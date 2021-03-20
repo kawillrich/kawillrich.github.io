@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>RPG Game Test</title>
+  </head>
+</html>
+<body>
+  <div id="container">Welcome!<hr>
+    <div id="character-info">
+    
+    </div>
+  
+  
+  </div>
+  <input type="radio" name="specialty" value="fighter" checked="checked">Figher<br>
+  <input type="radio" name="specialty" value="mage">Mage<br>
+  <input type="radio" name="specialty" value="archer">Archer<br>
+  
+  <input type="submit" id="submitted-specialty">
+</body>

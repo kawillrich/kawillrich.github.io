@@ -1,0 +1,28 @@
+//place function with if statement on selected radio button
+
+
+
+let character = {
+name : "Kurt",
+specialty : "Archer",
+HP : 150,
+};
+
+function displayChar(name, specialty, HP) {
+let changedText = document.querySelector("body");
+changedText.innerHTML = `Name: ${name}`;
+}
+
+
+const playerData = (character) => {
+  return `
+  <div>
+    <h3>Name: ${character.name}</h3>
+    <h3>Specialty: ${character.specialty}</h3>
+    <h3>HP: ${character.HP}</h3>
+  </div>
+`};
+
+const characterInfo = document.querySelector("#character-info");
+characterInfo.innerHTML = playerData(character);
+

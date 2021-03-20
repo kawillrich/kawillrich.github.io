@@ -1,0 +1,20 @@
+.monster {
+  display: inline-block;
+  width: 300px;
+}
+
+.attack-monster-one,
+.attack-monster-two,
+.spell2-monster-one,
+.spell2-monster-two,
+.spell1-heal {
+  width: 200px;
+}
+
+#monster-info {
+  height: 300px;
+}
+
+h4 {
+  margin: 0px 10px 0px 0px;
+}

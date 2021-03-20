@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  
+  <title>Dungeon Crawl</title>
+  <link href="styles/styles.css" type="text/css" rel="stylesheet"/>
+  <body>
+    
+    <hr>
+    <div id="header">
+      <h1>Welcome to Dungeon Crawl!</h1><br />      
+    </div>
+    <hr>
+    <div id="container">
+      <div id="character-info">
+
+      </div><hr>
+      
+      <div id="dialogue">
+        Introduction:  
+        Welcome, Traveler! 
+        <br><br>
+        In the ruins of Elsier, there are rumors of a large treasure being guarded by the Nighfang Dragon, known as Soul Stealer.
+        Soul Stealer is an ancient species of dragon with black scales, obsidian-like talons, and silver eyes that can see in the dark
+        as if it were daytime.  It is said that Soul Stealer breathes balck fire that is able to burn through <e>*almost*</e> anything....
+        <br><br>
+        You have decided that your training and preparation have readied you for the challenge to venture to the ruins, in hopes of defeating 
+        the dragon and obtaining his treasure.  Your have grown up a lot since your youth.  Now, at age 26, you feel you are at your 
+        physical peak.  Mentally, you have already taken the leap of faith and prepared your belongings - basic supplies: food, water, armor, 
+        a weapon, and a survival kit.  Your father, Edwin, and your Mother, Alena, have raised you well.  Your father taught you how to 
+        handle your skills and how to defend yourself.  He spent many nights with you, hiking, camping, and living in the woods.  Your mother 
+        taught you how to mend clothes, forage edible foods, and how to take care of your wounds.  
+        <br><br>
+        But did they prepare you for this?....
+        <br><br>
+        What's your name?
+        <br><br>
+        <form ></form>      
+        <label for="charactername">Name: </label><input type="text" maxlength="20" id="character-name" placeholder="20 letters max">
+        <input type="submit" id="submit-name" value="Submit Name"><br><br>
+
+        <div id="confirm-start"></div>
+
+        <div id="confirm-journey-start"></div>
+      </div>
+      <hr>
+      <div id= "fight-module"></div>
+      <div id = "monster-info"></div>
+      <hr>
+    </div>
+    <hr>
+    
+    
+    
+
+    
+    <script type="module" src="./js/js_v14.js"></script>
+    <script type="module" src="./js/specialty-class.js"></script>
+    <script type="module" src="./js/armor-class.js"></script>
+    <script type="module" src="./js/monster-class.js"></script>
+    <script type="module" src="./js/spell-class.js"></script>
+    <script type="module" src="./js/weapon-class.js"></script>
+    <script src="js/jquery-3.6.0.js"></script>
+  </body>
+</html>
+ 
