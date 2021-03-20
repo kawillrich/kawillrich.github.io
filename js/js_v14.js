@@ -1,4 +1,6 @@
 //testing spell functions
+//test disply: none on monters dead
+//test export * and add new classes in each respective module?
 
 
 import Specialty from "./specialty-class.js";
