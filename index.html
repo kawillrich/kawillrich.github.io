@@ -5,18 +5,15 @@
   <link href="styles/styles.css" type="text/css" rel="stylesheet"/>
   <body>
     
-    <hr>
+    <hr><hr>
     <div id="header">
-      <h1>Welcome to Dungeon Crawl!</h1><br />
-      <h1>Ruins of the Obsidian Dragon</h1>      
+      <h1>Welcome to Dungeon Crawl! Version 2</h1>
+      <h2>Ruins of the Obsidian Dragon</h2><br />      
     </div>
     <hr>
-    <div id="container">
-      <div id="character-info">
-
-      </div><hr>
+    <div id="character-info"></div><hr>
       
-      <div id="dialogue">
+    <div id="dialogue">
         Introduction:  
         Welcome, Traveler! 
         <br><br>
@@ -36,30 +33,29 @@
         What's your name?
         <br><br>
         <form ></form>      
-        <label for="charactername">Name: </label><input type="text" maxlength="20" id="character-name" placeholder="20 letters max">
+        <label for="charactername">Character Name: </label><input type="text" maxlength="20" id="character-name" placeholder="20 letters max">
         <input type="submit" id="submit-name" value="Submit Name"><br><br>
 
-        <div id="confirm-start"></div>
-
-        <div id="confirm-journey-start"></div>
-      </div>
-      <hr>
-      <div id= "fight-module"></div>
-      <div id = "monster-info"></div>
-      <hr>
+    <div id='confirm-start'></div>    
     </div>
     <hr>
+    <div id= "fight-module"></div>
+    <hr>
+    <div id = "monster-info"></div>
+    <hr>
+    <div id='footer'></div><hr><hr>
+    
     
     
     
 
     
-    <script type="module" src="/js/js_v14-3.js"></script>
-    <script type="module" src="/js/specialty-class.js"></script>
-    <script type="module" src="/js/armor-class.js"></script>
-    <script type="module" src="/js/monster-class.js"></script>
-    <script type="module" src="/js/spell-class.js"></script>
-    <script type="module" src="/js/weapon-class.js"></script>
+    <script type="module" src="./js/js_v14-3.js"></script>
+    <script type="module" src="./js/specialty-class-v2.js"></script>
+    <script type="module" src="./js/armor-class-v2.js"></script>
+    <script type="module" src="./js/monster-class-v2.js"></script>
+    <script type="module" src="./js/spell-class-v2.js"></script>
+    <script type="module" src="./js/weapon-class-v2.js"></script>
     <script src="js/jquery-3.6.0.js"></script>
   </body>
 </html>
