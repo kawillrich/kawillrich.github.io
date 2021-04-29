@@ -9,7 +9,7 @@ import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHea
 import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, masterArcher, highMage } from './specialty-class-v2.js';
 import Character from './character-class-v2.js';
-import Monster from './monster-class-v3.js';
+import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin } from './monster-class-v3.js';
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon);
