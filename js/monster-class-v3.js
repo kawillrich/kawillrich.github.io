@@ -28,7 +28,8 @@ export default class Monster {
         // console.log(enemy2.name);
         console.log('Monsters Attack');              
         console.log(arguments);
-        if (self.healthPoints === 'Dead' && enemy2.healthPoints === 'Dead') {
+
+        if (arguments[0].healthPoints === 'Dead' && arguments[1].healthPoints === 'Dead') {
             let removeFightModule = document.querySelector('#fight-module');
             removeFightModule.innerHTML = `<p>You won!</p>`;
         } else {
@@ -37,10 +38,26 @@ export default class Monster {
         <div class="monster-attack-buttons">
             <input type="submit" id="attack-player" value="Monster(s) Turn">        
         </div>`;
+        }
+
+        let monsterOneStatus = document.querySelector('#monster-one');
+        if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
+            arguments[0].healthPoints === 'Dead';
+
+        // if (arguments[0].healthPoints === 'Dead' && arguments[1].healthPoints === 'Dead') {
+        //     let removeFightModule = document.querySelector('#fight-module');
+        //     removeFightModule.innerHTML = `<p>You won!</p>`;
+        // } else {
+        // let monstersTurn = document.querySelector('#fight-module');
+        // monstersTurn.innerHTML = `
+        // <div class="monster-attack-buttons">
+        //     <input type="submit" id="attack-player" value="Monster(s) Turn">        
+        // </div>`;
     
-            let monsterOneStatus = document.querySelector('#monster-one');
-        if (this.healthPoints <= 0 || this.healthPoints === 'Dead') {
-            this.healthPoints === 'Dead';
+        //     let monsterOneStatus = document.querySelector('#monster-one');
+        // if (this.healthPoints <= 0 || this.healthPoints === 'Dead') {
+        //     this.healthPoints === 'Dead';
+
             // monsterOneStatus.innerHTML =`
             //     <div class="monster" id="monster-one">Monster 1:
             //         <h4 id="monster-one-type">Monster Type: ${this.enemy1.name}</h4>
@@ -48,8 +65,8 @@ export default class Monster {
             //         <h4 id="monster-one-ap">Armor Points: ${this.enemy1.armorPoints}</h4>
             //         <h4 id="monster-one-damage">Damage: ${this.enemy1.damage}</h4>       
             //         </div>`;
-            } else if (this.healthPoints > 0) {
-                this.healthPoints = this.healthPoints;
+            } else if (arguments[0].healthPoints > 0) {
+                arguments[0].healthPoints = arguments[0].healthPoints;
                 // monsterOneStatus.innerHTML =`
                 // <div class="monster" id="monster-one">Monster 1:
                 //     <h4 id="monster-one-type">Monster Type: ${wolf1.name}</h4>
@@ -84,7 +101,7 @@ export default class Monster {
         
         //return monsterAttackVariable;
         }
-    };
+    
 
     //NEED TO FIGURE OUT HOW TO GO BACK TO CHARACTER ATTACKING & HOW TO USE CONFIRMWOLVES ATTACK FUNCTION IN EVENT LISTENER
     //NEED TO MAKE THE MONSTERS ATTACK
@@ -105,6 +122,7 @@ export default class Monster {
         console.log(this.finalCharacter.confirmAttack)
         console.log(confirmAttackWolves);
         confirmAttackWolves();
+        }
     
     //NEED TO ADD ATTACK SEQUENCE - IF PLAYER HP IS <= 0, ETC.
     
@@ -114,11 +132,12 @@ export default class Monster {
     
     // let attackMonsterTwo = document.querySelector('.attack-monster-two');
     // attackMonsterTwo.addEventListener('click', RETURN_TO_FIGHT_MODULE, false);
-}
-    monstersAttackTurn();
-    }
 
-};
+        monstersAttackTurn();
+    }
+}
+
+
 
 let wolf1 = new Monster('Wolf', 20, 2, 6);
 let wolf2 = new Monster('Wolf', 20, 2, 6);

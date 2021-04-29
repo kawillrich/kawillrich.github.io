@@ -30,7 +30,10 @@ export default class Character {
     confirmAttack(enemy1, enemy2) {
         this.enemy1 = enemy1;
         this.enemy2 = enemy2;
-            
+        
+        enemy1.monsterAttack.apply(null, arguments);
+        enemy2.monsterAttack.apply(null, arguments);
+
         let fightMonster = document.querySelector('#dialogue');
         fightMonster.innerHTML = `<p>You Attack!</p>`;
     
