@@ -118,8 +118,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = masterArcher; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
-        finalCharacter.characterUpdate();
-        
+        finalCharacter.characterUpdate();        
         console.log(finalCharacter);
         
     } else if (selectedSpecialty === "mage") {
@@ -128,8 +127,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = highMage; 
         finalCharacter.armor = robes; 
         finalCharacter.weapon = staff;
-        finalCharacter.characterUpdate();
-        
+        finalCharacter.characterUpdate();        
         console.log(finalCharacter);
 
     } else {
@@ -285,16 +283,13 @@ function continueChapterThreeThree() {
 
     var attackWolvesYes = document.querySelector("#attack-wolves");
     attackWolvesYes.addEventListener('click', confirmAttackWolves, false);
-
     
     var attackWolvesNo = document.querySelector("#dont-attack-wolves");
     attackWolvesNo.addEventListener('click', goAroundWolves, false);    
 };
 
-function confirmAttackWolves() {       
-    
-    console.log('Attack Wolves OOP');
-    
+function confirmAttackWolves() {           
+    console.log('Attack Wolves OOP');    
     
     finalCharacter.confirmAttack(goblin, wolf2);
 
@@ -302,16 +297,10 @@ function confirmAttackWolves() {
     attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(goblin, finalCharacter.weapon)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
-    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);
-
-    
+    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);    
 };
 
-
-
-
-function confirmWolvesDead() {
-        
+function confirmWolvesDead() {        
         console.log(`${wolf1.healthPoints}`);  
         console.log(`${wolf2.healthPoints}`);
         if (wolf1.healthPoints === 'Dead' && wolf2.healthPoints === 'Dead') {
@@ -322,10 +311,7 @@ function confirmWolvesDead() {
             removeFightModule.innerHTML = `<p>You won!</p>`;
             defeatedMonsters.innerHTML = `
             <p>Congratulations, you defeated the monster(s)!</p>
-            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-            
-            
-            
+            <input type="submit" id="start-chapter-three-four" value="Continue">`; 
             
            //var removeMonstersTurnButton = document.querySelector('#attack-player');
             // removeMonstersTurnButton.remove();
