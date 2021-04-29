@@ -13,6 +13,7 @@ import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin } from './monster-class-v2.js';
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon);
+
 let selectedSpecialty = '';
 let finalWeapon = finalCharacter.weapon;
 
@@ -288,7 +289,7 @@ function continueChapterThreeThree() {
     attackWolvesNo.addEventListener('click', goAroundWolves, false);    
 };
 
-function confirmAttackWolves() {           
+export function confirmAttackWolves() {           
     console.log('Attack Wolves OOP');    
     
     finalCharacter.confirmAttack(goblin, wolf2);

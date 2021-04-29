@@ -1,4 +1,4 @@
-import { finalCharacter } from './js_v14-3.js';
+import { finalCharacter, confirmAttackWolves } from './js_v14-3.js';
 
 import Weapon from './weapon-class-v2.js';
 import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon } from './weapon-class-v2.js';
@@ -10,24 +10,22 @@ import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, masterArcher, highMage } from './specialty-class-v2.js';
 import Character from './character-class-v2.js';
 
+
+
 export default class Monster {
     constructor (name, healthPoints, armorPoints, damage) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.armorPoints = armorPoints;
-        this.damage = damage;
-        
+        this.damage = damage;        
     };
-
-    
 
     monsterAttack() {
         
         let self = this;
         //let monsterAttackVariable = this;
         console.log(this.name);
-        console.log('Monsters Attack');      
-        
+        console.log('Monsters Attack');              
         
         if (this.healthPoints === 'Dead' && this.enemy2.healthPoints === 'Dead') {
             let removeFightModule = document.querySelector('#fight-module');
@@ -79,26 +77,18 @@ export default class Monster {
         //         <h4 id="monster-two-damage">Damage: ${wolf2.damage}</h4>       
         //         </div>`
         //     };
-        
-        
          
         let confirmMonsterAttack = document.querySelector('#attack-player');
         confirmMonsterAttack.addEventListener('click', function() {self.monstersTurn(self.name, self.damage, self.healthPoints, finalCharacter)}, false);
         
         //return monsterAttackVariable;
-        
-        
-        
-        
-        
-        
-        
         }
     };
 
     //NEED TO FIGURE OUT HOW TO GO BACK TO CHARACTER ATTACKING & HOW TO USE CONFIRMWOLVES ATTACK FUNCTION IN EVENT LISTENER
     //NEED TO MAKE THE MONSTERS ATTACK
-    
+    //Need to remember to import/export other functions from js_v14-3.js file to be able to access here
+
     monstersTurn(monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
         this.monsterName = monsterName;
         this.monsterDamage = monsterDamage;
@@ -110,6 +100,8 @@ export default class Monster {
         console.log(this.monsterHealthPoints);
         console.log(this.monsterDamage);
         console.log(this.finalCharacter.name);
+        console.log(confirmAttackWolves);
+        confirmAttackWolves();
     
     //NEED TO ADD ATTACK SEQUENCE - IF PLAYER HP IS <= 0, ETC.
     
