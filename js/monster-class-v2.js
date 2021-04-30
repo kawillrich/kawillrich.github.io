@@ -21,14 +21,14 @@ export default class Monster {
     };
 
     monsterAttack() {
-               
-        //let monsterAttackVariable = this;
+        
         console.log(arguments);
-        //console.log(enemy2.name);
-        // console.log(enemy2.name);
+        console.log(arguments[0].name);
         console.log('Monsters Attack');              
-        console.log(arguments);
-        if (self.healthPoints === 'Dead' && enemy2.healthPoints === 'Dead') {
+       
+        //******ENTER arguments[0] and arguments[1] respectively to below function */
+
+        if (arguments[0].healthPoints === 'Dead' && argument[1].healthPoints === 'Dead') {
             let removeFightModule = document.querySelector('#fight-module');
             removeFightModule.innerHTML = `<p>You won!</p>`;
         } else {
@@ -39,8 +39,8 @@ export default class Monster {
         </div>`;
     
             let monsterOneStatus = document.querySelector('#monster-one');
-        if (this.healthPoints <= 0 || this.healthPoints === 'Dead') {
-            this.healthPoints === 'Dead';
+        if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
+            arguments[0].healthPoints === 'Dead';
             // monsterOneStatus.innerHTML =`
             //     <div class="monster" id="monster-one">Monster 1:
             //         <h4 id="monster-one-type">Monster Type: ${this.enemy1.name}</h4>
@@ -48,8 +48,8 @@ export default class Monster {
             //         <h4 id="monster-one-ap">Armor Points: ${this.enemy1.armorPoints}</h4>
             //         <h4 id="monster-one-damage">Damage: ${this.enemy1.damage}</h4>       
             //         </div>`;
-            } else if (this.healthPoints > 0) {
-                this.healthPoints = this.healthPoints;
+            } else if (arguments[0].healthPoints > 0) {
+                arguments[0].healthPoints = arguments[0].healthPoints;
                 // monsterOneStatus.innerHTML =`
                 // <div class="monster" id="monster-one">Monster 1:
                 //     <h4 id="monster-one-type">Monster Type: ${wolf1.name}</h4>
@@ -78,11 +78,14 @@ export default class Monster {
         //         <h4 id="monster-two-damage">Damage: ${wolf2.damage}</h4>       
         //         </div>`
         //     };
-         
+        //const monstersTurnToAttack = arguments[0].monstersTurn(arguments[0].name, arguments[0].damage, arguments[0].healthPoints, finalCharacter); 
+        console.log(arguments[0].name);
+        const ENEMYONE = arguments[0];
+        const MONSTERSNAME = arguments[0].name;
+    
         let confirmMonsterAttack = document.querySelector('#attack-player');
-        confirmMonsterAttack.addEventListener('click', function() {self.monstersTurn(self.name, self.damage, self.healthPoints, finalCharacter)}, false);
-        
-        //return monsterAttackVariable;
+        confirmMonsterAttack.addEventListener('click', function() { ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) }, false);
+        //confirmMonsterAttack.addEventListener('click', function() { console.log('Hi'); console.log(ENEMYONE.monstersTurn)}, false);
         }
     };
 

@@ -30,9 +30,9 @@ export default class Character {
     confirmAttack(enemy1, enemy2) {
         this.enemy1 = enemy1;
         this.enemy2 = enemy2;
+        // enemy1.monsterAttack.apply(null, arguments);
+        // enemy2.monsterAttack.apply(null, arguments);
         
-        enemy1.monsterAttack.apply(null, arguments);
-        enemy2.monsterAttack.apply(null, arguments);
 
         let fightMonster = document.querySelector('#dialogue');
         fightMonster.innerHTML = `<p>You Attack!</p>`;
@@ -73,7 +73,9 @@ export default class Character {
     weaponAttackMonster1(monster1, weapon) {
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
+        
            
+
         if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
         console.log('both dead');
         
@@ -127,7 +129,8 @@ export default class Character {
             let monster1DeadHP = this.monster1.healthPoints;
             
             confirmMonstersDead();
-            self.enemy1.monsterAttack();        
+            self.monster1.monsterAttack.apply(null, arguments); 
+            //self.enemy1.monsterAttack();        
         //ENDING CHECK
 
     };      
