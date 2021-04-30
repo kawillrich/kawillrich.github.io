@@ -290,7 +290,7 @@ function continueChapterThreeThree() {
 };
 
 export function confirmAttackWolves() {           
-    console.log('Attack Wolves OOP');    
+    console.log('confirmAttackWolves');    
     
     finalCharacter.confirmAttack(goblin, wolf2);
 
@@ -383,7 +383,7 @@ function goAroundWolves() {
 //     }
 // };
 
-function continueChapterThreeFour() {
+export function continueChapterThreeFour() {
     console.log('Chapter Three-four');
     let currentMonster1 = goblin;    
     let currentMonster2 = goblin;

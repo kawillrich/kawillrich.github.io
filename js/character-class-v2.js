@@ -1,3 +1,4 @@
+import { finalCharacter, continueChapterThreeFour } from './js_v14-3.js';
 import Weapon from './weapon-class-v2.js';
 import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon } from './weapon-class-v2.js';
 import Armor from './armor-class-v2.js';
@@ -30,10 +31,7 @@ export default class Character {
     confirmAttack(enemy1, enemy2) {
         this.enemy1 = enemy1;
         this.enemy2 = enemy2;
-        // enemy1.monsterAttack.apply(null, arguments);
-        // enemy2.monsterAttack.apply(null, arguments);
         
-
         let fightMonster = document.querySelector('#dialogue');
         fightMonster.innerHTML = `<p>You Attack!</p>`;
     
@@ -62,12 +60,7 @@ export default class Character {
             <h4 id="monster-two-ap">Armor Points: ${enemy2.armorPoints}</h4>
             <h4 id="monster-two-damage">Damage: ${enemy2.damage}</h4>       
         </div>
-        `;
-        
-        
-        console.log(this.weaponAttackMonster1);
-        //RETURNING ENEMY1
-        //return enemy1;
+        `;     
     };    
 
     weaponAttackMonster1(monster1, weapon) {
@@ -86,10 +79,9 @@ export default class Character {
         defeatedMonsters.innerHTML = `
         <p>Congratulations, you defeated the monster(s)!</p>
         <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-                
-        var removeMonstersTurnButton = document.querySelector('#attack-player');
-        removeMonstersTurnButton.remove();
         
+        removeFightModule.innerHTML = ` `;
+
         var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
         startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
         };            
@@ -110,6 +102,7 @@ export default class Character {
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
+            self.monster1.monsterAttack.apply(null, arguments);
         
         } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {
             this.monster1.healthPoints = 'Dead';
@@ -126,19 +119,16 @@ export default class Character {
             defeatMonster2.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;            
             };
-            let monster1DeadHP = this.monster1.healthPoints;
-            
+            let monster1DeadHP = this.monster1.healthPoints;            
             confirmMonstersDead();
-            self.monster1.monsterAttack.apply(null, arguments); 
-            //self.enemy1.monsterAttack();        
-        //ENDING CHECK
+            
 
     };      
 
     weaponAttackMonster2(monster2, weapon) {
         let self = this;
         let confirmMonstersDead = (enemy2) => {            
-            console.log(self.enemy1.name);
+            //console.log(self.enemy1.name);
             console.log(self.enemy2.name);
         
         console.log("checking function" + " " + self.enemy2.healthPoints);
@@ -153,9 +143,8 @@ export default class Character {
         defeatedMonsters.innerHTML = `
         <p>Congratulations, you defeated the monster(s)!</p>
         <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-                
-        var removeMonstersTurnButton = document.querySelector('#attack-player');
-        removeMonstersTurnButton.remove();
+        
+        removeFightModule.innerHTML = ` `;
             
         var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
         startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
@@ -166,9 +155,7 @@ export default class Character {
         this.weapon = weapon;
 
         console.log(this.weapon.damage);
-        
-        
-        
+                
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
         You attack the ${this.monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;
@@ -179,6 +166,7 @@ export default class Character {
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4>`;
+            self.monster2.monsterAttack.apply(null, arguments);
             
             } else if (this.monster2.healthPoints - this.weapon.damage <= 0 || this.monster2.healthPoints === 'Dead') {
                 this.monster2.healthPoints = 'Dead';
@@ -196,7 +184,8 @@ export default class Character {
                 <p>Congratulations, you defeated the Monster 2!</p>`;            
                 };
                 confirmMonstersDead();
-                this.monster2.monsterAttack();        
+                 
+                      
             //ENDING CHECK
     }
 

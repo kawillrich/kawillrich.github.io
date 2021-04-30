@@ -22,71 +22,62 @@ export default class Monster {
 
     monsterAttack() {
         
-        console.log(arguments);
-        console.log(arguments[0].name);
-        console.log('Monsters Attack');              
-       
-        //******ENTER arguments[0] and arguments[1] respectively to below function */
-
-        if (arguments[0].healthPoints === 'Dead' && argument[1].healthPoints === 'Dead') {
-            let removeFightModule = document.querySelector('#fight-module');
-            removeFightModule.innerHTML = `<p>You won!</p>`;
-        } else {
-        let monstersTurn = document.querySelector('#fight-module');
-        monstersTurn.innerHTML = `
-        <div class="monster-attack-buttons">
-            <input type="submit" id="attack-player" value="Monster(s) Turn">        
-        </div>`;
-    
-            let monsterOneStatus = document.querySelector('#monster-one');
-        if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
-            arguments[0].healthPoints === 'Dead';
-            // monsterOneStatus.innerHTML =`
-            //     <div class="monster" id="monster-one">Monster 1:
-            //         <h4 id="monster-one-type">Monster Type: ${this.enemy1.name}</h4>
-            //         <h4 id="monster-one-hp">Health Points: ${this.enemy1.healthPoints}</h4> 
-            //         <h4 id="monster-one-ap">Armor Points: ${this.enemy1.armorPoints}</h4>
-            //         <h4 id="monster-one-damage">Damage: ${this.enemy1.damage}</h4>       
-            //         </div>`;
-            } else if (arguments[0].healthPoints > 0) {
-                arguments[0].healthPoints = arguments[0].healthPoints;
-                // monsterOneStatus.innerHTML =`
-                // <div class="monster" id="monster-one">Monster 1:
-                //     <h4 id="monster-one-type">Monster Type: ${wolf1.name}</h4>
-                //     <h4 id="monster-one-hp">Health Points: ${wolf1.healthPoints}</h4> 
-                //     <h4 id="monster-one-ap">Armor Points: ${wolf1.armorPoints}</h4>
-                //     <h4 id="monster-one-damage">Damage: ${wolf1.damage}</h4>       
-                //     </div>`
-                };
-    
-        // let monsterTwoStatus = document.querySelector('#monster-two');
-        // if (wolf2.healthPoints <= 0 || wolf2.healthPoints === 'Dead') {
-        //     wolf2.healthPoints === 'Dead';
-        //     monsterTwoStatus.innerHTML =`
-        //     <div class="monster" id="monster-two">Monster 2:
-        //         <h4 id="monster-two-type">Monster Type: ${wolf2.name}</h4>
-        //         <h4 id="monster-two-hp">Health Points: ${wolf2.healthPoints}</h4> 
-        //         <h4 id="monster-two-ap">Armor Points: ${wolf2.armorPoints}</h4>
-        //         <h4 id="monster-two-damage">Damage: ${wolf2.damage}</h4>       
-        //         </div>`;
-        // } else if (wolf2.healthPoints > 0) {
-        //     monsterTwoStatus.innerHTML =`
-        //     <div class="monster" id="monster-two">Monster 2:
-        //         <h4 id="monster-two-type">Monster Type: ${wolf2.name}</h4>
-        //         <h4 id="monster-two-hp">Health Points: ${wolf2.healthPoints}</h4> 
-        //         <h4 id="monster-two-ap">Armor Points: ${wolf2.armorPoints}</h4>
-        //         <h4 id="monster-two-damage">Damage: ${wolf2.damage}</h4>       
-        //         </div>`
-        //     };
-        //const monstersTurnToAttack = arguments[0].monstersTurn(arguments[0].name, arguments[0].damage, arguments[0].healthPoints, finalCharacter); 
-        console.log(arguments[0].name);
         const ENEMYONE = arguments[0];
-        const MONSTERSNAME = arguments[0].name;
+        console.log(ENEMYONE.name);
+        console.log('Monsters Attack');    
+
+        // if (arguments[0].healthPoints === 'Dead' && argument[1].healthPoints === 'Dead') {
+        //     let removeFightModule = document.querySelector('#fight-module');
+        //     removeFightModule.innerHTML = `<p>You won!</p>`;
+        //     } else {
+                let monstersTurn = document.querySelector('#fight-module');
+                monstersTurn.innerHTML = `
+                <div class="monster-attack-buttons">
+                <input type="submit" id="attack-player" value="Monster(s) Turn">        
+                </div>`;
     
+                let monsterOneStatus = document.querySelector('#monster-one');
+                if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
+                    arguments[0].healthPoints === 'Dead';
+            
+                 } else if (arguments[0].healthPoints > 0) {
+                    arguments[0].healthPoints = arguments[0].healthPoints;                
+                    };        
+        
+
+        //---------------------------START OF COMMENTING OUT, BUT KEEP-------------------------------------------------//
+
+        // if (arguments[0].healthPoints === 'Dead' && argument[1].healthPoints === 'Dead') {
+        //     let removeFightModule = document.querySelector('#fight-module');
+        //     removeFightModule.innerHTML = `<p>You won!</p>`;
+        // } else {
+        // let monstersTurn = document.querySelector('#fight-module');
+        // monstersTurn.innerHTML = `
+        // <div class="monster-attack-buttons">
+        //     <input type="submit" id="attack-player" value="Monster(s) Turn">        
+        // </div>`;
+    
+        //     let monsterOneStatus = document.querySelector('#monster-one');
+        // if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
+        //     arguments[0].healthPoints === 'Dead';
+
+            
+        //     } else if (arguments[0].healthPoints > 0) {
+        //         arguments[0].healthPoints = arguments[0].healthPoints;                
+        //         };        
+       
+        //----------------------END OF SECTION TO KEEP COMMENTING OUT--------------------------------------------// 
+
+        console.log(arguments[0].name);        
         let confirmMonsterAttack = document.querySelector('#attack-player');
-        confirmMonsterAttack.addEventListener('click', function() { ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) }, false);
-        //confirmMonsterAttack.addEventListener('click', function() { console.log('Hi'); console.log(ENEMYONE.monstersTurn)}, false);
-        }
+        confirmMonsterAttack.addEventListener('click', function() { ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) }, false);     
+        
+        
+        //-------------INCLUDE THIS CLOSING CURLY BRACE-------------------------------------//
+        // }
+        //-------------INCLUDE THIS CLOSING CURLY BRACE-------------------------------------//
+
+
     };
 
     //NEED TO FIGURE OUT HOW TO GO BACK TO CHARACTER ATTACKING & HOW TO USE CONFIRMWOLVES ATTACK FUNCTION IN EVENT LISTENER
@@ -100,24 +91,15 @@ export default class Monster {
         this.finalCharacter = finalCharacter;
         
         let monstersAttackTurn = () => {
-        console.log("Executing monstersTurn");
-        console.log(this.monsterName);
-        console.log(this.monsterHealthPoints);
-        console.log(this.monsterDamage);
-        console.log(this.finalCharacter.name);
-        console.log(this.finalCharacter.confirmAttack)
-        console.log(confirmAttackWolves);
+        console.log("Executing monstersAttackTurn");
+        console.log("Monster's Name: " + this.monsterName);
+        console.log("Monster's HP: " + this.monsterHealthPoints);
+        console.log("Monster's Damage: " + this.monsterDamage);
+        console.log("Character Name: " + this.finalCharacter.name);        
         confirmAttackWolves();
     
-    //NEED TO ADD ATTACK SEQUENCE - IF PLAYER HP IS <= 0, ETC.
-    
-
-    // let attackMonsterOne = document.querySelector('.attack-monster-one');
-    // attackMonsterOne.addEventListener('click', RETURN_TO_FIGHT_MODULE, false);
-    
-    // let attackMonsterTwo = document.querySelector('.attack-monster-two');
-    // attackMonsterTwo.addEventListener('click', RETURN_TO_FIGHT_MODULE, false);
-}
+    //NEED TO ADD ATTACK SEQUENCE - IF PLAYER HP IS <= 0, ETC.    
+        }
     monstersAttackTurn();
     }
 
