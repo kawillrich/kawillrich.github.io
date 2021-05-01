@@ -23,15 +23,15 @@ export default class Character {
     characterUpdate() {
         let characterInfo =  document.querySelector("#character-info");
         characterInfo.innerHTML = `
-        <h4>Name: ${this.name}</h4>
-        <h4>Specialty: ${this.specialty.name}</h4>
-        <h4>Health Points: ${this.specialty.healthPoints}</h4> 
-        <h4>Armor: ${this.armor.name}</h4> 
-        <h4>Armor Points: ${this.armor.armorPoints}</h4>
-        <h4>Weapon: ${this.weapon.name}</h4>
-        <h4>Damage: ${this.weapon.damage}</h4>
-        <h4>Spell 1: ${this.specialty.spell1.name}</h4>
-        <h4>Spell 2: ${this.specialty.spell2.name}</h4>`; 
+        <h4 id='char-name'>Name: <span class="character-display-info">${this.name}</span></h4>
+        <h4 id='char-specialty'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
+        <h4 id='char-hp'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
+        <h4 id='char-armor'>Armor:  <span class="character-display-info">${this.armor.name}</span></h4> 
+        <h4 id='char-armor-points'>Armor Points:  <span class="character-display-info">${this.armor.armorPoints}</span></h4>
+        <h4 id='char-weapon'>Weapon:  <span class="character-display-info">${this.weapon.name}</span></h4>
+        <h4 id='char-damage'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
+        <h4 id='char-spell1'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
+        <h4 id='char-spell2'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>`; 
     }
     
     //confirms to attack monsters and populates monster-info section

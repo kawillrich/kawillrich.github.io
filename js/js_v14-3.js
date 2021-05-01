@@ -57,15 +57,15 @@ function startGame() {
     let newStartGameDialogue = document.querySelector("#character-info");
     
     newStartGameDialogue.innerHTML = `
-        <h4>Name: <span class="character-display-info">${submittedCharName}</span></h4>
-        <h4>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
-        <h4>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
-        <h4>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
-        <h4>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
-        <h4>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
-        <h4>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
-        <h4>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
-        <h4>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>`;
+        <h4 id='char-name'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
+        <h4 id='char-specialty'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
+        <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
+        <h4 id='char-armor'>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
+        <h4 id='char-armor-points'>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
+        <h4 id='char-weapon'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
+        <h4 id='char-damage'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
+        <h4 id='char-spell1'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
+        <h4 id='char-spell2'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>`;
         console.log(finalCharacter);   
 
     let chapterOne = document.querySelector('#dialogue');
@@ -304,23 +304,23 @@ export function confirmAttackWolves() {
     attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);    
 };
 
-function confirmWolvesDead() {        
-        console.log(`${wolf1.healthPoints}`);  
-        console.log(`${wolf2.healthPoints}`);
-        if (wolf1.healthPoints === 'Dead' && wolf2.healthPoints === 'Dead') {
-            console.log('both dead');
-            let defeatedMonsters = document.querySelector('#dialogue');
-            let removeFightModule = document.querySelector('#fight-module');
+// function confirmWolvesDead() {        
+//         console.log(`${wolf1.healthPoints}`);  
+//         console.log(`${wolf2.healthPoints}`);
+//         if (wolf1.healthPoints === 'Dead' && wolf2.healthPoints === 'Dead') {
+//             console.log('both dead');
+//             let defeatedMonsters = document.querySelector('#dialogue');
+//             let removeFightModule = document.querySelector('#fight-module');
             
-            removeFightModule.innerHTML = `<p>You won!</p>`;
-            defeatedMonsters.innerHTML = `
-            <p>Congratulations, you defeated the monster(s)!</p>
-            <input type="submit" id="start-chapter-three-four" value="Continue">`; 
+//             removeFightModule.innerHTML = `<p>You won!</p>`;
+//             defeatedMonsters.innerHTML = `
+//             <p>Congratulations, you defeated the monster(s)!</p>
+//             <input type="submit" id="start-chapter-three-four" value="Continue">`; 
             
-            var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
-            };            
-    };
+//             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
+//             startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+//             };            
+//     };
 
 //MOVE TO MONSTER CLASS AND THEN REFERENCE IN CHARACTER CLASS AS THIS.MONSTER.MONSTERATTACK    
 function goAroundWolves() {

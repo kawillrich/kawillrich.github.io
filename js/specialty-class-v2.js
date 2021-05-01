@@ -5,8 +5,6 @@ export default class Specialty {
         this.healthPoints = healthPoints;
         this.spell1 = spell1;
         this.spell2 = spell2;
-     
-
     };
 };
 

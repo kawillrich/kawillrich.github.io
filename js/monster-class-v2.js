@@ -55,16 +55,29 @@ export default class Monster {
         this.finalCharacter = finalCharacter;
         
         let monstersAttackTurn = () => {
-        console.log("Executing monstersAttackTurn");
-        console.log("Monster's Name: " + this.monsterName);
-        console.log("Monster's HP: " + this.monsterHealthPoints);
-        console.log("Monster's Damage: " + this.monsterDamage);
-        console.log("Character Name: " + this.finalCharacter.name);        
-        confirmAttackWolves();
-    
-    //NEED TO ADD ATTACK SEQUENCE - IF PLAYER HP IS <= 0, ETC.    
-        }
-    monstersAttackTurn();
+            finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
+            alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);
+            let updatedCharHP = document.querySelector("#char-hp");
+            updatedCharHP.innerHTML = `
+            <h4 id='char-hp'>Health Points:  <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+            `;    
+            if (finalCharacter.specialty.healthPoints <= 0) {
+                alert('You died!');
+                window.location.reload(false);
+            } else {
+            // console.log("Executing monstersAttackTurn");
+            // console.log("Monster's Name: " + this.monsterName);
+            // console.log("Monster's HP: " + this.monsterHealthPoints);
+            // console.log("Monster's Damage: " + this.monsterDamage);
+            // console.log("Character Name: " + this.finalCharacter.name);        
+            
+            
+            
+            
+            confirmAttackWolves();    
+            }
+    }
+        monstersAttackTurn();
     }
 
 };
