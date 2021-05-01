@@ -1,4 +1,4 @@
-//testing prototype attack functions
+//imports modules
 
 import Weapon from './weapon-class-v2.js';
 import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon } from './weapon-class-v2.js';
@@ -12,7 +12,11 @@ import Character from './character-class-v2.js';
 import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin } from './monster-class-v2.js';
 
+//exports finalCharacter for other modules to access
+
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon);
+
+//initialized and clears selectedSpecialty
 
 let selectedSpecialty = '';
 let finalWeapon = finalCharacter.weapon;
@@ -92,7 +96,6 @@ function startGame() {
     
         let submittingCharSpecialtyArcher = document.querySelector("#archer");
         submittingCharSpecialtyArcher.addEventListener('click', logCharSpecialty, false);
-
 
         let submittingCharSpecialtyMage = document.querySelector("#mage");
         submittingCharSpecialtyMage.addEventListener('click', logCharSpecialty, false);
@@ -314,8 +317,6 @@ function confirmWolvesDead() {
             <p>Congratulations, you defeated the monster(s)!</p>
             <input type="submit" id="start-chapter-three-four" value="Continue">`; 
             
-           //var removeMonstersTurnButton = document.querySelector('#attack-player');
-            // removeMonstersTurnButton.remove();
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
             };            
@@ -325,63 +326,6 @@ function confirmWolvesDead() {
 function goAroundWolves() {
     continueChapterThreeFour();
 };
-
-// function wolvesAttack() {
-//     console.log('Wovles Attack');
-//     if (wolf1.healthPoints === 'Dead' && wolf2.healthPoints === 'Dead') {
-//         let removeFightModule = document.querySelector('#fight-module');
-//         removeFightModule.innerHTML = `<p>You won!</p>`;
-//     } else {
-//     let monstersTurn = document.querySelector('#fight-module');
-//     monstersTurn.innerHTML = `
-//     <div class="monster-attack-buttons">
-//         <input type="submit" id="attack-player" value="Monster(s) Turn">        
-//     </div>`;
-
-
-//     let monsterOneStatus = document.querySelector('#monster-one');
-//     if (wolf1.healthPoints <= 0 || wolf1.healthPoints === 'Dead') {
-// 	    wolf1.healthPoints === 'Dead';
-//         monsterOneStatus.innerHTML =`
-// 		    <div class="monster" id="monster-one">Monster 1:
-//         	    <h4 id="monster-one-type">Monster Type: ${wolf1.name}</h4>
-//         	    <h4 id="monster-one-hp">Health Points: ${wolf1.healthPoints}</h4> 
-//         	    <h4 id="monster-one-ap">Armor Points: ${wolf1.armorPoints}</h4>
-//         	    <h4 id="monster-one-damage">Damage: ${wolf1.damage}</h4>       
-//     		    </div>`;
-// 	    } else if (wolf1.healthPoints > 0) {
-//             monsterOneStatus.innerHTML =`
-// 		    <div class="monster" id="monster-one">Monster 1:
-//         	    <h4 id="monster-one-type">Monster Type: ${wolf1.name}</h4>
-//         	    <h4 id="monster-one-hp">Health Points: ${wolf1.healthPoints}</h4> 
-//         	    <h4 id="monster-one-ap">Armor Points: ${wolf1.armorPoints}</h4>
-//         	    <h4 id="monster-one-damage">Damage: ${wolf1.damage}</h4>       
-//     		    </div>`
-// 		    };
-
-//     let monsterTwoStatus = document.querySelector('#monster-two');
-//     if (wolf2.healthPoints <= 0 || wolf2.healthPoints === 'Dead') {
-// 	    wolf2.healthPoints === 'Dead';
-//         monsterTwoStatus.innerHTML =`
-// 		<div class="monster" id="monster-two">Monster 2:
-//         	<h4 id="monster-two-type">Monster Type: ${wolf2.name}</h4>
-//         	<h4 id="monster-two-hp">Health Points: ${wolf2.healthPoints}</h4> 
-//         	<h4 id="monster-two-ap">Armor Points: ${wolf2.armorPoints}</h4>
-//         	<h4 id="monster-two-damage">Damage: ${wolf2.damage}</h4>       
-//     		</div>`;
-// 	} else if (wolf2.healthPoints > 0) {
-//         monsterTwoStatus.innerHTML =`
-// 		<div class="monster" id="monster-two">Monster 2:
-//         	<h4 id="monster-two-type">Monster Type: ${wolf2.name}</h4>
-//         	<h4 id="monster-two-hp">Health Points: ${wolf2.healthPoints}</h4> 
-//         	<h4 id="monster-two-ap">Armor Points: ${wolf2.armorPoints}</h4>
-//         	<h4 id="monster-two-damage">Damage: ${wolf2.damage}</h4>       
-//     		</div>`
-// 		};
-//     let confirmMonsterAttack = document.querySelector('#attack-player');
-//     confirmMonsterAttack.addEventListener('click', confirmAttackWolves, false);
-//     }
-// };
 
 export function continueChapterThreeFour() {
     console.log('Chapter Three-four');
@@ -399,7 +343,7 @@ export function continueChapterThreeFour() {
 //     console.log('Casting Spell 2');
 // };
 
-function returnToFightModule() {
-    console.log("testing var");
+// function returnToFightModule() {
+//     console.log("testing var");
     
-}
+// }

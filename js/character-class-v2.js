@@ -1,3 +1,5 @@
+//import other js modules to access
+
 import { finalCharacter, continueChapterThreeFour } from './js_v14-3.js';
 import Weapon from './weapon-class-v2.js';
 import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon } from './weapon-class-v2.js';
@@ -6,6 +8,8 @@ import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, 
 import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, masterArcher, highMage } from './specialty-class-v2.js';
 
+//exports Character class for other module access
+
 export default class Character {
     constructor(name, specialty, armor, weapon) {
         this.name = name;
@@ -13,6 +17,8 @@ export default class Character {
         this.armor = armor;
         this.weapon = weapon;
     };
+
+    //updates & initiates Character creation
 
     characterUpdate() {
         let characterInfo =  document.querySelector("#character-info");
@@ -28,6 +34,8 @@ export default class Character {
         <h4>Spell 2: ${this.specialty.spell2.name}</h4>`; 
     }
     
+    //confirms to attack monsters and populates monster-info section
+
     confirmAttack(enemy1, enemy2) {
         this.enemy1 = enemy1;
         this.enemy2 = enemy2;
@@ -63,11 +71,13 @@ export default class Character {
         `;     
     };    
 
+    //attacking monster 1
+
     weaponAttackMonster1(monster1, weapon) {
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
         
-           
+        //checking if both monsters are dead   
 
         if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
         console.log('both dead');
@@ -183,41 +193,11 @@ export default class Character {
                 defeatMonster2.innerHTML = `
                 <p>Congratulations, you defeated the Monster 2!</p>`;            
                 };
-                confirmMonstersDead();
-                 
-                      
-            //ENDING CHECK
+                confirmMonstersDead();                 
     }
 
-    //NEED TO FIND A WAY TO CHECK IF BOTH MONSTER 1 AND MONSTER 2 ARE DEAD...MAYBE IN JS FILE INSTEAD OF THE CLASS FILE
-    //DO NOT DELETE
+    //test function
 
-    // confirmMonstersDead() {
-    //     let monster2DeadHP = this.monster2.healthPoints;
-    //     this.monster1HP = monster1HP;
-    //     this.monster2HP = monster2HP;
-       
-    //     console.log(`${this.monster1HP}`);  
-    //     console.log(`${this.monster2Dead.healthPoints}`);
-    //     if (this.monster1HP === 'Dead' && this.monster2Dead.healthPoints === 'Dead') {
-    //         console.log('both dead');
-    //         let defeatedMonsters = document.querySelector('#dialogue');
-    //         let removeFightModule = document.querySelector('#fight-module');
-            
-    //         removeFightModule.innerHTML = `<p>You won!</p>`;
-    //         defeatedMonsters.innerHTML = `
-    //         <p>Congratulations, you defeated the monster(s)!</p>
-    //         <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-            
-            
-            
-            
-    //        //var removeMonstersTurnButton = document.querySelector('#attack-player');
-    //         // removeMonstersTurnButton.remove();
-    //         var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-    //         startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
-    //         };            
-    // };
     testingOutput () {
         console.log("Testing cross module import");
     }

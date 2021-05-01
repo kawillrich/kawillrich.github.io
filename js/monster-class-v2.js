@@ -26,61 +26,25 @@ export default class Monster {
         console.log(ENEMYONE.name);
         console.log('Monsters Attack');    
 
-        // if (arguments[0].healthPoints === 'Dead' && argument[1].healthPoints === 'Dead') {
-        //     let removeFightModule = document.querySelector('#fight-module');
-        //     removeFightModule.innerHTML = `<p>You won!</p>`;
-        //     } else {
-                let monstersTurn = document.querySelector('#fight-module');
-                monstersTurn.innerHTML = `
-                <div class="monster-attack-buttons">
-                <input type="submit" id="attack-player" value="Monster(s) Turn">        
-                </div>`;
+        let monstersTurn = document.querySelector('#fight-module');
+        monstersTurn.innerHTML = `
+        <div class="monster-attack-buttons">
+        <input type="submit" id="attack-player" value="Monster(s) Turn">        
+        </div>`;
     
-                let monsterOneStatus = document.querySelector('#monster-one');
-                if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
-                    arguments[0].healthPoints === 'Dead';
+        let monsterOneStatus = document.querySelector('#monster-one');
+        if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
+            arguments[0].healthPoints === 'Dead';
             
-                 } else if (arguments[0].healthPoints > 0) {
-                    arguments[0].healthPoints = arguments[0].healthPoints;                
-                    };        
+        } else if (arguments[0].healthPoints > 0) {
+            arguments[0].healthPoints = arguments[0].healthPoints;                
+            };        
         
-
-        //---------------------------START OF COMMENTING OUT, BUT KEEP-------------------------------------------------//
-
-        // if (arguments[0].healthPoints === 'Dead' && argument[1].healthPoints === 'Dead') {
-        //     let removeFightModule = document.querySelector('#fight-module');
-        //     removeFightModule.innerHTML = `<p>You won!</p>`;
-        // } else {
-        // let monstersTurn = document.querySelector('#fight-module');
-        // monstersTurn.innerHTML = `
-        // <div class="monster-attack-buttons">
-        //     <input type="submit" id="attack-player" value="Monster(s) Turn">        
-        // </div>`;
-    
-        //     let monsterOneStatus = document.querySelector('#monster-one');
-        // if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
-        //     arguments[0].healthPoints === 'Dead';
-
-            
-        //     } else if (arguments[0].healthPoints > 0) {
-        //         arguments[0].healthPoints = arguments[0].healthPoints;                
-        //         };        
-       
-        //----------------------END OF SECTION TO KEEP COMMENTING OUT--------------------------------------------// 
-
         console.log(arguments[0].name);        
         let confirmMonsterAttack = document.querySelector('#attack-player');
-        confirmMonsterAttack.addEventListener('click', function() { ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) }, false);     
-        
-        
-        //-------------INCLUDE THIS CLOSING CURLY BRACE-------------------------------------//
-        // }
-        //-------------INCLUDE THIS CLOSING CURLY BRACE-------------------------------------//
-
-
+        confirmMonsterAttack.addEventListener('click', function() { ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) }, false);             
     };
 
-    //NEED TO FIGURE OUT HOW TO GO BACK TO CHARACTER ATTACKING & HOW TO USE CONFIRMWOLVES ATTACK FUNCTION IN EVENT LISTENER
     //NEED TO MAKE THE MONSTERS ATTACK
     //Need to remember to import/export other functions from js_v14-3.js file to be able to access here
 
@@ -105,8 +69,12 @@ export default class Monster {
 
 };
 
+//initializing monsters
+
 let wolf1 = new Monster('Wolf', 20, 2, 6);
 let wolf2 = new Monster('Wolf', 20, 2, 6);
 let goblin = new Monster('Goblin', 30, 5, 6);
+
+//exporting monsters
 
 export { wolf1, wolf2, goblin };
