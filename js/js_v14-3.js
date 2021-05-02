@@ -299,13 +299,15 @@ export function confirmAttackWolves() {
 
 //---------------NEED TO FIND A WAY TO REMOVE ATTACK BUTTONS ONCE MONSTER1 OR MONSTER2 ARE DEAD---------------
 
+
+
     let attackMonsterOne = document.querySelector('.attack-monster-one');
     attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
     attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);    
 
-    if (finalCharacter.specialty.spell2.name === 'None') {
+    if (finalCharacter.specialty.spell2.name === 'None') {        
 
 //----------------CREATE A GLOBAL FUNTION TO REPLACE THIS SECTION, THEN INVOKE THE FUNCTION---------------------
 

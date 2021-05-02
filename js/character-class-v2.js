@@ -53,15 +53,20 @@ export default class Character {
             <input type="submit" class="spell1-heal" value="Cast Heal Spell"><br>
         </div>
         `;
+//----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 
-        // if (this.enemy1.healthPoints === 'Dead') {
-        //     let removeMonsterOneAttackButton = document.querySelector('.attack-monster-one');
-        //     removeMonsterOneAttackButton.className = 'monster1-dead';
-        // } else if (this.enemy2.healthPoints === 'Dead') {
-        //     let removeMonsterTwoAttackButton = document.querySelector('.attack-monster-two');
-        //     removeMonsterTwoAttackButton.className = 'monster1-dead';
-        // }; 
-        
+        if (this.enemy1.healthPoints === 'Dead') {
+            let removeMonsterOneAttackButton = document.querySelector('.attack-monster-one');
+            removeMonsterOneAttackButton.classList.add('monster1-dead');
+            let removeMonsterOneSpellAttack = document.querySelector('.spell2-monster-one');
+            removeMonsterOneSpellAttack.classList.add('monster1-dead');
+        } else if (this.enemy2.healthPoints === 'Dead') {
+            let removeMonsterTwoAttackButton = document.querySelector('.attack-monster-two');
+            removeMonsterTwoAttackButton.classList.add('monster1-dead');
+            let removeMonsterTwoSpellAttack = document.querySelector('.spell2-monster-two');
+            removeMonsterTwoSpellAttack.classList.add('monster1-dead');
+        }; 
+//----------------------------------------------------------------------------------------------------------
         let monsterInfo = document.querySelector('#monster-info');
         monsterInfo.innerHTML = `
         <div class="monster" id="monster-one">Monster 1:
@@ -133,7 +138,14 @@ export default class Character {
             <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>       
             </div>`;
             defeatMonster1.innerHTML = `
-            <p>Congratulations, you defeated the Monster 1!</p>`;                      
+            <p>Congratulations, you defeated the Monster 1!</p>`;
+
+//----------------------------trying to remove monster attack button--------------//
+
+           let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
+           removingMonster1Button[0].classList.add('monster1-dead')
+            
+//-------------------------------------------------------------------//
             };               
             confirmMonstersDead();    
     };      
@@ -192,7 +204,9 @@ export default class Character {
                 <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>       
                 </div>`;
                 defeatMonster2.innerHTML = `
-                <p>Congratulations, you defeated the Monster 2!</p>`;            
+                <p>Congratulations, you defeated the Monster 2!</p>`;    
+                let removingMonster2Button = document.getElementsByClassName('attack-monster-two');
+                removingMonster2Button[0].classList.add('monster1-dead')        
                 };
                 confirmMonstersDead();                 
     }
@@ -252,7 +266,9 @@ export default class Character {
             <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>       
             </div>`;
             defeatMonster1.innerHTML = `
-            <p>Congratulations, you defeated the Monster 1!</p>`;            
+            <p>Congratulations, you defeated the Monster 1!</p>`;     
+            let removingMonster1SpellButton = document.getElementsByClassName('spell2-monster-one');
+            removingMonster1SpellButton[0].classList.add('monster1-dead')       
             };            
             confirmMonstersDead();
     }
@@ -312,7 +328,9 @@ export default class Character {
             <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>       
             </div>`;
             defeatMonster2.innerHTML = `
-            <p>Congratulations, you defeated the Monster 2!</p>`;            
+            <p>Congratulations, you defeated the Monster 2!</p>`;    
+            let removingMonster2SpellButton = document.getElementsByClassName('spell2-monster-two');
+            removingMonster2SpellButton[0].classList.add('monster1-dead')               
             };                        
             confirmMonstersDead();
     }
