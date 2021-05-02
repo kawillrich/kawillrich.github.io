@@ -9,11 +9,13 @@ export default class Spell {
 };
 
 let noSpell = new Spell('None', 0, 0);
+let minorHealing = new Spell('Minor Healing', 0, 4);
 let mediumHealing = new Spell('Medium Healing', 0, 6);
 let majorHealing = new Spell('Major Healing', 0, 8);
+let fireBall = new Spell ('Fire Ball', 8, 0);
 let earthStrike = new Spell('Earth Strike', 10, 0);
 let lightening = new Spell('Lightening', 12, 0);
-let minorHealing = new Spell('Minor Healing', 0, 4);
-let fireBall = new Spell ('Fire Ball', 8, 0);
+
+
 
 export { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall};
