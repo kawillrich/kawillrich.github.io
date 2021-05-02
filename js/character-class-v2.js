@@ -79,22 +79,22 @@ export default class Character {
         
         //checking if both monsters are dead   
 
-        if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
-        console.log('both dead');
+            if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
+            console.log('both dead');
         
-        let defeatedMonsters = document.querySelector('#dialogue');
-        let removeFightModule = document.querySelector('#fight-module');
+            let defeatedMonsters = document.querySelector('#dialogue');
+            let removeFightModule = document.querySelector('#fight-module');
                 
-        removeFightModule.innerHTML = `<p>You won!</p>`;
-        defeatedMonsters.innerHTML = `
-        <p>Congratulations, you defeated the monster(s)!</p>
-        <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
         
-        removeFightModule.innerHTML = ` `;
+            removeFightModule.innerHTML = ` `;
 
-        var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-        startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
-        };            
+            var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
+            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            };            
         
         };        
         this.monster1 = monster1;
@@ -141,24 +141,24 @@ export default class Character {
             //console.log(self.enemy1.name);
             console.log(self.enemy2.name);
         
-        console.log("checking function" + " " + self.enemy2.healthPoints);
+            console.log("checking function" + " " + self.enemy2.healthPoints);
         
-        if (self.enemy2.healthPoints === 'Dead' && self.enemy1.healthPoints === 'Dead') {
-        console.log('both dead');
+            if (self.enemy2.healthPoints === 'Dead' && self.enemy1.healthPoints === 'Dead') {
+            console.log('both dead');
         
-        let defeatedMonsters = document.querySelector('#dialogue');
-        let removeFightModule = document.querySelector('#fight-module');
+            let defeatedMonsters = document.querySelector('#dialogue');
+            let removeFightModule = document.querySelector('#fight-module');
                 
-        removeFightModule.innerHTML = `<p>You won!</p>`;
-        defeatedMonsters.innerHTML = `
-        <p>Congratulations, you defeated the monster(s)!</p>
-        <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
         
-        removeFightModule.innerHTML = ` `;
+            removeFightModule.innerHTML = ` `;
             
-        var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-        startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
-        };            
+            var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
+            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            };            
         };
         
         this.monster2 = monster2;
@@ -212,6 +212,19 @@ export default class Character {
 
     spell1Heal() {
         console.log('Casting Heal Spell');
+        console.log(finalCharacter.specialty.spell1.healing)
+        let healedCharHP = document.querySelector("#char-hp");
+        finalCharacter.specialty.healthPoints += finalCharacter.specialty.spell1.healing;
+        if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
+            finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
+            }   
+        healedCharHP.innerHTML = `
+        <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+        `;
+        
+        let attackDialogue = document.querySelector("#dialogue");
+        attackDialogue.innerHTML = `
+        You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} health points.`;
     }
 };
 
