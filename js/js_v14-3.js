@@ -295,9 +295,9 @@ function continueChapterThreeThree() {
 export function confirmAttackWolves() {           
     console.log('confirmAttackWolves');    
     
-    finalCharacter.confirmAttack(wolf1, wolf2);
+    finalCharacter.confirmAttack(wolf1, wolf2);    
 
-    
+//---------------NEED TO FIND A WAY TO REMOVE ATTACK BUTTONS ONCE MONSTER1 OR MONSTER2 ARE DEAD---------------
 
     let attackMonsterOne = document.querySelector('.attack-monster-one');
     attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
@@ -306,6 +306,8 @@ export function confirmAttackWolves() {
     attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);    
 
     if (finalCharacter.specialty.spell2.name === 'None') {
+
+//----------------CREATE A GLOBAL FUNTION TO REPLACE THIS SECTION, THEN INVOKE THE FUNCTION---------------------
 
         let attackSpellTwoMonsterOneNone = document.querySelector('.spell2-monster-one');
         attackSpellTwoMonsterOneNone.className = 'no-spell';
@@ -320,7 +322,7 @@ export function confirmAttackWolves() {
         let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
         attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(wolf2, finalCharacter.spell2)}, false);        
     }
-
+//--------------------------------------END (SAME FOR THE HEAL SPELL BELOW)-------------------------------------
     if (finalCharacter.specialty.spell1.name === 'None') {
 
         let healSpellSelfNone = document.querySelector('.spell1-heal');

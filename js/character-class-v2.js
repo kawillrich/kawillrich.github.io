@@ -53,7 +53,15 @@ export default class Character {
             <input type="submit" class="spell1-heal" value="Cast Heal Spell"><br>
         </div>
         `;
-    
+
+        // if (this.enemy1.healthPoints === 'Dead') {
+        //     let removeMonsterOneAttackButton = document.querySelector('.attack-monster-one');
+        //     removeMonsterOneAttackButton.className = 'monster1-dead';
+        // } else if (this.enemy2.healthPoints === 'Dead') {
+        //     let removeMonsterTwoAttackButton = document.querySelector('.attack-monster-two');
+        //     removeMonsterTwoAttackButton.className = 'monster1-dead';
+        // }; 
+        
         let monsterInfo = document.querySelector('#monster-info');
         monsterInfo.innerHTML = `
         <div class="monster" id="monster-one">Monster 1:
@@ -102,10 +110,8 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;
+        You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;        
         
-        console.log(this.weapon.damage);
-                
         //CHECKING ATTACK INTERACTION
         if (this.monster1.healthPoints - this.weapon.damage > 0) {        
             this.monster1.healthPoints = this.monster1.healthPoints - this.weapon.damage;
@@ -117,22 +123,19 @@ export default class Character {
         } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {
             this.monster1.healthPoints = 'Dead';
             
-            let monsterTwoStatus = document.querySelector('#monster-one');
-            let defeatMonster2 = document.querySelector('#dialogue');
-            monsterTwoStatus.innerHTML = `
+            let monsterOneStatus = document.querySelector('#monster-one');
+            let defeatMonster1 = document.querySelector('#dialogue');
+            monsterOneStatus.innerHTML = `
             <div class="monster" id="monster-one">Monster 1:
             <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
             <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
             <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
             <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>       
             </div>`;
-            defeatMonster2.innerHTML = `
-            <p>Congratulations, you defeated the Monster 1!</p>`;            
-            };
-            let monster1DeadHP = this.monster1.healthPoints;            
-            confirmMonstersDead();
-            
-
+            defeatMonster1.innerHTML = `
+            <p>Congratulations, you defeated the Monster 1!</p>`;                      
+            };               
+            confirmMonstersDead();    
     };      
 
     weaponAttackMonster2(monster2, weapon) {
@@ -164,8 +167,6 @@ export default class Character {
         this.monster2 = monster2;
         this.weapon = weapon;
 
-        console.log(this.weapon.damage);
-                
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
         You attack the ${this.monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;
