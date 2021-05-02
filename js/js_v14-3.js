@@ -328,11 +328,25 @@ function goAroundWolves() {
 };
 
 export function continueChapterThreeFour() {
+    //let maxHPCount = finalCharacter.specialty.maxHealthPoints;
+    console.log(finalCharacter.specialty.maxHealthPoints)
     console.log('Chapter Three-four');
-    let currentMonster1 = goblin;    
-    let currentMonster2 = goblin;
-    console.log(currentMonster1.name, currentMonster2.damage);
-    //WORKS
+    let regenerateHP = () => {
+        console.log('regenerating HP');
+        var secs = 10 * 60;        
+        setInterval(function() {
+            let regeneratedCharHP = document.querySelector("#char-hp");
+            finalCharacter.specialty.healthPoints += 1;
+            if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
+                finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
+            }   
+            regeneratedCharHP.innerHTML = `
+            <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+            `;
+        }, secs);
+    }
+    regenerateHP();
+    
 };
 
 // function castSpell1 () {
