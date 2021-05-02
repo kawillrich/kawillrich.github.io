@@ -314,25 +314,8 @@ export function confirmAttackWolves() {
 
 };
 
-// function confirmWolvesDead() {        
-//         console.log(`${wolf1.healthPoints}`);  
-//         console.log(`${wolf2.healthPoints}`);
-//         if (wolf1.healthPoints === 'Dead' && wolf2.healthPoints === 'Dead') {
-//             console.log('both dead');
-//             let defeatedMonsters = document.querySelector('#dialogue');
-//             let removeFightModule = document.querySelector('#fight-module');
-            
-//             removeFightModule.innerHTML = `<p>You won!</p>`;
-//             defeatedMonsters.innerHTML = `
-//             <p>Congratulations, you defeated the monster(s)!</p>
-//             <input type="submit" id="start-chapter-three-four" value="Continue">`; 
-            
-//             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-//             startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
-//             };            
-//     };
-
 //MOVE TO MONSTER CLASS AND THEN REFERENCE IN CHARACTER CLASS AS THIS.MONSTER.MONSTERATTACK    
+
 function goAroundWolves() {
     continueChapterThreeFour();
 };

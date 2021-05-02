@@ -225,6 +225,15 @@ export default class Character {
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
         You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} health points.`;
-    }
+
+        let castedHealSpell = document.querySelector('.spell1-heal');
+        castedHealSpell.remove();
+
+        }
+
+    
+
+    
+
 };
 

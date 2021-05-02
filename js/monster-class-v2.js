@@ -32,7 +32,7 @@ export default class Monster {
         <input type="submit" id="attack-player" value="Monster(s) Turn">        
         </div>`;
     
-        let monsterOneStatus = document.querySelector('#monster-one');
+        //let monsterOneStatus = document.querySelector('#monster-one');
         if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
             arguments[0].healthPoints === 'Dead';
             
