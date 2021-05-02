@@ -201,5 +201,17 @@ export default class Character {
     testingOutput () {
         console.log("Testing cross module import");
     }
+
+    spell2AttackMonster1(monster1, weapon) {
+        console.log('Casting Spell Two on Monster One');
+    }
+
+    spell2AttackMonster2(monster2, weapon) {
+        console.log('Casting Spell Two on Monster Two');
+    }
+
+    spell1Heal() {
+        console.log('Casting Heal Spell');
+    }
 };
 

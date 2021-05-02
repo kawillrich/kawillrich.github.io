@@ -295,13 +295,23 @@ function continueChapterThreeThree() {
 export function confirmAttackWolves() {           
     console.log('confirmAttackWolves');    
     
-    finalCharacter.confirmAttack(goblin, wolf2);
+    finalCharacter.confirmAttack(wolf1, wolf2);
 
     let attackMonsterOne = document.querySelector('.attack-monster-one');
-    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(goblin, finalCharacter.weapon)}, false);
+    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
     attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);    
+
+    let attackSpellTwoMonsterOne = document.querySelector('.spell2-monster-one');
+    attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(wolf1, finalCharacter.spell2)}, false);
+
+    let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
+    attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(wolf2, finalCharacter.spell2)}, false);
+
+    let healSpellSelf = document.querySelector('.spell1-heal');
+    healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
+
 };
 
 // function confirmWolvesDead() {        
