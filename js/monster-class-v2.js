@@ -1,4 +1,4 @@
-import { finalCharacter, confirmAttackWolves } from './js_v14-3.js';
+import { finalCharacter, confirmAttackMonsters } from './js_v14-3.js';
 
 import Weapon from './weapon-class-v2.js';
 import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon } from './weapon-class-v2.js';
@@ -74,7 +74,7 @@ export default class Monster {
             
             
             
-            confirmAttackWolves();    
+            confirmAttackMonsters();    
             }
     }
         monstersAttackTurn();

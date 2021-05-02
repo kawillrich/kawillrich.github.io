@@ -286,20 +286,21 @@ function continueChapterThreeThree() {
     <input type="submit" id="attack-wolves" value="Attack"><input type="submit" id="dont-attack-wolves" value="Go Around">`;
 
     var attackWolvesYes = document.querySelector("#attack-wolves");
-    attackWolvesYes.addEventListener('click', confirmAttackWolves, false);
+    attackWolvesYes.addEventListener('click', confirmAttackMonsters, false);
     
     var attackWolvesNo = document.querySelector("#dont-attack-wolves");
-    attackWolvesNo.addEventListener('click', goAroundWolves, false);    
+    attackWolvesNo.addEventListener('click', goAroundMonsters, false);    
 };
 
-export function confirmAttackWolves() {           
+export function confirmAttackMonsters() {           
     console.log('confirmAttackWolves');    
     
     finalCharacter.confirmAttack(wolf1, wolf2);    
-
-//---------------NEED TO FIND A WAY TO REMOVE ATTACK BUTTONS ONCE MONSTER1 OR MONSTER2 ARE DEAD---------------
-
-
+    
+    attackingMonsters.apply(null, arguments);
+}
+    
+function attackingMonsters() {
 
     let attackMonsterOne = document.querySelector('.attack-monster-one');
     attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
@@ -307,9 +308,7 @@ export function confirmAttackWolves() {
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
     attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);    
 
-    if (finalCharacter.specialty.spell2.name === 'None') {        
-
-//----------------CREATE A GLOBAL FUNTION TO REPLACE THIS SECTION, THEN INVOKE THE FUNCTION---------------------
+    if (finalCharacter.specialty.spell2.name === 'None') {            
 
         let attackSpellTwoMonsterOneNone = document.querySelector('.spell2-monster-one');
         attackSpellTwoMonsterOneNone.className = 'no-spell';
@@ -324,7 +323,7 @@ export function confirmAttackWolves() {
         let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
         attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(wolf2, finalCharacter.spell2)}, false);        
     }
-//--------------------------------------END (SAME FOR THE HEAL SPELL BELOW)-------------------------------------
+    
     if (finalCharacter.specialty.spell1.name === 'None') {
 
         let healSpellSelfNone = document.querySelector('.spell1-heal');
@@ -333,16 +332,15 @@ export function confirmAttackWolves() {
         let healSpellSelf = document.querySelector('.spell1-heal');
         healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
     }
-};
+}
 
 //MOVE TO MONSTER CLASS AND THEN REFERENCE IN CHARACTER CLASS AS THIS.MONSTER.MONSTERATTACK    
 
-function goAroundWolves() {
+function goAroundMonsters() {
     continueChapterThreeFour();
 };
 
-export function continueChapterThreeFour() {
-    //let maxHPCount = finalCharacter.specialty.maxHealthPoints;
+export function continueChapterThreeFour() {    
     console.log(finalCharacter.specialty.maxHealthPoints)
     console.log('Chapter Three-four');
     let regenerateHP = () => {
@@ -363,15 +361,3 @@ export function continueChapterThreeFour() {
     
 };
 
-// function castSpell1 () {
-//     console.log('Casting Spell 1');
-// };
-
-// function castSpell2 () {
-//     console.log('Casting Spell 2');
-// };
-
-// function returnToFightModule() {
-//     console.log("testing var");
-    
-// }
