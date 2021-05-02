@@ -241,24 +241,79 @@ export default class Character {
         } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 || this.monster1.healthPoints === 'Dead') {
             this.monster1.healthPoints = 'Dead';
             
-            let monsterTwoStatus = document.querySelector('#monster-one');
-            let defeatMonster2 = document.querySelector('#dialogue');
-            monsterTwoStatus.innerHTML = `
+            let monsterOneStatus = document.querySelector('#monster-one');
+            let defeatMonster1 = document.querySelector('#dialogue');
+            monsterOneStatus.innerHTML = `
             <div class="monster" id="monster-one">Monster 1:
             <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
             <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
             <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
             <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>       
             </div>`;
-            defeatMonster2.innerHTML = `
+            defeatMonster1.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;            
-            };
-            //let monster1DeadHP = this.monster1.healthPoints;            
+            };            
             confirmMonstersDead();
     }
 
     spell2AttackMonster2(monster2, spell2) {
         console.log('Casting Spell Two on Monster Two');
+        let self = this;
+        let confirmMonstersDead = (enemy1) => {            
+        
+        //checking if both monsters are dead   
+
+            if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
+            console.log('both dead');
+        
+            let defeatedMonsters = document.querySelector('#dialogue');
+            let removeFightModule = document.querySelector('#fight-module');
+                
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+        
+            removeFightModule.innerHTML = ` `;
+
+            var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
+            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            };            
+        
+        };        
+        this.monster2 = monster2;
+        this.spell2 = spell2;
+                 
+        let attackDialogue = document.querySelector("#dialogue");
+        attackDialogue.innerHTML = `
+        You cast ${this.specialty.spell2.name} on the ${this.monster2.name} and cause ${this.specialty.spell2.damage} points of damage.`;
+        
+        console.log(this.specialty.spell2.damage);
+                
+        //CHECKING ATTACK INTERACTION
+        if (this.monster2.healthPoints - this.specialty.spell2.damage > 0) {        
+            this.monster2.healthPoints = this.monster2.healthPoints - this.specialty.spell2.damage;
+            let updatedMonsterHP = document.querySelector("#monster-two-hp");
+            updatedMonsterHP.innerHTML = `
+            <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4>`;
+            self.monster2.monsterAttack.apply(null, arguments);
+        
+        } else if (this.monster2.healthPoints - this.specialty.spell2.damage <= 0 || this.monster2.healthPoints === 'Dead') {
+            this.monster2.healthPoints = 'Dead';
+            
+            let monsterTwoStatus = document.querySelector('#monster-two');
+            let defeatMonster2 = document.querySelector('#dialogue');
+            monsterTwoStatus.innerHTML = `
+            <div class="monster" id="monster-two">Monster 1:
+            <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
+            <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
+            <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
+            <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>       
+            </div>`;
+            defeatMonster2.innerHTML = `
+            <p>Congratulations, you defeated the Monster 2!</p>`;            
+            };                        
+            confirmMonstersDead();
     }
 
     spell1Heal() {

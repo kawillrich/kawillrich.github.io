@@ -18,3 +18,7 @@
 h4 {
   margin: 0px 10px 0px 0px;
 }
+
+.no-spell {
+  display: none;
+}
