@@ -20,9 +20,19 @@ h4 {
 }
 
 .no-spell {
-  display: none;
+  /* display: none; */
+  background-color: grey;
+  width: 200px;
 }
 
 .monster1-dead {
-  display: none;
+  /* display: none; */
+  background-color: grey;
+  width: 200px;
+}
+
+.spell1-heal-used {
+  /* display: none; */
+  background-color: grey;
+  width: 200px;
 }

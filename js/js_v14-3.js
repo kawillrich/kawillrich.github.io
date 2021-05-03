@@ -293,14 +293,12 @@ function continueChapterThreeThree() {
 };
 
 export function confirmAttackMonsters() {           
-    console.log('confirmAttackWolves');    
-    
-    finalCharacter.confirmAttack(wolf1, wolf2);    
-    
+    console.log('Attacking Monsters');        
+    finalCharacter.confirmAttack(wolf1, wolf2);        
     attackingMonsters.apply(null, arguments);
 }
     
-function attackingMonsters() {
+export function attackingMonsters() {
 
     let attackMonsterOne = document.querySelector('.attack-monster-one');
     attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
@@ -358,6 +356,8 @@ export function continueChapterThreeFour() {
         }, secs);
     }
     regenerateHP();
+
+    
     
 };
 
