@@ -339,25 +339,42 @@ function goAroundMonsters() {
 };
 
 export function continueChapterThreeFour() {    
-    console.log(finalCharacter.specialty.maxHealthPoints)
     console.log('Chapter Three-four');
-    let regenerateHP = () => {
-        console.log('regenerating HP');
-        var secs = 10 * 60;        
-        setInterval(function() {
-            let regeneratedCharHP = document.querySelector("#char-hp");
-            finalCharacter.specialty.healthPoints += 1;
-            if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
-                finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
-            }   
-            regeneratedCharHP.innerHTML = `
-            <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
-            `;
-        }, secs);
-    }
-    regenerateHP();
 
+    let chapterThreeFour = document.querySelector('#dialogue');
+    chapterThreeFour.innerHTML = `
+    <p>As you pause after your victory over the wolves, you take a breath to regroup.  Would you like to rest a moment to tend to your wounds as your mother has taught you?</p>
     
     
+    <input type="submit" id="rest-and-heal" value="Rest">
+    
+    <input type="submit" id="start-chapter-three-five" value="Continue">`;
+
+    var restAndHeal = document.querySelector('#rest-and-heal');
+    restAndHeal.addEventListener('click', regenerateHP, false);
+
+    var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
+    startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);    
 };
+
+function regenerateHP() {
+    console.log('regenerating HP');
+    var secs = 10 * 60;        
+    setInterval(function() {
+        let regeneratedCharHP = document.querySelector("#char-hp");
+        finalCharacter.specialty.healthPoints += 1;
+        if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
+            finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
+        }   
+        regeneratedCharHP.innerHTML = `
+        <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+        `;
+    }, secs);
+}
+
+
+
+function continueChapterThreeFive () {
+    console.log('Chapter Three-Five');
+}
 
