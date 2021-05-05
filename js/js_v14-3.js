@@ -207,8 +207,11 @@ function talkToRaynard() {
      you with a place to rest and some extra food for the journey.  Talk to him about the forest, he will have information for you.  Good luck, ${finalCharacter.name} 
      - I wish you well."</p>
      <p>You thank Raynard for his help, shake his hand, and leave the inn.</p>
-     
+    
      <input type="submit" id="start-chapter-three" value="Continue">`;
+
+    finalCharacter.inventory = raynardsCoin;    
+    console.log("Received " + finalCharacter.inventory.name);
      var continueChapterThreeOne = document.querySelector("#start-chapter-three");
      continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
 };
