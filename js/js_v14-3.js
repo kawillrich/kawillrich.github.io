@@ -11,6 +11,8 @@ import { noSpecialty, warrior, masterArcher, highMage } from './specialty-class-
 import Character from './character-class-v2.js';
 import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin } from './monster-class-v2.js';
+import Inventory from './inventory-class-v1.js';
+import { raynardsCoin, farmersNote } from './inventory-class-v1.js';
 
 //exports finalCharacter for other modules to access
 
@@ -369,12 +371,29 @@ function regenerateHP() {
         regeneratedCharHP.innerHTML = `
         <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
         `;
+        
+        let completeRegenerateHP = document.querySelector('#dialogue');
+        completeRegenerateHP.innerHTML = `
+        <p>You decide to rest and tend to you wounds for a moment, applying the herbs and wrappings you learned during your youth. You clean your wounds, and then complete 
+        your wrappings. As you finish up, you can already feel the wounds tingling from the medicine you applied.</p>
+
+        <input type="submit" id="start-chapter-three-five" value="Continue">`;        
+       
+        var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
+        startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
     }, secs);
+    
+
+    var restAndHealRemove = document.querySelector('#rest-and-heal');
+    restAndHealRemove.remove();
+
 }
 
 
 
 function continueChapterThreeFive () {
     console.log('Chapter Three-Five');
+
+
 }
 
