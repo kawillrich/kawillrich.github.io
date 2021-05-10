@@ -413,7 +413,6 @@ function regenerateHP() {
             }   
             
        
-            // completeHealing();
 
             }, secs);
     
