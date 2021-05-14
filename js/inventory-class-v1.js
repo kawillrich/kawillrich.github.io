@@ -6,7 +6,8 @@ export default class Inventory {
 
 };
 
-let raynardsCoin = new Inventory("Raynards Coin", "Coin provided to you from Raynard");
+let noItem = new Inventory("None", "None");
+let raynardsCoin = new Inventory("Raynard's Coin", "Coin provided to you from Raynard");
 let farmersNote = new Inventory("Farmer's Note", "Note received from farmers after defeating wolves");
 
-export { raynardsCoin, farmersNote };
+export { raynardsCoin, farmersNote, noItem };

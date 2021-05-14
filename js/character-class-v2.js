@@ -11,11 +11,14 @@ import { noSpecialty, warrior, masterArcher, highMage } from './specialty-class-
 //exports Character class for other module access
 
 export default class Character {
-    constructor(name, specialty, armor, weapon) {
+    constructor(name, specialty, armor, weapon, inventory1, inventory2, inventory3) {
         this.name = name;
         this.specialty = specialty;
         this.armor = armor;
         this.weapon = weapon;
+        this.inventory1 = inventory1;
+        this.inventory2 = inventory2;
+        this.inventory3 = inventory3;
     };
 
     //updates & initiates Character creation
@@ -23,15 +26,25 @@ export default class Character {
     characterUpdate() {
         let characterInfo =  document.querySelector("#character-info");
         characterInfo.innerHTML = `
-        <h4 id='char-name'>Name: <span class="character-display-info">${this.name}</span></h4>
-        <h4 id='char-specialty'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
-        <h4 id='char-hp'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
-        <h4 id='char-armor'>Armor:  <span class="character-display-info">${this.armor.name}</span></h4> 
-        <h4 id='char-armor-points'>Armor Points:  <span class="character-display-info">${this.armor.armorPoints}</span></h4>
-        <h4 id='char-weapon'>Weapon:  <span class="character-display-info">${this.weapon.name}</span></h4>
-        <h4 id='char-damage'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
-        <h4 id='char-spell1'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
-        <h4 id='char-spell2'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>`; 
+        <div id='character-stats'>
+            <h4 id='char-name'>Name: <span class="character-display-info">${this.name}</span></h4>
+            <h4 id='char-specialty'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
+            <h4 id='char-hp'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
+            <h4 id='char-armor'>Armor:  <span class="character-display-info">${this.armor.name}</span></h4> 
+            <h4 id='char-armor-points'>Armor Points:  <span class="character-display-info">${this.armor.armorPoints}</span></h4>
+            <h4 id='char-weapon'>Weapon:  <span class="character-display-info">${this.weapon.name}</span></h4>
+            <h4 id='char-damage'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
+            <h4 id='char-spell1'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
+            <h4 id='char-spell2'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
+        </div>
+        <div id='character-inventory'>
+            <h4 id='char-items'>Inventory: <span class='character-display-inv1'>${this.inventory1.name}</span></h4>
+            <h4 id='char-items'>Inventory: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
+            <h4 id='char-items'>Inventory: <span class='character-display-inv3'>${this.inventory3.name}</span></h4>
+        </div>    
+            
+            
+            `; 
     }
     
     //confirms to attack monsters and populates monster-info section
