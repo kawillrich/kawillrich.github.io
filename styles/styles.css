@@ -1,3 +1,16 @@
+#character-info {
+  display: flex;
+  flex-direction: row;
+}
+
+.character-display-info {
+}
+
+.char-info-module {
+  height: 180px;
+  width: 200px;
+}
+
 .monster {
   display: inline-block;
   width: 300px;

@@ -60,25 +60,25 @@ function startGame() {
     
     newStartGameDialogue.innerHTML = `
         <div id='character-stats'>
-            <fieldset>
+            <fieldset class='char-info-module'>
                 <legend>Player Data</legend>
-                <h4 id='char-name'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
-                <h4 id='char-specialty'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
-                <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
-                <h4 id='char-armor'>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
-                <h4 id='char-armor-points'>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
-                <h4 id='char-weapon'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
-                <h4 id='char-damage'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
-                <h4 id='char-spell1'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
-                <h4 id='char-spell2'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
+                <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
+                <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
+                <h4 id='char-hp' class='char-info-label'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
+                <h4 id='char-armor' class='char-info-label'>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
+                <h4 id='char-armor-points' class='char-info-label'>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
+                <h4 id='char-weapon' class='char-info-label'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
+                <h4 id='char-damage' class='char-info-label'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
+                <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
+                <h4 id='char-spell2' class='char-info-label'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
             </fieldset>
         </div>
         <div id='character-inventory'>
-            <fieldset>
+            <fieldset class='char-info-module'>
                 <legend>Inventory</legend>
-                <h4 id='char-items'>Inventory: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
-                <h4 id='char-items'>Inventory: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
-                <h4 id='char-items'>Inventory: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4>
             </fieldset>
     </div>    
                 
@@ -433,7 +433,7 @@ function regenerateHP() {
             }        
 
             }, secs);
-    
+            
             let completeHealing = function() {
     
                 let finishedRegeneratingHP = document.getElementById('dialogue');

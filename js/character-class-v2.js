@@ -27,25 +27,25 @@ export default class Character {
         let characterInfo =  document.querySelector("#character-info");
         characterInfo.innerHTML = `
         <div id='character-stats'>
-            <fieldset>
+            <fieldset class='char-info-module'>
                 <legend>Player Data</legend>
-                <h4 id='char-name'>Name: <span class="character-display-info">${this.name}</span></h4>
-                <h4 id='char-specialty'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
-                <h4 id='char-hp'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
-                <h4 id='char-armor'>Armor:  <span class="character-display-info">${this.armor.name}</span></h4> 
-                <h4 id='char-armor-points'>Armor Points:  <span class="character-display-info">${this.armor.armorPoints}</span></h4>
-                <h4 id='char-weapon'>Weapon:  <span class="character-display-info">${this.weapon.name}</span></h4>
-                <h4 id='char-damage'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
-                <h4 id='char-spell1'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
-                <h4 id='char-spell2'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
+                <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name}</span></h4>
+                <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
+                <h4 id='char-hp' class='char-info-label'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
+                <h4 id='char-armor' class='char-info-label'>Armor:  <span class="character-display-info">${this.armor.name}</span></h4> 
+                <h4 id='char-armor-points' class='char-info-label'>Armor Points:  <span class="character-display-info">${this.armor.armorPoints}</span></h4>
+                <h4 id='char-weapon' class='char-info-label'>Weapon:  <span class="character-display-info">${this.weapon.name}</span></h4>
+                <h4 id='char-damage' class='char-info-label'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
+                <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
+                <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
             </fieldset>
         </div>
         <div id='character-inventory'>
-            <fieldset>
+            <fieldset  class='char-info-module'>
                 <legend>Inventory</legend>
-                <h4 id='char-items'>Inventory: <span class='character-display-inv1'>${this.inventory1.name}</span></h4>
-                <h4 id='char-items'>Inventory: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
-                <h4 id='char-items'>Inventory: <span class='character-display-inv3'>${this.inventory3.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv1'>${this.inventory1.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv3'>${this.inventory3.name}</span></h4>
             </fieldset>
         </div>    
             
@@ -381,7 +381,7 @@ export default class Character {
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
             }   
         healedCharHP.innerHTML = `
-        <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+        <h4 id='char-hp' class='char-info-label'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
         `;
         
         let attackDialogue = document.querySelector("#dialogue");
