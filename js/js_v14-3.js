@@ -398,11 +398,13 @@ function regenerateHP() {
     var secs = 10 * 60;        
     setInterval(function() {
 
+//---------------MAY NEED TO INCORPORATE A WHILE LOOP
+
             let regeneratedCharHP = document.querySelector("#char-hp");
             
             if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
                 finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
-               
+                
             regeneratedCharHP.innerHTML = `
             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
             `;
@@ -433,6 +435,7 @@ function regenerateHP() {
             }        
 
             }, secs);
+            
             
             let completeHealing = function() {
     
