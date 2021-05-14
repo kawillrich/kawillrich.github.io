@@ -12,11 +12,11 @@ import Character from './character-class-v2.js';
 import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin } from './monster-class-v2.js';
 import Inventory from './inventory-class-v1.js';
-import { raynardsCoin, farmersNote } from './inventory-class-v1.js';
+import { raynardsCoin, farmersNote, noItem } from './inventory-class-v1.js';
 
 //exports finalCharacter for other modules to access
 
-export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon);
+export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem);
 
 //initialized and clears selectedSpecialty
 
@@ -59,15 +59,24 @@ function startGame() {
     let newStartGameDialogue = document.querySelector("#character-info");
     
     newStartGameDialogue.innerHTML = `
-        <h4 id='char-name'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
-        <h4 id='char-specialty'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
-        <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
-        <h4 id='char-armor'>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
-        <h4 id='char-armor-points'>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
-        <h4 id='char-weapon'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
-        <h4 id='char-damage'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
-        <h4 id='char-spell1'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
-        <h4 id='char-spell2'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>`;
+        <div id='character-stats'>
+            <h4 id='char-name'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
+            <h4 id='char-specialty'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
+            <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
+            <h4 id='char-armor'>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
+            <h4 id='char-armor-points'>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
+            <h4 id='char-weapon'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
+            <h4 id='char-damage'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
+            <h4 id='char-spell1'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
+            <h4 id='char-spell2'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
+        </div>
+        <div id='character-inventory'>
+            <h4 id='char-items'>Inventory: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
+            <h4 id='char-items'>Inventory: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
+            <h4 id='char-items'>Inventory: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4>
+    </div>    
+                
+        `;
         console.log(finalCharacter);   
 
     let chapterOne = document.querySelector('#dialogue');
@@ -114,6 +123,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = warrior; 
         finalCharacter.armor = chainMail; 
         finalCharacter.weapon = steelSword;
+
         finalCharacter.characterUpdate(); 
         console.log(finalCharacter);
         
@@ -210,8 +220,13 @@ function talkToRaynard() {
     
      <input type="submit" id="start-chapter-three" value="Continue">`;
 
-    finalCharacter.inventory = raynardsCoin;    
-    console.log("Received " + finalCharacter.inventory.name);
+    finalCharacter.inventory1 = raynardsCoin;    
+    let receiveCoin = document.getElementsByClassName('character-display-inv1');
+    receiveCoin[0].innerHTML = `
+    <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span>
+    
+    `
+    console.log("Received " + finalCharacter.inventory1.name);
      var continueChapterThreeOne = document.querySelector("#start-chapter-three");
      continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
 };
@@ -406,13 +421,7 @@ function regenerateHP() {
             your wrappings. As you finish up, you can already feel the wounds tingling from the medicine you applied.</p>
             `;        
             completeHealing;
-
-
-
-
-            }   
-            
-       
+            }        
 
             }, secs);
     
@@ -430,20 +439,6 @@ function regenerateHP() {
             }
 
 }
-
-// function completeHealing () {
-    
-//     let finishedRegeneratingHP = document.getElementById('dialogue');
-//     finishedRegeneratingHP.innerHTML = `
-//     <p>You are rested.</p>        
-//     <input type="submit" id="start-chapter-three-five" value="Continue"></input>
-//     `;
-
-//     var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
-    
-//     startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
-
-// }
 
 
 function continueChapterThreeFive () {
