@@ -27,20 +27,26 @@ export default class Character {
         let characterInfo =  document.querySelector("#character-info");
         characterInfo.innerHTML = `
         <div id='character-stats'>
-            <h4 id='char-name'>Name: <span class="character-display-info">${this.name}</span></h4>
-            <h4 id='char-specialty'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
-            <h4 id='char-hp'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
-            <h4 id='char-armor'>Armor:  <span class="character-display-info">${this.armor.name}</span></h4> 
-            <h4 id='char-armor-points'>Armor Points:  <span class="character-display-info">${this.armor.armorPoints}</span></h4>
-            <h4 id='char-weapon'>Weapon:  <span class="character-display-info">${this.weapon.name}</span></h4>
-            <h4 id='char-damage'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
-            <h4 id='char-spell1'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
-            <h4 id='char-spell2'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
+            <fieldset>
+                <legend>Player Data</legend>
+                <h4 id='char-name'>Name: <span class="character-display-info">${this.name}</span></h4>
+                <h4 id='char-specialty'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
+                <h4 id='char-hp'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
+                <h4 id='char-armor'>Armor:  <span class="character-display-info">${this.armor.name}</span></h4> 
+                <h4 id='char-armor-points'>Armor Points:  <span class="character-display-info">${this.armor.armorPoints}</span></h4>
+                <h4 id='char-weapon'>Weapon:  <span class="character-display-info">${this.weapon.name}</span></h4>
+                <h4 id='char-damage'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
+                <h4 id='char-spell1'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
+                <h4 id='char-spell2'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
+            </fieldset>
         </div>
         <div id='character-inventory'>
-            <h4 id='char-items'>Inventory: <span class='character-display-inv1'>${this.inventory1.name}</span></h4>
-            <h4 id='char-items'>Inventory: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
-            <h4 id='char-items'>Inventory: <span class='character-display-inv3'>${this.inventory3.name}</span></h4>
+            <fieldset>
+                <legend>Inventory</legend>
+                <h4 id='char-items'>Inventory: <span class='character-display-inv1'>${this.inventory1.name}</span></h4>
+                <h4 id='char-items'>Inventory: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
+                <h4 id='char-items'>Inventory: <span class='character-display-inv3'>${this.inventory3.name}</span></h4>
+            </fieldset>
         </div>    
             
             
@@ -82,17 +88,23 @@ export default class Character {
 //----------------------------------------------------------------------------------------------------------
         let monsterInfo = document.querySelector('#monster-info');
         monsterInfo.innerHTML = `
-        <div class="monster" id="monster-one">Monster 1:
-            <h4 id="monster-one-type">Monster Type: ${enemy1.name}</h4>
-            <h4 id="monster-one-hp">Health Points: ${enemy1.healthPoints}</h4> 
-            <h4 id="monster-one-ap">Armor Points: ${enemy1.armorPoints}</h4>
-            <h4 id="monster-one-damage">Damage: ${enemy1.damage}</h4>       
+        <div class="monster" id="monster-one">
+            <fieldset>
+                <legend>Monster 1:</legend>
+                <h4 id="monster-one-type">Monster Type: ${enemy1.name}</h4>
+                <h4 id="monster-one-hp">Health Points: ${enemy1.healthPoints}</h4> 
+                <h4 id="monster-one-ap">Armor Points: ${enemy1.armorPoints}</h4>
+                <h4 id="monster-one-damage">Damage: ${enemy1.damage}</h4>     
+            </fieldset>  
         </div>
-        <div class="monster" id="monster-two">Monster 2:
-            <h4 id="monster-two-type">Monster Type: ${enemy2.name}</h4>
-            <h4 id="monster-two-hp">Health Points: ${enemy2.healthPoints}</h4> 
-            <h4 id="monster-two-ap">Armor Points: ${enemy2.armorPoints}</h4>
-            <h4 id="monster-two-damage">Damage: ${enemy2.damage}</h4>       
+        <div class="monster" id="monster-two">
+            <fieldset>
+                <legend>Monster 2:</legend>
+                <h4 id="monster-two-type">Monster Type: ${enemy2.name}</h4>
+                <h4 id="monster-two-hp">Health Points: ${enemy2.healthPoints}</h4> 
+                <h4 id="monster-two-ap">Armor Points: ${enemy2.armorPoints}</h4>
+                <h4 id="monster-two-damage">Damage: ${enemy2.damage}</h4> 
+            </fieldset>        
         </div>
         `;     
     };    
@@ -144,11 +156,14 @@ export default class Character {
             let monsterOneStatus = document.querySelector('#monster-one');
             let defeatMonster1 = document.querySelector('#dialogue');
             monsterOneStatus.innerHTML = `
-            <div class="monster" id="monster-one">Monster 1:
-            <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
-            <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
-            <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
-            <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>       
+            <div class="monster" id="monster-one">
+                <fieldset>
+                    <legend>Monster 1:</legend>
+                    <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
+                    <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
+                    <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
+                    <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>    
+                </fieldset>   
             </div>`;
             defeatMonster1.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;
@@ -210,11 +225,14 @@ export default class Character {
                 let monsterTwoStatus = document.querySelector('#monster-two');
                 let defeatMonster2 = document.querySelector('#dialogue');
                 monsterTwoStatus.innerHTML = `
-                <div class="monster" id="monster-two">Monster 1:
-                <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
-                <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
-                <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
-                <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>       
+                <div class="monster" id="monster-two">
+                    <fieldset>
+                        <legend>Monster 2:</legend>
+                        <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
+                        <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
+                        <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
+                        <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>   
+                    </fieldset>    
                 </div>`;
                 defeatMonster2.innerHTML = `
                 <p>Congratulations, you defeated the Monster 2!</p>`;    
@@ -272,11 +290,14 @@ export default class Character {
             let monsterOneStatus = document.querySelector('#monster-one');
             let defeatMonster1 = document.querySelector('#dialogue');
             monsterOneStatus.innerHTML = `
-            <div class="monster" id="monster-one">Monster 1:
-            <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
-            <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
-            <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
-            <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>       
+            <div class="monster" id="monster-one">
+                <fieldset>
+                    <legend>Monster 1:</legend>
+                    <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
+                    <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
+                    <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
+                    <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>    
+                </fieldset>   
             </div>`;
             defeatMonster1.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;     
@@ -334,11 +355,14 @@ export default class Character {
             let monsterTwoStatus = document.querySelector('#monster-two');
             let defeatMonster2 = document.querySelector('#dialogue');
             monsterTwoStatus.innerHTML = `
-            <div class="monster" id="monster-two">Monster 1:
-            <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
-            <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
-            <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
-            <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>       
+            <div class="monster" id="monster-two">
+                <fieldset>
+                    <legend>Monster 2:</legend>
+                    <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
+                    <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
+                    <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
+                    <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>   
+                </fieldset>    
             </div>`;
             defeatMonster2.innerHTML = `
             <p>Congratulations, you defeated the Monster 2!</p>`;    

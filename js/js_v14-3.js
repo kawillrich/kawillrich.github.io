@@ -60,20 +60,26 @@ function startGame() {
     
     newStartGameDialogue.innerHTML = `
         <div id='character-stats'>
-            <h4 id='char-name'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
-            <h4 id='char-specialty'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
-            <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
-            <h4 id='char-armor'>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
-            <h4 id='char-armor-points'>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
-            <h4 id='char-weapon'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
-            <h4 id='char-damage'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
-            <h4 id='char-spell1'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
-            <h4 id='char-spell2'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
+            <fieldset>
+                <legend>Player Data</legend>
+                <h4 id='char-name'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
+                <h4 id='char-specialty'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
+                <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
+                <h4 id='char-armor'>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
+                <h4 id='char-armor-points'>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
+                <h4 id='char-weapon'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
+                <h4 id='char-damage'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
+                <h4 id='char-spell1'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
+                <h4 id='char-spell2'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
+            </fieldset>
         </div>
         <div id='character-inventory'>
-            <h4 id='char-items'>Inventory: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
-            <h4 id='char-items'>Inventory: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
-            <h4 id='char-items'>Inventory: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4>
+            <fieldset>
+                <legend>Inventory</legend>
+                <h4 id='char-items'>Inventory: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
+                <h4 id='char-items'>Inventory: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
+                <h4 id='char-items'>Inventory: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4>
+            </fieldset>
     </div>    
                 
         `;
@@ -355,7 +361,7 @@ export function attackingMonsters() {
 //MOVE TO MONSTER CLASS AND THEN REFERENCE IN CHARACTER CLASS AS THIS.MONSTER.MONSTERATTACK    
 
 function goAroundMonsters() {
-    continueChapterThreeFour();
+    continueChapterThreeFive();
 };
 
 export function continueChapterThreeFour() {    
@@ -379,6 +385,9 @@ export function continueChapterThreeFour() {
 
 function regenerateHP() {
     console.log('regenerating HP');
+
+    var removeMonsterInfo = document.querySelector('#monster-info');
+    removeMonsterInfo.innerHTML = ` `;
 
     var restAndHealRemove = document.querySelector('#rest-and-heal');
     restAndHealRemove.remove();
@@ -443,6 +452,13 @@ function regenerateHP() {
 
 function continueChapterThreeFive () {
     console.log('Chapter Three-Five');
+    var removeMonsterInfo = document.querySelector('#monster-info');
+    removeMonsterInfo.innerHTML = ` `;
+
+    var chapterThreeFiveDialogue = document.getElementById('dialogue');
+    chapterThreeFiveDialogue.innerHTML = `
+    <p>You continue down the path towards the farm    
+    </p>`;
 
 
 }
