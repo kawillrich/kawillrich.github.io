@@ -384,6 +384,7 @@ export function continueChapterThreeFour() {
 };
 
 function regenerateHP() {
+
     console.log('regenerating HP');
 
     var removeMonsterInfo = document.querySelector('#monster-info');
@@ -396,9 +397,10 @@ function regenerateHP() {
     pauseStartChapterThreeFive.remove();
 
     var secs = 10 * 60;        
+    
     setInterval(function() {
 
-//---------------MAY NEED TO INCORPORATE A WHILE LOOP
+//---------------MAY NEED TO INCORPORATE A WHILE LOOP or a CLEARINTERVAL() FUNCTION
 
             let regeneratedCharHP = document.querySelector("#char-hp");
             
