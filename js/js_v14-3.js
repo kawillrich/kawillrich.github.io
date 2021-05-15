@@ -39,6 +39,7 @@ function startJourneySubmitted() {
      newLinkYes.type = "submit";
      newLinkYes.value= "Yes";
      newLinkYes.id = "start";
+     
      var DOMinsert = document.querySelector('#confirm-start');
      DOMinsert.appendChild(newLinkYes);
 
@@ -377,82 +378,187 @@ export function continueChapterThreeFour() {
     <input type="submit" id="start-chapter-three-five" value="Continue">`;
 
     var restAndHeal = document.querySelector('#rest-and-heal');
-    restAndHeal.addEventListener('click', regenerateHP, false);
+    restAndHeal.addEventListener('click', function() {regenerateHP(finalCharacter.specialty.healthPoints, finalCharacter.specialty.maxHealthPoints)}, false);
 
     var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
     startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);    
 };
 
-function regenerateHP() {
-
-    console.log('regenerating HP');
-
-    var removeMonsterInfo = document.querySelector('#monster-info');
-    removeMonsterInfo.innerHTML = ` `;
-
-    var restAndHealRemove = document.querySelector('#rest-and-heal');
-    restAndHealRemove.remove();
-
-    let pauseStartChapterThreeFive = document.querySelector("#start-chapter-three-five");
-    pauseStartChapterThreeFive.remove();
-
-    var secs = 10 * 60;        
+function regenerateHP(hp, maxHP) {
+    let completeHealing = function() {
     
-    setInterval(function() {
-
-//---------------MAY NEED TO INCORPORATE A WHILE LOOP or a CLEARINTERVAL() FUNCTION
-
-            let regeneratedCharHP = document.querySelector("#char-hp");
-            
-            if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
-                finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
-                
-            regeneratedCharHP.innerHTML = `
-            <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
-            `;
-        
-            let completeRegenerateHP = document.querySelector('#dialogue');
-            completeRegenerateHP.innerHTML = `
-            <p>You are rested.</p>        
-            <input type="submit" id="start-chapter-three-five" value="Continue"></input>
-                `;
-            
-            var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
-                
-            startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);   
-
-            } else if (finalCharacter.specialty.healthPoints < finalCharacter.specialty.maxHealthPoints) {
-                finalCharacter.specialty.healthPoints += 1;
-
-                regeneratedCharHP.innerHTML = `
-            <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
-            `;
-        
-            let completeRegenerateHP = document.querySelector('#dialogue');
-            completeRegenerateHP.innerHTML = `
-            <p>You decide to rest and tend to you wounds for a moment, applying the herbs and wrappings you learned during your youth. You clean your wounds, and then complete 
-            your wrappings. As you finish up, you can already feel the wounds tingling from the medicine you applied.</p>
-            `;        
-            completeHealing;
-            }        
-
-            }, secs);
-            
-            
-            let completeHealing = function() {
+        let finishedRegeneratingHP = document.getElementById('dialogue');
+        console.log(finalCharacter.specialty.healthPoints);
+        finishedRegeneratingHP.innerHTML = `
+        <p>You are rested.</p>        
+        <input type="submit" id="start-chapter-three-five" value="Continue"></input>
+        `;
     
-                let finishedRegeneratingHP = document.getElementById('dialogue');
-                finishedRegeneratingHP.innerHTML = `
-                <p>You are rested.</p>        
-                <input type="submit" id="start-chapter-three-five" value="Continue"></input>
-                `;
+        var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
+        
+        startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
+    }
+
+            console.log('regenerating HP');
+
+            var removeMonsterInfo = document.querySelector('#monster-info');
+            removeMonsterInfo.innerHTML = ` `;
+
+            var restAndHealRemove = document.querySelector('#rest-and-heal');
+            restAndHealRemove.remove();
+
+            let pauseStartChapterThreeFive = document.querySelector("#start-chapter-three-five");
+            pauseStartChapterThreeFive.remove();
+
+            regenerating(hp, maxHP); 
             
-                var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
+            function regenerating(hp, maxHP) {
+            if (hp === maxHP) {
+                continueChapterThreeFive();
+            } else {
+                hp += 1;
+                let regeneratedHP = document.getElementById('char-hp');
+                regeneratedHP.innerHTML = 
+                `
+                Health Points: <span class="character-display-info">${hp}</span>
+                `;
+                console.log(hp);
+                setTimeout( function() {regenerating(hp, maxHP)}, 500);
                 
-                startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
             }
+        }
 
+//     var secs = 10 * 60;      
+    
+//     setInterval(function() {
+
+// //---------------MAY NEED TO INCORPORATE A WHILE LOOP or a CLEARINTERVAL() FUNCTION
+
+//             let regeneratedCharHP = document.querySelector("#char-hp");
+            
+//             if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
+//                 finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
+                
+//             regeneratedCharHP.innerHTML = `
+//             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+//             `;
+        
+//             let completeRegenerateHP = document.querySelector('#dialogue');
+//             completeRegenerateHP.innerHTML = `
+//             <p>You are rested.</p>        
+//             <input type="submit" id="start-chapter-three-five" value="Continue"></input>
+//                 `;
+            
+//             var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
+                
+//             startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);   
+
+//             } else if (finalCharacter.specialty.healthPoints < finalCharacter.specialty.maxHealthPoints) {
+//                 finalCharacter.specialty.healthPoints += 1;
+
+//                 regeneratedCharHP.innerHTML = `
+//             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+//             `;
+        
+//             let completeRegenerateHP = document.querySelector('#dialogue');
+//             completeRegenerateHP.innerHTML = `
+//             <p>You decide to rest and tend to you wounds for a moment, applying the herbs and wrappings you learned during your youth. You clean your wounds, and then complete 
+//             your wrappings. As you finish up, you can already feel the wounds tingling from the medicine you applied.</p>
+//             `;        
+//             completeHealing;
+//             }        
+
+//             }, secs);
+            
+            
+            
+        
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// {
+//     console.log('regenerating HP');
+
+//     var removeMonsterInfo = document.querySelector('#monster-info');
+//     removeMonsterInfo.innerHTML = ` `;
+
+//     var restAndHealRemove = document.querySelector('#rest-and-heal');
+//     restAndHealRemove.remove();
+
+//     let pauseStartChapterThreeFive = document.querySelector("#start-chapter-three-five");
+//     pauseStartChapterThreeFive.remove();
+
+    
+
+
+//     var secs = 10 * 60;        
+    
+//     setInterval(function() {
+
+// //---------------MAY NEED TO INCORPORATE A WHILE LOOP or a CLEARINTERVAL() FUNCTION
+
+//             let regeneratedCharHP = document.querySelector("#char-hp");
+            
+//             if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
+//                 finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
+                
+//             regeneratedCharHP.innerHTML = `
+//             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+//             `;
+        
+//             let completeRegenerateHP = document.querySelector('#dialogue');
+//             completeRegenerateHP.innerHTML = `
+//             <p>You are rested.</p>        
+//             <input type="submit" id="start-chapter-three-five" value="Continue"></input>
+//                 `;
+            
+//             var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
+                
+//             startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);   
+
+//             } else if (finalCharacter.specialty.healthPoints < finalCharacter.specialty.maxHealthPoints) {
+//                 finalCharacter.specialty.healthPoints += 1;
+
+//                 regeneratedCharHP.innerHTML = `
+//             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+//             `;
+        
+//             let completeRegenerateHP = document.querySelector('#dialogue');
+//             completeRegenerateHP.innerHTML = `
+//             <p>You decide to rest and tend to you wounds for a moment, applying the herbs and wrappings you learned during your youth. You clean your wounds, and then complete 
+//             your wrappings. As you finish up, you can already feel the wounds tingling from the medicine you applied.</p>
+//             `;        
+//             completeHealing;
+//             }        
+
+//             }, secs);
+            
+            
+//             let completeHealing = function() {
+    
+//                 let finishedRegeneratingHP = document.getElementById('dialogue');
+//                 finishedRegeneratingHP.innerHTML = `
+//                 <p>You are rested.</p>        
+//                 <input type="submit" id="start-chapter-three-five" value="Continue"></input>
+//                 `;
+            
+//                 var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
+                
+//                 startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
+//             }
+        
+// }
 
 
 function continueChapterThreeFive () {

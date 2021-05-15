@@ -157,7 +157,7 @@ export default class Character {
             let defeatMonster1 = document.querySelector('#dialogue');
             monsterOneStatus.innerHTML = `
             <div class="monster" id="monster-one">
-                <fieldset>
+                <fieldset class='monster-info-module'>
                     <legend class='monster-dashboard'>Monster 1</legend>
                     <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
                     <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
