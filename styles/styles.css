@@ -7,6 +7,10 @@ legend {
   border-radius: 5px;
 }
 
+.player-dashboard {
+  background-color: rgb(160, 219, 255);
+}
+
 fieldset {
   border-radius: 5px;
 }
@@ -17,17 +21,13 @@ fieldset {
   height: 225px;
 }
 
-.character-display-info {
-}
-
 .char-info-module {
   height: 200px;
   width: 200px;
 }
 
-.monster {
-  display: inline-block;
-  width: 225px;
+.monster-dashboard {
+  background-color: rgb(255, 139, 139);
 }
 
 .attack-monster-one,
@@ -37,10 +37,24 @@ fieldset {
 .spell1-heal {
   width: 200px;
   border-radius: 5px;
+  background-color: rgb(193, 224, 193);
+}
+
+#attack-player {
+  width: 200px;
+  border-radius: 5px;
+  background-color: rgb(224, 193, 193);
 }
 
 #monster-info {
-  height: 300px;
+  display: flex;
+  flex-direction: row;
+  height: 225px;
+}
+
+.monster-info-module {
+  height: 200px;
+  width: 200px;
 }
 
 h4 {

@@ -28,7 +28,7 @@ export default class Character {
         characterInfo.innerHTML = `
         <div id='character-stats'>
             <fieldset class='char-info-module'>
-                <legend>Player Data</legend>
+                <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
                 <h4 id='char-hp' class='char-info-label'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
@@ -42,7 +42,7 @@ export default class Character {
         </div>
         <div id='character-inventory'>
             <fieldset  class='char-info-module'>
-                <legend>Inventory</legend>
+                <legend class='player-dashboard'>Inventory</legend>
                 <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv1'>${this.inventory1.name}</span></h4>
                 <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
                 <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv3'>${this.inventory3.name}</span></h4>
@@ -89,8 +89,8 @@ export default class Character {
         let monsterInfo = document.querySelector('#monster-info');
         monsterInfo.innerHTML = `
         <div class="monster" id="monster-one">
-            <fieldset>
-                <legend>Monster 1:</legend>
+            <fieldset class='monster-info-module'>
+                <legend class='monster-dashboard'>Monster 1</legend>
                 <h4 id="monster-one-type">Monster Type: ${enemy1.name}</h4>
                 <h4 id="monster-one-hp">Health Points: ${enemy1.healthPoints}</h4> 
                 <h4 id="monster-one-ap">Armor Points: ${enemy1.armorPoints}</h4>
@@ -98,8 +98,8 @@ export default class Character {
             </fieldset>  
         </div>
         <div class="monster" id="monster-two">
-            <fieldset>
-                <legend>Monster 2:</legend>
+            <fieldset class='monster-info-module'>
+                <legend class='monster-dashboard'>Monster 2</legend>
                 <h4 id="monster-two-type">Monster Type: ${enemy2.name}</h4>
                 <h4 id="monster-two-hp">Health Points: ${enemy2.healthPoints}</h4> 
                 <h4 id="monster-two-ap">Armor Points: ${enemy2.armorPoints}</h4>
@@ -158,7 +158,7 @@ export default class Character {
             monsterOneStatus.innerHTML = `
             <div class="monster" id="monster-one">
                 <fieldset>
-                    <legend>Monster 1:</legend>
+                    <legend class='monster-dashboard'>Monster 1</legend>
                     <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
                     <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
                     <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
@@ -227,7 +227,7 @@ export default class Character {
                 monsterTwoStatus.innerHTML = `
                 <div class="monster" id="monster-two">
                     <fieldset>
-                        <legend>Monster 2:</legend>
+                        <legend class='monster-dashboard'>Monster 2</legend>
                         <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
                         <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
                         <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
@@ -292,7 +292,7 @@ export default class Character {
             monsterOneStatus.innerHTML = `
             <div class="monster" id="monster-one">
                 <fieldset>
-                    <legend>Monster 1:</legend>
+                    <legend class='monster-dashboard'>Monster 1</legend>
                     <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
                     <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
                     <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
@@ -357,7 +357,7 @@ export default class Character {
             monsterTwoStatus.innerHTML = `
             <div class="monster" id="monster-two">
                 <fieldset>
-                    <legend>Monster 2:</legend>
+                    <legend class='monster-dashboard'>Monster 2</legend>
                     <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
                     <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
                     <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
