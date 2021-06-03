@@ -77,9 +77,9 @@ function startGame() {
         <div id='character-inventory'>
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Inventory</legend>
-                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
-                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
-                <h4 id='char-items' class='char-info-label'>Inventory: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Item 1: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Item 2: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4>
             </fieldset>
     </div>    
                 
