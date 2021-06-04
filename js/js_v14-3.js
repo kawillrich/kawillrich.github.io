@@ -415,6 +415,7 @@ function regenerateHP(hp, maxHP) {
             function regenerating(hp, maxHP) {
             if (hp === maxHP) {
                 continueChapterThreeFive();
+                completeHealing();
             } else {
                 hp += 1;
                 let regeneratedHP = document.getElementById('char-hp');
@@ -425,9 +426,11 @@ function regenerateHP(hp, maxHP) {
                 console.log(hp);
                 setTimeout( function() {regenerating(hp, maxHP)}, 500);
                 
+                
             }
+            
         }
-
+        
 //     var secs = 10 * 60;      
     
 //     setInterval(function() {

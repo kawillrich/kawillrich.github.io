@@ -207,7 +207,7 @@ export default class Character {
         this.monster2 = monster2;
         this.weapon = weapon;
 
-        let attackDialogue = document.querySelector("#dialogue");
+        let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
         You attack the ${this.monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;
         
@@ -389,11 +389,27 @@ export default class Character {
         You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} health points.`;
 
         let castedHealSpell = document.querySelector('.spell1-heal');
-        castedHealSpell.remove();
-
+        //castedHealSpell.remove();
         
-        
+        //WORKS, BUT NEED TO IMPLEMENT ALERT WINDOW WHEN MONSTERS ATTACK AND NOT RESET FIGHT MODULE
+        castedHealSpell.style.visibility = "hidden"
+        setTimeout(function() {
+            castedHealSpell.style.visibility = "visible"}, 60000);
         }
+
+
+        // try to hide the spell button with setTimeout() method //
+        // document.getElementById("button").onclick = function(){
+        //     doSingle();
+        //     document.getElementById("button").style.visibility = "hidden"
+        //     setTimeout(function(){
+        //       document.getElementById("button").style.visibility = "visible"
+        //     }, 1000)
+        //   };
+        //   function doSingle() {
+        //      // your function
+        //   };
+        // }
 
     
 

@@ -26,12 +26,20 @@ export default class Monster {
         console.log(ENEMYONE.name);
         console.log('Monsters Attack');    
 
+
+
+
+        //TRY TO USE POP UP INSTEAD OF ATTACK BUTTON
         let monstersTurn = document.querySelector('#fight-module');
         monstersTurn.innerHTML = `
         <div class="monster-attack-buttons">
         <input type="submit" id="attack-player" value="Monster(s) Turn">        
         </div>`;
     
+
+        setTimeout(function(){ alert(`Monster(s) Turn!`); }, 1000);
+        
+
         //let monsterOneStatus = document.querySelector('#monster-one');
         if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
             arguments[0].healthPoints === 'Dead';
