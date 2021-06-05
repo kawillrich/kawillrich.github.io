@@ -84,7 +84,7 @@ function startGame() {
     </div>    
                 
         `;
-        console.log(finalCharacter);   
+        console.table(finalCharacter);   
 
     let chapterOne = document.querySelector('#dialogue');
     chapterOne.innerHTML = `
@@ -132,7 +132,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = steelSword;
 
         finalCharacter.characterUpdate(); 
-        console.log(finalCharacter);
+        console.table(finalCharacter);
         
         
     } else if (selectedSpecialty === "archer") {
@@ -142,7 +142,7 @@ function logCharSpecialty() {
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
         finalCharacter.characterUpdate();        
-        console.log(finalCharacter);
+        console.table(finalCharacter);
         
     } else if (selectedSpecialty === "mage") {
         console.log('mage');
@@ -151,7 +151,7 @@ function logCharSpecialty() {
         finalCharacter.armor = robes; 
         finalCharacter.weapon = staff;
         finalCharacter.characterUpdate();        
-        console.log(finalCharacter);
+        console.table(finalCharacter);
 
     } else {
         console.log ('none');

@@ -65,11 +65,11 @@ export default class Character {
         let fightModule = document.querySelector('#fight-module');
         fightModule.innerHTML = `
         <div class="attack-buttons">
-            <input type="submit" class="attack-monster-one" value="Weapon Attack Enemy 1">
-            <input type="submit" class="attack-monster-two" value="Weapon Attack Enemy 2"><br>
-            <input type="submit" class="spell2-monster-one" value="Spells Attack Enemy 1">
-            <input type="submit" class="spell2-monster-two" value="Spells Attack Enemy 2"><br>
-            <input type="submit" class="spell1-heal" value="Cast Heal Spell"><br>
+            <input type="submit" class="attack-monster-one fight-module-button" value="Weapon Attack Enemy 1">
+            <input type="submit" class="attack-monster-two fight-module-button" value="Weapon Attack Enemy 2"><br>
+            <input type="submit" class="spell2-monster-one fight-module-button" value="Spells Attack Enemy 1">
+            <input type="submit" class="spell2-monster-two fight-module-button" value="Spells Attack Enemy 2"><br>
+            <input type="submit" class="spell1-heal fight-module-button" value="Cast Heal Spell"><br>
         </div>
         `;
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
@@ -226,7 +226,7 @@ export default class Character {
                 let defeatMonster2 = document.querySelector('#dialogue');
                 monsterTwoStatus.innerHTML = `
                 <div class="monster" id="monster-two">
-                    <fieldset>
+                    <fieldset class='monster-info-module'>
                         <legend class='monster-dashboard'>Monster 2</legend>
                         <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
                         <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
@@ -390,7 +390,7 @@ export default class Character {
 
         let castedHealSpell = document.querySelector('.spell1-heal');
         //castedHealSpell.remove();
-        
+
         //WORKS, BUT NEED TO IMPLEMENT ALERT WINDOW WHEN MONSTERS ATTACK AND NOT RESET FIGHT MODULE
         castedHealSpell.style.visibility = "hidden"
         setTimeout(function() {

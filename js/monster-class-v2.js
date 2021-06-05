@@ -30,14 +30,18 @@ export default class Monster {
 
 
         //TRY TO USE POP UP INSTEAD OF ATTACK BUTTON
-        let monstersTurn = document.querySelector('#fight-module');
-        monstersTurn.innerHTML = `
-        <div class="monster-attack-buttons">
-        <input type="submit" id="attack-player" value="Monster(s) Turn">        
-        </div>`;
+       
+       
+        // let monstersTurn = document.querySelector('#fight-module');
+        // monstersTurn.innerHTML = `
+        // <div class="monster-attack-buttons">
+        // <input type="submit" id="attack-player" value="Monster(s) Turn">        
+        // </div>`;
     
+        alert(`Monster(s) Turn!`) //ADDED FROM POP UP *NEED TO START monstersTurn function
 
-        setTimeout(function(){ alert(`Monster(s) Turn!`); }, 1000);
+
+        //setTimeout(function(){ alert(`Monster(s) Turn!`); }, 1000);
         
 
         //let monsterOneStatus = document.querySelector('#monster-one');
@@ -48,9 +52,13 @@ export default class Monster {
             arguments[0].healthPoints = arguments[0].healthPoints;                
             };        
         
-        console.log(arguments[0].name);        
-        let confirmMonsterAttack = document.querySelector('#attack-player');
-        confirmMonsterAttack.addEventListener('click', function() { ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) }, false);             
+        console.log(arguments[0].name);    
+        
+        ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter);
+        // let confirmMonsterAttack = document.querySelector('#attack-player');
+        // confirmMonsterAttack.addEventListener('click', function() { ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) }, false);
+        
+        //this.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) 
     };
 
     //NEED TO MAKE THE MONSTERS ATTACK
