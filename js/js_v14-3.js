@@ -1,13 +1,13 @@
 //imports modules
 
 import Weapon from './weapon-class-v2.js';
-import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon } from './weapon-class-v2.js';
+import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword } from './weapon-class-v2.js';
 import Armor from './armor-class-v2.js';
-import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes } from './armor-class-v2.js';
+import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes, obsidianPlateMail } from './armor-class-v2.js';
 import Spell from './spell-class-v2.js';
-import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall} from './spell-class-v2.js';
+import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, dragonFang} from './spell-class-v2.js';
 import Specialty from './specialty-class-v2.js';
-import { noSpecialty, warrior, masterArcher, highMage } from './specialty-class-v2.js';
+import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior } from './specialty-class-v2.js';
 import Character from './character-class-v2.js';
 import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin } from './monster-class-v2.js';
@@ -107,6 +107,7 @@ function startGame() {
         <input type = "radio" name="selected-specialty" value="fighter" id="fighter"/> Fighting
         <input type = "radio" name="selected-specialty" value="archer" id="archer"/> Archery
         <input type = "radio" name="selected-specialty" value="mage" id="mage"/> Magic
+        <input type = "radio" name="selected-specialty" value="dragonwarrior" id="dragonwarrior"/>Dragon Fighting
         </p>`;
         
         let submittingCharSpecialtyFighter = document.querySelector("#fighter");
@@ -117,6 +118,9 @@ function startGame() {
 
         let submittingCharSpecialtyMage = document.querySelector("#mage");
         submittingCharSpecialtyMage.addEventListener('click', logCharSpecialty, false);
+
+        let submittingCharSpecialtyDragon = document.querySelector("#dragonwarrior");
+        submittingCharSpecialtyDragon.addEventListener('click', logCharSpecialty, false);
     };
 
 //updates character attributes
@@ -150,6 +154,15 @@ function logCharSpecialty() {
         finalCharacter.specialty = highMage; 
         finalCharacter.armor = robes; 
         finalCharacter.weapon = staff;
+        finalCharacter.characterUpdate();        
+        console.table(finalCharacter);
+
+    } else if (selectedSpecialty === "dragonwarrior") {
+        console.log('dragonwarrior');
+        finalCharacter.name = submittedCharName;
+        finalCharacter.specialty = dragonWarrior; 
+        finalCharacter.armor = obsidianPlateMail; 
+        finalCharacter.weapon = obsidianSword;
         finalCharacter.characterUpdate();        
         console.table(finalCharacter);
 
@@ -424,145 +437,10 @@ function regenerateHP(hp, maxHP) {
                 Health Points: <span class="character-display-info">${hp}</span>
                 `;
                 console.log(hp);
-                setTimeout( function() {regenerating(hp, maxHP)}, 500);
-                
-                
-            }
-            
-        }
-        
-//     var secs = 10 * 60;      
-    
-//     setInterval(function() {
-
-// //---------------MAY NEED TO INCORPORATE A WHILE LOOP or a CLEARINTERVAL() FUNCTION
-
-//             let regeneratedCharHP = document.querySelector("#char-hp");
-            
-//             if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
-//                 finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
-                
-//             regeneratedCharHP.innerHTML = `
-//             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
-//             `;
-        
-//             let completeRegenerateHP = document.querySelector('#dialogue');
-//             completeRegenerateHP.innerHTML = `
-//             <p>You are rested.</p>        
-//             <input type="submit" id="start-chapter-three-five" value="Continue"></input>
-//                 `;
-            
-//             var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
-                
-//             startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);   
-
-//             } else if (finalCharacter.specialty.healthPoints < finalCharacter.specialty.maxHealthPoints) {
-//                 finalCharacter.specialty.healthPoints += 1;
-
-//                 regeneratedCharHP.innerHTML = `
-//             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
-//             `;
-        
-//             let completeRegenerateHP = document.querySelector('#dialogue');
-//             completeRegenerateHP.innerHTML = `
-//             <p>You decide to rest and tend to you wounds for a moment, applying the herbs and wrappings you learned during your youth. You clean your wounds, and then complete 
-//             your wrappings. As you finish up, you can already feel the wounds tingling from the medicine you applied.</p>
-//             `;        
-//             completeHealing;
-//             }        
-
-//             }, secs);
-            
-            
-            
-        
+                setTimeout( function() {regenerating(hp, maxHP)}, 500);                  
+            }            
+        }            
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-// {
-//     console.log('regenerating HP');
-
-//     var removeMonsterInfo = document.querySelector('#monster-info');
-//     removeMonsterInfo.innerHTML = ` `;
-
-//     var restAndHealRemove = document.querySelector('#rest-and-heal');
-//     restAndHealRemove.remove();
-
-//     let pauseStartChapterThreeFive = document.querySelector("#start-chapter-three-five");
-//     pauseStartChapterThreeFive.remove();
-
-    
-
-
-//     var secs = 10 * 60;        
-    
-//     setInterval(function() {
-
-// //---------------MAY NEED TO INCORPORATE A WHILE LOOP or a CLEARINTERVAL() FUNCTION
-
-//             let regeneratedCharHP = document.querySelector("#char-hp");
-            
-//             if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
-//                 finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
-                
-//             regeneratedCharHP.innerHTML = `
-//             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
-//             `;
-        
-//             let completeRegenerateHP = document.querySelector('#dialogue');
-//             completeRegenerateHP.innerHTML = `
-//             <p>You are rested.</p>        
-//             <input type="submit" id="start-chapter-three-five" value="Continue"></input>
-//                 `;
-            
-//             var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
-                
-//             startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);   
-
-//             } else if (finalCharacter.specialty.healthPoints < finalCharacter.specialty.maxHealthPoints) {
-//                 finalCharacter.specialty.healthPoints += 1;
-
-//                 regeneratedCharHP.innerHTML = `
-//             <h4 id='char-hp'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
-//             `;
-        
-//             let completeRegenerateHP = document.querySelector('#dialogue');
-//             completeRegenerateHP.innerHTML = `
-//             <p>You decide to rest and tend to you wounds for a moment, applying the herbs and wrappings you learned during your youth. You clean your wounds, and then complete 
-//             your wrappings. As you finish up, you can already feel the wounds tingling from the medicine you applied.</p>
-//             `;        
-//             completeHealing;
-//             }        
-
-//             }, secs);
-            
-            
-//             let completeHealing = function() {
-    
-//                 let finishedRegeneratingHP = document.getElementById('dialogue');
-//                 finishedRegeneratingHP.innerHTML = `
-//                 <p>You are rested.</p>        
-//                 <input type="submit" id="start-chapter-three-five" value="Continue"></input>
-//                 `;
-            
-//                 var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
-                
-//                 startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
-//             }
-        
-// }
-
 
 function continueChapterThreeFive () {
     console.log('Chapter Three-Five');

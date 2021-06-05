@@ -86,3 +86,8 @@ h4 {
   background-color: grey;
   border-radius: 5px;
 }
+
+input #dragonwarrior {
+  color: white;
+  background-color: red;
+}

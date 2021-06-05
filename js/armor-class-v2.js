@@ -16,5 +16,6 @@ let reinforcedLeather = new Armor('Reinforced Leather', 4);
 let platedLeather = new Armor('Plated Leather', 6);
 let reinforcedRobes = new Armor('Reinforced Robes', 2);
 let enchantedRobes = new Armor('Enchanged Robes', 4);
+let obsidianPlateMail = new Armor('Obsidian Plate Mail', 20);
 
-export { chainMail, leatherArmor, robes, noArmor, scaleMail, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes };
+export { chainMail, leatherArmor, robes, noArmor, scaleMail, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes, obsidianPlateMail };

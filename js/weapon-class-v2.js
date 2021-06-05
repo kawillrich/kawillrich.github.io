@@ -17,5 +17,6 @@ export default class Weapon {
  let mahoganyStaff = new Weapon('Mahogany Staff', 6);
  let gemStaff = new Weapon('Gem Staff', 8);
  let noWeapon = new Weapon('None', 0);
+ let obsidianSword = new Weapon('Obsidian Sword', 100);
 
-export { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon };
+export { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword };
