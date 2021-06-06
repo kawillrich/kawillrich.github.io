@@ -62,16 +62,16 @@ export default class Character {
         let fightMonster = document.querySelector('#dialogue');
         fightMonster.innerHTML = `<p>You Attack!</p>`;
     
-        let fightModule = document.querySelector('#fight-module');
-        fightModule.innerHTML = `
-        <div class="attack-buttons">
-            <input type="submit" class="attack-monster-one fight-module-button" value="Weapon Attack Enemy 1">
-            <input type="submit" class="attack-monster-two fight-module-button" value="Weapon Attack Enemy 2"><br>
-            <input type="submit" class="spell2-monster-one fight-module-button" value="Spells Attack Enemy 1">
-            <input type="submit" class="spell2-monster-two fight-module-button" value="Spells Attack Enemy 2"><br>
-            <input type="submit" class="spell1-heal fight-module-button" value="Cast Heal Spell"><br>
-        </div>
-        `;
+        // let fightModule = document.querySelector('#fight-module');
+        // fightModule.innerHTML = `
+        // <div class="attack-buttons">
+        //     <input type="submit" class="attack-monster-one fight-module-button" value="Weapon Attack Enemy 1">
+        //     <input type="submit" class="attack-monster-two fight-module-button" value="Weapon Attack Enemy 2"><br>
+        //     <input type="submit" class="spell2-monster-one fight-module-button" value="Spells Attack Enemy 1">
+        //     <input type="submit" class="spell2-monster-two fight-module-button" value="Spells Attack Enemy 2"><br>
+        //     <input type="submit" class="spell1-heal fight-module-button" value="Cast Heal Spell"><br>
+        // </div>
+        // `;
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 
         if (this.enemy1.healthPoints === 'Dead') {
