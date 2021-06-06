@@ -341,7 +341,7 @@ function continueChapterThreeThree() {
 };
 
 function addingFightModule() {
-    let headerFightModule = document.querySelector('#header');
+    let headerFightModule = document.querySelector('#fight-module');
         headerFightModule.innerHTML = `
         <div class="attack-buttons">
             <input type="submit" class="attack-monster-one fight-module-button" value="Weapon Attack Enemy 1">
