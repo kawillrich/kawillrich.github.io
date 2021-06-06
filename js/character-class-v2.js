@@ -60,18 +60,8 @@ export default class Character {
         this.enemy2 = enemy2;
         
         let fightMonster = document.querySelector('#dialogue');
-        fightMonster.innerHTML = `<p>You Attack!</p>`;
-    
-        // let fightModule = document.querySelector('#fight-module');
-        // fightModule.innerHTML = `
-        // <div class="attack-buttons">
-        //     <input type="submit" class="attack-monster-one fight-module-button" value="Weapon Attack Enemy 1">
-        //     <input type="submit" class="attack-monster-two fight-module-button" value="Weapon Attack Enemy 2"><br>
-        //     <input type="submit" class="spell2-monster-one fight-module-button" value="Spells Attack Enemy 1">
-        //     <input type="submit" class="spell2-monster-two fight-module-button" value="Spells Attack Enemy 2"><br>
-        //     <input type="submit" class="spell1-heal fight-module-button" value="Cast Heal Spell"><br>
-        // </div>
-        // `;
+        fightMonster.innerHTML = `<p>You Attack!</p>`;    
+       
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 
         if (this.enemy1.healthPoints === 'Dead') {
@@ -173,6 +163,9 @@ export default class Character {
            let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
            removingMonster1Button[0].classList.add('monster1-dead')
             
+           let removeMonster1SpellAttack = document.getElementsByClassName('spell2-monster-one');
+           removeMonster1SpellAttack[0].classList.add('monster1-dead');
+
 //-------------------------------------------------------------------//
             };               
             confirmMonstersDead();    
@@ -236,8 +229,13 @@ export default class Character {
                 </div>`;
                 defeatMonster2.innerHTML = `
                 <p>Congratulations, you defeated the Monster 2!</p>`;    
+                
                 let removingMonster2Button = document.getElementsByClassName('attack-monster-two');
                 removingMonster2Button[0].classList.add('monster1-dead')        
+                
+                let removeMonster2SpellAttack = document.getElementsByClassName('spell2-monster-two');
+                removeMonster2SpellAttack[0].classList.add('monster1-dead');
+            
                 };
                 confirmMonstersDead();                 
     }
@@ -301,8 +299,14 @@ export default class Character {
             </div>`;
             defeatMonster1.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;     
+
             let removingMonster1SpellButton = document.getElementsByClassName('spell2-monster-one');
-            removingMonster1SpellButton[0].classList.add('monster1-dead')       
+            removingMonster1SpellButton[0].classList.add('monster1-dead');       
+
+            let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
+            removingMonster1Button[0].classList.add('monster1-dead');
+
+
             };            
             confirmMonstersDead();
     }
@@ -366,8 +370,13 @@ export default class Character {
             </div>`;
             defeatMonster2.innerHTML = `
             <p>Congratulations, you defeated the Monster 2!</p>`;    
+
             let removingMonster2SpellButton = document.getElementsByClassName('spell2-monster-two');
-            removingMonster2SpellButton[0].classList.add('monster1-dead')               
+            removingMonster2SpellButton[0].classList.add('monster1-dead');
+            
+            let removingMonster2Button = document.getElementsByClassName('attack-monster-two');
+                removingMonster2Button[0].classList.add('monster1-dead');
+
             };                        
             confirmMonstersDead();
     }
@@ -389,7 +398,7 @@ export default class Character {
         You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} health points.`;
 
         let castedHealSpell = document.querySelector('.spell1-heal');
-        //castedHealSpell.remove();
+       
 
         //WORKS, BUT NEED TO IMPLEMENT ALERT WINDOW WHEN MONSTERS ATTACK AND NOT RESET FIGHT MODULE
         castedHealSpell.style.visibility = "hidden"
@@ -398,18 +407,7 @@ export default class Character {
         }
 
 
-        // try to hide the spell button with setTimeout() method //
-        // document.getElementById("button").onclick = function(){
-        //     doSingle();
-        //     document.getElementById("button").style.visibility = "hidden"
-        //     setTimeout(function(){
-        //       document.getElementById("button").style.visibility = "visible"
-        //     }, 1000)
-        //   };
-        //   function doSingle() {
-        //      // your function
-        //   };
-        // }
+      
 
     
 
