@@ -375,7 +375,7 @@ export default class Character {
             removingMonster2SpellButton[0].classList.add('monster1-dead');
             
             let removingMonster2Button = document.getElementsByClassName('attack-monster-two');
-                removingMonster2Button[0].classList.add('monster1-dead');
+            removingMonster2Button[0].classList.add('monster1-dead');
 
             };                        
             confirmMonstersDead();
