@@ -25,44 +25,20 @@ export default class Monster {
         const ENEMYONE = arguments[0];
         console.log(ENEMYONE.name);
         console.log('Monsters Attack');    
-
-
-
-
-        //TRY TO USE POP UP INSTEAD OF ATTACK BUTTON
-       
-       
-        // let monstersTurn = document.querySelector('#fight-module');
-        // monstersTurn.innerHTML = `
-        // <div class="monster-attack-buttons">
-        // <input type="submit" id="attack-player" value="Monster(s) Turn">        
-        // </div>`;
     
-        alert(`Monster(s) Turn!`) //ADDED FROM POP UP *NEED TO START monstersTurn function
+        alert(`Monster(s) Turn!`);
 
-
-        //setTimeout(function(){ alert(`Monster(s) Turn!`); }, 1000);
-        
-
-        //let monsterOneStatus = document.querySelector('#monster-one');
         if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
             arguments[0].healthPoints === 'Dead';
             
         } else if (arguments[0].healthPoints > 0) {
             arguments[0].healthPoints = arguments[0].healthPoints;                
-            };        
+        };        
         
         console.log(arguments[0].name);    
         
-        ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter);
-        // let confirmMonsterAttack = document.querySelector('#attack-player');
-        // confirmMonsterAttack.addEventListener('click', function() { ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) }, false);
-        
-        //this.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter) 
-    };
-
-    //NEED TO MAKE THE MONSTERS ATTACK
-    //Need to remember to import/export other functions from js_v14-3.js file to be able to access here
+        ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter);        
+    };    
 
     monstersTurn(monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
         this.monsterName = monsterName;
@@ -80,19 +56,10 @@ export default class Monster {
             if (finalCharacter.specialty.healthPoints <= 0) {
                 alert('You died!');
                 window.location.reload(false);
-            } else {
-            // console.log("Executing monstersAttackTurn");
-            // console.log("Monster's Name: " + this.monsterName);
-            // console.log("Monster's HP: " + this.monsterHealthPoints);
-            // console.log("Monster's Damage: " + this.monsterDamage);
-            // console.log("Character Name: " + this.finalCharacter.name);        
-            
-            
-            
-            
-            confirmAttackMonsters();    
+            } else {            
+                confirmAttackMonsters();    
             }
-    }
+        }
         monstersAttackTurn();
     }
 
