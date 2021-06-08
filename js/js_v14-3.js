@@ -497,6 +497,10 @@ function regenerateHP(hp, maxHP) {
                 `
                 Health Points: <span class="character-display-info">${hp}</span>
                 `;
+
+                let regenerationDialogue = document.getElementById('dialogue');
+                regenerationDialogue.innerHTML = 'Resting...';
+
                 console.log(hp);
                 setTimeout( function() {regenerating(hp, maxHP)}, 500);                  
             }            
