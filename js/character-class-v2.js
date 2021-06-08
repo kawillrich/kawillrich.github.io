@@ -59,8 +59,8 @@ export default class Character {
         this.enemy1 = enemy1;
         this.enemy2 = enemy2;
         
-        let fightMonster = document.querySelector('#dialogue');
-        fightMonster.innerHTML = `<p>You Attack!</p>`;    
+        //let fightMonster = document.querySelector('#dialogue');
+        //fightMonster.innerHTML = `<p>You Attack!</p>`;    
        
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 

@@ -331,7 +331,7 @@ function continueChapterThreeThree() {
     var attackWolvesYes = document.querySelector("#attack-wolves");
     attackWolvesYes.addEventListener('click', () => {
         addingFightModule();
-        
+        declareAttack();
         
         },   
         false);
@@ -339,6 +339,11 @@ function continueChapterThreeThree() {
     var attackWolvesNo = document.querySelector("#dont-attack-wolves");
     attackWolvesNo.addEventListener('click', goAroundMonsters, false);    
 };
+
+function declareAttack() {
+    let declareAttackDialogue = document.querySelector('#dialogue');
+    declareAttackDialogue.innerHTML = 'You Attack!';
+}
 
 function addingFightModule() {
     let headerFightModule = document.querySelector('#fight-module');
