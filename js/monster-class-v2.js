@@ -25,20 +25,14 @@ export default class Monster {
         const ENEMYONE = arguments[0];
         console.log(ENEMYONE.name);
         console.log('Monsters Attack');    
+        
+        let monsterAttacksPlayer = document.getElementById('dialogue');
+        this.monstersTurn.innerHTML = `The ${ENEMYONE.name} attacks you and causes ${ENEMYONE.damage}.`
 
 
-
-
-        //TRY TO USE POP UP INSTEAD OF ATTACK BUTTON
-       
-       
-        // let monstersTurn = document.querySelector('#fight-module');
-        // monstersTurn.innerHTML = `
-        // <div class="monster-attack-buttons">
-        // <input type="submit" id="attack-player" value="Monster(s) Turn">        
-        // </div>`;
-    
-        alert(`Monster(s) Turn!`) //ADDED FROM POP UP *NEED TO START monstersTurn function
+        //alert(`Monster(s) Turn!`);
+        
+        //alert(`Monster(s) Turn!`);
 
 
         //setTimeout(function(){ alert(`Monster(s) Turn!`); }, 1000);
@@ -71,8 +65,11 @@ export default class Monster {
         this.finalCharacter = finalCharacter;
         
         let monstersAttackTurn = () => {
-            finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
+            finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;   
+            
             alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);
+            
+            
             let updatedCharHP = document.querySelector("#char-hp");
             updatedCharHP.innerHTML = `
             <h4 id='char-hp'>Health Points:  <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
