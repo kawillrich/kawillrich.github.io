@@ -25,9 +25,9 @@ export default class Monster {
         const ENEMYONE = arguments[0];
         console.log(ENEMYONE.name);
         console.log('Monsters Attack');    
+        let monsterStrikes = document.getElementById('dialogue');
+        monsterStrikes.innerHTML = 'monster strikes';
         
-        let monsterAttacksPlayer = document.getElementById('dialogue');
-        this.monstersTurn.innerHTML = `The ${ENEMYONE.name} attacks you and causes ${ENEMYONE.damage}.`
 
 
         //alert(`Monster(s) Turn!`);
@@ -67,7 +67,10 @@ export default class Monster {
         let monstersAttackTurn = () => {
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;   
             
-            alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);
+            let monsterAttacksPlayer = document.getElementById('dialogue');
+            monsterAttacksPlayer.innerHTML = `The ${this.monsterName} attacks you and causes ${this.monsterDamage}.`
+
+            //alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);
             
             
             let updatedCharHP = document.querySelector("#char-hp");
