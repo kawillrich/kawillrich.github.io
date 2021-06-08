@@ -59,19 +59,13 @@ export default class Character {
         this.enemy1 = enemy1;
         this.enemy2 = enemy2;
         
-        let fightMonster = document.querySelector('#dialogue');
+        let fightMonster = document.getElementById('dialogue');
+        
         fightMonster.innerHTML = `<p>You Attack!</p>`;
-    
-        let fightModule = document.querySelector('#fight-module');
-        fightModule.innerHTML = `
-        <div class="attack-buttons">
-            <input type="submit" class="attack-monster-one fight-module-button" value="Weapon Attack Enemy 1">
-            <input type="submit" class="attack-monster-two fight-module-button" value="Weapon Attack Enemy 2"><br>
-            <input type="submit" class="spell2-monster-one fight-module-button" value="Spells Attack Enemy 1">
-            <input type="submit" class="spell2-monster-two fight-module-button" value="Spells Attack Enemy 2"><br>
-            <input type="submit" class="spell1-heal fight-module-button" value="Cast Heal Spell"><br>
-        </div>
-        `;
+        
+
+            
+       
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 
         if (this.enemy1.healthPoints === 'Dead') {
@@ -138,18 +132,26 @@ export default class Character {
         this.monster1 = monster1;
         this.weapon = weapon;
                  
-        let attackDialogue = document.querySelector("#dialogue");
+        let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
         You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;        
         
+
+         
+
         //CHECKING ATTACK INTERACTION
+        
         if (this.monster1.healthPoints - this.weapon.damage > 0) {        
             this.monster1.healthPoints = this.monster1.healthPoints - this.weapon.damage;
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
+            
+
+
             self.monster1.monsterAttack.apply(null, arguments);
-        
+            
+           
         } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {
             this.monster1.healthPoints = 'Dead';
             
@@ -174,9 +176,15 @@ export default class Character {
            removingMonster1Button[0].classList.add('monster1-dead')
             
 //-------------------------------------------------------------------//
-            };               
+            };
+        
+            
+            
+
             confirmMonstersDead();    
-    };      
+             
+    }
+
 
     weaponAttackMonster2(monster2, weapon) {
         let self = this;
