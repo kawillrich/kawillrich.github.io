@@ -91,3 +91,13 @@ input #dragonwarrior {
   color: white;
   background-color: red;
 }
+
+.button-border {
+  width: 202px;
+  display: inline-block;
+  margin: 2px 2px 2px 2px;
+  border: 1px solid black;
+  padding: 2px 2px 4px 2px;
+  border-radius: 3px;
+  background-color: gray;
+}

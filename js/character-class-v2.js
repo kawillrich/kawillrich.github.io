@@ -143,10 +143,29 @@ export default class Character {
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
             
-            
-            
-            
-            
+
+//ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+            let greyOutAttackButtons = function() {
+                let attackButtons = document.querySelectorAll('.attack');
+                for (let attackButton of attackButtons) {
+                    attackButton.classList.add('monster1-dead');
+                }
+                setTimeout(function(){
+                    for (let attackButton of attackButtons) {
+                        attackButton.classList.remove('monster1-dead');
+                    }
+                alert('Monster(s) Turn');
+                }, 3000)
+
+            }
+            greyOutAttackButtons();
+
+
+//END
+
+
+
+
             self.monster1.monsterAttack.apply(null, arguments);
         
         } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {

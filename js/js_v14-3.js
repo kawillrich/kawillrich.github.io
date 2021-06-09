@@ -349,11 +349,11 @@ function addingFightModule() {
     let headerFightModule = document.querySelector('#fight-module');
         headerFightModule.innerHTML = `
         <div class="attack-buttons">
-            <input type="submit" class="attack attack-monster-one fight-module-button" value="Weapon Attack Enemy 1">
-            <input type="submit" class="attack attack-monster-two fight-module-button" value="Weapon Attack Enemy 2"><br>
-            <input type="submit" class="attack spell2-monster-one fight-module-button" value="Spells Attack Enemy 1">
-            <input type="submit" class="attack spell2-monster-two fight-module-button" value="Spells Attack Enemy 2"><br>
-            <input type="submit" class="spell1-heal fight-module-button" value="Cast Heal Spell"><br>
+            <span class='button-border'><input type="submit" class="attack attack-monster-one fight-module-button" value="Weapon Attack Enemy 1"></span>
+            <span class='button-border'><input type="submit" class="attack attack-monster-two fight-module-button" value="Weapon Attack Enemy 2"></span><br>
+            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Spells Attack Enemy 1"></span>
+            <span class='button-border'><input type="submit" class="attack spell2-monster-two fight-module-button" value="Spells Attack Enemy 2"></span><br>
+            <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span><br>
         </div>
         `;
 
