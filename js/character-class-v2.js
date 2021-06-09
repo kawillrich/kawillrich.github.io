@@ -160,6 +160,8 @@ export default class Character {
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
 
+                let initiateMonsterAttack = document.querySelector('#monster-attack');
+                initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon)}, false);
 
             }
             greyOutAttackButtons();

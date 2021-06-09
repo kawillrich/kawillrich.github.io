@@ -353,8 +353,8 @@ function addingFightModule() {
             <span class='button-border'><input type="submit" class="attack attack-monster-two fight-module-button" value="Weapon Attack Enemy 2"></span><br>
             <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Spells Attack Enemy 1"></span>
             <span class='button-border'><input type="submit" class="attack spell2-monster-two fight-module-button" value="Spells Attack Enemy 2"></span><br>
-            <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span><br>
-            <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="hidden" value="Monster(s) Turn"></span>
+            <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span>
+            <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>
         `;
 

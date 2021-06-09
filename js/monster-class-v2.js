@@ -25,8 +25,10 @@ export default class Monster {
         const ENEMYONE = arguments[0];
         console.log(ENEMYONE.name);
         console.log('Monsters Attack');    
-    
-        //alert(`Monster(s) Turn!`);
+        
+        
+
+        alert(`Monster(s) Turn!`);
 
         if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
             arguments[0].healthPoints === 'Dead';
@@ -51,7 +53,7 @@ export default class Monster {
              
 
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
-            //alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);
+            alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);
             
             
             
