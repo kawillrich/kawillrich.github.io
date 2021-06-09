@@ -130,11 +130,7 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;        
-        
-        
-
-
+        You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;       
        
         //CHECKING ATTACK INTERACTION
         if (this.monster1.healthPoints - this.weapon.damage > 0) {        
@@ -149,13 +145,7 @@ export default class Character {
                 let attackButtons = document.querySelectorAll('.attack');
                 for (let attackButton of attackButtons) {
                     attackButton.classList.add('hidden');
-                }
-                // setTimeout(function(){
-                //     for (let attackButton of attackButtons) {
-                //         attackButton.classList.remove('hidden');
-                //     }
-                // alert('Monster(s) Turn');
-                // }, 1000)
+                }                
 
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
@@ -168,7 +158,7 @@ export default class Character {
 
 
 
-        let transferToMonsterAttack = function(monster1, weapon) {
+        let transferToMonsterAttack = function() {
             self.monster1.monsterAttack.apply(null, arguments);
         }
 //END
@@ -256,21 +246,23 @@ export default class Character {
 
             let greyOutAttackButtons = function() {
                 let attackButtons = document.querySelectorAll('.attack');
-                for (let attackButton of attackButtons) {   
+                for (let attackButton of attackButtons) {
                     attackButton.classList.add('hidden');
                 }
-                setTimeout(function(){
-                    for (let attackButton of attackButtons) {
-                        attackButton.classList.remove('hidden');
-                    }
-                alert('Monster(s) Turn');
-                }, 1000)
+                
+
+                let showMonsterAttackButton = document.querySelector('#monster-attack');
+                showMonsterAttackButton.classList.remove('hidden');
+
+                let initiateMonsterAttack = document.querySelector('#monster-attack');
+                initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster2, weapon)}, false);
 
             }
             greyOutAttackButtons();
 
-
-            self.monster2.monsterAttack.apply(null, arguments);
+            let transferToMonsterAttack = function(monster2, weapon) {
+            self.monster1.monsterAttack.apply(null, arguments);
+        }
             
             } else if (this.monster2.healthPoints - this.weapon.damage <= 0 || this.monster2.healthPoints === 'Dead') {
                 this.monster2.healthPoints = 'Dead';
@@ -345,20 +337,25 @@ export default class Character {
 
             let greyOutAttackButtons = function() {
                 let attackButtons = document.querySelectorAll('.attack');
-                for (let attackButton of attackButtons) {   
+                for (let attackButton of attackButtons) {
                     attackButton.classList.add('hidden');
                 }
-                setTimeout(function(){
-                    for (let attackButton of attackButtons) {
-                        attackButton.classList.remove('hidden');
-                    }
-                alert('Monster(s) Turn');
-                }, 1000)
+                
+
+                let showMonsterAttackButton = document.querySelector('#monster-attack');
+                showMonsterAttackButton.classList.remove('hidden');
+
+                let initiateMonsterAttack = document.querySelector('#monster-attack');
+                initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, spell2)}, false);
 
             }
             greyOutAttackButtons();
 
+
+
+        let transferToMonsterAttack = function(monster1, spell2) {
             self.monster1.monsterAttack.apply(null, arguments);
+        }
         
         } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 || this.monster1.healthPoints === 'Dead') {
             this.monster1.healthPoints = 'Dead';
@@ -432,25 +429,27 @@ export default class Character {
 
             //greying out attack module buttons when pressed
 
-            let greyOutAttackButtons = function() {
+           let greyOutAttackButtons = function() {
                 let attackButtons = document.querySelectorAll('.attack');
-                for (let attackButton of attackButtons) {   
+                for (let attackButton of attackButtons) {
                     attackButton.classList.add('hidden');
                 }
-                setTimeout(function(){
-                    for (let attackButton of attackButtons) {
-                        attackButton.classList.remove('hidden');
-                    }
-                alert('Monster(s) Turn');
-                }, 1000)
+                
+
+                let showMonsterAttackButton = document.querySelector('#monster-attack');
+                showMonsterAttackButton.classList.remove('hidden');
+
+                let initiateMonsterAttack = document.querySelector('#monster-attack');
+                initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster2, spell2)}, false);
 
             }
             greyOutAttackButtons();
 
 
-    
 
+        let transferToMonsterAttack = function(monster1, spell2) {
             self.monster2.monsterAttack.apply(null, arguments);
+        }
         
         } else if (this.monster2.healthPoints - this.specialty.spell2.damage <= 0 || this.monster2.healthPoints === 'Dead') {
             this.monster2.healthPoints = 'Dead';

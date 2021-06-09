@@ -48,14 +48,10 @@ export default class Monster {
         this.monsterHealthPoints = monsterHealthPoints; 
         this.finalCharacter = finalCharacter;
         
-        let monstersAttackTurn = () => {
-
-             
+        let monstersAttackTurn = () => {             
 
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
-            alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);
-            
-            
+            alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);            
             
             let updatedCharHP = document.querySelector("#char-hp");
             updatedCharHP.innerHTML = `
@@ -65,6 +61,19 @@ export default class Monster {
                 alert('You died!');
                 window.location.reload(false);
             } else {            
+
+                //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
+                let revertToAttackButtons = function () {
+                    let showAttackButtons = document.querySelectorAll('.attack');
+                    for (let showAttackButton of showAttackButtons) {
+                    showAttackButton.classList.remove('hidden'); 
+                    };
+                    let hideMonsterAttackButton = document.querySelector('#monster-attack');
+                    hideMonsterAttackButton.classList.add('hidden');
+                }
+
+                //END REVERTING CODE
+                revertToAttackButtons();
                 confirmAttackMonsters();    
             }
         }
