@@ -150,23 +150,31 @@ export default class Character {
                 for (let attackButton of attackButtons) {
                     attackButton.classList.add('hidden');
                 }
-                setTimeout(function(){
-                    for (let attackButton of attackButtons) {
-                        attackButton.classList.remove('hidden');
-                    }
-                alert('Monster(s) Turn');
-                }, 1000)
+                // setTimeout(function(){
+                //     for (let attackButton of attackButtons) {
+                //         attackButton.classList.remove('hidden');
+                //     }
+                // alert('Monster(s) Turn');
+                // }, 1000)
+
+                let showMonsterAttackButton = document.querySelector('#monster-attack');
+                showMonsterAttackButton.classList.remove('hidden');
+
 
             }
             greyOutAttackButtons();
 
 
+
+        let transferToMonsterAttack = function(monster1, weapon) {
+            self.monster1.monsterAttack.apply(null, arguments);
+        }
 //END
 
 
 
 
-            self.monster1.monsterAttack.apply(null, arguments);
+            //self.monster1.monsterAttack.apply(null, arguments);
         
         } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {
             this.monster1.healthPoints = 'Dead';
@@ -436,6 +444,9 @@ export default class Character {
 
             }
             greyOutAttackButtons();
+
+
+    
 
             self.monster2.monsterAttack.apply(null, arguments);
         
