@@ -101,3 +101,7 @@ input #dragonwarrior {
   border-radius: 3px;
   background-color: gray;
 }
+
+.hidden {
+  visibility: hidden;
+}

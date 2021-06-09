@@ -148,14 +148,14 @@ export default class Character {
             let greyOutAttackButtons = function() {
                 let attackButtons = document.querySelectorAll('.attack');
                 for (let attackButton of attackButtons) {
-                    attackButton.classList.add('monster1-dead');
+                    attackButton.classList.add('hidden');
                 }
                 setTimeout(function(){
                     for (let attackButton of attackButtons) {
-                        attackButton.classList.remove('monster1-dead');
+                        attackButton.classList.remove('hidden');
                     }
                 alert('Monster(s) Turn');
-                }, 3000)
+                }, 1000)
 
             }
             greyOutAttackButtons();
@@ -241,6 +241,25 @@ export default class Character {
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4>`;
+
+            //greying out attack module buttons when pressed
+
+            let greyOutAttackButtons = function() {
+                let attackButtons = document.querySelectorAll('.attack');
+                for (let attackButton of attackButtons) {   
+                    attackButton.classList.add('hidden');
+                }
+                setTimeout(function(){
+                    for (let attackButton of attackButtons) {
+                        attackButton.classList.remove('hidden');
+                    }
+                alert('Monster(s) Turn');
+                }, 1000)
+
+            }
+            greyOutAttackButtons();
+
+
             self.monster2.monsterAttack.apply(null, arguments);
             
             } else if (this.monster2.healthPoints - this.weapon.damage <= 0 || this.monster2.healthPoints === 'Dead') {
@@ -311,6 +330,23 @@ export default class Character {
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
+
+            //greying out attack module buttons when pressed
+
+            let greyOutAttackButtons = function() {
+                let attackButtons = document.querySelectorAll('.attack');
+                for (let attackButton of attackButtons) {   
+                    attackButton.classList.add('hidden');
+                }
+                setTimeout(function(){
+                    for (let attackButton of attackButtons) {
+                        attackButton.classList.remove('hidden');
+                    }
+                alert('Monster(s) Turn');
+                }, 1000)
+
+            }
+            greyOutAttackButtons();
 
             self.monster1.monsterAttack.apply(null, arguments);
         
@@ -383,6 +419,24 @@ export default class Character {
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4>`;
+
+            //greying out attack module buttons when pressed
+
+            let greyOutAttackButtons = function() {
+                let attackButtons = document.querySelectorAll('.attack');
+                for (let attackButton of attackButtons) {   
+                    attackButton.classList.add('hidden');
+                }
+                setTimeout(function(){
+                    for (let attackButton of attackButtons) {
+                        attackButton.classList.remove('hidden');
+                    }
+                alert('Monster(s) Turn');
+                }, 1000)
+
+            }
+            greyOutAttackButtons();
+
             self.monster2.monsterAttack.apply(null, arguments);
         
         } else if (this.monster2.healthPoints - this.specialty.spell2.damage <= 0 || this.monster2.healthPoints === 'Dead') {
