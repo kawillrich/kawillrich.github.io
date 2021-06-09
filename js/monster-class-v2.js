@@ -47,8 +47,14 @@ export default class Monster {
         this.finalCharacter = finalCharacter;
         
         let monstersAttackTurn = () => {
+
+             
+
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
             //alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);
+            
+            
+            
             let updatedCharHP = document.querySelector("#char-hp");
             updatedCharHP.innerHTML = `
             <h4 id='char-hp'>Health Points:  <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>

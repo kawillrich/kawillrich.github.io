@@ -132,12 +132,21 @@ export default class Character {
         attackDialogue.innerHTML = `
         You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;        
         
+        
+
+
+       
         //CHECKING ATTACK INTERACTION
         if (this.monster1.healthPoints - this.weapon.damage > 0) {        
             this.monster1.healthPoints = this.monster1.healthPoints - this.weapon.damage;
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
+            
+            
+            
+            
+            
             self.monster1.monsterAttack.apply(null, arguments);
         
         } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {
@@ -168,6 +177,9 @@ export default class Character {
 
 //-------------------------------------------------------------------//
             };               
+        
+        
+
             confirmMonstersDead();    
     };      
 
@@ -280,6 +292,7 @@ export default class Character {
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
+
             self.monster1.monsterAttack.apply(null, arguments);
         
         } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 || this.monster1.healthPoints === 'Dead') {

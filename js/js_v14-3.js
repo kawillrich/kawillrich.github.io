@@ -461,8 +461,7 @@ export function continueChapterThreeFour() {
 function regenerateHP(hp, maxHP) {
     let completeHealing = function() {
     
-        let finishedRegeneratingHP = document.getElementById('dialogue');
-        console.log(finalCharacter.specialty.healthPoints);
+        let finishedRegeneratingHP = document.getElementById('dialogue');        
         finishedRegeneratingHP.innerHTML = `
         <p>You are rested.</p>        
         <input type="submit" id="start-chapter-three-five" value="Continue"></input>
@@ -501,7 +500,6 @@ function regenerateHP(hp, maxHP) {
                 let regenerationDialogue = document.getElementById('dialogue');
                 regenerationDialogue.innerHTML = 'Resting...';
 
-                console.log(hp);
                 setTimeout( function() {regenerating(hp, maxHP)}, 500);                  
             }            
         }            
