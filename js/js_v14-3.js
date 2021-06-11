@@ -17,7 +17,7 @@ import { raynardsCoin, farmersNote, noItem } from './inventory-class-v1.js';
 //exports finalCharacter for other modules to access
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem);
-
+//testing
 //initialized and clears selectedSpecialty
 
 let selectedSpecialty = '';
