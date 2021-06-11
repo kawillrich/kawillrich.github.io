@@ -203,6 +203,7 @@ export default class Character {
     };      
 
     weaponAttackMonster2(monster2, weapon) {
+
         let self = this;
         let confirmMonstersDead = (enemy2) => {            
             //console.log(self.enemy1.name);
@@ -230,17 +231,19 @@ export default class Character {
         
         this.monster2 = monster2;
         this.weapon = weapon;
+        let enemy2X = this.enemy2;
+
 
         let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
-        You attack the ${this.monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;
+        You attack the ${enemy2X.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;
         
         //CHECKING ATTACK INTERACTION
         if (this.monster2.healthPoints - this.weapon.damage > 0) {        
             this.monster2.healthPoints = this.monster2.healthPoints - this.weapon.damage;
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
-            <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4>`;
+            <h4 id="monster-two-hp">Health Points: ${enemy2X.healthPoints}</h4>`;
 
             //greying out attack module buttons when pressed
 
@@ -261,7 +264,7 @@ export default class Character {
             greyOutAttackButtons();
 
             let transferToMonsterAttack = function(monster2, weapon) {
-            self.monster1.monsterAttack.apply(null, arguments);
+            self.monster2.monsterAttack.apply(null, arguments);
         }
             
             } else if (this.monster2.healthPoints - this.weapon.damage <= 0 || this.monster2.healthPoints === 'Dead') {

@@ -396,7 +396,7 @@ export function confirmAttackMonsters() {
 //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES
 
     console.log('Attacking Monsters');        
-    finalCharacter.confirmAttack(wolf1, wolf2);        
+    finalCharacter.confirmAttack(wolf1, goblin);        
     attackingMonsters.apply(null, arguments);
 }
     
