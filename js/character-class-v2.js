@@ -184,26 +184,7 @@ export default class Character {
             let initiateMonsterAttack = document.querySelector('#monster-attack');
             initiateMonsterAttack.addEventListener('click', attackedMonster.monsterAttack(monster1, weapon), false);
             
-            // let transferToMonsterAttack = function () {
-            //     console.log('transferToMonsterAttack arguments');
-            //     console.table(arguments);
-            //     let attackedMonster = arguments[0];
-            //     attackedMonster.monsterAttack(monster1, weapon);
-            // }
-
-
-
-        // let transferToMonsterAttack = function() {
-        //     console.log("transferToMonsterAttack arguments");
-        //     console.table(arguments);
-        //     self.monster1.monsterAttack.apply(null, arguments);
-        //}
-//END
-
-
-
-
-            //self.monster1.monsterAttack.apply(null, arguments);
+          
         
         } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {
             this.monster1.healthPoints = 'Dead';
