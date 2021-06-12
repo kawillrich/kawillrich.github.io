@@ -21,6 +21,12 @@ export default class Monster {
     };
 
     monsterAttack() {
+
+        
+
+
+
+
         const ENEMYONE = arguments[0];
         console.log('monsterAttack arguments');
         console.table(arguments);
