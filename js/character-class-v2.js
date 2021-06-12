@@ -56,6 +56,8 @@ export default class Character {
     //confirms to attack monsters and populates monster-info section
 
     confirmAttack(enemy1, enemy2) {
+        console.log("confirmAttack arguments");
+        console.table(arguments);
         this.enemy1 = enemy1;
         this.enemy2 = enemy2;
         
@@ -102,6 +104,9 @@ export default class Character {
     //attacking monster 1
 
     weaponAttackMonster1(monster1, weapon, finalCharacter) {
+        console.log('weaponAttackMonster1');
+        console.table(arguments);
+
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
         
@@ -144,9 +149,18 @@ export default class Character {
 //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
             let greyOutAttackButtons = function() {
                 let attackButtons = document.querySelectorAll('.attack');
-                for (let attackButton of attackButtons) {
-                    attackButton.classList.add('hidden');
-                }                
+
+                for (let i = 0; i < attackButtons.length; i++) {
+                    attackButtons[i].classList.add('hidden');
+                }
+
+
+
+
+                // let attackButtons = document.querySelectorAll('.attack');
+                // for (let attackButton of attackButtons) {
+                //     attackButton.classList.add('hidden');
+                // }                
 
 
 
@@ -166,13 +180,22 @@ export default class Character {
             showMonsterAttackButton.classList.remove('hidden');
 
             let initiateMonsterAttack = document.querySelector('#monster-attack');
-            initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon)}, false);
+            initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon);}, false);
 
-        let transferToMonsterAttack = function() {
-            console.log("transferToMonsterAttack arguments");
-            console.table(arguments);
-            self.monster1.monsterAttack.apply(null, arguments);
-        }
+            let transferToMonsterAttack = function () {
+                console.log('transferToMonsterAttack arguments');
+                console.table(arguments);
+                let attackedMonster = arguments[0];
+                attackedMonster.monsterAttack(monster1, weapon);
+            }
+
+
+
+        // let transferToMonsterAttack = function() {
+        //     console.log("transferToMonsterAttack arguments");
+        //     console.table(arguments);
+        //     self.monster1.monsterAttack.apply(null, arguments);
+        //}
 //END
 
 
@@ -276,6 +299,7 @@ export default class Character {
             greyOutAttackButtons();
 
             let transferToMonsterAttack = function(monster2, weapon) {
+
             self.monster2.monsterAttack.apply(null, arguments);
         }
             

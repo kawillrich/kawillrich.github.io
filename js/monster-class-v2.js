@@ -22,7 +22,9 @@ export default class Monster {
 
     monsterAttack() {
         const ENEMYONE = arguments[0];
-            
+        console.log('monsterAttack arguments');
+        console.table(arguments);
+        
         alert(`Monster(s) Turn!`);
         //console.log(arguments);
 
@@ -51,8 +53,6 @@ export default class Monster {
             console.log("monstersAttackTurn arguments");
             console.table(arguments);
             
-            console.log("this is an " + arguments[0].name);
-            console.log(arguments[0]);
             //console.log(monster1.name);
             //console.log(ENEMYONE.name);
             arguments[1].specialty.healthPoints = arguments[1].specialty.healthPoints - arguments[0].damage;    
@@ -70,9 +70,15 @@ export default class Monster {
                 //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
                 let revertToAttackButtons = function () {
                     let showAttackButtons = document.querySelectorAll('.attack');
-                    for (let showAttackButton of showAttackButtons) {
-                    showAttackButton.classList.remove('hidden'); 
-                    };
+                    
+                    for (let i = 0; i < showAttackButtons.length; i++) {
+                        showAttackButtons[i].classList.remove('hidden');
+                    }
+                    
+                    // for (let showAttackButton of showAttackButtons) {
+                    // showAttackButton.classList.remove('hidden'); 
+                    // };
+
                     let hideMonsterAttackButton = document.querySelector('#monster-attack');
                     hideMonsterAttackButton.classList.add('hidden');
                 }

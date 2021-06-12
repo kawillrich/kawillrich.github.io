@@ -84,7 +84,7 @@ function startGame() {
     </div>    
                 
         `;
-        console.table(finalCharacter);   
+          
 
     let chapterOne = document.querySelector('#dialogue');
     chapterOne.innerHTML = `
@@ -136,7 +136,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = steelSword;
 
         finalCharacter.characterUpdate(); 
-        console.table(finalCharacter);
+        
         
         
     } else if (selectedSpecialty === "archer") {
@@ -146,7 +146,7 @@ function logCharSpecialty() {
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
         finalCharacter.characterUpdate();        
-        console.table(finalCharacter);
+        
         
     } else if (selectedSpecialty === "mage") {
         console.log('mage');
@@ -155,7 +155,7 @@ function logCharSpecialty() {
         finalCharacter.armor = robes; 
         finalCharacter.weapon = staff;
         finalCharacter.characterUpdate();        
-        console.table(finalCharacter);
+        
 
     } else if (selectedSpecialty === "dragonwarrior") {
         console.log('dragonwarrior');
@@ -164,7 +164,7 @@ function logCharSpecialty() {
         finalCharacter.armor = obsidianPlateMail; 
         finalCharacter.weapon = obsidianSword;
         finalCharacter.characterUpdate();        
-        console.table(finalCharacter);
+        
 
     } else {
         console.log ('none');
@@ -358,7 +358,7 @@ function addingFightModule() {
         </div>
         `;
 
-        let attackMonsterOne = document.querySelector('.attack-monster-one');
+    let attackMonsterOne = document.querySelector('.attack-monster-one');
     attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
@@ -395,7 +395,8 @@ export function confirmAttackMonsters() {
 
 //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES
 
-    console.log('Attacking Monsters');        
+    console.log('confirmAttackMonsters');       
+    console.table(arguments); 
     finalCharacter.confirmAttack(wolf1, goblin);        
     //attackingMonsters.apply(null, arguments);
 }
