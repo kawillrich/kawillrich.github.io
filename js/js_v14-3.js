@@ -362,7 +362,7 @@ function addingFightModule() {
     attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
-    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);    
+    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(goblin, finalCharacter.weapon)}, false);    
 
     if (finalCharacter.specialty.spell2.name === 'None') {            
 
@@ -377,7 +377,7 @@ function addingFightModule() {
         attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(wolf1, finalCharacter.spell2)}, false);
 
         let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
-        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(wolf2, finalCharacter.spell2)}, false);        
+        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(goblin, finalCharacter.spell2)}, false);        
     }
     
     if (finalCharacter.specialty.spell1.name === 'None') {
