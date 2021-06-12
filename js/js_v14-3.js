@@ -397,7 +397,7 @@ export function confirmAttackMonsters() {
 
     console.log('Attacking Monsters');        
     finalCharacter.confirmAttack(wolf1, goblin);        
-    attackingMonsters.apply(null, arguments);
+    //attackingMonsters.apply(null, arguments);
 }
     
 export function attackingMonsters() {

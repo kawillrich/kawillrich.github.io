@@ -147,18 +147,29 @@ export default class Character {
                     attackButton.classList.add('hidden');
                 }                
 
-                let showMonsterAttackButton = document.querySelector('#monster-attack');
-                showMonsterAttackButton.classList.remove('hidden');
 
-                let initiateMonsterAttack = document.querySelector('#monster-attack');
-                initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon)}, false);
+
+
+
+
+                // let showMonsterAttackButton = document.querySelector('#monster-attack');
+                // showMonsterAttackButton.classList.remove('hidden');
+
+                // let initiateMonsterAttack = document.querySelector('#monster-attack');
+                // initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon)}, false);
 
             }
             greyOutAttackButtons();
 
+            let showMonsterAttackButton = document.querySelector('#monster-attack');
+            showMonsterAttackButton.classList.remove('hidden');
 
+            let initiateMonsterAttack = document.querySelector('#monster-attack');
+            initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon)}, false);
 
         let transferToMonsterAttack = function() {
+            console.log("transferToMonsterAttack arguments");
+            console.table(arguments);
             self.monster1.monsterAttack.apply(null, arguments);
         }
 //END

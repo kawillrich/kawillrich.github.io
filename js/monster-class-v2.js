@@ -21,37 +21,41 @@ export default class Monster {
     };
 
     monsterAttack() {
-        
         const ENEMYONE = arguments[0];
-        console.log(ENEMYONE.name);
-        console.log('Monsters Attack');    
-        
-        
-
+            
         alert(`Monster(s) Turn!`);
+        //console.log(arguments);
 
         if (arguments[0].healthPoints <= 0 || arguments[0].healthPoints === 'Dead') {
             arguments[0].healthPoints === 'Dead';
             
         } else if (arguments[0].healthPoints > 0) {
             arguments[0].healthPoints = arguments[0].healthPoints;                
-        };        
-        
-        console.log(arguments[0].name);    
-        
-        ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter);        
+        };           
+                 
+        ENEMYONE.monstersTurn(arguments[0]);        
     };    
 
-    monstersTurn(monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
-        this.monsterName = monsterName;
-        this.monsterDamage = monsterDamage;
-        this.monsterHealthPoints = monsterHealthPoints; 
-        this.finalCharacter = finalCharacter;
+    //monstersTurn(monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
+
+        monstersTurn() {
+            console.log("monstersTurn arguments");
+            console.table(arguments);
+        // this.monsterName = monsterName;
+        // this.monsterDamage = monsterDamage;
+        // this.monsterHealthPoints = monsterHealthPoints; 
+        // this.finalCharacter = finalCharacter;
         
         let monstersAttackTurn = () => {             
-
+            console.log("monstersAttackTurn arguments");
+            console.table(arguments);
+            
+            console.log("this is an " + arguments[0].name);
+            console.log(arguments[0]);
+            //console.log(monster1.name);
+            //console.log(ENEMYONE.name);
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
-            alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);            
+            alert(`The ${arguments[0].name} attacks you and causes ${arguments[0].damage} points of damage.`);            
             
             let updatedCharHP = document.querySelector("#char-hp");
             updatedCharHP.innerHTML = `
