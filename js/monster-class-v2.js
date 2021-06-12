@@ -33,7 +33,7 @@ export default class Monster {
             arguments[0].healthPoints = arguments[0].healthPoints;                
         };           
                  
-        ENEMYONE.monstersTurn(arguments[0], finalCharacter);        
+        ENEMYONE.monstersTurn(ENEMYONE, finalCharacter);        
     };    
 
     //monstersTurn(monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
