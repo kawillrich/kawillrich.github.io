@@ -149,24 +149,19 @@ export default class Character {
 
 //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
             let greyOutAttackButtons = function() {
+                
+                console.log('greyOutAttackButtons');
+                console.table(arguments);
                 let attackButtons = document.querySelectorAll('.attack');
 
                 for (let i = 0; i < attackButtons.length; i++) {
                     attackButtons[i].classList.add('hidden');
                 }
 
-
-
-
                 // let attackButtons = document.querySelectorAll('.attack');
                 // for (let attackButton of attackButtons) {
                 //     attackButton.classList.add('hidden');
                 // }                
-
-
-
-
-
 
                 // let showMonsterAttackButton = document.querySelector('#monster-attack');
                 // showMonsterAttackButton.classList.remove('hidden');
@@ -174,14 +169,15 @@ export default class Character {
                 // let initiateMonsterAttack = document.querySelector('#monster-attack');
                 // initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon)}, false);
 
+                
+
             }
             greyOutAttackButtons();
 
             let showMonsterAttackButton = document.querySelector('#monster-attack');
             showMonsterAttackButton.classList.remove('hidden');
 
-            // let initiateMonsterAttack = document.querySelector('#monster-attack');
-            // initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon);}, false);
+            
 
             let attackedMonster = arguments[0];
 
@@ -225,7 +221,7 @@ export default class Character {
                 </fieldset>   
             </div>`;
             defeatMonster1.innerHTML = `
-            <p>Congratulations, you defeated the Monster 1!</p>`;
+            <p>Congratulations, you defeated the ${this.monster1.name}!</p>`;
 
 //----------------------------trying to remove monster attack button--------------//
 
