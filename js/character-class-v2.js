@@ -101,7 +101,7 @@ export default class Character {
 
     //attacking monster 1
 
-    weaponAttackMonster1(monster1, weapon) {
+    weaponAttackMonster1(monster1, weapon, finalCharacter) {
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
         
@@ -127,7 +127,8 @@ export default class Character {
         };        
         this.monster1 = monster1;
         this.weapon = weapon;
-                 
+        this.finalCharacter = finalCharacter;
+        
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
         You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;       

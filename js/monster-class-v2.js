@@ -33,12 +33,13 @@ export default class Monster {
             arguments[0].healthPoints = arguments[0].healthPoints;                
         };           
                  
-        ENEMYONE.monstersTurn(arguments[0]);        
+        ENEMYONE.monstersTurn(arguments[0], finalCharacter);        
     };    
 
     //monstersTurn(monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
 
         monstersTurn() {
+            
             console.log("monstersTurn arguments");
             console.table(arguments);
         // this.monsterName = monsterName;
@@ -54,7 +55,7 @@ export default class Monster {
             console.log(arguments[0]);
             //console.log(monster1.name);
             //console.log(ENEMYONE.name);
-            finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
+            arguments[1].specialty.healthPoints = arguments[1].specialty.healthPoints - arguments[0].damage;    
             alert(`The ${arguments[0].name} attacks you and causes ${arguments[0].damage} points of damage.`);            
             
             let updatedCharHP = document.querySelector("#char-hp");
