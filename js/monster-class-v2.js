@@ -40,21 +40,11 @@ export default class Monster {
 
     //monstersTurn(monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
 
-        monstersTurn() {
-            
-            console.log("monstersTurn arguments");
-            console.table(arguments);
-        // this.monsterName = monsterName;
-        // this.monsterDamage = monsterDamage;
-        // this.monsterHealthPoints = monsterHealthPoints; 
-        // this.finalCharacter = finalCharacter;
-        
-        let monstersAttackTurn = () => {             
+        monstersTurn() {            
+              
             console.log("monstersAttackTurn arguments");
             console.table(arguments);
             
-            //console.log(monster1.name);
-            //console.log(ENEMYONE.name);
             arguments[1].specialty.healthPoints = arguments[1].specialty.healthPoints - arguments[0].damage;    
             alert(`The ${arguments[0].name} attacks you and causes ${arguments[0].damage} points of damage.`);            
             
@@ -86,9 +76,7 @@ export default class Monster {
                 //END REVERTING CODE
                 revertToAttackButtons();
                 confirmAttackMonsters();    
-            }
-        }
-        monstersAttackTurn();
+            }        
     }
 
 };

@@ -130,6 +130,7 @@ export default class Character {
             };            
         
         };        
+
         this.monster1 = monster1;
         this.weapon = weapon;
         this.finalCharacter = finalCharacter;
@@ -179,15 +180,20 @@ export default class Character {
             let showMonsterAttackButton = document.querySelector('#monster-attack');
             showMonsterAttackButton.classList.remove('hidden');
 
-            let initiateMonsterAttack = document.querySelector('#monster-attack');
-            initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon);}, false);
+            // let initiateMonsterAttack = document.querySelector('#monster-attack');
+            // initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon);}, false);
 
-            let transferToMonsterAttack = function () {
-                console.log('transferToMonsterAttack arguments');
-                console.table(arguments);
-                let attackedMonster = arguments[0];
-                attackedMonster.monsterAttack(monster1, weapon);
-            }
+            let attackedMonster = arguments[0];
+
+            let initiateMonsterAttack = document.querySelector('#monster-attack');
+            initiateMonsterAttack.addEventListener('click', attackedMonster.monsterAttack(monster1, weapon), false);
+            
+            // let transferToMonsterAttack = function () {
+            //     console.log('transferToMonsterAttack arguments');
+            //     console.table(arguments);
+            //     let attackedMonster = arguments[0];
+            //     attackedMonster.monsterAttack(monster1, weapon);
+            // }
 
 
 
