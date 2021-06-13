@@ -261,25 +261,55 @@ export default class Character {
 
             //greying out attack module buttons when pressed
 
+
             let greyOutAttackButtons = function() {
+                console.log('greyOutAttackButtons arguments');
+                console.table(arguments);
+                console.table(monster2);
+                
                 let attackButtons = document.querySelectorAll('.attack');
+                
                 for (let attackButton of attackButtons) {
                     attackButton.classList.add('hidden');
-                }
-                
+                }                
 
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
-
-                let initiateMonsterAttack = document.querySelector('#monster-attack');
-                initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster2, weapon)}, false);
+                
+                showMonsterAttackButton.onclick = function() {monster2.monsterAttack(monster2)};
+                
 
             }
+
+            
             greyOutAttackButtons();
 
-            let transferToMonsterAttack = function(monster2, weapon) {
-            self.monster2.monsterAttack.apply(null, arguments);
-        }
+
+
+        //     let greyOutAttackButtons = function() {
+        //         let attackButtons = document.querySelectorAll('.attack');
+        //         for (let attackButton of attackButtons) {
+        //             attackButton.classList.add('hidden');
+        //         }
+                
+
+        //         let showMonsterAttackButton = document.querySelector('#monster-attack');
+        //         showMonsterAttackButton.classList.remove('hidden');
+
+        //         let initiateMonsterAttack = document.querySelector('#monster-attack');
+        //         initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster2, weapon)}, false);
+
+        //     }
+        //     greyOutAttackButtons();
+
+        //     let transferToMonsterAttack = function(monster2, weapon) {
+        //     self.monster2.monsterAttack.apply(null, arguments);
+        // }
+
+
+
+
+
             
             } else if (this.monster2.healthPoints - this.weapon.damage <= 0 || this.monster2.healthPoints === 'Dead') {
                 this.monster2.healthPoints = 'Dead';
