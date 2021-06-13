@@ -103,6 +103,10 @@ export default class Character {
 
     weaponAttackMonster1(monster1, weapon) {
         let self = this;
+
+        console.log('weaponAttackMonster1 arguments');
+        console.table(arguments);
+
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   

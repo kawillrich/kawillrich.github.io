@@ -54,6 +54,9 @@ export default class Monster {
 
         let monstersAttackTurn = () => {             
 
+            console.log('monstersAttackTurn');
+            console.table(arguments);
+
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
             alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);            
             
