@@ -21,7 +21,8 @@ export default class Monster {
     };
 
     monsterAttack() {
-        
+        console.log('monsterAttack arguments');
+        console.table(arguments);
         const ENEMYONE = arguments[0];
         console.log(ENEMYONE.name);
         console.log('Monsters Attack');    
@@ -48,6 +49,9 @@ export default class Monster {
         this.monsterHealthPoints = monsterHealthPoints; 
         this.finalCharacter = finalCharacter;
         
+        console.log('monstersTurn arguments');
+        console.table(arguments);
+
         let monstersAttackTurn = () => {             
 
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
