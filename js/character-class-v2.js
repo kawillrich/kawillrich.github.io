@@ -155,8 +155,7 @@ export default class Character {
                 showMonsterAttackButton.classList.remove('hidden');
                 
                 showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
-            }
-            
+            }            
             greyOutAttackButtons();
 
 //END
@@ -237,7 +236,6 @@ export default class Character {
             <h4 id="monster-two-hp">Health Points: ${enemy2X.healthPoints}</h4>`;
 
             //greying out attack module buttons when pressed
-
 
             let greyOutAttackButtons = function() {
                 console.log('greyOutAttackButtons arguments');
