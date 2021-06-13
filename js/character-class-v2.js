@@ -146,6 +146,10 @@ export default class Character {
 
 //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
             let greyOutAttackButtons = function() {
+                console.log('greyOutAttackButtons arguments');
+                console.table(arguments);
+                console.table(monster1);
+                
                 let attackButtons = document.querySelectorAll('.attack');
                 for (let attackButton of attackButtons) {
                     attackButton.classList.add('hidden');
@@ -153,18 +157,24 @@ export default class Character {
 
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
-
+                
                 let initiateMonsterAttack = document.querySelector('#monster-attack');
-                initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster1, weapon)}, false);
+                initiateMonsterAttack.onclick = monster1.monsterAttack(monster1, weapon);
+                
 
             }
+
+            
             greyOutAttackButtons();
 
+            // let transferToMonsterAttack = function() {
+            // self.monster1.monsterAttack.apply(null, arguments);
 
+            
 
-        let transferToMonsterAttack = function() {
-            self.monster1.monsterAttack.apply(null, arguments);
-        }
+            
+            
+        
 //END
 
 
@@ -511,9 +521,9 @@ export default class Character {
             castedHealSpell.style.visibility = "visible"}, 60000);
         }
 
-
-      
-
+    transferToMonsterAttack() {
+        self.monster1.monsterAttack(monster1, weapon);
+    }
     
 
     
