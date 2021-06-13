@@ -47,9 +47,7 @@ export default class Character {
                 <h4 id='char-items' class='char-info-label'>Item 2: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
                 <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${this.inventory3.name}</span></h4>
             </fieldset>
-        </div>    
-            
-            
+        </div>            
             `; 
     }
     
@@ -57,10 +55,7 @@ export default class Character {
 
     confirmAttack(enemy1, enemy2) {
         this.enemy1 = enemy1;
-        this.enemy2 = enemy2;
-        
-        //let fightMonster = document.querySelector('#dialogue');
-        //fightMonster.innerHTML = `<p>You Attack!</p>`;    
+        this.enemy2 = enemy2;        
        
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 
@@ -160,27 +155,11 @@ export default class Character {
                 showMonsterAttackButton.classList.remove('hidden');
                 
                 showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
-                
-
             }
-
             
             greyOutAttackButtons();
 
-            // let transferToMonsterAttack = function() {
-            // self.monster1.monsterAttack.apply(null, arguments);
-
-            
-
-            
-            
-        
 //END
-
-
-
-
-            //self.monster1.monsterAttack.apply(null, arguments);
         
         } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {
             this.monster1.healthPoints = 'Dead';
@@ -211,8 +190,6 @@ export default class Character {
 //-------------------------------------------------------------------//
             };               
         
-        
-
             confirmMonstersDead();    
     };      
 
@@ -277,39 +254,9 @@ export default class Character {
                 showMonsterAttackButton.classList.remove('hidden');
                 
                 showMonsterAttackButton.onclick = function() {monster2.monsterAttack(monster2)};
-                
-
             }
-
             
             greyOutAttackButtons();
-
-
-
-        //     let greyOutAttackButtons = function() {
-        //         let attackButtons = document.querySelectorAll('.attack');
-        //         for (let attackButton of attackButtons) {
-        //             attackButton.classList.add('hidden');
-        //         }
-                
-
-        //         let showMonsterAttackButton = document.querySelector('#monster-attack');
-        //         showMonsterAttackButton.classList.remove('hidden');
-
-        //         let initiateMonsterAttack = document.querySelector('#monster-attack');
-        //         initiateMonsterAttack.addEventListener('click', function() {transferToMonsterAttack(monster2, weapon)}, false);
-
-        //     }
-        //     greyOutAttackButtons();
-
-        //     let transferToMonsterAttack = function(monster2, weapon) {
-        //     self.monster2.monsterAttack.apply(null, arguments);
-        // }
-
-
-
-
-
             
             } else if (this.monster2.healthPoints - this.weapon.damage <= 0 || this.monster2.healthPoints === 'Dead') {
                 this.monster2.healthPoints = 'Dead';
@@ -397,10 +344,7 @@ export default class Character {
                 showMonsterAttackButton.classList.remove('hidden');
                 
                 showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
-                
-
             }
-
             
             greyOutAttackButtons();
         
@@ -427,7 +371,6 @@ export default class Character {
 
             let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
             removingMonster1Button[0].classList.add('monster1-dead');
-
 
             };            
             confirmMonstersDead();
@@ -491,11 +434,8 @@ export default class Character {
                 showMonsterAttackButton.classList.remove('hidden');
                 
                 showMonsterAttackButton.onclick = function() {monster2.monsterAttack(monster2)};
-                
-
             }
 
-            
             greyOutAttackButtons();
         
         } else if (this.monster2.healthPoints - this.specialty.spell2.damage <= 0 || this.monster2.healthPoints === 'Dead') {
@@ -521,7 +461,6 @@ export default class Character {
             
             let removingMonster2Button = document.getElementsByClassName('attack-monster-two');
             removingMonster2Button[0].classList.add('monster1-dead');
-
             };                        
             confirmMonstersDead();
     }
@@ -542,8 +481,7 @@ export default class Character {
         attackDialogue.innerHTML = `
         You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} health points.`;
 
-        let castedHealSpell = document.querySelector('.spell1-heal');
-       
+        let castedHealSpell = document.querySelector('.spell1-heal');       
 
         //WORKS, BUT NEED TO IMPLEMENT ALERT WINDOW WHEN MONSTERS ATTACK AND NOT RESET FIGHT MODULE
         castedHealSpell.style.visibility = "hidden"
@@ -553,10 +491,6 @@ export default class Character {
 
     transferToMonsterAttack() {
         self.monster1.monsterAttack(monster1, weapon);
-    }
-    
-
-    
-
+    }    
 };
 
