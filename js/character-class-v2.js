@@ -151,6 +151,7 @@ export default class Character {
                 console.table(monster1);
                 
                 let attackButtons = document.querySelectorAll('.attack');
+                
                 for (let attackButton of attackButtons) {
                     attackButton.classList.add('hidden');
                 }                
@@ -158,8 +159,7 @@ export default class Character {
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
                 
-                let initiateMonsterAttack = document.querySelector('#monster-attack');
-                initiateMonsterAttack.onclick = monster1.monsterAttack(monster1, weapon);
+                showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
                 
 
             }
