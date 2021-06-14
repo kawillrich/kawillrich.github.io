@@ -342,7 +342,7 @@ function continueChapterThreeThree() {
 
 function declareAttack() {
     let declareAttackDialogue = document.querySelector('#dialogue');
-    declareAttackDialogue.innerHTML = 'You Attack!';
+    declareAttackDialogue.innerHTML = `<p>You Attack!</p>`;
 }
 
 function addingFightModule() {

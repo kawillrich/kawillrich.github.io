@@ -129,7 +129,7 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;       
+        <p>You attack the ${this.monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;       
        
         //CHECKING ATTACK INTERACTION
         if (this.monster1.healthPoints - this.weapon.damage > 0) {        
@@ -175,8 +175,7 @@ export default class Character {
                     <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>    
                 </fieldset>   
             </div>`;
-            defeatMonster1.innerHTML = `
-            <p>Congratulations, you defeated the Monster 1!</p>`;
+            defeatMonster1.innerHTML = `<p>Congratulations, you defeated the Monster 1!</p>`;
 
 //----------------------------trying to remove monster attack button--------------//
            
@@ -226,7 +225,7 @@ export default class Character {
 
         let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
-        You attack the ${enemy2X.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.`;
+        <p>You attack the ${enemy2X.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;
         
         //CHECKING ATTACK INTERACTION
         if (this.monster2.healthPoints - this.weapon.damage > 0) {        
@@ -314,7 +313,7 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        You cast ${this.specialty.spell2.name} on the ${this.monster1.name} and cause ${this.specialty.spell2.damage} points of damage.`;
+        <p>You cast ${this.specialty.spell2.name} on the ${this.monster1.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
         
         console.log(this.specialty.spell2.damage);
                 
@@ -404,7 +403,7 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        You cast ${this.specialty.spell2.name} on the ${this.monster2.name} and cause ${this.specialty.spell2.damage} points of damage.`;
+        <p>You cast ${this.specialty.spell2.name} on the ${this.monster2.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
         
         console.log(this.specialty.spell2.damage);
                 
@@ -477,7 +476,7 @@ export default class Character {
         
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} health points.`;
+        <p>You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} health points.</p>`;
 
         let castedHealSpell = document.querySelector('.spell1-heal');       
 
