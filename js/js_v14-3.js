@@ -468,7 +468,7 @@ function regenerateHP(hp, maxHP) {
         <input type="submit" id="start-chapter-three-five" value="Continue"></input>
         `;
     
-        var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
+        let startChapterThreeFive = document.querySelector("#start-chapter-three-five");
         
         startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
     }
@@ -499,12 +499,18 @@ function regenerateHP(hp, maxHP) {
                 `;
 
                 let regenerationDialogue = document.getElementById('dialogue');
-                regenerationDialogue.innerHTML = 'Resting...';
+                regenerationDialogue.innerHTML = `
+                    <p>Resting...</p>
+                    `
+                ;                
 
-                setTimeout( function() {regenerating(hp, maxHP)}, 500);                  
+                setTimeout( function() {regenerating(hp, maxHP)}, 500);           
             }            
         }            
 }
+
+
+
 
 function continueChapterThreeFive () {
     console.log('Chapter Three-Five');
