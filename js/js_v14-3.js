@@ -446,8 +446,7 @@ export function continueChapterThreeFour() {
     let chapterThreeFour = document.querySelector('#dialogue');
     chapterThreeFour.innerHTML = `
     <p>As you pause after your victory over the wolves, you take a breath to regroup.  Would you like to rest a moment to tend to your wounds as your mother has taught you?</p>
-    
-    
+        
     <input type="submit" id="rest-and-heal" value="Rest">
     
     <input type="submit" id="start-chapter-three-five" value="Continue">`;
@@ -494,12 +493,13 @@ function regenerateHP(hp, maxHP) {
                 hp += 1;
                 let regeneratedHP = document.getElementById('char-hp');
                 regeneratedHP.innerHTML = 
-                `
-                Health Points: <span class="character-display-info">${hp}</span>
-                `;
+                    `
+                    Health Points: <span class="character-display-info">${hp}</span>
+                    `;
 
                 let regenerationDialogue = document.getElementById('dialogue');
-                regenerationDialogue.innerHTML = `
+                regenerationDialogue.innerHTML = 
+                    `
                     <p>Resting...</p>
                     `
                 ;                
@@ -508,9 +508,6 @@ function regenerateHP(hp, maxHP) {
             }            
         }            
 }
-
-
-
 
 function continueChapterThreeFive () {
     console.log('Chapter Three-Five');
