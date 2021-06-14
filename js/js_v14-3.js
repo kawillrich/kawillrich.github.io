@@ -358,7 +358,7 @@ function addingFightModule() {
         </div>
         `;
 
-        let attackMonsterOne = document.querySelector('.attack-monster-one');
+    let attackMonsterOne = document.querySelector('.attack-monster-one');
     attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
@@ -367,10 +367,10 @@ function addingFightModule() {
     if (finalCharacter.specialty.spell2.name === 'None') {            
 
         let attackSpellTwoMonsterOneNone = document.querySelector('.spell2-monster-one');
-        attackSpellTwoMonsterOneNone.className = 'no-spell';
+        attackSpellTwoMonsterOneNone.className = 'no-spell attack';
 
         let attackSpellTwoMonsterTwoNone = document.querySelector('.spell2-monster-two');
-        attackSpellTwoMonsterTwoNone.className = 'no-spell';
+        attackSpellTwoMonsterTwoNone.className = 'no-spell attack';
 
     } else {
         let attackSpellTwoMonsterOne = document.querySelector('.spell2-monster-one');
@@ -383,7 +383,7 @@ function addingFightModule() {
     if (finalCharacter.specialty.spell1.name === 'None') {
 
         let healSpellSelfNone = document.querySelector('.spell1-heal');
-        healSpellSelfNone.className = 'no-spell';
+        healSpellSelfNone.className = 'no-spell attack';
     } else {
         let healSpellSelf = document.querySelector('.spell1-heal');
         healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
