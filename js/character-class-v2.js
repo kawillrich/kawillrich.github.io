@@ -179,12 +179,12 @@ export default class Character {
             <p>Congratulations, you defeated the Monster 1!</p>`;
 
 //----------------------------trying to remove monster attack button--------------//
-
-           let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
-           removingMonster1Button[0].classList.add('monster1-dead')
+           
+            let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
+            removingMonster1Button[0].classList.add('monster1-dead')
             
-           let removeMonster1SpellAttack = document.getElementsByClassName('spell2-monster-one');
-           removeMonster1SpellAttack[0].classList.add('monster1-dead');
+            let removeMonster1SpellAttack = document.getElementsByClassName('spell2-monster-one');
+            removeMonster1SpellAttack[0].classList.add('monster1-dead');
 
 //-------------------------------------------------------------------//
             };               

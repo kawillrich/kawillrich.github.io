@@ -367,10 +367,10 @@ function addingFightModule() {
     if (finalCharacter.specialty.spell2.name === 'None') {            
 
         let attackSpellTwoMonsterOneNone = document.querySelector('.spell2-monster-one');
-        attackSpellTwoMonsterOneNone.className = 'no-spell attack';
+        attackSpellTwoMonsterOneNone.className = 'no-spell attack spell2-monster-one';
 
         let attackSpellTwoMonsterTwoNone = document.querySelector('.spell2-monster-two');
-        attackSpellTwoMonsterTwoNone.className = 'no-spell attack';
+        attackSpellTwoMonsterTwoNone.className = 'no-spell attack spell2-monster-two';
 
     } else {
         let attackSpellTwoMonsterOne = document.querySelector('.spell2-monster-one');
