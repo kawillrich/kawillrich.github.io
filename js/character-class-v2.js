@@ -491,6 +491,12 @@ export default class Character {
     areaAttackSpell(monster1, monster2, spell2) {
         console.log('Casting Area Attack Spell');
         
+        let monstersGroup = [monster1, monster2];
+        monstersGroup.forEach(areaSpell);
+
+
+
+
     //     let self = this;
     //     let confirmMonstersDead = () => {            
         
@@ -580,6 +586,12 @@ export default class Character {
     //         confirmMonstersDead();
     }
     
+    areaSpell = function(item) {
+        let damage = finalCharacter.spell3.damage;
+        item.healthPoints -= damage;
+        console.log(`You attacked${item.name} for ${damage} points of damage`);
+    }
+
 //END OF AREA ATTACK SPELL
 
 
