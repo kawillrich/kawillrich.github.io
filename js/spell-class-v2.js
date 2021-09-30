@@ -16,7 +16,7 @@ let fireBall = new Spell ('Fire Ball', 8, 0);
 let earthStrike = new Spell('Earth Strike', 10, 0);
 let lightening = new Spell('Lightening', 12, 0);
 let dragonFang = new Spell('Dragon Fang', 500, 0)
+let fireArrows = new Spell('Fire Arrows', 6, 0);
 
 
-
-export { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, dragonFang};
+export { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, dragonFang, fireArrows };
