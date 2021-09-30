@@ -595,7 +595,7 @@ export default class Character {
         let self = this;
         let damage = finalCharacter.specialty.spell3.damage;
         item.healthPoints -= damage;
-        console.log(`You attacked${item.name} for ${damage} points of damage`);
+        console.log(`You attacked ${item.name} for ${damage} points of damage`);
     }
 
 //END OF AREA ATTACK SPELL
