@@ -504,11 +504,9 @@ export default class Character {
 
 
 
-
+//checking if both monsters are dead
    
-         let confirmMonstersDead = () => {            
-        
-        //checking if both monsters are dead   
+         let confirmMonstersDead = () => {      
 
             if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
             console.log('both dead');
