@@ -496,6 +496,9 @@ export default class Character {
         this.monster2 = monster2;
         this.spell3 = spell3;
 
+        let clearDialogue = document.querySelector('#dialogue');
+        clearDialogue.innerHTML = "";
+
         let monstersGroup = [monster1, monster2];
         monstersGroup.forEach(this.areaSpell);
 
@@ -529,11 +532,11 @@ export default class Character {
                  
         
         
-    //     console.log(this.specialty.spell2.damage);
+    
                 
     //     //CHECKING ATTACK INTERACTION
-    //     if (this.monster1.healthPoints - this.specialty.spell2.damage > 0) {        
-    //         this.monster1.healthPoints = this.monster1.healthPoints - this.specialty.spell2.damage;
+    //     if (this.monster1.healthPoints - this.specialty.spell3.damage > 0) {        
+    //         this.monster1.healthPoints = this.monster1.healthPoints - this.specialty.spell3.damage;
     //         let updatedMonsterHP = document.querySelector("#monster-one-hp");
     //         updatedMonsterHP.innerHTML = `
     //         <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
@@ -559,7 +562,7 @@ export default class Character {
             
     //         greyOutAttackButtons();
         
-    //     } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 || this.monster1.healthPoints === 'Dead') {
+    //     } else if (this.monster1.healthPoints - this.specialty.spell3.damage <= 0 || this.monster1.healthPoints === 'Dead') {
     //         this.monster1.healthPoints = 'Dead';
             
     //         let monsterOneStatus = document.querySelector('#monster-one');
