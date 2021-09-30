@@ -502,32 +502,30 @@ export default class Character {
 
 
 
-    //     let self = this;
-    //     let confirmMonstersDead = () => {            
+   
+         let confirmMonstersDead = () => {            
         
-    //     //checking if both monsters are dead   
+        //checking if both monsters are dead   
 
-    //         if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
-    //         console.log('both dead');
+            if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
+            console.log('both dead');
         
-    //         let defeatedMonsters = document.querySelector('#dialogue');
-    //         let removeFightModule = document.querySelector('#fight-module');
+            let defeatedMonsters = document.querySelector('#dialogue');
+            let removeFightModule = document.querySelector('#fight-module');
                 
-    //         removeFightModule.innerHTML = `<p>You won!</p>`;
-    //         defeatedMonsters.innerHTML = `
-    //         <p>Congratulations, you defeated the monster(s)!</p>
-    //         <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
         
-    //         removeFightModule.innerHTML = ` `;
+            removeFightModule.innerHTML = ` `;
 
-    //         var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-    //         startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
-    //         };            
+            var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
+            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            };            
         
-    //     };        
-    //     this.monster1 = monster1;
-    //     this.monster2 = monster2;
-    //     this.spell2 = spell2;
+         };        
+   
                  
     //     let attackDialogue = document.querySelector("#dialogue");
     //     attackDialogue.innerHTML = `
