@@ -383,6 +383,18 @@ function addingFightModule() {
         attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(goblin, finalCharacter.spell2)}, false);        
     }
     
+    if (finalCharacter.specialty.spell3.name === 'None') {
+
+        let groupAttackSpellNone = document.querySelector('.area-attack');
+        groupAttackSpellNone.className = '.no-spell attack area-attack';
+
+    } else {
+
+        let groupAttackSpell = document.querySelector('.area-attack');
+        groupAttackSpell.addEventListener('click', function () {finalCharacter.areaAttackSpell(wolf1, goblin, finalCharacter.spell3)}, false);
+    }
+
+
     if (finalCharacter.specialty.spell1.name === 'None') {
 
         let healSpellSelfNone = document.querySelector('.spell1-heal');
