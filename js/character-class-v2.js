@@ -527,9 +527,9 @@ export default class Character {
          };        
    
                  
-    //     let attackDialogue = document.querySelector("#dialogue");
-    //     attackDialogue.innerHTML = `
-    //     <p>You cast ${this.specialty.spell2.name} on the ${this.monster1.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
+        let attackDialogue = document.querySelector("#dialogue");
+        attackDialogue.innerHTML = `
+        <p>You cast ${this.specialty.spell3.name} on the ${this.item.name} and cause ${this.specialty.spell3.damage} points of damage.</p>`;
         
     //     console.log(this.specialty.spell2.damage);
                 
@@ -586,7 +586,7 @@ export default class Character {
     //         removingMonster1Button[0].classList.add('monster1-dead');
 
     //         };            
-    //         confirmMonstersDead();
+            confirmMonstersDead();
     }
     
     areaSpell = function(item) {
