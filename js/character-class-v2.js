@@ -488,11 +488,16 @@ export default class Character {
         }
 
 //***TRYING TO CREATE AREA ATTACK SPELL
-    areaAttackSpell(monster1, monster2, spell2) {
+    areaAttackSpell(monster1, monster2, spell3) {
         console.log('Casting Area Attack Spell');
         
+        let self = this;
+        this.monster1 = monster1;
+        this.monster2 = monster2;
+        this.spell3 = spell3;
+
         let monstersGroup = [monster1, monster2];
-        monstersGroup.forEach(areaSpell);
+        monstersGroup.forEach(this.areaSpell);
 
 
 
@@ -587,7 +592,8 @@ export default class Character {
     }
     
     areaSpell = function(item) {
-        let damage = finalCharacter.spell3.damage;
+        let self = this;
+        let damage = finalCharacter.specialty.spell3.damage;
         item.healthPoints -= damage;
         console.log(`You attacked${item.name} for ${damage} points of damage`);
     }
