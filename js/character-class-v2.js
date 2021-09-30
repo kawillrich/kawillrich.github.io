@@ -527,9 +527,7 @@ export default class Character {
          };        
    
                  
-        let attackDialogue = document.querySelector("#dialogue");
-        attackDialogue.innerHTML = `
-        <p>You cast ${this.specialty.spell3.name} on the ${this.item.name} and cause ${this.specialty.spell3.damage} points of damage.</p>`;
+        
         
     //     console.log(this.specialty.spell2.damage);
                 
@@ -594,6 +592,12 @@ export default class Character {
         let damage = finalCharacter.specialty.spell3.damage;
         item.healthPoints -= damage;
         console.log(`You attacked ${item.name} for ${damage} points of damage`);
+
+        let attackDialogue = document.querySelector("#dialogue");
+        
+        attackDialogue.innerHTML += `
+        <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${finalCharacter.specialty.spell3.damage} points of damage.</p>`;
+
     }
 
 //END OF AREA ATTACK SPELL
