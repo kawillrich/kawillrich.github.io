@@ -488,97 +488,99 @@ export default class Character {
         }
 
 //***TRYING TO CREATE AREA ATTACK SPELL
-        areaAttackSpell(monster1, monster2, spell2) {
-        console.log('Casting Spell Two on Monster One');
-        let self = this;
-        let confirmMonstersDead = () => {            
+    areaAttackSpell(monster1, monster2, spell2) {
+        console.log('Casting Area Attack Spell');
         
-        //checking if both monsters are dead   
+    //     let self = this;
+    //     let confirmMonstersDead = () => {            
+        
+    //     //checking if both monsters are dead   
 
-            if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
-            console.log('both dead');
+    //         if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
+    //         console.log('both dead');
         
-            let defeatedMonsters = document.querySelector('#dialogue');
-            let removeFightModule = document.querySelector('#fight-module');
+    //         let defeatedMonsters = document.querySelector('#dialogue');
+    //         let removeFightModule = document.querySelector('#fight-module');
                 
-            removeFightModule.innerHTML = `<p>You won!</p>`;
-            defeatedMonsters.innerHTML = `
-            <p>Congratulations, you defeated the monster(s)!</p>
-            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+    //         removeFightModule.innerHTML = `<p>You won!</p>`;
+    //         defeatedMonsters.innerHTML = `
+    //         <p>Congratulations, you defeated the monster(s)!</p>
+    //         <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
         
-            removeFightModule.innerHTML = ` `;
+    //         removeFightModule.innerHTML = ` `;
 
-            var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
-            };            
+    //         var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
+    //         startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+    //         };            
         
-        };        
-        this.monster1 = monster1;
-        this.monster2 = monster2;
-        this.spell2 = spell2;
+    //     };        
+    //     this.monster1 = monster1;
+    //     this.monster2 = monster2;
+    //     this.spell2 = spell2;
                  
-        let attackDialogue = document.querySelector("#dialogue");
-        attackDialogue.innerHTML = `
-        <p>You cast ${this.specialty.spell2.name} on the ${this.monster1.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
+    //     let attackDialogue = document.querySelector("#dialogue");
+    //     attackDialogue.innerHTML = `
+    //     <p>You cast ${this.specialty.spell2.name} on the ${this.monster1.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
         
-        console.log(this.specialty.spell2.damage);
+    //     console.log(this.specialty.spell2.damage);
                 
-        //CHECKING ATTACK INTERACTION
-        if (this.monster1.healthPoints - this.specialty.spell2.damage > 0) {        
-            this.monster1.healthPoints = this.monster1.healthPoints - this.specialty.spell2.damage;
-            let updatedMonsterHP = document.querySelector("#monster-one-hp");
-            updatedMonsterHP.innerHTML = `
-            <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
+    //     //CHECKING ATTACK INTERACTION
+    //     if (this.monster1.healthPoints - this.specialty.spell2.damage > 0) {        
+    //         this.monster1.healthPoints = this.monster1.healthPoints - this.specialty.spell2.damage;
+    //         let updatedMonsterHP = document.querySelector("#monster-one-hp");
+    //         updatedMonsterHP.innerHTML = `
+    //         <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
 
-            //greying out attack module buttons when pressed
+    //         //greying out attack module buttons when pressed
 
-            let greyOutAttackButtons = function() {
-                console.log('greyOutAttackButtons arguments');
-                console.table(arguments);
-                console.table(monster1);
+    //         let greyOutAttackButtons = function() {
+    //             console.log('greyOutAttackButtons arguments');
+    //             console.table(arguments);
+    //             console.table(monster1);
                 
-                let attackButtons = document.querySelectorAll('.attack');
+    //             let attackButtons = document.querySelectorAll('.attack');
                 
-                for (let attackButton of attackButtons) {
-                    attackButton.classList.add('hidden');
-                }                
+    //             for (let attackButton of attackButtons) {
+    //                 attackButton.classList.add('hidden');
+    //             }                
 
-                let showMonsterAttackButton = document.querySelector('#monster-attack');
-                showMonsterAttackButton.classList.remove('hidden');
+    //             let showMonsterAttackButton = document.querySelector('#monster-attack');
+    //             showMonsterAttackButton.classList.remove('hidden');
                 
-                showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
-            }
+    //             showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
+    //         }
             
-            greyOutAttackButtons();
+    //         greyOutAttackButtons();
         
-        } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 || this.monster1.healthPoints === 'Dead') {
-            this.monster1.healthPoints = 'Dead';
+    //     } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 || this.monster1.healthPoints === 'Dead') {
+    //         this.monster1.healthPoints = 'Dead';
             
-            let monsterOneStatus = document.querySelector('#monster-one');
-            let defeatMonster1 = document.querySelector('#dialogue');
-            monsterOneStatus.innerHTML = `
-            <div class="monster" id="monster-one">
-                <fieldset class='monster-info-module'>
-                    <legend class='monster-dashboard'>Monster 1</legend>
-                    <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
-                    <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
-                    <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
-                    <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>    
-                </fieldset>   
-            </div>`;
-            defeatMonster1.innerHTML = `
-            <p>Congratulations, you defeated the Monster 1!</p>`;     
+    //         let monsterOneStatus = document.querySelector('#monster-one');
+    //         let defeatMonster1 = document.querySelector('#dialogue');
+    //         monsterOneStatus.innerHTML = `
+    //         <div class="monster" id="monster-one">
+    //             <fieldset class='monster-info-module'>
+    //                 <legend class='monster-dashboard'>Monster 1</legend>
+    //                 <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
+    //                 <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
+    //                 <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
+    //                 <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>    
+    //             </fieldset>   
+    //         </div>`;
+    //         defeatMonster1.innerHTML = `
+    //         <p>Congratulations, you defeated the Monster 1!</p>`;     
 
-            let removingMonster1SpellButton = document.getElementsByClassName('spell2-monster-one');
-            removingMonster1SpellButton[0].classList.add('monster1-dead');       
+    //         let removingMonster1SpellButton = document.getElementsByClassName('spell2-monster-one');
+    //         removingMonster1SpellButton[0].classList.add('monster1-dead');       
 
-            let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
-            removingMonster1Button[0].classList.add('monster1-dead');
+    //         let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
+    //         removingMonster1Button[0].classList.add('monster1-dead');
 
-            };            
-            confirmMonstersDead();
+    //         };            
+    //         confirmMonstersDead();
     }
-//**END OF AREA ATTACK SPELL
+    
+//END OF AREA ATTACK SPELL
 
 
 
