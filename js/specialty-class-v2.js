@@ -13,7 +13,7 @@ export default class Specialty {
 let noSpecialty = new Specialty('None', 0, noSpell, noSpell, noSpell, 0);
 let warrior = new Specialty('Warrior', 140, noSpell, noSpell, noSpell, 140);
 let masterArcher = new Specialty('Master Archer', 125, minorHealing, noSpell, noSpell, 125);
-let highMage = new Specialty('High Mage', 115, minorHealing, fireBall, noSpell, 115);
+let highMage = new Specialty('High Mage', 115, minorHealing, fireBall, fireArrows, 115);
 let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, fireArrows, 500)
 
 export { noSpecialty, warrior, masterArcher, highMage, dragonWarrior };
