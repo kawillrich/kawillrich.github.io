@@ -19,4 +19,5 @@ let dragonFang = new Spell('Dragon Fang', 500, 0)
 let fireArrows = new Spell('Fire Arrows', 6, 0);
 
 
+
 export { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, dragonFang, fireArrows };
