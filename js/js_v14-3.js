@@ -85,7 +85,7 @@ function startGame() {
     </div>    
                 
         `;
-        console.table(finalCharacter);   
+          
 
     let chapterOne = document.querySelector('#dialogue');
     chapterOne.innerHTML = `
@@ -137,7 +137,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = steelSword;
 
         finalCharacter.characterUpdate(); 
-        console.table(finalCharacter);
+        
         
         
     } else if (selectedSpecialty === "archer") {
@@ -147,7 +147,7 @@ function logCharSpecialty() {
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
         finalCharacter.characterUpdate();        
-        console.table(finalCharacter);
+        
         
     } else if (selectedSpecialty === "mage") {
         console.log('mage');
@@ -156,7 +156,7 @@ function logCharSpecialty() {
         finalCharacter.armor = robes; 
         finalCharacter.weapon = staff;
         finalCharacter.characterUpdate();        
-        console.table(finalCharacter);
+        
 
     } else if (selectedSpecialty === "dragonwarrior") {
         console.log('dragonwarrior');
@@ -165,7 +165,7 @@ function logCharSpecialty() {
         finalCharacter.armor = obsidianPlateMail; 
         finalCharacter.weapon = obsidianSword;
         finalCharacter.characterUpdate();        
-        console.table(finalCharacter);
+        
 
     } else {
         console.log ('none');
@@ -247,7 +247,7 @@ function talkToRaynard() {
     <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span>
     
     `
-    console.log("Received " + finalCharacter.inventory1.name);
+   
      var continueChapterThreeOne = document.querySelector("#start-chapter-three");
      continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
 };
