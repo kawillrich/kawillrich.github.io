@@ -98,10 +98,7 @@ export default class Character {
     //attacking monster 1
 
     weaponAttackMonster1(monster1, weapon) {
-        let self = this;
-
-        console.log('weaponAttackMonster1 arguments');
-        console.table(arguments);
+        let self = this;        
 
         let confirmMonstersDead = (enemy1) => {            
         
@@ -141,10 +138,7 @@ export default class Character {
             
 
 //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
-            let greyOutAttackButtons = function() {
-                console.log('greyOutAttackButtons arguments');
-                console.table(arguments);
-                console.table(monster1);
+            let greyOutAttackButtons = function() {                
                 
                 let attackButtons = document.querySelectorAll('.attack');
                 
@@ -197,10 +191,7 @@ export default class Character {
         let self = this;
         let confirmMonstersDead = (enemy2) => {            
             //console.log(self.enemy1.name);
-            console.log(self.enemy2.name);
-        
-            console.log("checking function" + " " + self.enemy2.healthPoints);
-        
+                    
             if (self.enemy2.healthPoints === 'Dead' && self.enemy1.healthPoints === 'Dead') {
             console.log('both dead');
         
@@ -237,10 +228,7 @@ export default class Character {
 
             //greying out attack module buttons when pressed
 
-            let greyOutAttackButtons = function() {
-                console.log('greyOutAttackButtons arguments');
-                console.table(arguments);
-                console.table(monster2);
+            let greyOutAttackButtons = function() {                
                 
                 let attackButtons = document.querySelectorAll('.attack');
                 
@@ -327,10 +315,7 @@ export default class Character {
 
             //greying out attack module buttons when pressed
 
-            let greyOutAttackButtons = function() {
-                console.log('greyOutAttackButtons arguments');
-                console.table(arguments);
-                console.table(monster1);
+            let greyOutAttackButtons = function() {                
                 
                 let attackButtons = document.querySelectorAll('.attack');
                 
@@ -417,10 +402,7 @@ export default class Character {
 
             //greying out attack module buttons when pressed
 
-            let greyOutAttackButtons = function() {
-                console.log('greyOutAttackButtons arguments');
-                console.table(arguments);
-                console.table(monster2);
+            let greyOutAttackButtons = function() {                
                 
                 let attackButtons = document.querySelectorAll('.attack');
                 
@@ -464,8 +446,7 @@ export default class Character {
     }
 
     spell1Heal() {
-        console.log('Casting Heal Spell');
-        console.log(finalCharacter.specialty.spell1.healing)
+        console.log('Casting Heal Spell');        
         let healedCharHP = document.querySelector("#char-hp");
         finalCharacter.specialty.healthPoints += finalCharacter.specialty.spell1.healing;
         if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
