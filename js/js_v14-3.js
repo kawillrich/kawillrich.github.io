@@ -54,6 +54,7 @@ function startJourneySubmitted() {
 };
 
 
+
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {   
     
