@@ -417,41 +417,11 @@ export function confirmAttackMonsters() {
 
     console.log('Attacking Monsters');        
     finalCharacter.confirmAttack(wolf1, goblin);        
-    attackingMonsters.apply(null, arguments);
+    //attackingMonsters.apply(null, arguments);
 }
     
 export function attackingMonsters() {
-
-    // let attackMonsterOne = document.querySelector('.attack-monster-one');
-    // attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
     
-    // let attackMonsterTwo = document.querySelector('.attack-monster-two');
-    // attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(wolf2, finalCharacter.weapon)}, false);    
-
-    // if (finalCharacter.specialty.spell2.name === 'None') {            
-
-    //     let attackSpellTwoMonsterOneNone = document.querySelector('.spell2-monster-one');
-    //     attackSpellTwoMonsterOneNone.className = 'no-spell';
-
-    //     let attackSpellTwoMonsterTwoNone = document.querySelector('.spell2-monster-two');
-    //     attackSpellTwoMonsterTwoNone.className = 'no-spell';
-
-    // } else {
-    //     let attackSpellTwoMonsterOne = document.querySelector('.spell2-monster-one');
-    //     attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(wolf1, finalCharacter.spell2)}, false);
-
-    //     let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
-    //     attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(wolf2, finalCharacter.spell2)}, false);        
-    // }
-    
-    // if (finalCharacter.specialty.spell1.name === 'None') {
-
-    //     let healSpellSelfNone = document.querySelector('.spell1-heal');
-    //     healSpellSelfNone.className = 'no-spell';
-    // } else {
-    //     let healSpellSelf = document.querySelector('.spell1-heal');
-    //     healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
-    // }
 }
 
 //MOVE TO MONSTER CLASS AND THEN REFERENCE IN CHARACTER CLASS AS THIS.MONSTER.MONSTERATTACK    
