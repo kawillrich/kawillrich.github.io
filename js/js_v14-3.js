@@ -524,9 +524,20 @@ function continueChapterThreeFive () {
     this.  Besides, there is also a tinge of exitement!  Even though those wolves were an easy challenge, it reinforced to you that you ARE 
     capable of doing hard things - and that even as this was the first real battle you've engaged in, you have the peace of mind knowing that
     you are up to this journey.      
-    </p>`;
-
+    </p>
     
+    <input type="submit" id="start-chapter-three-six" value="Continue">    
+    `;
+
+    var startChapterThreeSix = document.querySelector("#start-chapter-three-six");
+    startChapterThreeSix.addEventListener('click', continueChapterThreeSix, false);    
 
 }
 
+function continueChapterThreeSix () {
+    console.log('Chapter Three-Six');
+    var chapterThreeSixDialogue = document.getElementById('dialogue');
+    chapterThreeSixDialogue.innerHTML = `
+    <p>      
+    </p>`;
+}
