@@ -493,6 +493,19 @@ export default class Character {
             if (self.enemy1.healthPoints <= 0 && self.enemy2.healthPoints <= 0) {
             console.log('both dead');
         
+            self.enemy1.healthPoints = 0;
+            self.enemy2.healthPoints = 0;
+
+            let updatedMonster1HP = document.querySelector("#monster-one-hp");
+            updatedMonster1HP.innerHTML = `
+            <h4 id="monster-one-hp">Health Points: ${self.enemy1.healthPoints}</h4>`;
+
+            let updatedMonster2HP = document.querySelector("#monster-two-hp");
+            updatedMonster2HP.innerHTML = `
+            <h4 id="monster-two-hp">Health Points: ${self.enemy2.healthPoints}</h4>`;
+
+
+
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
                 
@@ -522,6 +535,14 @@ export default class Character {
     //         <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
 
     //         //greying out attack module buttons when pressed
+
+    let updatedMonster1HP = document.querySelector("#monster-one-hp");
+    updatedMonster1HP.innerHTML = `
+    <h4 id="monster-one-hp">Health Points: ${self.enemy1.healthPoints}</h4>`;
+
+    let updatedMonster2HP = document.querySelector("#monster-two-hp");
+    updatedMonster2HP.innerHTML = `
+    <h4 id="monster-two-hp">Health Points: ${self.enemy2.healthPoints}</h4>`;
 
             let greyOutAttackButtons = function() {
                 console.log('greyOutAttackButtons arguments');
@@ -587,6 +608,8 @@ export default class Character {
             attackDialogue.innerHTML += `
             <p>${item.name} is dead.</p>`;
 
+            
+
         } else {
             item.healthPoints -= damage;
         console.log(`You attacked ${item.name} for ${damage} points of damage`);
@@ -595,6 +618,17 @@ export default class Character {
         
         attackDialogue.innerHTML += `
         <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${finalCharacter.specialty.spell3.damage} points of damage.</p>`;
+
+
+
+        // let updatedMonster1HP = document.querySelector("#monster-one-hp");
+        // updatedMonster1HP.innerHTML = `
+        // <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
+
+        // let updatedMonster2HP = document.querySelector("#monster-two-hp");
+        // updatedMonster2HP.innerHTML = `
+        // <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4>`;
+
         }
         
         
