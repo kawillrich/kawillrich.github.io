@@ -60,12 +60,12 @@ export default class Character {
        
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 
-        if (this.enemy1.healthPoints === 'Dead') {
+        if (this.enemy1.healthPoints <= 0) {
             let removeMonsterOneAttackButton = document.querySelector('.attack-monster-one');
             removeMonsterOneAttackButton.classList.add('monster1-dead');
             let removeMonsterOneSpellAttack = document.querySelector('.spell2-monster-one');
             removeMonsterOneSpellAttack.classList.add('monster1-dead');
-        } else if (this.enemy2.healthPoints === 'Dead') {
+        } else if (this.enemy2.healthPoints <= 0) {
             let removeMonsterTwoAttackButton = document.querySelector('.attack-monster-two');
             removeMonsterTwoAttackButton.classList.add('monster1-dead');
             let removeMonsterTwoSpellAttack = document.querySelector('.spell2-monster-two');
@@ -104,7 +104,7 @@ export default class Character {
         
         //checking if both monsters are dead   
 
-            if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
+            if (self.enemy1.healthPoints <= 0 && self.enemy2.healthPoints <= 0) {
             console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
@@ -155,8 +155,8 @@ export default class Character {
 
 //END
         
-        } else if (this.monster1.healthPoints - this.weapon.damage <= 0 || this.monster1.healthPoints === 'Dead') {
-            this.monster1.healthPoints = 'Dead';
+        } else if (this.monster1.healthPoints - this.weapon.damage <= 0) {
+            this.monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
             let defeatMonster1 = document.querySelector('#dialogue');
@@ -192,7 +192,7 @@ export default class Character {
         let confirmMonstersDead = (enemy2) => {            
             //console.log(self.enemy1.name);
                     
-            if (self.enemy2.healthPoints === 'Dead' && self.enemy1.healthPoints === 'Dead') {
+            if (self.enemy2.healthPoints <= 0 && self.enemy1.healthPoints <= 0) {
             console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
@@ -244,8 +244,8 @@ export default class Character {
             
             greyOutAttackButtons();
             
-            } else if (this.monster2.healthPoints - this.weapon.damage <= 0 || this.monster2.healthPoints === 'Dead') {
-                this.monster2.healthPoints = 'Dead';
+            } else if (this.monster2.healthPoints - this.weapon.damage <= 0) {
+                this.monster2.healthPoints = 0;
                 
                 let monsterTwoStatus = document.querySelector('#monster-two');
                 let defeatMonster2 = document.querySelector('#dialogue');
@@ -279,7 +279,7 @@ export default class Character {
         
         //checking if both monsters are dead   
 
-            if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
+            if (self.enemy1.healthPoints <= 0 && self.enemy2.healthPoints <= 0) {
             console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
@@ -331,8 +331,8 @@ export default class Character {
             
             greyOutAttackButtons();
         
-        } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 || this.monster1.healthPoints === 'Dead') {
-            this.monster1.healthPoints = 'Dead';
+        } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 ) {
+            this.monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
             let defeatMonster1 = document.querySelector('#dialogue');
@@ -366,7 +366,7 @@ export default class Character {
         
         //checking if both monsters are dead   
 
-            if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
+            if (self.enemy1.healthPoints <= 0 && self.enemy2.healthPoints <= 0) {
             console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
@@ -418,8 +418,8 @@ export default class Character {
 
             greyOutAttackButtons();
         
-        } else if (this.monster2.healthPoints - this.specialty.spell2.damage <= 0 || this.monster2.healthPoints === 'Dead') {
-            this.monster2.healthPoints = 'Dead';
+        } else if (this.monster2.healthPoints - this.specialty.spell2.damage <= 0 ) {
+            this.monster2.healthPoints = 0;
             
             let monsterTwoStatus = document.querySelector('#monster-two');
             let defeatMonster2 = document.querySelector('#dialogue');
@@ -542,8 +542,8 @@ export default class Character {
             
             greyOutAttackButtons();
         
-    //     } else if (this.monster1.healthPoints - this.specialty.spell3.damage <= 0 || this.monster1.healthPoints === 'Dead') {
-    //         this.monster1.healthPoints = 'Dead';
+    //     } else if (this.monster1.healthPoints - this.specialty.spell3.damage <= 0 ) {
+    //         this.monster1.healthPoints = 0;
             
     //         let monsterOneStatus = document.querySelector('#monster-one');
     //         let defeatMonster1 = document.querySelector('#dialogue');
