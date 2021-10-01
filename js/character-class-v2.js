@@ -468,7 +468,7 @@ export default class Character {
             castedHealSpell.style.visibility = "visible"}, 60000);
         }
 
-//***TRYING TO CREATE AREA ATTACK SPELL
+    //***TRYING TO CREATE AREA ATTACK SPELL
     areaAttackSpell(monster1, monster2, spell3) {
         console.log('Casting Area Attack Spell');
         
@@ -485,9 +485,9 @@ export default class Character {
 
 
 
-//checking if both monsters are dead
+        //checking if both monsters are dead
    
-         let confirmMonstersDead = () => {      
+        let confirmMonstersDead = () => {      
             console.log(self.enemy1.healthPoints);
             console.log(self.enemy2.healthPoints);
             if (self.enemy1.healthPoints <= 0 && self.enemy2.healthPoints <= 0) {
@@ -525,8 +525,7 @@ export default class Character {
 
             let greyOutAttackButtons = function() {
                 console.log('greyOutAttackButtons arguments');
-                console.table(arguments);
-                console.table(monster1);
+                
                 
                 let attackButtons = document.querySelectorAll('.attack');
                 
@@ -537,8 +536,15 @@ export default class Character {
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
                 
-                showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
+                showMonsterAttackButton.onclick = function() {
+                    if (monster1.healthPoints > 0) {
+                        monster1.monsterAttack(monster1)
+                    
+                    } else {
+                        monster2.monsterAttack(monster2);
+                    };
             }
+        }
             
             greyOutAttackButtons();
         
