@@ -1,6 +1,6 @@
 //import other js modules to access
 
-import { finalCharacter, continueChapterThreeFour, attackingMonsters } from './js_v14-3.js';
+import { finalCharacter, continueChapterThreeFour } from './js_v14-3.js';
 import Weapon from './weapon-class-v2.js';
 import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword } from './weapon-class-v2.js';
 import Armor from './armor-class-v2.js';
@@ -584,12 +584,12 @@ export default class Character {
 
         } else {
             item.healthPoints -= damage;
-        console.log(`You attacked ${item.name} for ${damage} points of damage`);
+            console.log(`You attacked ${item.name} for ${damage} points of damage`);
 
-        let attackDialogue = document.querySelector("#dialogue");
+            let attackDialogue = document.querySelector("#dialogue");
         
-        attackDialogue.innerHTML += `
-        <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${finalCharacter.specialty.spell3.damage} points of damage.</p>`;
+            attackDialogue.innerHTML += `
+            <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${finalCharacter.specialty.spell3.damage} points of damage.</p>`;
 
         }
         
