@@ -541,24 +541,24 @@ export default class Character {
 
     //         //greying out attack module buttons when pressed
 
-    //         let greyOutAttackButtons = function() {
-    //             console.log('greyOutAttackButtons arguments');
-    //             console.table(arguments);
-    //             console.table(monster1);
+            let greyOutAttackButtons = function() {
+                console.log('greyOutAttackButtons arguments');
+                console.table(arguments);
+                console.table(monster1);
                 
-    //             let attackButtons = document.querySelectorAll('.attack');
+                let attackButtons = document.querySelectorAll('.attack');
                 
-    //             for (let attackButton of attackButtons) {
-    //                 attackButton.classList.add('hidden');
-    //             }                
+                for (let attackButton of attackButtons) {
+                    attackButton.classList.add('hidden');
+                }                
 
-    //             let showMonsterAttackButton = document.querySelector('#monster-attack');
-    //             showMonsterAttackButton.classList.remove('hidden');
+                let showMonsterAttackButton = document.querySelector('#monster-attack');
+                showMonsterAttackButton.classList.remove('hidden');
                 
-    //             showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
-    //         }
+                showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
+            }
             
-    //         greyOutAttackButtons();
+            greyOutAttackButtons();
         
     //     } else if (this.monster1.healthPoints - this.specialty.spell3.damage <= 0 || this.monster1.healthPoints === 'Dead') {
     //         this.monster1.healthPoints = 'Dead';
@@ -598,6 +598,8 @@ export default class Character {
         
         attackDialogue.innerHTML += `
         <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${finalCharacter.specialty.spell3.damage} points of damage.</p>`;
+
+        
 
     }
 
