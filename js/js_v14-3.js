@@ -435,12 +435,23 @@ export function continueChapterThreeFour() {
 
     let chapterThreeFour = document.querySelector('#dialogue');
     chapterThreeFour.innerHTML = `
-    <p>As you pause after your victory over the wolves, you take a breath to regroup.  Would you like to rest a moment to tend to your wounds as your mother has taught you?</p>
+    <p>As you pause after your victory over the wolves, you take a breath to regroup.  As you inspect at the wolves, you notice that these 
+    don't appear to be normal wolves that you've seen before.  These wolves have a distinctly black coat of fur running down their backs, at 
+    the tip of their tails, and the edges of their ears.  "So strange.", you think.  Then, you notice something very odd...their claws are 
+    black a night!  You didn't immediately notice during the fight, but now you can see plain as day.  You aren't someone who disrespects 
+    animals, but you take one of the large claws and place it on a string around your neck so that you can ask around about it and what others
+    may know of it.  "Well," you think to yourself, "at least I'll have some interseting stories to tell at the end of this journey..."
+    
+    You don't want to linger too long, and decide it's time to get moving.</p>    
+    
+    <p>Would you like to rest a moment to tend to your wounds as your mother has taught you?</p>
         
     <input type="submit" id="rest-and-heal" value="Rest">
     
     <input type="submit" id="start-chapter-three-five" value="Continue">`;
 
+
+    
     var restAndHeal = document.querySelector('#rest-and-heal');
     restAndHeal.addEventListener('click', function() {regenerateHP(finalCharacter.specialty.healthPoints, finalCharacter.specialty.maxHealthPoints)}, false);
 
