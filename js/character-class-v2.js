@@ -536,13 +536,22 @@ export default class Character {
 
     //         //greying out attack module buttons when pressed
 
-    let updatedMonster1HP = document.querySelector("#monster-one-hp");
-    updatedMonster1HP.innerHTML = `
-    <h4 id="monster-one-hp">Health Points: ${self.enemy1.healthPoints}</h4>`;
+            if (self.enemy1.healthPoints <= 0) {
+                self.enemy1.healthPoints = 0;
+            }
 
-    let updatedMonster2HP = document.querySelector("#monster-two-hp");
-    updatedMonster2HP.innerHTML = `
-    <h4 id="monster-two-hp">Health Points: ${self.enemy2.healthPoints}</h4>`;
+            if (self.enemy2.healthPoints <= 0) {
+                self.enemy2.healthPoints = 0;
+            }
+
+
+            let updatedMonster1HP = document.querySelector("#monster-one-hp");
+            updatedMonster1HP.innerHTML = `
+            <h4 id="monster-one-hp">Health Points: ${self.enemy1.healthPoints}</h4>`;
+
+            let updatedMonster2HP = document.querySelector("#monster-two-hp");
+            updatedMonster2HP.innerHTML = `
+            <h4 id="monster-two-hp">Health Points: ${self.enemy2.healthPoints}</h4>`;
 
             let greyOutAttackButtons = function() {
                 console.log('greyOutAttackButtons arguments');
