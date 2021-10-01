@@ -602,8 +602,8 @@ export default class Character {
 
 
 
-    transferToMonsterAttack() {
-        self.monster1.monsterAttack(monster1, weapon);
-    }    
+    // transferToMonsterAttack() {
+    //     self.monster1.monsterAttack(monster1, weapon);
+    // }    
 };
 
