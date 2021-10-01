@@ -7,6 +7,7 @@ export default class Specialty {
         this.spell2 = spell2;
         this.spell3 = spell3;
         this.maxHealthPoints = maxHealthPoints;
+        
     };
 };
 
