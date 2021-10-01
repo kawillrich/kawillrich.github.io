@@ -517,9 +517,16 @@ function continueChapterThreeFive () {
 
     var chapterThreeFiveDialogue = document.getElementById('dialogue');
     chapterThreeFiveDialogue.innerHTML = `
-    <p>You continue down the path towards the farm    
+    <p>You continue down the path towards the farm.  While you are walking towards the farm, you glance around and take in the sight around you.
+    You don't travel this far often.  Normally, you may travel to Gryphon's Keep to buy goods that you can't find in your village.  You definitely
+    Haven't travelled beyond the farm you are headed to.  Even though you some of your thoughts wander to worrying about travelling farther than
+    you have in the past, you know that you will be okay and you are reassured by your own thoughts and knowledge that you are capable of doing
+    this.  Besides, there is also a tinge of exitement!  Even though those wolves were an easy challenge, it reinforced to you that you ARE 
+    capable of doing hard things - and that even as this was the first real battle you've engaged in, you have the peace of mind knowing that
+    you are up to this journey.      
     </p>`;
 
+    
 
 }
 
