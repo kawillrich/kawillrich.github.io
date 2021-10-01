@@ -507,8 +507,9 @@ export default class Character {
 //checking if both monsters are dead
    
          let confirmMonstersDead = () => {      
-
-            if (self.enemy1.healthPoints === 'Dead' && self.enemy2.healthPoints === 'Dead') {
+            console.log(self.enemy1.healthPoints);
+            console.log(self.enemy2.healthPoints);
+            if (self.enemy1.healthPoints <= 0 && self.enemy2.healthPoints <= 0) {
             console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
@@ -589,15 +590,28 @@ export default class Character {
     }
     
     areaSpell = function(item) {
+        
         let self = this;
         let damage = finalCharacter.specialty.spell3.damage;
-        item.healthPoints -= damage;
+        
+        if (item.healthPoints <= 0) {
+            let attackDialogue = document.querySelector("#dialogue");
+        
+            attackDialogue.innerHTML += `
+            <p>${item.name} is dead.</p>`;
+
+        } else {
+            item.healthPoints -= damage;
         console.log(`You attacked ${item.name} for ${damage} points of damage`);
 
         let attackDialogue = document.querySelector("#dialogue");
         
         attackDialogue.innerHTML += `
         <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${finalCharacter.specialty.spell3.damage} points of damage.</p>`;
+        }
+        
+        
+        
 
         
 
