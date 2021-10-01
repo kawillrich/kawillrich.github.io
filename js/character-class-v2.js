@@ -11,7 +11,7 @@ import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior } from './s
 //exports Character class for other module access
 
 export default class Character {
-    constructor(name, specialty, armor, weapon, inventory1, inventory2, inventory3) {
+    constructor(name, specialty, armor, weapon, inventory1, inventory2, inventory3, enchantedItem) {
         this.name = name;
         this.specialty = specialty;
         this.armor = armor;
@@ -19,6 +19,7 @@ export default class Character {
         this.inventory1 = inventory1;
         this.inventory2 = inventory2;
         this.inventory3 = inventory3;
+        this.enchantedItem = enchantedItem;
     };
 
     //updates & initiates Character creation
@@ -38,7 +39,8 @@ export default class Character {
                 <h4 id='char-damage' class='char-info-label'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
-                <h4 id='char-spell3' class='char-info-label'>Spell 3:  <span class="character-display-info">${this.specialty.spell3.name}</span></h4>
+                <h4 id='char-spell3' class='char-info-label'>Spell 3:  <span class="character-display-info">${this.specialty.spell3.name}</span></h4><br>
+                
             </fieldset>
         </div>
         <div id='character-inventory'>
@@ -46,7 +48,8 @@ export default class Character {
                 <legend class='player-dashboard'>Inventory</legend>
                 <h4 id='char-items' class='char-info-label'>Item 1: <span class='character-display-inv1'>${this.inventory1.name}</span></h4>
                 <h4 id='char-items' class='char-info-label'>Item 2: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
-                <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${this.inventory3.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${this.inventory3.name}</span></h4><br>
+                <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${this.enchantedItem.name}</span></h4>
             </fieldset>
         </div>            
             `; 
@@ -521,28 +524,14 @@ export default class Character {
             };            
         
          };        
-   
-                 
-        
-        
-    
-                
-    //     //CHECKING ATTACK INTERACTION
-    //     if (this.monster1.healthPoints - this.specialty.spell3.damage > 0) {        
-    //         this.monster1.healthPoints = this.monster1.healthPoints - this.specialty.spell3.damage;
-    //         let updatedMonsterHP = document.querySelector("#monster-one-hp");
-    //         updatedMonsterHP.innerHTML = `
-    //         <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
-
-    //         //greying out attack module buttons when pressed
 
             if (self.enemy1.healthPoints <= 0) {
                 self.enemy1.healthPoints = 0;
-            }
+            };
 
             if (self.enemy2.healthPoints <= 0) {
                 self.enemy2.healthPoints = 0;
-            }
+            };
 
 
             let updatedMonster1HP = document.querySelector("#monster-one-hp");
@@ -554,8 +543,7 @@ export default class Character {
             <h4 id="monster-two-hp">Health Points: ${self.enemy2.healthPoints}</h4>`;
 
             let greyOutAttackButtons = function() {
-                console.log('greyOutAttackButtons arguments');
-                
+                console.log('greyOutAttackButtons arguments');                
                 
                 let attackButtons = document.querySelectorAll('.attack');
                 
@@ -576,33 +564,8 @@ export default class Character {
             }
         }
             
-            greyOutAttackButtons();
-        
-    //     } else if (this.monster1.healthPoints - this.specialty.spell3.damage <= 0 ) {
-    //         this.monster1.healthPoints = 0;
-            
-    //         let monsterOneStatus = document.querySelector('#monster-one');
-    //         let defeatMonster1 = document.querySelector('#dialogue');
-    //         monsterOneStatus.innerHTML = `
-    //         <div class="monster" id="monster-one">
-    //             <fieldset class='monster-info-module'>
-    //                 <legend class='monster-dashboard'>Monster 1</legend>
-    //                 <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
-    //                 <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
-    //                 <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
-    //                 <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>    
-    //             </fieldset>   
-    //         </div>`;
-    //         defeatMonster1.innerHTML = `
-    //         <p>Congratulations, you defeated the Monster 1!</p>`;     
-
-    //         let removingMonster1SpellButton = document.getElementsByClassName('spell2-monster-one');
-    //         removingMonster1SpellButton[0].classList.add('monster1-dead');       
-
-    //         let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
-    //         removingMonster1Button[0].classList.add('monster1-dead');
-
-    //         };            
+            greyOutAttackButtons();        
+    
             confirmMonstersDead();
     }
     
@@ -628,26 +591,12 @@ export default class Character {
         attackDialogue.innerHTML += `
         <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${finalCharacter.specialty.spell3.damage} points of damage.</p>`;
 
-
-
-        // let updatedMonster1HP = document.querySelector("#monster-one-hp");
-        // updatedMonster1HP.innerHTML = `
-        // <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
-
-        // let updatedMonster2HP = document.querySelector("#monster-two-hp");
-        // updatedMonster2HP.innerHTML = `
-        // <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4>`;
-
         }
         
-        
-        
-
-        
-
     }
 
 //END OF AREA ATTACK SPELL
+
 
 
 

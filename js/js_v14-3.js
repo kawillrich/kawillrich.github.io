@@ -12,11 +12,11 @@ import Character from './character-class-v2.js';
 import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin } from './monster-class-v2.js';
 import Inventory from './inventory-class-v1.js';
-import { raynardsCoin, farmersNote, noItem } from './inventory-class-v1.js';
+import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
 
 //exports finalCharacter for other modules to access
 
-export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem);
+export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem);
 
 //initialized and clears selectedSpecialty
 
@@ -80,7 +80,8 @@ function startGame() {
                 <legend class='player-dashboard'>Inventory</legend>
                 <h4 id='char-items' class='char-info-label'>Item 1: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
                 <h4 id='char-items' class='char-info-label'>Item 2: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
-                <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4>
+                <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4><br>
+                <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${finalCharacter.enchantedItem.name}</span></h4>
             </fieldset>
     </div>    
                 
@@ -135,7 +136,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = warrior; 
         finalCharacter.armor = chainMail; 
         finalCharacter.weapon = steelSword;
-
+        finalCharacter.enchantedItem = noItem;
         finalCharacter.characterUpdate(); 
         
         
@@ -146,6 +147,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = masterArcher; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
+        finalCharacter.enchantedItem = noItem;
         finalCharacter.characterUpdate();        
         
         
@@ -155,6 +157,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = highMage; 
         finalCharacter.armor = robes; 
         finalCharacter.weapon = staff;
+        finalCharacter.enchantedItem = noItem;
         finalCharacter.characterUpdate();        
         
 
@@ -164,6 +167,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = dragonWarrior; 
         finalCharacter.armor = obsidianPlateMail; 
         finalCharacter.weapon = obsidianSword;
+        finalCharacter.enchantedItem = eloisesRing;
         finalCharacter.characterUpdate();        
         
 
