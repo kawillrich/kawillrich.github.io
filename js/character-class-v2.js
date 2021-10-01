@@ -574,6 +574,8 @@ export default class Character {
         let self = this;
         let damage = finalCharacter.specialty.spell3.damage;
         
+        item.healthPoints -= damage;
+
         if (item.healthPoints <= 0) {
             let attackDialogue = document.querySelector("#dialogue");
         
@@ -583,7 +585,7 @@ export default class Character {
             
 
         } else {
-            item.healthPoints -= damage;
+            //item.healthPoints -= damage;
             console.log(`You attacked ${item.name} for ${damage} points of damage`);
 
             let attackDialogue = document.querySelector("#dialogue");
