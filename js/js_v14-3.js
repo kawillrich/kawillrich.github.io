@@ -336,7 +336,7 @@ function continueChapterThreeThree() {
     
     var attackWolvesYes = document.querySelector("#attack-wolves");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule();
+        addingFightModule(wolf1, goblin);
         declareAttack();
         
         },   
@@ -351,7 +351,9 @@ function declareAttack() {
     declareAttackDialogue.innerHTML = `<p>You Attack!</p>`;
 }
 
-function addingFightModule() {
+function addingFightModule(monsterOne, monsterTwo) {
+    console.log(monsterOne);
+    console.log(monsterTwo); 
     let headerFightModule = document.querySelector('#fight-module');
         headerFightModule.innerHTML = `
         <div class="attack-buttons">
@@ -367,10 +369,10 @@ function addingFightModule() {
         `;
 
     let attackMonsterOne = document.querySelector('.attack-monster-one');
-    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(wolf1, finalCharacter.weapon)}, false);
+    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(monsterOne, finalCharacter.weapon)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
-    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(goblin, finalCharacter.weapon)}, false);    
+    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(monsterTwo, finalCharacter.weapon)}, false);    
 
     if (finalCharacter.specialty.spell2.name === 'None') {            
 
@@ -382,10 +384,10 @@ function addingFightModule() {
 
     } else {
         let attackSpellTwoMonsterOne = document.querySelector('.spell2-monster-one');
-        attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(wolf1, finalCharacter.spell2)}, false);
+        attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(monsterOne, finalCharacter.spell2)}, false);
 
         let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
-        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(goblin, finalCharacter.spell2)}, false);        
+        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(monsterTwo, finalCharacter.spell2)}, false);        
     }
     
     if (finalCharacter.specialty.spell3.name === 'None') {
@@ -396,7 +398,7 @@ function addingFightModule() {
     } else {
 
         let groupAttackSpell = document.querySelector('.area-attack');
-        groupAttackSpell.addEventListener('click', function () {finalCharacter.areaAttackSpell(wolf1, goblin, finalCharacter.spell3)}, false);
+        groupAttackSpell.addEventListener('click', function () {finalCharacter.areaAttackSpell(monsterOne, monsterTwo, finalCharacter.spell3)}, false);
     }
 
 
@@ -408,15 +410,15 @@ function addingFightModule() {
         let healSpellSelf = document.querySelector('.spell1-heal');
         healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
 }
-    confirmAttackMonsters();
+    confirmAttackMonsters(monsterOne, monsterTwo);
 }
 
-export function confirmAttackMonsters() {           
+export function confirmAttackMonsters(monsterOne, monsterTwo) {           
 
 //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES
 
     console.log('Attacking Monsters');        
-    finalCharacter.confirmAttack(wolf1, goblin);        
+    finalCharacter.confirmAttack(monsterOne, monsterTwo);        
     //attackingMonsters.apply(null, arguments);
 }
     
@@ -550,8 +552,8 @@ function continueChapterThreeSix () {
     
     var attackWolvesYes = document.querySelector("#attack-goblins");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule();
-        declareAttack(goblin1, goblin2);
+        addingFightModule(goblin1, goblin2);
+        declareAttack();
     
     
     ;

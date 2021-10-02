@@ -58,6 +58,8 @@ export default class Character {
     //confirms to attack monsters and populates monster-info section
 
     confirmAttack(enemy1, enemy2) {
+        console.log(enemy1);
+        console.log(enemy2);
         this.enemy1 = enemy1;
         this.enemy2 = enemy2;        
        
