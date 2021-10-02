@@ -163,8 +163,8 @@ export default class Character {
 
 //END
         
-        } else if (this.monster1.healthPoints - this.weapon.damage <= 0) {
-            this.monster1.healthPoints = 0;
+        } else if (monster1.healthPoints - this.weapon.damage <= 0) {
+            monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
             let defeatMonster1 = document.querySelector('#dialogue');
@@ -172,10 +172,10 @@ export default class Character {
             <div class="monster" id="monster-one">
                 <fieldset class='monster-info-module'>
                     <legend class='monster-dashboard'>Monster 1</legend>
-                    <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
-                    <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
-                    <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
-                    <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>    
+                    <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                    <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4> 
+                    <h4 id="monster-one-ap">Armor Points: ${monster1.armorPoints}</h4>
+                    <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>    
                 </fieldset>   
             </div>`;
             defeatMonster1.innerHTML = `<p>Congratulations, you defeated the Monster 1!</p>`;
@@ -195,12 +195,14 @@ export default class Character {
     };      
 
     weaponAttackMonster2(monster1, monster2, weapon) {
-
+        console.log(monster1);
+        console.log(weapon);
+        console.log(monster2);
         let self = this;
         let confirmMonstersDead = (enemy2) => {            
             //console.log(self.enemy1.name);
                     
-            if (self.enemy2.healthPoints <= 0 && self.enemy1.healthPoints <= 0) {
+            if (monster2.healthPoints <= 0 && monster1.healthPoints <= 0) {
             console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
@@ -218,21 +220,21 @@ export default class Character {
             };            
         };
         
-        this.monster2 = monster2;
-        this.weapon = weapon;
-        let enemy2X = this.enemy2;
+        // this.monster2 = monster2;
+        // this.weapon = weapon;
+        // let enemy2X = this.enemy2;
 
 
         let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${enemy2X.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;
+        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;
         
         //CHECKING ATTACK INTERACTION
-        if (this.monster2.healthPoints - this.weapon.damage > 0) {        
-            this.monster2.healthPoints = this.monster2.healthPoints - this.weapon.damage;
+        if (monster2.healthPoints - this.weapon.damage > 0) {        
+            monster2.healthPoints = monster2.healthPoints - this.weapon.damage;
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
-            <h4 id="monster-two-hp">Health Points: ${enemy2X.healthPoints}</h4>`;
+            <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4>`;
 
             //greying out attack module buttons when pressed
 
