@@ -10,7 +10,7 @@ import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior } from './specialty-class-v2.js';
 import Character from './character-class-v2.js';
 import Monster from './monster-class-v2.js';
-import { wolf1, wolf2, goblin } from './monster-class-v2.js';
+import { wolf1, wolf2, goblin, goblin1, goblin2 } from './monster-class-v2.js';
 import Inventory from './inventory-class-v1.js';
 import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
 
@@ -538,6 +538,23 @@ function continueChapterThreeSix () {
     console.log('Chapter Three-Six');
     var chapterThreeSixDialogue = document.getElementById('dialogue');
     chapterThreeSixDialogue.innerHTML = `
-    <p>      
-    </p>`;
+    <p>     
+    
+    
+    </p>
+    
+    
+    
+    <input type="submit" id="attack-goblins" value="Attack">     
+    `
+    
+    var attackWolvesYes = document.querySelector("#attack-goblins");
+    attackWolvesYes.addEventListener('click', () => {
+        addingFightModule();
+        declareAttack(goblin1, goblin2);
+    
+    
+    ;
+})
+
 }
