@@ -369,10 +369,10 @@ function addingFightModule(monsterOne, monsterTwo) {
         `;
 
     let attackMonsterOne = document.querySelector('.attack-monster-one');
-    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(monsterOne, finalCharacter.weapon)}, false);
+    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(monsterOne, monsterTwo, finalCharacter.weapon)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
-    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(monsterTwo, finalCharacter.weapon)}, false);    
+    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(monsterOne, monsterTwo, finalCharacter.weapon)}, false);    
 
     if (finalCharacter.specialty.spell2.name === 'None') {            
 
@@ -410,6 +410,8 @@ function addingFightModule(monsterOne, monsterTwo) {
         let healSpellSelf = document.querySelector('.spell1-heal');
         healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
 }
+    console.log(monsterOne);
+    console.log(monsterTwo);
     confirmAttackMonsters(monsterOne, monsterTwo);
 }
 
@@ -417,7 +419,9 @@ export function confirmAttackMonsters(monsterOne, monsterTwo) {
 
 //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES
 
-    console.log('Attacking Monsters');        
+    console.log('Attacking Monsters');     
+    console.log(monsterOne);   
+    console.log(monsterTwo);
     finalCharacter.confirmAttack(monsterOne, monsterTwo);        
     //attackingMonsters.apply(null, arguments);
 }

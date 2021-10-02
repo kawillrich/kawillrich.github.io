@@ -20,9 +20,10 @@ export default class Monster {
         this.damage = damage;        
     };
 
-    monsterAttack() {
-        
-        const ENEMYONE = arguments[0];
+    monsterAttack(monsterOne, monsterTwo) {
+        console.log(monsterOne);
+        console.log(monsterTwo);
+        //const monsterOne = arguments[0];
        
         console.log('Monsters Attack');    
         
@@ -39,10 +40,10 @@ export default class Monster {
         
        
         
-        ENEMYONE.monstersTurn(ENEMYONE.name, ENEMYONE.damage, ENEMYONE.healthPoints, finalCharacter);        
+        monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, finalCharacter);        
     };    
 
-    monstersTurn(monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
+    monstersTurn(monsterOne, monsterTwo, monsterName, monsterDamage, monsterHealthPoints, finalCharacter) {
         this.monsterName = monsterName;
         this.monsterDamage = monsterDamage;
         this.monsterHealthPoints = monsterHealthPoints; 
@@ -50,8 +51,9 @@ export default class Monster {
         
       
 
-        let monstersAttackTurn = () => {             
-
+        let monstersAttackTurn = (monsterOne, monsterTwo) => {     
+            console.log(monsterOne);        
+            console.log(monsterTwo);
          
 
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
@@ -78,10 +80,10 @@ export default class Monster {
 
                 //END REVERTING CODE
                 revertToAttackButtons();
-                confirmAttackMonsters();    
+                confirmAttackMonsters(monsterOne, monsterTwo);    
             }
         }
-        monstersAttackTurn();
+        monstersAttackTurn(monsterOne, monsterTwo);
     }
 
 };
