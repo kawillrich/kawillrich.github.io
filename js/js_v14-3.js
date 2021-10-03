@@ -200,7 +200,7 @@ function beginJourney() {
     };
 };
 
-//begins chapter one
+//CHAPTER TWO
 
 function beginChapterTwo() {
     console.log('Begin');
@@ -257,6 +257,8 @@ function talkToRaynard() {
      continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
 };
 
+//CHAPTER THREE ONE
+
 function startChapterThreeOne() {
     console.log('Chapter Three-one');
     let chapterThreeOne = document.querySelector('#dialogue');
@@ -279,6 +281,8 @@ function startChapterThreeOne() {
      var startChapterThreeTwo = document.querySelector("#start-chapter-three-two");
      startChapterThreeTwo.addEventListener('click', continueChapterThreeTwo, false);
 };
+
+//CHAPTER THREE TWO
 
 function continueChapterThreeTwo() {
     console.log('Chapter Three-two');
@@ -311,6 +315,8 @@ function continueChapterThreeTwo() {
      var startChapterThreeThree = document.querySelector("#start-chapter-three-three");
      startChapterThreeThree.addEventListener('click', continueChapterThreeThree, false);
 };
+
+//CHAPTER THREE THREE
 
 function continueChapterThreeThree() {
     console.log('Chapter Three-three');
@@ -436,6 +442,8 @@ function goAroundMonsters() {
     continueChapterThreeFive();
 };
 
+//CHAPTER THREE FOUR
+
 export function continueChapterThreeFour() {    
     console.log('Chapter Three-four');
 
@@ -464,6 +472,8 @@ export function continueChapterThreeFour() {
     var startChapterThreeFive = document.querySelector("#start-chapter-three-five");
     startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);    
 };
+
+//RESTING
 
 function regenerateHP(hp, maxHP) {
     let completeHealing = function() {
@@ -516,6 +526,8 @@ function regenerateHP(hp, maxHP) {
         }            
 }
 
+//CHAPTER THREE FIVE
+
 function continueChapterThreeFive () {
     console.log('Chapter Three-Five');
     var removeMonsterInfo = document.querySelector('#monster-info');
@@ -539,6 +551,8 @@ function continueChapterThreeFive () {
     startChapterThreeSix.addEventListener('click', continueChapterThreeSix, false);    
 
 }
+
+//CHAPTER THREE SIX
 
 function continueChapterThreeSix () {
     console.log('Chapter Three-Six');
