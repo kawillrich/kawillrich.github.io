@@ -249,13 +249,13 @@ export default class Character {
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
                 
-                showMonsterAttackButton.onclick = function() {monster2.monsterAttack(monster2)};
+                showMonsterAttackButton.onclick = function() {monster2.monsterAttack(monster1, monster2)};
             }
             
             greyOutAttackButtons();
             
-            } else if (this.monster2.healthPoints - this.weapon.damage <= 0) {
-                this.monster2.healthPoints = 0;
+            } else if (monster2.healthPoints - this.weapon.damage <= 0) {
+                monster2.healthPoints = 0;
                 
                 let monsterTwoStatus = document.querySelector('#monster-two');
                 let defeatMonster2 = document.querySelector('#dialogue');
@@ -263,10 +263,10 @@ export default class Character {
                 <div class="monster" id="monster-two">
                     <fieldset class='monster-info-module'>
                         <legend class='monster-dashboard'>Monster 2</legend>
-                        <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
-                        <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
-                        <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
-                        <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>   
+                        <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                        <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4> 
+                        <h4 id="monster-two-ap">Armor Points: ${monster2.armorPoints}</h4>
+                        <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
                     </fieldset>    
                 </div>`;
                 defeatMonster2.innerHTML = `
