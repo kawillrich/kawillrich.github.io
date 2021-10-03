@@ -384,10 +384,10 @@ function addingFightModule(monsterOne, monsterTwo) {
 
     } else {
         let attackSpellTwoMonsterOne = document.querySelector('.spell2-monster-one');
-        attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(monsterOne, finalCharacter.spell2)}, false);
+        attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(monsterOne, monsterTwo, finalCharacter.spell2)}, false);
 
         let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
-        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(monsterTwo, finalCharacter.spell2)}, false);        
+        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(monsterOne, monsterTwo, finalCharacter.spell2)}, false);        
     }
     
     if (finalCharacter.specialty.spell3.name === 'None') {

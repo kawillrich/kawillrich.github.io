@@ -282,14 +282,17 @@ export default class Character {
                 confirmMonstersDead();                 
     }
 
-    spell2AttackMonster1(monster1, spell2) {
+    spell2AttackMonster1(monster1, monster2, spell2) {
         console.log('Casting Spell Two on Monster One');
+        console.log(monster1);
+        console.log(monster2);
+        console.log(spell2);
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
 
-            if (self.enemy1.healthPoints <= 0 && self.enemy2.healthPoints <= 0) {
+            if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
             console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
@@ -307,21 +310,21 @@ export default class Character {
             };            
         
         };        
-        this.monster1 = monster1;
-        this.spell2 = spell2;
+        //this.monster1 = monster1;
+        //this.spell2 = spell2;
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You cast ${this.specialty.spell2.name} on the ${this.monster1.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
+        <p>You cast ${this.specialty.spell2.name} on the ${monster1.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
         
         console.log(this.specialty.spell2.damage);
                 
         //CHECKING ATTACK INTERACTION
-        if (this.monster1.healthPoints - this.specialty.spell2.damage > 0) {        
-            this.monster1.healthPoints = this.monster1.healthPoints - this.specialty.spell2.damage;
+        if (monster1.healthPoints - this.specialty.spell2.damage > 0) {        
+            monster1.healthPoints = monster1.healthPoints - this.specialty.spell2.damage;
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
-            <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4>`;
+            <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4>`;
 
             //greying out attack module buttons when pressed
 
@@ -336,13 +339,13 @@ export default class Character {
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
                 
-                showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1)};
+                showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1, monster2)};
             }
             
             greyOutAttackButtons();
         
-        } else if (this.monster1.healthPoints - this.specialty.spell2.damage <= 0 ) {
-            this.monster1.healthPoints = 0;
+        } else if (monster1.healthPoints - this.specialty.spell2.damage <= 0 ) {
+            monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
             let defeatMonster1 = document.querySelector('#dialogue');
@@ -350,10 +353,10 @@ export default class Character {
             <div class="monster" id="monster-one">
                 <fieldset class='monster-info-module'>
                     <legend class='monster-dashboard'>Monster 1</legend>
-                    <h4 id="monster-one-type">Monster Type: ${this.monster1.name}</h4>
-                    <h4 id="monster-one-hp">Health Points: ${this.monster1.healthPoints}</h4> 
-                    <h4 id="monster-one-ap">Armor Points: ${this.monster1.armorPoints}</h4>
-                    <h4 id="monster-one-damage">Damage: ${this.monster1.damage}</h4>    
+                    <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                    <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4> 
+                    <h4 id="monster-one-ap">Armor Points: ${monster1.armorPoints}</h4>
+                    <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>    
                 </fieldset>   
             </div>`;
             defeatMonster1.innerHTML = `
@@ -369,14 +372,14 @@ export default class Character {
             confirmMonstersDead();
     }
 
-    spell2AttackMonster2(monster2, spell2) {
+    spell2AttackMonster2(monster1, monster2, spell2) {
         console.log('Casting Spell Two on Monster Two');
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
 
-            if (self.enemy1.healthPoints <= 0 && self.enemy2.healthPoints <= 0) {
+            if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
             console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
@@ -394,21 +397,21 @@ export default class Character {
             };            
         
         };        
-        this.monster2 = monster2;
-        this.spell2 = spell2;
+        //this.monster2 = monster2;
+        //this.spell2 = spell2;
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You cast ${this.specialty.spell2.name} on the ${this.monster2.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
+        <p>You cast ${this.specialty.spell2.name} on the ${monster2.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
         
         console.log(this.specialty.spell2.damage);
                 
         //CHECKING ATTACK INTERACTION
-        if (this.monster2.healthPoints - this.specialty.spell2.damage > 0) {        
-            this.monster2.healthPoints = this.monster2.healthPoints - this.specialty.spell2.damage;
+        if (monster2.healthPoints - this.specialty.spell2.damage > 0) {        
+            monster2.healthPoints = monster2.healthPoints - this.specialty.spell2.damage;
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
-            <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4>`;
+            <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4>`;
 
             //greying out attack module buttons when pressed
 
@@ -423,13 +426,13 @@ export default class Character {
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
                 
-                showMonsterAttackButton.onclick = function() {monster2.monsterAttack(monster2)};
+                showMonsterAttackButton.onclick = function() {monster2.monsterAttack(monster1, monster2)};
             }
 
             greyOutAttackButtons();
         
-        } else if (this.monster2.healthPoints - this.specialty.spell2.damage <= 0 ) {
-            this.monster2.healthPoints = 0;
+        } else if (monster2.healthPoints - this.specialty.spell2.damage <= 0 ) {
+            monster2.healthPoints = 0;
             
             let monsterTwoStatus = document.querySelector('#monster-two');
             let defeatMonster2 = document.querySelector('#dialogue');
@@ -437,10 +440,10 @@ export default class Character {
             <div class="monster" id="monster-two">
                 <fieldset class='monster-info-module'>
                     <legend class='monster-dashboard'>Monster 2</legend>
-                    <h4 id="monster-two-type">Monster Type: ${this.monster2.name}</h4>
-                    <h4 id="monster-two-hp">Health Points: ${this.monster2.healthPoints}</h4> 
-                    <h4 id="monster-two-ap">Armor Points: ${this.monster2.armorPoints}</h4>
-                    <h4 id="monster-two-damage">Damage: ${this.monster2.damage}</h4>   
+                    <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                    <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4> 
+                    <h4 id="monster-two-ap">Armor Points: ${monster2.armorPoints}</h4>
+                    <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
                 </fieldset>    
             </div>`;
             defeatMonster2.innerHTML = `
