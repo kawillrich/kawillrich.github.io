@@ -94,8 +94,8 @@ let wolf1 = new Monster('Wolf', 20, 2, 6);
 let wolf2 = new Monster('Wolf', 20, 2, 6);
 let goblin = new Monster('Goblin', 30, 5, 6);
 
-let goblin1 = new Monster('Goblin', 30, 5);
-let goblin2 = new Monster('Goblin', 30, 5);
+let goblin1 = new Monster('Goblin', 30, 5, 6);
+let goblin2 = new Monster('Goblin', 30, 5, 6);
 
 //exporting monsters
 

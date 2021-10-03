@@ -70,12 +70,21 @@ export default class Character {
             removeMonsterOneAttackButton.classList.add('monster1-dead');
             let removeMonsterOneSpellAttack = document.querySelector('.spell2-monster-one');
             removeMonsterOneSpellAttack.classList.add('monster1-dead');
-        } else if (monsterTwo.healthPoints <= 0) {
+        } 
+        
+        if (monsterTwo.healthPoints <= 0) {
             let removeMonsterTwoAttackButton = document.querySelector('.attack-monster-two');
             removeMonsterTwoAttackButton.classList.add('monster1-dead');
             let removeMonsterTwoSpellAttack = document.querySelector('.spell2-monster-two');
             removeMonsterTwoSpellAttack.classList.add('monster1-dead');
-        }; 
+        }
+        
+        if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints <= 0) {
+            let removeAreaAttackSpellButton = document.querySelector('.area-attack');
+            removeAreaAttackSpellButton.classList.add('monster1-dead');
+        }
+        
+        ; 
 //----------------------------------------------------------------------------------------------------------
         let monsterInfo = document.querySelector('#monster-info');
         monsterInfo.innerHTML = `
