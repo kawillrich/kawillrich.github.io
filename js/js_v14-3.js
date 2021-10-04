@@ -556,15 +556,20 @@ function continueChapterThreeFive () {
 
 function continueChapterThreeSix () {
     console.log('Chapter Three-Six');
+    
+    
+    
+    
+    
+    
+    
+    
+    
     var chapterThreeSixDialogue = document.getElementById('dialogue');
     chapterThreeSixDialogue.innerHTML = `
-    <p>     
-    
-    
+    <p>         
     </p>
-    
-    
-    
+        
     <input type="submit" id="attack-goblins" value="Attack">     
     `
     
@@ -577,4 +582,13 @@ function continueChapterThreeSix () {
     ;
 })
 
+}
+
+function continueChapterThreeSeven () {
+    console.log('Chapter Three Seven');
+    var chapterThreeSevenDialogue = document.getElementById('dialogue');
+    chapterThreeSevenDialogue.innerHTML = `
+    <p> You continue towards the farm        
+    </p>     
+    `
 }
