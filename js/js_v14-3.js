@@ -439,7 +439,7 @@ export function attackingMonsters() {
 //MOVE TO MONSTER CLASS AND THEN REFERENCE IN CHARACTER CLASS AS THIS.MONSTER.MONSTERATTACK    
 
 function goAroundMonsters(nextChapter) {
-    nextChapter;
+    return nextChapter;
 };
 
 //CHAPTER THREE FOUR
