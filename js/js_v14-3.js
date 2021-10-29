@@ -349,7 +349,7 @@ function continueChapterThreeThree() {
         false);
 
     var attackWolvesNo = document.querySelector("#dont-attack-wolves");
-    attackWolvesNo.addEventListener('click', goAroundMonsters, false);    
+    attackWolvesNo.addEventListener('click', goAroundMonsters(continueChapterThreeFive), false);    
 };
 
 function declareAttack() {
@@ -438,8 +438,8 @@ export function attackingMonsters() {
 
 //MOVE TO MONSTER CLASS AND THEN REFERENCE IN CHARACTER CLASS AS THIS.MONSTER.MONSTERATTACK    
 
-function goAroundMonsters() {
-    continueChapterThreeFive();
+function goAroundMonsters(nextChapter) {
+    nextChapter;
 };
 
 //CHAPTER THREE FOUR
