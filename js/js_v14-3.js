@@ -557,8 +557,31 @@ function continueChapterThreeSix () {
     let chapterThreeSixDialogue = document.querySelector('#dialogue');
     chapterThreeSixDialogue.innerHTML = `
     <p>
+    After walking for about 30 minutes, you finally can see the farmhouse in the distance.  You being to approach the farmhouse and start to notice 
+    it and the property it is located on.  You walk up to the farmhouse a large - but noticeably worn down - structure, with several other outlying 
+    buildings randomly located in some of the adjacent fields.  The smell of hay and cow manure fill the air and you can see the heavily worn dirt 
+    paths on the ground where people walk.  One path leads to a small hut-like structure, a simple shed really, where you can see some goats moving
+    about. Another larger structure appears to be a barn, and as you listen, you can hear the shuffling of horses in the stalls on the inside. What do you do?
     </p>
-    `
+    
+    <input type="submit" id="farmhouse-door" value="Knock">
+    
+    <input type="submit" id="start-chapter-three-seven" value="Continue">`;
+
+
+    
+    var restAndHeal = document.querySelector('#farmhouse-door');
+    restAndHeal.addEventListener('click', function() {
+        
+        //regenerateHP(finalCharacter.specialty.healthPoints, finalCharacter.specialty.maxHealthPoints)
+
+    }, false);
+
+    var startChapterThreeFive = document.querySelector("#start-chapter-three-seven");
+    startChapterThreeFive.addEventListener('click', continueChapterThreeSeven, false);  
+
+
+
 
 };
 
@@ -566,7 +589,7 @@ function continueChapterThreeSeven () {
     console.log('Chapter Three Seven');
     var chapterThreeSevenDialogue = document.getElementById('dialogue');
     chapterThreeSevenDialogue.innerHTML = `
-    <p> You continue towards the farm        
+    <p>         
     </p>     
     `
 }
