@@ -8,6 +8,7 @@ import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, 
 import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior } from './specialty-class-v2.js';
 
+
 //exports Character class for other module access
 
 export default class Character {

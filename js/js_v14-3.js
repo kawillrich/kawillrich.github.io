@@ -13,6 +13,7 @@ import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin, goblin1, goblin2 } from './monster-class-v2.js';
 import Inventory from './inventory-class-v1.js';
 import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
+import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory-array-v1.js';
 
 //exports finalCharacter for other modules to access
 
@@ -614,7 +615,8 @@ function continueChapterFour () {
     <br>
     <br>
 
-    As he waits for your reply, he gives you a cursory once over.
+    As he waits for your reply, you can tell that he gives you a cursory once over, looking you up and down quickly to see if you are a 
+    threat.
     </p>     
     `;
 
