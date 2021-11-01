@@ -553,28 +553,14 @@ function continueChapterThreeFive () {
 //CHAPTER THREE SIX
 
 function continueChapterThreeSix () {
-    console.log('Chapter Three-Six');
-        
-    var chapterThreeSixDialogue = document.getElementById('dialogue');
+    console.log('Chapter Three Six');
+    let chapterThreeSixDialogue = document.querySelector('#dialogue');
     chapterThreeSixDialogue.innerHTML = `
-    <p>You walk up to the farmhouse a large - but noticeably worn down - structure, with several other outlying buildings randomly located in 
-    some of the adjacent fields.  The smell of hay and cow manure fill the air and you can see the heavily worn dirt paths on the ground where
-    people walk.  One path leads to a small hut-like structure, a simple shed really, where you can see          
+    <p>
     </p>
-        
-    <input type="submit" id="attack-goblins" value="Attack">     
     `
-    
-    var attackWolvesYes = document.querySelector("#attack-goblins");
-    attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(goblin1, goblin2);
-        declareAttack();
-    
-    
-    ;
-})
 
-}
+};
 
 function continueChapterThreeSeven () {
     console.log('Chapter Three Seven');
@@ -585,3 +571,26 @@ function continueChapterThreeSeven () {
     `
 }
 
+// function continueChapterXxxxXxxx () {
+//     console.log('Chapter Three-Six');
+        
+//     var chapterThreeSixDialogue = document.getElementById('dialogue');
+//     chapterThreeSixDialogue.innerHTML = `
+//     <p>You walk up to the farmhouse a large - but noticeably worn down - structure, with several other outlying buildings randomly located in 
+//     some of the adjacent fields.  The smell of hay and cow manure fill the air and you can see the heavily worn dirt paths on the ground where
+//     people walk.  One path leads to a small hut-like structure, a simple shed really, where you can see          
+//     </p>
+        
+//     <input type="submit" id="attack-goblins" value="Attack">     
+//     `
+    
+//     var attackWolvesYes = document.querySelector("#attack-goblins");
+//     attackWolvesYes.addEventListener('click', () => {
+//         addingFightModule(goblin1, goblin2);
+//         declareAttack();
+    
+    
+//     ;
+// })
+
+// }
