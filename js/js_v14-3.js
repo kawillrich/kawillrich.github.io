@@ -14,6 +14,7 @@ import { wolf1, wolf2, goblin, goblin1, goblin2 } from './monster-class-v2.js';
 import Inventory from './inventory-class-v1.js';
 import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
 import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory-array-v1.js';
+import { killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
 
 //exports finalCharacter for other modules to access
 
@@ -447,6 +448,7 @@ function goAroundMonsters(nextChapter) {
 
 export function continueChapterThreeFour() {    
     console.log('Chapter Three-four');
+    finalCharacter.achievements += killedFarmWolves;
 
     let chapterThreeFour = document.querySelector('#dialogue');
     chapterThreeFour.innerHTML = `
@@ -618,7 +620,9 @@ function continueChapterFour () {
     As he waits for your reply, you can tell that he gives you a cursory once over, looking you up and down quickly to see if you are a 
     threat.
     </p>     
-    `;
+    `; 
+
+    
 
     //if (finalCharacter.)
 }
