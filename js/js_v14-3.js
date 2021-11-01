@@ -587,7 +587,16 @@ function continueChapterThreeSix () {
 
 function continueChapterThreeSeven () {
     console.log('Chapter Three Seven');
-    var chapterThreeSevenDialogue = document.getElementById('dialogue');
+    let chapterThreeSevenDialogue = document.getElementById('dialogue');
+    chapterThreeSevenDialogue.innerHTML = `
+    <p>         
+    </p>     
+    `
+}
+
+function continueChapterFour () {
+    console.log('Chapter Four');
+    let chapterThreeSevenDialogue = document.getElementById('dialogue');
     chapterThreeSevenDialogue.innerHTML = `
     <p>         
     </p>     
