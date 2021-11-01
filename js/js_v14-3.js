@@ -570,8 +570,8 @@ function continueChapterThreeSix () {
 
 
     
-    var restAndHeal = document.querySelector('#farmhouse-door');
-    restAndHeal.addEventListener('click', function() {
+    let knockFarmhouse = document.querySelector('#farmhouse-door');
+    knockFarmhouse.addEventListener('click', function() {
         
         //regenerateHP(finalCharacter.specialty.healthPoints, finalCharacter.specialty.maxHealthPoints)
 
