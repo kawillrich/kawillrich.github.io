@@ -572,7 +572,7 @@ function continueChapterThreeSix () {
     
     let knockFarmhouse = document.querySelector('#farmhouse-door');
     knockFarmhouse.addEventListener('click', function() {
-        
+        continueChapterFour();
         //regenerateHP(finalCharacter.specialty.healthPoints, finalCharacter.specialty.maxHealthPoints)
 
     }, false);
@@ -586,7 +586,7 @@ function continueChapterThreeSix () {
 };
 
 function continueChapterThreeSeven () {
-    console.log('Chapter Three Seven');
+    console.log('Chapter Three-Seven');
     let chapterThreeSevenDialogue = document.getElementById('dialogue');
     chapterThreeSevenDialogue.innerHTML = `
     <p>         
@@ -596,11 +596,29 @@ function continueChapterThreeSeven () {
 
 function continueChapterFour () {
     console.log('Chapter Four');
-    let chapterThreeSevenDialogue = document.getElementById('dialogue');
-    chapterThreeSevenDialogue.innerHTML = `
-    <p>         
+    let chapterFourDialogue = document.getElementById('dialogue');
+    chapterFourDialogue.innerHTML = `
+    <p>You decide to knock on the door.  You can see how the wooden door shutters when you strike your hand against it.  As you wait for an 
+    answer, you glance at the building and take notice to its shape and construction.  The farmhouse appears to be imprecisely built, made
+    up of irregulary-shaped boards and lumbar.  Despite it's uneven build, it does look sturdy and well built - suited for a place far
+    from the town.  You can see and smell the smoke from the fireplace and as you glance around, you notice movement through the window and
+    hear footsteps walking along the creaky boards.  When the footsteps get closer, they stop, and then you hear latch sliding, and the 
+    creak of the door as the hinges seem to whine when the door opens.  An elderly man appears in the door.  He is shorter than you, but
+    you can tell that in his youth, he was likely a very strong man.  Now, he has a weathered face, white hair, and caloused hands.
+    
+    <br>
+    <br>
+    
+    "Can I help you?"
+
+    <br>
+    <br>
+
+    As he waits for your reply, he gives you a cursory once over.
     </p>     
-    `
+    `;
+
+    //if (finalCharacter.)
 }
 
 // function continueChapterXxxxXxxx () {
