@@ -113,7 +113,8 @@ export default class Character {
 
     //attacking monster 1
 
-    weaponAttackMonster1(monster1, monster2, weapon) {
+    weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter) {
+        console.log("Logging NEXT CHAPTER" + continueNextChapter)
         console.log(monster1);
         console.log(weapon);
         console.log(monster2);
@@ -137,7 +138,7 @@ export default class Character {
             removeFightModule.innerHTML = ` `;
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
         
         };        
@@ -205,7 +206,8 @@ export default class Character {
             confirmMonstersDead();    
     };      
 
-    weaponAttackMonster2(monster1, monster2, weapon) {
+    weaponAttackMonster2(monster1, monster2, weapon, continueNextChapter) {
+        console.log("Logging NEXT CHAPTER" + continueNextChapter)
         console.log(monster1);
         console.log(weapon);
         console.log(monster2);
@@ -227,7 +229,7 @@ export default class Character {
             removeFightModule.innerHTML = ` `;
             
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
         };
         
@@ -293,7 +295,7 @@ export default class Character {
                 confirmMonstersDead();                 
     }
 
-    spell2AttackMonster1(monster1, monster2, spell2) {
+    spell2AttackMonster1(monster1, monster2, spell2, continueNextChapter) {
         console.log('Casting Spell Two on Monster One');
         console.log(monster1);
         console.log(monster2);
@@ -317,7 +319,7 @@ export default class Character {
             removeFightModule.innerHTML = ` `;
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
         
         };        
@@ -383,7 +385,7 @@ export default class Character {
             confirmMonstersDead();
     }
 
-    spell2AttackMonster2(monster1, monster2, spell2) {
+    spell2AttackMonster2(monster1, monster2, spell2, continueNextChapter) {
         console.log('Casting Spell Two on Monster Two');
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
@@ -404,7 +406,7 @@ export default class Character {
             removeFightModule.innerHTML = ` `;
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
         
         };        

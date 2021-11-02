@@ -365,7 +365,7 @@ function declareAttack() {
     declareAttackDialogue.innerHTML = `<p>You Attack!</p>`;
 }
 
-function addingFightModule(monsterOne, monsterTwo) {
+function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     console.log(monsterOne);
     console.log(monsterTwo); 
     let headerFightModule = document.querySelector('#fight-module');
@@ -383,10 +383,10 @@ function addingFightModule(monsterOne, monsterTwo) {
         `;
 
     let attackMonsterOne = document.querySelector('.attack-monster-one');
-    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(monsterOne, monsterTwo, finalCharacter.weapon)}, false);
+    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(monsterOne, monsterTwo, finalCharacter.weapon, continueNextChapter)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
-    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(monsterOne, monsterTwo, finalCharacter.weapon)}, false);    
+    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(monsterOne, monsterTwo, finalCharacter.weapon, continueNextChapter)}, false);    
 
     if (finalCharacter.specialty.spell2.name === 'None') {            
 
@@ -398,10 +398,10 @@ function addingFightModule(monsterOne, monsterTwo) {
 
     } else {
         let attackSpellTwoMonsterOne = document.querySelector('.spell2-monster-one');
-        attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(monsterOne, monsterTwo, finalCharacter.spell2)}, false);
+        attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(monsterOne, monsterTwo, finalCharacter.spell2, continueNextChapter)}, false);
 
         let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
-        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(monsterOne, monsterTwo, finalCharacter.spell2)}, false);        
+        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(monsterOne, monsterTwo, finalCharacter.spell2, continueNextChapter)}, false);        
     }
     
     if (finalCharacter.specialty.spell3.name === 'None') {
@@ -412,7 +412,7 @@ function addingFightModule(monsterOne, monsterTwo) {
     } else {
 
         let groupAttackSpell = document.querySelector('.area-attack');
-        groupAttackSpell.addEventListener('click', function () {finalCharacter.areaAttackSpell(monsterOne, monsterTwo, finalCharacter.spell3)}, false);
+        groupAttackSpell.addEventListener('click', function () {finalCharacter.areaAttackSpell(monsterOne, monsterTwo, finalCharacter.spell3, continueNextChapter)}, false);
     }
 
 
