@@ -495,7 +495,7 @@ export default class Character {
         }
 
     //***TRYING TO CREATE AREA ATTACK SPELL
-    areaAttackSpell(monster1, monster2, spell3) {
+    areaAttackSpell(monster1, monster2, spell3, continueNextChapter) {
         console.log('Casting Area Attack Spell');
         
         let self = this;
@@ -544,7 +544,7 @@ export default class Character {
             removeFightModule.innerHTML = ` `;
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
-            startChapterThreeFour.addEventListener('click', continueChapterThreeFour, false);
+            startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
         
          };        
