@@ -253,7 +253,7 @@ function talkToRaynard() {
 
     finalCharacter.achievements.spokeToRaynard = {name: "Spoke to Raynard", desc: "Spoke to Raynard and received his coin."};
     console.log(finalCharacter.achievements); 
-    
+
     finalCharacter.inventory1 = raynardsCoin;    
     let receiveCoin = document.getElementsByClassName('character-display-inv1');
     receiveCoin[0].innerHTML = `
@@ -634,6 +634,20 @@ function continueChapterFour () {
     </p>     
     `; 
 
+    if (finalCharacter.achievements.killedFarmWolves) {
+        chapterFourDialogue.innerHTML += `
+        <p>You reply, "I killed two wolves that attacked a sheep down the path and was wondering if the sheep belonged to you.  If so, those
+        wolves won't be a threat to you anymore.  Do you see many wolves around here?"</p>
+
+        `
+
+        
+    } else {
+        chapterFourDialogue.innerHTML += `
+        <p>You reply, "I just saw two wovles eating a dead sheep down the path.  Do you see many wolves around here?"</p>
+
+        `
+    }
     
 
     //if (finalCharacter.)
