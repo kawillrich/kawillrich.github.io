@@ -350,7 +350,7 @@ function continueChapterThreeThree() {
     
     var attackWolvesYes = document.querySelector("#attack-wolves");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(wolf1, goblin);
+        addingFightModule(wolf1, wolf2);
         declareAttack();
         
         },   
@@ -504,41 +504,40 @@ function regenerateHP(hp, maxHP) {
         startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
     }
 
-            console.log('regenerating HP');
+    console.log('regenerating HP');
 
-            var removeMonsterInfo = document.querySelector('#monster-info');
-            removeMonsterInfo.innerHTML = ` `;
+    var removeMonsterInfo = document.querySelector('#monster-info');
+    removeMonsterInfo.innerHTML = ` `;
 
-            var restAndHealRemove = document.querySelector('#rest-and-heal');
-            restAndHealRemove.remove();
+    var restAndHealRemove = document.querySelector('#rest-and-heal');
+    restAndHealRemove.remove();
 
-            let pauseStartChapterThreeFive = document.querySelector("#start-chapter-three-five");
-            pauseStartChapterThreeFive.remove();
+    let pauseStartChapterThreeFive = document.querySelector("#start-chapter-three-five");
+    pauseStartChapterThreeFive.remove();
 
-            regenerating(hp, maxHP); 
+    regenerating(hp, maxHP); 
             
-            function regenerating(hp, maxHP) {
-            if (hp === maxHP) {
-                continueChapterThreeFive();
-                completeHealing();
-            } else {
-                hp += 1;
-                let regeneratedHP = document.getElementById('char-hp');
-                regeneratedHP.innerHTML = 
-                    `
-                    Health Points: <span class="character-display-info">${hp}</span>
-                    `;
+    function regenerating(hp, maxHP) {
+        if (hp === maxHP) {
+            continueChapterThreeFive();
+            completeHealing();
+        } else {
+            hp += 1;
+            let regeneratedHP = document.getElementById('char-hp');
+            regeneratedHP.innerHTML = 
+                `
+                Health Points: <span class="character-display-info">${hp}</span>
+                `;
 
-                let regenerationDialogue = document.getElementById('dialogue');
-                regenerationDialogue.innerHTML = 
-                    `
-                    <p>Resting...</p>
-                    `
-                ;                
+            let regenerationDialogue = document.getElementById('dialogue');
+            regenerationDialogue.innerHTML = 
+                `
+                <p>Resting...</p>
+                `;                
 
                 setTimeout( function() {regenerating(hp, maxHP)}, 500);           
-            }            
         }            
+    }            
 }
 
 //CHAPTER THREE FIVE
@@ -687,13 +686,94 @@ function continueChapterFourThree() {
 
 
 function continueChapterFourThreeOne() {
+    let chapterFourThreeFourOneDialogue = document.getElementById('dialogue');
+    chapterFourThreeFourOneDialogue.innerHTML = `
+    <p>You decide to take the farmer up on his offer to help.  "Come in", he says.  You follow him as he escorts you to the kitchen. "Please,
+    have a seat."  As you sit down at the the wooden table, he calls his wife over, asks her to get some field dressing for your wounds.  The
+    farmer begins to prepare some tea, and his wife returns with some bandages and herbal ointments.  While the tea is cooking and his wife 
+    is applying some ointments, he walks over to his cabinet and brings you some cheese and bread. "I know it's not much," he says, "but 
+    this should fill you up a little bit for the rest of your trip."</p>
+    
+    <input type="submit" id="farmhouse-rest" value="Drink tea and eat">
+    `
+    let farmhouseResting = document.querySelector('#farmhouse-rest');    
+    farmhouseResting.addEventListener('click', continueChapterFourThreeThree, false);
 
+    
 };
 
 function continueChapterFourThreeTwo() {
-
+    let chapterFourThreeFourOneDialogue = document.getElementById('dialogue');
+    chapterFourThreeFourOneDialogue.innerHTML = `
+    <p>You decide to focus on your mission and not to get caught up in small talk with the farmer, afterall, what could an old farmer 
+    possibly do to help you on this journey?  You politely decline to enter, and say goodbye to the old man and then continue along
+    your adventure.</p>
+    
+    <input type="submit" id="bypass-farm" value="Continue">
+    
+    `
+    
+    let beginChapterFive = document.querySelector('#bypass-farm');
+    beginChapterFive.addEventListener('click', continueChapterFive, false)
+    
+    
 };
 
+function continueChapterFourThreeThree() {
+
+    let chapterFourThreeThreeDialogue = document.querySelector('#dialogue');
+    chapterFourThreeThreeDialogue.innerHTML = 
+    `<p>As you drink tea and eat, you can already notice the tingling of the ointments on your arms as they being to heal your wounds</p>
+    `
+
+    function farmhouseResting(hp, maxHP) {
+        if (hp === maxHP) {
+
+            chapterFourThreeThreeDialogue.innerHTML += `
+            <input type="submit" id="start-chapt-five" value="Continue">`;
+
+            let continueChapterFive = document.querySelector("#start-chapt-five");
+            continueChapterFive.addEventListener('click', continueChapterFourThreeFour, false);
+
+            //continueChapterThreeFive();
+            //completeHealing();
+        } else {
+            hp += 1;
+            let regeneratedHP = document.getElementById('char-hp');
+            regeneratedHP.innerHTML = 
+                `
+                Health Points: <span class="character-display-info">${hp}</span>
+                `;
+
+            // let regenerationDialogue = document.getElementById('dialogue');
+            // regenerationDialogue.innerHTML = 
+            //     `
+            //     <p>Resting...</p>
+            //     `;                
+
+                setTimeout( function() {farmhouseResting(hp, maxHP)}, 500);           
+        }            
+    }       
+
+    farmhouseResting(finalCharacter.specialty.healthPoints, finalCharacter.specialty.maxHealthPoints);
+}
+
+function continueChapterFourThreeFour() {
+    let chapterFourThreeFourDialogue = document.querySelector('#dialogue');
+    chapterFourThreeFourDialogue.innerHTML = `
+    <p>You, the farmer, and his wife talk about the wolves and he tells you that this is the first time he has seen dire wolves in 
+    the area for decades.  The farmer continues, "I've even heard the farm helpers mention that they've seen and heard some strange
+    shadows and noises coming from the forerst.  I'm not sure if they are just playing jokes trying to scare each other, but if you
+    are headed that way, I recommend being careful.</p>`
+
+
+    // if (finalCharacter.achievements.spokeToRaynard) {
+
+    // }
+
+
+    
+};
 
 function continueChapterFourTwo() {
     let chapterFourTwoDialogue = document.querySelector('#dialogue');
@@ -714,8 +794,7 @@ function continueChapterFourTwo() {
         let contChaptFourTwoOne = document.querySelector("#continueChapt4-2-noWolvesAchievement");
         contChaptFourTwoOne.addEventListener('click', continueChapterFourTwoOne, false);  
 
-    }  else {
-        chapterFourTwoDialogue.innerHTML += `
+    }  else {        chapterFourTwoDialogue.innerHTML += `
         <p>You thank the farmer for his time, and let him know you are just passing through and will be on your way.  You exchange goodbyes and continue
         along your journey.</p> 
         
