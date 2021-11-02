@@ -767,9 +767,22 @@ function continueChapterFourThreeFour() {
     are headed that way, I recommend being careful.</p>`
 
 
-    // if (finalCharacter.achievements.spokeToRaynard) {
+    if (finalCharacter.achievements.spokeToRaynard) {
+        chapterFourThreeFourDialogue.innerHTML += `
+        <p>You thank the farmer and his wife for their hospitality, tea, and food.  As you say your thanks, you hand them the coin that
+        Raynard provided to you back at the Blue Blade Inn.  You tell the farmer, "On my way here, I came across a man named Raynard.
+        He mentioned he knew who you were and asked me to give this to you, if I came across you."</p>
+        
+        <p>The farmer smiles and looks at you.</p>
+        
+        <input type="submit" id="give-coin-to-farmer" value="Continue">        
+        `
 
-    // }
+        let contChaptFourTwoOne = document.querySelector("#give-coin-to-farmer");
+        contChaptFourTwoOne.addEventListener('click', continueChapterFourTwoOne, false); 
+
+
+    }
 
 
     
