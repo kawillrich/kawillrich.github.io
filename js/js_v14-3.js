@@ -83,9 +83,9 @@ function startGame() {
         <div id='character-inventory'>
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Inventory</legend>
-                <h4 id='char-items' class='char-info-label'>Item 1: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
-                <h4 id='char-items' class='char-info-label'>Item 2: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
-                <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4><br>
+                <h4 id='char-items1' class='char-info-label'>Item 1: <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span></h4>
+                <h4 id='char-items2' class='char-info-label'>Item 2: <span class='character-display-inv2'>${finalCharacter.inventory2.name}</span></h4>
+                <h4 id='char-items3' class='char-info-label'>Item 3: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4><br>
                 <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${finalCharacter.enchantedItem.name}</span></h4>
             </fieldset>
     </div>    
@@ -255,19 +255,21 @@ function talkToRaynard() {
     console.log(finalCharacter.achievements); 
 
     finalCharacter.inventory1 = raynardsCoin;    
-    let receiveCoin = document.getElementsByClassName('character-display-inv1');
-    receiveCoin[0].innerHTML = `
-    <span class='character-display-inv1'>${finalCharacter.inventory1.name}</span>
     
-    `
    
      var continueChapterThreeOne = document.querySelector("#start-chapter-three");
+     
+     continueChapterThreeOne.addEventListener('click', function() {
+        alert(`You received ${finalCharacter.inventory1.name}`);    })
      continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
 };
 
 //CHAPTER THREE ONE
 
 function startChapterThreeOne() {
+    let receiveCoin = document.querySelector('.character-display-inv1');
+    receiveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
+    
     console.log('Chapter Three-one');
     let chapterThreeOne = document.querySelector('#dialogue');
     chapterThreeOne.innerHTML = `
