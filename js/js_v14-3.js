@@ -830,7 +830,10 @@ function continueChapterFourTwoOne() {
     never failed.  Unfortunately, during one journey, I was wounded badly.  I returned to Gryphon's Keep, with the help of Raynard.  Had he
     not helped me, I would have died on the way back before reaching the town.  I owe Raynard my life.  Please take this and make good use
     of it, I cannot use it any longer."</p>
-    
+
+    <p>You take the gift, and farmer walks you to his door to escort you back to your journey.  You exchnage goodbyes, thank him for all he
+    has done, and exit the farmhouse to continue on.</p>
+     
     <input type="submit" id="start-chapt-five" value="Continue">`;
     
     
