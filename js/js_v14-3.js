@@ -580,7 +580,7 @@ function continueChapterThreeSix () {
     
     <input type="submit" id="farmhouse-door" value="Knock">
     
-    <input type="submit" id="start-chapter-three-seven" value="Continue">`;
+    <input type="submit" id="start-chapter-five" value="Continue">`;
 
 
     
@@ -591,8 +591,8 @@ function continueChapterThreeSix () {
 
     }, false);
 
-    var startChapterThreeFive = document.querySelector("#start-chapter-three-seven");
-    startChapterThreeFive.addEventListener('click', continueChapterThreeSeven, false);  
+    var startChapterFive = document.querySelector("#start-chapter-five");
+    startChapterFive.addEventListener('click', continueChapterFive, false);  
 
 
 
