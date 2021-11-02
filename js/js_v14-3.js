@@ -781,6 +781,17 @@ function continueChapterFourThreeFour() {
         let contChaptFourTwoOne = document.querySelector("#give-coin-to-farmer");
         contChaptFourTwoOne.addEventListener('click', continueChapterFourTwoOne, false); 
 
+    } else {
+        chapterFourThreeFourDialogue.innerHTML += `
+        <p>You thank the farmer and his wife for their hospitality, tea, and food.  You let them know you must be going to travel as
+        far as you can by foot before it gets dark out.  They thank you again, and bid you safe travels as they escort you to the 
+        front door so you can continue your journey.  You exit the farmhouse, grateful for having met the couple and return to the path.</p>
+        
+        <input type="submit" id="return-to-path" value="Continue"> 
+        `;
+
+        let beginChapterFive = document.querySelector('#return-to-path');
+        beginChapterFive.addEventListener('click', continueChapterFive, false); 
 
     }
 
@@ -868,12 +879,12 @@ function continueChapterFive() {
     `
 
     let continueTestChapter = document.querySelector('#test-chapter');
-    continueTestChapter.addEventListener('click', continueTestChapter, false);
+    continueTestChapter.addEventListener('click', beginTestChapter, false);
 
 }
 
 
-function continueTestChapter () {
+function beginTestChapter () {
     console.log('Chapter Three-Six');
         
     var chapterThreeSixDialogue = document.getElementById('dialogue');
