@@ -14,11 +14,13 @@ import { wolf1, wolf2, goblin, goblin1, goblin2 } from './monster-class-v2.js';
 import Inventory from './inventory-class-v1.js';
 import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
 import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory-array-v1.js';
-import { killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
+//import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
 
 //exports finalCharacter for other modules to access
 
-export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem);
+let charAchievements = {};
+
+export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements);
 
 //initialized and clears selectedSpecialty
 
@@ -448,8 +450,11 @@ function goAroundMonsters(nextChapter) {
 
 export function continueChapterThreeFour() {    
     console.log('Chapter Three-four');
-    finalCharacter.achievements += killedFarmWolves;
 
+    //ADDING ACHIEVEMENT
+    
+    finalCharacter.achievements.killedFarmWolves = {name: "Killed Farm Wolves", desc: "Killed two wolves near farmhouse."};
+    console.log(finalCharacter.achievements);
     let chapterThreeFour = document.querySelector('#dialogue');
     chapterThreeFour.innerHTML = `
     <p>As you pause after your victory over the wolves, you take a breath to regroup.  As you inspect at the wolves, you notice that these 

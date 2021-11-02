@@ -7,7 +7,7 @@ import Armor from './armor-class-v2.js';
 import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes, obsidianPlateMail } from './armor-class-v2.js';
 import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior } from './specialty-class-v2.js';
-
+//import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
 
 //exports Character class for other module access
 
@@ -21,6 +21,7 @@ export default class Character {
         this.inventory2 = inventory2;
         this.inventory3 = inventory3;
         this.enchantedItem = enchantedItem;
+        this.achievements = achievements;
     };
 
     //updates & initiates Character creation
