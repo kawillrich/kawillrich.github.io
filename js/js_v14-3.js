@@ -638,7 +638,6 @@ function continueChapterFour () {
         chapterFourDialogue.innerHTML += `
         <p>You reply, "I killed two wolves that attacked a sheep down the path and was wondering if the sheep belonged to you.  If so, those
         wolves won't be a threat to you anymore.  Do you see many wolves around here?"</p>
-
         `
 
         
@@ -646,12 +645,57 @@ function continueChapterFour () {
         chapterFourDialogue.innerHTML += `
         <p>You reply, "I just saw two wovles eating a dead sheep down the path.  Do you see many wolves around here?"</p>
 
-        `
+        <input type="submit" id="continueChapt4-noWolvesAchievement" value="Continue">`;
+        
+        let contChaptFourTwo = document.querySelector("#continueChapt4-noWolvesAchievement");
+        contChaptFourTwo.addEventListener('click', continueChapterFourTwo, false);  
+
+
+
     }
     
 
-    //if (finalCharacter.)
+    
 }
+
+function continueChapterFourTwo() {
+    let chapterFourTwoDialogue = document.querySelector('#dialogue');
+        
+    chapterFourTwoDialogue.innerHTML = `
+        </p>"Yes, there has been several strange occurances of dire wolves showing up lately.  This is so strange for here, I haven't
+        seen these types of wolves in this area for decades.
+        `
+    }
+    if (finalCharacter.achievements.spokeToRaynard) {
+        chapterFourTwoDialogue.innerHTML = `
+        You thank the farmer for his time, and mention that after speaking to Raynard, the owner of the Blue Blade Inn, he handed you this coin
+        to give to the farmer in the event you run into him.  You hand the coin to the farmer, and when he looks at it, you see a gleam in his
+        eyes. 
+        
+        <input type="submit" id="continueChapt4-2-noWolvesAchievement" value="Continue">`;
+        
+        let contChaptFourTwoOne = document.querySelector("#continueChapt4-2-noWolvesAchievement");
+        contChaptFourTwoOne.addEventListener('click', continueChapterFourTwoOne, false);  
+
+
+    
+}
+
+function continueChapterFourTwoOne() {
+    let chapterFourTwoOneDialogue = document.querySelector('#dialogue');
+    chapterFourTwoOneDialogue.innerHTML = `
+    "So, you know Raynard?  If you gave you this coin, it can only mean that he trusts you.  Wait here one moment..."  The farmer walks away
+    for a moment and then returns with a long object wrapped in an old blanket.  You can tell the blanket is covered in dust, protecting 
+    whatever is inside.  The blanket is tied up with some twing and a leather strap.  He hands you the object, and begins to speak:
+
+    "Me and Raynard used to adventure together in our youth.  This weapon is what i used during my adventures.  It treated me well, and 
+    never failed.  Unfortunately, during one journey, I was wounded badly.  I returned to Gryphon's Keep, with the help of Raynard.  Had he
+    not helped me, I would have died on the way back before reaching the town.  I owe Raynard my life.  Please take this and make good use
+    of it, I cannot use it any longer."
+    `
+
+}
+
 
 // function continueChapterXxxxXxxx () {
 //     console.log('Chapter Three-Six');
