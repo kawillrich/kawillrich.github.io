@@ -350,7 +350,7 @@ function continueChapterThreeThree() {
     
     var attackWolvesYes = document.querySelector("#attack-wolves");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(wolf1, wolf2);
+        addingFightModule(wolf1, wolf2, continueChapterThreeFour);
         declareAttack();
         
         },   
@@ -897,11 +897,20 @@ function beginTestChapter () {
     
     var attackWolvesYes = document.querySelector("#attack-goblins");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(goblin1, goblin2);
+        addingFightModule(goblin1, goblin2, continueChapterSix);
         declareAttack();
     
     
     ;
 })
 
+}
+
+function continueChapterSix() {
+    let chapterSixDialogue = document.getElementById('dialogue');
+    chapterSixDialogue.innerHTML = `
+    <p>You continue into the forest          
+    </p>
+            
+    `
 }
