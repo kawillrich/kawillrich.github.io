@@ -407,7 +407,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     if (finalCharacter.specialty.spell3.name === 'None') {
 
         let groupAttackSpellNone = document.querySelector('.area-attack');
-        groupAttackSpellNone.className = '.no-spell attack area-attack';
+        groupAttackSpellNone.className = 'no-spell attack area-attack';
 
     } else {
 
