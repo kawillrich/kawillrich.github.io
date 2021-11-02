@@ -833,6 +833,16 @@ function continueChapterFourTwo() {
 }
 
 function continueChapterFourTwoOne() {
+
+    if (finalCharacter.inventory1 = raynardsCoin) {
+        finalCharacter.inventory1 = noItem;
+    } else {
+        finalCharacter.inventory1 = noItem;
+    };
+
+    let giveCoin = document.querySelector('.character-display-inv1');
+    giveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
+
     let chapterFourTwoOneDialogue = document.querySelector('#dialogue');
     chapterFourTwoOneDialogue.innerHTML = `
     <p>"So, you know Raynard?  If you gave you this coin, it can only mean that he trusts you.  Wait here one moment..."  The farmer walks away
