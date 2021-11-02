@@ -250,6 +250,10 @@ function talkToRaynard() {
     
      <input type="submit" id="start-chapter-three" value="Continue">`;
 
+
+    finalCharacter.achievements.spokeToRaynard = {name: "Spoke to Raynard", desc: "Spoke to Raynard and received his coin."};
+    console.log(finalCharacter.achievements); 
+    
     finalCharacter.inventory1 = raynardsCoin;    
     let receiveCoin = document.getElementsByClassName('character-display-inv1');
     receiveCoin[0].innerHTML = `
@@ -452,9 +456,12 @@ export function continueChapterThreeFour() {
     console.log('Chapter Three-four');
 
     //ADDING ACHIEVEMENT
-    
+
     finalCharacter.achievements.killedFarmWolves = {name: "Killed Farm Wolves", desc: "Killed two wolves near farmhouse."};
     console.log(finalCharacter.achievements);
+
+    //END ACHIEVEMENT ADD
+
     let chapterThreeFour = document.querySelector('#dialogue');
     chapterThreeFour.innerHTML = `
     <p>As you pause after your victory over the wolves, you take a breath to regroup.  As you inspect at the wolves, you notice that these 
