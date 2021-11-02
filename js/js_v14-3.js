@@ -863,30 +863,34 @@ function continueChapterFive() {
     let chapterFiveDialogue = document.querySelector('#dialogue');
     chapterFiveDialogue.innerHTML = `
     <p>You continue along the path from the farmhouse and anxiously head towards the forest.</p>
+
+    <input type="submit" id="test-chapter" value="Continue">
     `
+
+    let continueTestChapter = document.querySelector('#test-chapter');
+    continueTestChapter.addEventListener('click', continueTestChapter, false);
+
 }
 
 
-// function continueChapterXxxxXxxx () {
-//     console.log('Chapter Three-Six');
+function continueTestChapter () {
+    console.log('Chapter Three-Six');
         
-//     var chapterThreeSixDialogue = document.getElementById('dialogue');
-//     chapterThreeSixDialogue.innerHTML = `
-//     <p>You walk up to the farmhouse a large - but noticeably worn down - structure, with several other outlying buildings randomly located in 
-//     some of the adjacent fields.  The smell of hay and cow manure fill the air and you can see the heavily worn dirt paths on the ground where
-//     people walk.  One path leads to a small hut-like structure, a simple shed really, where you can see          
-//     </p>
+    var chapterThreeSixDialogue = document.getElementById('dialogue');
+    chapterThreeSixDialogue.innerHTML = `
+    <p>As you approach the forest, you hear some rusltling and grunting noises - you get attacked by some goblins!!          
+    </p>
         
-//     <input type="submit" id="attack-goblins" value="Attack">     
-//     `
+    <input type="submit" id="attack-goblins" value="Attack">     
+    `
     
-//     var attackWolvesYes = document.querySelector("#attack-goblins");
-//     attackWolvesYes.addEventListener('click', () => {
-//         addingFightModule(goblin1, goblin2);
-//         declareAttack();
+    var attackWolvesYes = document.querySelector("#attack-goblins");
+    attackWolvesYes.addEventListener('click', () => {
+        addingFightModule(goblin1, goblin2);
+        declareAttack();
     
     
-//     ;
-// })
+    ;
+})
 
-// }
+}
