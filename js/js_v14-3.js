@@ -638,7 +638,11 @@ function continueChapterFour () {
         chapterFourDialogue.innerHTML += `
         <p>You reply, "I killed two wolves that attacked a sheep down the path and was wondering if the sheep belonged to you.  If so, those
         wolves won't be a threat to you anymore.  Do you see many wolves around here?"</p>
-        `
+
+        <input type="submit" id="continueChapt4-yesWolvesAchievement" value="Continue">`;
+        
+        let contChaptFourThree = document.querySelector("#continueChapt4-yesWolvesAchievement");
+        contChaptFourThree.addEventListener('click', continueChapterFourThree, false);
 
         
     } else {
@@ -658,11 +662,44 @@ function continueChapterFour () {
     
 }
 
+function continueChapterFourThree() {
+    let chapterFourTwoThreeDialogue = document.getElementById('dialogue');
+    chapterFourTwoThreeDialogue.innerHTML = `
+    <p>Upon hearing your words, the farmer says, "Thank you, adventurer! I have had a lot of trouble with the dire wolves lately, and sadly
+    I am too old to take care of them myself.  They have been eating my livestock.  This is so strange to see dire wolves in this area, and 
+    it has reduced the amount of meat I can provide to the inn and markets at Gryphon's Keep.  This is how I make a living now-a-day.  As 
+    appreciation for your troubles, please come in and rest a bit, surely that fight must have worn you down a little bit, and looking at
+    those cuts on your arms, you could use some healing."</p>
+
+    <input type="submit" id="enter-farmhouse" value="Enter Farmhouse">
+
+    <input type="submit" id="leave-farmhouse" value="Decline to Enter">
+
+    `
+    let enterFarmhouse = document.querySelector('#enter-farmhouse');
+    enterFarmhouse.addEventListener('click', continueChapterFourThreeOne, false);
+
+    let declineToEnter = document.querySelector('#leave-farmhouse');
+    declineToEnter.addEventListener('click', continueChapterFourThreeTwo, false);
+
+}
+
+
+
+function continueChapterFourThreeOne() {
+
+};
+
+function continueChapterFourThreeTwo() {
+
+};
+
+
 function continueChapterFourTwo() {
     let chapterFourTwoDialogue = document.querySelector('#dialogue');
         
     chapterFourTwoDialogue.innerHTML = `
-        </p>"Yes, there has been several strange occurances of dire wolves showing up lately.  This is so strange for here, I haven't
+        </p>"Yes, there has been several strange occurances of dire wolves showing up lately.  This is so odd for around here, I haven't
         seen these types of wolves in this area for decades.
         `
     
@@ -677,20 +714,30 @@ function continueChapterFourTwo() {
         let contChaptFourTwoOne = document.querySelector("#continueChapt4-2-noWolvesAchievement");
         contChaptFourTwoOne.addEventListener('click', continueChapterFourTwoOne, false);  
 
-    }  
+    }  else {
+        chapterFourTwoDialogue.innerHTML += `
+        <p>You thank the farmer for his time, and let him know you are just passing through and will be on your way.  You exchange goodbyes and continue
+        along your journey.</p> 
+        
+        <input type="submit" id="continue-chapt-5" value="Continue">`;
+
+        let beginChapterFive = document.querySelector('#continue-chapt-5');
+        beginChapterFive.addEventListener('click', continueChapterFive, false);
+
+    }
 }
 
 function continueChapterFourTwoOne() {
     let chapterFourTwoOneDialogue = document.querySelector('#dialogue');
     chapterFourTwoOneDialogue.innerHTML = `
-    "So, you know Raynard?  If you gave you this coin, it can only mean that he trusts you.  Wait here one moment..."  The farmer walks away
+    <p>"So, you know Raynard?  If you gave you this coin, it can only mean that he trusts you.  Wait here one moment..."  The farmer walks away
     for a moment and then returns with a long object wrapped in an old blanket.  You can tell the blanket is covered in dust, protecting 
-    whatever is inside.  The blanket is tied up with some twing and a leather strap.  He hands you the object, and begins to speak:
+    whatever is inside.  The blanket is tied up with some twing and a leather strap.  He hands you the object, and begins to speak:</p>
 
-    "Me and Raynard used to adventure together in our youth.  This weapon is what i used during my adventures.  It treated me well, and 
+    <p>"Me and Raynard used to adventure together in our youth.  This weapon is what i used during my adventures.  It treated me well, and 
     never failed.  Unfortunately, during one journey, I was wounded badly.  I returned to Gryphon's Keep, with the help of Raynard.  Had he
     not helped me, I would have died on the way back before reaching the town.  I owe Raynard my life.  Please take this and make good use
-    of it, I cannot use it any longer."
+    of it, I cannot use it any longer."</p>
     
     <input type="submit" id="start-chapt-five" value="Continue">`;
     
@@ -720,7 +767,7 @@ function continueChapterFive() {
 
     let chapterFiveDialogue = document.querySelector('#dialogue');
     chapterFiveDialogue.innerHTML = `
-    <p>You depart the farmhouse and anxiously head towards the forest.</p>
+    <p>You continue along the path from the farmhouse and anxiously head towards the forest.</p>
     `
 }
 
