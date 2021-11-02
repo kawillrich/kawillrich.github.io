@@ -665,20 +665,19 @@ function continueChapterFourTwo() {
         </p>"Yes, there has been several strange occurances of dire wolves showing up lately.  This is so strange for here, I haven't
         seen these types of wolves in this area for decades.
         `
-    }
+    
     if (finalCharacter.achievements.spokeToRaynard) {
-        chapterFourTwoDialogue.innerHTML = `
-        You thank the farmer for his time, and mention that after speaking to Raynard, the owner of the Blue Blade Inn, he handed you this coin
+        chapterFourTwoDialogue.innerHTML += `
+        <p>You thank the farmer for his time, and mention that after speaking to Raynard, the owner of the Blue Blade Inn, he handed you this coin
         to give to the farmer in the event you run into him.  You hand the coin to the farmer, and when he looks at it, you see a gleam in his
-        eyes. 
+        eyes.</p> 
         
         <input type="submit" id="continueChapt4-2-noWolvesAchievement" value="Continue">`;
         
         let contChaptFourTwoOne = document.querySelector("#continueChapt4-2-noWolvesAchievement");
         contChaptFourTwoOne.addEventListener('click', continueChapterFourTwoOne, false);  
 
-
-    
+    }  
 }
 
 function continueChapterFourTwoOne() {
@@ -693,7 +692,15 @@ function continueChapterFourTwoOne() {
     not helped me, I would have died on the way back before reaching the town.  I owe Raynard my life.  Please take this and make good use
     of it, I cannot use it any longer."
     `
-
+    if (finalCharacter.specialty === warrior) {
+        finalCharacter.weapon = silverSword;
+    } else if (finalCharacter.specialty === masterArcher) {
+        finalCharacter.weapon = longBow;
+    } else if (finalCharacter.specialty === highMage) {
+        finalCharacter.weapon = mahoganyStaff;
+    } else {
+        finalCharacter.weapon = finalCharacter.weapon;
+    }
 }
 
 
