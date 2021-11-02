@@ -691,7 +691,10 @@ function continueChapterFourTwoOne() {
     never failed.  Unfortunately, during one journey, I was wounded badly.  I returned to Gryphon's Keep, with the help of Raynard.  Had he
     not helped me, I would have died on the way back before reaching the town.  I owe Raynard my life.  Please take this and make good use
     of it, I cannot use it any longer."
-    `
+    
+    <input type="submit" id="start-chapt-five" value="Continue">`;
+    
+    
     if (finalCharacter.specialty === warrior) {
         finalCharacter.weapon = silverSword;
     } else if (finalCharacter.specialty === masterArcher) {
@@ -701,6 +704,24 @@ function continueChapterFourTwoOne() {
     } else {
         finalCharacter.weapon = finalCharacter.weapon;
     }
+
+    console.log(finalCharacter.weapon.name);
+
+    let beginChapterFive = document.querySelector('#start-chapt-five');
+    beginChapterFive.addEventListener('click', continueChapterFive, false);
+    beginChapterFive.addEventListener('click', () => alert(`You received ${finalCharacter.weapon.name}`));
+
+}
+
+function continueChapterFive() {
+    console.log(finalCharacter.weapon.name);
+    let updatedCharWeapon = document.querySelector('#char-weapon');
+    updatedCharWeapon.innerHTML = `<h4 id='char-weapon' class='char-info-label'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>`;
+
+    let chapterFiveDialogue = document.querySelector('#dialogue');
+    chapterFiveDialogue.innerHTML = `
+    <p>You depart the farmhouse and anxiously head towards the forest.</p>
+    `
 }
 
 
