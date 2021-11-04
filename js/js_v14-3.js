@@ -132,7 +132,7 @@ function startGame() {
 
         let submittingCharSpecialtyDragon = document.querySelector("#dragonwarrior");
         submittingCharSpecialtyDragon.addEventListener('click', logCharSpecialty, false);
-    };
+};
 
 //updates character attributes
 //return out finalCharacter?
@@ -185,7 +185,7 @@ function logCharSpecialty() {
     };
     
     beginJourney();
-    };
+};
         
 let submittedCharName = document.querySelector("#submit-name");
 submittedCharName.addEventListener('click', charNameSubmitted, false);
@@ -369,7 +369,7 @@ function continueChapterThreeThree() {
 function declareAttack() {
     let declareAttackDialogue = document.querySelector('#dialogue');
     declareAttackDialogue.innerHTML = `<p>You Attack!</p>`;
-}
+};
 
 function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     console.log(monsterOne);
@@ -429,11 +429,11 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     } else {
         let healSpellSelf = document.querySelector('.spell1-heal');
         healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
-}
+    }
     console.log(monsterOne);
     console.log(monsterTwo);
     confirmAttackMonsters(monsterOne, monsterTwo);
-}
+};
 
 export function confirmAttackMonsters(monsterOne, monsterTwo) {           
 
