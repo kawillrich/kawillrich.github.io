@@ -89,9 +89,12 @@ h4 {
   border-radius: 5px;
 }
 
-input #dragonwarrior {
+input.dragonwarrior {
+  opacity: 0;
+}
+
+span#dragonwarrior {
   color: white;
-  background-color: red;
 }
 
 .button-border {

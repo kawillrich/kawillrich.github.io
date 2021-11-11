@@ -37,7 +37,7 @@ export default class Character {
                 <h4 id='char-hp' class='char-info-label'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor:  <span class="character-display-info">${this.armor.name}</span></h4> 
                 <h4 id='char-armor-points' class='char-info-label'>Armor Points:  <span class="character-display-info">${this.armor.armorPoints}</span></h4>
-                <h4 id='char-weapon' class='char-info-label'>Weapon:  <span class="character-display-info">${this.weapon.name}</span></h4>
+                <h4 id='char-weapon' class='char-info-label'>Weapon:  <span id="weapon-info" class="character-display-info" title="display-weapon-info">${this.weapon.name}</span></h4>
                 <h4 id='char-damage' class='char-info-label'>Damage:  <span class="character-display-info">${this.weapon.damage}</span></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>

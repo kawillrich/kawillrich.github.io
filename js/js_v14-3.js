@@ -73,7 +73,7 @@ function startGame() {
                 <h4 id='char-hp' class='char-info-label'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor: <span class="character-display-info">${finalCharacter.armor.name}</span></h4> 
                 <h4 id='char-armor-points' class='char-info-label'>Armor Points: <span class="character-display-info">${finalCharacter.armor.armorPoints}</span></h4>
-                <h4 id='char-weapon' class='char-info-label'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>
+                <h4 id='char-weapon' class='char-info-label'>Weapon: <span id="weapon-info" class="character-display-info" title="display-weapon-info">${finalCharacter.weapon.name}</span></h4>
                 <h4 id='char-damage' class='char-info-label'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
@@ -118,7 +118,7 @@ function startGame() {
         <input type = "radio" name="selected-specialty" value="fighter" id="fighter"/> Fighting
         <input type = "radio" name="selected-specialty" value="archer" id="archer"/> Archery
         <input type = "radio" name="selected-specialty" value="mage" id="mage"/> Magic
-        <input type = "radio" name="selected-specialty" value="dragonwarrior" id="dragonwarrior"/>Dragon Fighting
+        <input type = "radio" name="selected-specialty" value="dragonwarrior" class="dragonwarrior"/><span id="dragonwarrior">Dragon Fighting</span>
         </p>`;
         
         let submittingCharSpecialtyFighter = document.querySelector("#fighter");
@@ -130,7 +130,7 @@ function startGame() {
         let submittingCharSpecialtyMage = document.querySelector("#mage");
         submittingCharSpecialtyMage.addEventListener('click', logCharSpecialty, false);
 
-        let submittingCharSpecialtyDragon = document.querySelector("#dragonwarrior");
+        let submittingCharSpecialtyDragon = document.querySelector(".dragonwarrior");
         submittingCharSpecialtyDragon.addEventListener('click', logCharSpecialty, false);
 };
 
@@ -933,4 +933,20 @@ function continueChapterSix() {
     </p>
             
     `
+}
+
+if (document.querySelector('#weapon-info')) {
+    let updatedTitle = document.querySelector('#weapon-info');
+    updatedTitle.addEventListener('mouseover', updatingWeaponTitle, false);
+    
+};
+
+function updatingWeaponTitle() {
+    let updatedWeaponTitle = document.querySelector('#weapon-info');
+    updatedWeaponTitle.setAttribute('title', newWeaponTitle());
+}
+
+function newWeaponTitle() {
+    return `Info:
+    Name: ${finalCharacter.weapon.name}`;
 }
