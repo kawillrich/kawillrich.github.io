@@ -421,7 +421,6 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
         groupAttackSpell.addEventListener('click', function () {finalCharacter.areaAttackSpell(monsterOne, monsterTwo, finalCharacter.spell3, continueNextChapter)}, false);
     }
 
-
     if (finalCharacter.specialty.spell1.name === 'None') {
 
         let healSpellSelfNone = document.querySelector('.spell1-heal');
@@ -432,7 +431,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     }
     console.log(monsterOne);
     console.log(monsterTwo);
-    confirmAttackMonsters(monsterOne, monsterTwo);
+    confirmAttackMonsters(monsterOne, monsterTwo);    
 };
 
 export function confirmAttackMonsters(monsterOne, monsterTwo) {           

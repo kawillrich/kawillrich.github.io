@@ -5,6 +5,8 @@ export default class Inventory {
         this.enchantment = enchantment;
     };
 
+    
+
 };
 
 let noItem = new Inventory("None", "None", 0);
