@@ -92,7 +92,7 @@ function startGame() {
         </div id="canvas-area">
             <fieldset class= 'canvas-info-module'>
                 <legend class='canvas-dashboard'>Arena</legend>
-                <img src="images/red-flying-dragon.jpg">
+                <img src="images/mage.svg" width="200" height="200">
             </fieldset>
         </div>
                 
