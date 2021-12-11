@@ -88,7 +88,13 @@ function startGame() {
                 <h4 id='char-items3' class='char-info-label'>Item 3: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4><br>
                 <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${finalCharacter.enchantedItem.name}</span></h4>
             </fieldset>
-    </div>    
+        </div>    
+        </div id="canvas-area">
+            <fieldset class= 'canvas-info-module'>
+                <legend class='canvas-dashboard'>Arena</legend>
+                <img src="images/red-flying-dragon.jpg">
+            </fieldset>
+        </div>
                 
         `;
           

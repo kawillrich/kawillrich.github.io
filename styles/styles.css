@@ -26,6 +26,15 @@ fieldset {
   width: 200px;
 }
 
+.canvas-info-module {
+  height: 210px;
+  width: 200px;
+}
+
+.canvas-dashboard {
+  background-color: rgb(139, 226, 138);
+}
+
 .monster-dashboard {
   background-color: rgb(255, 139, 139);
 }
