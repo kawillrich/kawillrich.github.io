@@ -54,6 +54,12 @@ export default class Character {
                 <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${this.inventory3.name}</span></h4><br>
                 <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${this.enchantedItem.name}</span></h4>
             </fieldset>
+        </div>
+        </div id="canvas-area">
+            <fieldset class= 'canvas-info-module'>
+                <legend class='canvas-dashboard'>Arena</legend>
+                ${finalCharacter.characterImage}
+            </fieldset>
         </div>            
             `; 
     }
