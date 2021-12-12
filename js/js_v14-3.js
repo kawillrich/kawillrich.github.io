@@ -61,7 +61,7 @@ function startJourneySubmitted() {
 
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {   
-    
+    let mageImage = '<img src="images/mage.svg" width="200" height="200">';
     let newStartGameDialogue = document.querySelector("#character-info");
     
     newStartGameDialogue.innerHTML = `
@@ -92,7 +92,7 @@ function startGame() {
         </div id="canvas-area">
             <fieldset class= 'canvas-info-module'>
                 <legend class='canvas-dashboard'>Arena</legend>
-                <img src="images/mage.svg" width="200" height="200">
+                ${mageImage}
             </fieldset>
         </div>
                 

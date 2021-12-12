@@ -29,6 +29,7 @@ fieldset {
 .canvas-info-module {
   height: 210px;
   width: 200px;
+  background-color: rgb(155, 155, 155);
 }
 
 .canvas-dashboard {
