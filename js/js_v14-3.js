@@ -22,6 +22,7 @@ let adventurerImage = "<img src='images/adventurer.svg' height='200' width='200'
 let fighterImage = "<img src='images/fighter2.svg' height='200' width='200'>";
 let mageImage = "<img src='images/mage.svg' height='200' width='200'>";
 let archerImage = "<img src='images/archer2.svg' height='200' width='200'>";
+let dragonWarriorImage = "<img src='images/dragon-warrior.svg' height='200' width='200'>";
 
 
 let charAchievements = {};
@@ -193,6 +194,7 @@ function logCharSpecialty() {
         finalCharacter.armor = obsidianPlateMail; 
         finalCharacter.weapon = obsidianSword;
         finalCharacter.enchantedItem = eloisesRing;
+        finalCharacter.characterImage = dragonWarriorImage;
         finalCharacter.characterUpdate();        
         
 
