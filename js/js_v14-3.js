@@ -18,9 +18,13 @@ import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory
 
 //exports finalCharacter for other modules to access
 
+let adventurerImage = "<img src='images/adventurer.svg' height='200' width='200'>";
+
+
+
 let charAchievements = {};
 
-export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements);
+export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements, adventurerImage);
 
 //initialized and clears selectedSpecialty
 
@@ -92,7 +96,7 @@ function startGame() {
         </div id="canvas-area">
             <fieldset class= 'canvas-info-module'>
                 <legend class='canvas-dashboard'>Arena</legend>
-                ${mageImage}
+                ${finalCharacter.characterImage}
             </fieldset>
         </div>
                 

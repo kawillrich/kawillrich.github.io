@@ -12,7 +12,7 @@ import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior } from './s
 //exports Character class for other module access
 
 export default class Character {
-    constructor(name, specialty, armor, weapon, inventory1, inventory2, inventory3, enchantedItem, achievements) {
+    constructor(name, specialty, armor, weapon, inventory1, inventory2, inventory3, enchantedItem, achievements, characterImage) {
         this.name = name;
         this.specialty = specialty;
         this.armor = armor;
@@ -22,6 +22,7 @@ export default class Character {
         this.inventory3 = inventory3;
         this.enchantedItem = enchantedItem;
         this.achievements = achievements;
+        this.characterImage = characterImage;
     };
 
     //updates & initiates Character creation
