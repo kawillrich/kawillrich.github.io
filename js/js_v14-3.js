@@ -67,10 +67,9 @@ function startJourneySubmitted() {
 
 
 //TEST FUNCTION TO START GAME - creates player info
-function startGame() {   
-    let mageImage = '<img src="images/mage.svg" width="200" height="200">';
+function startGame() {       
     let newStartGameDialogue = document.querySelector("#character-info");
-    
+    newStartGameDialogue.style.backgroundImage = "none";
     newStartGameDialogue.innerHTML = `
         <div id='character-stats'>
             <fieldset class='char-info-module'>
