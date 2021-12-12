@@ -19,7 +19,9 @@ import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory
 //exports finalCharacter for other modules to access
 
 let adventurerImage = "<img src='images/adventurer.svg' height='200' width='200'>";
-
+let fighterImage = "<img src='images/fighter.svg' height='200' width='200'>";
+let mageImage = "<img src='images/mage.svg' height='200' width='200'>";
+let archerImage = "<img src='images/archer2.svg' height='200' width='200'>";
 
 
 let charAchievements = {};
@@ -156,7 +158,9 @@ function logCharSpecialty() {
         finalCharacter.armor = chainMail; 
         finalCharacter.weapon = steelSword;
         finalCharacter.enchantedItem = noItem;
+        finalCharacter.characterImage = fighterImage;
         finalCharacter.characterUpdate(); 
+        
         
         
         
@@ -167,6 +171,7 @@ function logCharSpecialty() {
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
         finalCharacter.enchantedItem = noItem;
+        finalCharacter.characterImage = archerImage;
         finalCharacter.characterUpdate();        
         
         
@@ -177,6 +182,7 @@ function logCharSpecialty() {
         finalCharacter.armor = robes; 
         finalCharacter.weapon = staff;
         finalCharacter.enchantedItem = noItem;
+        finalCharacter.characterImage = mageImage;
         finalCharacter.characterUpdate();        
         
 
