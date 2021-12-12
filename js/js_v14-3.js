@@ -19,7 +19,7 @@ import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory
 //exports finalCharacter for other modules to access
 
 let adventurerImage = "<img src='images/adventurer.svg' height='200' width='200'>";
-let fighterImage = "<img src='images/fighter.svg' height='200' width='200'>";
+let fighterImage = "<img src='images/fighter2.svg' height='200' width='200'>";
 let mageImage = "<img src='images/mage.svg' height='200' width='200'>";
 let archerImage = "<img src='images/archer2.svg' height='200' width='200'>";
 
