@@ -2,8 +2,8 @@
   font-family: "Corbel";
 }
 
-#header {
-  background-image: url("images/black-dragon.jpg");
+body {
+  width: 700px;
 }
 
 legend {
@@ -20,6 +20,13 @@ fieldset {
 }
 
 #character-info {
+  background-image: url("../images/black-dragon.jpg");
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-position-y: -100px;
   display: flex;
   flex-direction: row;
   height: 225px;
