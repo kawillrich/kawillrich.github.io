@@ -100,7 +100,7 @@ function startGame() {
                 <legend class='canvas-dashboard'>Arena</legend>
                 ${finalCharacter.characterImage}
             </fieldset>
-        </div>
+        </>
                 
         `;
           
