@@ -98,15 +98,23 @@ function startGame() {
                 <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${finalCharacter.enchantedItem.name}</span></h4>
             </fieldset>
         </div>
+
+
         
         </div id="canvas-area">
           <fieldset class= 'canvas-info-module'>
             <legend class='canvas-dashboard'>Arena</legend>
-              ${finalCharacter.characterImage}
+            <canvas id="canvas1"></canvas>
            </fieldset>
         </div>                
         `;
 
+
+        const canvas = document.getElementById('canvas1');
+        const ctx = canvas.getContext('2d');
+
+        const CANVAS_WIDTH = canvas.width = 200;
+        const CANVAS_HEIGHT = canvas.height = 210;
 
     let chapterOne = document.querySelector('#dialogue');
     chapterOne.innerHTML = `
