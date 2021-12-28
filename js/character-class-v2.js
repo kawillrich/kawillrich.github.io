@@ -1,6 +1,6 @@
 //import other js modules to access
 
-import { finalCharacter, continueChapterThreeFour } from './js_v14-3.js';
+import { finalCharacter, continueChapterThreeFour, render } from './js_v14-3.js';
 import Weapon from './weapon-class-v2.js';
 import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword } from './weapon-class-v2.js';
 import Armor from './armor-class-v2.js';
@@ -175,6 +175,7 @@ export default class Character {
 
                 let showMonsterAttackButton = document.querySelector('#monster-attack');
                 showMonsterAttackButton.classList.remove('hidden');
+                
                 
                 showMonsterAttackButton.onclick = function() {monster1.monsterAttack(monster1, monster2)};
             }            

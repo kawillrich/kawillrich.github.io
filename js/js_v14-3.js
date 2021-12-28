@@ -28,9 +28,60 @@ let charAchievements = {};
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements, adventurerImage);
 
+//Animation data
+
+const canvas = document.getElementById('canvas2');
+const ctx = canvas.getContext('2d');
+
+const CANVAS_WIDTH = canvas.width = 0;
+const CANVAS_HEIGHT = canvas.height = 0;
+const playerImage = new Image();
+playerImage.src = "character-spritesheet.svg";
+const spriteWidth = 64;
+const spriteHeight = 64;
+let frameX = 0;
+let frameY = 3;
+let gameFrame = 0;
+const staggerFrames = 8;
+let reqAnim;
+
+export function render() {
+    CANVAS_HEIGHT = 200;
+    CANVAS_WIDTH = 200;
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+    ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*2, spriteHeight*2);    
+    requestAnimationFrame(render);
+}
 
 
+function animate() {
+    document.querySelector('#attack').disabled = true;
+    ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+    //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
+    ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*2, spriteHeight*2);
+    
+    if (gameFrame % staggerFrames == 0){       
+        if (frameX < 4) {
+            frameX++;
+        } else if (frameX >= 4) {
+            frameX = 0;
+            document.querySelector('#attack').disabled = false;
+            return ;
+        }
+    
+    }    
+    console.log(frameX);
+    gameFrame++;
+    reqAnim = requestAnimationFrame(animate);
+    
+};
 
+export function stopAnimate() {
+    
+    window.cancelAnimationFrame(reqAnim);
+    
+}
 
 //initialized and clears selectedSpecialty
 
@@ -104,17 +155,15 @@ function startGame() {
         </div id="canvas-area">
           <fieldset class= 'canvas-info-module'>
             <legend class='canvas-dashboard'>Arena</legend>
-            <canvas id="canvas1"></canvas>
+            <canvas id="canvas2"></canvas>
            </fieldset>
         </div>                
         `;
 
 
-        const canvas = document.getElementById('canvas1');
-        const ctx = canvas.getContext('2d');
+        
 
-        const CANVAS_WIDTH = canvas.width = 200;
-        const CANVAS_HEIGHT = canvas.height = 210;
+        
 
     let chapterOne = document.querySelector('#dialogue');
     chapterOne.innerHTML = `
