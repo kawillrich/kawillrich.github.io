@@ -72,7 +72,9 @@ export function animate() {
             frameX++;
         } else if (frameX >= 4) {
             frameX = 0;
-            document.querySelector(".attack-monster-one").disabled = false;
+            if (document.querySelector(".attack-monster-one")) {
+                document.querySelector(".attack-monster-one").disabled = false;
+            }
             return ;
         }
     
@@ -475,7 +477,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     attackMonsterOne.addEventListener('click', function() {animate(); finalCharacter.weaponAttackMonster1(monsterOne, monsterTwo, finalCharacter.weapon, continueNextChapter)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
-    attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(monsterOne, monsterTwo, finalCharacter.weapon, continueNextChapter)}, false);    
+    attackMonsterTwo.addEventListener('click', function() {animate(); finalCharacter.weaponAttackMonster2(monsterOne, monsterTwo, finalCharacter.weapon, continueNextChapter)}, false);    
 
     if (finalCharacter.specialty.spell2.name === 'None') {            
 
@@ -487,10 +489,10 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
 
     } else {
         let attackSpellTwoMonsterOne = document.querySelector('.spell2-monster-one');
-        attackSpellTwoMonsterOne.addEventListener('click', function() {finalCharacter.spell2AttackMonster1(monsterOne, monsterTwo, finalCharacter.spell2, continueNextChapter)}, false);
+        attackSpellTwoMonsterOne.addEventListener('click', function() {animate(); finalCharacter.spell2AttackMonster1(monsterOne, monsterTwo, finalCharacter.spell2, continueNextChapter)}, false);
 
         let attackSpellTwoMonsterTwo = document.querySelector('.spell2-monster-two');
-        attackSpellTwoMonsterTwo.addEventListener('click', function() {finalCharacter.spell2AttackMonster2(monsterOne, monsterTwo, finalCharacter.spell2, continueNextChapter)}, false);        
+        attackSpellTwoMonsterTwo.addEventListener('click', function() {animate(); finalCharacter.spell2AttackMonster2(monsterOne, monsterTwo, finalCharacter.spell2, continueNextChapter)}, false);        
     }
     
     if (finalCharacter.specialty.spell3.name === 'None') {
@@ -501,7 +503,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     } else {
 
         let groupAttackSpell = document.querySelector('.area-attack');
-        groupAttackSpell.addEventListener('click', function () {finalCharacter.areaAttackSpell(monsterOne, monsterTwo, finalCharacter.spell3, continueNextChapter)}, false);
+        groupAttackSpell.addEventListener('click', function () {animate(); finalCharacter.areaAttackSpell(monsterOne, monsterTwo, finalCharacter.spell3, continueNextChapter)}, false);
     }
 
     if (finalCharacter.specialty.spell1.name === 'None') {
