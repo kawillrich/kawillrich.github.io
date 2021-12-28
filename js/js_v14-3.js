@@ -24,10 +24,13 @@ let mageImage = "<img src='images/mage.svg' height='200' width='200'>";
 let archerImage = "<img src='images/archer2.svg' height='200' width='200'>";
 let dragonWarriorImage = "<img src='images/dragon-warrior.svg' height='200' width='200'>";
 
-
 let charAchievements = {};
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements, adventurerImage);
+
+
+
+
 
 //initialized and clears selectedSpecialty
 
@@ -94,16 +97,16 @@ function startGame() {
                 <h4 id='char-items3' class='char-info-label'>Item 3: <span class='character-display-inv3'>${finalCharacter.inventory3.name}</span></h4><br>
                 <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${finalCharacter.enchantedItem.name}</span></h4>
             </fieldset>
-        </div>    
+        </div>
+        
         </div id="canvas-area">
-            <fieldset class= 'canvas-info-module'>
-                <legend class='canvas-dashboard'>Arena</legend>
-                ${finalCharacter.characterImage}
-            </fieldset>
-        </>
-                
+          <fieldset class= 'canvas-info-module'>
+            <legend class='canvas-dashboard'>Arena</legend>
+              ${finalCharacter.characterImage}
+           </fieldset>
+        </div>                
         `;
-          
+
 
     let chapterOne = document.querySelector('#dialogue');
     chapterOne.innerHTML = `
