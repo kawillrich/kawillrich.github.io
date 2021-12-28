@@ -56,11 +56,11 @@ export default class Character {
             </fieldset>
         </div>
         </div id="canvas-area">
-            <fieldset class= 'canvas-info-module'>
-                <legend class='canvas-dashboard'>Arena</legend>
-                ${finalCharacter.characterImage}
-            </fieldset>
-        </div>            
+          <fieldset class= 'canvas-info-module'>
+            <legend class='canvas-dashboard'>Arena</legend>
+            <canvas id="canvas2" height="200" width="200"></canvas>
+           </fieldset>
+        </div>             
             `; 
     }
     

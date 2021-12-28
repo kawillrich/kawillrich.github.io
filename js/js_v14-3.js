@@ -40,7 +40,7 @@ playerImage.src = "images/character-spritesheet.svg";
 const spriteWidth = 64;
 const spriteHeight = 64;
 let frameX = 0;
-let frameY = 1;
+let frameY = 4;
 let gameFrame = 0;
 const staggerFrames = 8;
 let reqAnim;
