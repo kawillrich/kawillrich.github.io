@@ -59,7 +59,8 @@ export function render() {
 
 
 export function animate() {
-    document.querySelector('#attack').disabled = true;
+    frameY = finalCharacter.characterImage;
+    document.querySelector(".attack-monster-one").disabled = true;
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
     ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*3, spriteHeight*3);
@@ -69,7 +70,7 @@ export function animate() {
             frameX++;
         } else if (frameX >= 4) {
             frameX = 0;
-            document.querySelector('#attack').disabled = false;
+            document.querySelector(".attack-monster-one").disabled = false;
             return ;
         }
     
@@ -469,7 +470,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
         `;
 
     let attackMonsterOne = document.querySelector('.attack-monster-one');
-    attackMonsterOne.addEventListener('click', function() {finalCharacter.weaponAttackMonster1(monsterOne, monsterTwo, finalCharacter.weapon, continueNextChapter)}, false);
+    attackMonsterOne.addEventListener('click', function() {animate(); finalCharacter.weaponAttackMonster1(monsterOne, monsterTwo, finalCharacter.weapon, continueNextChapter)}, false);
     
     let attackMonsterTwo = document.querySelector('.attack-monster-two');
     attackMonsterTwo.addEventListener('click', function() {finalCharacter.weaponAttackMonster2(monsterOne, monsterTwo, finalCharacter.weapon, continueNextChapter)}, false);    
