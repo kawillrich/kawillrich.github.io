@@ -18,7 +18,7 @@ import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory
 
 //exports finalCharacter for other modules to access
 
-let adventurerImage = "<img src='images/adventurer.svg' height='200' width='200'>";
+let adventurerImage = 4;
 let fighterImage = "<img src='images/fighter2.svg' height='200' width='200'>";
 let mageImage = "<img src='images/mage.svg' height='200' width='200'>";
 let archerImage = "<img src='images/archer2.svg' height='200' width='200'>";
@@ -46,6 +46,7 @@ const staggerFrames = 8;
 let reqAnim;
 
 export function render() {
+    frameY = finalCharacter.characterImage;
     canvas = document.getElementById('canvas2');
     ctx = canvas.getContext('2d');    
     CANVAS_HEIGHT = 200;
@@ -220,7 +221,7 @@ function logCharSpecialty() {
         finalCharacter.armor = chainMail; 
         finalCharacter.weapon = steelSword;
         finalCharacter.enchantedItem = noItem;
-        finalCharacter.characterImage = fighterImage;
+        finalCharacter.characterImage = 2;
         finalCharacter.characterUpdate(); 
         
         
@@ -233,7 +234,7 @@ function logCharSpecialty() {
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
         finalCharacter.enchantedItem = noItem;
-        finalCharacter.characterImage = archerImage;
+        finalCharacter.characterImage = 1;
         finalCharacter.characterUpdate();        
         
         
@@ -244,7 +245,7 @@ function logCharSpecialty() {
         finalCharacter.armor = robes; 
         finalCharacter.weapon = staff;
         finalCharacter.enchantedItem = noItem;
-        finalCharacter.characterImage = mageImage;
+        finalCharacter.characterImage = 3;
         finalCharacter.characterUpdate();        
         
 
@@ -255,7 +256,7 @@ function logCharSpecialty() {
         finalCharacter.armor = obsidianPlateMail; 
         finalCharacter.weapon = obsidianSword;
         finalCharacter.enchantedItem = eloisesRing;
-        finalCharacter.characterImage = dragonWarriorImage;
+        finalCharacter.characterImage = 0;
         finalCharacter.characterUpdate();        
         
 
