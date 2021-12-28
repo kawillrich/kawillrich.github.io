@@ -89,6 +89,8 @@ h4 {
   background-color: grey;
   width: 200px;
   border-radius: 5px;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .monster1-dead {
@@ -96,6 +98,8 @@ h4 {
   background-color: grey;
   width: 200px;
   border-radius: 5px;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .spell1-heal-used {

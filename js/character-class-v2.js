@@ -205,6 +205,7 @@ export default class Character {
             let removingMonster1Button = document.getElementsByClassName('attack-monster-one');
             removingMonster1Button[0].classList.add('monster1-dead')
             
+            
             let removeMonster1SpellAttack = document.getElementsByClassName('spell2-monster-one');
             removeMonster1SpellAttack[0].classList.add('monster1-dead');
 

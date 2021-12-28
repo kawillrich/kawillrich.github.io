@@ -60,7 +60,9 @@ export function render() {
 
 export function animate() {
     frameY = finalCharacter.characterImage;
-    document.querySelector(".attack-monster-one").disabled = true;
+    if(document.querySelector(".attack-monster-one")) {
+        document.querySelector(".attack-monster-one").disabled = true;
+    };
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
     ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*3, spriteHeight*3);
