@@ -609,6 +609,7 @@ function regenerateHP(hp, maxHP) {
             
     function regenerating(hp, maxHP) {
         if (hp === maxHP) {
+            finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
             continueChapterThreeFive();
             completeHealing();
         } else {
