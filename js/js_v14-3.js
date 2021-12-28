@@ -30,36 +30,38 @@ export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWe
 
 //Animation data
 
-const canvas = document.getElementById('canvas2');
-const ctx = canvas.getContext('2d');
+let canvas = document.getElementById('canvas2');
+let ctx = canvas.getContext('2d');
 
-const CANVAS_WIDTH = canvas.width = 0;
-const CANVAS_HEIGHT = canvas.height = 0;
+let CANVAS_WIDTH = canvas.width = 0;
+let CANVAS_HEIGHT = canvas.height = 0;
 const playerImage = new Image();
-playerImage.src = "character-spritesheet.svg";
+playerImage.src = "images/character-spritesheet.svg";
 const spriteWidth = 64;
 const spriteHeight = 64;
 let frameX = 0;
-let frameY = 3;
+let frameY = 1;
 let gameFrame = 0;
 const staggerFrames = 8;
 let reqAnim;
 
 export function render() {
+    canvas = document.getElementById('canvas2');
+    ctx = canvas.getContext('2d');    
     CANVAS_HEIGHT = 200;
     CANVAS_WIDTH = 200;
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
-    ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*2, spriteHeight*2);    
+    ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*3, spriteHeight*3);    
     requestAnimationFrame(render);
 }
 
 
-function animate() {
+export function animate() {
     document.querySelector('#attack').disabled = true;
     ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
     //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
-    ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*2, spriteHeight*2);
+    ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*3, spriteHeight*3);
     
     if (gameFrame % staggerFrames == 0){       
         if (frameX < 4) {
@@ -155,12 +157,12 @@ function startGame() {
         </div id="canvas-area">
           <fieldset class= 'canvas-info-module'>
             <legend class='canvas-dashboard'>Arena</legend>
-            <canvas id="canvas2"></canvas>
+            <canvas id="canvas2" height="200" width="200"></canvas>
            </fieldset>
         </div>                
         `;
 
-
+        render();
         
 
         
