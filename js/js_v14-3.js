@@ -161,7 +161,7 @@ function startGame() {
 
         
         </div id="canvas-area">
-          <fieldset class= 'canvas-info-module'>
+          <fieldset class= 'canvas-info-module-player'>
             <legend class='canvas-dashboard'>Arena</legend>
             <canvas id="canvas2" height="200" width="200"></canvas>
            </fieldset>

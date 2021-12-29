@@ -56,7 +56,7 @@ export default class Character {
             </fieldset>
         </div>
         </div id="canvas-area">
-          <fieldset class= 'canvas-info-module'>
+          <fieldset class= 'canvas-info-module-player'>
             <legend class='canvas-dashboard'>Arena</legend>
             <canvas id="canvas2" height="200" width="200"></canvas>
            </fieldset>
@@ -114,6 +114,13 @@ export default class Character {
                 <h4 id="monster-two-ap">Armor Points: ${monsterTwo.armorPoints}</h4>
                 <h4 id="monster-two-damage">Damage: ${monsterTwo.damage}</h4> 
             </fieldset>        
+        </div>
+
+        </div id="canvas-area-monster">
+          <fieldset class= 'canvas-info-module-monster'>
+            <legend class='canvas-dashboard'>Arena</legend>
+            <canvas id="canvas3" height="200" width="200"></canvas>
+           </fieldset>
         </div>
         `;     
     };    
