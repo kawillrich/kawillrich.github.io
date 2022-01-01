@@ -819,7 +819,7 @@ function continueChapterFourThreeThree() {
 
     function farmhouseResting(hp, maxHP) {
         if (hp === maxHP) {
-
+            finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
             chapterFourThreeThreeDialogue.innerHTML += `
             <input type="submit" id="start-chapt-five" value="Continue">`;
 
