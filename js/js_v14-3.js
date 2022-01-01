@@ -116,11 +116,11 @@ function startJourneySubmitted() {
      var DOMinsert = document.querySelector('#confirm-start');
      DOMinsert.appendChild(newLinkYes);
 
-     var newLinkNo = document.createElement('input');
-     newLinkNo.type = 'submit';
-     newLinkNo.value = 'No';
-     newLinkNo.id = 'end';
-     DOMinsert.appendChild(newLinkNo);
+    //  var newLinkNo = document.createElement('input');
+    //  newLinkNo.type = 'submit';
+    //  newLinkNo.value = 'No';
+    //  newLinkNo.id = 'end';
+    //  DOMinsert.appendChild(newLinkNo);
 
      var startingGame = document.querySelector("#start");
     startingGame.addEventListener('click', startGame, false);
