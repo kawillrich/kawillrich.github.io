@@ -29,7 +29,7 @@ let charAchievements = {};
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements, adventurerImage);
 
 //Player sheet tab initialization
-function openCity(e, cityName) {
+function openItem(e, cityName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabContent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -42,31 +42,16 @@ function openCity(e, cityName) {
     document.getElementById(cityName).style.display = "block";
     e.currentTarget.className += " active";
   }
-// function openPlayerLink(e, item) {
-//     var i, tabcontent, tablinks;
-//     tabcontent=document.querySelector('.tabContent');
-//     for (i = 0; i < tabcontent.clientHeight; i++) {
-//         tabcontent[i].style.display = 'none';
 
-//     }
 
-//     tablinks = document.querySelector(".tablinks");
-//     for (i = 0; i < tablinks.clientHeight; i++ ) {
-//         tablinks[i].className = tablinks[i].className.replace(" active", "");
-//     }
+let londonLink = document.querySelector('#normal-equipment-link');
+londonLink.addEventListener('click', function(e) { openItem(e, 'normal-equipment')}, false);
 
-//     document.querySelector(item).style.display = "block";
-//     e.currentTarget.className += " active";
-// }
+let parisLink = document.querySelector('#magical-equipment-link');
+parisLink.addEventListener('click', function(e) { openItem(e, 'magical-equipment')}, false);
 
-let londonLink = document.querySelector('#london-link');
-londonLink.addEventListener('click', function(e) { openCity(e, 'London')}, false);
-
-let parisLink = document.querySelector('#paris-link');
-parisLink.addEventListener('click', function(e) { openCity(e, 'Paris')}, false);
-
-let tokyoLink = document.querySelector('#tokyo-link');
-tokyoLink.addEventListener('click', function(e) { openCity(e, 'Tokyo')}, false);
+let tokyoLink = document.querySelector('#spells-link');
+tokyoLink.addEventListener('click', function(e) { openItem(e, 'spells')}, false);
 
 
 //Animation data
