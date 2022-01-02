@@ -4,7 +4,7 @@
 
 body {
   margin: 20px 0px 0px 0px;
-  width: 1400px;
+  /* width: 1400px; */
   height: 1400px;
   padding: 0px 10px 0px 10px;
   display: flex;
@@ -27,9 +27,9 @@ body {
 }
 
 #container-2 {
-  padding: 10px 0px 0px 10px;
-  width: 800px;
   margin: 0px 0px 0px 10px;
+  width: 800px;
+  padding: 10px 0px 0px 10px;
   border: 1px solid black;
   height: 1100px;
 }
