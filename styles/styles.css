@@ -35,15 +35,13 @@ body {
 }
 
 #player-sheet {
-  margin: 10px;
+  margin: 0px;
   height: 500px;
-  border: 1px solid black;
 }
 
 #map {
-  margin: 0px 10px 10px 10px;
+  margin: 0px;
   height: 500px;
-  border: 1px solid black;
 }
 
 legend {

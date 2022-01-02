@@ -151,6 +151,9 @@ function startGame() {
     let minimizeHeader = document.querySelector('#header');
     minimizeHeader.classList.add('minimized');
 
+    let maximizeCanvas4 = document.querySelector('#canvas4');
+    maximizeCanvas4.classList.remove('minimized');
+
 
     let newStartGameDialogue = document.querySelector("#character-info");
     newStartGameDialogue.style.backgroundImage = "none";
