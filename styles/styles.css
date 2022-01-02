@@ -3,7 +3,43 @@
 }
 
 body {
+  margin: auto;
+  width: 1400px;
+  /* height: 1400px; */
+  padding: 0px 10px 0px 10px;
+  display: flex;
+  align-items: stretch;
+}
+
+#footer {
+  border: 1px solid black;
+  height: 50px;
+}
+
+#container {
+  margin: auto;
+  width: 800px;
+  padding: 0px 10px 0px 10px;
+  border: 1px solid black;
+  height: 850px;
+}
+
+#container-2 .hidden {
   width: 700px;
+  margin: 0px 0px 0px 10px;
+  border: 1px solid black;
+}
+
+#player-sheet {
+  margin: 10px;
+  height: 500px;
+  border: 1px solid black;
+}
+
+#map {
+  margin: 0px 10px 10px 10px;
+  height: 500px;
+  border: 1px solid black;
 }
 
 legend {
@@ -79,6 +115,12 @@ fieldset {
   display: flex;
   flex-direction: row;
   height: 225px;
+}
+
+.minimized {
+  display: none;
+  height: 0px;
+  width: 0px;
 }
 
 .monster-info-module {

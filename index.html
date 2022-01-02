@@ -4,64 +4,84 @@
   <title>Dungeon Crawl</title>
   <link href="styles/styles.css" type="text/css" rel="stylesheet"/>
   <body>
-    
-    <hr><hr>
-    <div id="header">
-      <h1>Welcome to Dungeon Crawl: <span>Ruins of the Obsidian Dragon</span></h1><br />
-      <!-- <img src="images/black-dragon.jpg" height="300" width="400"> -->
-      <h6><em>version: 15-trying-animation</em></h6>      
-    </div>
-    <hr>
-    <div id="character-info">
-      <div id="canvas-area">
-        <canvas id="canvas2"></canvas>
+    <div id="container">
+      
+      <div id="header">
+        <h1>Welcome to Dungeon Crawl: <span>Ruins of the Obsidian Dragon</span></h1><br />
+        <!-- <img src="images/black-dragon.jpg" height="300" width="400"> -->
+        <h6><em>version: 15-trying-animation</em></h6>      
       </div>
+      
+      <div id="character-info">
+        <div id="canvas-area">
+          <canvas id="canvas2"></canvas>
+        </div>
 
-    </div><hr>
-    
-    
-    <div id="dialogue">
-        Introduction:  
-        Welcome, Traveler! 
-        <br><br>
-        In the ruins of Elsier, there are rumors of a large treasure being guarded by the Nightfang Dragon, known as Soul Stealer.
-        Soul Stealer is an ancient species of dragon with black scales, obsidian-like talons, and silver eyes that can see in the dark
-        as if it were daytime.  It is said that Soul Stealer breathes black fire that is able to burn through <e>*almost*</e> anything....
-        <br><br>
-        You have decided that your training and preparation have readied you for the challenge to venture to the ruins, in hopes of defeating 
-        the dragon and obtaining his treasure.  Your have grown up a lot since your youth.  Now, at age 26, you feel you are at your 
-        physical peak.  Mentally, you have already taken the leap of faith and prepared your belongings - basic supplies: food, water, armor, 
-        a weapon, and a survival kit.  Your father, Edwin, and your Mother, Alena, have raised you well.  Your father taught you how to 
-        handle your skills and how to defend yourself.  He spent many nights with you, hiking, camping, and living in the woods.  Your mother 
-        taught you how to mend clothes, forage edible foods, and how to take care of your wounds.  
-        <br><br>
-        But did they prepare you for this?....
-        <br><br>
-        What's your name?
-        <br><br>
-        <form ></form>      
-        <label for="charactername">Character Name: </label><input type="text" maxlength="20" id="character-name" placeholder="20 letters max" autofocus>
-        <input type="submit" id="submit-name" value="Submit Name" autofocus><br><br>
+      </div><hr>
+      
+      
+      <div id="dialogue">
+          Introduction:  
+          Welcome, Traveler! 
+          <br><br>
+          In the ruins of Elsier, there are rumors of a large treasure being guarded by the Nightfang Dragon, known as Soul Stealer.
+          Soul Stealer is an ancient species of dragon with black scales, obsidian-like talons, and silver eyes that can see in the dark
+          as if it were daytime.  It is said that Soul Stealer breathes black fire that is able to burn through <e>*almost*</e> anything....
+          <br><br>
+          You have decided that your training and preparation have readied you for the challenge to venture to the ruins, in hopes of defeating 
+          the dragon and obtaining his treasure.  Your have grown up a lot since your youth.  Now, at age 26, you feel you are at your 
+          physical peak.  Mentally, you have already taken the leap of faith and prepared your belongings - basic supplies: food, water, armor, 
+          a weapon, and a survival kit.  Your father, Edwin, and your Mother, Alena, have raised you well.  Your father taught you how to 
+          handle your skills and how to defend yourself.  He spent many nights with you, hiking, camping, and living in the woods.  Your mother 
+          taught you how to mend clothes, forage edible foods, and how to take care of your wounds.  
+          <br><br>
+          But did they prepare you for this?....
+          <br><br>
+          What's your name?
+          <br><br>
+          <form ></form>      
+          <label for="charactername">Character Name: </label><input type="text" maxlength="20" id="character-name" placeholder="20 letters max" autofocus>
+          <input type="submit" id="submit-name" value="Submit Name" autofocus><br><br>
 
-      <div id='confirm-start'>        
-      </div>    
-    </div>
-    <hr>
-    <div id= "fight-module"></div>
-    <hr>
-    <div id = "monster-info">
-      <div id="canvas-area-monster">
-        <canvas id='canvas3'></canvas>
+        <div id='confirm-start'>        
+        </div>    
       </div>
-    </div>
-    <hr>
-    <div id='footer'></div><hr><hr>
-    
-    
-    
-    
+      
+      <div id= "fight-module"></div>
+      
+      <div id = "monster-info" class="minimized">
+        <div id="canvas-area-monster" class='minimized'>
+          <canvas id='canvas3' class='minimized'></canvas>
+        </div>
+      </div>
+      
+      <div id='footer'>footer</div>
+      
+      
+      
+      
 
-    
+      
+      
+
+    </div>
+
+    <!-- <div id='container-2'>
+      <div id='player-sheet'>
+        
+
+
+
+      </div>
+      <div id='map'></div>
+
+    </div> -->
+
+
+
+
+
+
     <script type="module" src="./js/js_v14-3.js"></script>
     <script type="module" src="./js/specialty-class-v2.js"></script>
     <script type="module" src="./js/armor-class-v2.js"></script>
