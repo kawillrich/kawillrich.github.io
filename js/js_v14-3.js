@@ -192,7 +192,7 @@ function startGame() {
            </fieldset>
         </div>                
         `;
-
+        
         render();
         
 

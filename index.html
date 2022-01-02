@@ -53,27 +53,56 @@
         <div id="canvas-area-monster" class='minimized'>
           <canvas id='canvas3' class='minimized'></canvas>
         </div>
-      </div>
-      
-      
-      
-      
-      
-      
-
-      
-      
-
+      </div>       
     </div>
 
     <div id='container-2' class="minimized">
       <div id='player-sheet' class="minimized">
         <fieldset class='char-inventory-sheet'>
           <legend class='player-dashboard'>Player Sheet</legend>
-          Normal Equipment:
+
+          <ul id="tabs">
+            <li><a href="equipment">Equipment</a></li>
+            <li><a href="magical-equipment">Magical Equipment</a></li>
+            <li><a href="spells">Spells</a></li>
+          </ul>
+          
+          <div class="tabContent" id="equipment">
+            <h4>Normal Equipment</h4>
+            <div>
+              <ul>
+                <li>Torch</li>
+                <li>Rations</li>
+
+
+              </ul>
+
+            </div>
+          </div>
+
+          <div class="tabContent" id="magical-equipment">
+            <h4>Magical Equpment:</h4>
+            <div>
+              <ul>
+                <li>Magic Wand</li>
+              </ul>
+            </div>
+          
+          </div>
+
+          <div class="tabContent" id="spells">
+            <h4>Spells:</h4>
+            <div>
+              <ul>Level 1:
+                <li>Heal</li>
+              </ul>
+            </div>
+          </div>
+
+          
         </fieldset>
 
-
+        
 
       </div>
       <div id='map' class="minimized">
