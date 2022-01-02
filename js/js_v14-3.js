@@ -397,12 +397,16 @@ function talkToRaynard() {
     console.log(finalCharacter.achievements); 
 
     finalCharacter.inventory1 = raynardsCoin;    
+
+    
     
    
      var continueChapterThreeOne = document.querySelector("#start-chapter-three");
      
      continueChapterThreeOne.addEventListener('click', function() {
-        alert(`You received ${finalCharacter.inventory1.name}`);    })
+        alert(`You received ${finalCharacter.inventory1.name}`);
+        let addItemToInventory = document.querySelector('#normal-equipment');
+        addItemToInventory.innerHTML += raynardsCoin.name;    })
      continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
 };
 
