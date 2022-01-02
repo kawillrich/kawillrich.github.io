@@ -203,7 +203,7 @@ span#dragonwarrior {
   outline: none;
   cursor: pointer;
   transition: 0.3s;
-  margin: 0px 10px 0px 0px;
+  margin: 0px 0px 0px 10px;
 }
 
 /* Change background color of buttons on hover */
@@ -220,6 +220,7 @@ span#dragonwarrior {
 .tabContent {
   display: none;
   padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px 0px 0px 0px;
 }
