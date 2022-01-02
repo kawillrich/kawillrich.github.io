@@ -3,9 +3,9 @@
 }
 
 body {
-  margin: auto;
+  margin: 20px 0px 0px 0px;
   width: 1400px;
-  /* height: 1400px; */
+  height: 1400px;
   padding: 0px 10px 0px 10px;
   display: flex;
   align-items: stretch;
@@ -13,21 +13,25 @@ body {
 
 #footer {
   border: 1px solid black;
-  height: 50px;
+  /* height: 50px;
+  width: 800px; */
+  /* margin: auto; */
 }
 
 #container {
-  margin: auto;
+  margin: 0px auto 0px auto;
   width: 800px;
-  padding: 0px 10px 0px 10px;
+  padding: 10px 10px 0px 10px;
   border: 1px solid black;
-  height: 850px;
+  height: 1100px;
 }
 
-#container-2 .hidden {
-  width: 700px;
+#container-2 {
+  padding: 10px 0px 0px 10px;
+  width: 800px;
   margin: 0px 0px 0px 10px;
   border: 1px solid black;
+  height: 1100px;
 }
 
 #player-sheet {

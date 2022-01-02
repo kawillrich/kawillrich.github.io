@@ -130,6 +130,28 @@ function startJourneySubmitted() {
 
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {       
+    let maximizeMonsterInfo = document.querySelector('#monster-info');
+    maximizeMonsterInfo.classList.remove('minimized');
+
+    let maximizeCanvasAreaMonster = document.querySelector('#canvas-area-monster');
+    maximizeCanvasAreaMonster.classList.remove('minimized');
+
+    let maximizeCanvas3 = document.querySelector('#canvas3');
+    maximizeCanvas3.classList.remove('minimized');
+
+    let maximizeContainer2 = document.querySelector('#container-2');
+    maximizeContainer2.classList.remove('minimized');
+
+    let maximizePlayerSheet = document.querySelector('#player-sheet');
+    maximizePlayerSheet.classList.remove('minimized');
+
+    let maximizeMap = document.querySelector('#map');
+    maximizeMap.classList.remove('minimized');
+
+    let minimizeHeader = document.querySelector('#header');
+    minimizeHeader.classList.add('minimized');
+
+
     let newStartGameDialogue = document.querySelector("#character-info");
     newStartGameDialogue.style.backgroundImage = "none";
     newStartGameDialogue.innerHTML = `
