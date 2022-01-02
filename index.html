@@ -57,16 +57,37 @@
     </div>
 
     <div id='container-2' class="minimized">
-      <div id='player-sheet' class="minimized">
+      <div id='player-sheet' class="minimized"">
         <fieldset class='char-inventory-sheet'>
           <legend class='player-dashboard'>Player Sheet</legend>
 
-          <ul id="tabs">
-            <li><a href="equipment">Equipment</a></li>
-            <li><a href="magical-equipment">Magical Equipment</a></li>
-            <li><a href="spells">Spells</a></li>
-          </ul>
+          <div class="tab">
+            <button id="london-link" class="tablinks" >London</button>
+            <button id="paris-link" class="tablinks" >Paris</button>
+            <button id="tokyo-link" class="tablinks" >Tokyo</button>
+          </div>
           
+          <div id="London" class="tabContent">
+            <h3>London</h3>
+            <p>London is the capital city of England.</p>
+          </div>
+          
+          <div id="Paris" class="tabContent">
+            <h3>Paris</h3>
+            <p>Paris is the capital of France.</p> 
+          </div>
+          
+          <div id="Tokyo" class="tabContent">
+            <h3>Tokyo</h3>
+            <p>Tokyo is the capital of Japan.</p>
+          </div>
+
+          <!-- <ul id="tabs">
+            <li><a class="tablinks" href="#equipment" id="equipment-link">Equipment</a></li>
+            <li><a class="tablinks" href="#magical-equipment" id="magical-equipment-link">Magical Equipment</a></li>
+            <li><a class="tablinks" href="#spells" id="spells-link">Spells</a></li>
+          </ul>
+
           <div class="tabContent" id="equipment">
             <h4>Normal Equipment</h4>
             <div>
@@ -97,7 +118,7 @@
                 <li>Heal</li>
               </ul>
             </div>
-          </div>
+          </div> -->
 
           
         </fieldset>

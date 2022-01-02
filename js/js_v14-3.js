@@ -28,6 +28,47 @@ let charAchievements = {};
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements, adventurerImage);
 
+//Player sheet tab initialization
+function openCity(e, cityName) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabContent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(cityName).style.display = "block";
+    e.currentTarget.className += " active";
+  }
+// function openPlayerLink(e, item) {
+//     var i, tabcontent, tablinks;
+//     tabcontent=document.querySelector('.tabContent');
+//     for (i = 0; i < tabcontent.clientHeight; i++) {
+//         tabcontent[i].style.display = 'none';
+
+//     }
+
+//     tablinks = document.querySelector(".tablinks");
+//     for (i = 0; i < tablinks.clientHeight; i++ ) {
+//         tablinks[i].className = tablinks[i].className.replace(" active", "");
+//     }
+
+//     document.querySelector(item).style.display = "block";
+//     e.currentTarget.className += " active";
+// }
+
+let londonLink = document.querySelector('#london-link');
+londonLink.addEventListener('click', function(e) { openCity(e, 'London')}, false);
+
+let parisLink = document.querySelector('#paris-link');
+parisLink.addEventListener('click', function(e) { openCity(e, 'Paris')}, false);
+
+let tokyoLink = document.querySelector('#tokyo-link');
+tokyoLink.addEventListener('click', function(e) { openCity(e, 'Tokyo')}, false);
+
+
 //Animation data
 
 let canvas = document.getElementById('canvas2');
@@ -130,6 +171,8 @@ function startJourneySubmitted() {
 
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {       
+    
+
     let maximizeMonsterInfo = document.querySelector('#monster-info');
     maximizeMonsterInfo.classList.remove('minimized');
 
