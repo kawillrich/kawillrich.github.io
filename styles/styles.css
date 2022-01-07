@@ -39,6 +39,16 @@ body {
   height: 500px;
 }
 
+.char-inventory-sheet {
+  height: 450px;
+}
+
+#normal-equipment,
+#magical-equipment,
+#spells {
+  height: 370px;
+}
+
 #map {
   margin: 0px;
   height: 500px;

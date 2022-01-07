@@ -53,6 +53,7 @@ parisLink.addEventListener('click', function(e) { openItem(e, 'magical-equipment
 let tokyoLink = document.querySelector('#spells-link');
 tokyoLink.addEventListener('click', function(e) { openItem(e, 'spells')}, false);
 
+document.getElementById("normal-equipment-link").click();
 
 //Animation data
 
@@ -139,9 +140,10 @@ function startJourneySubmitted() {
      newLinkYes.value= "Yes";
      newLinkYes.id = "start";
      
+     
      var DOMinsert = document.querySelector('#confirm-start');
      DOMinsert.appendChild(newLinkYes);
-
+     newLinkYes.autofocus = true;
     //  var newLinkNo = document.createElement('input');
     //  newLinkNo.type = 'submit';
     //  newLinkNo.value = 'No';
