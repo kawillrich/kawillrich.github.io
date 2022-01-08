@@ -1,3 +1,5 @@
+//RENAME as QuestItem?
+
 export default class Inventory {
     constructor (name, description, enchantment, encumbrance) {
         this.name = name;
