@@ -1,4 +1,4 @@
-export let inventory = [];
+export let normalItems = [];
 
 
 /* 
