@@ -978,7 +978,7 @@ function continueChapterFourTwo() {
         let contChaptFourTwoOne = document.querySelector("#continueChapt4-2-noWolvesAchievement");
         contChaptFourTwoOne.addEventListener('click', continueChapterFourTwoOne, false);  
 
-    }  else {        chapterFourTwoDialogue.innerHTML += `
+    }  else { chapterFourTwoDialogue.innerHTML += `
         <p>You thank the farmer for his time, and let him know you are just passing through and will be on your way.  You exchange goodbyes and continue
         along your journey.</p> 
         
@@ -1039,7 +1039,8 @@ function continueChapterFourTwoOne() {
 function continueChapterFive() {
     // console.log(finalCharacter.weapon.name);
     let updatedCharWeapon = document.querySelector('#char-weapon');
-    updatedCharWeapon.innerHTML = `<h4 id='char-weapon' class='char-info-label'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>`;
+    updatedCharWeapon.innerHTML = `<h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
+    `;
 
     // let updatedCharDamage = document.querySelector('#char-damage');
     // updatedCharDamage.innerHTML = `
