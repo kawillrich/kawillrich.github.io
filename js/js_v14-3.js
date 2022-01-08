@@ -146,22 +146,18 @@ function charNameSubmitted() {
 //asks to start game
 
 function startJourneySubmitted() {
-     var newLinkYes = document.createElement('input');
+     let newLinkYes = document.createElement('input');
      newLinkYes.type = "submit";
      newLinkYes.value= "Yes";
      newLinkYes.id = "start";
      
      
-     var DOMinsert = document.querySelector('#confirm-start');
+     let DOMinsert = document.querySelector('#confirm-start');
      DOMinsert.appendChild(newLinkYes);
      newLinkYes.autofocus = true;
-    //  var newLinkNo = document.createElement('input');
-    //  newLinkNo.type = 'submit';
-    //  newLinkNo.value = 'No';
-    //  newLinkNo.id = 'end';
-    //  DOMinsert.appendChild(newLinkNo);
+    
 
-     var startingGame = document.querySelector("#start");
+     let startingGame = document.querySelector("#start");
     startingGame.addEventListener('click', startGame, false);
 };
 
