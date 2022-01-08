@@ -1039,9 +1039,9 @@ function continueChapterFive() {
     let updatedCharWeapon = document.querySelector('#char-weapon');
     updatedCharWeapon.innerHTML = `<h4 id='char-weapon' class='char-info-label'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>`;
 
-    let updatedCharDamage = document.querySelector('#char-damage');
-    updatedCharDamage.innerHTML = `
-    <h4 id='char-damage' class='char-info-label'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>`;
+    // let updatedCharDamage = document.querySelector('#char-damage');
+    // updatedCharDamage.innerHTML = `
+    // <h4 id='char-damage' class='char-info-label'>Damage: <span class="character-display-info">${finalCharacter.weapon.damage}</span></h4>`;
 
     let chapterFiveDialogue = document.querySelector('#dialogue');
     chapterFiveDialogue.innerHTML = `
