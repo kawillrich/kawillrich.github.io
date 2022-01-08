@@ -14,28 +14,32 @@ export let  = {
 export let raynardsCoin1 = {
     name: "Raynard's Coin", 
     description: "Coin provided to you from Raynard", 
-    enchantment: 0
+    enchantment: 0,
+    costInGP: 1
 };
 
 export let farmersNote1 = {
     name: "Farmer's Note", 
     description: "Note received from farmers after defeating wolves", 
     enchantment: 0,
-    encumbrance: 0
+    encumbrance: 0,
+    costInGP: 0
 };
 
 export let eloisesRing1 = {
     name: "Eloise's Ring", 
     description: "Ring Eloise wore", 
     enchantment: 0,
-    encumbrance: 0
+    encumbrance: 0,
+    costInGP: 30
 };
 
 export let noItem1 = {
     name: "None", 
     description: "None", 
     enchantment: 0,
-    encumbrance: 0
+    encumbrance: 0,
+    costInGP: 0
 };
 
 export let torch = {
@@ -43,6 +47,7 @@ export let torch = {
     description: "Ordinary Torch",
     enchantment: 0,
     encumbrance: 1,
+    costInGP: 20
 }
 
 export let backPack = {
@@ -50,6 +55,7 @@ export let backPack = {
     description: "Ordinary backpack",
     enchantment: 0,
     encumbrance: 20,
+    costInGP: 5
 }
 
 export let holySymbol = { 
@@ -57,6 +63,7 @@ export let holySymbol = {
     description: "Holy Symbol for clerics",
     enchantment: 0,
     encumbrance: 1,
+    costInGP: 25
 }
 
 export let holyWater = { 
@@ -64,6 +71,7 @@ export let holyWater = {
     description: "1 vial of Holy Water for clerics",
     enchantment: 0,
     encumbrance: 1,
+    costInGP: 25
 }
 
 export let smallHammer = { 
@@ -71,6 +79,7 @@ export let smallHammer = {
     description: "Ordinary small hammer",
     enchantment: 0,
     encumbrance: 10,
+    costInGP: 2
 }
 
 export let ironSpikes = { 
@@ -78,6 +87,7 @@ export let ironSpikes = {
     description: "Iron Spikes",
     enchantment: 0,
     encumbrance: 5,
+    costInGP: 1
 }
 
 export let garlic = { 
@@ -85,6 +95,7 @@ export let garlic = {
     description: "Bulb of garlic",
     enchantment: 0,
     encumbrance: 1,
+    costInGP: 5
 }
 
 export let grapplingHook = { 
@@ -92,6 +103,7 @@ export let grapplingHook = {
     description: "Ordinary Grappling Hook",
     enchantment: 0,
     encumbrance: 80,
+    costInGP: 25
 }
 
 export let lantern = { 
@@ -99,6 +111,7 @@ export let lantern = {
     description: "Ordinary Lantern",
     enchantment: 0,
     encumbrance: 30,
+    costInGP: 10
 }
 
 export let mirrorHandSized = { 
@@ -106,6 +119,7 @@ export let mirrorHandSized = {
     description: "Hand-sized mirror made of steel",
     enchantment: 0,
     encumbrance: 5,
+    costInGP: 5
 }
 
 export let oil = { 
@@ -113,6 +127,7 @@ export let oil = {
     description: "One flask of oil",
     enchantment: 0,
     encumbrance: 10,
+    costInGP: 2
 }
 
 export let poleWooden = { 
@@ -120,6 +135,7 @@ export let poleWooden = {
     description: "Pole, wooden (10ft long)",
     enchantment: 0,
     encumbrance: 100,
+    costInGP: 1
 }
 
 export let rationsIron = { 
@@ -127,6 +143,7 @@ export let rationsIron = {
     description: "Iron rations",
     enchantment: 0,
     encumbrance: 70,
+    costInGP: 15
 }
 
 export let rationsStandard = { 
@@ -134,6 +151,7 @@ export let rationsStandard = {
     description: "Standard rations",
     enchantment: 0,
     encumbrance: 200,
+    costInGP: 5
 }
 
 export let rope = { 
@@ -141,6 +159,7 @@ export let rope = {
     description: "",
     enchantment: 0,
     encumbrance: 50,
+    costInGP: 1
 }
 
 export let sackSmall = { 
@@ -148,6 +167,7 @@ export let sackSmall = {
     description: "Small sack",
     enchantment: 0,
     encumbrance: 1,
+    costInGP: 1
 }
 
 export let sackLarge = { 
@@ -155,6 +175,7 @@ export let sackLarge = {
     description: "Large sack",
     enchantment: 0,
     encumbrance: 5,
+    costInGP: 2
 }
 
 export let stakesAndMallet = { 
@@ -162,6 +183,7 @@ export let stakesAndMallet = {
     description: "Stakes and mallet",
     enchantment: 0,
     encumbrance: 10,
+    costInGP: 3
 }
 
 export let thievesTools = { 
@@ -169,6 +191,7 @@ export let thievesTools = {
     description: "Tools for thieves",
     enchantment: 0,
     encumbrance: 10,
+    costInGP: 25
 }
 
 export let tinderBox = { 
@@ -176,6 +199,7 @@ export let tinderBox = {
     description: "Tinder box used for making fires",
     enchantment: 0,
     encumbrance: 5,
+    costInGP: 3
 }
 
 export let waterskin = { 
@@ -183,6 +207,7 @@ export let waterskin = {
     description: "Used for storing water",
     enchantment: 0,
     encumbrance: 5,
+    costInGP: 1
 }
 
 export let wine = { 
@@ -190,6 +215,7 @@ export let wine = {
     description: "One quart of wine",
     enchantment: 0,
     encumbrance: 30,
+    costInGP: 1
 }
 
 export let wolfsbane = { 
@@ -197,4 +223,5 @@ export let wolfsbane = {
     description: "One bunch of wolvesbane to repel lycanthrops",
     enchantment: 0,
     encumbrance: 0,
+    costInGP: 10
 }
