@@ -235,26 +235,29 @@ span#dragonwarrior {
   margin: 10px 0px 0px 0px;
 }
 
-.armor-tooltip {
+.armor-tooltip,
+.weapon-tooltip {
   position: relative;
   display: inline-block;
 }
 
-.armor-tooltiptext {
+.armor-tooltiptext,
+.weapon-tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: black;
   color: #fff;
-  text-align: center;
+  text-align: left;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 5px 5px;
   position: absolute;
   z-index: 1;
   top: -5px;
   left: 110%;
 }
 
-.armor-tooltip .armor-tooltiptext::after {
+.armor-tooltip .armor-tooltiptext::after,
+.weapon-tooltip .weapon-tooltiptext::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -265,6 +268,7 @@ span#dragonwarrior {
   border-color: transparent black transparent transparent;
 }
 
-.armor-tooltip:hover .armor-tooltiptext {
+.armor-tooltip:hover .armor-tooltiptext,
+.weapon-tooltip:hover .weapon-tooltiptext {
   visibility: visible;
 }
