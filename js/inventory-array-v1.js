@@ -115,9 +115,86 @@ export let oil = {
     encumbrance: 10,
 }
 
-export let  = { 
-    name: "",
+export let poleWooden = { 
+    name: "Pole (wooden)",
+    description: "Pole, wooden (10ft long)",
+    enchantment: 0,
+    encumbrance: 100,
+}
+
+export let rationsIron = { 
+    name: "Rations, iron",
+    description: "Iron rations",
+    enchantment: 0,
+    encumbrance: 70,
+}
+
+export let rationsStandard = { 
+    name: "Rations, standard",
+    description: "Standard rations",
+    enchantment: 0,
+    encumbrance: 200,
+}
+
+export let rope = { 
+    name: "Rope (50ft length)",
     description: "",
+    enchantment: 0,
+    encumbrance: 50,
+}
+
+export let sackSmall = { 
+    name: "Sack, small",
+    description: "Small sack",
+    enchantment: 0,
+    encumbrance: 1,
+}
+
+export let sackLarge = { 
+    name: "Sack, large",
+    description: "Large sack",
+    enchantment: 0,
+    encumbrance: 5,
+}
+
+export let stakesAndMallet = { 
+    name: "Stakes and Mallet",
+    description: "Stakes and mallet",
+    enchantment: 0,
+    encumbrance: 10,
+}
+
+export let thievesTools = { 
+    name: "Thieves' Tools",
+    description: "Tools for thieves",
+    enchantment: 0,
+    encumbrance: 10,
+}
+
+export let tinderBox = { 
+    name: "Tinder Box",
+    description: "Tinder box used for making fires",
+    enchantment: 0,
+    encumbrance: 5,
+}
+
+export let waterskin = { 
+    name: "Waterskin (1 quart)",
+    description: "Used for storing water",
+    enchantment: 0,
+    encumbrance: 5,
+}
+
+export let wine = { 
+    name: "Wine (1 quart)",
+    description: "One quart of wine",
+    enchantment: 0,
+    encumbrance: 30,
+}
+
+export let wolfsbane = { 
+    name: "Wolfsbane (1 bunch)",
+    description: "One bunch of wolvesbane to repel lycanthrops",
     enchantment: 0,
     encumbrance: 0,
 }
