@@ -199,7 +199,7 @@ function startGame() {
                 <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
+                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorPoints}</span></div></h4> 
                 <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
@@ -681,7 +681,7 @@ function regenerateHP(hp, maxHP) {
             let regeneratedHP = document.getElementById('char-hp');
             regeneratedHP.innerHTML = 
                 `
-                Health Points: <span class="character-display-info">${hp}</span>
+                Hit Points: <span class="character-display-info">${hp}</span>
                 `;
 
             let regenerationDialogue = document.getElementById('dialogue');
@@ -897,7 +897,7 @@ function continueChapterFourThreeThree() {
             let regeneratedHP = document.getElementById('char-hp');
             regeneratedHP.innerHTML = 
                 `
-                Health Points: <span class="character-display-info">${hp}</span>
+                Hit Points: <span class="character-display-info">${hp}</span>
                 `;
 
             // let regenerationDialogue = document.getElementById('dialogue');
