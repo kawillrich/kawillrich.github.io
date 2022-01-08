@@ -34,7 +34,7 @@ export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWe
 
 
 //Player sheet tab initialization
-function openItem(e, cityName) {
+function openItem(e, linkName) {
     var i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabContent");
     for (i = 0; i < tabcontent.length; i++) {
@@ -44,19 +44,19 @@ function openItem(e, cityName) {
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(linkName).style.display = "block";
     e.currentTarget.className += " active";
   }
 
 
-let londonLink = document.querySelector('#normal-equipment-link');
-londonLink.addEventListener('click', function(e) { openItem(e, 'normal-equipment')}, false);
+let normalEquipmentLink = document.querySelector('#normal-equipment-link');
+normalEquipmentLink.addEventListener('click', function(e) { openItem(e, 'normal-equipment')}, false);
 
-let parisLink = document.querySelector('#magical-equipment-link');
-parisLink.addEventListener('click', function(e) { openItem(e, 'magical-equipment')}, false);
+let magicalEqiupmentLink = document.querySelector('#magical-equipment-link');
+magicalEqiupmentLink.addEventListener('click', function(e) { openItem(e, 'magical-equipment')}, false);
 
-let tokyoLink = document.querySelector('#spells-link');
-tokyoLink.addEventListener('click', function(e) { openItem(e, 'spells')}, false);
+let spellsLink = document.querySelector('#spells-link');
+spellsLink.addEventListener('click', function(e) { openItem(e, 'spells')}, false);
 
 document.getElementById("normal-equipment-link").click();
 
@@ -108,8 +108,7 @@ export function animate() {
                 document.querySelector(".attack-monster-one").disabled = false;
             }
             return ;
-        }
-    
+        }    
     }    
     // console.log(frameX);
     gameFrame++;
@@ -117,8 +116,7 @@ export function animate() {
     
 };
 
-export function stopAnimate() {
-    
+export function stopAnimate() {    
     window.cancelAnimationFrame(reqAnim);
     
 }
