@@ -65,10 +65,9 @@ export default class Character {
     //confirms to attack monsters and populates monster-info section
 
     confirmAttack(monsterOne, monsterTwo) {
-        console.log(monsterOne);
-        console.log(monsterTwo);
-        //this.enemy1 = monsterOne;
-        //this.enemy2 = monsterTwo;        
+        // console.log(monsterOne);
+        // console.log(monsterTwo);
+               
        
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 
@@ -126,10 +125,10 @@ export default class Character {
     //attacking monster 1
 
     weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter) {
-        console.log("Logging NEXT CHAPTER" + continueNextChapter)
-        console.log(monster1);
-        console.log(weapon);
-        console.log(monster2);
+        // console.log("Logging NEXT CHAPTER" + continueNextChapter)
+        // console.log(monster1);
+        // console.log(weapon);
+        // console.log(monster2);
         let self = this;        
 
         let confirmMonstersDead = (enemy1) => {            
@@ -137,7 +136,7 @@ export default class Character {
         //checking if both monsters are dead   
 
             if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
-            console.log('both dead');
+            // console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
@@ -221,16 +220,15 @@ export default class Character {
     };      
 
     weaponAttackMonster2(monster1, monster2, weapon, continueNextChapter) {
-        console.log("Logging NEXT CHAPTER" + continueNextChapter)
-        console.log(monster1);
-        console.log(weapon);
-        console.log(monster2);
+        // console.log("Logging NEXT CHAPTER" + continueNextChapter)
+        // console.log(monster1);
+        // console.log(weapon);
+        // console.log(monster2);
         let self = this;
         let confirmMonstersDead = (enemy2) => {            
-            //console.log(self.enemy1.name);
                     
             if (monster2.healthPoints <= 0 && monster1.healthPoints <= 0) {
-            console.log('both dead');
+            // console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
@@ -310,17 +308,17 @@ export default class Character {
     }
 
     spell2AttackMonster1(monster1, monster2, spell2, continueNextChapter) {
-        console.log('Casting Spell Two on Monster One');
-        console.log(monster1);
-        console.log(monster2);
-        console.log(spell2);
+        // console.log('Casting Spell Two on Monster One');
+        // console.log(monster1);
+        // console.log(monster2);
+        // console.log(spell2);
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
 
             if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
-            console.log('both dead');
+            // console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
@@ -344,7 +342,7 @@ export default class Character {
         attackDialogue.innerHTML = `
         <p>You cast ${this.specialty.spell2.name} on the ${monster1.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
         
-        console.log(this.specialty.spell2.damage);
+        // console.log(this.specialty.spell2.damage);
                 
         //CHECKING ATTACK INTERACTION
         if (monster1.healthPoints - this.specialty.spell2.damage > 0) {        
@@ -400,14 +398,14 @@ export default class Character {
     }
 
     spell2AttackMonster2(monster1, monster2, spell2, continueNextChapter) {
-        console.log('Casting Spell Two on Monster Two');
+        // console.log('Casting Spell Two on Monster Two');
         let self = this;
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
 
             if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
-            console.log('both dead');
+            // console.log('both dead');
         
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
@@ -431,7 +429,7 @@ export default class Character {
         attackDialogue.innerHTML = `
         <p>You cast ${this.specialty.spell2.name} on the ${monster2.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
         
-        console.log(this.specialty.spell2.damage);
+        // console.log(this.specialty.spell2.damage);
                 
         //CHECKING ATTACK INTERACTION
         if (monster2.healthPoints - this.specialty.spell2.damage > 0) {        
@@ -486,7 +484,7 @@ export default class Character {
     }
 
     spell1Heal() {
-        console.log('Casting Heal Spell');        
+        // console.log('Casting Heal Spell');        
         let healedCharHP = document.querySelector("#char-hp");
         finalCharacter.specialty.healthPoints += finalCharacter.specialty.spell1.healing;
         if (finalCharacter.specialty.healthPoints >= finalCharacter.specialty.maxHealthPoints) {
@@ -510,7 +508,7 @@ export default class Character {
 
     //***TRYING TO CREATE AREA ATTACK SPELL
     areaAttackSpell(monster1, monster2, spell3, continueNextChapter) {
-        console.log('Casting Area Attack Spell');
+        // console.log('Casting Area Attack Spell');
         
         let self = this;
         this.monster1 = monster1;
@@ -528,11 +526,11 @@ export default class Character {
         //checking if both monsters are dead
    
         let confirmMonstersDead = () => {      
-            console.log(monster1.healthPoints);
-            console.log(monster2.healthPoints);
+            // console.log(monster1.healthPoints);
+            // console.log(monster2.healthPoints);
             
             if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
-            console.log('both dead');
+            // console.log('both dead');
         
             monster1.healthPoints = 0;
             monster2.healthPoints = 0;
@@ -562,8 +560,8 @@ export default class Character {
             };            
         
          };        
-         console.log(monster1);
-         console.log(monster2);
+        //  console.log(monster1);
+        //  console.log(monster2);
             if (monster1.healthPoints <= 0) {
                 monster1.healthPoints = 0;
             };
@@ -582,7 +580,7 @@ export default class Character {
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
 
             let greyOutAttackButtons = function() {
-                console.log('greyOutAttackButtons arguments');                
+                // console.log('greyOutAttackButtons arguments');                
                 
                 let attackButtons = document.querySelectorAll('.attack');
                 
@@ -625,7 +623,7 @@ export default class Character {
 
         } else {
             //item.healthPoints -= damage;
-            console.log(`You attacked ${item.name} for ${damage} points of damage`);
+            // console.log(`You attacked ${item.name} for ${damage} points of damage`);
 
             let attackDialogue = document.querySelector("#dialogue");
         
