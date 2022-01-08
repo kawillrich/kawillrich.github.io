@@ -35,7 +35,7 @@ export default class Character {
                 <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Health Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
+                <h4 id='char-hp' class='char-info-label'>Hit Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorPoints}</span></div></h4> 
                 <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
@@ -99,7 +99,7 @@ export default class Character {
             <fieldset class='monster-info-module'>
                 <legend class='monster-dashboard'>Monster 1</legend>
                 <h4 id="monster-one-type">Monster Type: ${monsterOne.name}</h4>
-                <h4 id="monster-one-hp">Health Points: ${monsterOne.healthPoints}</h4> 
+                <h4 id="monster-one-hp">Hit Points: ${monsterOne.healthPoints}</h4> 
                 <h4 id="monster-one-ap">Armor Points: ${monsterOne.armorPoints}</h4>
                 <h4 id="monster-one-damage">Damage: ${monsterOne.damage}</h4>     
             </fieldset>  
@@ -108,7 +108,7 @@ export default class Character {
             <fieldset class='monster-info-module'>
                 <legend class='monster-dashboard'>Monster 2</legend>
                 <h4 id="monster-two-type">Monster Type: ${monsterTwo.name}</h4>
-                <h4 id="monster-two-hp">Health Points: ${monsterTwo.healthPoints}</h4> 
+                <h4 id="monster-two-hp">Hit Points: ${monsterTwo.healthPoints}</h4> 
                 <h4 id="monster-two-ap">Armor Points: ${monsterTwo.armorPoints}</h4>
                 <h4 id="monster-two-damage">Damage: ${monsterTwo.damage}</h4> 
             </fieldset>        
@@ -166,7 +166,7 @@ export default class Character {
             monster1.healthPoints = monster1.healthPoints - this.weapon.damage;
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
-            <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4>`;
+            <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
             
 
 //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
@@ -198,7 +198,7 @@ export default class Character {
                 <fieldset class='monster-info-module'>
                     <legend class='monster-dashboard'>Monster 1</legend>
                     <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
-                    <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4> 
+                    <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4> 
                     <h4 id="monster-one-ap">Armor Points: ${monster1.armorPoints}</h4>
                     <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>    
                 </fieldset>   
@@ -261,7 +261,7 @@ export default class Character {
             monster2.healthPoints = monster2.healthPoints - this.weapon.damage;
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
-            <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4>`;
+            <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
 
             //greying out attack module buttons when pressed
 
@@ -291,7 +291,7 @@ export default class Character {
                     <fieldset class='monster-info-module'>
                         <legend class='monster-dashboard'>Monster 2</legend>
                         <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
-                        <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4> 
+                        <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4> 
                         <h4 id="monster-two-ap">Armor Points: ${monster2.armorPoints}</h4>
                         <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
                     </fieldset>    
@@ -351,7 +351,7 @@ export default class Character {
             monster1.healthPoints = monster1.healthPoints - this.specialty.spell2.damage;
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
-            <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4>`;
+            <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
 
             //greying out attack module buttons when pressed
 
@@ -381,7 +381,7 @@ export default class Character {
                 <fieldset class='monster-info-module'>
                     <legend class='monster-dashboard'>Monster 1</legend>
                     <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
-                    <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4> 
+                    <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4> 
                     <h4 id="monster-one-ap">Armor Points: ${monster1.armorPoints}</h4>
                     <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>    
                 </fieldset>   
@@ -438,7 +438,7 @@ export default class Character {
             monster2.healthPoints = monster2.healthPoints - this.specialty.spell2.damage;
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
-            <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4>`;
+            <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
 
             //greying out attack module buttons when pressed
 
@@ -468,7 +468,7 @@ export default class Character {
                 <fieldset class='monster-info-module'>
                     <legend class='monster-dashboard'>Monster 2</legend>
                     <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
-                    <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4> 
+                    <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4> 
                     <h4 id="monster-two-ap">Armor Points: ${monster2.armorPoints}</h4>
                     <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
                 </fieldset>    
@@ -493,12 +493,12 @@ export default class Character {
             finalCharacter.specialty.healthPoints = finalCharacter.specialty.maxHealthPoints;
             }   
         healedCharHP.innerHTML = `
-        <h4 id='char-hp' class='char-info-label'>Health Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+        <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
         `;
         
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} health points.</p>`;
+        <p>You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} hit points.</p>`;
 
         let castedHealSpell = document.querySelector('.spell1-heal');       
 
@@ -539,11 +539,11 @@ export default class Character {
 
             let updatedMonster1HP = document.querySelector("#monster-one-hp");
             updatedMonster1HP.innerHTML = `
-            <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4>`;
+            <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
 
             let updatedMonster2HP = document.querySelector("#monster-two-hp");
             updatedMonster2HP.innerHTML = `
-            <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4>`;
+            <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
 
 
 
@@ -575,11 +575,11 @@ export default class Character {
 
             let updatedMonster1HP = document.querySelector("#monster-one-hp");
             updatedMonster1HP.innerHTML = `
-            <h4 id="monster-one-hp">Health Points: ${monster1.healthPoints}</h4>`;
+            <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
 
             let updatedMonster2HP = document.querySelector("#monster-two-hp");
             updatedMonster2HP.innerHTML = `
-            <h4 id="monster-two-hp">Health Points: ${monster2.healthPoints}</h4>`;
+            <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
 
             let greyOutAttackButtons = function() {
                 console.log('greyOutAttackButtons arguments');                
