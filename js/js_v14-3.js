@@ -109,7 +109,7 @@ export function animate() {
         }
     
     }    
-    console.log(frameX);
+    // console.log(frameX);
     gameFrame++;
     reqAnim = requestAnimationFrame(animate);
     
@@ -283,7 +283,7 @@ function logCharSpecialty() {
     
     selectedSpecialty = document.querySelector('input[name="selected-specialty"]:checked').value;
     if (selectedSpecialty === "fighter") {
-        console.log('fighter');
+        // console.log('fighter');
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = warrior; 
         finalCharacter.armor = chainMail; 
@@ -296,7 +296,7 @@ function logCharSpecialty() {
         
         
     } else if (selectedSpecialty === "archer") {
-        console.log('archer');
+        // console.log('archer');
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = masterArcher; 
         finalCharacter.armor = leatherArmor; 
@@ -307,7 +307,7 @@ function logCharSpecialty() {
         
         
     } else if (selectedSpecialty === "mage") {
-        console.log('mage');
+        // console.log('mage');
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = highMage; 
         finalCharacter.armor = robes; 
@@ -318,7 +318,7 @@ function logCharSpecialty() {
         
 
     } else if (selectedSpecialty === "dragonwarrior") {
-        console.log('dragonwarrior');
+        // console.log('dragonwarrior');
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = dragonWarrior; 
         finalCharacter.armor = obsidianPlateMail; 
@@ -329,7 +329,7 @@ function logCharSpecialty() {
         
 
     } else {
-        console.log ('none');
+        // console.log ('none');
     };
     
     beginJourney();
@@ -359,7 +359,7 @@ function beginJourney() {
 //CHAPTER TWO
 
 function beginChapterTwo() {
-    console.log('Begin');
+    // console.log('Begin');
     let chapterTwo = document.querySelector('#dialogue');
     chapterTwo.innerHTML = `
     <p>As you pack up your belongings, you know your ${finalCharacter.specialty.name} training will serve you well.  You pick up your ${finalCharacter.weapon.name} and slide your 
@@ -381,7 +381,7 @@ function beginChapterTwo() {
 }; 
 
 function talkToRaynard() {
-    console.log('Talking to Raynard');
+    // console.log('Talking to Raynard');
     let talkingToRaynard = document.querySelector('#dialogue');
     talkingToRaynard.innerHTML = `
     <p>"Good Morning, ${finalCharacter.name}.  I hope you slept well.  You know, I remember stories of the dragon Soul Stealer.  My father's father's grandfather told me of the 
@@ -404,7 +404,7 @@ function talkToRaynard() {
 
 
     finalCharacter.achievements.spokeToRaynard = {name: "Spoke to Raynard", desc: "Spoke to Raynard and received his coin."};
-    console.log(finalCharacter.achievements); 
+    // console.log(finalCharacter.achievements); 
 
     finalCharacter.inventory1 = raynardsCoin;    
 
@@ -426,7 +426,7 @@ function startChapterThreeOne() {
     let receiveCoin = document.querySelector('.character-display-inv1');
     receiveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
     
-    console.log('Chapter Three-one');
+    // console.log('Chapter Three-one');
     let chapterThreeOne = document.querySelector('#dialogue');
     chapterThreeOne.innerHTML = `
     <p>As you depart the Blue Blade Inn, you feel confident in what you are about the journey you are about to embark on (begin).  You've heard stories from others about the 
@@ -451,7 +451,7 @@ function startChapterThreeOne() {
 //CHAPTER THREE TWO
 
 function continueChapterThreeTwo() {
-    console.log('Chapter Three-two');
+    // console.log('Chapter Three-two');
     let chapterThreeTwo = document.querySelector('#dialogue');
     chapterThreeTwo.innerHTML = `
     <p>You find the main road in town and head south until you find the horse cart path running East.  You take one look back, beathe in...hold...and exhale.  You follow the 
@@ -485,7 +485,7 @@ function continueChapterThreeTwo() {
 //CHAPTER THREE THREE
 
 function continueChapterThreeThree() {
-    console.log('Chapter Three-three');
+    // console.log('Chapter Three-three');
     let chapterThreeThree = document.querySelector('#dialogue');
     chapterThreeThree.innerHTML = `
     <p>You hasten (quicken) your pace, enough to move more quickly, but not in a jog - you have a long journey ahead of you and know you can't tire yourself out to soon.  
@@ -524,8 +524,8 @@ function declareAttack() {
 };
 
 function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
-    console.log(monsterOne);
-    console.log(monsterTwo); 
+    // console.log(monsterOne);
+    // console.log(monsterTwo); 
     let headerFightModule = document.querySelector('#fight-module');
         headerFightModule.innerHTML = `
         <div class="attack-buttons">
@@ -581,8 +581,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
         let healSpellSelf = document.querySelector('.spell1-heal');
         healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
     }
-    console.log(monsterOne);
-    console.log(monsterTwo);
+    // console.log(monsterOne);
+    // console.log(monsterTwo);
     confirmAttackMonsters(monsterOne, monsterTwo);    
 };
 
@@ -590,9 +590,9 @@ export function confirmAttackMonsters(monsterOne, monsterTwo) {
 
 //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES
 
-    console.log('Attacking Monsters');     
-    console.log(monsterOne);   
-    console.log(monsterTwo);
+    // console.log('Attacking Monsters');     
+    // console.log(monsterOne);   
+    // console.log(monsterTwo);
     finalCharacter.confirmAttack(monsterOne, monsterTwo);        
     //attackingMonsters.apply(null, arguments);
 }
@@ -610,12 +610,12 @@ function goAroundMonsters(nextChapter) {
 //CHAPTER THREE FOUR
 
 export function continueChapterThreeFour() {    
-    console.log('Chapter Three-four');
+    // console.log('Chapter Three-four');
 
     //ADDING ACHIEVEMENT
 
     finalCharacter.achievements.killedFarmWolves = {name: "Killed Farm Wolves", desc: "Killed two wolves near farmhouse."};
-    console.log(finalCharacter.achievements);
+    // console.log(finalCharacter.achievements);
 
     //END ACHIEVEMENT ADD
 
@@ -661,7 +661,7 @@ function regenerateHP(hp, maxHP) {
         startChapterThreeFive.addEventListener('click', continueChapterThreeFive, false);
     }
 
-    console.log('regenerating HP');
+    // console.log('regenerating HP');
 
     var removeMonsterInfo = document.querySelector('#monster-info');
     removeMonsterInfo.innerHTML = ` `;
@@ -701,7 +701,7 @@ function regenerateHP(hp, maxHP) {
 //CHAPTER THREE FIVE
 
 function continueChapterThreeFive () {
-    console.log('Chapter Three-Five');
+    // console.log('Chapter Three-Five');
     var removeMonsterInfo = document.querySelector('#monster-info');
     removeMonsterInfo.innerHTML = ` `;
 
@@ -725,7 +725,7 @@ function continueChapterThreeFive () {
 //CHAPTER THREE SIX
 
 function continueChapterThreeSix () {
-    console.log('Chapter Three Six');
+    // console.log('Chapter Three Six');
     let chapterThreeSixDialogue = document.querySelector('#dialogue');
     chapterThreeSixDialogue.innerHTML = `
     <p>
@@ -758,7 +758,7 @@ function continueChapterThreeSix () {
 };
 
 function continueChapterThreeSeven () {
-    console.log('Chapter Three-Seven');
+    // console.log('Chapter Three-Seven');
     let chapterThreeSevenDialogue = document.getElementById('dialogue');
     chapterThreeSevenDialogue.innerHTML = `
     <p>         
@@ -767,7 +767,7 @@ function continueChapterThreeSeven () {
 }
 
 function continueChapterFour () {
-    console.log('Chapter Four');
+    // console.log('Chapter Four');
     let chapterFourDialogue = document.getElementById('dialogue');
     chapterFourDialogue.innerHTML = `
     <p>You decide to knock on the door.  You can see how the wooden door shutters when you strike your hand against it.  As you wait for an 
@@ -1026,7 +1026,7 @@ function continueChapterFourTwoOne() {
         finalCharacter.weapon = finalCharacter.weapon;
     }
 
-    console.log(finalCharacter.weapon.name);
+    // console.log(finalCharacter.weapon.name);
 
     let beginChapterFive = document.querySelector('#start-chapt-five');
     beginChapterFive.addEventListener('click', continueChapterFive, false);
@@ -1035,7 +1035,7 @@ function continueChapterFourTwoOne() {
 }
 
 function continueChapterFive() {
-    console.log(finalCharacter.weapon.name);
+    // console.log(finalCharacter.weapon.name);
     let updatedCharWeapon = document.querySelector('#char-weapon');
     updatedCharWeapon.innerHTML = `<h4 id='char-weapon' class='char-info-label'>Weapon: <span class="character-display-info">${finalCharacter.weapon.name}</span></h4>`;
 
@@ -1057,7 +1057,7 @@ function continueChapterFive() {
 
 
 function beginTestChapter () {
-    console.log('Chapter Three-Six');
+    // console.log('Chapter Three-Six');
         
     var chapterThreeSixDialogue = document.getElementById('dialogue');
     chapterThreeSixDialogue.innerHTML = `
