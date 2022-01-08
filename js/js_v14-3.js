@@ -31,6 +31,8 @@ let charAchievements = {};
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements, adventurerImage);
 
+
+
 //Player sheet tab initialization
 function openItem(e, cityName) {
     var i, tabcontent, tablinks;
