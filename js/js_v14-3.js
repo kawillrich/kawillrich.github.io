@@ -275,25 +275,43 @@ function generateNewAttributes() {
     let getCharCharisma = document.querySelector('#charisma-stat');
     getCharCharisma.innerHTML = attributes[5].score;
 
-    
-  
     for (let i = 0; i < attributes.length; i++) {
-      if (attributes[i].score === 3) {
-        attributes[i].adjustment = -3;
-      } else if (attributes[i].score === 4 || attributes[i].score === 5) {
-        attributes[i].adjustment = -2;
-      } else if (attributes[i].score === 6 || attributes[i].score === 7 || attributes[i].score === 8) {
-        attributes[i].adjustment = -1;
-      } else if (attributes[i].score > 8 && attributes[i].score < 13) {
-        attributes[i].adjustment = 0;
-      } else if (attributes[i].score > 12 && attributes[i].score < 16) {
-        attributes[i].adjustment = 1;
-      } else if (attributes[i].score > 15 && attributes[i].score < 18) {
-        attributes[i].adjustment = 2;
-      } else if (attributes[i].score === 18) {
-        attributes[i].adjustment = 3;
-      }
-    };
+        if (attributes[i].score === 3) {
+          attributes[i].adjustment = -3;
+        } else if (attributes[i].score === 4 || attributes[i].score === 5) {
+          attributes[i].adjustment = -2;
+        } else if (attributes[i].score === 6 || attributes[i].score === 7 || attributes[i].score === 8) {
+          attributes[i].adjustment = -1;
+        } else if (attributes[i].score > 8 && attributes[i].score < 13) {
+          attributes[i].adjustment = 0;
+        } else if (attributes[i].score > 12 && attributes[i].score < 16) {
+          attributes[i].adjustment = 1;
+        } else if (attributes[i].score > 15 && attributes[i].score < 18) {
+          attributes[i].adjustment = 2;
+        } else if (attributes[i].score === 18) {
+          attributes[i].adjustment = 3;
+        }
+      };
+
+    let getCharStrengthAdj = document.querySelector('#strength-stat-adjustment');
+    getCharStrengthAdj.innerHTML = attributes[0].adjustment;
+  
+    let getCharIntelligenceAdj = document.querySelector('#intelligence-stat-adjustment');
+    getCharIntelligenceAdj.innerHTML = attributes[1].adjustment;
+  
+    let getCharWisdomAdj = document.querySelector('#wisdom-stat-adjustment');
+    getCharWisdomAdj.innerHTML = attributes[2].adjustment;
+  
+    let getCharDexterityAdj = document.querySelector('#dexterity-stat-adjustment');
+    getCharDexterityAdj.innerHTML = attributes[3].adjustment;
+  
+    let getCharConstitutionAdj = document.querySelector('#constitution-stat-adjustment');
+    getCharConstitutionAdj.innerHTML = attributes[4].adjustment;
+  
+    let getCharCharismaAdj = document.querySelector('#charisma-stat-adjustment');
+    getCharCharismaAdj.innerHTML = attributes[5].adjustment;
+  
+    
     // console.log(attributes);
   
   };

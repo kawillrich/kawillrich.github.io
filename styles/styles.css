@@ -280,18 +280,21 @@ span#dragonwarrior {
 }
 
 .ability-score-grid-container {
+  width: 40%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 2fr 2fr;
 }
 
 .ability-score-grid-item {
 }
 
 .ability-score-number-grid-item {
+  text-align: center;
 }
 
 .ability-score-title-grid-item {
 }
 
 .ability-score-adjustment-grid-item {
+  text-align: center;
 }
