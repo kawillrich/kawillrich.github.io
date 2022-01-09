@@ -19,19 +19,51 @@ import * as inventory from './inventory-array-v1.js';
 
 //exports finalCharacter for other modules to access
 
-
+//inializing character default values
 
 let adventurerImage = 4;
-// let fighterImage = "<img src='images/fighter2.svg' height='200' width='200'>";
-// let mageImage = "<img src='images/mage.svg' height='200' width='200'>";
-// let archerImage = "<img src='images/archer2.svg' height='200' width='200'>";
-// let dragonWarriorImage = "<img src='images/dragon-warrior.svg' height='200' width='200'>";
-
 let charAchievements = {};
+let attributes = [];
+
+let strength = {
+  name: "Strength",
+  score: 9,
+  adjustment: 0
+};
+
+let intelligence = {
+  name: "Intelligence",
+  score: 9,
+  adjustment: 0,
+};
+
+let wisdom = {
+  name: "Wisdom",
+  score: 9,
+  adjustment: 0,
+};
+
+let dexterity = {
+  name: "Dexterity",
+  score: 9,
+  adjustment: 0,
+};
+
+let constitution = {
+  name: "Constitution",
+  score: 9,
+  adjustment: 0,
+};
+
+let charisma = {
+  name: "Charisma",
+  score: 9,
+  adjustment: 0,
+};
+
+attributes.unshift(strength, intelligence, wisdom, dexterity, constitution, charisma);
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements, adventurerImage);
-
-
 
 //Player sheet tab initialization
 function openItem(e, linkName) {
@@ -46,8 +78,7 @@ function openItem(e, linkName) {
     }
     document.getElementById(linkName).style.display = "block";
     e.currentTarget.className += " active";
-  }
-
+  };
 
 let normalEquipmentLink = document.querySelector('#normal-equipment-link');
 normalEquipmentLink.addEventListener('click', function(e) { openItem(e, 'normal-equipment')}, false);
@@ -64,7 +95,6 @@ document.getElementById("normal-equipment-link").click();
 
 let canvas = document.getElementById('canvas2');
 let ctx = canvas.getContext('2d');
-
 let CANVAS_WIDTH = canvas.width = 0;
 let CANVAS_HEIGHT = canvas.height = 0;
 const playerImage = new Image();
@@ -88,7 +118,6 @@ export function render() {
     ctx.drawImage(playerImage, frameX * spriteWidth, frameY * spriteHeight, spriteWidth, spriteHeight, 0, 0, spriteWidth*3, spriteHeight*3);    
     requestAnimationFrame(render);
 }
-
 
 export function animate() {
     frameY = finalCharacter.characterImage;
@@ -117,8 +146,7 @@ export function animate() {
 };
 
 export function stopAnimate() {    
-    window.cancelAnimationFrame(reqAnim);
-    
+    window.cancelAnimationFrame(reqAnim);    
 }
 
 //initialized and clears selectedSpecialty
@@ -128,42 +156,175 @@ let finalWeapon = finalCharacter.weapon;
 
 //tooltips
 
-
-
-
-
 //asks if you are ready to start game
 
 function charNameSubmitted() {
     var confirmStart = document.querySelector("#confirm-start");
     submittedCharName = document.querySelector("#character-name").value;
     confirmStart.textContent = `Welcome, ${submittedCharName}, are you ready to begin your journey?`;
-    startJourneySubmitted();    
+    rollAttributes();    
 };
 
 //asks to start game
 
-function startJourneySubmitted() {
-     let newLinkYes = document.createElement('input');
-     newLinkYes.type = "submit";
-     newLinkYes.value= "Yes";
-     newLinkYes.id = "start";
+//ADDING ABILITY SCORE GENERATOR FUNCTION
+
+function rollAttributes() {
+    document.querySelector('#submit-name').classList.add("disabled");
+
+
+    let getCharName = document.querySelector('#confirm-start');
+    getCharName.innerHTML = `
+    <button id="generate-attributes">Roll</button>
+    <button id="confirm-attributes">Confirm</button>
+
+    <div id="stats">
+        <ul>
+            <h3><b>Attributes</b></h3>
+            <li>Strength: <span id="strength-stat"></span></li>
+            <li>Intelligence: <span id="intelligence-stat"></span></li>
+            <li>Wisdom: <span id="wisdom-stat"></span></li>
+            <li>Dexterity: <span id="dexterity-stat"></span></li>
+            <li>Constitution: <span id="constitution-stat"></span></li>
+            <li>Charisma: <span id="charisma-stat"></span></li>
+        </ul>
+    </div>
+
+    <p id="dialogue">Choose your attributes.</p>
+    `
+
+    let getCharStrength = document.querySelector('#strength-stat');
+    getCharStrength.innerHTML = strength.score;
+
+    let getCharIntelligence = document.querySelector('#intelligence-stat');
+    getCharIntelligence.innerHTML = intelligence.score;
+
+    let getCharWisdom = document.querySelector('#wisdom-stat');
+    getCharWisdom.innerHTML = wisdom.score;
+
+    let getCharDexterity = document.querySelector('#dexterity-stat');
+    getCharDexterity.innerHTML = dexterity.score;
+
+    let getCharConstitution = document.querySelector('#constitution-stat');
+    getCharConstitution.innerHTML = constitution.score;
+
+    let getCharCharisma = document.querySelector('#charisma-stat');
+    getCharCharisma.innerHTML = charisma.score;
+
+    let rollNewAttributes = document.querySelector('#generate-attributes');
+    rollNewAttributes.addEventListener('click', generateNewAttributes, false);
+
+    let confirmAttributes = document.querySelector('#confirm-attributes');
+    confirmAttributes.addEventListener('click', confirmingAttributes, false);
+
+}
+
+function generateNewAttributes() {
+
+
+
+    attributes[0].score = (Math.ceil(Math.random() * 12) + 6);
+    attributes[1].score = (Math.ceil(Math.random() * 12) + 6);
+    attributes[2].score = (Math.ceil(Math.random() * 12) + 6);
+    attributes[3].score = (Math.ceil(Math.random() * 12) + 6);
+    attributes[4].score = (Math.ceil(Math.random() * 12) + 6);
+    attributes[5].score = (Math.ceil(Math.random() * 12) + 6);
+  
+    let getCharStrength = document.querySelector('#strength-stat');
+    getCharStrength.innerHTML = attributes[0].score;
+  
+    let getCharIntelligence = document.querySelector('#intelligence-stat');
+    getCharIntelligence.innerHTML = attributes[1].score;
+  
+    let getCharWisdom = document.querySelector('#wisdom-stat');
+    getCharWisdom.innerHTML = attributes[2].score;
+  
+    let getCharDexterity = document.querySelector('#dexterity-stat');
+    getCharDexterity.innerHTML = attributes[3].score;
+  
+    let getCharConstitution = document.querySelector('#constitution-stat');
+    getCharConstitution.innerHTML = attributes[4].score;
+  
+    let getCharCharisma = document.querySelector('#charisma-stat');
+    getCharCharisma.innerHTML = attributes[5].score;
+  
+    for (let i = 0; i < attributes.length; i++) {
+      if (attributes[i].score === 3) {
+        attributes[i].adjustment = -3;
+      } else if (attributes[i].score === 4 || attributes[i].score === 5) {
+        attributes[i].adjustment = -2;
+      } else if (attributes[i].score === 6 || attributes[i].score === 7 || attributes[i].score === 8) {
+        attributes[i].adjustment = -1;
+      } else if (attributes[i].score > 8 && attributes[i].score < 13) {
+        attributes[i].adjustment = 0;
+      } else if (attributes[i].score > 12 && attributes[i].score < 16) {
+        attributes[i].adjustment = 1;
+      } else if (attributes[i].score > 15 && attributes[i].score < 18) {
+        attributes[i].adjustment = 2;
+      } else if (attributes[i].score === 18) {
+        attributes[i].adjustment = 3;
+      }
+    };
+    // console.log(attributes);
+  
+  };
+
+  function confirmingAttributes() {
+
+    let rollNewAttributes = document.querySelector('#generate-attributes');
+
+    let confirmAttributes = document.querySelector('#confirm-attributes');
+
+    rollNewAttributes.style.pointerEvents = "none";
+    rollNewAttributes.style.cursor = "not-allowed";
+    rollNewAttributes.style.disabled = true;
+    rollNewAttributes.style.opacity = .5;
+  
+    confirmAttributes.style.pointerEvents = "none";
+    confirmAttributes.style.cursor = "not-allowed";
+    confirmAttributes.style.disabled = true;
+    confirmAttributes.style.opacity = .5;
+  
+    let changeDialogue = document.querySelector("#dialogue");
+    changeDialogue.innerHTML =
+      `
+    <p>You have successfully selected your attributes.</p><br>
+  
+    <button id="beginAdventure">Continue</button>
+    `
+  
+    finalCharacter.attributes = attributes;
+    console.log(finalCharacter.attributes);
+
+    let beginningAdventure = document.querySelector('#beginAdventure');
+    beginningAdventure.addEventListener('click', startGame, false);
+
+  
+  }
+
+// function startJourneySubmitted() {
+//      let newLinkYes = document.createElement('input');
+//      newLinkYes.type = "submit";
+//      newLinkYes.value= "Yes";
+//      newLinkYes.id = "start";
      
      
-     let DOMinsert = document.querySelector('#confirm-start');
-     DOMinsert.appendChild(newLinkYes);
-     newLinkYes.autofocus = true;
+//      let DOMinsert = document.querySelector('#dialogue');
+//      DOMinsert.appendChild(newLinkYes);
+//      newLinkYes.autofocus = true;
     
 
-     let startingGame = document.querySelector("#start");
-    startingGame.addEventListener('click', startGame, false);
-};
+//      let startingGame = document.querySelector("#start");
+//     startingGame.addEventListener('click', startGame, false);
 
-
+//     console.log(finalCharacter);
+// };
 
 //TEST FUNCTION TO START GAME - creates player info
-function startGame() {       
-    
+function startGame() {        
+
+     console.log(finalCharacter);
+
 
     let maximizeMonsterInfo = document.querySelector('#monster-info');
     maximizeMonsterInfo.classList.remove('minimized');
@@ -188,7 +349,6 @@ function startGame() {
 
     let maximizeCanvas4 = document.querySelector('#canvas4');
     maximizeCanvas4.classList.remove('minimized');
-
 
     let newStartGameDialogue = document.querySelector("#character-info");
     newStartGameDialogue.style.backgroundImage = "none";
@@ -215,8 +375,6 @@ function startGame() {
                 <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${finalCharacter.enchantedItem.name}</span></h4>
             </fieldset>
         </div>
-
-
         
         </div id="canvas-area">
           <fieldset class= 'canvas-info-module-player'>
@@ -224,14 +382,9 @@ function startGame() {
             <canvas id="canvas2" height="200" width="200"></canvas>
            </fieldset>
         </div>                
-        `;
-        
-        
+        `;  
         render();
         
-
-        
-
     let chapterOne = document.querySelector('#dialogue');
     chapterOne.innerHTML = `
         <p>After a good night's sleep, you wake up in your room in the Blue Blade Inn.  The inn is located in Gryphon's Keep, a small, 
@@ -287,10 +440,7 @@ function logCharSpecialty() {
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
         finalCharacter.characterUpdate(); 
-        
-        
-        
-        
+                
     } else if (selectedSpecialty === "archer") {
         // console.log('archer');
         finalCharacter.name = submittedCharName;
@@ -300,8 +450,7 @@ function logCharSpecialty() {
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 1;
         finalCharacter.characterUpdate();        
-        
-        
+                
     } else if (selectedSpecialty === "mage") {
         // console.log('mage');
         finalCharacter.name = submittedCharName;
@@ -312,7 +461,6 @@ function logCharSpecialty() {
         finalCharacter.characterImage = 3;
         finalCharacter.characterUpdate();        
         
-
     } else if (selectedSpecialty === "dragonwarrior") {
         // console.log('dragonwarrior');
         finalCharacter.name = submittedCharName;
@@ -323,11 +471,9 @@ function logCharSpecialty() {
         finalCharacter.characterImage = 0;
         finalCharacter.characterUpdate();        
         
-
     } else {
         // console.log ('none');
-    };
-    
+    };    
     beginJourney();
 };
         
@@ -398,22 +544,18 @@ function talkToRaynard() {
     
      <input type="submit" id="start-chapter-three" value="Continue">`;
 
-
     finalCharacter.achievements.spokeToRaynard = {name: "Spoke to Raynard", desc: "Spoke to Raynard and received his coin."};
     // console.log(finalCharacter.achievements); 
 
     finalCharacter.inventory1 = raynardsCoin;    
-
-    
-    
    
-     var continueChapterThreeOne = document.querySelector("#start-chapter-three");
+    var continueChapterThreeOne = document.querySelector("#start-chapter-three");
      
-     continueChapterThreeOne.addEventListener('click', function() {
-        alert(`You received ${finalCharacter.inventory1.name}`);
-        let addItemToInventory = document.querySelector('#normal-equipment');
-        addItemToInventory.innerHTML += raynardsCoin.name;    })
-     continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
+    continueChapterThreeOne.addEventListener('click', function() {
+      alert(`You received ${finalCharacter.inventory1.name}`);
+      let addItemToInventory = document.querySelector('#normal-equipment');
+      addItemToInventory.innerHTML += raynardsCoin.name;    })
+    continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
 };
 
 //CHAPTER THREE ONE

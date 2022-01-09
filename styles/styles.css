@@ -272,3 +272,9 @@ span#dragonwarrior {
 .weapon-tooltip:hover .weapon-tooltiptext {
   visibility: visible;
 }
+
+.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+  opacity: 0.5;
+}
