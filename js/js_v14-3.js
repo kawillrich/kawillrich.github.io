@@ -152,7 +152,7 @@ export function stopAnimate() {
 //initialized and clears selectedSpecialty
 
 let selectedSpecialty = '';
-let finalWeapon = finalCharacter.weapon;
+//let finalWeapon = finalCharacter.weapon;
 
 //tooltips
 
@@ -171,26 +171,53 @@ function charNameSubmitted() {
 
 function rollAttributes() {
     document.querySelector('#submit-name').classList.add("disabled");
-
-
-    let getCharName = document.querySelector('#confirm-start');
+    
+    let getCharName = document.querySelector('#dialogue');
     getCharName.innerHTML = `
+    Welcome, ${submittedCharName}, please roll your Attribute Scores.<br>
+    
+
+    <div id="stats"><h3><b>Attributes</b></h3>
+        <div class="ability-score-grid-container">            
+
+            <div class="ability-score-grid-item ability-score-number-grid-item" id="header-stat"><b>Score</b></div>
+            <div class="ability-score-grid-item ability-score-title-grid-item"><b>Attribute</b></div>
+            <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="header-stat-adjustment"><b>Adjustment</b></div>
+           
+            <div class="ability-score-grid-item ability-score-number-grid-item" id="strength-stat">9</div>
+            <div class="ability-score-grid-item ability-score-title-grid-item">Strength</div>
+            <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="strength-stat-adjustment">0</div>
+
+            <div class="ability-score-grid-item ability-score-number-grid-item" id="intelligence-stat"></div>
+            <div class="ability-score-grid-item ability-score-title-grid-item">Intelligence</div>
+            <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="intelligence-stat-adjustment">0</div>
+
+            <div class="ability-score-grid-item ability-score-number-grid-item" id="wisdom-stat"></div>
+            <div class="ability-score-grid-item ability-score-title-grid-item">Wisdom</div>
+            <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="wisdom-stat-adjustment">0</div>
+
+            <div class="ability-score-grid-item ability-score-number-grid-item" id="dexterity-stat"></div>
+            <div class="ability-score-grid-item ability-score-title-grid-item">Dexterity</div>
+            <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="dexterity-stat-adjustment">0</div>
+
+            <div class="ability-score-grid-item ability-score-number-grid-item" id="constitution-stat"></div>
+            <div class="ability-score-grid-item ability-score-title-grid-item">Constitution</div>
+            <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="constitution-stat-adjustment">0</div>
+
+            <div class="ability-score-grid-item ability-score-number-grid-item" id="charisma-stat"></div>
+            <div class="ability-score-grid-item ability-score-title-grid-item">Charisma</div>
+            <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="charisma-stat-adjustment">0</div>
+
+
+
+            
+           
+        </div>
+    </div>
+ 
+    <p id="dialogue">Choose your attributes.</p>
     <button id="generate-attributes">Roll</button>
     <button id="confirm-attributes">Confirm</button>
-
-    <div id="stats">
-        <ul>
-            <h3><b>Attributes</b></h3>
-            <li>Strength: <span id="strength-stat"></span></li>
-            <li>Intelligence: <span id="intelligence-stat"></span></li>
-            <li>Wisdom: <span id="wisdom-stat"></span></li>
-            <li>Dexterity: <span id="dexterity-stat"></span></li>
-            <li>Constitution: <span id="constitution-stat"></span></li>
-            <li>Charisma: <span id="charisma-stat"></span></li>
-        </ul>
-    </div>
-
-    <p id="dialogue">Choose your attributes.</p>
     `
 
     let getCharStrength = document.querySelector('#strength-stat');
@@ -247,6 +274,8 @@ function generateNewAttributes() {
   
     let getCharCharisma = document.querySelector('#charisma-stat');
     getCharCharisma.innerHTML = attributes[5].score;
+
+    
   
     for (let i = 0; i < attributes.length; i++) {
       if (attributes[i].score === 3) {
@@ -294,7 +323,6 @@ function generateNewAttributes() {
     `
   
     finalCharacter.attributes = attributes;
-    console.log(finalCharacter.attributes);
 
     let beginningAdventure = document.querySelector('#beginAdventure');
     beginningAdventure.addEventListener('click', startGame, false);
