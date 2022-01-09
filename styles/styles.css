@@ -282,7 +282,8 @@ span#dragonwarrior {
 .ability-score-grid-container {
   width: 40%;
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 5px;
 }
 
 .ability-score-grid-item {
@@ -290,6 +291,8 @@ span#dragonwarrior {
 
 .ability-score-number-grid-item {
   text-align: center;
+  border: 1px solid black;
+  width: 50%;
 }
 
 .ability-score-title-grid-item {

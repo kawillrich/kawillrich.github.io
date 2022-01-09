@@ -180,9 +180,9 @@ function rollAttributes() {
     <div id="stats"><h3><b>Attributes</b></h3>
         <div class="ability-score-grid-container">            
 
-            <div class="ability-score-grid-item ability-score-number-grid-item" id="header-stat"><b>Score</b></div>
-            <div class="ability-score-grid-item ability-score-title-grid-item"><b>Attribute</b></div>
-            <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="header-stat-adjustment"><b>Adjustment</b></div>
+            <div class="ability-score-header-grid-item ability-score-number-header-grid-item" id="header-stat"><b>Score</b></div>
+            <div class="ability-score-header-grid-item ability-score-title-header-grid-item"><b>Attribute</b></div>
+            <div class="ability-score-header-grid-item ability-score-header-adjustment-grid-item" id="header-stat-adjustment"><b>Adjustment</b></div>
            
             <div class="ability-score-grid-item ability-score-number-grid-item" id="strength-stat">9</div>
             <div class="ability-score-grid-item ability-score-title-grid-item">Strength</div>
@@ -312,7 +312,6 @@ function generateNewAttributes() {
     getCharCharismaAdj.innerHTML = attributes[5].adjustment;
   
     
-    // console.log(attributes);
   
   };
 
@@ -341,6 +340,9 @@ function generateNewAttributes() {
     `
   
     finalCharacter.attributes = attributes;
+
+    console.log(finalCharacter.attributes);
+
 
     let beginningAdventure = document.querySelector('#beginAdventure');
     beginningAdventure.addEventListener('click', startGame, false);
