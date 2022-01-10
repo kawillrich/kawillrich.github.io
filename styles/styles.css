@@ -301,3 +301,7 @@ span#dragonwarrior {
 .ability-score-adjustment-grid-item {
   text-align: center;
 }
+
+.no-display {
+  display: none;
+}
