@@ -174,7 +174,7 @@ function rollAttributes() {
     
     let getCharName = document.querySelector('#dialogue');
     getCharName.innerHTML = `
-    Welcome, ${submittedCharName}, please roll your Attribute Scores.<br>
+    Welcome, ${submittedCharName}, please roll your Attribute Scores. The maximum score is 18 and the lowest score is 7. Select 'Confirm' when done.<br>
     
 
     <div id="stats"><h3><b>Attributes</b></h3>
@@ -339,32 +339,36 @@ function generateNewAttributes() {
     changeDialogue.innerHTML =
       `
     <p>You have successfully selected your attributes. Now select a an Alignment.</p><br>
-     
-    <div id="alignment-selection-container">
-        <div id="lawful-container-item" class="alignment-container-item">
-            <input type="radio" name="alignment" value="lawful" id="lawful" checked="checked" autofocus/>Lawful
+    <div id="alignment-container"> 
+        <div class="alignment-item" id="alignment-selection-container">
+            <div id="lawful-container-item" class="alignment-container-item">
+                <input type="radio" name="alignment" value="lawful" id="lawful" checked="checked" autofocus/>Lawful
+            </div>
+            <div id="neutral-container-item" class="alignment-container-item">
+                <input type="radio" name="alignment" value="neutral" id="neutral" />Neutral
+            </div>
+            <div id="chaotic-container-item" class="alignment-container-item">
+                <input type="radio" name="alignment" value="chaotic"id="chaotic" />Chaotic
+            </div>
         </div>
-        <div id="neutral-container-item" class="alignment-container-item">
-            <input type="radio" name="alignment" value="neutral" id="neutral" />Neutral
+        
+        <div class="alignment-item" id="alignment-description-container">
+            <div id="lawful-description" class="alignment-description">Lawful characters believe that everything should follow an order, and that obeying rules is the natural way of life. 
+            Lawful creatures will try to tell the truth, obey laws, and care about all things. Lawful characters always try to keep their promises. They will try to obey laws as long as 
+            such laws are fair and just. If a choice must be made between the benefit of the group or an individual, a Lawful character will usually choose the group.
+            </div>
+
+            <div id="neutral-description" class="alignement-description hidden no-display">Neutral characters believethat the works is a balance between Law and Chaos. It is important that neither side get
+            too much power and upset this balance. The individual is important, but so it the group; the two sides must work together. A Neutral character is most interested in personal
+            survival. Such characters believe in their own wits and abilities rather than luck.
+            </div>
+
+            <div id="chaotic-description" class="alignment-description hidden no-display">Chaotic characters are the opposite of Lawful characters. They believe that life is random, and that chance and 
+            luck rule the world. Everything happens by accident and nother can be predicted. Laws are made to be broken, as long as a person can get away with it. It is not important to 
+            keep promises, and lying and telling the truth are both useful. To a Chaotic creature, the individual is the most important of all things. Selfishness is the normal way of 
+            life, and the group is not important.
+            </div>    
         </div>
-        <div id="chaotic-container-item" class="alignment-container-item">
-            <input type="radio" name="alignment" value="chaotic"id="chaotic" />Chaotic
-        </div>
-    </div>
-    
-    <div id="alignment-description-container">
-        <div id="lawful-description" class="alignment-description hidden no-display">Lawful characters believe that everything should follow an order, and that obeying rules is the natural way of life. 
-        Lawful creatures will try to tell the truth, obey laws, and care about all things. Lawful characters always try to keep their promises. They will try to obey laws as long as 
-        such laws are fair and just. If a choice must be made between the benefit of the group or an individual, a Lawful character will usually choose the group.
-        </div>
-        <div id="neutral-description" class="alignement-description hidden no-display">Neutral characters believethat the works is a balance between Law and Chaos. It is important that neither side get
-        too much power and upset this balance. The individual is important, but so it the group; the two sides must work together. A Neutral character is most interested in personal
-        survival. Such characters believe in their own wits and abilities rather than luck.
-        </div>
-        <div id="chaotic-description" class="alignment-description hidden no-display">Chaotic characters are the opposite of Lawful characters. They believe that life is random, and that chance and 
-        luck rule the world. Everything happens by accident and nother can be predicted. Laws are made to be broken, as long as a person can get away with it. It is not important to 
-        keep promises, and lying and telling the truth are both useful. To a Chaotic creature, the individual is the most important of all things. Selfishness is the normal way of 
-        life, and the group is not important.</div>    
     </div>
 
 
@@ -382,7 +386,14 @@ function generateNewAttributes() {
     let chaoticUnSelected = document.querySelector("#chaotic");
 
 
+    // let neutralClickSelected= document.querySelector("#neutral-container-item");
+    // neutralClickSelected.addEventListener('click', neutralFocused, false);
 
+    // let lawfulClickSelected= document.querySelector("#lawful-container-item");
+    // lawfulClickSelected.addEventListener('click', lawfulFocused, false);
+
+    // let chaoticClickSelected= document.querySelector("#chaotic-container-item");
+    // chaoticClickSelected.addEventListener('click', chaoticFocused, false);
 
     if (lawfulSelected.checked) {
         console.log('lawful default checked');
@@ -415,36 +426,59 @@ function lawfulFocused() {
     console.log('lawful focused')
     let showLawfulDescription = document.querySelector('#lawful-description');
     showLawfulDescription.classList.remove("hidden", "no-display");
+    let showChaoticDescription = document.querySelector('#chaotic-description');
+    showChaoticDescription.classList.add("hidden", "no-display");
+    let showNeutralDescription = document.querySelector('#neutral-description');
+    showNeutralDescription.classList.add("hidden", "no-display");
+
+    
 };
 
 function neutralFocused() {
     console.log('neutral focused');
     let showNeutralDescription = document.querySelector('#neutral-description');
     showNeutralDescription.classList.remove("hidden", "no-display");
+    let showLawfulDescription = document.querySelector('#lawful-description');
+    showLawfulDescription.classList.add("hidden", "no-display");
+    let showChaoticDescription = document.querySelector('#chaotic-description');
+    showChaoticDescription.classList.add("hidden", "no-display");
+
+    
 };
 
 function chaoticFocused() {
     console.log('chaotic focused');
     let showChaoticDescription = document.querySelector('#chaotic-description');
     showChaoticDescription.classList.remove("hidden", "no-display");
+    let showLawfulDescription = document.querySelector('#lawful-description');
+    showLawfulDescription.classList.add("hidden", "no-display");
+    let showNeutralDescription = document.querySelector('#neutral-description');
+    showNeutralDescription.classList.add("hidden", "no-display");
+
+    
 };
 
 function lawfulUnFocused() {
     console.log('lawful unfocused')
     let showLawfulDescription = document.querySelector('#lawful-description');
     showLawfulDescription.classList.add("hidden", "no-display");
+
+    
 };
 
 function neutralUnFocused() {
     let showNeutralDescription = document.querySelector('#neutral-description');
     showNeutralDescription.classList.add("hidden", "no-display");
     console.log('neutral unfocused');
+
+    
 };
 
 function chaoticUnFocused() {
     let showChaoticDescription = document.querySelector('#chaotic-description');
     showChaoticDescription.classList.add("hidden", "no-display");
     console.log('chaotic unfocused');
+
 };
 
 

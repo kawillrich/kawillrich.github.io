@@ -305,3 +305,16 @@ span#dragonwarrior {
 .no-display {
   display: none;
 }
+
+#alignment-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.alignment-item {
+  border: 1px solid black;
+}
+
+#alignment-description-container {
+  grid-column: 2 / 5;
+}
