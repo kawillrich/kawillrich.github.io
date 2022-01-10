@@ -342,7 +342,7 @@ function generateNewAttributes() {
      
     <div id="alignment-selection-container">
         <div id="lawful-container-item" class="alignment-container-item">
-            <input type="radio" name="alignment" value="lawful" id="lawful" checked="checked"/>Lawful
+            <input type="radio" name="alignment" value="lawful" id="lawful" checked="checked" autofocus/>Lawful
         </div>
         <div id="neutral-container-item" class="alignment-container-item">
             <input type="radio" name="alignment" value="neutral" id="neutral" />Neutral
@@ -354,20 +354,24 @@ function generateNewAttributes() {
     
     <button id="beginAdventure">Continue</button>
     
-    `
+    `;
 
     let lawfulSelected = document.querySelector("#lawful");
+    lawfulSelected.checked = true;
     let neutralSelected = document.querySelector("#neutral");
     let chaoticSelected = document.querySelector("#chaotic");
 
-    
-    if (lawfulSelected.value === "lawful" ) {
-        console.log('lawful checked');
-    } else if (neutralSelected.value === "neutral" ) {
-        console.log('neutral checked');
-    } else if (chaoticSelected.value === "chaotic" ) {
-        console.log('chaotic checked');
+    if (lawfulSelected.checked) {
+        console.log('lawful default checked');
     }
+
+    lawfulSelected.addEventListener('focus', lawfulFocused, false);
+    neutralSelected.addEventListener('focus', neutralFocused, false);
+
+    
+
+    
+    
   
 
     // <div id="alignment-description-container">
@@ -396,6 +400,14 @@ function generateNewAttributes() {
 
   
   }
+  function lawfulFocused() {
+    console.log('lawful focused')
+};
+
+function neutralFocused() {
+    console.log('neutral focused');
+};
+
 
 // function startJourneySubmitted() {
 //      let newLinkYes = document.createElement('input');
