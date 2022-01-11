@@ -333,7 +333,6 @@ function generateNewAttributes() {
   
     finalCharacter.attributes = attributes;
 
-    console.log(finalCharacter.attributes);
 
     let changeDialogue = document.querySelector("#dialogue");
     changeDialogue.innerHTML =
@@ -421,139 +420,6 @@ function updateAlignmentDescription() {
 }
 
 
-    
-
-//**COMMENTING OUT------------------------------------------------------------------------------------------
-
-    // let lawfulSelected = document.querySelector("#lawful");
-    // lawfulSelected.checked = true;
-    // let neutralSelected = document.querySelector("#neutral");
-    // let chaoticSelected = document.querySelector("#chaotic");
-
-    // let lawfulUnSelected = document.querySelector("#lawful");
-    // let neutralUnSelected = document.querySelector("#neutral");
-    // let chaoticUnSelected = document.querySelector("#chaotic");
-
-
-    // // let neutralClickSelected= document.querySelector("#neutral-container-item");
-    // // neutralClickSelected.addEventListener('click', neutralFocused, false);
-
-    // // let lawfulClickSelected= document.querySelector("#lawful-container-item");
-    // // lawfulClickSelected.addEventListener('click', lawfulFocused, false);
-
-    // // let chaoticClickSelected= document.querySelector("#chaotic-container-item");
-    // // chaoticClickSelected.addEventListener('click', chaoticFocused, false);
-
-    // if (lawfulSelected.checked) {
-    //     console.log('lawful default checked');
-    //     let showLawfulDescription = document.querySelector('#lawful-description');
-    //     showLawfulDescription.classList.remove("hidden");
-    //     //SHOW LAWFUL DESCRIPTION//
-    // } 
-    
-
-
-//     lawfulSelected.addEventListener('focus', lawfulFocused, false);
-//     neutralSelected.addEventListener('focus', neutralFocused, false);
-//     chaoticSelected.addEventListener('focus', chaoticFocused, false);
-
-//     lawfulUnSelected.addEventListener('focusout', lawfulUnFocused, false);
-//     neutralUnSelected.addEventListener('focusout', neutralUnFocused, false);
-//     chaoticUnSelected.addEventListener('focusout', chaoticUnFocused, false);
-//     // <button id="beginAdventure">Continue</button>
-    
-  
-    
-
-
-//     let beginningAdventure = document.querySelector('#beginAdventure');
-//     beginningAdventure.addEventListener('click', startGame, false);
-
-  
-//   };
-
-// function lawfulFocused() {
-//     console.log('lawful focused')
-//     let showLawfulDescription = document.querySelector('#lawful-description');
-//     showLawfulDescription.classList.remove("hidden", "no-display");
-//     let showChaoticDescription = document.querySelector('#chaotic-description');
-//     showChaoticDescription.classList.add("hidden", "no-display");
-//     let showNeutralDescription = document.querySelector('#neutral-description');
-//     showNeutralDescription.classList.add("hidden", "no-display");
-
-    
-// };
-
-// function neutralFocused() {
-//     console.log('neutral focused');
-//     let showNeutralDescription = document.querySelector('#neutral-description');
-//     showNeutralDescription.classList.remove("hidden", "no-display");
-//     let showLawfulDescription = document.querySelector('#lawful-description');
-//     showLawfulDescription.classList.add("hidden", "no-display");
-//     let showChaoticDescription = document.querySelector('#chaotic-description');
-//     showChaoticDescription.classList.add("hidden", "no-display");
-
-    
-// };
-
-// function chaoticFocused() {
-//     console.log('chaotic focused');
-//     let showChaoticDescription = document.querySelector('#chaotic-description');
-//     showChaoticDescription.classList.remove("hidden", "no-display");
-//     let showLawfulDescription = document.querySelector('#lawful-description');
-//     showLawfulDescription.classList.add("hidden", "no-display");
-//     let showNeutralDescription = document.querySelector('#neutral-description');
-//     showNeutralDescription.classList.add("hidden", "no-display");
-
-    
-// };
-
-// function lawfulUnFocused() {
-//     console.log('lawful unfocused')
-//     let showLawfulDescription = document.querySelector('#lawful-description');
-//     showLawfulDescription.classList.add("hidden", "no-display");
-
-    
-// };
-
-// function neutralUnFocused() {
-//     let showNeutralDescription = document.querySelector('#neutral-description');
-//     showNeutralDescription.classList.add("hidden", "no-display");
-//     console.log('neutral unfocused');
-
-    
-// };
-
-// function chaoticUnFocused() {
-//     let showChaoticDescription = document.querySelector('#chaotic-description');
-//     showChaoticDescription.classList.add("hidden", "no-display");
-//     console.log('chaotic unfocused');
-
-// };
-
-//**COMMENTING OUT------------------------------------------------------------------------------------------
-
-
-
-
-// function startJourneySubmitted() {
-//      let newLinkYes = document.createElement('input');
-//      newLinkYes.type = "submit";
-//      newLinkYes.value= "Yes";
-//      newLinkYes.id = "start";
-     
-     
-//      let DOMinsert = document.querySelector('#dialogue');
-//      DOMinsert.appendChild(newLinkYes);
-//      newLinkYes.autofocus = true;
-    
-
-//      let startingGame = document.querySelector("#start");
-//     startingGame.addEventListener('click', startGame, false);
-
-//     console.log(finalCharacter);
-// };
-
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {        
 
@@ -639,17 +505,28 @@ function startGame() {
         everything you've done in life has taken you up to this point.  Then, with your clear and focused mind, you meticulously begin 
         preparing and packing your things.</p>
         
-        <p>What is your specialty?</p>
+        <p>What is your Class?</p>
         
-        <input type = "radio" name="selected-specialty" value="fighter" id="fighter"/> Fighting
+        <input type = "radio" name="selected-specialty" value="fighter" id="fighter"/> Fighter
         <input type = "radio" name="selected-specialty" value="archer" id="archer"/> Archery
-        <input type = "radio" name="selected-specialty" value="mage" id="mage"/> Magic
+        <input type = "radio" name="selected-specialty" value="mage" id="mage"/> Magic-User
+        <input type = "radio" name="selected-specialty" value="thief" id="thief"/> Thief
+        <input type = "radio" name="selected-specialty" value="dwarf" id="dwarf"/> Dwarf
+        <input type = "radio" name="selected-specialty" value="elf" id="elf"/> Elf
+        <input type = "radio" name="selected-specialty" value="halfling" id="halfling"/> Halfling
+        <input type = "radio" name="selected-specialty" value="cleric" id="cleric"/> Cleric
+
+
+
+
+
+
         <input type = "radio" name="selected-specialty" value="dragonwarrior" class="dragonwarrior"/><span id="dragonwarrior">Dragon Fighting</span>
         </p>`;
         
         let submittingCharSpecialtyFighter = document.querySelector("#fighter");
         submittingCharSpecialtyFighter.addEventListener('click', logCharSpecialty, false);
-    
+
         let submittingCharSpecialtyArcher = document.querySelector("#archer");
         submittingCharSpecialtyArcher.addEventListener('click', logCharSpecialty, false);
 
