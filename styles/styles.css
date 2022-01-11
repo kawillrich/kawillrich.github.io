@@ -309,10 +309,13 @@ span#dragonwarrior {
 #alignment-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 5px;
 }
 
 .alignment-item {
   border: 1px solid black;
+  padding: 5px;
+  margin: 0px 0px 10px 0px;
 }
 
 #alignment-description-container {
