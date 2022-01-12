@@ -368,10 +368,11 @@ function generateNewAttributes() {
             life, and the group is not important.
             </div>    
         </div>
+        <button id="beginAdventure" class="alignment-description">Continue</button>
     </div>
 
 
-    <button id="beginAdventure">Continue</button>
+    
     
     `;
 
@@ -422,7 +423,6 @@ function updateAlignmentDescription() {
 
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {        
-
      console.log(finalCharacter);
 
 
@@ -588,6 +588,7 @@ function logCharSpecialty() {
     beginJourney();
 };
         
+
 let submittedCharName = document.querySelector("#submit-name");
 submittedCharName.addEventListener('click', charNameSubmitted, false);
 
