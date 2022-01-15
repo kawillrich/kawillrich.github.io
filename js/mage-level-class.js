@@ -1,4 +1,4 @@
-import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism, continualLight, detectEvil, invisibility} from './mage-level-one-spells-class.js'
+import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism} from './mage-level-one-spells-class.js'
 
 export default class MageLevels {
     constructor (level, specialtySkills) {
