@@ -424,7 +424,6 @@ function updateAlignmentDescription() {
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {        
      console.log(finalCharacter);
-     console.log(finalCharacter.specialty.characterSavingThrows);
 
 
     let maximizeMonsterInfo = document.querySelector('#monster-info');
