@@ -18,7 +18,7 @@ export default class Specialty {
 
 let noSpecialty = new Specialty('None', 0, noSpell, noSpell, noSpell, 0, 0, ["Common Tongue"]);
 
-let warrior = new Specialty('Warrior', 140, noSpell, noSpell, noSpell, 140, 0, ['None'], fighterWarrior);
+let warrior = new Specialty('Warrior', 140, noSpell, noSpell, noSpell, 140, 0, ['Common Tongue'], fighterWarrior);
 
 let masterArcher = new Specialty('Master Archer', 125, minorHealing, noSpell, noSpell, 125, 0, ["Common Tongue"], );
 
