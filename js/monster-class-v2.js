@@ -13,11 +13,18 @@ import Character from './character-class-v2.js';
 
 
 export default class Monster {
-    constructor (name, healthPoints, armorPoints, damage) {
+    constructor (name, healthPoints, armorClass, damage, experienceValue, alignment, attacks, treasureType, saveAs, status) {
         this.name = name;
         this.healthPoints = healthPoints;
-        this.armorPoints = armorPoints;
+        this.armorClass = armorClass;
         this.damage = damage;        
+        this.experienceValue = experienceValue;
+        this.alignment = alignment || 'Neutral';
+        this.attacks = attacks;
+        this.treasureType = treasureType;
+        this.saveAs = saveAs;
+        this.satus = status || "Alive";
+
     };
 
     monsterAttack(monsterOne, monsterTwo) {

@@ -1,12 +1,15 @@
 import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, fireArrows, dragonFang} from './spell-class-v2.js';
 export default class Specialty {
-    constructor(name, healthPoints, spell1, spell2, spell3, maxHealthPoints) {
+    constructor(name, healthPoints, spell1, spell2, spell3, maxHealthPoints, characterExperience, characterLanguages, characterLevel) {
         this.name = name;
         this.healthPoints = healthPoints;
         this.spell1 = spell1;
         this.spell2 = spell2;
         this.spell3 = spell3;
         this.maxHealthPoints = maxHealthPoints;
+        this.chacterLanguages = characterLanguages;
+        this.characterLevel = characterLevel || 1;
+        this.characterExperience = characterExperience || 0;
         
     };
 };

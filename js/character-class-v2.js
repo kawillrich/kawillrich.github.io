@@ -23,6 +23,7 @@ export default class Character {
         this.enchantedItem = enchantedItem;
         this.achievements = achievements;
         this.characterImage = characterImage; 
+        
     };
 
     //updates & initiates Character creation
