@@ -204,6 +204,8 @@ export default class Character {
                 </fieldset>   
             </div>`;
             defeatMonster1.innerHTML = `<p>Congratulations, you defeated the Monster 1!</p>`;
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            console.log(finalCharacter.specialty.characterExperience);
 
 //----------------------------trying to remove monster attack button--------------//
            
@@ -298,6 +300,9 @@ export default class Character {
                 defeatMonster2.innerHTML = `
                 <p>Congratulations, you defeated the Monster 2!</p>`;    
                 
+                finalCharacter.specialty.characterExperience += monster2.experienceValue;
+                console.log(finalCharacter.specialty.characterExperience);
+
                 let removingMonster2Button = document.getElementsByClassName('attack-monster-two');
                 removingMonster2Button[0].classList.add('monster1-dead')        
                 
@@ -387,7 +392,10 @@ export default class Character {
             </div>`;
             defeatMonster1.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;     
-
+            
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            console.log(finalCharacter.specialty.characterExperience);
+            
             let removingMonster1SpellButton = document.getElementsByClassName('spell2-monster-one');
             removingMonster1SpellButton[0].classList.add('monster1-dead');       
 
@@ -474,6 +482,9 @@ export default class Character {
             </div>`;
             defeatMonster2.innerHTML = `
             <p>Congratulations, you defeated the Monster 2!</p>`;    
+
+            finalCharacter.specialty.characterExperience += monster2.experienceValue;
+            console.log(finalCharacter.specialty.characterExperience);
 
             let removingMonster2SpellButton = document.getElementsByClassName('spell2-monster-two');
             removingMonster2SpellButton[0].classList.add('monster1-dead');
@@ -565,10 +576,17 @@ export default class Character {
         //  console.log(monster2);
             if (monster1.healthPoints <= 0) {
                 monster1.healthPoints = 0;
+                
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            console.log(finalCharacter.specialty.characterExperience);
+
             };
 
             if (monster2.healthPoints <= 0) {
                 monster2.healthPoints = 0;
+
+            finalCharacter.specialty.characterExperience += monster2.experienceValue;
+            console.log(finalCharacter.specialty.characterExperience);
             };
 
 
