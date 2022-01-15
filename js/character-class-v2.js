@@ -7,6 +7,7 @@ import Armor from './armor-class-v2.js';
 import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes, obsidianPlateMail } from './armor-class-v2.js';
 import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior } from './specialty-class-v2.js';
+import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './fighter-level-class.js';
 //import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
 
 //exports Character class for other module access
