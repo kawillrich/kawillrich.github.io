@@ -20,8 +20,6 @@ let readLanguages = new MageLevelOneSpells ("Read Languages", 0, 2, "The mage on
 let shieldSpell = new MageLevelOneSpells ("Shield", 0, 2, "The mage only");
 let sleepSpell = new MageLevelOneSpells ("Sleep", 240, [4, 16], "2-16 Hit Dice of leaving creatures within a 40 foot square area");
 let ventriloquism = new MageLevelOneSpells ("Ventriloquism", 60, 2, "One item or location");
-let continualLight = new MageLevelOneSpells ("Continual Light", 120, 999, "Volume of 60 foot diameter");
-let detectEvil = new MageLevelOneSpells ("Detect Evil", 60, 2, "Everything within 60 feet");
-let invisibility = new MageLevelOneSpells ("Invisibility", 240, 999, "One creature or object");
 
-export { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism, continualLight, detectEvil, invisibility };
+
+export { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism };
