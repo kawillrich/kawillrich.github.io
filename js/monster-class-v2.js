@@ -104,6 +104,8 @@ let goblin = new Monster('Goblin', 1, 4, 1, 6, 5);
 let goblin1 = new Monster('Goblin', 1, 4, 1, 6, 5);
 let goblin2 = new Monster('Goblin', 1, 3, 1, 6, 5);
 
+let noMonster = new Monster('None', 0, 0, 0, 0, 0);
+
 //exporting monsters
 
-export { wolf1, wolf2, goblin, goblin1, goblin2 };
+export { wolf1, wolf2, goblin, goblin1, goblin2, noMonster };
