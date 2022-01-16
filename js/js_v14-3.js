@@ -406,6 +406,8 @@ function generateNewAttributes() {
 
     let lawfulSelected = document.querySelector("#lawful");
     lawfulSelected.checked = true;
+    finalCharacter.alignment = "Lawful";
+
     let neutralSelected = document.querySelector("#neutral");
     let chaoticSelected = document.querySelector("#chaotic");
 
@@ -421,8 +423,10 @@ function generateNewAttributes() {
 
 function updateAlignmentDescription() {
     let selectedAlignment = document.querySelector('input[name="alignment"]:checked').value;
+
     let updateAlignmentDescElement = document.querySelector("#alignment-description-container"); 
     if (selectedAlignment === "lawful") {
+        finalCharacter.alignment = "Lawful";
         updateAlignmentDescElement.innerHTML = 
         `
         Lawful characters believe that everything should follow an order, and that obeying rules is the natural way of life. 
@@ -430,6 +434,7 @@ function updateAlignmentDescription() {
         such laws are fair and just. If a choice must be made between the benefit of the group or an individual, a Lawful character will usually choose the group.
         `
     } else if (selectedAlignment === "neutral") {
+        finalCharacter.alignment = "Neutral";
         updateAlignmentDescElement.innerHTML = 
         `
         Neutral characters believethat the works is a balance between Law and Chaos. It is important that neither side get
@@ -437,6 +442,7 @@ function updateAlignmentDescription() {
             survival. Such characters believe in their own wits and abilities rather than luck.
         `
     } else if (selectedAlignment === "chaotic") {
+        finalCharacter.alignment = "Chaotic";
         updateAlignmentDescElement.innerHTML = 
         `
         Chaotic characters are the opposite of Lawful characters. They believe that life is random, and that chance and 

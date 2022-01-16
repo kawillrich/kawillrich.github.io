@@ -18,11 +18,11 @@ export default class Specialty {
 
 let noSpecialty = new Specialty('None', 0, noSpell, noSpell, noSpell, 0, 0, ["Common Tongue"]);
 
-let warrior = new Specialty('Warrior', 140, noSpell, noSpell, noSpell, 140, 0, ['Common Tongue'], fighterWarrior);
+let warrior = new Specialty('Warrior', 8, noSpell, noSpell, noSpell, 140, 0, ['Common Tongue'], fighterWarrior);
 
-let masterArcher = new Specialty('Master Archer', 125, minorHealing, noSpell, noSpell, 125, 0, ["Common Tongue"], );
+let masterArcher = new Specialty('Master Archer', 6, minorHealing, noSpell, noSpell, 125, 0, ["Common Tongue"], );
 
-let highMage = new Specialty('High Mage', 115, minorHealing, fireBall, fireArrows, 115, 0, ["Common Tongue"], mageMedium);
+let highMage = new Specialty('High Mage', 4, minorHealing, fireBall, fireArrows, 115, 0, ["Common Tongue"], mageMedium);
 
 let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, dragonFang, 500, 0, ["Common Tongue"], )
 
