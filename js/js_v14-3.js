@@ -498,6 +498,8 @@ function startGame() {
                 <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 3: <span class="character-display-info">${finalCharacter.specialty.spell3.name}</span></h4>
+                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+               
             </fieldset>
         </div>
         <div id='character-inventory'>
@@ -650,6 +652,9 @@ function beginJourney() {
 //CHAPTER TWO
 
 function beginChapterTwo() {
+    finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment;
+    finalCharacter.specialty.maxHealthPoints = finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment;
+    finalCharacter.weapon.damage = finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment;
     // console.log('Begin');
     let chapterTwo = document.querySelector('#dialogue');
     chapterTwo.innerHTML = `

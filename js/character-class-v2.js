@@ -45,7 +45,9 @@ export default class Character {
                 <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
-                <h4 id='char-spell3' class='char-info-label'>Spell 3:  <span class="character-display-info">${this.specialty.spell3.name}</span></h4><br>
+                <h4 id='char-spell3' class='char-info-label'>Spell 3:  <span class="character-display-info">${this.specialty.spell3.name}</span></h4>
+                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+                
                 
             </fieldset>
         </div>
@@ -104,7 +106,7 @@ export default class Character {
                 <legend class='monster-dashboard'>Monster 1</legend>
                 <h4 id="monster-one-type">Monster Type: ${monsterOne.name}</h4>
                 <h4 id="monster-one-hp">Hit Points: ${monsterOne.healthPoints}</h4> 
-                <h4 id="monster-one-ap">Armor Points: ${monsterOne.armorPoints}</h4>
+                <h4 id="monster-one-ap">Armor Class: ${monsterOne.armorClass}</h4>
                 <h4 id="monster-one-damage">Damage: ${monsterOne.damage}</h4>     
             </fieldset>  
         </div>
@@ -113,7 +115,7 @@ export default class Character {
                 <legend class='monster-dashboard'>Monster 2</legend>
                 <h4 id="monster-two-type">Monster Type: ${monsterTwo.name}</h4>
                 <h4 id="monster-two-hp">Hit Points: ${monsterTwo.healthPoints}</h4> 
-                <h4 id="monster-two-ap">Armor Points: ${monsterTwo.armorPoints}</h4>
+                <h4 id="monster-two-ap">Armor Class: ${monsterTwo.armorClass}</h4>
                 <h4 id="monster-two-damage">Damage: ${monsterTwo.damage}</h4> 
             </fieldset>        
         </div>
@@ -163,11 +165,11 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage + finalCharacter.attributes[0].adjustment} points of damage.</p>`;       
+        <p>You attack the ${monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;       
        
         //CHECKING ATTACK INTERACTION
-        if (monster1.healthPoints - this.weapon.damage + finalCharacter.attributes[0].adjustment > 0) {        
-            monster1.healthPoints = monster1.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment);
+        if (monster1.healthPoints - this.weapon.damage > 0) {        
+            monster1.healthPoints = monster1.healthPoints - this.weapon.damage;
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
@@ -192,7 +194,7 @@ export default class Character {
 
 //END
         
-        } else if (monster1.healthPoints - this.weapon.damage + finalCharacter.attributes[0].adjustment <= 0) {
+        } else if (monster1.healthPoints - this.weapon.damage <= 0) {
             monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
@@ -203,12 +205,18 @@ export default class Character {
                     <legend class='monster-dashboard'>Monster 1</legend>
                     <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
                     <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4> 
-                    <h4 id="monster-one-ap">Armor Points: ${monster1.armorPoints}</h4>
+                    <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
                     <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>    
                 </fieldset>   
             </div>`;
             defeatMonster1.innerHTML = `<p>Congratulations, you defeated the Monster 1!</p>`;
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
+
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
+
             console.log(finalCharacter.specialty.characterExperience);
 
 //----------------------------trying to remove monster attack button--------------//
@@ -259,11 +267,11 @@ export default class Character {
 
         let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage + finalCharacter.attributes[0].adjustment} points of damage.</p>`;
+        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;
         
         //CHECKING ATTACK INTERACTION
-        if (monster2.healthPoints - this.weapon.damage + finalCharacter.attributes[0].adjustment > 0) {        
-            monster2.healthPoints = monster2.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment);
+        if (monster2.healthPoints - this.weapon.damage > 0) {        
+            monster2.healthPoints = monster2.healthPoints - this.weapon.damage;
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
@@ -297,7 +305,7 @@ export default class Character {
                         <legend class='monster-dashboard'>Monster 2</legend>
                         <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
                         <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4> 
-                        <h4 id="monster-two-ap">Armor Points: ${monster2.armorPoints}</h4>
+                        <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
                         <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
                     </fieldset>    
                 </div>`;
@@ -305,6 +313,12 @@ export default class Character {
                 <p>Congratulations, you defeated the Monster 2!</p>`;    
                 
                 finalCharacter.specialty.characterExperience += monster2.experienceValue;
+
+                let updatedExperience = document.querySelector('#char-experience');
+                updatedExperience.innerHTML = `
+                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+                `;
+
                 console.log(finalCharacter.specialty.characterExperience);
 
                 let removingMonster2Button = document.getElementsByClassName('attack-monster-two');
@@ -390,7 +404,7 @@ export default class Character {
                     <legend class='monster-dashboard'>Monster 1</legend>
                     <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
                     <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4> 
-                    <h4 id="monster-one-ap">Armor Points: ${monster1.armorPoints}</h4>
+                    <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
                     <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>    
                 </fieldset>   
             </div>`;
@@ -400,6 +414,12 @@ export default class Character {
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
             console.log(finalCharacter.specialty.characterExperience);
             
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
+
+
             let removingMonster1SpellButton = document.getElementsByClassName('spell2-monster-one');
             removingMonster1SpellButton[0].classList.add('monster1-dead');       
 
@@ -480,7 +500,7 @@ export default class Character {
                     <legend class='monster-dashboard'>Monster 2</legend>
                     <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
                     <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4> 
-                    <h4 id="monster-two-ap">Armor Points: ${monster2.armorPoints}</h4>
+                    <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
                     <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
                 </fieldset>    
             </div>`;
@@ -488,6 +508,10 @@ export default class Character {
             <p>Congratulations, you defeated the Monster 2!</p>`;    
 
             finalCharacter.specialty.characterExperience += monster2.experienceValue;
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
             console.log(finalCharacter.specialty.characterExperience);
 
             let removingMonster2SpellButton = document.getElementsByClassName('spell2-monster-two');
@@ -584,6 +608,11 @@ export default class Character {
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
             console.log(finalCharacter.specialty.characterExperience);
 
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
+
             };
 
             if (monster2.healthPoints <= 0) {
@@ -591,6 +620,12 @@ export default class Character {
 
             finalCharacter.specialty.characterExperience += monster2.experienceValue;
             console.log(finalCharacter.specialty.characterExperience);
+
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
+            
             };
 
 
@@ -642,6 +677,7 @@ export default class Character {
             attackDialogue.innerHTML += `
             <p>${item.name} is dead.</p>`;
 
+            
             
 
         } else {
