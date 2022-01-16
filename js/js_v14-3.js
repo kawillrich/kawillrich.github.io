@@ -298,22 +298,46 @@ function generateNewAttributes() {
       };
 
     let getCharStrengthAdj = document.querySelector('#strength-stat-adjustment');
-    getCharStrengthAdj.innerHTML = attributes[0].adjustment;
-  
+    if (attributes[0].adjustment > 0) {
+        getCharStrengthAdj.innerHTML = `+${attributes[0].adjustment}`;        
+    } else {
+        getCharStrengthAdj.innerHTML = attributes[0].adjustment;
+    }
+
     let getCharIntelligenceAdj = document.querySelector('#intelligence-stat-adjustment');
+    if (attributes[1].adjustment > 0) {
+        getCharIntelligenceAdj.innerHTML = `+${attributes[1].adjustment}`;        
+    } else {
     getCharIntelligenceAdj.innerHTML = attributes[1].adjustment;
+    }
   
     let getCharWisdomAdj = document.querySelector('#wisdom-stat-adjustment');
+    if (attributes[2].adjustment > 0) {
+        getCharWisdomAdj.innerHTML = `+${attributes[2].adjustment}`;        
+    } else {
     getCharWisdomAdj.innerHTML = attributes[2].adjustment;
-  
+    }
+
     let getCharDexterityAdj = document.querySelector('#dexterity-stat-adjustment');
+    if (attributes[3].adjustment > 0) {
+        getCharDexterityAdj.innerHTML = `+${attributes[3].adjustment}`;        
+    } else {
     getCharDexterityAdj.innerHTML = attributes[3].adjustment;
-  
+    }
+
     let getCharConstitutionAdj = document.querySelector('#constitution-stat-adjustment');
+    if (attributes[4].adjustment > 0) {
+        getCharConstitutionAdj.innerHTML = `+${attributes[4].adjustment}`;        
+    } else {
     getCharConstitutionAdj.innerHTML = attributes[4].adjustment;
+    }
   
     let getCharCharismaAdj = document.querySelector('#charisma-stat-adjustment');
+    if (attributes[5].adjustment > 0) {
+        getCharCharismaAdj.innerHTML = `+${attributes[5].adjustment}`;        
+    } else {
     getCharCharismaAdj.innerHTML = attributes[5].adjustment;
+    }
   
     
   
