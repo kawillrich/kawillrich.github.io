@@ -13,8 +13,9 @@ import Character from './character-class-v2.js';
 
 
 export default class Monster {
-    constructor (name, healthPoints, armorClass, damage, experienceValue, alignment, attacks, treasureType, saveAs, status) {
+    constructor (name, hitDice, healthPoints, armorClass, damage, experienceValue, alignment, attacks, treasureType, saveAs, status) {
         this.name = name;
+        this.hitDice = hitDice;
         this.healthPoints = healthPoints;
         this.armorClass = armorClass;
         this.damage = damage;        
@@ -67,7 +68,7 @@ export default class Monster {
             
             let updatedCharHP = document.querySelector("#char-hp");
             updatedCharHP.innerHTML = `
-            <h4 id='char-hp'>Health Points:  <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
+            <h4 id='char-hp'>Hit Points:  <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
             `;    
             if (finalCharacter.specialty.healthPoints <= 0) {
                 alert('You died!');
@@ -96,12 +97,12 @@ export default class Monster {
 
 //initializing monsters
 
-let wolf1 = new Monster('Wolf', 20, 2, 6, 10);
-let wolf2 = new Monster('Wolf', 20, 2, 6, 10);
-let goblin = new Monster('Goblin', 30, 5, 6, 5);
+let wolf1 = new Monster('Wolf', 1, 16, 2, 6, 5);
+let wolf2 = new Monster('Wolf', 1, 16, 2, 6, 5);
+let goblin = new Monster('Goblin', 1, 30, 5, 6, 5);
 
-let goblin1 = new Monster('Goblin', 30, 5, 6, 5);
-let goblin2 = new Monster('Goblin', 30, 5, 6, 5);
+let goblin1 = new Monster('Goblin', 1, 8, 5, 6, 5);
+let goblin2 = new Monster('Goblin', 1, 8, 5, 6, 5);
 
 //exporting monsters
 
