@@ -584,6 +584,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = warrior; 
         finalCharacter.armor = chainMail; 
         finalCharacter.weapon = steelSword;
+        
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
         finalCharacter.characterUpdate(); 

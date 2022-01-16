@@ -97,8 +97,8 @@ export default class Monster {
 
 //initializing monsters
 
-let wolf1 = new Monster('Wolf', 1, 2, 2, 1, 5);
-let wolf2 = new Monster('Wolf', 1, 4, 2, 1, 5);
+let wolf1 = new Monster('Wolf', 1, 16, 2, 1, 5);
+let wolf2 = new Monster('Wolf', 1, 16, 2, 1, 5);
 let goblin = new Monster('Goblin', 1, 4, 1, 6, 5);
 
 let goblin1 = new Monster('Goblin', 1, 4, 1, 6, 5);

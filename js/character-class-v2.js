@@ -40,9 +40,9 @@ export default class Character {
                 <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Hit Points:  <span class="character-display-info">${this.specialty.healthPoints}</span></h4> 
+                <h4 id='char-hp' class='char-info-label'>Hit Points:  <span class="character-display-info">${this.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span></h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorPoints}</span></div></h4> 
-                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
+                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
                 <h4 id='char-spell3' class='char-info-label'>Spell 3:  <span class="character-display-info">${this.specialty.spell3.name}</span></h4><br>
@@ -163,11 +163,11 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;       
+        <p>You attack the ${monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage + finalCharacter.attributes[0].adjustment} points of damage.</p>`;       
        
         //CHECKING ATTACK INTERACTION
-        if (monster1.healthPoints - this.weapon.damage > 0) {        
-            monster1.healthPoints = monster1.healthPoints - this.weapon.damage;
+        if (monster1.healthPoints - this.weapon.damage + finalCharacter.attributes[0].adjustment > 0) {        
+            monster1.healthPoints = monster1.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment);
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
@@ -192,7 +192,7 @@ export default class Character {
 
 //END
         
-        } else if (monster1.healthPoints - this.weapon.damage <= 0) {
+        } else if (monster1.healthPoints - this.weapon.damage + finalCharacter.attributes[0].adjustment <= 0) {
             monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
@@ -259,11 +259,11 @@ export default class Character {
 
         let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;
+        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage + finalCharacter.attributes[0].adjustment} points of damage.</p>`;
         
         //CHECKING ATTACK INTERACTION
-        if (monster2.healthPoints - this.weapon.damage > 0) {        
-            monster2.healthPoints = monster2.healthPoints - this.weapon.damage;
+        if (monster2.healthPoints - this.weapon.damage + finalCharacter.attributes[0].adjustment > 0) {        
+            monster2.healthPoints = monster2.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment);
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
