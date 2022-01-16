@@ -26,9 +26,17 @@ let highMage = new Specialty('High Mage', 115, minorHealing, fireBall, fireArrow
 
 let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, dragonFang, 500, 0, ["Common Tongue"], )
 
+let elf = new Specialty('Elf', 6, noSpell, noSpell, noSpell, 6, 0, ["Common Tongue", "Elvish"]);
 
+let dwarf = new Specialty('Dwarf', 8, noSpell, noSpell, noSpell, 8, 0, ["Common Tongue", "Dwarvish"]);
 
-export { noSpecialty, warrior, masterArcher, highMage, dragonWarrior };
+let halfling = new Specialty('Halfling', 6, noSpell, noSpell, noSpell, 6, 0, ["Common Tongue", "Halfling"]);
+
+let cleric = new Specialty('Cleric', 6, minorHealing, noSpell, noSpell, 6, 0, ["Common Tongue"]);
+
+let thief = new Specialty('Thief', 4, noSpell, noSpell,noSpell, 4, 0, ["Common Tongue"]);
+
+export { noSpecialty, warrior, masterArcher, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief };
 
 
 

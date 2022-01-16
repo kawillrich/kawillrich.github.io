@@ -6,7 +6,7 @@ import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow,
 import Armor from './armor-class-v2.js';
 import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes, obsidianPlateMail } from './armor-class-v2.js';
 import Specialty from './specialty-class-v2.js';
-import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior } from './specialty-class-v2.js';
+import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief } from './specialty-class-v2.js';
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './fighter-level-class.js';
 import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-level-two-spells-class.js';
 import  { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism } from './mage-level-one-spells-class.js';
