@@ -1362,7 +1362,7 @@ function beginTestChapter () {
     
     var attackWolvesYes = document.querySelector("#attack-goblins");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(goblin1, goblin2, continueChapterSix);
+        addingFightModule(goblin1, noMonster, continueChapterSix);
         declareAttack();
     
     
