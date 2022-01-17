@@ -1318,6 +1318,9 @@ function continueChapterFourTwoOne() {
         finalCharacter.weapon = finalCharacter.weapon;
     }
 
+    finalCharacter.weapon.damage = finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment;
+
+
     // console.log(finalCharacter.weapon.name);
 
     let beginChapterFive = document.querySelector('#start-chapt-five');
