@@ -1,7 +1,7 @@
 import { finalCharacter, confirmAttackMonsters } from './js_v14-3.js';
 
 import Weapon from './weapon-class-v2.js';
-import { steelSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon } from './weapon-class-v2.js';
+import { normalSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon } from './weapon-class-v2.js';
 import Armor from './armor-class-v2.js';
 import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes } from './armor-class-v2.js';
 import Spell from './spell-class-v2.js';
