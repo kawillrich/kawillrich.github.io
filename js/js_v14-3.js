@@ -545,8 +545,7 @@ function startGame() {
         
         <p>What is your Class?</p>
         
-        <input type = "radio" name="selected-specialty" value="fighter" id="fighter"/> Fighter
-        <input type = "radio" name="selected-specialty" value="archer" id="archer"/> Archer
+        <input type = "radio" name="selected-specialty" value="fighter" id="fighter"/> Fighter        
         <input type = "radio" name="selected-specialty" value="mage" id="mage"/> Magic-User
         <input type = "radio" name="selected-specialty" value="thief" id="thief"/> Thief
         <input type = "radio" name="selected-specialty" value="dwarf" id="dwarf"/> Dwarf
@@ -559,9 +558,6 @@ function startGame() {
         
         let submittingCharSpecialtyFighter = document.querySelector("#fighter");
         submittingCharSpecialtyFighter.addEventListener('click', logCharSpecialty, false);
-
-        let submittingCharSpecialtyArcher = document.querySelector("#archer");
-        submittingCharSpecialtyArcher.addEventListener('click', logCharSpecialty, false);
 
         let submittingCharSpecialtyMage = document.querySelector("#mage");
         submittingCharSpecialtyMage.addEventListener('click', logCharSpecialty, false);
@@ -599,17 +595,7 @@ function logCharSpecialty() {
         
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
-        finalCharacter.characterUpdate(); 
-                
-    } else if (selectedSpecialty === "archer") {
-        // console.log('archer');
-        finalCharacter.name = submittedCharName;
-        finalCharacter.specialty = masterArcher; 
-        finalCharacter.armor = leatherArmor; 
-        finalCharacter.weapon = shortBow;
-        finalCharacter.enchantedItem = noItem;
-        finalCharacter.characterImage = 1;
-        finalCharacter.characterUpdate();        
+        finalCharacter.characterUpdate();              
                 
     } else if (selectedSpecialty === "mage") {
         // console.log('mage');
@@ -1381,7 +1367,7 @@ function continueChapterFourTwoOne() {
     
     if (finalCharacter.specialty === warrior) {
         finalCharacter.weapon = silverSword;
-    } else if (finalCharacter.specialty === masterArcher) {
+    } else if (finalCharacter.specialty === thief) {
         finalCharacter.weapon = longBow;
     } else if (finalCharacter.specialty === highMage) {
         finalCharacter.weapon = mahoganyStaff;
