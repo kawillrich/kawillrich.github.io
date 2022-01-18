@@ -29,7 +29,13 @@ export default class Weapon {
  let battleAxe = new Weapon('Battle Axe', 8, 'Melee', 2, 7, 60);
  let handAxe = new Weapon('Hand Axe', 6, 'Melee', 1, 4, 30);
  let crossBow = new Weapon('Cross Bow', 6, 'Missile', 2, 30, 50);
- 
+ let shortSword = new Weapon('Short Sword', 6, 'Melee', 1, 7, 30);
+ let mace = new Weapon('Mace', 6, 'Melee', 1, 5, 30);
+ let javelin = new Weapon('Javelin', 6, 'Missile', 1, 1, 20);
+ let poleArm = new Weapon('Pole Arm', 10, 'Melee', 2, 7, 150);
+ let sling = new Weapon('Sling', 4, 'Missile', 1, 2, 20);
+ let spear = new Weapon('Spear', 6, 'Melee', 1, 3, 30);
+ warHammer = new Weapon('War Hammer', 6, 'Melee', 1, 5, 50);
 
 
 export { normalSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword };
