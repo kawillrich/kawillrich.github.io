@@ -19,6 +19,7 @@ let mageMedium = new MageLevels (
     {
         name: "Medium",
         level: 1,
+        maxEP: 2499,
         savingThrows: [       
             { name: "Poison or Death Ray", score: 13},
             { name: "Magic Wand", score: 14},
@@ -48,6 +49,7 @@ let mageSeer = new MageLevels (
     {
     name: "Seer",
     level: 2,
+    maxHP: 4999,
     savingThrows: [       
         { name: "Poison or Death Ray", score: 13},
         { name: "Magic Wand", score: 14},

@@ -28,7 +28,14 @@ export default class Monster {
 
     };
 
+    createHitPoints() {
+        this.healthPoints = this.hitDice * (Math.ceil(Math.random(1)* 6));
+        return this.healthPoints;
+    };
+
     monsterAttack(monsterOne, monsterTwo) {
+        
+        
         // console.log(monsterOne);
         // console.log(monsterTwo);
        
@@ -62,9 +69,10 @@ export default class Monster {
             // console.log(monsterOne);        
             // console.log(monsterTwo);
          
+            let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
 
-            finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - this.monsterDamage;    
-            alert(`The ${this.monsterName} attacks you and causes ${this.monsterDamage} points of damage.`);            
+            finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;    
+            alert(`The ${this.monsterName} attacks you and causes ${monsterRandomDamage} points of damage.`);            
             
             let updatedCharHP = document.querySelector("#char-hp");
             updatedCharHP.innerHTML = `
@@ -97,12 +105,12 @@ export default class Monster {
 
 //initializing monsters
 
-let wolf1 = new Monster('Wolf', 1, 16, 2, 1, 5);
-let wolf2 = new Monster('Wolf', 1, 16, 2, 1, 5);
-let goblin = new Monster('Goblin', 1, 4, 1, 6, 5);
+let wolf1 = new Monster('Wolf', 5, 16, 2, 1, 5);
+let wolf2 = new Monster('Wolf', 5, 16, 2, 1, 5);
+let goblin = new Monster('Goblin', 1, 4, 1, 1, 5);
 
-let goblin1 = new Monster('Goblin', 1, 18, 1, 6, 5);
-let goblin2 = new Monster('Goblin', 1, 3, 1, 6, 5);
+let goblin1 = new Monster('Goblin', 1, 18, 1, 1, 5);
+let goblin2 = new Monster('Goblin', 1, 3, 1, 1, 5);
 
 let noMonster = new Monster(' ', ' ', ' ', ' ', ' ', ' ');
 

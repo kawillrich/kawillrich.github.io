@@ -22,7 +22,7 @@ let warrior = new Specialty('Warrior', 8, noSpell, noSpell, noSpell, 8, 0, ['Com
 
 let masterArcher = new Specialty('Master Archer', 6, minorHealing, noSpell, noSpell, 6, 0, ["Common Tongue"], );
 
-let highMage = new Specialty('High Mage', 4, minorHealing, fireBall, fireArrows, 4, 0, ["Common Tongue"], mageMedium);
+let highMage = new Specialty('High Mage', 500, minorHealing, fireBall, fireArrows, 500, 0, ["Common Tongue"], mageMedium);
 
 let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, dragonFang, 500, 0, ["Common Tongue"], )
 
