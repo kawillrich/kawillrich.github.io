@@ -134,13 +134,8 @@ export default class Character {
 
     //attacking monster 1
 
-    weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter) {
-        // console.log("Logging NEXT CHAPTER" + continueNextChapter)
-        // console.log(monster1);
-        // console.log(weapon);
-        // console.log(monster2);
+    weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter) {       
         let self = this;        
-
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
@@ -163,16 +158,14 @@ export default class Character {
             };            
         
         };        
-        //this.monster1 = monster1;
-        //this.weapon = weapon;
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;       
+        <p>You attack the ${monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage + finalCharacter.attributes[0].adjustment} points of damage.</p>`;       
        
         //CHECKING ATTACK INTERACTION
-        if (monster1.healthPoints - this.weapon.damage > 0) {        
-            monster1.healthPoints = monster1.healthPoints - this.weapon.damage;
+        if (monster1.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment) > 0) {        
+            monster1.healthPoints = monster1.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment);
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
@@ -197,7 +190,7 @@ export default class Character {
 
 //END
         
-        } else if (monster1.healthPoints - this.weapon.damage <= 0) {
+        } else if (monster1.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment) <= 0) {
             monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
@@ -270,11 +263,11 @@ export default class Character {
 
         let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage} points of damage.</p>`;
+        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage + finalCharacter.attributes[0].adjustment} points of damage.</p>`;
         
         //CHECKING ATTACK INTERACTION
-        if (monster2.healthPoints - this.weapon.damage > 0) {        
-            monster2.healthPoints = monster2.healthPoints - this.weapon.damage;
+        if (monster2.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment) > 0) {        
+            monster2.healthPoints = monster2.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment);
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
@@ -297,7 +290,7 @@ export default class Character {
             
             greyOutAttackButtons();
             
-            } else if (monster2.healthPoints - this.weapon.damage <= 0) {
+            } else if (monster2.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment) <= 0) {
                 monster2.healthPoints = 0;
                 
                 let monsterTwoStatus = document.querySelector('#monster-two');

@@ -22,7 +22,7 @@ let sling = new Weapon('Sling', 4, 'Missile', 1, 2, 20);
 // 1d6 damage
 let shortBow = new Weapon('Short Bow', 6, 'Missile', 2, 25, 20);
 let longBow = new Weapon('Long Bow', 6, 'Missile', 2, 40, 30);
-let silverDagger = new Weapon('Dagger', 6, 'Melee', 1, 30, 10);
+let silverDagger = new Weapon('Silver Dagger', 6, 'Melee', 1, 30, 10);
 let handAxe = new Weapon('Hand Axe', 6, 'Melee', 1, 4, 30);
 let shortSword = new Weapon('Short Sword', 6, 'Melee', 1, 7, 30);
 let javelin = new Weapon('Javelin', 6, 'Missile', 1, 1, 20);

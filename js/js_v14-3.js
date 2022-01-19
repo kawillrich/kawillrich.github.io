@@ -591,8 +591,8 @@ function logCharSpecialty() {
         // console.log('fighter');
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = warrior; 
-        finalCharacter.armor = chainMail; 
-        finalCharacter.weapon = normalSword;
+        finalCharacter.armor = leatherArmor; 
+        finalCharacter.weapon = shortSword;
         
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
@@ -644,7 +644,7 @@ function logCharSpecialty() {
         // console.log('dragonwarrior');
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = dwarf; 
-        finalCharacter.armor = chainMail; 
+        finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = normalSword;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
@@ -705,7 +705,7 @@ function beginJourney() {
 function beginChapterTwo() {
     finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment;
     finalCharacter.specialty.maxHealthPoints = finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment;
-    finalCharacter.weapon.damage = finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment;
+    // finalCharacter.weapon.damage = finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment;
     // console.log('Begin');
     let chapterTwo = document.querySelector('#dialogue');
     chapterTwo.innerHTML = `
@@ -1367,11 +1367,22 @@ function continueChapterFourTwoOne() {
     
     
     if (finalCharacter.specialty === warrior) {
-        finalCharacter.weapon = silverSword;
+        //resetting weapon damage to account for strength adjustment
+        finalCharacter.weapon = twoHandedBroadSword;
     } else if (finalCharacter.specialty === thief) {
         finalCharacter.weapon = longBow;
+    } else if (finalCharacter.specialty === cleric) {
+        finalCharacter.weapon = warHammer;
+    } else if (finalCharacter.specialty === halfling) {
+        finalCharacter.weapon = shortSword;
+    } else if (finalCharacter.specialty === dwarf) {
+        finalCharacter.weapon = normalSword;
+        console.log(finalCharacter);
+        console.log(finalCharacter.weapon);
     } else if (finalCharacter.specialty === highMage) {
-        finalCharacter.weapon = mahoganyStaff;
+        finalCharacter.weapon = silverDagger;
+    } else if (finalCharacter.specialty === elf) {
+        finalCharacter.weapon = longBow;
     } else {
         finalCharacter.weapon = finalCharacter.weapon;
     }
