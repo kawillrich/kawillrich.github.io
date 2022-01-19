@@ -38,10 +38,13 @@ export default class Monster {
             console.log(newHPArray);
           }
           const reducer = (previousValue, currentValue) => previousValue + currentValue;
-          finalHPArray = newHPArray.reduce(reducer);
-          console.log(finalHPArray);
-          this.healthPoints = finalHPArray;
-
+          if (!newHPArray ===[]) {
+            finalHPArray = newHPArray.reduce(reducer);
+            console.log(finalHPArray);
+            this.healthPoints = finalHPArray;
+          } else {
+              return;
+          }
 
         //   return finalHPArray;
         

@@ -153,6 +153,10 @@ export default class Character {
         
             removeFightModule.innerHTML = ` `;
 
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            finalCharacter.specialty.characterExperience += monster2.experienceValue;
+
+
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
@@ -206,7 +210,6 @@ export default class Character {
                 </fieldset>   
             </div>`;
             defeatMonster1.innerHTML = `<p>Congratulations, you defeated the Monster 1!</p>`;
-            finalCharacter.specialty.characterExperience += monster1.experienceValue;
 
             let updatedExperience = document.querySelector('#char-experience');
             updatedExperience.innerHTML = `
@@ -308,7 +311,6 @@ export default class Character {
                 defeatMonster2.innerHTML = `
                 <p>Congratulations, you defeated the Monster 2!</p>`;    
                 
-                finalCharacter.specialty.characterExperience += monster2.experienceValue;
 
                 let updatedExperience = document.querySelector('#char-experience');
                 updatedExperience.innerHTML = `
@@ -340,6 +342,14 @@ export default class Character {
             if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
             // console.log('both dead');
         
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            finalCharacter.specialty.characterExperience += monster2.experienceValue;
+
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
+
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
                 
@@ -407,13 +417,12 @@ export default class Character {
             defeatMonster1.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;     
             
-            finalCharacter.specialty.characterExperience += monster1.experienceValue;
-            console.log(finalCharacter.specialty.characterExperience);
+            // console.log(finalCharacter.specialty.characterExperience);
             
-            let updatedExperience = document.querySelector('#char-experience');
-            updatedExperience.innerHTML = `
-            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-            `;
+            // let updatedExperience = document.querySelector('#char-experience');
+            // updatedExperience.innerHTML = `
+            // <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            // `;
 
 
             let removingMonster1SpellButton = document.getElementsByClassName('spell2-monster-one');
@@ -445,6 +454,12 @@ export default class Character {
             <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
         
             removeFightModule.innerHTML = ` `;
+
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
+
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
@@ -503,12 +518,12 @@ export default class Character {
             defeatMonster2.innerHTML = `
             <p>Congratulations, you defeated the Monster 2!</p>`;    
 
-            finalCharacter.specialty.characterExperience += monster2.experienceValue;
-            let updatedExperience = document.querySelector('#char-experience');
-            updatedExperience.innerHTML = `
-            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-            `;
-            console.log(finalCharacter.specialty.characterExperience);
+            // finalCharacter.specialty.characterExperience += monster2.experienceValue;
+            // let updatedExperience = document.querySelector('#char-experience');
+            // updatedExperience.innerHTML = `
+            // <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            // `;
+            // console.log(finalCharacter.specialty.characterExperience);
 
             let removingMonster2SpellButton = document.getElementsByClassName('spell2-monster-two');
             removingMonster2SpellButton[0].classList.add('monster1-dead');
@@ -543,7 +558,7 @@ export default class Character {
         }
 
     //***TRYING TO CREATE AREA ATTACK SPELL
-    
+
     areaAttackSpell(monster1, monster2, spell3, continueNextChapter) {
         // console.log('Casting Area Attack Spell');
         
@@ -590,6 +605,14 @@ export default class Character {
             <p>Congratulations, you defeated the monster(s)!</p>
             <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
         
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            finalCharacter.specialty.characterExperience += monster2.experienceValue;
+
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
+
             removeFightModule.innerHTML = ` `;
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
@@ -602,26 +625,19 @@ export default class Character {
             if (monster1.healthPoints <= 0) {
                 monster1.healthPoints = 0;
                 
-            finalCharacter.specialty.characterExperience += monster1.experienceValue;
-            console.log(finalCharacter.specialty.characterExperience);
 
-            let updatedExperience = document.querySelector('#char-experience');
-            updatedExperience.innerHTML = `
-            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-            `;
+            
 
             };
 
             if (monster2.healthPoints <= 0) {
                 monster2.healthPoints = 0;
 
-            finalCharacter.specialty.characterExperience += monster2.experienceValue;
-            console.log(finalCharacter.specialty.characterExperience);
 
-            let updatedExperience = document.querySelector('#char-experience');
-            updatedExperience.innerHTML = `
-            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-            `;
+            // let updatedExperience = document.querySelector('#char-experience');
+            // updatedExperience.innerHTML = `
+            // <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            // `;
 
             };
 
