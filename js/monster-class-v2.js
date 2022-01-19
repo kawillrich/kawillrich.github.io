@@ -30,8 +30,36 @@ export default class Monster {
     };
 
     createHitPoints() {
-        this.healthPoints = this.hitDice * (Math.ceil(Math.random(1)* 6));
-        return this.healthPoints;
+        let newHPArray = [];
+        let finalHPArray = [];
+        for ( let i = 0; i < this.hitDice; i++) {
+            let updatedHP = (Math.ceil(Math.random(1) * 6));
+            newHPArray.unshift(updatedHP);
+            console.log(newHPArray);
+          }
+          const reducer = (previousValue, currentValue) => previousValue + currentValue;
+          finalHPArray = newHPArray.reduce(reducer);
+          console.log(finalHPArray);
+          this.healthPoints = finalHPArray;
+
+
+        //   return finalHPArray;
+        
+      
+
+
+
+
+
+
+
+
+
+
+
+
+        // this.healthPoints = this.hitDice * (Math.ceil(Math.random(1)* 6));
+        // return this.healthPoints;
     };
 
     monsterAttack(monsterOne, monsterTwo) {

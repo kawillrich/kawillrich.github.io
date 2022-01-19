@@ -1,3 +1,4 @@
+import { finalCharacter } from "./js_v14-3.js";
 import Weapon from "./weapon-class-v2.js";
 
 export default class MagicalWeapon extends Weapon {
@@ -8,8 +9,14 @@ export default class MagicalWeapon extends Weapon {
         this.numOfHands = numOfHands;
         this.cost = cost;
         this.encumbrance = encumbrance;
+
+        super(name, damage, type, numOfHands, cost, encumbrance, effect)
+        this.effect = effect;
     }
 
+    castAreaSpell() {
+        finalCharacter.areaAttackSpell(monster1, monster2, spell3, continueNextChapter);
+    }
    
 }
 

@@ -543,6 +543,7 @@ export default class Character {
         }
 
     //***TRYING TO CREATE AREA ATTACK SPELL
+    
     areaAttackSpell(monster1, monster2, spell3, continueNextChapter) {
         // console.log('Casting Area Attack Spell');
         
