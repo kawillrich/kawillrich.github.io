@@ -10,8 +10,8 @@ export default class Specialty {
         this.spell3 = spell3;
         this.maxHealthPoints = maxHealthPoints;
         this.characterExperience = characterExperience || 0;     
-        this.chacterLanguages = characterLanguages;        
-        this.characterLevel = characterLevel;
+        this.chacterLanguages = characterLanguages || ["Common Tongue"];        
+        this.characterLevel = characterLevel || 1;
         
     };
 };
@@ -19,8 +19,6 @@ export default class Specialty {
 let noSpecialty = new Specialty('None', 0, noSpell, noSpell, noSpell, 0, 0, ["Common Tongue"]);
 
 let warrior = new Specialty('Warrior', 8, noSpell, noSpell, noSpell, 8, 0, ['Common Tongue'], fighterWarrior);
-
-let masterArcher = new Specialty('Master Archer', 6, minorHealing, noSpell, noSpell, 6, 0, ["Common Tongue"], );
 
 let highMage = new Specialty('High Mage', 500, minorHealing, fireBall, fireArrows, 500, 0, ["Common Tongue"], mageMedium);
 
@@ -36,7 +34,7 @@ let cleric = new Specialty('Cleric', 6, minorHealing, noSpell, noSpell, 6, 0, ["
 
 let thief = new Specialty('Thief', 4, noSpell, noSpell,noSpell, 4, 0, ["Common Tongue"]);
 
-export { noSpecialty, warrior, masterArcher, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief };
+export { noSpecialty, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief };
 
 
 

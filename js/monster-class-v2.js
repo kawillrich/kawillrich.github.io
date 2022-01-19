@@ -7,7 +7,7 @@ import { chainMail, leatherArmor, robes, noArmor, plateMail, reinforcedLeather, 
 import Spell from './spell-class-v2.js';
 import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall} from './spell-class-v2.js';
 import Specialty from './specialty-class-v2.js';
-import { noSpecialty, warrior, masterArcher, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief } from './specialty-class-v2.js';
+import { noSpecialty, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief } from './specialty-class-v2.js';
 import Character from './character-class-v2.js';
 
 

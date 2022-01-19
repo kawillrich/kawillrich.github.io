@@ -1,21 +1,19 @@
 export default class Armor {
-    constructor (name, armorPoints) {
+    constructor (name, armorClass, encumbrance, armorCost) {
         this.name = name;
-        this.armorPoints = armorPoints;
+        this.armorClass = armorClass;
+        this.encumbrance = encumbrance;
+        this.armorCost = armorCost;
        
     }
 };
+let noArmor = new Armor('None', 9, 0, 0);
+let robes = new Armor('Robes', 9, 50, 5);
+let leatherArmor = new Armor('Leather Armor', 7, 200, 20);
+let scaleMail = new Armor('Scale Mail', 6, 300, 30);
+let chainMail = new Armor('Chain Mail', 5, 400, 40);
+let bandedMail = new Armor('Banded Mail', 4, 450, 45);
+let plateMail = new Armor('Plate Mail', 3, 500, 60);
+let obsidianPlateMail = new Armor('Obsidian Plate Mail', 3, 200);
 
-let chainMail = new Armor('Chain Mail', 3);
-let leatherArmor = new Armor('Leather Armor', 2);
-let robes = new Armor('Robes', 1);
-let noArmor = new Armor('None', 0);
-let scaleMail = new Armor('Scale Mail', 5);
-let plateMail = new Armor('Plate Mail', 7);
-let reinforcedLeather = new Armor('Reinforced Leather', 4);
-let platedLeather = new Armor('Plated Leather', 6);
-let reinforcedRobes = new Armor('Reinforced Robes', 2);
-let enchantedRobes = new Armor('Enchanged Robes', 4);
-let obsidianPlateMail = new Armor('Obsidian Plate Mail', 20);
-
-export { chainMail, leatherArmor, robes, noArmor, scaleMail, plateMail, reinforcedLeather, platedLeather, reinforcedRobes, enchantedRobes, obsidianPlateMail };
+export { chainMail, leatherArmor, robes, noArmor, scaleMail, plateMail, bandedMail, obsidianPlateMail };
