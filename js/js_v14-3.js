@@ -1,7 +1,7 @@
 //imports modules
 
 import Weapon from './weapon-class-v2.js';
-import { normalSword, shortBow, staff, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword, woodenClub, dagger, 
+import { normalSword, shortBow, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword, woodenClub, dagger, 
     silverDagger, battleAxe, handAxe, crossBow, shortSword, mace, javelin, poleArm, sling, spear, warHammer } from './weapon-class-v2.js';
 import Armor from './armor-class-v2.js';
 import { chainMail, leatherArmor, robes, noArmor, scaleMail, plateMail, bandedMail, obsidianPlateMail } from './armor-class-v2.js';
@@ -603,7 +603,7 @@ function logCharSpecialty() {
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = highMage; 
         finalCharacter.armor = robes; 
-        finalCharacter.weapon = staff;
+        finalCharacter.weapon = dagger;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
         finalCharacter.characterUpdate();        
@@ -634,7 +634,7 @@ function logCharSpecialty() {
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = cleric; 
         finalCharacter.armor = leatherArmor; 
-        finalCharacter.weapon = staff;
+        finalCharacter.weapon = mace;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         finalCharacter.characterUpdate();   
