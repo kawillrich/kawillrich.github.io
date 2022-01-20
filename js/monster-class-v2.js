@@ -34,20 +34,59 @@ export default class Monster {
         if (this.healthPoints === 0 || this.healthPoints === ' ' || this.hitDice === 0 || this.hitDice === ' ') {
             return;
         } else {
-        let newHPArray = [];
-        let finalHPArray = [];
-        for ( let i = 0; i < this.hitDice[0]; i++) {
-            let updatedHP = (Math.ceil(Math.random(1) * 6));
-            newHPArray.unshift(updatedHP);
-          }
-          const reducer = (previousValue, currentValue) => previousValue + currentValue;
-          finalHPArray = newHPArray.reduce(reducer) + this.hitDice[1];
-          if (finalHPArray < 1) {
-              finalHPArray = 1;
-          }
-          console.log(finalHPArray);
-          this.healthPoints = finalHPArray;
+
+            if (this.hitDice < 1) {
+                let newHPArray = [];
+                let finalHPArray = [];
+                for ( let i = 0; i < this.hitDice[0]; i++) {
+                    let updatedHP = (Math.ceil(Math.random(1) * 4));
+                    newHPArray.unshift(updatedHP);
+                }
+                const reducer = (previousValue, currentValue) => previousValue + currentValue;
+                finalHPArray = newHPArray.reduce(reducer) + this.hitDice[1];
+                if (finalHPArray < 1) {
+                    finalHPArray = 1;
+                }
+                console.log(finalHPArray);
+                this.healthPoints = finalHPArray;
+        
+            } else {
+                let newHPArray = [];
+                let finalHPArray = [];
+                for ( let i = 0; i < this.hitDice[0]; i++) {
+                    let updatedHP = (Math.ceil(Math.random(1) * 8));
+                    newHPArray.unshift(updatedHP);
+                  }
+                  const reducer = (previousValue, currentValue) => previousValue + currentValue;
+                  finalHPArray = newHPArray.reduce(reducer) + this.hitDice[1];
+                  if (finalHPArray < 1) {
+                      finalHPArray = 1;
+                  }
+                  console.log(finalHPArray);
+                  this.healthPoints = finalHPArray;
+                }
+
         }
+
+            
+
+
+
+
+        // let newHPArray = [];
+        // let finalHPArray = [];
+        // for ( let i = 0; i < this.hitDice[0]; i++) {
+        //     let updatedHP = (Math.ceil(Math.random(1) * 8));
+        //     newHPArray.unshift(updatedHP);
+        //   }
+        //   const reducer = (previousValue, currentValue) => previousValue + currentValue;
+        //   finalHPArray = newHPArray.reduce(reducer) + this.hitDice[1];
+        //   if (finalHPArray < 1) {
+        //       finalHPArray = 1;
+        //   }
+        //   console.log(finalHPArray);
+        //   this.healthPoints = finalHPArray;
+        // }
       
 
 
@@ -147,8 +186,13 @@ let goblin1 = new Monster('Goblin', [1, -1], 18, 1, 1, 5);
 let goblin2 = new Monster('Goblin', [1, -1], 3, 1, 1, 5);
 
 let fireBeetle = new Monster('Fire Beetle', [1, 2], 6, 4, 8, 15, 'Neutral', 'Bite')
+let hobGoblin = new Monster('Hobgoblin', [1, 1], 9, 6, 6, 15, 'Chaotic', 'Sword');
+let bugBear = new Monster('Bug Bear', [3, 1], 19, 5, 9, 75, 'Chaotic', 'Sword');
+let kobold = new Monster('Kobold', [.5, 0], 4, 7, 4, 5, 'Chaotic', 'Club');
+let kobold1 = new Monster('Kobold', [.5, 0], 4, 7, 4, 5, 'Chaotic', 'Club');
+
 
 
 //exporting monsters
 
-export { wolf1, wolf2, goblin, goblin1, goblin2, noMonster };
+export { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold, kobold1 };

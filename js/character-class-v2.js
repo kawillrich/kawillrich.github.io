@@ -11,7 +11,7 @@ import { noSpecialty, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cl
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './fighter-level-class.js';
 import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-level-two-spells-class.js';
 import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism } from './mage-level-one-spells-class.js';
-import { noMonster } from './monster-class-v2.js';
+import { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold } from './monster-class-v2.js';
 
 //import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
 
