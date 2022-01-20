@@ -38,9 +38,7 @@ export default class Monster {
         let finalHPArray = [];
         for ( let i = 0; i < this.hitDice[0]; i++) {
             let updatedHP = (Math.ceil(Math.random(1) * 6));
-            console.log(updatedHP);
             newHPArray.unshift(updatedHP);
-            console.log(newHPArray);
           }
           const reducer = (previousValue, currentValue) => previousValue + currentValue;
           finalHPArray = newHPArray.reduce(reducer) + this.hitDice[1];
@@ -139,14 +137,17 @@ export default class Monster {
 
 //initializing monsters
 
-let wolf1 = new Monster('Wolf', [5, 0], 16, 2, 1, 5, []);
-let wolf2 = new Monster('Wolf', [5, 0], 16, 2, 1, 5, []);
-let goblin = new Monster('Goblin', [1, -1], 4, 1, 1, 5, []);
-
-let goblin1 = new Monster('Goblin', [1, -1], 18, 1, 1, 5, []);
-let goblin2 = new Monster('Goblin', [1, -1], 3, 1, 1, 5, []);
-
 let noMonster = new Monster(' ', ' ', ' ', ' ', ' ', ' ');
+
+let wolf1 = new Monster('Wolf', [5, 0], 16, 2, 1, 5);
+let wolf2 = new Monster('Wolf', [5, 0], 16, 2, 1, 5);
+
+let goblin = new Monster('Goblin', [1, -1], 4, 1, 1, 5);
+let goblin1 = new Monster('Goblin', [1, -1], 18, 1, 1, 5);
+let goblin2 = new Monster('Goblin', [1, -1], 3, 1, 1, 5);
+
+let fireBeetle = new Monster('Fire Beetle', [1, 2], 6, 4, 8, 15, 'Neutral', 'Bite')
+
 
 //exporting monsters
 

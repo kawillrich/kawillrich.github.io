@@ -225,7 +225,6 @@ export default class Character {
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
             `;
 
-            console.log(finalCharacter.specialty.characterExperience);
 
 //----------------------------trying to remove monster attack button--------------//
            
@@ -337,7 +336,6 @@ export default class Character {
                 <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
                 `;
 
-                console.log(finalCharacter.specialty.characterExperience);
 
                 let removingMonster2Button = document.getElementsByClassName('attack-monster-two');
                 removingMonster2Button[0].classList.add('monster1-dead')        
