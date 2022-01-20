@@ -44,7 +44,7 @@ export default class Character {
                 <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
                 <h4 id='char-hp' class='char-info-label'>Hit Points:  <span class="character-display-info">${this.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span></h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorPoints}</span></div></h4> 
-                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
+                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
                 <h4 id='char-spell3' class='char-info-label'>Spell 3:  <span class="character-display-info">${this.specialty.spell3.name}</span></h4>
@@ -355,6 +355,10 @@ export default class Character {
         // console.log(monster2);
         // console.log(spell2);
         let self = this;
+
+        let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.specialty.spell2.damage));
+
+
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
@@ -389,13 +393,13 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You cast ${this.specialty.spell2.name} on the ${monster1.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
+        <p>You cast ${this.specialty.spell2.name} on the ${monster1.name} and cause ${inflictedDamage} points of damage.</p>`;
         
         // console.log(this.specialty.spell2.damage);
                 
         //CHECKING ATTACK INTERACTION
-        if (monster1.healthPoints - this.specialty.spell2.damage > 0) {        
-            monster1.healthPoints = monster1.healthPoints - this.specialty.spell2.damage;
+        if (monster1.healthPoints - inflictedDamage > 0) {        
+            monster1.healthPoints = monster1.healthPoints - inflictedDamage;
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
@@ -418,7 +422,7 @@ export default class Character {
             
             greyOutAttackButtons();
         
-        } else if (monster1.healthPoints - this.specialty.spell2.damage <= 0 ) {
+        } else if (monster1.healthPoints - inflictedDamage <= 0 ) {
             monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
@@ -457,6 +461,9 @@ export default class Character {
     spell2AttackMonster2(monster1, monster2, spell2, continueNextChapter) {
         // console.log('Casting Spell Two on Monster Two');
         let self = this;
+
+        let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.specialty.spell2.damage));
+
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
@@ -493,13 +500,13 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You cast ${this.specialty.spell2.name} on the ${monster2.name} and cause ${this.specialty.spell2.damage} points of damage.</p>`;
+        <p>You cast ${this.specialty.spell2.name} on the ${monster2.name} and cause ${inflictedDamage} points of damage.</p>`;
         
         // console.log(this.specialty.spell2.damage);
                 
         //CHECKING ATTACK INTERACTION
-        if (monster2.healthPoints - this.specialty.spell2.damage > 0) {        
-            monster2.healthPoints = monster2.healthPoints - this.specialty.spell2.damage;
+        if (monster2.healthPoints - inflictedDamage > 0) {        
+            monster2.healthPoints = monster2.healthPoints - inflictedDamage;
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
@@ -522,7 +529,7 @@ export default class Character {
 
             greyOutAttackButtons();
         
-        } else if (monster2.healthPoints - this.specialty.spell2.damage <= 0 ) {
+        } else if (monster2.healthPoints - inflictedDamage <= 0 ) {
             monster2.healthPoints = 0;
             
             let monsterTwoStatus = document.querySelector('#monster-two');
