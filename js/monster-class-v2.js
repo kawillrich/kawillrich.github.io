@@ -14,7 +14,7 @@ import Character from './character-class-v2.js';
 
 
 export default class Monster {
-    constructor (name, hitDice, healthPoints, armorClass, damage, experienceValue, alignment, attacks, treasureType, saveAs, status) {
+    constructor (name, hitDice, healthPoints, armorClass, damage, experienceValue, alignment, attacks, treasureType, saveAs, status, finalHPArray) {
         this.name = name;
         this.hitDice = hitDice;
         this.healthPoints = healthPoints;
@@ -26,28 +26,26 @@ export default class Monster {
         this.treasureType = treasureType;
         this.saveAs = saveAs;
         this.satus = status || "Alive";
+        this.finalHPArray = this.finalHPArray;
 
     };
 
     createHitPoints() {
+        if (this.healthPoints === 0 || this.healthPoints === ' ' || this.hitDice === 0 || this.hitDice === ' ') {
+            return;
+        } else {
         let newHPArray = [];
         let finalHPArray = [];
         for ( let i = 0; i < this.hitDice; i++) {
             let updatedHP = (Math.ceil(Math.random(1) * 6));
             newHPArray.unshift(updatedHP);
-            // console.log(newHPArray);
+            console.log(newHPArray);
           }
           const reducer = (previousValue, currentValue) => previousValue + currentValue;
-          if (!newHPArray ===[]) {
-            finalHPArray = newHPArray.reduce(reducer);
-            // console.log(finalHPArray);
-            this.healthPoints = finalHPArray;
-          } else {
-              return;
-          }
-
-        //   return finalHPArray;
-        
+          finalHPArray = newHPArray.reduce(reducer);
+          console.log(finalHPArray);
+          this.healthPoints = finalHPArray;
+        }
       
 
 
@@ -137,12 +135,12 @@ export default class Monster {
 
 //initializing monsters
 
-let wolf1 = new Monster('Wolf', 5, 16, 2, 1, 5);
-let wolf2 = new Monster('Wolf', 5, 16, 2, 1, 5);
-let goblin = new Monster('Goblin', 1, 4, 1, 1, 5);
+let wolf1 = new Monster('Wolf', 5, 16, 2, 1, 5, []);
+let wolf2 = new Monster('Wolf', 5, 16, 2, 1, 5, []);
+let goblin = new Monster('Goblin', 1, 4, 1, 1, 5, []);
 
-let goblin1 = new Monster('Goblin', 1, 18, 1, 1, 5);
-let goblin2 = new Monster('Goblin', 1, 3, 1, 1, 5);
+let goblin1 = new Monster('Goblin', 1, 18, 1, 1, 5, []);
+let goblin2 = new Monster('Goblin', 1, 3, 1, 1, 5, []);
 
 let noMonster = new Monster(' ', ' ', ' ', ' ', ' ', ' ');
 
