@@ -3,13 +3,6 @@ import Weapon from "./weapon-class-v2.js";
 
 export default class MagicalWeapon extends Weapon {
     constructor (name, damage, type, numOfHands, cost, encumbrance) {
-        this.name = name;
-        this.damage = damage;
-        this.type = type;
-        this.numOfHands = numOfHands;
-        this.cost = cost;
-        this.encumbrance = encumbrance;
-
         super(name, damage, type, numOfHands, cost, encumbrance, effect)
         this.effect = effect;
     }

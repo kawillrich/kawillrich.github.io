@@ -35,12 +35,12 @@ export default class Monster {
         for ( let i = 0; i < this.hitDice; i++) {
             let updatedHP = (Math.ceil(Math.random(1) * 6));
             newHPArray.unshift(updatedHP);
-            console.log(newHPArray);
+            // console.log(newHPArray);
           }
           const reducer = (previousValue, currentValue) => previousValue + currentValue;
           if (!newHPArray ===[]) {
             finalHPArray = newHPArray.reduce(reducer);
-            console.log(finalHPArray);
+            // console.log(finalHPArray);
             this.healthPoints = finalHPArray;
           } else {
               return;

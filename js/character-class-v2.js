@@ -44,7 +44,7 @@ export default class Character {
                 <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
                 <h4 id='char-hp' class='char-info-label'>Hit Points:  <span class="character-display-info">${this.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span></h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorPoints}</span></div></h4> 
-                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment}</span></div></h4>
+                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
                 <h4 id='char-spell3' class='char-info-label'>Spell 3:  <span class="character-display-info">${this.specialty.spell3.name}</span></h4>
@@ -136,6 +136,11 @@ export default class Character {
 
     weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter) {       
         let self = this;        
+        let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.weapon.damage)) + finalCharacter.attributes[0].adjustment;
+        
+
+
+
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
@@ -156,6 +161,10 @@ export default class Character {
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
             finalCharacter.specialty.characterExperience += monster2.experienceValue;
 
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
@@ -165,11 +174,11 @@ export default class Character {
                  
         let attackDialogue = document.querySelector("#dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${monster1.name} with your ${this.weapon.name} and cause ${this.weapon.damage + finalCharacter.attributes[0].adjustment} points of damage.</p>`;       
+        <p>You attack the ${monster1.name} with your ${this.weapon.name} and cause ${inflictedDamage} points of damage.</p>`;       
        
         //CHECKING ATTACK INTERACTION
-        if (monster1.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment) > 0) {        
-            monster1.healthPoints = monster1.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment);
+        if (monster1.healthPoints - inflictedDamage > 0) {        
+            monster1.healthPoints = monster1.healthPoints - inflictedDamage;
             let updatedMonsterHP = document.querySelector("#monster-one-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}</h4>`;
@@ -194,7 +203,7 @@ export default class Character {
 
 //END
         
-        } else if (monster1.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment) <= 0) {
+        } else if (monster1.healthPoints - inflictedDamage <= 0) {
             monster1.healthPoints = 0;
             
             let monsterOneStatus = document.querySelector('#monster-one');
@@ -239,6 +248,9 @@ export default class Character {
         // console.log(weapon);
         // console.log(monster2);
         let self = this;
+        let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.weapon.damage)) + finalCharacter.attributes[0].adjustment;
+
+
         let confirmMonstersDead = (enemy2) => {            
                     
             if (monster2.healthPoints <= 0 && monster1.healthPoints <= 0) {
@@ -254,6 +266,14 @@ export default class Character {
         
             removeFightModule.innerHTML = ` `;
             
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            finalCharacter.specialty.characterExperience += monster2.experienceValue;
+
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
+
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
@@ -266,11 +286,11 @@ export default class Character {
 
         let attackDialogue = document.getElementById("dialogue");
         attackDialogue.innerHTML = `
-        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${this.weapon.damage + finalCharacter.attributes[0].adjustment} points of damage.</p>`;
+        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${inflictedDamage} points of damage.</p>`;
         
         //CHECKING ATTACK INTERACTION
-        if (monster2.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment) > 0) {        
-            monster2.healthPoints = monster2.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment);
+        if (monster2.healthPoints - inflictedDamage > 0) {        
+            monster2.healthPoints = monster2.healthPoints - inflictedDamage;
             let updatedMonsterHP = document.querySelector("#monster-two-hp");
             updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}</h4>`;
@@ -293,7 +313,7 @@ export default class Character {
             
             greyOutAttackButtons();
             
-            } else if (monster2.healthPoints - (this.weapon.damage + finalCharacter.attributes[0].adjustment) <= 0) {
+            } else if (monster2.healthPoints - inflictedDamage <= 0) {
                 monster2.healthPoints = 0;
                 
                 let monsterTwoStatus = document.querySelector('#monster-two');
@@ -342,14 +362,6 @@ export default class Character {
             if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
             // console.log('both dead');
         
-            finalCharacter.specialty.characterExperience += monster1.experienceValue;
-            finalCharacter.specialty.characterExperience += monster2.experienceValue;
-
-            let updatedExperience = document.querySelector('#char-experience');
-            updatedExperience.innerHTML = `
-            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-            `;
-
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
                 
@@ -360,6 +372,13 @@ export default class Character {
         
             removeFightModule.innerHTML = ` `;
 
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            finalCharacter.specialty.characterExperience += monster2.experienceValue;
+
+            let updatedExperience = document.querySelector('#char-experience');
+            updatedExperience.innerHTML = `
+            <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+            `;
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
@@ -454,6 +473,9 @@ export default class Character {
             <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
         
             removeFightModule.innerHTML = ` `;
+
+            finalCharacter.specialty.characterExperience += monster1.experienceValue;
+            finalCharacter.specialty.characterExperience += monster2.experienceValue;
 
             let updatedExperience = document.querySelector('#char-experience');
             updatedExperience.innerHTML = `
