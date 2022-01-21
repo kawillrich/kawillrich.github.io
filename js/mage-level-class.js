@@ -41,7 +41,9 @@ let mageMedium = new MageLevels (
             [0, 19]    
         ]
     }, 
-    [mageFirstLevelSpells] 
+    mageFirstLevelSpells = {
+        
+    } 
     );    
 
        

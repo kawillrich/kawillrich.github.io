@@ -15,7 +15,7 @@ import { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGobli
 import Inventory from './inventory-class-v1.js';
 import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './fighter-level-class.js';
-import { mageLevelOneSpells } from './mage-level-one-spells-class.js';
+import { mageLevelOneSpells, magicMissile } from './mage-level-one-spells-class.js';
 import { mageLevelTwoSpells } from './mage-level-two-spells-class.js';
 
 // import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory-array-v1.js';
@@ -606,6 +606,8 @@ function logCharSpecialty() {
         finalCharacter.weapon = dagger;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
+        finalCharacter.specialty.characterLevel.specialtySkills.mageFirstLevelSpells = {magicMissile};
+        console.log(finalCharacter);
         finalCharacter.characterUpdate();        
         
     } else if (selectedSpecialty === "dragonwarrior") {
@@ -703,6 +705,8 @@ function beginJourney() {
 //CHAPTER TWO
 
 function beginChapterTwo() {
+    console.log(finalCharacter);
+
     finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment;
     finalCharacter.specialty.maxHealthPoints = finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment;
     // finalCharacter.weapon.damage = finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment;
@@ -718,8 +722,12 @@ function beginChapterTwo() {
     <p>After finishing the last of your breakfast, you head down to the main floor of the inn. You see the innkeeper, Raynard, sitting at the counter. You've already paid for 
     one night of sleep, would you like to speak with Raynard on your way out?</p> 
     <input type="submit" id="talk-raynard-yes" value="Yes"><input type="submit" id="talk-raynard-no" value="No"><br> 
+    
     `;    
    
+    // let castingSpell = document.querySelector('#cast-spell');
+    // castingSpell.addEventListener('click', finalCharacter.specialty.characterLevel.specialtySkills.mageFirstLevelSpells.magicMissile.castingEffect, false);
+
     var talkToRaynardYes = document.querySelector("#talk-raynard-yes");
     talkToRaynardYes.addEventListener('click', talkToRaynard, false);
 
@@ -886,6 +894,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
             <span class='button-border'><input type="submit" class="attack area-attack fight-module-button" value="Area Attack Spell"></span>
             <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span><br>            
             <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span>
+            
             <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>
         `;
