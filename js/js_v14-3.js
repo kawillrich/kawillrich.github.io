@@ -1433,7 +1433,7 @@ function beginTestChapter () {
     
     var attackWolvesYes = document.querySelector("#attack-goblins");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(kobold, kobold1, continueChapterSix);
+        addingFightModule(kobold1, kobold, continueChapterSix);
         declareAttack();
     
     
