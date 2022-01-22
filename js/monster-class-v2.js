@@ -35,7 +35,7 @@ export default class Monster {
             return;
         } else {
 
-            if (this.hitDice < 1) {
+            if (this.hitDice[0] < 1) {
                 let newHPArray = [];
                 let finalHPArray = [];
                 for ( let i = 0; i < this.hitDice[0]; i++) {
