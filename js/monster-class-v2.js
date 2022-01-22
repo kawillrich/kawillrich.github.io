@@ -14,7 +14,7 @@ import Character from './character-class-v2.js';
 
 
 export default class Monster {
-    constructor (name, hitDice, healthPoints, armorClass, damage, experienceValue, alignment, attacks, treasureType, saveAs, status, finalHPArray) {
+    constructor (name, hitDice, healthPoints, armorClass, damage, experienceValue, alignment, attacks, treasureType, saveAs, status) {
         this.name = name;
         this.hitDice = hitDice;
         this.healthPoints = healthPoints;
@@ -26,10 +26,9 @@ export default class Monster {
         this.treasureType = treasureType;
         this.saveAs = saveAs;
         this.satus = status || "Alive";
-        this.finalHPArray = this.finalHPArray;
-
     };
 
+    //auto generating HD number of hitpoints for monsters
     createHitPoints() {
         if (this.healthPoints === 0 || this.healthPoints === ' ' || this.hitDice === 0 || this.hitDice === ' ') {
             return;
@@ -65,54 +64,10 @@ export default class Monster {
                   console.log(finalHPArray);
                   this.healthPoints = finalHPArray;
                 }
-
-        }
-
-            
-
-
-
-
-        // let newHPArray = [];
-        // let finalHPArray = [];
-        // for ( let i = 0; i < this.hitDice[0]; i++) {
-        //     let updatedHP = (Math.ceil(Math.random(1) * 8));
-        //     newHPArray.unshift(updatedHP);
-        //   }
-        //   const reducer = (previousValue, currentValue) => previousValue + currentValue;
-        //   finalHPArray = newHPArray.reduce(reducer) + this.hitDice[1];
-        //   if (finalHPArray < 1) {
-        //       finalHPArray = 1;
-        //   }
-        //   console.log(finalHPArray);
-        //   this.healthPoints = finalHPArray;
-        // }
-      
-
-
-
-
-
-
-
-
-
-
-
-
-        // this.healthPoints = this.hitDice * (Math.ceil(Math.random(1)* 6));
-        // return this.healthPoints;
+        }            
     };
 
-    monsterAttack(monsterOne, monsterTwo) {
-        
-        
-        // console.log(monsterOne);
-        // console.log(monsterTwo);
-       
-        // console.log('Monsters Attack');    
-        
-        
+    monsterAttack(monsterOne, monsterTwo) {        
 
         alert(`Monster(s) Turn!`);
 
@@ -122,8 +77,6 @@ export default class Monster {
         } else if (arguments[0].healthPoints > 0) {
             arguments[0].healthPoints = arguments[0].healthPoints;                
         };        
-        
-       
         
         monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, finalCharacter);        
     };    
@@ -137,8 +90,6 @@ export default class Monster {
       
 
         let monstersAttackTurn = (monsterOne, monsterTwo) => {     
-            // console.log(monsterOne);        
-            // console.log(monsterTwo);
          
             let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
 
