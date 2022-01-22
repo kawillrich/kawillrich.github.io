@@ -26,9 +26,6 @@ import * as inventory from './inventory-array-v1.js';
 
 //inializing character default values
 
-export let mageFirstLevelSpells = [];
-export let mageSecondLevelSpells = [];
-export let mageThirdLevelSpells = [];
 
 let adventurerImage = 4;
 let charAchievements = {};  
@@ -610,9 +607,10 @@ function logCharSpecialty() {
         finalCharacter.weapon = dagger;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
-        finalCharacter.specialty.characterLevel.specialtySkills["First Level"] = {magicMissile};
+        finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = {magicMissile};
         console.log(finalCharacter);
-        finalCharacter.characterUpdate();        
+        finalCharacter.characterUpdate();      
+
         
     } else if (selectedSpecialty === "dragonwarrior") {
         // console.log('dragonwarrior');
@@ -622,6 +620,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = obsidianSword;
         finalCharacter.enchantedItem = eloisesRing;
         finalCharacter.characterImage = 0;
+
         finalCharacter.characterUpdate();   
         
     } else if (selectedSpecialty === "thief") {
@@ -684,7 +683,6 @@ function logCharSpecialty() {
     beginJourney();
 };
         
-
 let submittedCharName = document.querySelector("#submit-name");
 submittedCharName.addEventListener('click', charNameSubmitted, false);
 
@@ -709,6 +707,13 @@ function beginJourney() {
 //CHAPTER TWO
 
 function beginChapterTwo() {
+
+    if (finalCharacter.specialty.name === 'High Mage' || finalCharacter.specialty.name === "Elf") {
+        pickMageSpells();
+    } else if (finalCharacter.specialty.name === 'Cleric') {
+        pickClericSpells();
+    }
+
     console.log(finalCharacter);
 
     finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment;
@@ -738,6 +743,14 @@ function beginChapterTwo() {
     var talkToRaynardNo = document.querySelector("#talk-raynard-no");
     talkToRaynardNo.addEventListener('click', startChapterThreeOne, false);
 }; 
+
+function pickMageSpells() {
+    alert('Pick Mage Spells');
+};
+
+function pickClericSpells() {
+    alert('Pick Cleric Spells');
+};
 
 function talkToRaynard() {
     // console.log('Talking to Raynard');

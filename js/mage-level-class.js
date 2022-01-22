@@ -1,8 +1,6 @@
 import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism} from './mage-level-one-spells-class.js'
 import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-level-two-spells-class.js';
-import { mageFirstLevelSpells } from './js_v14-3.js';
-import { mageSecondLevelSpells } from './js_v14-3.js';
-import { mageThirdLevelSpells } from './js_v14-3.js';
+
 
 
 export default class MageLevels {
@@ -46,7 +44,7 @@ let mageMedium = new MageLevels (
     }, 
     {
         "First Level Mage Spells": " ",
-        "Secod Level Mage Spells": " ",
+        "Second Level Mage Spells": " ",
         "Third Level Mage Spells": " ",
         },
         [1, 0, 0], 
@@ -80,9 +78,9 @@ let mageSeer = new MageLevels (
     ]
 }, 
 {
-    "First Level": " ",
-    "Secod Level": " ",
-    "Third Level": " ",  
+    "First Level Mage Spells": " ",
+    "Second Level Mage Spells": " ",
+    "Third Level Mage Spells": " ",  
     }, 
 [2, 0, 0], 
 ); 
@@ -113,9 +111,9 @@ let mageConjurer = new MageLevels (
     ]
 }, 
 {
-        "First Level": " ",
-        "Secod Level": " ",
-        "Third Level": " ",
+    "First Level Mage Spells": " ",
+    "Second Level Mage Spells": " ",
+    "Third Level Mage Spells": " ",
     }[2, 1, 0], 
 ); 
 
