@@ -894,7 +894,9 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
             <span class='button-border'><input type="submit" class="attack area-attack fight-module-button" value="Area Attack Spell"></span>
             <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span><br>            
             <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span>
-            
+
+            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Magic Missile"></span>
+
             <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>
         `;
