@@ -1,21 +1,24 @@
 import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism} from './mage-level-one-spells-class.js'
 import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-level-two-spells-class.js';
-import { mageLevelOneSpells } from './mage-level-one-spells-class.js';
-import { mageLevelTwoSpells } from './mage-level-two-spells-class.js';
-
+import { mageFirstLevelSpells } from './js_v14-3.js';
+import { mageSecondLevelSpells } from './js_v14-3.js';
+import { mageThirdLevelSpells } from './js_v14-3.js';
 
 
 export default class MageLevels {
-    constructor (level, specialtySkills) {
+    constructor (level, specialtySkills, numberOfSpells) {
+       
+
         this.level= level;        
         this.specialtySkills = specialtySkills;
+        this.numberOfSpells = numberOfSpells;
+        
     }
 };
 
-let mageFirstLevelSpells = [];
-let mageSecondLevelSpells = [];
 
 let mageMedium = new MageLevels (
+    
     {
         name: "Medium",
         level: 1,
@@ -41,9 +44,12 @@ let mageMedium = new MageLevels (
             [0, 19]    
         ]
     }, 
-    mageFirstLevelSpells = {
-        
-    } 
+    {
+        "First Level Mage Spells": " ",
+        "Secod Level Mage Spells": " ",
+        "Third Level Mage Spells": " ",
+        },
+        [1, 0, 0], 
     );    
 
        
@@ -73,8 +79,13 @@ let mageSeer = new MageLevels (
         [0, 19]    
     ]
 }, 
-[mageFirstLevelSpells]
-);
+{
+    "First Level": " ",
+    "Secod Level": " ",
+    "Third Level": " ",  
+    }, 
+[2, 0, 0], 
+); 
 
 let mageConjurer = new MageLevels (
     {
@@ -101,7 +112,11 @@ let mageConjurer = new MageLevels (
         [0, 19]    
     ]
 }, 
-[mageFirstLevelSpells, mageSecondLevelSpells]
-);
+{
+        "First Level": " ",
+        "Secod Level": " ",
+        "Third Level": " ",
+    }[2, 1, 0], 
+); 
 
 export { mageMedium, mageSeer, mageConjurer };

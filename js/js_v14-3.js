@@ -26,6 +26,10 @@ import * as inventory from './inventory-array-v1.js';
 
 //inializing character default values
 
+export let mageFirstLevelSpells = [];
+export let mageSecondLevelSpells = [];
+export let mageThirdLevelSpells = [];
+
 let adventurerImage = 4;
 let charAchievements = {};  
 let attributes = [];
@@ -606,7 +610,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = dagger;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
-        finalCharacter.specialty.characterLevel.specialtySkills.mageFirstLevelSpells = {magicMissile};
+        finalCharacter.specialty.characterLevel.specialtySkills["First Level"] = {magicMissile};
         console.log(finalCharacter);
         finalCharacter.characterUpdate();        
         
