@@ -1,7 +1,7 @@
 export let mageLevelTwoSpells = [];
 
 export default class MageLevelTwoSpells {
-    constructor (name, range, duration, effect) {
+    constructor (name, level, range, duration, effect) {
         this.name = name;
         this.level = level;
         this.range = range;

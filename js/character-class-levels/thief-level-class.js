@@ -31,8 +31,16 @@ let apprentice = new ThiefLevels (
             [0, 19]    
         ]
     }, 
-    ['None'] 
-    );    
+    {
+        "Open Locks" : 15,
+        "Remove Traps": 10,
+        "Pick Pockets": 20,
+        "Move Silently": 30, 
+        "Climb Sheer Surfaces": 87,
+        "Hide in Shadows": 10,
+        "Hear Noise": 17,
+    } 
+);    
 
        
 let footpad = new ThiefLevels (
@@ -61,8 +69,16 @@ let footpad = new ThiefLevels (
         [1, 18],
         [0, 19]    
     ]
-}, 
-['None']
+    }, 
+    {
+        "Open Locks" : 15,
+        "Remove Traps": 10,
+        "Pick Pockets": 20,
+        "Move Silently": 30, 
+        "Climb Sheer Surfaces": 87,
+        "Hide in Shadows": 10,
+        "Hear Noise": 17,
+    } 
 );
 
 let robber = new ThiefLevels (
@@ -91,8 +107,16 @@ let robber = new ThiefLevels (
         [1, 18],
         [0, 19]    
     ]
-}, 
-['None']
+    }, 
+    {
+        "Open Locks" : 15,
+        "Remove Traps": 10,
+        "Pick Pockets": 20,
+        "Move Silently": 30, 
+        "Climb Sheer Surfaces": 87,
+        "Hide in Shadows": 10,
+        "Hear Noise": 17,
+    } 
 );
 
 export { apprentice, footpad, robber };

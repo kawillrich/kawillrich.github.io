@@ -11,11 +11,13 @@ import { noSpecialty, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cl
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './character-class-levels/fighter-level-class.js';
 import { veteranMedium, warriorSeer, swordMasterConjurer } from './character-class-levels/elf-level-class.js';
 import { apprentice, footpad, robber } from './character-class-levels/thief-level-class.js';
-import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-level-two-spells-class.js';
-import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism } from './mage-level-one-spells-class.js';
+import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-spells/mage-level-two-spells-class.js';
+import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism } from './mage-spells/mage-level-one-spells-class.js';
 import { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold } from './monster-class-v2.js';
 
 //import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
+
+//==============================================end imports===============================================//
 
 //exports Character class for other module access
 
@@ -45,7 +47,7 @@ export default class Character {
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name}</span></h4>
                 <h4 id='char-hp' class='char-info-label'>Hit Points:  <span class="character-display-info">${this.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span></h4> 
-                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorPoints}</span></div></h4> 
+                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span></div></h4> 
                 <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>

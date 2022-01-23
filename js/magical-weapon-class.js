@@ -1,6 +1,8 @@
 import { finalCharacter } from "./js_v14-3.js";
 import Weapon from "./weapon-class-v2.js";
 
+//==============================================end imports===============================================//
+
 export default class MagicalWeapon extends Weapon {
     constructor (name, damage, type, numOfHands, cost, encumbrance) {
         super(name, damage, type, numOfHands, cost, encumbrance, effect)

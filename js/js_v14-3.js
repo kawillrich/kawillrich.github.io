@@ -35,11 +35,12 @@ import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './character-
 import { veteranMedium, warriorSeer, swordMasterConjurer } from './character-class-levels/elf-level-class.js';
 
 //mage spell imports
-import { mageLevelOneSpells, magicMissile } from './mage-level-one-spells-class.js';
-import { mageLevelTwoSpells } from './mage-level-two-spells-class.js';
+import { mageLevelOneSpells, magicMissile } from './mage-spells/mage-level-one-spells-class.js';
+import { mageLevelTwoSpells } from './mage-spells/mage-level-two-spells-class.js';
 
 //cleric spell imports
-
+import { cureLightWoundsCleric, detectEvilCleric, detectMagicCleric, purifyFoodAdWaterCleric, lightSpellCleric, removeFearCleric, protectionFromEvilCleric, resistColdCleric } from './cleric-spells/cleric-level-one-spells-class.js';
+import { blessCleric, findTrapsCleric, holdPersonCleric, knowAlignmentCleric, resistFire, silence15ftCleric, snakeCharmCleric, speakWithAnimalCleric} from './cleric-spells/cleric-level-two-spells-class.js';
 
 
 //achievement imports
@@ -520,7 +521,7 @@ function startGame() {
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
                 <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
-                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorPoints}</span></div></h4> 
+                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span></div></h4> 
                 <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
