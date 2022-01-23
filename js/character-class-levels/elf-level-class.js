@@ -38,13 +38,19 @@ let veteranMedium = new ElfLevels (
             [0, 19]    
         ]
     }, 
-    {
+    {        
         "First Level Mage Spells": " ",
         "Second Level Mage Spells": " ",
         "Third Level Mage Spells": " ",
+        "Vision": {
+            "Infravision": "See 60 feet in the dark",
+            "Night Vision": "See 60 feet in the dark",       
         },
-        [1, 0, 0], 
-    );    
+        "Immunity to Ghoul Paralysis": "Immune to paralysis from Ghouls",
+        "Detection": "Find secret and hidden doors at 33%",
+    },
+    [1, 0, 0], 
+);    
 
        
 let warriorSeer = new ElfLevels (
@@ -77,8 +83,14 @@ let warriorSeer = new ElfLevels (
     "First Level Mage Spells": " ",
     "Second Level Mage Spells": " ",
     "Third Level Mage Spells": " ",  
-    }, 
-[2, 0, 0], 
+    "Vision": {
+        "Infravision": "See 60 feet in the dark",
+        "Night Vision": "See 60 feet in the dark",       
+    },
+    "Immunity to Ghoul Paralysis": "Immune to paralysis from Ghouls",
+    "Detection": "Find secret and hidden doors at 33%",
+    },
+    [2, 0, 0], 
 ); 
 
 let swordMasterConjurer = new ElfLevels (
@@ -111,7 +123,14 @@ let swordMasterConjurer = new ElfLevels (
     "First Level Mage Spells": " ",
     "Second Level Mage Spells": " ",
     "Third Level Mage Spells": " ",
-    }[2, 1, 0], 
+    "Vision": {
+        "Infravision": "See 60 feet in the dark",
+        "Night Vision": "See 60 feet in the dark",       
+    },
+    "Immunity to Ghoul Paralysis": "Immune to paralysis from Ghouls",
+    "Detection": "Find secret and hidden doors at 33%",
+    },
+    [2, 1, 0], 
 ); 
 
 export { veteranMedium, warriorSeer, swordMasterConjurer };
