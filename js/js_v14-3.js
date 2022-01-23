@@ -22,7 +22,7 @@ import Character from './character-class-v2.js';
 
 //moster imports
 import Monster from './monster-class-v2.js';
-import { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold, kobold1 } from './monster-class-v2.js';
+import { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold, kobold1 } from './monster-class-v2.js';
 
 //inventory imports
 import Inventory from './inventory-class-v1.js';
@@ -904,7 +904,7 @@ function continueChapterThreeThree() {
     
     var attackWolvesYes = document.querySelector("#attack-wolves");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(wolf1, noMonster, continueChapterThreeFour);
+        addingFightModule(smallWolf, noMonster, continueChapterThreeFour);
         declareAttack();
         
         },   

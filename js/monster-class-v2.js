@@ -127,7 +127,9 @@ export default class Monster {
 
 //initializing monsters
 
-let noMonster = new Monster(' ', ' ', ' ', ' ', ' ', ' ');
+let noMonster = new Monster(' ', ' ', ' ', ' ', ' ', 0);
+
+let smallWolf = new Monster('Small Wolf', [.5, 0], 8, 9, 4, 5);
 
 let wolf1 = new Monster('Wolf', [2, 2], 18, 7, 6, 25);
 let wolf2 = new Monster('Wolf', [2, 2], 18, 7, 6, 25);
@@ -190,4 +192,4 @@ let giantRacer = new Monster('Giant Racer', 2, 16, 5, 6, 20, 'Neutral', 'Bite');
 
 //exporting monsters
 
-export { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold, kobold1 };
+export { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold, kobold1 };
