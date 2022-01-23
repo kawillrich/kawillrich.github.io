@@ -623,6 +623,8 @@ function logCharSpecialty() {
         
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
+        console.log(finalCharacter);
+
         finalCharacter.characterUpdate();              
                 
     } else if (selectedSpecialty === "mage") {
@@ -646,6 +648,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = obsidianSword;
         finalCharacter.enchantedItem = eloisesRing;
         finalCharacter.characterImage = 0;
+        console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
         
@@ -657,6 +660,8 @@ function logCharSpecialty() {
         finalCharacter.weapon = shortBow;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 1;
+        console.log(finalCharacter);
+
         finalCharacter.characterUpdate();   
         
         
@@ -668,6 +673,8 @@ function logCharSpecialty() {
         finalCharacter.weapon = mace;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
+        console.log(finalCharacter);
+
         finalCharacter.characterUpdate();   
         
         
@@ -679,6 +686,8 @@ function logCharSpecialty() {
         finalCharacter.weapon = normalSword;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
+        console.log(finalCharacter);
+
         finalCharacter.characterUpdate();   
         
         
@@ -690,6 +699,8 @@ function logCharSpecialty() {
         finalCharacter.weapon = shortBow;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
+        console.log(finalCharacter);
+
         finalCharacter.characterUpdate();   
         
         
@@ -701,6 +712,8 @@ function logCharSpecialty() {
         finalCharacter.weapon = shortBow;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
+        console.log(finalCharacter);
+
         finalCharacter.characterUpdate();         
         
     } else {
