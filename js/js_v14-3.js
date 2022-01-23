@@ -867,9 +867,9 @@ function continueChapterThreeTwo() {
     town."  As it gets closer, you can see one horse in front, pulling along an open wagon.  You can make out the shape of two men in the cart, but as it gets closre you notice 
     that they seems to be in a hurry and that one horse is missing pulling the wagon.  It comes closer and you notice the horse is in a full out trot.  You can clearly tell the 
     men are slightly alarmed, and one of them waves at you to move out of the way.  Finally, the older man gets close enough to you and yells, "Go back! There's trouble ahead 
-    - wolves!"  As he passes by, you notice an injured sheep in the back of the cart - blood is everywhere, and you can clearly see a large gash in the animal.  The 
+    - wolf!"  As he passes by, you notice an injured sheep in the back of the cart - blood is everywhere, and you can clearly see a large gash in the animal.  The 
     wagon-riders don't stop and continue in speed, leaving a dust trail behind them as they quickly move out of sight.  "Strange, for around here...", you think.  "What 
-    are wolves doing out here during daylight and in the middle of the fields?"  "Did they attack that sheep?" 
+    is a wolf doing out here during daylight and in the middle of the fields?"  "Did it attack that sheep?" 
     </p>
 
     <input type="submit" id="start-chapter-three-three" value="Continue">`;
@@ -884,15 +884,15 @@ function continueChapterThreeThree() {
     let chapterThreeThree = document.querySelector('#dialogue');
     chapterThreeThree.innerHTML = `
     <p>You hasten (quicken) your pace, enough to move more quickly, but not in a jog - you have a long journey ahead of you and know you can't tire yourself out to soon.  
-    Ahead, you see two dark figures hovering over a shape on the ground.  You quicken your pace still, and as you come closer, you can make out two wolves picking at a 
+    Ahead, you see two dark figures hovering over a shape on the ground.  You quicken your pace still, and as you come closer, you can make out a wolf picking at a 
     sheep, dead on the road.  Not only is this odd because of the time of day, but wolves haven't been a problem in this country side for quite some time.  You have heard 
-    of some stories of attacks from foxes on chickens, or coyotes on deer, but a sighting of wolves is a rare thing.  Regardless, as you approach, you see the wolves look up 
-    at you, while still chewing on the sheep.  One lifts its head up slowly, eyes lowered and it bares its teeth in a small growl.  "Well," you think, "I wasn't planning 
+    of some stories of attacks from foxes on chickens, or coyotes on deer, but a sighting of wolves is a rare thing.  Regardless, as you approach, you see the wolf look up 
+    at you, while still chewing on the sheep.  It lifts its head up slowly, eyes lowered and it bares its teeth in a small growl.  "Well," you think, "I wasn't planning 
     on needing to use my training this soon, but now is as good of a time as any..."</p>
 
-    <p>At first you try to scare the wolves away.  You aren't a person to invite violence or to willfully harm others, but you also don't back down from a fight either.  
-    You can tell these wolves have no intention of leaving the sheep, and wolves are dangerous for the farm, so you have to make a decision.  You slow down 
-    as you get closer to the animals.  One wolf isn't too challenging, but two, on the other hand, can be a difficult fight.  Breathe in...hold...exhale.  Hand on your 
+    <p>At first you try to scare the wolf away.  You aren't a person to invite violence or to willfully harm others, but you also don't back down from a fight either.  
+    You can tell this wolf has no intention of leaving the sheep, and wolves are dangerous for the farm, so you have to make a decision.  You slow down 
+    as you get closer to the animals.  One wolf isn't too challenging you think...  Breathe in...hold...exhale.  Hand on your 
     weapon and your mind focused, what do you do?</p>
     <p>  
     
@@ -904,7 +904,7 @@ function continueChapterThreeThree() {
     
     var attackWolvesYes = document.querySelector("#attack-wolves");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(wolf1, wolf2, continueChapterThreeFour);
+        addingFightModule(wolf1, noMonster, continueChapterThreeFour);
         declareAttack();
         
         },   
@@ -1025,9 +1025,9 @@ export function continueChapterThreeFour() {
 
     let chapterThreeFour = document.querySelector('#dialogue');
     chapterThreeFour.innerHTML = `
-    <p>As you pause after your victory over the wolves, you take a breath to regroup.  As you inspect at the wolves, you notice that these 
-    don't appear to be normal wolves that you've seen before.  These wolves have a distinctly black coat of fur running down their backs, at 
-    the tip of their tails, and the edges of their ears.  "So strange.", you think.  Then, you notice something very odd...their claws are 
+    <p>As you pause after your victory over the wolf, you take a breath to regroup.  As you inspect the wolf, you notice that this 
+    don't appear to be normal wolf that you've seen before.  This wolf has a distinctly black coat of fur running down its backs, at 
+    the tip of their tails, and the edges of their ears.  "So strange.", you think.  Then, you notice something very odd...its claws are 
     black a night!  You didn't immediately notice during the fight, but now you can see plain as day.  You aren't someone who disrespects 
     animals, but you take one of the large claws and place it on a string around your neck so that you can ask around about it and what others
     may know of it.  "Well," you think to yourself, "at least I'll have some interseting stories to tell at the end of this journey..."
@@ -1197,8 +1197,8 @@ function continueChapterFour () {
 
     if (finalCharacter.achievements.killedFarmWolves) {
         chapterFourDialogue.innerHTML += `
-        <p>You reply, "I killed two wolves that attacked a sheep down the path and was wondering if the sheep belonged to you.  If so, those
-        wolves won't be a threat to you anymore.  Do you see many wolves around here?"</p>
+        <p>You reply, "I killed a wolf that attacked a sheep down the path and was wondering if the sheep belonged to you.  If so, that
+        wolf won't be a threat to you anymore.  Do you see many wolves around here?"</p>
 
         <input type="submit" id="continueChapt4-yesWolvesAchievement" value="Continue">`;
         

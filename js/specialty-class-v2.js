@@ -37,9 +37,9 @@ let warrior = new Specialty('Warrior', 8, noSpell, noSpell, noSpell, 8, 0, ['Com
 
 let highMage = new Specialty('High Mage', 500, minorHealing, fireBall, fireArrows, 500, 0, ["Common Tongue"], mageMedium);
 
-let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, dragonFang, 500, 0, ["Common Tongue"], )
+let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, dragonFang, 500, 0, ["Common Tongue"], );
 
-let elf = new Specialty('Elf', 6, noSpell, noSpell, noSpell, 6, 0, ["Common Tongue", "Elvish", "Gnoll", "Hobgoblin", "Orc"]);
+let elf = new Specialty('Elf', 6, noSpell, noSpell, noSpell, 6, 0, ["Common Tongue", "Elvish", "Gnoll", "Hobgoblin", "Orc"], veteranMedium);
 
 let dwarf = new Specialty('Dwarf', 8, noSpell, noSpell, noSpell, 8, 0, ["Common Tongue", "Dwarvish", "Gnome", "Goblin", "Kobold"]);
 
