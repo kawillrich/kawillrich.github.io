@@ -1,30 +1,53 @@
 //imports modules
 
+//weapon imports
 import Weapon from './weapon-class-v2.js';
 import { normalSword, shortBow, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword, woodenClub, dagger, 
     silverDagger, battleAxe, handAxe, crossBow, shortSword, mace, javelin, poleArm, sling, spear, warHammer } from './weapon-class-v2.js';
+
+//armor imports
 import Armor from './armor-class-v2.js';
 import { chainMail, leatherArmor, robes, noArmor, scaleMail, plateMail, bandedMail, obsidianPlateMail } from './armor-class-v2.js';
+
+//spell imports
 import Spell from './spell-class-v2.js';
 import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, dragonFang, fireArrows} from './spell-class-v2.js';
+
+//specialty imports
 import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief } from './specialty-class-v2.js';
+
+//character imports
 import Character from './character-class-v2.js';
+
+//moster imports
 import Monster from './monster-class-v2.js';
 import { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold, kobold1 } from './monster-class-v2.js';
+
+//inventory imports
 import Inventory from './inventory-class-v1.js';
 import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
-import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './fighter-level-class.js';
-import { veteranMedium, warriorSeer, swordMasterConjurer } from './elf-level-class.js';
+// import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory-array-v1.js';
+import * as inventory from './inventory-array-v1.js';
 
+//class-level-imports
+import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './character-class-levels/fighter-level-class.js';
+import { veteranMedium, warriorSeer, swordMasterConjurer } from './character-class-levels/elf-level-class.js';
+
+//mage spell imports
 import { mageLevelOneSpells, magicMissile } from './mage-level-one-spells-class.js';
 import { mageLevelTwoSpells } from './mage-level-two-spells-class.js';
 
-// import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory-array-v1.js';
-import * as inventory from './inventory-array-v1.js';
+//cleric spell imports
+
+
+
+//achievement imports
 //import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
 
-//exports finalCharacter for other modules to access
+
+
+//==============================================end imports===============================================//
 
 //inializing character default values
 
