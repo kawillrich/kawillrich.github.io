@@ -1,26 +1,15 @@
-import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism} from './mage-level-one-spells-class.js'
-import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-level-two-spells-class.js';
-
-
-
-export default class MageLevels {
-    constructor (level, specialtySkills, numberOfSpells) {
-       
-
+export default class ThiefLevels {
+    constructor (level, specialtySkills) {
         this.level= level;        
         this.specialtySkills = specialtySkills;
-        this.numberOfSpells = numberOfSpells;
-        
     }
 };
 
-
-let mageMedium = new MageLevels (
-    
+let apprentice = new ThiefLevels (
     {
-        name: "Medium",
+        name: "Apprentice",
         level: 1,
-        maxXP: 2499,
+        maxXP: 1199,
         savingThrows: [       
             { name: "Poison or Death Ray", score: 13},
             { name: "Magic Wand", score: 14},
@@ -42,27 +31,23 @@ let mageMedium = new MageLevels (
             [0, 19]    
         ]
     }, 
-    {
-        "First Level Mage Spells": " ",
-        "Second Level Mage Spells": " ",
-        "Third Level Mage Spells": " ",
-        },
-        [1, 0, 0], 
+    ['None'] 
     );    
 
        
-let mageSeer = new MageLevels (
+let footpad = new ThiefLevels (
     {
-    name: "Seer",
+    name: "Footpad",
     level: 2,
-    maxXP: 4999,
+    maxXP: 2399,
+
     savingThrows: [       
         { name: "Poison or Death Ray", score: 13},
         { name: "Magic Wand", score: 14},
         { name: "Turn to Stone or Paralysis", score: 13},
         { name: "Dragon Breath", score: 16},
-        { name: "Spells or Magic Staff", score: 15},
-    ],
+        { name: "Spells or Magic Staff", score: 15},  
+      ],
 
     hitRolls: [
         [9, 10],
@@ -77,26 +62,22 @@ let mageSeer = new MageLevels (
         [0, 19]    
     ]
 }, 
-{
-    "First Level Mage Spells": " ",
-    "Second Level Mage Spells": " ",
-    "Third Level Mage Spells": " ",  
-    }, 
-[2, 0, 0], 
-); 
+['None']
+);
 
-let mageConjurer = new MageLevels (
+let robber = new ThiefLevels (
     {
-    name: "Conjurer",
+    name: "Robber",
     level: 3,
-    maxXP: 9999,
+    maxXP: 4799,
+
     savingThrows: [       
         { name: "Poison or Death Ray", score: 13},
         { name: "Magic Wand", score: 14},
         { name: "Turn to Stone or Paralysis", score: 13},
         { name: "Dragon Breath", score: 16},
         { name: "Spells or Magic Staff", score: 15},
-    ],
+        ],
 
     hitRolls: [
         [9, 10],
@@ -111,11 +92,7 @@ let mageConjurer = new MageLevels (
         [0, 19]    
     ]
 }, 
-{
-    "First Level Mage Spells": " ",
-    "Second Level Mage Spells": " ",
-    "Third Level Mage Spells": " ",
-    }[2, 1, 0], 
-); 
+['None']
+);
 
-export { mageMedium, mageSeer, mageConjurer };
+export { apprentice, footpad, robber };

@@ -15,6 +15,8 @@ import { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGobli
 import Inventory from './inventory-class-v1.js';
 import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './fighter-level-class.js';
+import { veteranMedium, warriorSeer, swordMasterConjurer } from './elf-level-class.js';
+
 import { mageLevelOneSpells, magicMissile } from './mage-level-one-spells-class.js';
 import { mageLevelTwoSpells } from './mage-level-two-spells-class.js';
 

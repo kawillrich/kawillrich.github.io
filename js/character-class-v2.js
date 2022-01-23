@@ -9,6 +9,8 @@ import { chainMail, leatherArmor, robes, noArmor, scaleMail, plateMail, bandedMa
 import Specialty from './specialty-class-v2.js';
 import { noSpecialty, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief } from './specialty-class-v2.js';
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './fighter-level-class.js';
+import { veteranMedium, warriorSeer, swordMasterConjurer } from './elf-level-class.js';
+import { apprentice, footpad, robber } from './thief-level-class.js';
 import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-level-two-spells-class.js';
 import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism } from './mage-level-one-spells-class.js';
 import { wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold } from './monster-class-v2.js';

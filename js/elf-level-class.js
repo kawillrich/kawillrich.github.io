@@ -3,29 +3,24 @@ import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateO
 
 
 
-export default class MageLevels {
+export default class ElfLevels {
     constructor (level, specialtySkills, numberOfSpells) {
-       
-
         this.level= level;        
         this.specialtySkills = specialtySkills;
-        this.numberOfSpells = numberOfSpells;
-        
+        this.numberOfSpells = numberOfSpells;        
     }
 };
 
-
-let mageMedium = new MageLevels (
-    
+let veteranMedium = new ElfLevels (    
     {
-        name: "Medium",
+        name: "Veteran Medium",
         level: 1,
-        maxXP: 2499,
+        maxXP: 3999,
         savingThrows: [       
-            { name: "Poison or Death Ray", score: 13},
-            { name: "Magic Wand", score: 14},
+            { name: "Poison or Death Ray", score: 12},
+            { name: "Magic Wand", score: 13},
             { name: "Turn to Stone or Paralysis", score: 13},
-            { name: "Dragon Breath", score: 16},
+            { name: "Dragon Breath", score: 15},
             { name: "Spells or Magic Staff", score: 15},
         ],
 
@@ -51,16 +46,16 @@ let mageMedium = new MageLevels (
     );    
 
        
-let mageSeer = new MageLevels (
+let warriorSeer = new ElfLevels (
     {
-    name: "Seer",
+    name: "Warrior Seer",
     level: 2,
-    maxXP: 4999,
+    maxXP: 7999,
     savingThrows: [       
-        { name: "Poison or Death Ray", score: 13},
-        { name: "Magic Wand", score: 14},
+        { name: "Poison or Death Ray", score: 12},
+        { name: "Magic Wand", score: 13},
         { name: "Turn to Stone or Paralysis", score: 13},
-        { name: "Dragon Breath", score: 16},
+        { name: "Dragon Breath", score: 15},
         { name: "Spells or Magic Staff", score: 15},
     ],
 
@@ -85,16 +80,16 @@ let mageSeer = new MageLevels (
 [2, 0, 0], 
 ); 
 
-let mageConjurer = new MageLevels (
+let swordMasterConjurer = new ElfLevels (
     {
-    name: "Conjurer",
+    name: "Swordmaster Conjurer",
     level: 3,
-    maxXP: 9999,
+    maxXP: 15999,
     savingThrows: [       
-        { name: "Poison or Death Ray", score: 13},
-        { name: "Magic Wand", score: 14},
+        { name: "Poison or Death Ray", score: 12},
+        { name: "Magic Wand", score: 13},
         { name: "Turn to Stone or Paralysis", score: 13},
-        { name: "Dragon Breath", score: 16},
+        { name: "Dragon Breath", score: 15},
         { name: "Spells or Magic Staff", score: 15},
     ],
 
@@ -118,4 +113,4 @@ let mageConjurer = new MageLevels (
     }[2, 1, 0], 
 ); 
 
-export { mageMedium, mageSeer, mageConjurer };
+export { veteranMedium, warriorSeer, swordMasterConjurer };

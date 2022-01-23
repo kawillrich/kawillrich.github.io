@@ -1,5 +1,6 @@
 import { fighterWarrior, fighterVeteran, fighterSwordmaster } from './fighter-level-class.js';
 import { mageMedium, mageSeer, mageConjurer } from './mage-level-class.js';
+import { apprentice, footpad, robber } from './thief-level-class.js';
 import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, fireArrows, dragonFang} from './spell-class-v2.js';
 export default class Specialty {
     constructor(name, healthPoints, spell1, spell2, spell3, maxHealthPoints, characterExperience, characterLanguages, characterLevel) {
