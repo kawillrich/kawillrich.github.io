@@ -35,10 +35,10 @@ let apprentice = new ThiefLevels (
         "Open Locks" : 15,
         "Remove Traps": 10,
         "Pick Pockets": 20,
-        "Move Silently": 30, 
+        "Move Silently": 20, 
         "Climb Sheer Surfaces": 87,
         "Hide in Shadows": 10,
-        "Hear Noise": 17,
+        "Hear Noise": 33,
     } 
 );    
 
@@ -71,13 +71,13 @@ let footpad = new ThiefLevels (
     ]
     }, 
     {
-        "Open Locks" : 15,
-        "Remove Traps": 10,
-        "Pick Pockets": 20,
-        "Move Silently": 30, 
-        "Climb Sheer Surfaces": 87,
-        "Hide in Shadows": 10,
-        "Hear Noise": 17,
+        "Open Locks" : 20,
+        "Remove Traps": 15,
+        "Pick Pockets": 25,
+        "Move Silently": 25, 
+        "Climb Sheer Surfaces": 88,
+        "Hide in Shadows": 15,
+        "Hear Noise": 33,
     } 
 );
 
@@ -109,13 +109,13 @@ let robber = new ThiefLevels (
     ]
     }, 
     {
-        "Open Locks" : 15,
-        "Remove Traps": 10,
-        "Pick Pockets": 20,
-        "Move Silently": 30, 
-        "Climb Sheer Surfaces": 87,
-        "Hide in Shadows": 10,
-        "Hear Noise": 17,
+        "Open Locks" : 25,
+        "Remove Traps": 20,
+        "Pick Pockets": 30,
+        "Move Silently": 35, 
+        "Climb Sheer Surfaces": 89,
+        "Hide in Shadows": 20,
+        "Hear Noise": 50,
     } 
 );
 
