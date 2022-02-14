@@ -26,6 +26,8 @@ export default class Monster {
         this.treasureType = treasureType;
         this.saveAs = saveAs;
         this.satus = status || "Alive";
+        this.maxHP = this.hitDice[0]*8;
+        this.startingHealthPoints = 0;
     };
 
     //auto generating HD number of hitpoints for monsters
@@ -48,6 +50,8 @@ export default class Monster {
                 }
                 console.log(finalHPArray);
                 this.healthPoints = finalHPArray;
+                this.startingHealthPoints = finalHPArray;
+
         
             } else {
                 let newHPArray = [];
@@ -63,6 +67,7 @@ export default class Monster {
                   }
                   console.log(finalHPArray);
                   this.healthPoints = finalHPArray;
+                  this.startingHealthPoints = finalHPArray;
                 }
         }            
     };
@@ -98,8 +103,7 @@ export default class Monster {
             
             let updatedCharHP = document.querySelector("#char-hp");
             updatedCharHP.innerHTML = `
-            <h4 id='char-hp'>Hit Points:  <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4>
-            `;    
+            <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}</span></span></h4>            `;    
             if (finalCharacter.specialty.healthPoints <= 0) {
                 alert('You died!');
                 window.location.reload(false);
@@ -192,4 +196,4 @@ let giantRacer = new Monster('Giant Racer', 2, 16, 5, 6, 20, 'Neutral', 'Bite');
 
 //exporting monsters
 
-export { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold, kobold1 };
+export { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, bugBear1, kobold, kobold1 };

@@ -22,7 +22,7 @@ import Character from './character-class-v2.js';
 
 //moster imports
 import Monster from './monster-class-v2.js';
-import { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, kobold, kobold1 } from './monster-class-v2.js';
+import { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetle, hobGoblin, bugBear, bugBear1, kobold, kobold1 } from './monster-class-v2.js';
 
 //inventory imports
 import Inventory from './inventory-class-v1.js';
@@ -520,7 +520,7 @@ function startGame() {
                 <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span></h4> 
+                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}"></progress>${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span></span></h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span></div></h4> 
                 <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage}</span></div></h4>
                 <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
@@ -754,6 +754,8 @@ function beginChapterTwo() {
     }
 
     console.log(finalCharacter);
+    let JSONcharacter = JSON.stringify(finalCharacter);
+    console.log(JSONcharacter);
 
     finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment;
     finalCharacter.specialty.maxHealthPoints = finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment;
@@ -1492,7 +1494,7 @@ function beginTestChapter () {
         
     var chapterThreeSixDialogue = document.getElementById('dialogue');
     chapterThreeSixDialogue.innerHTML = `
-    <p>As you approach the forest, you hear some rusltling and grunting noises - you get attacked by some goblins!!          
+    <p>As you approach the forest, you hear some rusltling and grunting noises - you get attacked!!          
     </p>
         
     <input type="submit" id="attack-goblins" value="Attack">     
@@ -1500,7 +1502,7 @@ function beginTestChapter () {
     
     var attackWolvesYes = document.querySelector("#attack-goblins");
     attackWolvesYes.addEventListener('click', () => {
-        addingFightModule(kobold1, kobold, continueChapterSix);
+        addingFightModule(bugBear, bugBear1, continueChapterSix);
         declareAttack();
     
     
