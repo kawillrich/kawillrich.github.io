@@ -143,9 +143,9 @@ export default class Character {
     weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter) {       
         let self = this;        
         let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.weapon.damage)) + finalCharacter.attributes[0].adjustment;
-        
-
-
+        if (inflictedDamage <= 0 ) {
+            inflictedDamage = 0;
+        }
 
         let confirmMonstersDead = (enemy1) => {            
         
@@ -254,6 +254,9 @@ export default class Character {
         // console.log(monster2);
         let self = this;
         let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.weapon.damage)) + finalCharacter.attributes[0].adjustment;
+        if (inflictedDamage <= 0 ){
+            inflictedDamage = 0;
+        }
 
 
         let confirmMonstersDead = (enemy2) => {            
@@ -353,6 +356,7 @@ export default class Character {
                 confirmMonstersDead();                 
     }
 
+
     spell2AttackMonster1(monster1, monster2, spell2, continueNextChapter) {
         // console.log('Casting Spell Two on Monster One');
         // console.log(monster1);
@@ -361,7 +365,9 @@ export default class Character {
         let self = this;
 
         let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.specialty.spell2.damage));
-
+        if (inflictedDamage <= 0 ) {
+            inflictedDamage = 0;
+        }
 
         let confirmMonstersDead = (enemy1) => {            
         
@@ -468,7 +474,9 @@ export default class Character {
         let self = this;
 
         let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.specialty.spell2.damage));
-
+        if (inflictedDamage <= 0 ) {
+            inflictedDamage = 0;
+        }
         let confirmMonstersDead = (enemy1) => {            
         
         //checking if both monsters are dead   
@@ -752,5 +760,5 @@ export default class Character {
     // transferToMonsterAttack() {
     //     self.monster1.monsterAttack(monster1, weapon);
     // }    
-};
+}
 
