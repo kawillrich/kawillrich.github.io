@@ -133,7 +133,7 @@ export default class Monster {
 
 let noMonster = new Monster(' ', ' ', ' ', ' ', ' ', 0);
 
-let smallWolf = new Monster('Small Wolf', [.5, 0], 8, 9, 4, 5);
+let smallWolf = new Monster('Small Wolf', [2, 0], 8, 9, 4, 5);
 
 let wolf1 = new Monster('Wolf', [2, 2], 18, 7, 6, 25);
 let wolf2 = new Monster('Wolf', [2, 2], 18, 7, 6, 25);

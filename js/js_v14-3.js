@@ -2,7 +2,7 @@
 
 //weapon imports
 import Weapon from './weapon-class-v2.js';
-import { normalSword, shortBow, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword, woodenClub, dagger, 
+import { fists, normalSword, shortBow, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword, woodenClub, dagger, 
     silverDagger, battleAxe, handAxe, crossBow, shortSword, mace, javelin, poleArm, sling, spear, warHammer } from './weapon-class-v2.js';
 
 //armor imports
@@ -632,7 +632,7 @@ function logCharSpecialty() {
         finalCharacter.name = submittedCharName;
         finalCharacter.specialty = highMage; 
         finalCharacter.armor = robes; 
-        finalCharacter.weapon = dagger;
+        finalCharacter.weapon = fists;
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
         finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = {magicMissile};
@@ -1103,7 +1103,7 @@ function regenerateHP(hp, maxHP) {
             let regeneratedHP = document.getElementById('char-hp');
             regeneratedHP.innerHTML = 
                 `
-                Hit Points: <span class="character-display-info">${hp}</span>
+                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${hp}"></progress>${hp}</span></span>
                 `;
 
             let regenerationDialogue = document.getElementById('dialogue');
@@ -1319,7 +1319,7 @@ function continueChapterFourThreeThree() {
             let regeneratedHP = document.getElementById('char-hp');
             regeneratedHP.innerHTML = 
                 `
-                Hit Points: <span class="character-display-info">${hp}</span>
+                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${hp}"></progress>${hp}</span></span>
                 `;
 
             // let regenerationDialogue = document.getElementById('dialogue');

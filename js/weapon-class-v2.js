@@ -14,6 +14,8 @@ export default class Weapon {
 
 let noWeapon = new Weapon('None', 0, 'Melee', 1, 0, 0); 
 
+let fists = new Weapon('Fists', 1, 'Melee', 1, 0, 0);
+
 // 1d4 damage
 let woodenClub = new Weapon('Wooden Club', 4, 'Melee', 1, 3, 50);
 let dagger = new Weapon('Dagger', 4, 'Melee', 1, 3, 10);
@@ -49,5 +51,5 @@ let obsidianSword = new Weapon('Obsidian Sword', 100, 'Melee', 1, 1000, 40);
 
 
 
-export { normalSword, shortBow, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword, woodenClub, dagger, 
+export { fists, normalSword, shortBow, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword, woodenClub, dagger, 
     silverDagger, battleAxe, handAxe, crossBow, shortSword, mace, javelin, poleArm, sling, spear, warHammer };
