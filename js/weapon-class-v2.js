@@ -14,7 +14,7 @@ export default class Weapon {
 
 let noWeapon = new Weapon('None', 0, 'Melee', 1, 0, 0); 
 
-let fists = new Weapon('Fists', -1, 'Melee', 1, 0, 0);
+let fists = new Weapon('Fists', 1, 'Melee', 1, 0, 0);
 
 // 1d4 damage
 let woodenClub = new Weapon('Wooden Club', 4, 'Melee', 1, 3, 50);

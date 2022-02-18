@@ -157,8 +157,8 @@ let hobGoblin4 = new Monster('Hobgoblin', [1, 1], 9, 6, 6, 15, 'Chaotic', 'Short
 let hobGoblin5 = new Monster('Hobgoblin', [1, 1], 9, 6, 8, 15, 'Chaotic', 'Sword');
 
 
-let bugBear = new Monster('Bug Bear', [3, 1], 19, 5, 7, 75, 'Chaotic', 'Short Sword');
-let bugBear1 = new Monster('Bug Bear', [3, 1], 19, 5, 7, 75, 'Chaotic', 'Short Sword');
+let bugBear = new Monster('Bug Bear', [3, 1], 19, 5, 7, 3000, 'Chaotic', 'Short Sword');
+let bugBear1 = new Monster('Bug Bear', [3, 1], 19, 5, 7, 3000, 'Chaotic', 'Short Sword');
 let bugBear2 = new Monster('Bug Bear', [3, 1], 19, 5, 7, 75, 'Chaotic', 'Short Sword');
 let bugBear3 = new Monster('Bug Bear', [3, 1], 19, 5, 7, 75, 'Chaotic', 'Short Sword');
 let bugBear4 = new Monster('Bug Bear', [3, 1], 19, 5, 7, 75, 'Chaotic', 'Short Sword');
@@ -190,8 +190,6 @@ let skeleton5 = new Monster('Skeleton', [1, 0], 8, 7, 6, 10, 'Chaotic', 'Short S
 
 
 let giantRacer = new Monster('Giant Racer', 2, 16, 5, 6, 20, 'Neutral', 'Bite');
-
-
 
 
 //exporting monsters

@@ -140,6 +140,12 @@ export default class Character {
 
     //attacking monster 1
 
+    checkLevelUp() {
+        if ( finalCharacter.specialty.characterExperience > finalCharacter.specialty.characterLevel.level.maxXP ) {
+            alert('Congratulations, you have achieved the next level!');
+        }
+    }
+
     weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter) {       
         let self = this;        
         let inflictedDamage = (Math.ceil(Math.random(1) * finalCharacter.weapon.damage)) + finalCharacter.attributes[0].adjustment;
@@ -157,11 +163,6 @@ export default class Character {
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
                 
-            removeFightModule.innerHTML = `<p>You won!</p>`;
-            defeatedMonsters.innerHTML = `
-            <p>Congratulations, you defeated the monster(s)!</p>
-            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-        
             removeFightModule.innerHTML = ` `;
 
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
@@ -171,6 +172,13 @@ export default class Character {
             updatedExperience.innerHTML = `
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
             `;
+
+            finalCharacter.checkLevelUp();
+
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;     
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
@@ -266,12 +274,6 @@ export default class Character {
         
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
-                
-            removeFightModule.innerHTML = `<p>You won!</p>`;
-            defeatedMonsters.innerHTML = `
-            <p>Congratulations, you defeated the monster(s)!</p>
-            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-        
             removeFightModule.innerHTML = ` `;
             
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
@@ -282,6 +284,16 @@ export default class Character {
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
             `;
 
+            finalCharacter.checkLevelUp();
+
+                            
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+        
+
+            
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
@@ -378,12 +390,6 @@ export default class Character {
         
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
-                
-            removeFightModule.innerHTML = `<p>You won!</p>`;
-            defeatedMonsters.innerHTML = `
-            <p>Congratulations, you defeated the monster(s)!</p>
-            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-        
             removeFightModule.innerHTML = ` `;
 
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
@@ -393,6 +399,16 @@ export default class Character {
             updatedExperience.innerHTML = `
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
             `;
+
+            finalCharacter.checkLevelUp();
+                            
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+
+
+
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
             };            
@@ -487,11 +503,6 @@ export default class Character {
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
                 
-            removeFightModule.innerHTML = `<p>You won!</p>`;
-            defeatedMonsters.innerHTML = `
-            <p>Congratulations, you defeated the monster(s)!</p>
-            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-        
             removeFightModule.innerHTML = ` `;
 
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
@@ -502,6 +513,13 @@ export default class Character {
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
             `;
 
+            finalCharacter.checkLevelUp();
+
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+        
 
             var startChapterThreeFour = document.querySelector("#start-chapter-three-four");
             startChapterThreeFour.addEventListener('click', continueNextChapter, false);
@@ -641,12 +659,6 @@ export default class Character {
 
             let defeatedMonsters = document.querySelector('#dialogue');
             let removeFightModule = document.querySelector('#fight-module');
-                
-            removeFightModule.innerHTML = `<p>You won!</p>`;
-            defeatedMonsters.innerHTML = `
-            <p>Congratulations, you defeated the monster(s)!</p>
-            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
-        
             finalCharacter.specialty.characterExperience += monster1.experienceValue;
             finalCharacter.specialty.characterExperience += monster2.experienceValue;
 
@@ -654,6 +666,15 @@ export default class Character {
             updatedExperience.innerHTML = `
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
             `;
+
+            finalCharacter.checkLevelUp();
+                
+            removeFightModule.innerHTML = `<p>You won!</p>`;
+            defeatedMonsters.innerHTML = `
+            <p>Congratulations, you defeated the monster(s)!</p>
+            <input type="submit" id="start-chapter-three-four" value="Continue">`;                    
+        
+
 
             removeFightModule.innerHTML = ` `;
 
@@ -724,7 +745,15 @@ export default class Character {
     areaSpell = function(item) {
         
         let self = this;
-        let damage = finalCharacter.specialty.spell3.damage;
+
+        let damage = (Math.ceil(Math.random(1) * finalCharacter.specialty.spell3.damage));
+        if (damage <= 0 ) {
+            damage = 0;
+        }
+
+        console.log(damage);
+
+        // let damage = finalCharacter.specialty.spell3.damage;
         
         item.healthPoints -= damage;
 
@@ -746,7 +775,7 @@ export default class Character {
             let attackDialogue = document.querySelector("#dialogue");
         
             attackDialogue.innerHTML += `
-            <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${finalCharacter.specialty.spell3.damage} points of damage.</p>`;
+            <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${damage} points of damage.</p>`;
 
         }
         
