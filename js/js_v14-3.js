@@ -1429,6 +1429,9 @@ function continueChapterFourTwo() {
 }
 
 function continueChapterFourTwoOne() {
+    let giveAwayRaynardsCoin = finalCharacter.inventory.indexOf(raynardsCoin);
+    alert(`You gave away ${finalCharacter.inventory[giveAwayRaynardsCoin].name}`);
+
     console.log(finalCharacter.inventory);
     let findRaynardsCoin = finalCharacter.inventory.indexOf(raynardsCoin);
     finalCharacter.inventory.splice(findRaynardsCoin, 1);
@@ -1436,6 +1439,7 @@ function continueChapterFourTwoOne() {
     console.log(finalCharacter.inventory);
 
     
+
     
 
     if (finalCharacter.inventory1 = raynardsCoin) {
