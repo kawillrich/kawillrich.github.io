@@ -833,7 +833,7 @@ function talkToRaynard() {
     finalCharacter.achievements.spokeToRaynard = {name: "Spoke to Raynard", desc: "Spoke to Raynard and received his coin."};
     // console.log(finalCharacter.achievements); 
 
-    finalCharacter.inventory1 = raynardsCoin;    
+    // finalCharacter.inventory1 = raynardsCoin;    
     finalCharacter.inventory.push(raynardsCoin);    
 
     console.log(finalCharacter.inventory);
@@ -1438,18 +1438,14 @@ function continueChapterFourTwoOne() {
     console.log(findRaynardsCoin);
     console.log(finalCharacter.inventory);
 
-    
+    // if (finalCharacter.inventory1 = raynardsCoin) {
+    //     finalCharacter.inventory1 = noItem;
+    // } else {
+    //     finalCharacter.inventory1 = noItem;
+    // };
 
-    
-
-    if (finalCharacter.inventory1 = raynardsCoin) {
-        finalCharacter.inventory1 = noItem;
-    } else {
-        finalCharacter.inventory1 = noItem;
-    };
-
-    let giveCoin = document.querySelector('.character-display-inv1');
-    giveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
+    // let giveCoin = document.querySelector('.character-display-inv1');
+    // giveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
 
     let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
     giveRaynardsCoin.innerHTML = `
