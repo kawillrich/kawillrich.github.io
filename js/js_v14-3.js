@@ -770,7 +770,7 @@ function beginChapterTwo() {
 
     console.log(finalCharacter);
     let JSONcharacter = JSON.stringify(finalCharacter);
-    console.log(JSONcharacter);
+    //console.log(JSONcharacter);
 
     finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment;
     finalCharacter.specialty.maxHealthPoints = finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment;
@@ -836,14 +836,18 @@ function talkToRaynard() {
     finalCharacter.inventory1 = raynardsCoin;    
     finalCharacter.inventory.push(raynardsCoin);    
 
+    console.log(finalCharacter.inventory);
    
     var continueChapterThreeOne = document.querySelector("#start-chapter-three");
      
     continueChapterThreeOne.addEventListener('click', function() {
-      alert(`You received ${finalCharacter.inventory1.name}`);
-      let addItemToInventory = document.querySelector('#normal-equipment');
-      addItemToInventory.innerHTML += raynardsCoin.name;    })
-    continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
+        let raynardsCoinIndex = finalCharacter.inventory.indexOf(raynardsCoin);
+        console.log(raynardsCoinIndex);
+        alert(`You received ${finalCharacter.inventory[raynardsCoinIndex].name}`);
+        let addItemToInventory = document.querySelector('#normal-equipment-list');
+        addItemToInventory.innerHTML += raynardsCoin.name;    
+        })
+        continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
 };
 
 //CHAPTER THREE ONE
@@ -1425,6 +1429,7 @@ function continueChapterFourTwo() {
 }
 
 function continueChapterFourTwoOne() {
+    console.log(finalCharacter.inventory);
     let findRaynardsCoin = finalCharacter.inventory.indexOf(raynardsCoin);
     finalCharacter.inventory.splice(findRaynardsCoin, 1);
     console.log(findRaynardsCoin);
@@ -1443,9 +1448,11 @@ function continueChapterFourTwoOne() {
     giveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
 
     let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
-    giveRaynardsCoin.innerHTML =  `
+    giveRaynardsCoin.innerHTML = `
     ${finalCharacter.inventory}
     `; 
+
+
 
     let chapterFourTwoOneDialogue = document.querySelector('#dialogue');
     chapterFourTwoOneDialogue.innerHTML = `
