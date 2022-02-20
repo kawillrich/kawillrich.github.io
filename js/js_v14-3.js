@@ -26,7 +26,7 @@ import { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetl
 
 //inventory imports
 import Inventory from './inventory-class-v1.js';
-import { raynardsCoin, farmersNote, noItem , eloisesRing } from './inventory-class-v1.js';
+import { raynardsCoin, farmersNote, noItem , eloisesRing, torch } from './inventory-class-v1.js';
 // import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory-array-v1.js';
 import * as inventory from './inventory-array-v1.js';
 
@@ -550,11 +550,21 @@ function startGame() {
         </div>                
         `;  
         
-        let updateInventory = document.querySelector('#normal-equipment-list');
-        updateInventory.innerHTML = `
-        ${finalCharacter.inventory}
-        `;
+        // let updateInventory = document.querySelector('#normal-equipment-list');
+        // let updateInventory = document.querySelector('#normal-equipment-list');
+
+        for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
+            let updateInventory = document.querySelector('#normal-equipment-list');
+
+            updateInventory = `${updateInventory} + <br></br> ${finalCharacter.inventory[i].name}`;
+            console.log(updateInventory);
+            // updateInventory.innerHTML += updatedInventory;
         
+            // updateInventory.innerHTML = `
+            // ${finalCharacter.inventory[i].name}
+            // `;
+            
+        }
 
 
         render();
@@ -628,7 +638,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = warrior; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortSword;
-        finalCharacter.inventory = [];
+        finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
         console.log(finalCharacter);
@@ -641,7 +651,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = highMage; 
         finalCharacter.armor = robes; 
         finalCharacter.weapon = fists;
-        finalCharacter.inventory = [];
+        finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
         finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = {magicMissile};
@@ -655,7 +665,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = dragonWarrior; 
         finalCharacter.armor = obsidianPlateMail; 
         finalCharacter.weapon = obsidianSword;
-        finalCharacter.inventory = [];
+        finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = eloisesRing;
         finalCharacter.characterImage = 0;
         console.log(finalCharacter);
@@ -668,7 +678,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = thief; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
-        finalCharacter.inventory = [];
+        finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 1;
         console.log(finalCharacter);
@@ -682,7 +692,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = cleric; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = mace;
-        finalCharacter.inventory = [];
+        finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         console.log(finalCharacter);
@@ -696,7 +706,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = dwarf; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = normalSword;
-        finalCharacter.inventory = [];
+        finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         console.log(finalCharacter);
@@ -710,7 +720,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = elf; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
-        finalCharacter.inventory = [];
+        finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         console.log(finalCharacter);
@@ -724,7 +734,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = halfling; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
-        finalCharacter.inventory = [];
+        finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         console.log(finalCharacter);
@@ -842,12 +852,13 @@ function talkToRaynard() {
      
     continueChapterThreeOne.addEventListener('click', function() {
         let raynardsCoinIndex = finalCharacter.inventory.indexOf(raynardsCoin);
-        console.log(raynardsCoinIndex);
+        console.log(finalCharacter.inventory);
         alert(`You received ${finalCharacter.inventory[raynardsCoinIndex].name}`);
         let addItemToInventory = document.querySelector('#normal-equipment-list');
-        addItemToInventory.innerHTML += raynardsCoin.name;    
+        addItemToInventory.innerHTML += `<br> ${raynardsCoin.name}`;    
         })
         continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
+        
 };
 
 //CHAPTER THREE ONE
@@ -1447,10 +1458,18 @@ function continueChapterFourTwoOne() {
     // let giveCoin = document.querySelector('.character-display-inv1');
     // giveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
 
-    let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
-    giveRaynardsCoin.innerHTML = `
-    ${finalCharacter.inventory}
-    `; 
+    for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
+        let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
+        giveRaynardsCoin.innerHTML = `${finalCharacter.inventory[i].name}`;
+
+        console.log(giveRaynardsCoin);
+    }
+
+
+    // let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
+    // giveRaynardsCoin.innerHTML = `
+    // ${finalCharacter.inventory}
+    // `; 
 
 
 

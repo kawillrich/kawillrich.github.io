@@ -76,13 +76,20 @@ export default class Character {
         </div>             
         `; 
 
-        let updateInventory = document.querySelector('#normal-equipment-list');
-        updateInventory.innerHTML = `
-        ${finalCharacter.inventory}
-        `;
+        for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
+            let updateInventory = document.querySelector('#normal-equipment-list');
+
+            updateInventory = `${updateInventory} + <br></br> ${finalCharacter.inventory[i].name}`;
+            console.log(updateInventory);
+
+
+        // let updateInventory = document.querySelector('#normal-equipment-list');
+        // updateInventory.innerHTML = `
+        // ${finalCharacter.inventory}
+        // `;
         
     }
-    
+}
     //confirms to attack monsters and populates monster-info section
 
     confirmAttack(monsterOne, monsterTwo) {
