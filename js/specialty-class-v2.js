@@ -21,6 +21,7 @@ import { acolyte, adept, priest } from './character-class-levels/cleric-level-cl
 
 //import spells
 import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, fireArrows, dragonFang} from './spell-class-v2.js';
+import { dragonWarriorVeteran } from './character-class-levels/dragon-warrior-level-class.js';
 
 //==============================================end imports===============================================//
 
@@ -46,7 +47,7 @@ let warrior = new Specialty('Warrior', 8, noSpell, noSpell, noSpell, 8, 0, ['Com
 
 let highMage = new Specialty('High Mage', 500, minorHealing, fireBall, fireArrows, 500, 0, ["Common Tongue"], mageMedium);
 
-let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, dragonFang, 500, 0, ["Common Tongue"], );
+let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, dragonFang, 500, 0, ["Common Tongue"], dragonWarriorVeteran);
 
 let elf = new Specialty('Elf', 6, noSpell, noSpell, noSpell, 6, 0, ["Common Tongue", "Elvish", "Gnoll", "Hobgoblin", "Orc"], veteranMedium);
 

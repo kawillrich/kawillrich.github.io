@@ -33,6 +33,7 @@ import * as inventory from './inventory-array-v1.js';
 //class-level-imports
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './character-class-levels/fighter-level-class.js';
 import { veteranMedium, warriorSeer, swordMasterConjurer } from './character-class-levels/elf-level-class.js';
+import { dragonWarriorVeteran } from './character-class-levels/dragon-warrior-level-class.js';
 
 //mage spell imports
 import { mageLevelOneSpells, magicMissile } from './mage-spells/mage-level-one-spells-class.js';
@@ -96,6 +97,7 @@ let charisma = {
 attributes.unshift(strength, intelligence, wisdom, dexterity, constitution, charisma);
 
 export let finalCharacter = new Character('Traveler', noSpecialty, noArmor, noWeapon, noItem, noItem, noItem, noItem, charAchievements, adventurerImage);
+finalCharacter.inventory = [];
 
 //Player sheet tab initialization
 function openItem(e, linkName) {
@@ -547,6 +549,12 @@ function startGame() {
            </fieldset>
         </div>                
         `;  
+        
+        let updateInventory = document.querySelector('#normal-equipment-list');
+        updateInventory.innerHTML = `
+        ${finalCharacter.inventory}
+        `;
+        
 
 
         render();
@@ -620,7 +628,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = warrior; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortSword;
-        
+        finalCharacter.inventory = [];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
         console.log(finalCharacter);
@@ -633,6 +641,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = highMage; 
         finalCharacter.armor = robes; 
         finalCharacter.weapon = fists;
+        finalCharacter.inventory = [];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
         finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = {magicMissile};
@@ -646,6 +655,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = dragonWarrior; 
         finalCharacter.armor = obsidianPlateMail; 
         finalCharacter.weapon = obsidianSword;
+        finalCharacter.inventory = [];
         finalCharacter.enchantedItem = eloisesRing;
         finalCharacter.characterImage = 0;
         console.log(finalCharacter);
@@ -658,6 +668,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = thief; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
+        finalCharacter.inventory = [];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 1;
         console.log(finalCharacter);
@@ -671,6 +682,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = cleric; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = mace;
+        finalCharacter.inventory = [];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         console.log(finalCharacter);
@@ -684,6 +696,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = dwarf; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = normalSword;
+        finalCharacter.inventory = [];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         console.log(finalCharacter);
@@ -697,6 +710,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = elf; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
+        finalCharacter.inventory = [];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         console.log(finalCharacter);
@@ -710,6 +724,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = halfling; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
+        finalCharacter.inventory = [];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
         console.log(finalCharacter);
@@ -819,6 +834,8 @@ function talkToRaynard() {
     // console.log(finalCharacter.achievements); 
 
     finalCharacter.inventory1 = raynardsCoin;    
+    finalCharacter.inventory.push(raynardsCoin);    
+
    
     var continueChapterThreeOne = document.querySelector("#start-chapter-three");
      
@@ -1408,6 +1425,13 @@ function continueChapterFourTwo() {
 }
 
 function continueChapterFourTwoOne() {
+    let findRaynardsCoin = finalCharacter.inventory.indexOf(raynardsCoin);
+    finalCharacter.inventory.splice(findRaynardsCoin, 1);
+    console.log(findRaynardsCoin);
+    console.log(finalCharacter.inventory);
+
+    
+    
 
     if (finalCharacter.inventory1 = raynardsCoin) {
         finalCharacter.inventory1 = noItem;
@@ -1417,6 +1441,11 @@ function continueChapterFourTwoOne() {
 
     let giveCoin = document.querySelector('.character-display-inv1');
     giveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
+
+    let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
+    giveRaynardsCoin.innerHTML =  `
+    ${finalCharacter.inventory}
+    `; 
 
     let chapterFourTwoOneDialogue = document.querySelector('#dialogue');
     chapterFourTwoOneDialogue.innerHTML = `
