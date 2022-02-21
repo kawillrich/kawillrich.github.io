@@ -867,9 +867,7 @@ function talkToRaynard() {
 //CHAPTER THREE ONE
 
 function startChapterThreeOne() {
-    let receiveCoin = document.querySelector('.character-display-inv1');
-    receiveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
-    
+   
     // console.log('Chapter Three-one');
     let chapterThreeOne = document.querySelector('#dialogue');
     chapterThreeOne.innerHTML = `

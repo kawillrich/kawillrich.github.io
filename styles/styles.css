@@ -339,3 +339,7 @@ span#dragonwarrior {
   width: 20px;
   text-align: right;
 }
+
+#hp-prog-bar {
+  width: 70px;
+}
