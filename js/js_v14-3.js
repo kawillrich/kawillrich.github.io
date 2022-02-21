@@ -1046,8 +1046,6 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
         let healSpellSelf = document.querySelector('.spell1-heal');
         healSpellSelf.addEventListener('click', function () {finalCharacter.spell1Heal(finalCharacter.spell1)}, false);
     }
-    // console.log(monsterOne);
-    // console.log(monsterTwo);
     confirmAttackMonsters(monsterOne, monsterTwo);    
 };
 
@@ -1055,11 +1053,7 @@ export function confirmAttackMonsters(monsterOne, monsterTwo) {
 
 //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES
 
-    // console.log('Attacking Monsters');     
-    // console.log(monsterOne);   
-    // console.log(monsterTwo);
     finalCharacter.confirmAttack(monsterOne, monsterTwo);        
-    //attackingMonsters.apply(null, arguments);
 }
     
 export function attackingMonsters() {
@@ -1462,10 +1456,11 @@ function continueChapterFourTwoOne() {
     finalCharacter.inventory.splice(findRaynardsCoin, 1);
     console.log(findRaynardsCoin);
     console.log(finalCharacter.inventory);
+    document.querySelector('#normal-equipment-list').innerHTML = `<p id="normal-equipment-list"></p>`;
 
     for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
         let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
-        giveRaynardsCoin.innerHTML = `${finalCharacter.inventory[i].name}`;
+        giveRaynardsCoin.innerHTML += `${finalCharacter.inventory[i].name} <br>`;
     }
 
     let chapterFourTwoOneDialogue = document.querySelector('#dialogue');
