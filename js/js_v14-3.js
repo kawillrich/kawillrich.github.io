@@ -553,22 +553,52 @@ function startGame() {
         </div>                
         `;  
         
-        // let updateInventory = document.querySelector('#normal-equipment-list');
-        // let updateInventory = document.querySelector('#normal-equipment-list');
 
-        for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
-            let updateInventory = document.querySelector('#normal-equipment-list');
+        // let addItemToInventory = document.querySelector('#normal-equipment-list');
+        let showInventory = () => {
+            let accumulator = "";
+  
+            for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
+                accumulator += `${finalCharacter.inventory[i].name} <br>`;
+            }
 
-            updateInventory = `${updateInventory} + <br></br> ${finalCharacter.inventory[i].name}`;
-            console.log(updateInventory);
-            // updateInventory.innerHTML += updatedInventory;
-        
-            // updateInventory.innerHTML = `
-            // ${finalCharacter.inventory[i].name}
-            // `;
-            
+            console.log(accumulator);
+            return accumulator;
+
+
+
+
+
+
+
+            // let updatedInventory = document.querySelector('#normal-equipment-list');
+            // let accumulator = "";
+            // console.log(finalCharacter.inventory.length);
+            // for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
+            //     console.log(finalCharacter.inventory[i].name);
+            //     accumulator += finalCharacter.inventory[i].name;     
+            //     console.log(accumulator);
+            // };
+            // updatedInventory.innerHTML = accumulator;
+            // console.log(updatedInventory.innerHTML);
         }
 
+        let updatedInventory = document.querySelector('#normal-equipment-list');
+        updatedInventory.innerHTML = showInventory();
+
+        showInventory();
+
+        // addItemToInventory.innerHTML += `<br> ${raynardsCoin.name}`;   
+
+        // for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
+        //     let updateInventory = document.querySelector('#normal-equipment-list').innerHTML;
+
+        //     updateInventory =+ finalCharacter.inventory[i].name;
+        //     console.log(updateInventory);
+            
+            
+        // }
+    
 
         render();
         
