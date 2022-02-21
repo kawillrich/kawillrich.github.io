@@ -1449,29 +1449,10 @@ function continueChapterFourTwoOne() {
     console.log(findRaynardsCoin);
     console.log(finalCharacter.inventory);
 
-    // if (finalCharacter.inventory1 = raynardsCoin) {
-    //     finalCharacter.inventory1 = noItem;
-    // } else {
-    //     finalCharacter.inventory1 = noItem;
-    // };
-
-    // let giveCoin = document.querySelector('.character-display-inv1');
-    // giveCoin.innerHTML = `<span>${finalCharacter.inventory1.name}</span>`;
-
     for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
         let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
         giveRaynardsCoin.innerHTML = `${finalCharacter.inventory[i].name}`;
-
-        console.log(giveRaynardsCoin);
     }
-
-
-    // let giveRaynardsCoin = document.querySelector('#normal-equipment-list');
-    // giveRaynardsCoin.innerHTML = `
-    // ${finalCharacter.inventory}
-    // `; 
-
-
 
     let chapterFourTwoOneDialogue = document.querySelector('#dialogue');
     chapterFourTwoOneDialogue.innerHTML = `
