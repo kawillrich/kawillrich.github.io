@@ -322,3 +322,20 @@ span#dragonwarrior {
 #alignment-description-container {
   grid-column: 2 / 5;
 }
+
+.character-display-attributes {
+  display: inline-block;
+  width: 100px;
+}
+
+.character-display-attributes-scores {
+  display: inline-block;
+  width: 70px;
+  text-align: center;
+}
+
+.character-display-attributes-scores-adj {
+  display: inline-block;
+  width: 20px;
+  text-align: right;
+}

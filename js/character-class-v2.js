@@ -59,15 +59,20 @@ export default class Character {
                 
             </fieldset>
         </div>
-        <div id='character-inventory'>
-            <fieldset  class='char-info-module'>
-                <legend class='player-dashboard'>Inventory</legend>
-                <h4 id='char-items' class='char-info-label'>Item 1: <span class='character-display-inv1'>${this.inventory1.name}</span></h4>
-                <h4 id='char-items' class='char-info-label'>Item 2: <span class='character-display-inv2'>${this.inventory2.name}</span></h4>
-                <h4 id='char-items' class='char-info-label'>Item 3: <span class='character-display-inv3'>${this.inventory3.name}</span></h4><br>
-                <h4 id='char-enchanted-item' class='char-info-label'>Enchanted Item:  <span class="character-display-info">${this.enchantedItem.name}</span></h4>
+
+        <div id='character-attributes'>
+            <fieldset class='char-info-module'>
+                <legend class='player-dashboard'>Attributes</legend>
+                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>Attribute: </span><span class='character-display-attributes-scores'>Score: </span><span class='character-display-attributes-scores-adj'>Adj: </span></h4>
+                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[0].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[0].adjustment}</span></h4>
+                <h4 id='char-intelligence' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[1].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[1].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[1].adjustment}</span></h4>
+                <h4 id='char-wisdom' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[2].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[2].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[2].adjustment}</span></h4>
+                <h4 id='char-dexterity' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[3].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[3].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[3].adjustment}</span></h4>
+                <h4 id='char-constitution' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[4].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[4].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[4].adjustment}</span></h4>
+                <h4 id='char-charisma' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[5].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[5].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[5].adjustment}</span></h4>
             </fieldset>
         </div>
+
         </div id="canvas-area">
           <fieldset class= 'canvas-info-module-player'>
             <legend class='canvas-dashboard'>Arena</legend>
