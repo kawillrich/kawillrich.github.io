@@ -708,7 +708,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = normalSword;
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
-        finalCharacter.characterImage = 4;
+        finalCharacter.characterImage = 6;
         console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
@@ -722,7 +722,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = shortBow;
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
-        finalCharacter.characterImage = 4;
+        finalCharacter.characterImage = 5;
         console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
@@ -736,7 +736,7 @@ function logCharSpecialty() {
         finalCharacter.weapon = shortBow;
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
-        finalCharacter.characterImage = 4;
+        finalCharacter.characterImage = 7;
         console.log(finalCharacter);
 
         finalCharacter.characterUpdate();         
