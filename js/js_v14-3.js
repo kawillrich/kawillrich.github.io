@@ -564,23 +564,6 @@ function startGame() {
 
             console.log(accumulator);
             return accumulator;
-
-
-
-
-
-
-
-            // let updatedInventory = document.querySelector('#normal-equipment-list');
-            // let accumulator = "";
-            // console.log(finalCharacter.inventory.length);
-            // for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
-            //     console.log(finalCharacter.inventory[i].name);
-            //     accumulator += finalCharacter.inventory[i].name;     
-            //     console.log(accumulator);
-            // };
-            // updatedInventory.innerHTML = accumulator;
-            // console.log(updatedInventory.innerHTML);
         }
 
         let updatedInventory = document.querySelector('#normal-equipment-list');
@@ -767,7 +750,7 @@ function logCharSpecialty() {
         finalCharacter.specialty = halfling; 
         finalCharacter.armor = leatherArmor; 
         finalCharacter.weapon = shortBow;
-        finalCharacter.inventory = [torch];
+        finalCharacter.inventory = [torch, dagger];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 7;
         console.log(finalCharacter);
@@ -888,7 +871,7 @@ function talkToRaynard() {
         console.log(finalCharacter.inventory);
         alert(`You received ${finalCharacter.inventory[raynardsCoinIndex].name}`);
         let addItemToInventory = document.querySelector('#normal-equipment-list');
-        addItemToInventory.innerHTML += `<br> ${raynardsCoin.name}`;    
+        addItemToInventory.innerHTML += `${raynardsCoin.name}`;    
         })
         continueChapterThreeOne.addEventListener('click', startChapterThreeOne, false);
         

@@ -84,18 +84,11 @@ export default class Character {
         let inventoryStatus = document.querySelector('#normal-equipment-list');
         inventoryStatus.innerHTML = `<p id="normal-equipment-list"></p>`;
 
-        
+
 
         for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
             let updateInventory = document.querySelector('#normal-equipment-list');
-            updateInventory.innerHTML += finalCharacter.inventory[i].name;
-
-
-        // let updateInventory = document.querySelector('#normal-equipment-list');
-        // updateInventory.innerHTML = `
-        // ${finalCharacter.inventory}
-        // `;
-        
+            updateInventory.innerHTML += `${finalCharacter.inventory[i].name} <br>`;        
     }
 }
     //confirms to attack monsters and populates monster-info section
