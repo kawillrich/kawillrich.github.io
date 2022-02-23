@@ -343,3 +343,39 @@ span#dragonwarrior {
 #hp-prog-bar {
   width: 70px;
 }
+
+.hide-cleric-container {
+  display: none;
+}
+
+.hide-mage-container {
+  display: none;
+}
+
+.show-mage-spells {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background-color: lightblue;
+  z-index: 1;
+  padding: 20% 50% 50%;
+}
+
+.show-cleric-spells {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  background-color: lightblue;
+  z-index: 1;
+  padding: 20% 50% 50%;
+}
