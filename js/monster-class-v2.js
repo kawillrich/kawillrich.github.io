@@ -103,7 +103,8 @@ export default class Monster {
             
             let updatedCharHP = document.querySelector("#char-hp");
             updatedCharHP.innerHTML = `
-            <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span></span></h4>            `;    
+            <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}"></progress>${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span></span></h4> 
+            `;    
             if (finalCharacter.specialty.healthPoints <= 0) {
                 alert('You died!');
                 window.location.reload(false);

@@ -11,7 +11,7 @@ import { chainMail, leatherArmor, robes, noArmor, scaleMail, plateMail, bandedMa
 
 //spell imports
 import Spell from './spell-class-v2.js';
-import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, dragonFang, fireArrows} from './spell-class-v2.js';
+import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireStorm, dragonFang, fireArrows} from './spell-class-v2.js';
 
 //specialty imports
 import Specialty from './specialty-class-v2.js';
@@ -38,6 +38,7 @@ import { dragonWarriorVeteran } from './character-class-levels/dragon-warrior-le
 //mage spell imports
 import { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism , readMagic } from './mage-spells/mage-level-one-spells-class.js';
 import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, web, wizardLock, detectInvisible } from './mage-spells/mage-level-two-spells-class.js';
+import { clairvoyance, dispelMagic, fireBall, fly, haste, holdPerson, infravision, invisibilityTenFoot, lightningBolt, protectionFromEvilTenFoot, protectionFromNormalMissiles, waterBreathing } from './mage-spells/mage-level-three-spells-class.js'
 
 //cleric spell imports
 import { cureLightWoundsCleric, detectEvilCleric, detectMagicCleric, purifyFoodAdWaterCleric, lightSpellCleric, removeFearCleric, protectionFromEvilCleric, resistColdCleric } from './cleric-spells/cleric-level-one-spells-class.js';
