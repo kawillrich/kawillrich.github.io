@@ -379,3 +379,9 @@ span#dragonwarrior {
   z-index: 1;
   padding: 20% 50% 50%;
 }
+
+.grey-out {
+  color: grey;
+  cursor: not-allowed;
+  pointer-events: none;
+}

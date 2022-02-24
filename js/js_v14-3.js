@@ -828,11 +828,111 @@ function beginChapterTwo() {
 
 function pickMageSpells() {
     alert('Pick Mage Spells');
+    let showMageSpellsList = document.querySelector('.hide-mage-container')
+    showMageSpellsList.classList.add('show-mage-spells');
+    console.log(finalCharacter.specialty.characterLevel.numberOfSpells[0]);
+    selectLevelOneMageSpells();
+    selectLevelTwoMageSpells();
+    selectLevelThreeMageSpells()
+
+
 };
 
 function pickClericSpells() {
     alert('Pick Cleric Spells');
 };
+
+function selectLevelOneMageSpells() {
+    if (finalCharacter.specialty.characterLevel.numberOfSpells[0] > 0) {
+      let mageFirstLevelSpells = document.getElementById('mage-first-level-spell-list').getElementsByTagName("input");
+      let limit = finalCharacter.specialty.characterLevel.numberOfSpells[0];
+      for (let i = 0; i < mageFirstLevelSpells.length; i++) {
+        mageFirstLevelSpells[i].onclick = function () {
+          let checkedcount = 0;
+          for (let i = 0; i < mageFirstLevelSpells.length; i++) {
+            checkedcount += (mageFirstLevelSpells[i].checked) ? 1 : 0;
+          }
+          if (checkedcount > limit) {
+            console.log("You can select maximum of " + limit + " spell(s).");
+            alert("You can select maximum of " + limit + " spell(s).");
+            this.checked = false;
+          }
+        }
+      }
+    } else {
+      let mageFirstLevelSpells = document.getElementById('mage-first-level-spell-list').getElementsByTagName("input");
+      for (let i = 0; i < mageFirstLevelSpells.length; i++) {
+      mageFirstLevelSpells[i].classList.add('grey-out');
+    //   document.querySelector('#submit-spells').classList.add('grey-out');
+  
+      }
+    }
+  }
+  
+  function selectLevelTwoMageSpells() {
+    if (finalCharacter.specialty.characterLevel.numberOfSpells[1] > 0) {
+      let mageSecondLevelSpells = document.getElementById('mage-second-level-spell-list').getElementsByTagName("input");
+      let limit = finalCharacter.specialty.characterLevel.numberOfSpells[1];
+      for (let i = 0; i < mageSecondLevelSpells.length; i++) {
+        mageSecondLevelSpells[i].onclick = function () {
+          let checkedcount = 0;
+          for (let i = 0; i < mageSecondLevelSpells.length; i++) {
+            checkedcount += (mageSecondLevelSpells[i].checked) ? 1 : 0;
+          }
+          if (checkedcount > limit) {
+            console.log("You can select maximum of " + limit + " spell(s).");
+            alert("You can select maximum of " + limit + " spell(s).");
+            this.checked = false;
+          }
+        }
+      }
+    } else {
+      let removeMageSecondLevelSpells = document.querySelector('#mage-second-level-spell-list')
+      removeMageSecondLevelSpells.classList.add("hide-mage-container");
+      let mageSecondLevelSpells = document.getElementById('mage-second-level-spell-list').getElementsByTagName("input");
+      for (let i = 0; i < mageSecondLevelSpells.length; i++) {
+      mageSecondLevelSpells[i].classList.add('grey-out');
+    //   document.querySelector('#submit-spells').classList.add('grey-out');
+  
+      }
+    }
+  }
+
+  function selectLevelThreeMageSpells() {
+    if (finalCharacter.specialty.characterLevel.numberOfSpells[2] > 0) {
+      let mageThirdLevelSpells = document.getElementById('mage-third-level-spell-list').getElementsByTagName("input");
+      let limit = finalCharacter.specialty.characterLevel.numberOfSpells[2];
+      for (let i = 0; i < mageThirdLevelSpells.length; i++) {
+        mageThirdLevelSpells[i].onclick = function () {
+          let checkedcount = 0;
+          for (let i = 0; i < mageThirdLevelSpells.length; i++) {
+            checkedcount += (mageThirdLevelSpells[i].checked) ? 1 : 0;
+          }
+          if (checkedcount > limit) {
+            console.log("You can select maximum of " + limit + " spell(s).");
+            alert("You can select maximum of " + limit + " spell(s).");
+            this.checked = false;
+          }
+        }
+      }
+    } else {
+      let removemageThirdLevelSpells = document.querySelector('#mage-third-level-spell-list')
+      removemageThirdLevelSpells.classList.add("hide-mage-container");
+      let mageThirdLevelSpells = document.getElementById('mage-third-level-spell-list').getElementsByTagName("input");
+      for (let i = 0; i < mageThirdLevelSpells.length; i++) {
+      mageThirdLevelSpells[i].classList.add('grey-out');
+    //   document.querySelector('#submit-spells').classList.add('grey-out');
+  
+      }
+    }
+  }
+
+
+function submitAllMageSpells() {
+
+
+}
+
 
 function talkToRaynard() {
     // console.log('Talking to Raynard');
