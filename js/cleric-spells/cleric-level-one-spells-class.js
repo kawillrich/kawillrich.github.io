@@ -17,11 +17,11 @@ let cureLightWoundsCleric = new ClericLevelOneSpells ("Cure Light Wounds", 1, 0,
 //     console.log('casting')
 // }
 );
-let detectMagicCleric = new ClericLevelOneSpells ("Detec Magic", 1, 0, 2, "Detects magic within 60 feet");
+let detectMagicCleric = new ClericLevelOneSpells ("Detect Magic", 1, 0, 2, "Detects magic within 60 feet");
 let detectEvilCleric = new ClericLevelOneSpells ("Detect Evil", 60, 2, "Everything within 60 feet");
 let purifyFoodAdWaterCleric = new ClericLevelOneSpells ("Purify Food and Water", 1, 10, 0, "Makes spoiled or poisoned food and water safe and usable (one ration, 6 waterskins");
 let lightSpellCleric = new ClericLevelOneSpells ("Light", 1, 120, 6, "Volume of 30 feet diameter");
-let removeFearCleric = new ClericLevelOneSpells ("Remove Fear", 1, 0, 0, "Will calm the creature and remove ay fear. Plus 1 bonus for each level up to 6",
+let removeFearCleric = new ClericLevelOneSpells ("Remove Fear", 1, 0, 0, "Will calm the creature and remove any fear. Plus 1 bonus for each level up to 6",
 function() {
     console.log('Casting');
     //finalCharacter.spell2AttackMonster1();

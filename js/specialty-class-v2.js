@@ -20,7 +20,7 @@ import { halflingVeteran, halflingWarrior, halflingSwordmaster } from './charact
 import { acolyte, adept, priest } from './character-class-levels/cleric-level-class.js';
 
 //import spells
-import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireBall, fireArrows, dragonFang} from './spell-class-v2.js';
+import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireStorm, fireArrows, dragonFang} from './spell-class-v2.js';
 import { dragonWarriorVeteran } from './character-class-levels/dragon-warrior-level-class.js';
 
 //==============================================end imports===============================================//
@@ -45,7 +45,7 @@ let noSpecialty = new Specialty('None', 0, noSpell, noSpell, noSpell, 0, 0, ["Co
 
 let warrior = new Specialty('Warrior', 8, noSpell, noSpell, noSpell, 8, 0, ['Common Tongue'], fighterVeteran);
 
-let highMage = new Specialty('High Mage', 500, minorHealing, fireBall, fireArrows, 500, 0, ["Common Tongue"], mageConjurer);
+let highMage = new Specialty('High Mage', 500, minorHealing, fireStorm, fireArrows, 500, 0, ["Common Tongue"], mageConjurer);
 
 let dragonWarrior = new Specialty('Dragon Warrior', 500, majorHealing, dragonFang, dragonFang, 500, 0, ["Common Tongue"], dragonWarriorVeteran);
 
