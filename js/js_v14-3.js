@@ -560,10 +560,8 @@ function startGame() {
             let accumulator = "";
   
             for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
-                accumulator += `${finalCharacter.inventory[i].name} <br>`;
+                accumulator += `${finalCharacter.inventory[i].name} <br>`;            
             }
-
-            console.log(accumulator);
             return accumulator;
         }
 
