@@ -43,9 +43,9 @@ let acolyte = new ClericLevels (
         ]
     }, 
     {
-        "First Level Cleric Spells": " ",
-        "Second Level Cleric Spells": " ",
-        "Third Level Cleric Spells": " ",
+        "First Level Cleric Spells": [],
+        "Second Level Cleric Spells": [],
+        "Third Level Cleric Spells": [],
     },
     [1, 0, 0], 
     {
@@ -88,9 +88,9 @@ let adept = new ClericLevels (
     ]
     }, 
     {
-    "First Level Cleric Spells": " ",
-    "Second Level Cleric Spells": " ",
-    "Third Level Cleric Spells": " ",  
+        "First Level Cleric Spells": [],
+        "Second Level Cleric Spells": [],
+        "Third Level Cleric Spells": [],
     }, 
     [2, 0, 0], 
     {
@@ -133,9 +133,9 @@ let priest = new ClericLevels (
     ]
     }, 
     {
-    "First Level Cleric Spells": " ",
-    "Second Level Cleric Spells": " ",
-    "Third Level Cleric Spells": " ",
+        "First Level Cleric Spells": [],
+        "Second Level Cleric Spells": [],
+        "Third Level Cleric Spells": [],
     }[2, 1, 0], 
     {
         "Skeleton": "T",

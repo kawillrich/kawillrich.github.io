@@ -850,10 +850,6 @@ function pickMageSpells() {
 
 };
 
-function pickClericSpells() {
-    alert('Pick Cleric Spells');
-};
-
 function selectLevelOneMageSpells() {
     if (finalCharacter.specialty.characterLevel.numberOfSpells[0] > 0) {
       let mageFirstLevelSpells = document.getElementById('mage-first-level-spell-list').getElementsByTagName("input");
@@ -977,14 +973,9 @@ function submitAllMageSpells() {
                 finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"].push(newSpell);  
                 console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"])    
 
-              }
-  
-
-
-      
+              }      
       // END  
           
-         
         }
         let showPickSpellsButton = document.querySelector('.hide-mage-container');
         showPickSpellsButton.classList.remove('show-mage-spells');
@@ -994,8 +985,150 @@ function submitAllMageSpells() {
         //console.log(player);
 }
     
+function pickClericSpells() {
+    alert('Pick Cleric Spells');
+    let showClericSpellsList = document.querySelector('.hide-cleric-container')
+    showClericSpellsList.classList.add('show-cleric-spells');
+    console.log(finalCharacter.specialty.characterLevel.numberOfSpells[0]);
+    selectLevelOneClericSpells();
+    selectLevelTwoClericSpells();
+    selectLevelThreeClericSpells()
 
+};
 
+function selectLevelOneClericSpells() {
+    if (finalCharacter.specialty.characterLevel.numberOfSpells[0] > 0) {
+      let clericFirstLevelSpells = document.getElementById('cleric-first-level-spell-list').getElementsByTagName("input");
+      let limit = finalCharacter.specialty.characterLevel.numberOfSpells[0];
+      for (let i = 0; i < clericFirstLevelSpells.length; i++) {
+        clericFirstLevelSpells[i].onclick = function () {
+          let checkedcount = 0;
+          for (let i = 0; i < clericFirstLevelSpells.length; i++) {
+            checkedcount += (clericFirstLevelSpells[i].checked) ? 1 : 0;
+          }
+          if (checkedcount > limit) {
+            console.log("You can select maximum of " + limit + " spell(s).");
+            alert("You can select maximum of " + limit + " spell(s).");
+            this.checked = false;
+          }
+        }
+      }
+    } else {
+      let clericFirstLevelSpells = document.getElementById('cleric-first-level-spell-list').getElementsByTagName("input");
+      for (let i = 0; i < clericFirstLevelSpells.length; i++) {
+      clericFirstLevelSpells[i].classList.add('grey-out');
+    //   document.querySelector('#submit-spells').classList.add('grey-out');
+  
+      }
+    }
+  }
+
+  function selectLevelTwoClericSpells() {
+    if (finalCharacter.specialty.characterLevel.numberOfSpells[1] > 0) {
+      let clericSecondLevelSpells = document.getElementById('cleric-second-level-spell-list').getElementsByTagName("input");
+      let limit = finalCharacter.specialty.characterLevel.numberOfSpells[1];
+      for (let i = 0; i < clericSecondLevelSpells.length; i++) {
+        clericSecondLevelSpells[i].onclick = function () {
+          let checkedcount = 0;
+          for (let i = 0; i < clericSecondLevelSpells.length; i++) {
+            checkedcount += (clericSecondLevelSpells[i].checked) ? 1 : 0;
+          }
+          if (checkedcount > limit) {
+            console.log("You can select maximum of " + limit + " spell(s).");
+            alert("You can select maximum of " + limit + " spell(s).");
+            this.checked = false;
+          }
+        }
+      }
+    } else {
+      let removeclericSecondLevelSpells = document.querySelector('#cleric-second-level-spell-list')
+      removeclericSecondLevelSpells.classList.add("hide-cleric-container");
+      let clericSecondLevelSpells = document.getElementById('cleric-second-level-spell-list').getElementsByTagName("input");
+      for (let i = 0; i < clericSecondLevelSpells.length; i++) {
+      clericSecondLevelSpells[i].classList.add('grey-out');
+    //   document.querySelector('#submit-spells').classList.add('grey-out');
+  
+      }
+    }
+  }
+
+  function selectLevelThreeClericSpells() {
+    if (finalCharacter.specialty.characterLevel.numberOfSpells[2] > 0) {
+      let clericThirdLevelSpells = document.getElementById('cleric-third-level-spell-list').getElementsByTagName("input");
+      let limit = finalCharacter.specialty.characterLevel.numberOfSpells[2];
+      for (let i = 0; i < clericThirdLevelSpells.length; i++) {
+        clericThirdLevelSpells[i].onclick = function () {
+          let checkedcount = 0;
+          for (let i = 0; i < clericThirdLevelSpells.length; i++) {
+            checkedcount += (clericThirdLevelSpells[i].checked) ? 1 : 0;
+          }
+          if (checkedcount > limit) {
+            console.log("You can select maximum of " + limit + " spell(s).");
+            alert("You can select maximum of " + limit + " spell(s).");
+            this.checked = false;
+          }
+        }
+      }
+    } else {
+      let removeclericThirdLevelSpells = document.querySelector('#cleric-third-level-spell-list')
+      removeclericThirdLevelSpells.classList.add("hide-cleric-container");
+      let clericThirdLevelSpells = document.getElementById('cleric-third-level-spell-list').getElementsByTagName("input");
+      for (let i = 0; i < clericThirdLevelSpells.length; i++) {
+      clericThirdLevelSpells[i].classList.add('grey-out');
+    //   document.querySelector('#submit-spells').classList.add('grey-out');
+  
+      }
+    }
+  }
+let submitAllClericSpellsButton = document.querySelector('#submit-all-cleric-spells');
+submitAllClericSpellsButton.addEventListener('click', submitAllClericSpells, false);
+
+function submitAllClericSpells() {
+    let selectedAllSpells = document.querySelectorAll('.cleric-spells');
+
+    // player.spells = [];
+    for (let i = 0; i < selectedAllSpells.length; i++) {
+
+        //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
+        if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-one-spells")) {
+        //   alert('contains level 1');
+            ;
+            //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
+            let newSpell = eval(selectedAllSpells[i].value);
+
+            finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"].push(newSpell);
+            console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"])    
+        
+        }
+
+        if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-two-spells")) {
+        //   alert('contains level 2');
+
+            let newSpell = eval(selectedAllSpells[i].value);
+
+            finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"].push(newSpell);  
+            console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"])    
+        }
+
+        if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-three-spells")) {
+            // alert('contains level 3');
+
+            let newSpell = eval(selectedAllSpells[i].value);
+
+            finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"].push(newSpell);  
+            console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"])    
+
+            }      
+    // END  
+        
+    }
+    let showPickSpellsButton = document.querySelector('.hide-cleric-container');
+    showPickSpellsButton.classList.remove('show-cleric-spells');
+    // let showPickSpellsButtonInput = document.querySelector('#pick-mage-spells');
+    // showPickSpellsButtonInput.classList.remove('not-visible');
+    //console.log(player.spells);
+    //console.log(player);
+}
 
 
 function talkToRaynard() {
