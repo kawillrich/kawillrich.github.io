@@ -43,7 +43,7 @@ import { clairvoyance, dispelMagic, fireBall, fly, haste, holdPerson, infravisio
 //cleric spell imports
 import { cureLightWoundsCleric, detectEvilCleric, detectMagicCleric, purifyFoodAdWaterCleric, lightSpellCleric, removeFearCleric, protectionFromEvilCleric, resistColdCleric } from './cleric-spells/cleric-level-one-spells-class.js';
 import { blessCleric, findTrapsCleric, holdPersonCleric, knowAlignmentCleric, resistFire, silence15ftCleric, snakeCharmCleric, speakWithAnimalCleric} from './cleric-spells/cleric-level-two-spells-class.js';
-
+import { continualLightCleric, cureBlindnessCleric, cureDiseaseCleric, growthOfAnimalsCleric, locateObjectCleric, removeCurseCleric, speakWithTheDeadCleric, strikingCleric } from './cleric-level-three-spells.js';
 
 //achievement imports
 //import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';

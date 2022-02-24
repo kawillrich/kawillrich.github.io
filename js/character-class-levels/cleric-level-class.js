@@ -1,5 +1,7 @@
 import { cureLightWoundsCleric, detectEvilCleric, detectMagicCleric, purifyFoodAdWaterCleric, lightSpellCleric, removeFearCleric, protectionFromEvilCleric, resistColdCleric } from '../cleric-spells/cleric-level-one-spells-class.js';
 import { blessCleric, findTrapsCleric, holdPersonCleric, knowAlignmentCleric, resistFire, silence15ftCleric, snakeCharmCleric, speakWithAnimalCleric} from '../cleric-spells/cleric-level-two-spells-class.js';
+import { continualLightCleric, cureBlindnessCleric, cureDiseaseCleric, growthOfAnimalsCleric, locateObjectCleric, removeCurseCleric, speakWithTheDeadCleric, strikingCleric } from '../cleric-spells/cleric-level-three-spells.js';
+
 
 //==============================================end imports===============================================//
 
