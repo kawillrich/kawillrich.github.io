@@ -36,7 +36,7 @@ import { veteranMedium, warriorSeer, swordMasterConjurer } from './character-cla
 import { dragonWarriorVeteran } from './character-class-levels/dragon-warrior-level-class.js';
 
 //mage spell imports
-import { mageLevelOneSpells, magicMissile } from './mage-spells/mage-level-one-spells-class.js';
+import { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism , readMagic } from './mage-spells/mage-level-one-spells-class.js';
 import { mageLevelTwoSpells } from './mage-spells/mage-level-two-spells-class.js';
 
 //cleric spell imports
@@ -670,7 +670,7 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
-        finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = {magicMissile};
+        finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = [];
         console.log(finalCharacter);
         finalCharacter.characterUpdate();      
 
@@ -927,11 +927,63 @@ function selectLevelOneMageSpells() {
     }
   }
 
+let submitAllMageSpellsButton = document.querySelector('#submit-all-mage-spells');
+submitAllMageSpellsButton.addEventListener('click', submitAllMageSpells, false);
 
 function submitAllMageSpells() {
+        let selectedAllSpells = document.querySelectorAll('.mage-spells');
+      
+        // player.spells = [];
+        for (let i = 0; i < selectedAllSpells.length; i++) {
+      
+            //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
+            if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-one-spells")) {
+              alert('contains level 1');
+              ;
+              //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
+              let newSpell = eval(selectedAllSpells[i].value);
+      
+              finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].push(newSpell);
+              console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"])    
+            
+            }
+      
+            if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-two-spells")) {
+              alert('contains level 2');
+
+              let newSpell = eval(selectedAllSpells[i].value);
+      
+              finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"].push(newSpell);  
+              console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"])    
+            }
+      
+            if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-three-spells")) {
+                alert('contains level 3');
+  
+                let newSpell = eval(selectedAllSpells[i].value);
+        
+                finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"].push(newSpell);  
+              console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"])    
+
+              }
+  
 
 
+      
+      // END  
+          
+         
+        }
+        let showPickSpellsButton = document.querySelector('.hide-mage-container');
+        showPickSpellsButton.classList.remove('show-mage-spells');
+        // let showPickSpellsButtonInput = document.querySelector('#pick-mage-spells');
+        // showPickSpellsButtonInput.classList.remove('not-visible');
+        //console.log(player.spells);
+        //console.log(player);
 }
+    
+
+
 
 
 function talkToRaynard() {

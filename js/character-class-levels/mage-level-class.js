@@ -1,4 +1,4 @@
-import { charmPerson, detectMagic, floatingDisc, holdPortal, lightSpell, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism} from '../mage-spells/mage-level-one-spells-class.js'
+import { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism, readMagic } from '../mage-spells/mage-level-one-spells-class.js'
 import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from '../mage-spells/mage-level-two-spells-class.js';
 
 //==============================================end imports===============================================//

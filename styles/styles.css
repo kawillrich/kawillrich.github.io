@@ -385,3 +385,7 @@ span#dragonwarrior {
   cursor: not-allowed;
   pointer-events: none;
 }
+
+.not-visible {
+  display: none;
+}
