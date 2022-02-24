@@ -30,9 +30,9 @@ function() {
 );
 let protectionFromEvil = new MageLevelOneSpells ("Protection from Evil", 1, 0, 6, "The mage only");
 let readLanguages = new MageLevelOneSpells ("Read Languages", 1, 0, 2, "The mage only");
-let shieldSpell = new MageLevelOneSpells ("Shield", 1, 0, 2, "The mage only");
-let sleepSpell = new MageLevelOneSpells ("Sleep", 1, 240, [4, 16], "2-16 Hit Dice of leaving creatures within a 40 foot square area");
+let shield = new MageLevelOneSpells ("Shield", 1, 0, 2, "The mage only");
+let sleep = new MageLevelOneSpells ("Sleep", 1, 240, [4, 16], "2-16 Hit Dice of leaving creatures within a 40 foot square area");
 let ventriloquism = new MageLevelOneSpells ("Ventriloquism", 1, 60, 2, "One item or location");
 let readMagic = new MageLevelOneSpells ("Read Magic", 1, 0, 0, "The mage only");
 
-export { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism, readMagic };
+export { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism, readMagic };

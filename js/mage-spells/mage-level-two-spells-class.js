@@ -19,8 +19,8 @@ let levitate = new MageLevelTwoSpells ("Levitate", 2, 0, 6, "The mage only");
 let locateObject = new MageLevelTwoSpells ("Locate Object", 2, 60, 2, "One object within range");
 let mirrorImage = new MageLevelTwoSpells ("Mirror Image", 2, 0, 6, "The mage only");
 let phantasmalForce = new MageLevelTwoSpells ("Phantasmal Force", 2, 999, "20 foot volume");
-let webSpell = new MageLevelTwoSpells ("Web", 2, 10, 48, "A volume of 10 by 10 by 10");
+let web = new MageLevelTwoSpells ("Web", 2, 10, 48, "A volume of 10 by 10 by 10");
 let wizardLock = new MageLevelTwoSpells ("Wizard Lock", 2, 10, 999, "One portal or lock");
+let detectInvisibile = new MageLevelTwoSpells ("Detect Invisible", 2, 10, 6, "Detect invisibility");
 
-
-export { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock }
+export { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, web, wizardLock, detectInvisibile }

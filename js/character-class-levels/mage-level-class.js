@@ -1,5 +1,5 @@
-import { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism, readMagic } from '../mage-spells/mage-level-one-spells-class.js'
-import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from '../mage-spells/mage-level-two-spells-class.js';
+import { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism, readMagic } from '../mage-spells/mage-level-one-spells-class.js'
+import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, web, wizardLock, detectInvisibile } from '../mage-spells/mage-level-two-spells-class.js';
 
 //==============================================end imports===============================================//
 
@@ -117,7 +117,7 @@ let mageConjurer = new MageLevels (
     "Second Level Mage Spells": " ",
     "Third Level Mage Spells": " ",
     },
-    [2, 1, 0], 
+    [4, 3, 0], 
 ); 
 
 export { mageMedium, mageSeer, mageConjurer };
