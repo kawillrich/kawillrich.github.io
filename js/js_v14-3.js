@@ -37,7 +37,7 @@ import { dragonWarriorVeteran } from './character-class-levels/dragon-warrior-le
 
 //mage spell imports
 import { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism , readMagic } from './mage-spells/mage-level-one-spells-class.js';
-import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, web, wizardLock, detectInvisibile } from './mage-spells/mage-level-two-spells-class.js';
+import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, web, wizardLock, detectInvisible } from './mage-spells/mage-level-two-spells-class.js';
 
 //cleric spell imports
 import { cureLightWoundsCleric, detectEvilCleric, detectMagicCleric, purifyFoodAdWaterCleric, lightSpellCleric, removeFearCleric, protectionFromEvilCleric, resistColdCleric } from './cleric-spells/cleric-level-one-spells-class.js';
@@ -949,7 +949,7 @@ function submitAllMageSpells() {
       
             //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-one-spells")) {
-              alert('contains level 1');
+            //   alert('contains level 1');
               ;
               //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
               let newSpell = eval(selectedAllSpells[i].value);
@@ -960,7 +960,7 @@ function submitAllMageSpells() {
             }
       
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-two-spells")) {
-              alert('contains level 2');
+            //   alert('contains level 2');
 
               let newSpell = eval(selectedAllSpells[i].value);
       
@@ -969,12 +969,12 @@ function submitAllMageSpells() {
             }
       
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-three-spells")) {
-                alert('contains level 3');
+                // alert('contains level 3');
   
                 let newSpell = eval(selectedAllSpells[i].value);
         
                 finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"].push(newSpell);  
-              console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"])    
+                console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"])    
 
               }
   
