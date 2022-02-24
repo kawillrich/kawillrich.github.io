@@ -49,9 +49,6 @@ body {
   height: 370px;
 }
 
-.spells-container {
-}
-
 #map {
   margin: 0px;
   height: 500px;
@@ -295,16 +292,10 @@ span#dragonwarrior {
   grid-gap: 5px;
 }
 
-.ability-score-grid-item {
-}
-
 .ability-score-number-grid-item {
   text-align: center;
   border: 1px solid black;
   width: 50%;
-}
-
-.ability-score-title-grid-item {
 }
 
 .ability-score-adjustment-grid-item {
