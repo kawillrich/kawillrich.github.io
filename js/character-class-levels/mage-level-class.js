@@ -83,7 +83,7 @@ let mageSeer = new MageLevels (
     "Second Level Mage Spells": " ",
     "Third Level Mage Spells": " ",  
     }, 
-[2, 0, 0], 
+    [2, 0, 0], 
 ); 
 
 let mageConjurer = new MageLevels (
@@ -116,7 +116,8 @@ let mageConjurer = new MageLevels (
     "First Level Mage Spells": " ",
     "Second Level Mage Spells": " ",
     "Third Level Mage Spells": " ",
-    }[2, 1, 0], 
+    },
+    [2, 1, 0], 
 ); 
 
 export { mageMedium, mageSeer, mageConjurer };

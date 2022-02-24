@@ -37,7 +37,7 @@ import { dragonWarriorVeteran } from './character-class-levels/dragon-warrior-le
 
 //mage spell imports
 import { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shieldSpell, sleepSpell, ventriloquism , readMagic } from './mage-spells/mage-level-one-spells-class.js';
-import { mageLevelTwoSpells } from './mage-spells/mage-level-two-spells-class.js';
+import { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, webSpell, wizardLock } from './mage-spells/mage-level-two-spells-class.js';
 
 //cleric spell imports
 import { cureLightWoundsCleric, detectEvilCleric, detectMagicCleric, purifyFoodAdWaterCleric, lightSpellCleric, removeFearCleric, protectionFromEvilCleric, resistColdCleric } from './cleric-spells/cleric-level-one-spells-class.js';
@@ -671,6 +671,9 @@ function logCharSpecialty() {
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 3;
         finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = [];
+        finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
+        finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
+
         console.log(finalCharacter);
         finalCharacter.characterUpdate();      
 
@@ -684,6 +687,10 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = eloisesRing;
         finalCharacter.characterImage = 0;
+        finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = [];
+        finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
+        finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
+
         console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
@@ -739,6 +746,10 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 5;
+        finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = [];
+        finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
+        finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
+
         console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
