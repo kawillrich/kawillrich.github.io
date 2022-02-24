@@ -49,6 +49,9 @@ body {
   height: 370px;
 }
 
+.spells-container {
+}
+
 #map {
   margin: 0px;
   height: 500px;
@@ -228,11 +231,17 @@ span#dragonwarrior {
 
 /* Style the tab content */
 .tabContent {
-  display: none;
+  display: flex;
+  flex-direction: row;
   padding: 6px 12px;
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px 0px 0px 0px;
+}
+
+.spells-container {
+  display: inline-block;
+  width: 30%;
 }
 
 .armor-tooltip,

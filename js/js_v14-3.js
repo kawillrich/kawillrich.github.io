@@ -1126,6 +1126,8 @@ function submitAllClericSpells() {
     // showPickSpellsButtonInput.classList.remove('not-visible');
     //console.log(player.spells);
     //console.log(player);
+
+    
 }
 
 
