@@ -1,5 +1,5 @@
-import { cureLightWoundsCleric, detectEvilCleric, detectMagicCleric, purifyFoodAdWaterCleric, lightSpellCleric, removeFearCleric, protectionFromEvilCleric, resistColdCleric } from '../cleric-spells/cleric-level-one-spells-class.js';
-import { blessCleric, findTrapsCleric, holdPersonCleric, knowAlignmentCleric, resistFire, silence15ftCleric, snakeCharmCleric, speakWithAnimalCleric} from '../cleric-spells/cleric-level-two-spells-class.js';
+import { cureLightWoundsCleric, detectEvilCleric, detectMagicCleric, purifyFoodAndWaterCleric, lightCleric, removeFearCleric, protectionFromEvilCleric, resistColdCleric } from '../cleric-spells/cleric-level-one-spells-class.js';
+import { blessCleric, findTrapsCleric, holdPersonCleric, knowAlignmentCleric, resistFireCleric, silence15ftCleric, snakeCharmCleric, speakWithAnimalCleric} from '../cleric-spells/cleric-level-two-spells-class.js';
 import { continualLightCleric, cureBlindnessCleric, cureDiseaseCleric, growthOfAnimalsCleric, locateObjectCleric, removeCurseCleric, speakWithTheDeadCleric, strikingCleric } from '../cleric-spells/cleric-level-three-spells.js';
 
 
@@ -47,7 +47,7 @@ let acolyte = new ClericLevels (
         "Second Level Cleric Spells": [],
         "Third Level Cleric Spells": [],
     },
-    [1, 0, 0], 
+    [3, 2, 1], 
     {
         "Skeleton": 7,
         "Zombie": 9,

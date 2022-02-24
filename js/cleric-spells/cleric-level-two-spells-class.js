@@ -20,7 +20,7 @@ let blessCleric = new ClericLevelTwoSpells ("Bless", 2, 60, 6, "Improves morale 
 let findTrapsCleric = new ClericLevelTwoSpells ("Find Traps", 2, 0, 2, "Cuases traps to glow with blue light with 30 feet");
 let holdPersonCleric = new ClericLevelTwoSpells ("HOld Person", 2 ,180, 9, "Affects humans, humanoids, but not undead or creatures larger than Ogres");
 let knowAlignmentCleric = new ClericLevelTwoSpells ("Know Alignment", 2, 0, 1, "Caster discovers alignment of creatures or items withing 10 feet");
-let resistFire = new ClericLevelTwoSpells ("Resist Fire", 2, 30, 2, "Cannot be harmed by fire, recieves +2 Saving Throw against all magical fire");
+let resistFireCleric = new ClericLevelTwoSpells ("Resist Fire", 2, 30, 2, "Cannot be harmed by fire, recieves +2 Saving Throw against all magical fire");
 let silence15ftCleric = new ClericLevelTwoSpells ("Silence", 2, 180, 12, "Sphere of silence 30 feet across",
 function() {
     console.log('Casting');
@@ -32,4 +32,4 @@ let snakeCharmCleric = new ClericLevelTwoSpells ("Snake Charm", 2, 60, 5, "Charm
 let speakWithAnimalCleric = new ClericLevelTwoSpells ("Speak With Animals", 2, 0, 6, "Cleric must name one animal");
 
 
-export { blessCleric, findTrapsCleric, holdPersonCleric, knowAlignmentCleric, resistFire, silence15ftCleric, snakeCharmCleric, speakWithAnimalCleric };
+export { blessCleric, findTrapsCleric, holdPersonCleric, knowAlignmentCleric, resistFireCleric, silence15ftCleric, snakeCharmCleric, speakWithAnimalCleric };
