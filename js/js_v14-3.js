@@ -951,7 +951,17 @@ function submitAllMageSpells() {
       
               finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].push(newSpell);
               console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"])    
-            
+              let addedSpell = document.createElement('li');
+              let newID = selectedAllSpells[i].getAttribute("data-spell");
+              addedSpell.setAttribute('id', newID);
+              let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
+              let addedSpellTextNode = document.createTextNode(newTextName);
+              addedSpell.appendChild(addedSpellTextNode);
+              console.log(addedSpell);
+              let spellList = document.querySelector('#spells-level-1');
+              console.log(spellList);
+              spellList.appendChild(addedSpell);  
+  
             }
       
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-two-spells")) {
@@ -960,7 +970,18 @@ function submitAllMageSpells() {
               let newSpell = eval(selectedAllSpells[i].value);
       
               finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"].push(newSpell);  
-              console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"])    
+              console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"]);
+              let addedSpell = document.createElement('li');
+              let newID = selectedAllSpells[i].getAttribute("data-spell");
+              addedSpell.setAttribute('id', newID);
+              let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
+              let addedSpellTextNode = document.createTextNode(newTextName);
+              addedSpell.appendChild(addedSpellTextNode);
+              console.log(addedSpell);
+              let spellList = document.querySelector('#spells-level-2');
+              console.log(spellList);
+              spellList.appendChild(addedSpell);  
+      
             }
       
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-three-spells")) {
@@ -969,7 +990,19 @@ function submitAllMageSpells() {
                 let newSpell = eval(selectedAllSpells[i].value);
         
                 finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"].push(newSpell);  
-                console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"])    
+                console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"]);
+                
+                let addedSpell = document.createElement('li');
+                let newID = selectedAllSpells[i].getAttribute("data-spell");
+                addedSpell.setAttribute('id', newID);
+                let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
+                let addedSpellTextNode = document.createTextNode(newTextName);
+                addedSpell.appendChild(addedSpellTextNode);
+                console.log(addedSpell);
+                let spellList = document.querySelector('#spells-level-3');
+                console.log(spellList);
+                spellList.appendChild(addedSpell);  
+    
 
               }      
       // END  
@@ -1090,38 +1123,23 @@ function submitAllClericSpells() {
 
         //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
         if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-one-spells")) {
-        //   alert('contains level 1');
-            ;
+        //   alert('contains level 1');            
             //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
             let newSpell = eval(selectedAllSpells[i].value);
 
             finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"].push(newSpell);
-            console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"])    
-            
-            // console.log(selectedAllSpells[i]);
+            console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"]) 
 
             let addedSpell = document.createElement('li');
-
             let newID = selectedAllSpells[i].getAttribute("data-spell");
-
             addedSpell.setAttribute('id', newID);
-
             let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
-
             let addedSpellTextNode = document.createTextNode(newTextName);
             addedSpell.appendChild(addedSpellTextNode);
-
             console.log(addedSpell);
-
-
             let spellList = document.querySelector('#spells-level-1');
-
             console.log(spellList);
-
             spellList.appendChild(addedSpell);
-
-
-
         }
 
         if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-two-spells")) {
@@ -1130,7 +1148,18 @@ function submitAllClericSpells() {
             let newSpell = eval(selectedAllSpells[i].value);
 
             finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"].push(newSpell);  
-            console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"])    
+            console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"]);
+
+            let addedSpell = document.createElement('li');
+            let newID = selectedAllSpells[i].getAttribute("data-spell");
+            addedSpell.setAttribute('id', newID);
+            let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
+            let addedSpellTextNode = document.createTextNode(newTextName);
+            addedSpell.appendChild(addedSpellTextNode);
+            console.log(addedSpell);
+            let spellList = document.querySelector('#spells-level-2');
+            console.log(spellList);
+            spellList.appendChild(addedSpell);    
         }
 
         if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-three-spells")) {
@@ -1140,6 +1169,17 @@ function submitAllClericSpells() {
 
             finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"].push(newSpell);  
             console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"])    
+
+            let addedSpell = document.createElement('li');
+            let newID = selectedAllSpells[i].getAttribute("data-spell");
+            addedSpell.setAttribute('id', newID);
+            let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
+            let addedSpellTextNode = document.createTextNode(newTextName);
+            addedSpell.appendChild(addedSpellTextNode);
+            console.log(addedSpell);
+            let spellList = document.querySelector('#spells-level-3');
+            console.log(spellList);
+            spellList.appendChild(addedSpell);  
 
             }      
     // END  
