@@ -1505,7 +1505,7 @@ function regenerateHP(hp, maxHP) {
             let regeneratedHP = document.getElementById('char-hp');
             regeneratedHP.innerHTML = 
                 `
-                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${hp}"></progress>${hp}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span></span>
+                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${hp}"></progress>${hp}/${finalCharacter.specialty.maxHealthPoints}</span></span>
                 `;
 
             let regenerationDialogue = document.getElementById('dialogue');
