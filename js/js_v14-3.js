@@ -945,35 +945,56 @@ function submitAllMageSpells() {
             //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-one-spells")) {
             //   alert('contains level 1');
-              ;
+              
               //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
               let newSpell = eval(selectedAllSpells[i].value);
       
               finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].push(newSpell);
-              let addedSpell = document.createElement('li');
-              let newID = selectedAllSpells[i].getAttribute("data-spell");
-              addedSpell.setAttribute('id', newID);
-              let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
-              let addedSpellTextNode = document.createTextNode(newTextName);
-              addedSpell.appendChild(addedSpellTextNode);
-              let spellList = document.querySelector('#spells-level-1');
-              spellList.appendChild(addedSpell);  
+
+              console.log(`i iterator ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"]}`)
+
+            //   let addedSpell = document.createElement('li');
+            //   let newID = selectedAllSpells[i].getAttribute("data-spell");
+            //   addedSpell.setAttribute('id', newID);
+            //   let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
+            //   let addedSpellTextNode = document.createTextNode(newTextName);
+            //   addedSpell.appendChild(addedSpellTextNode);
+            //   let spellList = document.querySelector('#spells-level-1');
+            //   spellList.appendChild(addedSpell);  
   
                 //trying to add spell object to <span> element to use a tooltip
+                // move element & TextNode generation to below the next line, and use the pushed spell objects to create it
+
+
+                
+
                 for (let j = 0; j < finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].length; j++) {
                    
-                        // let newDataSpellAtt = selectedAllSpells[j].getAttribute("data-spell");
-                        // console.log(newDataSpellAtt);
+                    console.log(`j iterator: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"]}`)
 
-                        // let spellTooltipSpan = document.createElement('span');
-                        // spellTooltipSpan.innerHTML = 
-                        // `${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j]}`;
+                    let addedSpell = document.createElement('li');
+                    let newID = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j].className;
+                    addedSpell.setAttribute('id', newID);
 
-                        // console.log(spellTooltipSpan.innerHTML);
+                    let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j].name;
+                    let addedSpellTextNode = document.createTextNode(newTextName);
 
-                        console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j])
+                    addedSpell.appendChild(addedSpellTextNode);
+
+                    let spellList = document.querySelector('#spells-level-1');
+                    spellList.appendChild(addedSpell);  
+
+
+
+
+
+                    // let spellTooltipSpan = document.createElement('span');
+                    // spellTooltipSpan.innerHTML = 
+                    // `${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j].range}`;
+
+                    // console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j])
                         
-                        // spellList.appendChild(spellTooltipSpan);
+                    // addedSpell.appendChild(spellTooltipSpan);
                     
                 }
 
