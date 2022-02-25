@@ -1078,6 +1078,7 @@ function selectLevelOneClericSpells() {
       }
     }
   }
+
 let submitAllClericSpellsButton = document.querySelector('#submit-all-cleric-spells');
 submitAllClericSpellsButton.addEventListener('click', submitAllClericSpells, false);
 
@@ -1096,7 +1097,31 @@ function submitAllClericSpells() {
 
             finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"].push(newSpell);
             console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"])    
-        
+            
+            // console.log(selectedAllSpells[i]);
+
+            let addedSpell = document.createElement('li');
+
+            let newID = selectedAllSpells[i].getAttribute("data-spell");
+
+            addedSpell.setAttribute('id', newID);
+
+            let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
+
+            let addedSpellTextNode = document.createTextNode(newTextName);
+            addedSpell.appendChild(addedSpellTextNode);
+
+            console.log(addedSpell);
+
+
+            let spellList = document.querySelector('#spells-level-1');
+
+            console.log(spellList);
+
+            spellList.appendChild(addedSpell);
+
+
+
         }
 
         if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-two-spells")) {
