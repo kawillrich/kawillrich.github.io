@@ -656,7 +656,7 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
-        console.log(finalCharacter);
+        //console.log(finalCharacter);
 
         finalCharacter.characterUpdate();              
                 
@@ -673,7 +673,7 @@ function logCharSpecialty() {
         finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
 
-        console.log(finalCharacter);
+        //console.log(finalCharacter);
         finalCharacter.characterUpdate();      
 
         
@@ -690,7 +690,7 @@ function logCharSpecialty() {
         finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
 
-        console.log(finalCharacter);
+        //console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
         
@@ -703,7 +703,7 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 1;
-        console.log(finalCharacter);
+        //console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
         
@@ -717,7 +717,7 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
-        console.log(finalCharacter);
+        //console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
         
@@ -731,7 +731,7 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 6;
-        console.log(finalCharacter);
+        //console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
         
@@ -749,7 +749,7 @@ function logCharSpecialty() {
         finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
 
-        console.log(finalCharacter);
+        //console.log(finalCharacter);
 
         finalCharacter.characterUpdate();   
         
@@ -763,7 +763,7 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch, dagger];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 7;
-        console.log(finalCharacter);
+        //console.log(finalCharacter);
 
         finalCharacter.characterUpdate();         
         
@@ -840,7 +840,7 @@ function pickMageSpells() {
     alert('Pick Mage Spells');
     let showMageSpellsList = document.querySelector('.hide-mage-container')
     showMageSpellsList.classList.add('show-mage-spells');
-    console.log(finalCharacter.specialty.characterLevel.numberOfSpells[0]);
+    //console.log(finalCharacter.specialty.characterLevel.numberOfSpells[0]);
     selectLevelOneMageSpells();
     selectLevelTwoMageSpells();
     selectLevelThreeMageSpells()
@@ -859,7 +859,7 @@ function selectLevelOneMageSpells() {
             checkedcount += (mageFirstLevelSpells[i].checked) ? 1 : 0;
           }
           if (checkedcount > limit) {
-            console.log("You can select maximum of " + limit + " spell(s).");
+            //console.log("You can select maximum of " + limit + " spell(s).");
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }
@@ -886,7 +886,7 @@ function selectLevelOneMageSpells() {
             checkedcount += (mageSecondLevelSpells[i].checked) ? 1 : 0;
           }
           if (checkedcount > limit) {
-            console.log("You can select maximum of " + limit + " spell(s).");
+            //console.log("You can select maximum of " + limit + " spell(s).");
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }
@@ -915,7 +915,7 @@ function selectLevelOneMageSpells() {
             checkedcount += (mageThirdLevelSpells[i].checked) ? 1 : 0;
           }
           if (checkedcount > limit) {
-            console.log("You can select maximum of " + limit + " spell(s).");
+            //console.log("You can select maximum of " + limit + " spell(s).");
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }
@@ -950,18 +950,35 @@ function submitAllMageSpells() {
               let newSpell = eval(selectedAllSpells[i].value);
       
               finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].push(newSpell);
-              console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"])    
               let addedSpell = document.createElement('li');
               let newID = selectedAllSpells[i].getAttribute("data-spell");
               addedSpell.setAttribute('id', newID);
               let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
               let addedSpellTextNode = document.createTextNode(newTextName);
               addedSpell.appendChild(addedSpellTextNode);
-              console.log(addedSpell);
               let spellList = document.querySelector('#spells-level-1');
-              console.log(spellList);
               spellList.appendChild(addedSpell);  
   
+                //trying to add spell object to <span> element to use a tooltip
+                for (let j = 0; j < finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].length; j++) {
+                   
+                        // let newDataSpellAtt = selectedAllSpells[j].getAttribute("data-spell");
+                        // console.log(newDataSpellAtt);
+
+                        // let spellTooltipSpan = document.createElement('span');
+                        // spellTooltipSpan.innerHTML = 
+                        // `${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j]}`;
+
+                        // console.log(spellTooltipSpan.innerHTML);
+
+                        console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j])
+                        
+                        // spellList.appendChild(spellTooltipSpan);
+                    
+                }
+
+
+
             }
       
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-two-spells")) {
@@ -1721,7 +1738,7 @@ function continueChapterFourThreeThree() {
             let regeneratedHP = document.getElementById('char-hp');
             regeneratedHP.innerHTML = 
                 `
-                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${hp}"></progress>${hp}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span></span>
+                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints }" value="${hp}"></progress>${hp}/${finalCharacter.specialty.maxHealthPoints }</span></span>
                 `;
 
             // let regenerationDialogue = document.getElementById('dialogue');
