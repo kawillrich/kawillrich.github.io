@@ -240,7 +240,7 @@ span#dragonwarrior {
 }
 
 .spells-container {
-  background-color: bisque;
+  /* background-color: bisque; */
 }
 
 .armor-tooltip,
@@ -270,6 +270,7 @@ span#dragonwarrior {
 
 .spell-tooltiptext {
   visibility: hidden;
+  height: 100px;
   width: 170px;
   background-color: black;
   color: #fff;
@@ -278,7 +279,7 @@ span#dragonwarrior {
   padding: 5px 5px;
   position: absolute;
   z-index: 1;
-  top: -32px;
+  top: -2.7em;
   left: 50%;
 }
 
