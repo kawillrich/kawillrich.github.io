@@ -967,15 +967,28 @@ function submitAllMageSpells() {
         for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].length; i++) {            
 
             let addedSpell = document.createElement('li');
+            addedSpell.classList.add('spell-tooltip');
+
+            let addedSpellSpan = document.createElement('span');
+            addedSpellSpan.innerHTML = 
+            `<span class="spell-tooltiptext">Range: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].range}
+            Duration: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].duration}
+            Effect: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].effect}</span>
+            `;
+
             let newID = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].className;
             addedSpell.setAttribute('id', newID);
             let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].name;
             let addedSpellTextNode = document.createTextNode(newTextName);
             addedSpell.appendChild(addedSpellTextNode);
+            addedSpell.appendChild(addedSpellSpan);
+
             console.log(addedSpell);
+
             let spellList = document.querySelector('#spells-level-1');
             console.log(spellList);
             spellList.appendChild(addedSpell);
+            console.log(addedSpell.innerHTML);
         }
 
         for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"].length; i++) {            
