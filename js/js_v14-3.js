@@ -1170,42 +1170,71 @@ function submitAllClericSpells() {
     for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"].length; i++) {            
 
         let addedSpell = document.createElement('li');
+        addedSpell.classList.add('spell-tooltip');
+
+        let addedSpellSpan = document.createElement('span');
+        addedSpellSpan.innerHTML = 
+        `<span class="spell-tooltiptext">Range: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"][i].range}<br>
+        Duration: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"][i].duration}<br>
+        Effect: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"][i].effect}</span>
+        `;
+
         let newID = finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"][i].className;
         addedSpell.setAttribute('id', newID);
         let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"][i].name;
         let addedSpellTextNode = document.createTextNode(newTextName);
         addedSpell.appendChild(addedSpellTextNode);
-        console.log(addedSpell);
+        addedSpell.appendChild(addedSpellSpan);
+
         let spellList = document.querySelector('#spells-level-1');
-        console.log(spellList);
         spellList.appendChild(addedSpell);
     }
 
     for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"].length; i++) {            
 
         let addedSpell = document.createElement('li');
+        addedSpell.classList.add('spell-tooltip');
+
+        let addedSpellSpan = document.createElement('span');
+        addedSpellSpan.innerHTML = 
+        `<span class="spell-tooltiptext">Range: ${finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"][i].range}<br>
+        Duration: ${finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"][i].duration}<br>
+        Effect: ${finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"][i].effect}</span>
+        `;
+
         let newID = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"][i].className;
         addedSpell.setAttribute('id', newID);
         let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"][i].name;
         let addedSpellTextNode = document.createTextNode(newTextName);
         addedSpell.appendChild(addedSpellTextNode);
-        console.log(addedSpell);
+        addedSpell.appendChild(addedSpellSpan);
+
         let spellList = document.querySelector('#spells-level-2');
-        console.log(spellList);
         spellList.appendChild(addedSpell);
+    
+
     }
 
     for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"].length; i++) {            
 
         let addedSpell = document.createElement('li');
+        addedSpell.classList.add('spell-tooltip');
+
+        let addedSpellSpan = document.createElement('span');
+        addedSpellSpan.innerHTML = 
+        `<span class="spell-tooltiptext">Range: ${finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"][i].range}<br>
+        Duration: ${finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"][i].duration}<br>
+        Effect: ${finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"][i].effect}</span>
+        `;
+
         let newID = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"][i].className;
         addedSpell.setAttribute('id', newID);
         let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"][i].name;
         let addedSpellTextNode = document.createTextNode(newTextName);
         addedSpell.appendChild(addedSpellTextNode);
-        console.log(addedSpell);
+        addedSpell.appendChild(addedSpellSpan);
+
         let spellList = document.querySelector('#spells-level-3');
-        console.log(spellList);
         spellList.appendChild(addedSpell);
     }
 
