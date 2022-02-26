@@ -409,7 +409,9 @@ span#dragonwarrior {
   display: none;
 }
 
-#spells-level-1 {
+#spells-level-1,
+#spells-level-2,
+#spells-level-3 {
   display: grid;
   grid-template-rows: auto auto auto;
 }
