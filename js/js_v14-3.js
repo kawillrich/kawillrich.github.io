@@ -1010,10 +1010,6 @@ function submitAllMageSpells() {
         // END  
         let showPickSpellsButton = document.querySelector('.hide-mage-container');
         showPickSpellsButton.classList.remove('show-mage-spells');
-        // let showPickSpellsButtonInput = document.querySelector('#pick-mage-spells');
-        // showPickSpellsButtonInput.classList.remove('not-visible');
-        //console.log(player.spells);
-        //console.log(player);
 }
     
 function pickClericSpells() {
@@ -1106,7 +1102,6 @@ function selectLevelOneClericSpells() {
       let clericThirdLevelSpells = document.getElementById('cleric-third-level-spell-list').getElementsByTagName("input");
       for (let i = 0; i < clericThirdLevelSpells.length; i++) {
       clericThirdLevelSpells[i].classList.add('grey-out');
-    //   document.querySelector('#submit-spells').classList.add('grey-out');
   
       }
     }
@@ -1120,77 +1115,73 @@ function submitAllClericSpells() {
 
     // player.spells = [];
     for (let i = 0; i < selectedAllSpells.length; i++) {
-
+      
         //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
-        if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-one-spells")) {
-        //   alert('contains level 1');            
-            //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
-            let newSpell = eval(selectedAllSpells[i].value);
-
-            finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"].push(newSpell);
-            console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"]) 
-
-            let addedSpell = document.createElement('li');
-            let newID = selectedAllSpells[i].getAttribute("data-spell");
-            addedSpell.setAttribute('id', newID);
-            let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
-            let addedSpellTextNode = document.createTextNode(newTextName);
-            addedSpell.appendChild(addedSpellTextNode);
-            console.log(addedSpell);
-            let spellList = document.querySelector('#spells-level-1');
-            console.log(spellList);
-            spellList.appendChild(addedSpell);
+        if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-one-spells")) {              
+          //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN Cleric LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
+          let newSpell = eval(selectedAllSpells[i].value);      
+          finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"].push(newSpell);
         }
-
+  
         if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-two-spells")) {
         //   alert('contains level 2');
-
-            let newSpell = eval(selectedAllSpells[i].value);
-
-            finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"].push(newSpell);  
-            console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"]);
-
-            let addedSpell = document.createElement('li');
-            let newID = selectedAllSpells[i].getAttribute("data-spell");
-            addedSpell.setAttribute('id', newID);
-            let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
-            let addedSpellTextNode = document.createTextNode(newTextName);
-            addedSpell.appendChild(addedSpellTextNode);
-            console.log(addedSpell);
-            let spellList = document.querySelector('#spells-level-2');
-            console.log(spellList);
-            spellList.appendChild(addedSpell);    
+          let newSpell = eval(selectedAllSpells[i].value);      
+          finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"].push(newSpell);  
+          //console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"]);  
         }
-
+  
         if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("cleric-three-spells")) {
-            // alert('contains level 3');
-
-            let newSpell = eval(selectedAllSpells[i].value);
-
+            // alert('contains level 3');  
+            let newSpell = eval(selectedAllSpells[i].value);        
             finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"].push(newSpell);  
-            console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"])    
-
-            let addedSpell = document.createElement('li');
-            let newID = selectedAllSpells[i].getAttribute("data-spell");
-            addedSpell.setAttribute('id', newID);
-            let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
-            let addedSpellTextNode = document.createTextNode(newTextName);
-            addedSpell.appendChild(addedSpellTextNode);
-            console.log(addedSpell);
-            let spellList = document.querySelector('#spells-level-3');
-            console.log(spellList);
-            spellList.appendChild(addedSpell);  
-
-            }      
-    // END  
-        
+            console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"]);
+          }                           
     }
+
+    for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"].length; i++) {            
+
+        let addedSpell = document.createElement('li');
+        let newID = finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"][i].className;
+        addedSpell.setAttribute('id', newID);
+        let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["First Level Cleric Spells"][i].name;
+        let addedSpellTextNode = document.createTextNode(newTextName);
+        addedSpell.appendChild(addedSpellTextNode);
+        console.log(addedSpell);
+        let spellList = document.querySelector('#spells-level-1');
+        console.log(spellList);
+        spellList.appendChild(addedSpell);
+    }
+
+    for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"].length; i++) {            
+
+        let addedSpell = document.createElement('li');
+        let newID = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"][i].className;
+        addedSpell.setAttribute('id', newID);
+        let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"][i].name;
+        let addedSpellTextNode = document.createTextNode(newTextName);
+        addedSpell.appendChild(addedSpellTextNode);
+        console.log(addedSpell);
+        let spellList = document.querySelector('#spells-level-2');
+        console.log(spellList);
+        spellList.appendChild(addedSpell);
+    }
+
+    for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"].length; i++) {            
+
+        let addedSpell = document.createElement('li');
+        let newID = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"][i].className;
+        addedSpell.setAttribute('id', newID);
+        let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Cleric Spells"][i].name;
+        let addedSpellTextNode = document.createTextNode(newTextName);
+        addedSpell.appendChild(addedSpellTextNode);
+        console.log(addedSpell);
+        let spellList = document.querySelector('#spells-level-3');
+        console.log(spellList);
+        spellList.appendChild(addedSpell);
+    }
+
     let showPickSpellsButton = document.querySelector('.hide-cleric-container');
     showPickSpellsButton.classList.remove('show-cleric-spells');
-    // let showPickSpellsButtonInput = document.querySelector('#pick-mage-spells');
-    // showPickSpellsButtonInput.classList.remove('not-visible');
-    //console.log(player.spells);
-    //console.log(player);
 
     
 }
