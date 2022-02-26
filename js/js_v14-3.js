@@ -971,8 +971,8 @@ function submitAllMageSpells() {
 
             let addedSpellSpan = document.createElement('span');
             addedSpellSpan.innerHTML = 
-            `<span class="spell-tooltiptext">Range: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].range}
-            Duration: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].duration}
+            `<span class="spell-tooltiptext">Range: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].range}<br>
+            Duration: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].duration}<br>
             Effect: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].effect}</span>
             `;
 
