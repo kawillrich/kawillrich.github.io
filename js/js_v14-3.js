@@ -938,114 +938,76 @@ submitAllMageSpellsButton.addEventListener('click', submitAllMageSpells, false);
 
 function submitAllMageSpells() {
         let selectedAllSpells = document.querySelectorAll('.mage-spells');
+        console.log(selectedAllSpells);
       
-        // player.spells = [];
         for (let i = 0; i < selectedAllSpells.length; i++) {
       
             //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
-            if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-one-spells")) {
-            //   alert('contains level 1');
-              
+            if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-one-spells")) {              
               //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
-              let newSpell = eval(selectedAllSpells[i].value);
-      
+              let newSpell = eval(selectedAllSpells[i].value);      
               finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].push(newSpell);
-
-              console.log(`i iterator ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"]}`)
-
-            //   let addedSpell = document.createElement('li');
-            //   let newID = selectedAllSpells[i].getAttribute("data-spell");
-            //   addedSpell.setAttribute('id', newID);
-            //   let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
-            //   let addedSpellTextNode = document.createTextNode(newTextName);
-            //   addedSpell.appendChild(addedSpellTextNode);
-            //   let spellList = document.querySelector('#spells-level-1');
-            //   spellList.appendChild(addedSpell);  
-  
-                //trying to add spell object to <span> element to use a tooltip
-                // move element & TextNode generation to below the next line, and use the pushed spell objects to create it
-
-
-                
-
-                for (let j = 0; j < finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].length; j++) {
-                   
-                    console.log(`j iterator: ${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"]}`)
-
-                    let addedSpell = document.createElement('li');
-                    let newID = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j].className;
-                    addedSpell.setAttribute('id', newID);
-
-                    let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j].name;
-                    let addedSpellTextNode = document.createTextNode(newTextName);
-
-                    addedSpell.appendChild(addedSpellTextNode);
-
-                    let spellList = document.querySelector('#spells-level-1');
-                    spellList.appendChild(addedSpell);  
-
-
-
-
-
-                    // let spellTooltipSpan = document.createElement('span');
-                    // spellTooltipSpan.innerHTML = 
-                    // `${finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j].range}`;
-
-                    // console.log(finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][j])
-                        
-                    // addedSpell.appendChild(spellTooltipSpan);
-                    
-                }
-
-
-
             }
       
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-two-spells")) {
             //   alert('contains level 2');
-
-              let newSpell = eval(selectedAllSpells[i].value);
-      
+              let newSpell = eval(selectedAllSpells[i].value);      
               finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"].push(newSpell);  
-              console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"]);
-              let addedSpell = document.createElement('li');
-              let newID = selectedAllSpells[i].getAttribute("data-spell");
-              addedSpell.setAttribute('id', newID);
-              let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
-              let addedSpellTextNode = document.createTextNode(newTextName);
-              addedSpell.appendChild(addedSpellTextNode);
-              console.log(addedSpell);
-              let spellList = document.querySelector('#spells-level-2');
-              console.log(spellList);
-              spellList.appendChild(addedSpell);  
-      
+              //console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"]);  
             }
       
             if (selectedAllSpells[i].checked === true && selectedAllSpells[i].classList.contains("mage-three-spells")) {
-                // alert('contains level 3');
-  
-                let newSpell = eval(selectedAllSpells[i].value);
-        
+                // alert('contains level 3');  
+                let newSpell = eval(selectedAllSpells[i].value);        
                 finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"].push(newSpell);  
                 console.log(finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"]);
-                
-                let addedSpell = document.createElement('li');
-                let newID = selectedAllSpells[i].getAttribute("data-spell");
-                addedSpell.setAttribute('id', newID);
-                let newTextName = selectedAllSpells[i].getAttribute("data-spell-name");
-                let addedSpellTextNode = document.createTextNode(newTextName);
-                addedSpell.appendChild(addedSpellTextNode);
-                console.log(addedSpell);
-                let spellList = document.querySelector('#spells-level-3');
-                console.log(spellList);
-                spellList.appendChild(addedSpell);  
-    
-
-              }      
-      // END  
-          
+              }                           
         }
+
+        for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"].length; i++) {            
+
+            let addedSpell = document.createElement('li');
+            let newID = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].className;
+            addedSpell.setAttribute('id', newID);
+            let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"][i].name;
+            let addedSpellTextNode = document.createTextNode(newTextName);
+            addedSpell.appendChild(addedSpellTextNode);
+            console.log(addedSpell);
+            let spellList = document.querySelector('#spells-level-1');
+            console.log(spellList);
+            spellList.appendChild(addedSpell);
+        }
+
+        for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"].length; i++) {            
+
+            let addedSpell = document.createElement('li');
+            let newID = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"][i].className;
+            addedSpell.setAttribute('id', newID);
+            let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"][i].name;
+            let addedSpellTextNode = document.createTextNode(newTextName);
+            addedSpell.appendChild(addedSpellTextNode);
+            console.log(addedSpell);
+            let spellList = document.querySelector('#spells-level-2');
+            console.log(spellList);
+            spellList.appendChild(addedSpell);
+        }
+
+        for (let i = 0; i < finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"].length; i++) {            
+
+            let addedSpell = document.createElement('li');
+            let newID = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"][i].className;
+            addedSpell.setAttribute('id', newID);
+            let newTextName = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"][i].name;
+            let addedSpellTextNode = document.createTextNode(newTextName);
+            addedSpell.appendChild(addedSpellTextNode);
+            console.log(addedSpell);
+            let spellList = document.querySelector('#spells-level-3');
+            console.log(spellList);
+            spellList.appendChild(addedSpell);
+        }
+
+
+        // END  
         let showPickSpellsButton = document.querySelector('.hide-mage-container');
         showPickSpellsButton.classList.remove('show-mage-spells');
         // let showPickSpellsButtonInput = document.querySelector('#pick-mage-spells');

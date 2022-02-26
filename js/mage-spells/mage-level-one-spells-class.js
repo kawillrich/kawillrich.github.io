@@ -14,7 +14,7 @@ export default class MageLevelOneSpells {
 };
 
 let charmPerson = new MageLevelOneSpells ("Charm Person", 1, 120, "Varies", "Charms one person", function() {console.log('casting')}, "charm-person");
-let detectMagic = new MageLevelOneSpells ("Detec Magic", 1, 0, 2, "Detects magic within 60 feet", function() {console.log('casting')}, "detect-magic");
+let detectMagic = new MageLevelOneSpells ("Detect Magic", 1, 0, 2, "Detects magic within 60 feet", function() {console.log('casting')}, "detect-magic");
 let floatingDisc = new MageLevelOneSpells ("Floating Disc", 1, 0, 6, "Creates an invisible disc that can carry 5000 cn", function() {console.log('casting')}, "floating-disc");
 let holdPortal = new MageLevelOneSpells ("Hold Portal", 1, 10, [2,12], "On door, gate, or similar portal", function() {console.log('casting')}, "hold-portal");
 let light = new MageLevelOneSpells ("Light", 1, 120, 6, "Volume of 30 feet diameter", function() {console.log('casting')}, "light");
