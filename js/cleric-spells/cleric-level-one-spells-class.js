@@ -19,10 +19,10 @@ let cureLightWoundsCleric = new ClericLevelOneSpells ("Cure Light Wounds", 1, 0,
 let detectMagicCleric = new ClericLevelOneSpells ("Detect Magic", 1, 0, 2, "Detects magic within 60 feet", 
     function() {console.log('Casting');}, "detect-magic-cleric");
 
-let detectEvilCleric = new ClericLevelOneSpells ("Detect Evil", 60, 2, "Everything within 60 feet", 
+let detectEvilCleric = new ClericLevelOneSpells ("Detect Evil", 1, 60, 2, "Everything within 60 feet", 
     function() {console.log('Casting');}, "detect-evil-cleric");
 
-let purifyFoodAndWaterCleric = new ClericLevelOneSpells ("Purify Food and Water", 1, 10, 0, "Makes spoiled or poisoned food and water safe and usable (one ration, 6 waterskins", 
+let purifyFoodAndWaterCleric = new ClericLevelOneSpells ("Purify Food and Water", 1, 10, 0, "Makes spoiled or poisoned food and water safe and usable (one ration, 6 waterskins)", 
     function() {console.log('Casting');}, "purify-food-and-water-cleric");
 
 let lightCleric = new ClericLevelOneSpells ("Light", 1, 120, 6, "Volume of 30 feet diameter", 
