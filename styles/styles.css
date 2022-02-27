@@ -277,7 +277,7 @@ span#dragonwarrior {
 .spell-tooltiptext {
   visibility: hidden;
   height: 100px;
-  width: 170px;
+  width: 200px;
   background-color: black;
   color: #fff;
   text-align: left;
@@ -287,13 +287,13 @@ span#dragonwarrior {
   z-index: 1;
   top: -2.7em;
   left: 50%;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .html-spell-tooltiptext {
   visibility: hidden;
   height: 100px;
-  width: 170px;
+  width: 200px;
   background-color: black;
   color: #fff;
   text-align: left;
@@ -303,7 +303,7 @@ span#dragonwarrior {
   z-index: 1;
   top: -2.7em;
   left: 50%;
-  overflow: scroll;
+  /* overflow: auto; */
 }
 .armor-tooltip .armor-tooltiptext::after,
 .weapon-tooltip .weapon-tooltiptext::after,
