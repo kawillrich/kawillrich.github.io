@@ -14,7 +14,7 @@ export default class ClericLevelTwoSpells {
 
 let blessCleric = new ClericLevelTwoSpells ("Bless", 2, 60, 6, "Improves morale of friendly creatures by +1, give +1 hit and damage rolls", function() {console.log('Casting');}, "bless-cleric");
 let findTrapsCleric = new ClericLevelTwoSpells ("Find Traps", 2, 0, 2, "Causes traps to glow with blue light with 30 feet", function() {console.log('Casting');}, "find-traps-cleric");
-let holdPersonCleric = new ClericLevelTwoSpells ("Hold Person", 2 ,180, 9, "Affects humans, humanoids, but not undead or creatures larger than Ogres", function() {console.log('Casting');}, "hold-person-cleric");
+let holdPersonCleric = new ClericLevelTwoSpells ("Hold Person", 2, 180, 9, "Affects humans, humanoids, but not undead or creatures larger than Ogres", function() {console.log('Casting');}, "hold-person-cleric");
 let knowAlignmentCleric = new ClericLevelTwoSpells ("Know Alignment", 2, 0, 1, "Caster discovers alignment of creatures or items withing 10 feet", function() {console.log('Casting');}, "know-alignment-cleric");
 let resistFireCleric = new ClericLevelTwoSpells ("Resist Fire", 2, 30, 2, "Cannot be harmed by fire, +2 Saving Throw against all magical fire", function() {console.log('Casting');}, "resist-fire-cleric");
 let silence15ftCleric = new ClericLevelTwoSpells ("Silence", 2, 180, 12, "Sphere of silence 30 feet across", function() {console.log('Casting');}, "silence-cleric");
