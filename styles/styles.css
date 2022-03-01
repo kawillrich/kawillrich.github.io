@@ -45,7 +45,8 @@ body {
 
 #normal-equipment,
 #magical-equipment,
-#spells {
+#spells,
+#treasure {
   height: 370px;
 }
 
@@ -410,6 +411,24 @@ span#dragonwarrior {
 
 .hide-mage-container {
   display: none;
+}
+
+.hide-inventory-container {
+  display: none;
+}
+
+.show-inventory-container {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  display: block;
+  height: 2000px;
+  width: 2000px;
+  background-color: lightblue;
+  z-index: 1;
+  padding: 10% 30% 30%;
 }
 
 .show-mage-spells {

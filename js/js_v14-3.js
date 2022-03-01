@@ -123,6 +123,10 @@ magicalEqiupmentLink.addEventListener('click', function(e) { openItem(e, 'magica
 let spellsLink = document.querySelector('#spells-link');
 spellsLink.addEventListener('click', function(e) { openItem(e, 'spells')}, false);
 
+let treasureLink = document.querySelector('#treasure-link');
+treasureLink.addEventListener('click', function(e) { openItem(e, 'treasure')}, false);
+
+
 document.getElementById("normal-equipment-link").click();
 
 //Animation data
@@ -282,8 +286,9 @@ function rollAttributes() {
 
 function generateNewAttributes() {
 
-
-
+    let treasure = (Math.ceil(Math.random() * 15) + 3) * 10;
+    finalCharacter.treasure = treasure;
+    console.log(finalCharacter.treasure);
     attributes[0].score = (Math.ceil(Math.random() * 12) + 6);
     attributes[1].score = (Math.ceil(Math.random() * 12) + 6);
     attributes[2].score = (Math.ceil(Math.random() * 12) + 6);
@@ -557,11 +562,6 @@ function startGame() {
         charismaPlusAdjustment = attributes[5].adjustment;
     };
 
-
-
-
-
-
     let newStartGameDialogue = document.querySelector("#character-info");
     newStartGameDialogue.style.backgroundImage = "none";
     newStartGameDialogue.innerHTML = `
@@ -576,8 +576,7 @@ function startGame() {
                 <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span></h4>
                 <h4 id='char-spell2' class='char-info-label'>Spell 3: <span class="character-display-info">${finalCharacter.specialty.spell3.name}</span></h4>
-                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-               
+                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>               
             </fieldset>
         </div>
         <div id='character-attributes'>
@@ -601,8 +600,6 @@ function startGame() {
         </div>                
         `;  
         
-
-        // let addItemToInventory = document.querySelector('#normal-equipment-list');
         let showInventory = () => {
             let accumulator = "";
   
@@ -616,19 +613,6 @@ function startGame() {
         updatedInventory.innerHTML = showInventory();
 
         showInventory();
-
-        // addItemToInventory.innerHTML += `<br> ${raynardsCoin.name}`;   
-
-        // for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
-        //     let updateInventory = document.querySelector('#normal-equipment-list').innerHTML;
-
-        //     updateInventory =+ finalCharacter.inventory[i].name;
-        //     console.log(updateInventory);
-            
-            
-        // }
-    
-
         render();
         
     let chapterOne = document.querySelector('#dialogue');
@@ -703,8 +687,6 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 2;
-        //console.log(finalCharacter);
-
         finalCharacter.characterUpdate();              
                 
     } else if (selectedSpecialty === "mage") {
@@ -719,8 +701,6 @@ function logCharSpecialty() {
         finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
-
-        //console.log(finalCharacter);
         finalCharacter.characterUpdate();      
 
         
@@ -736,9 +716,6 @@ function logCharSpecialty() {
         finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
-
-        //console.log(finalCharacter);
-
         finalCharacter.characterUpdate();   
         
     } else if (selectedSpecialty === "thief") {
@@ -750,8 +727,6 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 1;
-        //console.log(finalCharacter);
-
         finalCharacter.characterUpdate();   
         
         
@@ -764,8 +739,6 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 4;
-        //console.log(finalCharacter);
-
         finalCharacter.characterUpdate();   
         
         
@@ -778,8 +751,6 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 6;
-        //console.log(finalCharacter);
-
         finalCharacter.characterUpdate();   
         
         
@@ -795,11 +766,7 @@ function logCharSpecialty() {
         finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"] = [];
         finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"] = [];
-
-        //console.log(finalCharacter);
-
         finalCharacter.characterUpdate();   
-        
         
     } else if (selectedSpecialty === "halfling") {
         // console.log('dragonwarrior');
@@ -810,8 +777,6 @@ function logCharSpecialty() {
         finalCharacter.inventory = [torch, dagger];
         finalCharacter.enchantedItem = noItem;
         finalCharacter.characterImage = 7;
-        //console.log(finalCharacter);
-
         finalCharacter.characterUpdate();         
         
     } else {
@@ -843,6 +808,8 @@ function beginJourney() {
 
 //CHAPTER TWO
 
+
+
 function beginChapterTwo() {
 
     if (finalCharacter.specialty.name === 'High Mage' || finalCharacter.specialty.name === "Elf") {
@@ -850,6 +817,8 @@ function beginChapterTwo() {
     } else if (finalCharacter.specialty.name === 'Cleric') {
         pickClericSpells();
     }
+
+    showInventory();
 
     console.log(finalCharacter);
     let JSONcharacter = JSON.stringify(finalCharacter);
@@ -882,6 +851,19 @@ function beginChapterTwo() {
     var talkToRaynardNo = document.querySelector("#talk-raynard-no");
     talkToRaynardNo.addEventListener('click', startChapterThreeOne, false);
 }; 
+
+function showInventory() {
+    alert('Purchase your supplies');
+    let showInventory = document.querySelector('.hide-inventory-container');
+    showInventory.classList.add('show-inventory-container');
+    selectInventory();
+}
+
+function selectInventory() {
+    if (finalCharacter.treasure >= 0) {
+
+    }
+};
 
 function pickMageSpells() {
     alert('Pick Mage Spells');
