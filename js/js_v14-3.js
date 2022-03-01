@@ -595,7 +595,7 @@ function startGame() {
         
         </div id="canvas-area">
           <fieldset class= 'canvas-info-module-player'>
-            <legend class='canvas-dashboard'>Arena</legend>
+            <legend class='canvas-dashboard'>Player</legend>
             <canvas id="canvas2" height="200" width="200"></canvas>
            </fieldset>
         </div>                
@@ -912,6 +912,10 @@ function selectLevelOneMageSpells() {
           }
         }
       }
+      let numberOfLevelOneSpells = document.querySelector('.number-of-first-level-mage-spells');
+      numberOfLevelOneSpells.innerHTML = `
+      <div class="number-of-first-level-mage-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[0]} spell(s)</div><br>
+      `;
     } else {
       let mageFirstLevelSpells = document.getElementById('mage-first-level-spell-list').getElementsByTagName("input");
       for (let i = 0; i < mageFirstLevelSpells.length; i++) {
@@ -939,6 +943,11 @@ function selectLevelOneMageSpells() {
           }
         }
       }
+      let numberOfLeveltwoSpells = document.querySelector('.number-of-second-level-mage-spells');
+      numberOfLeveltwoSpells.innerHTML = `
+      <div class="number-of-second-level-mage-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[1]} spell(s)</div><br>
+      `;
+
     } else {
       let removeMageSecondLevelSpells = document.querySelector('#mage-second-level-spell-list')
       removeMageSecondLevelSpells.classList.add("hide-mage-container");
@@ -968,6 +977,11 @@ function selectLevelOneMageSpells() {
           }
         }
       }
+      let numberOfLevelthreeSpells = document.querySelector('.number-of-third-level-mage-spells');
+      numberOfLevelthreeSpells.innerHTML = `
+      <div class="number-of-third-level-mage-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[2]} spell(s)</div><br>
+      `;
+
     } else {
       let removemageThirdLevelSpells = document.querySelector('#mage-third-level-spell-list')
       removemageThirdLevelSpells.classList.add("hide-mage-container");
@@ -1116,6 +1130,10 @@ function selectLevelOneClericSpells() {
           }
         }
       }
+      let numberOfLeveloneSpells = document.querySelector('.number-of-first-level-cleric-spells');
+      numberOfLeveloneSpells.innerHTML = `
+      <div class="number-of-first-level-cleric-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[0]} spell(s)</div><br>
+      `;
     } else {
       let clericFirstLevelSpells = document.getElementById('cleric-first-level-spell-list').getElementsByTagName("input");
       for (let i = 0; i < clericFirstLevelSpells.length; i++) {
@@ -1143,6 +1161,11 @@ function selectLevelOneClericSpells() {
           }
         }
       }
+      let numberOfLeveltwoSpells = document.querySelector('.number-of-second-level-cleric-spells');
+      numberOfLeveltwoSpells.innerHTML = `
+      <div class="number-of-second-level-cleric-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[1]} spell(s)</div><br>
+      `;
+
     } else {
       let removeclericSecondLevelSpells = document.querySelector('#cleric-second-level-spell-list')
       removeclericSecondLevelSpells.classList.add("hide-cleric-container");
@@ -1172,6 +1195,11 @@ function selectLevelOneClericSpells() {
           }
         }
       }
+      let numberOfLevelthreeSpells = document.querySelector('.number-of-third-level-cleric-spells');
+      numberOfLevelthreeSpells.innerHTML = `
+      <div class="number-of-third-level-cleric-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[2]} spell(s)</div><br>
+      `;
+
     } else {
       let removeclericThirdLevelSpells = document.querySelector('#cleric-third-level-spell-list')
       removeclericThirdLevelSpells.classList.add("hide-cleric-container");

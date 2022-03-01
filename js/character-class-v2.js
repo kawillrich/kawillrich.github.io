@@ -40,6 +40,50 @@ export default class Character {
     //updates & initiates Character creation
 
     characterUpdate() {
+        let strengthPlusAdjustment;
+        let intelligencePlusAdjustment;
+        let wisdomPlusAdjustment;
+        let dexterityPlusAdjustment;
+        let constitutionPlusAdjustment;
+        let charismaPlusAdjustment;
+
+        if (finalCharacter.attributes[0].adjustment > 0) {
+            strengthPlusAdjustment = `+${finalCharacter.attributes[0].adjustment}`;        
+        } else {
+            strengthPlusAdjustment = finalCharacter.attributes[0].adjustment;
+        };
+    
+        if (finalCharacter.attributes[1].adjustment > 0) {
+            intelligencePlusAdjustment = `+${finalCharacter.attributes[1].adjustment}`;        
+        } else {
+            intelligencePlusAdjustment = finalCharacter.attributes[1].adjustment;
+        };
+      
+        if (finalCharacter.attributes[2].adjustment > 0) {
+            wisdomPlusAdjustment = `+${finalCharacter.attributes[2].adjustment}`;        
+        } else {
+            wisdomPlusAdjustment = finalCharacter.attributes[2].adjustment;
+        };
+    
+        if (finalCharacter.attributes[3].adjustment > 0) {
+            dexterityPlusAdjustment = `+${finalCharacter.attributes[3].adjustment}`;        
+        } else {
+            dexterityPlusAdjustment = finalCharacter.attributes[3].adjustment;
+        };
+    
+        if (finalCharacter.attributes[4].adjustment > 0) {
+            constitutionPlusAdjustment = `+${finalCharacter.attributes[4].adjustment}`;        
+        } else {
+            constitutionPlusAdjustment = finalCharacter.attributes[4].adjustment;
+        };
+    
+        if (finalCharacter.attributes[5].adjustment > 0) {
+            charismaPlusAdjustment = `+${finalCharacter.attributes[5].adjustment}`;        
+        } else {
+            charismaPlusAdjustment = finalCharacter.attributes[5].adjustment;
+        };
+    
+
         let characterInfo =  document.querySelector("#character-info");
         // let hpProgressBar = document.querySelector.("#
         characterInfo.innerHTML = `
@@ -64,12 +108,12 @@ export default class Character {
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Attributes</legend>
                 <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>Attribute: </span><span class='character-display-attributes-scores'>Score: </span><span class='character-display-attributes-scores-adj'>Adj: </span></h4>
-                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[0].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[0].adjustment}</span></h4>
-                <h4 id='char-intelligence' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[1].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[1].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[1].adjustment}</span></h4>
-                <h4 id='char-wisdom' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[2].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[2].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[2].adjustment}</span></h4>
-                <h4 id='char-dexterity' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[3].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[3].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[3].adjustment}</span></h4>
-                <h4 id='char-constitution' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[4].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[4].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[4].adjustment}</span></h4>
-                <h4 id='char-charisma' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[5].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[5].score}</span><span class='character-display-attributes-scores-adj'>${finalCharacter.attributes[5].adjustment}</span></h4>
+                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[0].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score}</span><span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span></h4>
+                <h4 id='char-intelligence' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[1].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[1].score}</span><span class='character-display-attributes-scores-adj'>${intelligencePlusAdjustment}</span></h4>
+                <h4 id='char-wisdom' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[2].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[2].score}</span><span class='character-display-attributes-scores-adj'>${wisdomPlusAdjustment}</span></h4>
+                <h4 id='char-dexterity' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[3].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[3].score}</span><span class='character-display-attributes-scores-adj'>${dexterityPlusAdjustment}</span></h4>
+                <h4 id='char-constitution' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[4].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[4].score}</span><span class='character-display-attributes-scores-adj'>${constitutionPlusAdjustment}</span></h4>
+                <h4 id='char-charisma' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[5].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[5].score}</span><span class='character-display-attributes-scores-adj'>${charismaPlusAdjustment}</span></h4>
             </fieldset>
         </div>
 
