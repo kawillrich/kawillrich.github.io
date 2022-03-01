@@ -904,8 +904,16 @@ function selectLevelOneMageSpells() {
           let checkedcount = 0;
           for (let i = 0; i < mageFirstLevelSpells.length; i++) {
             checkedcount += (mageFirstLevelSpells[i].checked) ? 1 : 0;
+            console.log(checkedcount);
+            let updatedCheckedSpells = document.querySelector('.first-level-selected-spells');
+            updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
+            `
           }
           if (checkedcount > limit) {
+            checkedcount = limit;
+            let updatedCheckedSpells2 = document.querySelector('.first-level-selected-spells');
+            updatedCheckedSpells2.textContent = `You have selected ${checkedcount} spell(s)     
+            `
             //console.log("You can select maximum of " + limit + " spell(s).");
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
