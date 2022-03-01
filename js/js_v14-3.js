@@ -990,8 +990,6 @@ function selectLevelOneMageSpells() {
           }
           if (checkedcount > limit) {
             checkedcount = limit;
-
-            //console.log("You can select maximum of " + limit + " spell(s).");
             let updatedCheckedSpells2 = document.querySelector('.third-level-selected-spells');
             updatedCheckedSpells2.textContent = `You have selected ${checkedcount} spell(s)     
             `
@@ -1145,9 +1143,15 @@ function selectLevelOneClericSpells() {
           let checkedcount = 0;
           for (let i = 0; i < clericFirstLevelSpells.length; i++) {
             checkedcount += (clericFirstLevelSpells[i].checked) ? 1 : 0;
+            let updatedCheckedSpells = document.querySelector('.first-level-selected-spells-cleric');
+            updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
+            `
           }
           if (checkedcount > limit) {
-            console.log("You can select maximum of " + limit + " spell(s).");
+            checkedcount = limit;
+            let updatedCheckedSpells2 = document.querySelector('.first-level-selected-spells-cleric');
+            updatedCheckedSpells2.textContent = `You have selected ${checkedcount} spell(s)     
+            `
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }
@@ -1176,9 +1180,15 @@ function selectLevelOneClericSpells() {
           let checkedcount = 0;
           for (let i = 0; i < clericSecondLevelSpells.length; i++) {
             checkedcount += (clericSecondLevelSpells[i].checked) ? 1 : 0;
+            let updatedCheckedSpells = document.querySelector('.second-level-selected-spells-cleric');
+            updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
+            `
           }
           if (checkedcount > limit) {
-            console.log("You can select maximum of " + limit + " spell(s).");
+            checkedcount = limit;
+            let updatedCheckedSpells2 = document.querySelector('.second-level-selected-spells-cleric');
+            updatedCheckedSpells2.textContent = `You have selected ${checkedcount} spell(s)     
+            `            
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }
@@ -1210,9 +1220,15 @@ function selectLevelOneClericSpells() {
           let checkedcount = 0;
           for (let i = 0; i < clericThirdLevelSpells.length; i++) {
             checkedcount += (clericThirdLevelSpells[i].checked) ? 1 : 0;
+            let updatedCheckedSpells = document.querySelector('.third-level-selected-spells-cleric');
+            updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
+            `
           }
           if (checkedcount > limit) {
-            console.log("You can select maximum of " + limit + " spell(s).");
+            checkedcount = limit;
+            let updatedCheckedSpells2 = document.querySelector('.third-level-selected-spells-cleric');
+            updatedCheckedSpells2.textContent = `You have selected ${checkedcount} spell(s)     
+            `
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }

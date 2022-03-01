@@ -47,7 +47,7 @@ let acolyte = new ClericLevels (
         "Second Level Cleric Spells": [],
         "Third Level Cleric Spells": [],
     },
-    [8, 8, 8], 
+    [3, 3, 3], 
     {
         "Skeleton": 7,
         "Zombie": 9,
