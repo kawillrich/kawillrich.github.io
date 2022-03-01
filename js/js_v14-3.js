@@ -904,7 +904,6 @@ function selectLevelOneMageSpells() {
           let checkedcount = 0;
           for (let i = 0; i < mageFirstLevelSpells.length; i++) {
             checkedcount += (mageFirstLevelSpells[i].checked) ? 1 : 0;
-            console.log(checkedcount);
             let updatedCheckedSpells = document.querySelector('.first-level-selected-spells');
             updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
             `
@@ -943,9 +942,17 @@ function selectLevelOneMageSpells() {
           let checkedcount = 0;
           for (let i = 0; i < mageSecondLevelSpells.length; i++) {
             checkedcount += (mageSecondLevelSpells[i].checked) ? 1 : 0;
+            let updatedCheckedSpells = document.querySelector('.second-level-selected-spells');
+            updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
+            `
           }
           if (checkedcount > limit) {
+            checkedcount = limit;
+
             //console.log("You can select maximum of " + limit + " spell(s).");
+            let updatedCheckedSpells2 = document.querySelector('.second-level-selected-spells');
+            updatedCheckedSpells2.textContent = `You have selected ${checkedcount} spell(s)     
+            `
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }
@@ -977,9 +984,17 @@ function selectLevelOneMageSpells() {
           let checkedcount = 0;
           for (let i = 0; i < mageThirdLevelSpells.length; i++) {
             checkedcount += (mageThirdLevelSpells[i].checked) ? 1 : 0;
+            let updatedCheckedSpells = document.querySelector('.third-level-selected-spells');
+            updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
+            `
           }
           if (checkedcount > limit) {
+            checkedcount = limit;
+
             //console.log("You can select maximum of " + limit + " spell(s).");
+            let updatedCheckedSpells2 = document.querySelector('.third-level-selected-spells');
+            updatedCheckedSpells2.textContent = `You have selected ${checkedcount} spell(s)     
+            `
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }
