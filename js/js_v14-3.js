@@ -26,9 +26,8 @@ import { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetl
 
 //inventory imports
 import Inventory from './inventory-class-v1.js';
-import { raynardsCoin, farmersNote, noItem , eloisesRing, torch } from './inventory-class-v1.js';
-// import { raynardsCoin1, farmersNote1, noItem1 , eloisesRing1 } from './inventory-array-v1.js';
-import * as inventory from './inventory-array-v1.js';
+import { raynardsCoin, farmersNote, noItem , eloisesRing, torch, backPack, holySymbol, holyWater, smallHammer, ironSpikes, garlic, grapplingHook, lantern, mirrorHandSized, oil, poleWooden, 
+    rationsIron, rationsStandard, rope,     sackSmall, sackLarge, stakesAndMallet, thievesTools, tinderBox, waterskin, wine, wolfsbane } from './inventory-class-v1.js';
 
 //class-level-imports
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from './character-class-levels/fighter-level-class.js';

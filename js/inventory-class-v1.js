@@ -38,4 +38,5 @@ let waterskin = new Inventory("Waterskin (1 quart)","Used for storing water",0,5
 let wine = new Inventory("Wine (1 quart)","One quart of wine",0,30,1);
 let wolfsbane = new Inventory("Wolfsbane (1 bunch)","One bunch of wolvesbane to repel lycanthrops",0,0,10);
 
-export { raynardsCoin, farmersNote, noItem , eloisesRing, torch };
+export { raynardsCoin, farmersNote, noItem , eloisesRing, torch, backPack, holySymbol, holyWater, smallHammer, ironSpikes, garlic, grapplingHook, lantern, mirrorHandSized, oil, poleWooden, 
+rationsIron, rationsStandard, rope,     sackSmall, sackLarge, stakesAndMallet, thievesTools, tinderBox, waterskin, wine, wolfsbane };
