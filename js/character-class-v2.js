@@ -23,7 +23,7 @@ import { smallWolf, wolf1, wolf2, goblin, goblin1, goblin2, noMonster, fireBeetl
 //exports Character class for other module access
 
 export default class Character {
-    constructor(name, specialty, armor, weapon, inventory1, inventory2, inventory3, enchantedItem, achievements, characterImage) {
+    constructor(name, specialty, armor, weapon, inventory1, inventory2, inventory3, enchantedItem, achievements, characterImage, treasure) {
         this.name = name;
         this.specialty = specialty;
         this.armor = armor;
@@ -34,6 +34,7 @@ export default class Character {
         this.enchantedItem = enchantedItem;
         this.achievements = achievements;
         this.characterImage = characterImage; 
+        this.treasure = treasure;
         
     };
 
