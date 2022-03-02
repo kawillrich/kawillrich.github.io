@@ -899,6 +899,13 @@ function showInventory() {
 //populating inventory
 
 function selectInventory() {
+    let startChapter = function() {
+        let getInventoryElement = document.querySelector(".hide-inventory-container");
+        getInventoryElement.classList.remove('show-inventory-container');
+    }
+
+    let submitBuyingItems = document.querySelector('#buy-items');
+    submitBuyingItems.addEventListener('click', startChapter, false);
 
     if (finalCharacter.treasure >= 0) {
 
