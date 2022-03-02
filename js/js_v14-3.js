@@ -863,10 +863,24 @@ function showInventory() {
         let getULInventory = document.querySelector('.inventory-list');
         getULInventory.appendChild(newItemList);
         let getNewLI = document.querySelectorAll('.inventory-list li');
-        getNewLI[i].classList.add(`item${i}`);
+        
+
+
+
+        let classifiedName = totalItems[i].name.split(" ").join("-").toLowerCase();
+        let commaRemovedClassifiedName = classifiedName.split(",").join("-");
+        let parensRemovedClassifiedName = commaRemovedClassifiedName.split(")").join("");
+        let parensRightRemoved = parensRemovedClassifiedName.split("(").join("");
+        let apostropheRemoved = parensRightRemoved.split("(").join("");
+
+
+        getNewLI[i].classList.add(`item-${apostropheRemoved}`);
         let updateNewLI = document.querySelectorAll('.inventory-list li');
         let addNewLITextContent = document.createTextNode(totalItems[i].name);
         updateNewLI[i].appendChild(addNewLITextContent);
+
+        let addNewInputNumber = document.createElement('input');
+        addNewLITextContent
 
 
         console.log(newItemList);
