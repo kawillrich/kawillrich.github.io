@@ -816,14 +816,14 @@ function beginChapterTwo() {
         pickMageSpells();
     } else if (finalCharacter.specialty.name === 'Cleric') {
         pickClericSpells();
-    }
+    } else {
 
     showInventory();
 
     console.log(finalCharacter);
     let JSONcharacter = JSON.stringify(finalCharacter);
     //console.log(JSONcharacter);
-
+}
     finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment;
     finalCharacter.specialty.maxHealthPoints = finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment;
     // finalCharacter.weapon.damage = finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment;
@@ -853,26 +853,25 @@ function beginChapterTwo() {
 }; 
 
 function showInventory() {
+    alert('Purchase your inventory')
+
     let totalItems = [torch, backPack, holySymbol, holyWater, smallHammer, ironSpikes, garlic, grapplingHook, lantern, mirrorHandSized, oil, poleWooden, 
         rationsIron, rationsStandard, rope, sackSmall, sackLarge, stakesAndMallet, thievesTools, tinderBox, waterskin, wine, wolfsbane];
    
 
     for (let i = 0; i < totalItems.length; i++) {       
+        
         let newItemList = document.createElement('li');
         
         let getULInventory = document.querySelector('.inventory-list');
         getULInventory.appendChild(newItemList);
         let getNewLI = document.querySelectorAll('.inventory-list li');
         
-
-
-
         let classifiedName = totalItems[i].name.split(" ").join("-").toLowerCase();
         let commaRemovedClassifiedName = classifiedName.split(",").join("-");
         let parensRemovedClassifiedName = commaRemovedClassifiedName.split(")").join("");
         let parensRightRemoved = parensRemovedClassifiedName.split("(").join("");
-        let apostropheRemoved = parensRightRemoved.split("(").join("");
-
+        let apostropheRemoved = parensRightRemoved.split("'").join("");
 
         getNewLI[i].classList.add(`item-${apostropheRemoved}`);
         let updateNewLI = document.querySelectorAll('.inventory-list li');
@@ -892,7 +891,6 @@ function showInventory() {
     };
     // console.log(newItemUnorderedList);
 
-    alert('Purchase your supplies');
     let showInventory = document.querySelector('.hide-inventory-container');
     showInventory.classList.add('show-inventory-container');
     selectInventory();
@@ -901,6 +899,7 @@ function showInventory() {
 //populating inventory
 
 function selectInventory() {
+
     if (finalCharacter.treasure >= 0) {
 
     }
@@ -1146,6 +1145,7 @@ function submitAllMageSpells() {
         // END  
         let showPickSpellsButton = document.querySelector('.hide-mage-container');
         showPickSpellsButton.classList.remove('show-mage-spells');
+        showInventory();
 }
     
 function pickClericSpells() {
@@ -1379,6 +1379,8 @@ function submitAllClericSpells() {
 
     let showPickSpellsButton = document.querySelector('.hide-cleric-container');
     showPickSpellsButton.classList.remove('show-cleric-spells');
+
+    showInventory();
 
     
 }
