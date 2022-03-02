@@ -129,7 +129,7 @@ export default class Character {
         let inventoryStatus = document.querySelector('#normal-equipment-list');
         inventoryStatus.innerHTML = `<p id="normal-equipment-list"></p>`;
 
-
+        //populating normal-equipment tab
 
         for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
             let updateInventory = document.querySelector('#normal-equipment-list');
@@ -139,8 +139,6 @@ export default class Character {
     //confirms to attack monsters and populates monster-info section
 
     confirmAttack(monsterOne, monsterTwo) {
-        // console.log(monsterOne);
-        // console.log(monsterTwo);
                
        
 //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------

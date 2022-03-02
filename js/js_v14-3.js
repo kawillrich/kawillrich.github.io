@@ -853,17 +853,46 @@ function beginChapterTwo() {
 }; 
 
 function showInventory() {
+    let totalItems = [torch, backPack, holySymbol, holyWater, smallHammer, ironSpikes, garlic, grapplingHook, lantern, mirrorHandSized, oil, poleWooden, 
+        rationsIron, rationsStandard, rope, sackSmall, sackLarge, stakesAndMallet, thievesTools, tinderBox, waterskin, wine, wolfsbane];
+   
+
+    for (let i = 0; i < totalItems.length; i++) {       
+        let newItemList = document.createElement('li');
+        
+        let getULInventory = document.querySelector('.inventory-list');
+        getULInventory.appendChild(newItemList);
+        let getNewLI = document.querySelectorAll('.inventory-list li');
+        getNewLI[i].classList.add(`item${i}`);
+        let updateNewLI = document.querySelectorAll('.inventory-list li');
+        let addNewLITextContent = document.createTextNode(totalItems[i].name);
+        updateNewLI[i].appendChild(addNewLITextContent);
+
+
+        console.log(newItemList);
+        // let newItemTextNode = document.createTextNode(totalItems[i].name);
+        // let newItemClass = document.querySelector("".item)
+        // newItemList.appendChild(newItemTextNode);
+        // newItemUnorderedList.appendChild(newItemList);
+        
+    };
+    // console.log(newItemUnorderedList);
+
     alert('Purchase your supplies');
     let showInventory = document.querySelector('.hide-inventory-container');
     showInventory.classList.add('show-inventory-container');
     selectInventory();
 }
 
+//populating inventory
+
 function selectInventory() {
     if (finalCharacter.treasure >= 0) {
 
     }
 };
+
+//end inventory 
 
 function pickMageSpells() {
     alert('Pick Mage Spells');
