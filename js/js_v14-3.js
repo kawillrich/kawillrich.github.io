@@ -903,10 +903,16 @@ function showInventory() {
     console.log(updateNewLIInput);
 
     for (let j = 0; j < updateNewLIInput.length; j++ ) {
+        let stepName = totalItems[j].cost;
         let addNewInputNumber = document.createElement('input');
         addNewInputNumber.setAttribute('type', 'number');
         addNewInputNumber.setAttribute('name', 'inventory-quantity');
         addNewInputNumber.setAttribute('class', 'quantity');
+        addNewInputNumber.setAttribute('min', 0);
+        addNewInputNumber.setAttribute('max', 10);
+        addNewInputNumber.setAttribute('step', stepName);
+
+
 
 
         updateNewLIInput[j].appendChild(addNewInputNumber);
