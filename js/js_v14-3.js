@@ -884,6 +884,8 @@ function showInventory() {
 
         //add newly created class to the <li> node list
         getNewLI[i].classList.add(`item-${apostropheRemoved}`);
+        getNewLI[i].classList.add('inventory-list-item');
+
         let updateNewLI = document.querySelectorAll('.inventory-list li');
         let addNewLITextContent = document.createTextNode(totalItems[i].name);
         updateNewLI[i].appendChild(addNewLITextContent);
@@ -902,9 +904,9 @@ function showInventory() {
 
     for (let j = 0; j < updateNewLIInput.length; j++ ) {
         let addNewInputNumber = document.createElement('input');
-        // addNewInputNumber.setAttribute('type', 'number');
-        // addNewInputNumber.setAttribute('name', 'inventory-quantity');
-        // addNewInputNumber.setAttribute('class', 'quantity');
+        addNewInputNumber.setAttribute('type', 'number');
+        addNewInputNumber.setAttribute('name', 'inventory-quantity');
+        addNewInputNumber.setAttribute('class', 'quantity');
 
 
         updateNewLIInput[j].appendChild(addNewInputNumber);

@@ -475,3 +475,7 @@ span#dragonwarrior {
   display: grid;
   grid-template-rows: auto auto auto;
 }
+
+.inventory-list li {
+  width: 200px;
+}
