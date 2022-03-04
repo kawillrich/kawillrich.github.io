@@ -852,6 +852,8 @@ function beginChapterTwo() {
     talkToRaynardNo.addEventListener('click', startChapterThreeOne, false);
 }; 
 
+//populating inventory
+
 function showInventory() {
     alert('Purchase your inventory')
 
@@ -861,42 +863,63 @@ function showInventory() {
 
     for (let i = 0; i < totalItems.length; i++) {       
         
+        //create <li>
         let newItemList = document.createElement('li');
         
+        //get parent <ul>
         let getULInventory = document.querySelector('.inventory-list');
+
+        //append <li> to the <ul>
         getULInventory.appendChild(newItemList);
+
+        //get entire <li> node list
         let getNewLI = document.querySelectorAll('.inventory-list li');
         
+        //create variable to use as an added class
         let classifiedName = totalItems[i].name.split(" ").join("-").toLowerCase();
         let commaRemovedClassifiedName = classifiedName.split(",").join("-");
         let parensRemovedClassifiedName = commaRemovedClassifiedName.split(")").join("");
         let parensRightRemoved = parensRemovedClassifiedName.split("(").join("");
         let apostropheRemoved = parensRightRemoved.split("'").join("");
 
+        //add newly created class to the <li> node list
         getNewLI[i].classList.add(`item-${apostropheRemoved}`);
         let updateNewLI = document.querySelectorAll('.inventory-list li');
         let addNewLITextContent = document.createTextNode(totalItems[i].name);
         updateNewLI[i].appendChild(addNewLITextContent);
 
+        //create new <input> number-type to be able to select quantity
+
+       
+
+        
+        
+    };
+    // console.log(newItemUnorderedList);
+
+    let updateNewLIInput = document.querySelectorAll('.inventory-list li');
+    console.log(updateNewLIInput);
+
+    for (let j = 0; j < updateNewLIInput.length; j++ ) {
         let addNewInputNumber = document.createElement('input');
-        addNewLITextContent
+        // addNewInputNumber.setAttribute('type', 'number');
+        // addNewInputNumber.setAttribute('name', 'inventory-quantity');
+        // addNewInputNumber.setAttribute('class', 'quantity');
 
 
-        console.log(newItemList);
+        updateNewLIInput[j].appendChild(addNewInputNumber);
+        }
+
         // let newItemTextNode = document.createTextNode(totalItems[i].name);
         // let newItemClass = document.querySelector("".item)
         // newItemList.appendChild(newItemTextNode);
         // newItemUnorderedList.appendChild(newItemList);
-        
-    };
-    // console.log(newItemUnorderedList);
 
     let showInventory = document.querySelector('.hide-inventory-container');
     showInventory.classList.add('show-inventory-container');
     selectInventory();
 }
 
-//populating inventory
 
 function selectInventory() {
     let startChapter = function() {
