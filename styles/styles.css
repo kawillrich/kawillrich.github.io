@@ -476,6 +476,19 @@ span#dragonwarrior {
   grid-template-rows: auto auto auto;
 }
 
-.inventory-list li {
-  width: 200px;
+.inventory-input-container {
+  display: grid;
+  grid-template-columns: 60px 250px;
+}
+
+.quantity {
+  display: block;
+  height: 0.9em;
+  margin: 4px;
+}
+
+.inventory-list-item {
+  display: block;
+  height: 1em;
+  margin: 6px;
 }

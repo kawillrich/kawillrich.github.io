@@ -903,6 +903,7 @@ function showInventory() {
     console.log(updateNewLIInput);
 
     for (let j = 0; j < updateNewLIInput.length; j++ ) {
+        let inputItemList = document.querySelector('.input-list');
         let stepName = totalItems[j].cost;
         let addNewInputNumber = document.createElement('input');
         addNewInputNumber.setAttribute('type', 'number');
@@ -915,7 +916,7 @@ function showInventory() {
 
 
 
-        updateNewLIInput[j].appendChild(addNewInputNumber);
+        inputItemList.appendChild(addNewInputNumber);
         }
 
         // let newItemTextNode = document.createTextNode(totalItems[i].name);
