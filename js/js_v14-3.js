@@ -912,6 +912,7 @@ function showInventory() {
         addNewInputNumber.setAttribute('min', 0);
         addNewInputNumber.setAttribute('max', 10);
         addNewInputNumber.setAttribute('step', stepName);
+        // addNewInputNumber.setAttribute('placeholder', 0);
 
 
 
@@ -919,10 +920,6 @@ function showInventory() {
         inputItemList.appendChild(addNewInputNumber);
         }
 
-        // let newItemTextNode = document.createTextNode(totalItems[i].name);
-        // let newItemClass = document.querySelector("".item)
-        // newItemList.appendChild(newItemTextNode);
-        // newItemUnorderedList.appendChild(newItemList);
 
     let showInventory = document.querySelector('.hide-inventory-container');
     showInventory.classList.add('show-inventory-container');
