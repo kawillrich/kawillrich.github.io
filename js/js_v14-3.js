@@ -928,49 +928,60 @@ function showInventory() {
     availableGoldPieces.textContent = `${finalCharacter.treasure}`;
 
 
+    let submitBuyingItems = document.querySelector('#buy-items');
+    submitBuyingItems.addEventListener('click', function () {
+        selectInventory(addingTotalInventoryCost())}, false);
 
 
-    selectInventory();
+    // selectInventory();
 
 
 
 }
 
 function addingTotalInventoryCost(e) {
-    console.log(`adding total. Max Gold ${finalCharacter.treasure}`);
-    // console.log(e);
+    let maxGold = finalCharacter.treasure;
     let sum = 0;
     let getValues = document.querySelectorAll('.quantity');
     for (let i = 0; i < getValues.length; i++) {
         sum += parseInt(getValues[i].value);
     }
 
-    if (sum > finalCharacter.treasure) {
+    if (sum > maxGold) {
         alert("You don't have enough gold.");
         e.target.value -= e.target.step;
         sum -= e.target.step;
 
     }
 
-    let totalGoldPieces = document.querySelector('#total-gold');
-    totalGoldPieces.textContent = `${finalCharacter.treasure}`;
 
     let availableGoldPieces = document.querySelector('#available-gold');
-    availableGoldPieces.textContent = `${finalCharacter.treasure - sum}`;
+    
+    let remainingGold = maxGold - sum;
+    
+    availableGoldPieces.textContent = `${remainingGold}`;
+
+    return remainingGold;
+
+    
+
+       
 }
 
-function selectInventory() {
+function selectInventory(finalGold) {
+    
+    finalCharacter.treasure = finalGold; 
+
     let startChapter = function() {
         let getInventoryElement = document.querySelector(".hide-inventory-container");
         getInventoryElement.classList.remove('show-inventory-container');
-    }
 
-    let submitBuyingItems = document.querySelector('#buy-items');
-    submitBuyingItems.addEventListener('click', startChapter, false);
-
-    if (finalCharacter.treasure >= 0) {
+        console.log(finalCharacter.treasure);
 
     }
+
+    startChapter();
+
 };
 
 //end inventory 
