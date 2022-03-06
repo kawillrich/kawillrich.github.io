@@ -57,6 +57,8 @@ import { continualLightCleric, cureBlindnessCleric, cureDiseaseCleric, growthOfA
 let adventurerImage = 4;
 let charAchievements = {};  
 let attributes = [];
+let supplies = [torch, backPack, holySymbol, holyWater, smallHammer, ironSpikes, garlic, grapplingHook, lantern, mirrorHandSized, oil, poleWooden, 
+    rationsIron, rationsStandard, rope, sackSmall, sackLarge, stakesAndMallet, thievesTools, tinderBox, waterskin, wine, wolfsbane];
 
 let strength = {
   name: "Strength",
@@ -893,11 +895,12 @@ function showInventory() {
     };
 
     let updateNewLIInput = document.querySelectorAll('.inventory-list li');
-    console.log(updateNewLIInput);
+    // console.log(updateNewLIInput);
 
     for (let j = 0; j < updateNewLIInput.length; j++ ) {
         let inputItemList = document.querySelector('.input-list');
         let stepName = totalItems[j].cost;
+        let suppliesName = supplies[j].name;
         let addNewInputNumber = document.createElement('input');
         addNewInputNumber.setAttribute('type', 'number');
         addNewInputNumber.setAttribute('name', 'inventory-quantity');
@@ -906,6 +909,7 @@ function showInventory() {
         addNewInputNumber.setAttribute('max', 999);
         addNewInputNumber.setAttribute('step', stepName);
         addNewInputNumber.setAttribute('value', 0);
+        addNewInputNumber.setAttribute('data-name', suppliesName)
 
         inputItemList.appendChild(addNewInputNumber);
         }
@@ -951,40 +955,39 @@ function addingTotalInventoryCost(e) {
         alert("You don't have enough gold.");
         e.target.value -= e.target.step;
         sum -= e.target.step;
+    }
 
+    let availableGoldPieces = document.querySelector('#available-gold');    
+    let remainingGold = maxGold - sum;    
+    availableGoldPieces.textContent = `${remainingGold}`;
+    return remainingGold;       
+}
+
+function selectInventory(finalGold) {    
+    finalCharacter.treasure = finalGold; 
+
+    let purchasedSupplies =  document.querySelectorAll('.quantity');
+    for (let i = 0; i < purchasedSupplies.length; i++ ) {
+        let updatedSuppliesName = purchasedSupplies[i].getAttribute('data-name');
+        if (purchasedSupplies[i].value > 0) {
+        // let updatedSuppliesValue = purchasedSupplies[i].data-name;
+        console.log(updatedSuppliesName);
+        finalCharacter.inventory.push(updatedSuppliesName);
+        console.log(finalCharacter.inventory);
+        }
     }
 
 
-    let availableGoldPieces = document.querySelector('#available-gold');
-    
-    let remainingGold = maxGold - sum;
-    
-    availableGoldPieces.textContent = `${remainingGold}`;
-
-    return remainingGold;
-
-    
-
-       
-}
-
-function selectInventory(finalGold) {
-    
-    finalCharacter.treasure = finalGold; 
 
     let startChapter = function() {
         let getInventoryElement = document.querySelector(".hide-inventory-container");
         getInventoryElement.classList.remove('show-inventory-container');
-
         console.log(finalCharacter.treasure);
         let updateCharTreasure = document.querySelector('#char-treasure');
         updateCharTreasure.innerHTML = `
         <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure}</span></h4>        
-        `
-    
-    }
-
-
+        `;
+        }
     startChapter();
 
 };
@@ -999,8 +1002,6 @@ function pickMageSpells() {
     selectLevelOneMageSpells();
     selectLevelTwoMageSpells();
     selectLevelThreeMageSpells()
-
-
 };
 
 function selectLevelOneMageSpells() {
@@ -1014,14 +1015,13 @@ function selectLevelOneMageSpells() {
             checkedcount += (mageFirstLevelSpells[i].checked) ? 1 : 0;
             let updatedCheckedSpells = document.querySelector('.first-level-selected-spells');
             updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
-            `
+            `;
           }
           if (checkedcount > limit) {
             checkedcount = limit;
             let updatedCheckedSpells2 = document.querySelector('.first-level-selected-spells');
             updatedCheckedSpells2.textContent = `You have selected ${checkedcount} spell(s)     
-            `
-            //console.log("You can select maximum of " + limit + " spell(s).");
+            `;
             alert("You can select maximum of " + limit + " spell(s).");
             this.checked = false;
           }
