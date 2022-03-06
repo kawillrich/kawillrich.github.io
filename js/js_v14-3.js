@@ -920,6 +920,16 @@ function showInventory() {
     for (let k = 0; k < selectingInputValues.length; k++) {
     selectingInputValues[k].addEventListener('click', function(e) {addingTotalInventoryCost(e)}, false);
     }
+
+    let totalGoldPieces = document.querySelector('#total-gold');
+    totalGoldPieces.textContent = `${finalCharacter.treasure}`;
+
+    let availableGoldPieces = document.querySelector('#available-gold');
+    availableGoldPieces.textContent = `${finalCharacter.treasure}`;
+
+
+
+
     selectInventory();
 
 
@@ -941,6 +951,12 @@ function addingTotalInventoryCost(e) {
         sum -= e.target.step;
 
     }
+
+    let totalGoldPieces = document.querySelector('#total-gold');
+    totalGoldPieces.textContent = `${finalCharacter.treasure}`;
+
+    let availableGoldPieces = document.querySelector('#available-gold');
+    availableGoldPieces.textContent = `${finalCharacter.treasure - sum}`;
 }
 
 function selectInventory() {
