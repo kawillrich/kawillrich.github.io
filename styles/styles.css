@@ -479,17 +479,18 @@ span#dragonwarrior {
 .inventory-input-container {
   display: grid;
   grid-template-columns: 100px 250px;
+  /* column-gap: 10px; */
 }
 
 .quantity {
   display: block;
   height: 0.9em;
-  margin: 4px;
+  margin: 4px 0px 0px 0px;
   /* width: 50px; */
 }
 
 .inventory-list-item {
   display: block;
   height: 1em;
-  margin: 6px;
+  margin: 6px 0px 0px 0px;
 }

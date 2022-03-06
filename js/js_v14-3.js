@@ -889,15 +889,8 @@ function showInventory() {
         let updateNewLI = document.querySelectorAll('.inventory-list li');
         let addNewLITextContent = document.createTextNode(totalItems[i].name);
         updateNewLI[i].appendChild(addNewLITextContent);
-
-        //create new <input> number-type to be able to select quantity
-
-       
-
-        
         
     };
-    // console.log(newItemUnorderedList);
 
     let updateNewLIInput = document.querySelectorAll('.inventory-list li');
     console.log(updateNewLIInput);
@@ -910,12 +903,9 @@ function showInventory() {
         addNewInputNumber.setAttribute('name', 'inventory-quantity');
         addNewInputNumber.setAttribute('class', 'quantity');
         addNewInputNumber.setAttribute('min', 0);
-        addNewInputNumber.setAttribute('max', 10);
+        addNewInputNumber.setAttribute('max', 999);
         addNewInputNumber.setAttribute('step', stepName);
-        // addNewInputNumber.setAttribute('placeholder', 0);
-
-
-
+        addNewInputNumber.setAttribute('value', 0);
 
         inputItemList.appendChild(addNewInputNumber);
         }
@@ -923,9 +913,35 @@ function showInventory() {
 
     let showInventory = document.querySelector('.hide-inventory-container');
     showInventory.classList.add('show-inventory-container');
+
+    
+    let selectingInputValues = document.querySelectorAll('.quantity');
+    
+    for (let k = 0; k < selectingInputValues.length; k++) {
+    selectingInputValues[k].addEventListener('click', function(e) {addingTotalInventoryCost(e)}, false);
+    }
     selectInventory();
+
+
+
 }
 
+function addingTotalInventoryCost(e) {
+    console.log(`adding total. Max Gold ${finalCharacter.treasure}`);
+    // console.log(e);
+    let sum = 0;
+    let getValues = document.querySelectorAll('.quantity');
+    for (let i = 0; i < getValues.length; i++) {
+        sum += parseInt(getValues[i].value);
+    }
+
+    if (sum > finalCharacter.treasure) {
+        alert("You don't have enough gold.");
+        e.target.value -= e.target.step;
+        sum -= e.target.step;
+
+    }
+}
 
 function selectInventory() {
     let startChapter = function() {
