@@ -915,7 +915,7 @@ function showInventory() {
         
         let addNewButtonIncrease = document.createElement('button');
         
-        addNewButtonIncrease.setAttribute('class', `quantity-increase`);
+        addNewButtonIncrease.setAttribute('class', `quantity-increase quantity-change`);
         addNewButtonIncrease.setAttribute('data-name', `increase-${buttonApostropheRemoved}`)
         addNewButtonIncrease.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`)
         addNewButtonIncrease.setAttribute('data-cost', costName)
@@ -923,7 +923,7 @@ function showInventory() {
 
         let addNewButtonDecrease = document.createElement('button');
 
-        addNewButtonDecrease.setAttribute('class', `quantity-decrease`);
+        addNewButtonDecrease.setAttribute('class', `quantity-decrease quantity-change`);
         addNewButtonDecrease.setAttribute('data-name', `decrease-${buttonApostropheRemoved}`)
         addNewButtonDecrease.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`)
         addNewButtonDecrease.setAttribute('data-cost', costName)
@@ -957,7 +957,7 @@ function showInventory() {
     showInventory.classList.add('show-inventory-container');
 
     
-    let selectingInputValues = document.querySelectorAll('.quantity');
+    let selectingInputValues = document.querySelectorAll('.quantity-change');
     
     for (let k = 0; k < selectingInputValues.length; k++) {
     selectingInputValues[k].addEventListener('click', function(e) {addingTotalInventoryCost(e)}, false);
@@ -984,21 +984,19 @@ function showInventory() {
 function addingTotalInventoryCost(e) {
     let maxGold = finalCharacter.treasure;
     let sum = 0;
-    let getValues = document.querySelectorAll('.quantity');
-    for (let i = 0; i < getValues.length; i++) {
-        sum += parseInt(getValues[i].value);
-    }
-
-    if (sum > maxGold) {
-        alert("You don't have enough gold.");
-            e.target.value -= e.target.step;
-            sum -= e.target.step;
-            
-            
-    } 
-//    else {
-    //         sum = 0;
+    let getValues = document.querySelectorAll('.quantity-change');
+    console.log(e.target.dataset.cost);
+    // for (let i = 0; i < getValues.length; i++) {
+    //     sum += parseInt(getValues[i].value);
     // }
+
+    // if (sum > maxGold) {
+    //     alert("You don't have enough gold.");
+    //         e.target.value -= e.target.step;
+    //         sum -= e.target.step;
+            
+            
+    // } 
     
 
     let availableGoldPieces = document.querySelector('#available-gold');    
