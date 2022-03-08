@@ -478,7 +478,7 @@ span#dragonwarrior {
 
 .inventory-input-container {
   display: grid;
-  grid-template-columns: 100px 250px;
+  grid-template-columns: 100px 300px;
   /* column-gap: 10px; */
 }
 
@@ -492,19 +492,30 @@ span#dragonwarrior {
 .inventory-list-item {
   display: block;
   height: 1em;
-  margin: 6px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 
 .quantity-increase {
   width: 2em;
-  height: 2em;
+  height: 1.5em;
   text-align: center;
   margin: auto;
 }
 
 .quantity-decrease {
   width: 2em;
-  height: 2em;
+  height: 1.5em;
   text-align: center;
   margin: auto;
+}
+
+.current-item-qty {
+  background-color: white;
+  display: block;
+  height: 1em;
+  margin: 10px 0px 0px 0px;
+}
+
+.input-list {
+  list-style-type: none;
 }

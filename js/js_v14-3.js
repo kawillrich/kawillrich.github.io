@@ -889,7 +889,7 @@ function showInventory() {
         getNewLI[i].classList.add('inventory-list-item');
 
         let updateNewLI = document.querySelectorAll('.inventory-list li');
-        let addNewLITextContent = document.createTextNode(totalItems[i].name);
+        let addNewLITextContent = document.createTextNode(`${totalItems[i].name} (${totalItems[i].cost} gp)`);
         updateNewLI[i].appendChild(addNewLITextContent);
         
     };
@@ -907,7 +907,7 @@ function showInventory() {
         let buttonParensRightRemoved = buttonParensRemovedClassifiedName.split("(").join("");
         let buttonApostropheRemoved = buttonParensRightRemoved.split("'").join("");
 
-
+        let inputListUl = document.querySelector('input-list')
 
         let inputItemList = document.querySelectorAll('.inventory-list-item');
         let suppliesName = supplies[j].name;
@@ -927,13 +927,30 @@ function showInventory() {
         addNewButtonDecrease.setAttribute('data-cost', costName)
         addNewButtonDecrease.textContent = "-";
 
+       
+        
 
         inputItemList[j].prepend(addNewButtonIncrease);
         inputItemList[j].prepend(addNewButtonDecrease);
 
 
+        let newItemQty = document.createElement('li');
+        newItemQty.setAttribute('class', 'current-item-qty');
+        newItemQty.textContent = "0";
+        
+        //get parent <ul>
+        let getQtyULInventory = document.querySelector('.input-list');
 
+        //append <li> to the <ul>
+        getQtyULInventory.appendChild(newItemQty);
 
+        //get entire <li> node list
+
+    }
+    let getNewLIQty = document.querySelectorAll('.new-item-qty');
+
+        for (let k = 0; k < getNewLIQty.length; k++) {
+            getNewLIQty[k].textContent = 0;
         }
 
 
