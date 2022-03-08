@@ -953,16 +953,15 @@ function addingTotalInventoryCost(e) {
 
     if (sum > maxGold) {
         alert("You don't have enough gold.");
-        if (e === undefined) {
             e.target.value -= e.target.step;
             sum -= e.target.step;
-            if (sum < 0) {
-                sum = 0;
-            }
-        } else {
-            sum = 0;
-        }
-    }
+            
+            
+    } 
+//    else {
+    //         sum = 0;
+    // }
+    
 
     let availableGoldPieces = document.querySelector('#available-gold');    
     let remainingGold = maxGold - sum;    
