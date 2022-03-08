@@ -494,3 +494,17 @@ span#dragonwarrior {
   height: 1em;
   margin: 6px 0px 0px 0px;
 }
+
+.quantity-increase {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  margin: auto;
+}
+
+.quantity-decrease {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  margin: auto;
+}

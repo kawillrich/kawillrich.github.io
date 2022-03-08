@@ -897,21 +897,43 @@ function showInventory() {
     let updateNewLIInput = document.querySelectorAll('.inventory-list li');
     // console.log(updateNewLIInput);
 
-    for (let j = 0; j < updateNewLIInput.length; j++ ) {
-        let inputItemList = document.querySelector('.input-list');
-        let stepName = totalItems[j].cost;
-        let suppliesName = supplies[j].name;
-        let addNewInputNumber = document.createElement('input');
-        addNewInputNumber.setAttribute('type', 'number');
-        addNewInputNumber.setAttribute('name', 'inventory-quantity');
-        addNewInputNumber.setAttribute('class', 'quantity');
-        addNewInputNumber.setAttribute('min', 0);
-        addNewInputNumber.setAttribute('max', 999);
-        addNewInputNumber.setAttribute('step', stepName);
-        addNewInputNumber.setAttribute('value', 0);
-        addNewInputNumber.setAttribute('data-name', suppliesName)
+    //creating increase and decrease buttons (number input type doesn't work because you can hold it down)
 
-        inputItemList.appendChild(addNewInputNumber);
+    for (let j = 0; j < updateNewLIInput.length; j++ ) {
+
+        let buttonClassifiedName = supplies[j].name.split(" ").join("-").toLowerCase();
+        let buttonCommaRemovedClassifiedName = buttonClassifiedName.split(",").join("-");
+        let buttonParensRemovedClassifiedName = buttonCommaRemovedClassifiedName.split(")").join("");
+        let buttonParensRightRemoved = buttonParensRemovedClassifiedName.split("(").join("");
+        let buttonApostropheRemoved = buttonParensRightRemoved.split("'").join("");
+
+
+
+        let inputItemList = document.querySelectorAll('.inventory-list-item');
+        let suppliesName = supplies[j].name;
+        let costName = supplies[j].cost;
+        
+        let addNewButtonIncrease = document.createElement('button');
+        
+        addNewButtonIncrease.setAttribute('class', `quantity-increase`);
+        addNewButtonIncrease.setAttribute('data-name', `increase-${buttonApostropheRemoved}`)
+        addNewButtonIncrease.setAttribute('data-cost', costName)
+        addNewButtonIncrease.textContent = "+";
+
+        let addNewButtonDecrease = document.createElement('button');
+
+        addNewButtonDecrease.setAttribute('class', `quantity-decrease`);
+        addNewButtonDecrease.setAttribute('data-name', `decrease-${buttonApostropheRemoved}`)
+        addNewButtonDecrease.setAttribute('data-cost', costName)
+        addNewButtonDecrease.textContent = "-";
+
+
+        inputItemList[j].prepend(addNewButtonIncrease);
+        inputItemList[j].prepend(addNewButtonDecrease);
+
+
+
+
         }
 
 
