@@ -984,25 +984,33 @@ function showInventory() {
 function addingTotalInventoryCost(e) {
     let maxGold = finalCharacter.treasure;
     let sum = 0;
-    let getValues = document.querySelectorAll('.quantity-change');
-    console.log(e.target.dataset.cost);
-    // for (let i = 0; i < getValues.length; i++) {
-    //     sum += parseInt(getValues[i].value);
-    // }
+    let getValues = document.querySelectorAll('.current-item-qty');
 
-    // if (sum > maxGold) {
-    //     alert("You don't have enough gold.");
-    //         e.target.value -= e.target.step;
-    //         sum -= e.target.step;
+    console.log(e.target.dataset.cost);
+
+    let parsedTargetCost = parseInt(e.target.dataset.cost);
+
+    let updatedAvailableGold = document.querySelector('#available-gold');
+
+    updatedAvailableGold.textContent -= parsedTargetCost;
+    // console.log(availableGold);
+
+    if (updatedAvailableGold.textContent < 0 ) {
+        alert("You don't have enough gold.");
+
+        updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) + parsedTargetCost; 
+
+            // e.target.value -= e.target.step;
+            // sum -= e.target.step;
             
             
-    // } 
+    } 
     
 
-    let availableGoldPieces = document.querySelector('#available-gold');    
-    let remainingGold = maxGold - sum;    
-    availableGoldPieces.textContent = `${remainingGold}`;
-    return remainingGold;       
+    // let availableGoldPieces = document.querySelector('#available-gold');    
+    // let remainingGold = maxGold - sum;    
+    // availableGoldPieces.textContent = `${remainingGold}`;
+    // return remainingGold;       
 }
 
 function selectInventory(finalGold) {    
