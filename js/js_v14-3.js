@@ -862,7 +862,7 @@ function showInventory() {
     let totalItems = [torch, backPack, holySymbol, holyWater, smallHammer, ironSpikes, garlic, grapplingHook, lantern, mirrorHandSized, oil, poleWooden, 
         rationsIron, rationsStandard, rope, sackSmall, sackLarge, stakesAndMallet, thievesTools, tinderBox, waterskin, wine, wolfsbane];
    
-
+    //creating items to populate into supply page
     for (let i = 0; i < totalItems.length; i++) {       
         
         //create <li>
@@ -879,7 +879,7 @@ function showInventory() {
         
         //create variable to use as an added class
         let classifiedName = totalItems[i].name.split(" ").join("-").toLowerCase();
-        let commaRemovedClassifiedName = classifiedName.split(",").join("-");
+        let commaRemovedClassifiedName = classifiedName.split(",").join("");
         let parensRemovedClassifiedName = commaRemovedClassifiedName.split(")").join("");
         let parensRightRemoved = parensRemovedClassifiedName.split("(").join("");
         let apostropheRemoved = parensRightRemoved.split("'").join("");
@@ -902,7 +902,7 @@ function showInventory() {
     for (let j = 0; j < updateNewLIInput.length; j++ ) {
 
         let buttonClassifiedName = supplies[j].name.split(" ").join("-").toLowerCase();
-        let buttonCommaRemovedClassifiedName = buttonClassifiedName.split(",").join("-");
+        let buttonCommaRemovedClassifiedName = buttonClassifiedName.split(",").join("");
         let buttonParensRemovedClassifiedName = buttonCommaRemovedClassifiedName.split(")").join("");
         let buttonParensRightRemoved = buttonParensRemovedClassifiedName.split("(").join("");
         let buttonApostropheRemoved = buttonParensRightRemoved.split("'").join("");
@@ -917,6 +917,7 @@ function showInventory() {
         
         addNewButtonIncrease.setAttribute('class', `quantity-increase`);
         addNewButtonIncrease.setAttribute('data-name', `increase-${buttonApostropheRemoved}`)
+        addNewButtonIncrease.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`)
         addNewButtonIncrease.setAttribute('data-cost', costName)
         addNewButtonIncrease.textContent = "+";
 
@@ -924,19 +925,17 @@ function showInventory() {
 
         addNewButtonDecrease.setAttribute('class', `quantity-decrease`);
         addNewButtonDecrease.setAttribute('data-name', `decrease-${buttonApostropheRemoved}`)
+        addNewButtonDecrease.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`)
         addNewButtonDecrease.setAttribute('data-cost', costName)
         addNewButtonDecrease.textContent = "-";
-
-       
-        
 
         inputItemList[j].prepend(addNewButtonIncrease);
         inputItemList[j].prepend(addNewButtonDecrease);
 
-
         let newItemQty = document.createElement('li');
         newItemQty.setAttribute('class', 'current-item-qty');
-        newItemQty.textContent = "0";
+        newItemQty.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`)
+        newItemQty.textContent = 0;
         
         //get parent <ul>
         let getQtyULInventory = document.querySelector('.input-list');
