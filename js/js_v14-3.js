@@ -993,7 +993,9 @@ function addingTotalInventoryCost(e) {
         // console.log(availableGold);
         let getSiblingQty = document.querySelector(`li[data-link="${e.target.dataset.link}"]`);
         // alert(getSiblingQty);
-        console.log(getSiblingQty.textContent += e.target.dataset.cost);
+        let parsedTotal = parseInt(getSiblingQty.textContent);
+        getSiblingQty.textContent = parsedTotal += e.target.dataset.cost;
+        // console.log(parseInt(getSiblingQty.textContent) += e.target.dataset.cost);
         if (e.target.classList.contains("quantity-increase") && updatedAvailableGold.textContent < 0 ) {
             alert("You don't have enough gold.");
             updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) + parsedTargetCost; 
