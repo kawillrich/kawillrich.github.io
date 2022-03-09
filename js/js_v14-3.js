@@ -986,25 +986,31 @@ function addingTotalInventoryCost(e) {
     let sum = 0;
     let getValues = document.querySelectorAll('.current-item-qty');
 
-    console.log(e.target.dataset.cost);
-
-    let parsedTargetCost = parseInt(e.target.dataset.cost);
-
-    let updatedAvailableGold = document.querySelector('#available-gold');
-
-    updatedAvailableGold.textContent -= parsedTargetCost;
-    // console.log(availableGold);
-
-    if (updatedAvailableGold.textContent < 0 ) {
-        alert("You don't have enough gold.");
-
-        updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) + parsedTargetCost; 
-
-            // e.target.value -= e.target.step;
-            // sum -= e.target.step;
-            
-            
+    if (e.target.classList.contains("quantity-increase")) { 
+        let parsedTargetCost = parseInt(e.target.dataset.cost);
+        let updatedAvailableGold = document.querySelector('#available-gold');
+        updatedAvailableGold.textContent -= parsedTargetCost;
+        // console.log(availableGold);
+    
+        if (e.target.classList.contains("quantity-increase") && updatedAvailableGold.textContent < 0 ) {
+            alert("You don't have enough gold.");
+            updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) + parsedTargetCost; 
+        } 
     } 
+    
+    if (e.target.classList.contains("quantity-decrease")) {
+        let parsedTargetCost2 = parseInt(e.target.dataset.cost);
+        let updatedAvailableGold2 = document.querySelector('#available-gold');
+        let parsedUpdatedGold = updatedAvailableGold2.textContent;
+        let parsedUpdate2 = parseInt(parsedUpdatedGold);
+        updatedAvailableGold2.textContent = parsedUpdate2 + parsedTargetCost2;
+
+        if (e.target.classList.contains("quantity-decrease") && updatedAvailableGold2.textContent > maxGold )
+            alert("Can't increase");
+            updatedAvailableGold2.textContent = maxGold;
+            //updatedAvailableGold2.textContent = parseInt(updatedAvailableGold2.textContent) + parsedTargetCost2; 
+
+    }
     
 
     // let availableGoldPieces = document.querySelector('#available-gold');    
