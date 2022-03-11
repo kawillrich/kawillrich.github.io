@@ -934,7 +934,8 @@ function showInventory() {
 
         let newItemQty = document.createElement('li');
         newItemQty.setAttribute('class', 'current-item-qty');
-        newItemQty.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`)
+        newItemQty.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`);
+        newItemQty.setAttribute('data-step', 0);
         newItemQty.textContent = 0;
         
         //get parent <ul>
@@ -981,20 +982,40 @@ function showInventory() {
 
 }
 
+let sumSupplies = 0;
+
 function addingTotalInventoryCost(e) {
     let maxGold = finalCharacter.treasure;
-    let sum = 0;
-    let getValues = document.querySelectorAll('.current-item-qty');
+    // let getValues = document.querySelectorAll('.current-item-qty');
+
+    let getSiblingQty = document.querySelector(`li[data-link="${e.target.dataset.link}"]`);
+    console.log(getSiblingQty);
+    getSiblingQty.setAttribute('data-step', sumSupplies++ );
+
+    let siblingStep = parseInt(getSiblingQty.dataset.step);
+
+    
+
 
     if (e.target.classList.contains("quantity-increase")) { 
         let parsedTargetCost = parseInt(e.target.dataset.cost);
         let updatedAvailableGold = document.querySelector('#available-gold');
         updatedAvailableGold.textContent -= parsedTargetCost;
-        // console.log(availableGold);
-        let getSiblingQty = document.querySelector(`li[data-link="${e.target.dataset.link}"]`);
-        // alert(getSiblingQty);
-        let parsedTotal = parseInt(getSiblingQty.textContent);
-        getSiblingQty.textContent = parsedTotal += e.target.dataset.cost;
+
+            
+        
+        siblingStep ++;
+        // let gettingAvailGold = document.querySelector('#available-gold');
+        // let parsingGettingGold = parseInt(gettingAvailGold.textContent);
+
+
+
+        getSiblingQty.textContent = `${siblingStep}`;
+
+
+
+        // let parsedTotal = parseInt(getSiblingQty.textContent);
+        // getSiblingQty.textContent = parsedTotal + e.target.dataset.cost;
         // console.log(parseInt(getSiblingQty.textContent) += e.target.dataset.cost);
         if (e.target.classList.contains("quantity-increase") && updatedAvailableGold.textContent < 0 ) {
             alert("You don't have enough gold.");
@@ -1003,6 +1024,9 @@ function addingTotalInventoryCost(e) {
     } 
     
     if (e.target.classList.contains("quantity-decrease")) {
+
+
+        
         let parsedTargetCost2 = parseInt(e.target.dataset.cost);
         let updatedAvailableGold2 = document.querySelector('#available-gold');
         let parsedUpdatedGold = updatedAvailableGold2.textContent;
