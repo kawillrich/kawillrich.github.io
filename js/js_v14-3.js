@@ -1048,13 +1048,14 @@ function addingTotalInventoryCost(e) {
 function selectInventory() {    
     // finalCharacter.treasure = finalGold; 
 
-    let purchasedSupplies =  document.querySelectorAll('.quantity');
+    let purchasedSupplies =  document.querySelectorAll('.current-item-qty');
     for (let i = 0; i < purchasedSupplies.length; i++ ) {
-        let updatedSuppliesName = purchasedSupplies[i].getAttribute('data-name');
-        if (purchasedSupplies[i].value > 0) {
+        let updatedSuppliesName = purchasedSupplies[i].getAttribute('data-value');
+        let parsedSuppliesValue = purchasedSupplies[i].getAttribute('data-qty');
+        if (parsedSuppliesValue > 0) {
         // let updatedSuppliesValue = purchasedSupplies[i].data-name;
         console.log(updatedSuppliesName);
-        finalCharacter.inventory.push(updatedSuppliesName);
+        finalCharacter.inventory.push(eval(updatedSuppliesName));
         console.log(finalCharacter.inventory);
         }
     }
