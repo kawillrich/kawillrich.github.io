@@ -4,21 +4,16 @@
   <title>Dungeon Crawl</title>
   <link href="styles/styles.css" type="text/css" rel="stylesheet"/>
   <body>
-    <div id="container">
-      
+    <div id="container">      
       <div id="header">
         <h1>Welcome to Dungeon Crawl: <span>Ruins of the Obsidian Dragon</span></h1><br />
         <h6><em>version: 18</em></h6>      
-      </div>
-      
+      </div>      
       <div id="character-info">
         <div id="canvas-area">
           <canvas id="canvas2"></canvas>
         </div>
-
-      </div><hr>
-      
-      
+      </div><hr>     
       <div id="dialogue">
           Introduction:  
           Welcome, Traveler! 
@@ -41,42 +36,32 @@
           <form ></form>      
           <label for="charactername">Character Name: </label><input type="text" maxlength="20" id="character-name" placeholder="20 letters max" autofocus>
           <input type="submit" id="submit-name" value="Submit Name" autofocus><br><br>
-
         <div id='confirm-start'>        
         </div>    
-      </div>
-      
-      <div id= "fight-module"></div>
-      
+      </div>      
+      <div id= "fight-module"></div>      
       <div id = "monster-info" class="minimized">
         <div id="canvas-area-monster" class='minimized'>
           <canvas id='canvas3' class='minimized'></canvas>
         </div>
       </div>       
     </div>
-
     <div id='container-2' class="minimized">
       <div id='player-sheet' class="minimized">
         <fieldset class='char-inventory-sheet'>
           <legend class='player-dashboard'>Player Sheet</legend>
-
           <div class="tab">
             <button id="normal-equipment-link" class="tablinks" >Normal Equipment</button>
             <button id="magical-equipment-link" class="tablinks" >Magical Equipment</button>
             <button id="spells-link" class="tablinks" >Spells</button>
             <button id="treasure-link" class="tablinks">Treasure</button>
-          </div>
-          
-          <div id="normal-equipment" class="tabContent">
-            
+          </div>          
+          <div id="normal-equipment" class="tabContent">            
             <p id="normal-equipment-list"></p>
-          </div>
-          
-          <div id="magical-equipment" class="tabContent">
-            
+          </div>          
+          <div id="magical-equipment" class="tabContent">            
             <p id="magical-equipment-list">Magic Missle Scroll</p> 
-          </div>
-          
+          </div>          
           <div id="spells" class="tabContent">
             <div class="tabContent-container">
               <div class="spells-container">
@@ -93,25 +78,15 @@
               </div>  
             </div>
           </div>
-
-          <div id="treasure" class="tabContent">
-            
+          <div id="treasure" class="tabContent">            
             <p id="treasure"></p> 
-          </div>
-
-          
-
-          
-        </fieldset>
-
-        
-
+          </div>     
+        </fieldset>       
       </div>
       <div id='map' class="minimized">
           <fieldset class='char-inventory-sheet'>
             <legend class='player-dashboard'>Map</legend>
-              <canvas id="canvas4" class="minimized" height="500px" width="500px"></canvas>
-          
+              <canvas id="canvas4" class="minimized" height="500px" width="500px"></canvas>          
           </fieldset>
         </div>
       </div>
@@ -120,20 +95,15 @@
           <h1>Supplies</h1>
           <h3>Total Gold Pieces: <span id="total-gold"></span></h3>
           <h3>Available Gold Pieces: <span id="available-gold"></span></h3>
-
-          <div class="inventory-input-container">            
-          
+          <div class="inventory-input-container">       
             <div class="input-item-item">
               <ul class="input-list"></ul>
             </div>
-            
             <div class="li-item-item">
               <ul class="inventory-list"></ul>
-            </div>
-            
+            </div>            
           </div>
           <input type="button" value="Buy Items" id="buy-items">
-
         </div>
 <!-- END INVENTORY -->
 
@@ -484,7 +454,6 @@
                   Effect: One air-breathing creature
               </span>
             </div>
-
           </div>
 
           <!-- <input type="button" value="Submit" id="submit-spells-2"> -->

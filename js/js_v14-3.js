@@ -1056,11 +1056,24 @@ function selectInventory() {
         // let updatedSuppliesValue = purchasedSupplies[i].data-name;
         console.log(updatedSuppliesName);
         finalCharacter.inventory.push(eval(updatedSuppliesName));
+        
         console.log(finalCharacter.inventory);
         }
     }
 
+    let showInventory = () => {
+        let accumulator = "";
 
+        for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
+            accumulator += `${finalCharacter.inventory[i].name} <br>`;            
+        }
+        return accumulator;
+    }
+
+    let updatedInventory = document.querySelector('#normal-equipment-list');
+    updatedInventory.innerHTML = showInventory();
+
+    showInventory();
 
     let startChapter = function() {
         let getInventoryElement = document.querySelector(".hide-inventory-container");
