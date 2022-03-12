@@ -1006,15 +1006,7 @@ function addingTotalInventoryCost(e) {
 
         updatedAvailableGold.textContent -= parsedTargetCost;
 
-
-        
-        // siblingStep ++;
-
-
-
         getSiblingQty.textContent = `${parsedRetrievedLink + 1}`;
-
-
 
         if (e.target.classList.contains("quantity-increase") && updatedAvailableGold.textContent < 0 ) {
             alert("You don't have enough gold.");
@@ -1025,29 +1017,35 @@ function addingTotalInventoryCost(e) {
 
         } 
     } 
+
+    if (e.target.classList.contains("quantity-decrease")) { 
+        let parsedTargetCost = parseInt(e.target.dataset.cost);
+        let updatedAvailableGold = document.querySelector('#available-gold');
+
+        getSiblingQty.setAttribute('data-qty', parsedRetrievedLink - 1 );
+
+        let parsedUpdatedAvailGold = parseInt(updatedAvailableGold.textContent);
+        console.log(parsedUpdatedAvailGold);
+
+        parsedUpdatedAvailGold += parsedTargetCost;
+
+        updatedAvailableGold.textContent = parsedUpdatedAvailGold;
+
+        getSiblingQty.textContent = `${parsedRetrievedLink - 1}`;
+
+        if (e.target.classList.contains("quantity-decrease") && updatedAvailableGold.textContent > maxGold ) {
+            // alert("You don't have enough gold.");
+
+            
+
+            parsedUpdatedAvailGold.textContent = parseInt(updatedAvailableGold.textContent) - parsedTargetCost; 
+
+            getSiblingQty.setAttribute('data-qty', parsedRetrievedLink );
+            getSiblingQty.textContent = parsedRetrievedLink;
+
+        } 
+    } 
     
-    if (e.target.classList.contains("quantity-decrease")) {
-
-
-        
-        let parsedTargetCost2 = parseInt(e.target.dataset.cost);
-        let updatedAvailableGold2 = document.querySelector('#available-gold');
-        let parsedUpdatedGold = updatedAvailableGold2.textContent;
-        let parsedUpdate2 = parseInt(parsedUpdatedGold);
-        updatedAvailableGold2.textContent = parsedUpdate2 + parsedTargetCost2;
-
-        if (e.target.classList.contains("quantity-decrease") && updatedAvailableGold2.textContent > maxGold )
-            alert("Can't increase");
-            updatedAvailableGold2.textContent = maxGold;
-            updatedAvailableGold2.textContent = parseInt(updatedAvailableGold2.textContent) + parsedTargetCost2; 
-
-    }
-    
-
-    // let availableGoldPieces = document.querySelector('#available-gold');    
-    // let remainingGold = maxGold - sum;    
-    // availableGoldPieces.textContent = `${remainingGold}`;
-    // return remainingGold;       
 }
 
 function selectInventory(finalGold) {    
