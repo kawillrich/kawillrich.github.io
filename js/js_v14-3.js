@@ -887,6 +887,7 @@ function showInventory() {
         //add newly created class to the <li> node list
         getNewLI[i].classList.add(`item-${apostropheRemoved}`);
         getNewLI[i].classList.add('inventory-list-item');
+        getNewLI[i].setAttribute('data-value', totalItems[i].dataName);
 
         let updateNewLI = document.querySelectorAll('.inventory-list li');
         let addNewLITextContent = document.createTextNode(`${totalItems[i].name} (${totalItems[i].cost} gp)`);
@@ -936,6 +937,8 @@ function showInventory() {
         newItemQty.setAttribute('class', 'current-item-qty');
         newItemQty.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`);
         newItemQty.setAttribute('data-qty', 0);
+        newItemQty.setAttribute('data-value', supplies[j].dataName);
+
         newItemQty.textContent = 0;
         
         //get parent <ul>
@@ -972,8 +975,7 @@ function showInventory() {
 
 
     let submitBuyingItems = document.querySelector('#buy-items');
-    submitBuyingItems.addEventListener('click', function () {
-        selectInventory(addingTotalInventoryCost())}, false);
+    submitBuyingItems.addEventListener('click', selectInventory, false);
 
 
     // selectInventory();
@@ -981,8 +983,6 @@ function showInventory() {
 
 
 }
-
-let sumSupplies = 0;
 
 function addingTotalInventoryCost(e) {
     let maxGold = finalCharacter.treasure;
@@ -1039,11 +1039,14 @@ function addingTotalInventoryCost(e) {
 
         } 
     } 
-    
+
+    let finalTreasureAmount = document.querySelector('#available-gold');
+    finalCharacter.treasure = parseInt(finalTreasureAmount.textContent); 
+    console.log(finalCharacter.treasure);
 }
 
-function selectInventory(finalGold) {    
-    finalCharacter.treasure = finalGold; 
+function selectInventory() {    
+    // finalCharacter.treasure = finalGold; 
 
     let purchasedSupplies =  document.querySelectorAll('.quantity');
     for (let i = 0; i < purchasedSupplies.length; i++ ) {
