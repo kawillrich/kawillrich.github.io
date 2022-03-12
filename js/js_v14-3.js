@@ -935,7 +935,7 @@ function showInventory() {
         let newItemQty = document.createElement('li');
         newItemQty.setAttribute('class', 'current-item-qty');
         newItemQty.setAttribute('data-link', `change-qty-${buttonApostropheRemoved}`);
-        newItemQty.setAttribute('data-step', 0);
+        newItemQty.setAttribute('data-qty', 0);
         newItemQty.textContent = 0;
         
         //get parent <ul>
@@ -989,10 +989,11 @@ function addingTotalInventoryCost(e) {
     // let getValues = document.querySelectorAll('.current-item-qty');
 
     let getSiblingQty = document.querySelector(`li[data-link="${e.target.dataset.link}"]`);
-    console.log(getSiblingQty);
-    getSiblingQty.setAttribute('data-step', sumSupplies++ );
+    let retrievedDataLink = getSiblingQty.dataset.qty;
+    let parsedRetrievedLink = parseInt(retrievedDataLink);
+    // console.log(parsedRetrievedLink);
 
-    let siblingStep = parseInt(getSiblingQty.dataset.step);
+    // let siblingStep = parseInt(getSiblingQty.dataset.qty);
 
     
 
@@ -1000,26 +1001,28 @@ function addingTotalInventoryCost(e) {
     if (e.target.classList.contains("quantity-increase")) { 
         let parsedTargetCost = parseInt(e.target.dataset.cost);
         let updatedAvailableGold = document.querySelector('#available-gold');
+
+        getSiblingQty.setAttribute('data-qty', parsedRetrievedLink + 1 );
+
         updatedAvailableGold.textContent -= parsedTargetCost;
 
-            
+
         
-        siblingStep ++;
-        // let gettingAvailGold = document.querySelector('#available-gold');
-        // let parsingGettingGold = parseInt(gettingAvailGold.textContent);
+        // siblingStep ++;
 
 
 
-        getSiblingQty.textContent = `${siblingStep}`;
+        getSiblingQty.textContent = `${parsedRetrievedLink + 1}`;
 
 
 
-        // let parsedTotal = parseInt(getSiblingQty.textContent);
-        // getSiblingQty.textContent = parsedTotal + e.target.dataset.cost;
-        // console.log(parseInt(getSiblingQty.textContent) += e.target.dataset.cost);
         if (e.target.classList.contains("quantity-increase") && updatedAvailableGold.textContent < 0 ) {
             alert("You don't have enough gold.");
             updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) + parsedTargetCost; 
+
+            getSiblingQty.setAttribute('data-qty', parsedRetrievedLink );
+            getSiblingQty.textContent = parsedRetrievedLink;
+
         } 
     } 
     
@@ -1036,7 +1039,7 @@ function addingTotalInventoryCost(e) {
         if (e.target.classList.contains("quantity-decrease") && updatedAvailableGold2.textContent > maxGold )
             alert("Can't increase");
             updatedAvailableGold2.textContent = maxGold;
-            //updatedAvailableGold2.textContent = parseInt(updatedAvailableGold2.textContent) + parsedTargetCost2; 
+            updatedAvailableGold2.textContent = parseInt(updatedAvailableGold2.textContent) + parsedTargetCost2; 
 
     }
     
