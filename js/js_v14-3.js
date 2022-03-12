@@ -1011,7 +1011,6 @@ function addingTotalInventoryCost(e) {
         if (e.target.classList.contains("quantity-increase") && updatedAvailableGold.textContent < 0 ) {
             alert("You don't have enough gold.");
             updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) + parsedTargetCost; 
-
             getSiblingQty.setAttribute('data-qty', parsedRetrievedLink );
             getSiblingQty.textContent = parsedRetrievedLink;
 
@@ -1034,12 +1033,7 @@ function addingTotalInventoryCost(e) {
         getSiblingQty.textContent = `${parsedRetrievedLink - 1}`;
 
         if (e.target.classList.contains("quantity-decrease") && updatedAvailableGold.textContent > maxGold ) {
-            // alert("You don't have enough gold.");
-
-            
-
-            parsedUpdatedAvailGold.textContent = parseInt(updatedAvailableGold.textContent) - parsedTargetCost; 
-
+            updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) - parsedTargetCost; 
             getSiblingQty.setAttribute('data-qty', parsedRetrievedLink );
             getSiblingQty.textContent = parsedRetrievedLink;
 
