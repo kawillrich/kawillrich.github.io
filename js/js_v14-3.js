@@ -198,6 +198,22 @@ let selectedSpecialty = '';
 
 //asks if you are ready to start game
 
+
+
+
+function checkUsername() {
+    let checkName = document.querySelector('#character-name');
+    let checkNameLength = checkName.value;
+    console.log('checking name');
+    let usernameMessage = document.querySelector('#username-message');
+    if (checkNameLength.length < 3) {
+        usernameMessage.textContent = "Name must be at least 3 characters.";
+    } else {
+        usernameMessage = "";
+        charNameSubmitted();
+    }
+}
+
 function charNameSubmitted() {
     var confirmStart = document.querySelector("#confirm-start");
     submittedCharName = document.querySelector("#character-name").value;
@@ -789,7 +805,7 @@ function logCharSpecialty() {
 };
         
 let submittedCharName = document.querySelector("#submit-name");
-submittedCharName.addEventListener('click', charNameSubmitted, false);
+submittedCharName.addEventListener('click', checkUsername, false);
 
 //confirms your specialty and continues the gameplay
 
