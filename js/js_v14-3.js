@@ -213,9 +213,10 @@ function rollAttributes() {
     document.querySelector('#submit-name').classList.add("disabled");
     
     let getCharName = document.querySelector('#dialogue');
-    getCharName.innerHTML = `
-    Welcome, ${submittedCharName}, please roll your Attribute Scores. The maximum score is 18 and the lowest score is 7. Select 'Confirm' when done.<br>
+    getCharName.textContent = `
+    Welcome, ${submittedCharName}, please roll your Attribute Scores. The maximum score is 18 and the lowest score is 7. Select 'Confirm' when done.`
     
+    getCharName.innerHTML += `
 
     <div id="stats"><h3><b>Attributes</b></h3>
         <div class="ability-score-grid-container">            
@@ -1065,6 +1066,8 @@ function selectInventory() {
         let accumulator = "";
 
         for (let i = 0; i < finalCharacter.inventory.length; i++ ) {
+
+
             accumulator += `${finalCharacter.inventory[i].name} <br>`;            
         }
         return accumulator;
