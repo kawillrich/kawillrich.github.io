@@ -924,7 +924,7 @@ function startGame() {
   };
 
   let updatedInventory = document.querySelector("#normal-equipment-list");
-  updatedInventory.innerHTML = showInventory();
+  updatedInventory.innerHTML = `${showInventory()}`;
 
   showInventory();
   render();
@@ -1501,7 +1501,7 @@ function selectInventory() {
     return accumulator;
   };
 
-  let updatedInventory = document.querySelector("#normal-equipment-list");
+  //   let updatedInventory = document.querySelector("#normal-equipment-list");
   //   updatedInventory.innerHTML = showInventory();
 
   showInventory();

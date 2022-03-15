@@ -291,8 +291,8 @@ export default class Character {
         </div>             
         `;
 
-    let inventoryStatus = document.querySelector("#normal-equipment-list");
-    inventoryStatus.innerHTML = `<p id="normal-equipment-list"></p>`;
+    // let inventoryStatus = document.querySelector("#normal-equipment-list");
+    // inventoryStatus.innerHTML = `<p id="normal-equipment-list"></p>`;
 
     //populating normal-equipment tab
 
