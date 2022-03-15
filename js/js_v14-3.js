@@ -1472,19 +1472,19 @@ function selectInventory() {
 
   for (let i = 0; i < finalCharacter.inventory.length; i++) {
     let addedItemSpan = document.createElement("span");
-    addedItemSpan.innerHTML = `<span class="item-tooltiptext">Desc: ${finalCharacter.inventory[i].description}<br>
+    addedItemSpan.innerHTML = `<span class="supply-item-tooltiptext">Desc: ${finalCharacter.inventory[i].description}<br>
           Qty: ${finalCharacter.inventory[i].qty}<br>
           </span>
           `;
 
     let newID = finalCharacter.inventory[i].dataName;
     addedItemSpan.setAttribute("id", newID);
-    addedItemSpan.classList.add("item-tooltip");
+    addedItemSpan.classList.add("supply-item-tooltip");
     let itemSpanBreak = document.createElement("br");
     addedItemSpan.appendChild(itemSpanBreak);
     let newTextName = finalCharacter.inventory[i].name;
     let addedItemTextNode = document.createTextNode(newTextName);
-    addedItemSpan.appendChild(addedItemTextNode);
+    addedItemSpan.prepend(addedItemTextNode);
 
     let itemList = document.querySelector("#normal-equipment-list");
     itemList.appendChild(addedItemSpan);
