@@ -509,10 +509,6 @@ function rollAttributes() {
             <div class="ability-score-grid-item ability-score-number-grid-item" id="charisma-stat"></div>
             <div class="ability-score-grid-item ability-score-title-grid-item">Charisma</div>
             <div class="ability-score-grid-item ability-score-adjustment-grid-item" id="charisma-stat-adjustment">0</div>
-
-
-
-            
            
         </div>
     </div>
@@ -699,10 +695,6 @@ function confirmingAttributes() {
         </div>
         <button id="beginAdventure" class="alignment-description">Continue</button>
     </div>
-
-
-    
-    
     `;
 
   let lawfulSelected = document.querySelector("#lawful");
@@ -828,6 +820,7 @@ function startGame() {
 
   let newStartGameDialogue = document.querySelector("#character-info");
   newStartGameDialogue.style.backgroundImage = "none";
+
   newStartGameDialogue.innerHTML = `
         <div id='character-stats'>
             <fieldset class='char-info-module'>
@@ -1034,7 +1027,7 @@ function logCharSpecialty() {
     finalCharacter.specialty = warrior;
     finalCharacter.armor = leatherArmor;
     finalCharacter.weapon = shortSword;
-    finalCharacter.inventory = [torch];
+    finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 2;
     finalCharacter.characterUpdate();
@@ -1044,7 +1037,7 @@ function logCharSpecialty() {
     finalCharacter.specialty = highMage;
     finalCharacter.armor = robes;
     finalCharacter.weapon = fists;
-    finalCharacter.inventory = [torch];
+    finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 3;
     finalCharacter.specialty.characterLevel.specialtySkills[
@@ -1063,7 +1056,7 @@ function logCharSpecialty() {
     finalCharacter.specialty = dragonWarrior;
     finalCharacter.armor = obsidianPlateMail;
     finalCharacter.weapon = obsidianSword;
-    finalCharacter.inventory = [torch];
+    finalCharacter.inventory = [];
     finalCharacter.enchantedItem = eloisesRing;
     finalCharacter.characterImage = 0;
     finalCharacter.specialty.characterLevel.specialtySkills[
@@ -1082,7 +1075,7 @@ function logCharSpecialty() {
     finalCharacter.specialty = thief;
     finalCharacter.armor = leatherArmor;
     finalCharacter.weapon = shortBow;
-    finalCharacter.inventory = [torch];
+    finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 1;
     finalCharacter.characterUpdate();
@@ -1092,7 +1085,7 @@ function logCharSpecialty() {
     finalCharacter.specialty = cleric;
     finalCharacter.armor = leatherArmor;
     finalCharacter.weapon = mace;
-    finalCharacter.inventory = [torch];
+    finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 4;
     finalCharacter.characterUpdate();
@@ -1102,7 +1095,7 @@ function logCharSpecialty() {
     finalCharacter.specialty = dwarf;
     finalCharacter.armor = leatherArmor;
     finalCharacter.weapon = normalSword;
-    finalCharacter.inventory = [torch];
+    finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 6;
     finalCharacter.characterUpdate();
@@ -1112,7 +1105,7 @@ function logCharSpecialty() {
     finalCharacter.specialty = elf;
     finalCharacter.armor = leatherArmor;
     finalCharacter.weapon = shortBow;
-    finalCharacter.inventory = [torch];
+    finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 5;
     finalCharacter.specialty.characterLevel.specialtySkills[
@@ -1131,7 +1124,7 @@ function logCharSpecialty() {
     finalCharacter.specialty = halfling;
     finalCharacter.armor = leatherArmor;
     finalCharacter.weapon = shortBow;
-    finalCharacter.inventory = [torch, dagger];
+    finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 7;
     finalCharacter.characterUpdate();
@@ -1197,8 +1190,7 @@ function beginChapterTwo() {
     for breakfast, knowing you must have a good breakfast for the long walk ahead of you.</p>
     <p>After finishing the last of your breakfast, you head down to the main floor of the inn. You see the innkeeper, Raynard, sitting at the counter. You've already paid for 
     one night of sleep, would you like to speak with Raynard on your way out?</p> 
-    <input type="submit" id="talk-raynard-yes" value="Yes"><input type="submit" id="talk-raynard-no" value="No"><br> 
-    
+    <input type="submit" id="talk-raynard-yes" value="Yes"><input type="submit" id="talk-raynard-no" value="No"><br>    
     `;
 
   // let castingSpell = document.querySelector('#cast-spell');
@@ -1268,6 +1260,7 @@ function showInventory() {
     //add newly created class to the <li> node list
     getNewLI[i].classList.add(`item-${apostropheRemoved}`);
     getNewLI[i].classList.add("inventory-list-item");
+    getNewLI[i].classList.add("item-tooltip"); //adding class to start lining up tooltips
     getNewLI[i].setAttribute("data-value", totalItems[i].dataName);
 
     let updateNewLI = document.querySelectorAll(".inventory-list li");
@@ -1475,6 +1468,30 @@ function selectInventory() {
     }
   }
 
+  //start adding inventory tooltips
+
+  for (let i = 0; i < finalCharacter.inventory.length; i++) {
+    let addedItemSpan = document.createElement("span");
+    addedItemSpan.innerHTML = `<span class="item-tooltiptext">Desc: ${finalCharacter.inventory[i].description}<br>
+          Qty: ${finalCharacter.inventory[i].qty}<br>
+          </span>
+          `;
+
+    let newID = finalCharacter.inventory[i].dataName;
+    addedItemSpan.setAttribute("id", newID);
+    addedItemSpan.classList.add("item-tooltip");
+    let itemSpanBreak = document.createElement("br");
+    addedItemSpan.appendChild(itemSpanBreak);
+    let newTextName = finalCharacter.inventory[i].name;
+    let addedItemTextNode = document.createTextNode(newTextName);
+    addedItemSpan.appendChild(addedItemTextNode);
+
+    let itemList = document.querySelector("#normal-equipment-list");
+    itemList.appendChild(addedItemSpan);
+  }
+
+  //end adding inventory tooltips
+
   let showInventory = () => {
     let accumulator = "";
 
@@ -1485,7 +1502,7 @@ function selectInventory() {
   };
 
   let updatedInventory = document.querySelector("#normal-equipment-list");
-  updatedInventory.innerHTML = showInventory();
+  //   updatedInventory.innerHTML = showInventory();
 
   showInventory();
 
