@@ -1413,16 +1413,33 @@ function addingTotalInventoryCost(e) {
 
   if (e.target.classList.contains("quantity-decrease")) {
     let parsedTargetCost = parseInt(e.target.dataset.cost);
-    let updatedAvailableGold = document.querySelector("#available-gold");
 
+    console.log(typeof(parsedTargetCost) + " " + parsedTargetCost);
+    let updatedAvailableGold = document.querySelector("#available-gold"); 
     getSiblingQty.setAttribute("data-qty", parsedRetrievedLink - 1);
+    let numberedUpdatedGold = updatedAvailableGold.textContent;
+    let parsedUpdatedGold = Number(numberedUpdatedGold);
+    console.log(typeof(parsedUpdatedGold) + " " + parsedUpdatedGold);
+    console.log(parsedUpdatedGold + parsedTargetCost);
 
-    updatedAvailableGold.textContent = Number(updatedAvailableGold.textContent) - Number(e.target.dataset.cost);
+    let newTotal = Number(parsedUpdatedGold + parsedTargetCost);
+    console.log(typeof(newTotal) + " " + newTotal);
 
+    updatedAvailableGold.innerHTML = `<span id="available-gold">${newTotal}</span>`;
+    console.log(updatedAvailableGold.textContent);
     getSiblingQty.textContent = `${parsedRetrievedLink - 1}`;
 
+    let totalGoldPiecesContent = document.querySelector('#total-gold');
+    let parsedTotalGold = Number(totalGoldPiecesContent.textContent)
 
-    if (e.target.classList.contains("quantity-decrease") && updatedAvailableGold.textContent > maxGold) {
+    if (e.target.classList.contains("quantity-decrease") && newTotal > parsedTotalGold) {
+      console.log(typeof(newTotal) + " " + newTotal + " newTotal");
+      console.log(typeof(finalCharacter.treasure) + " " + finalCharacter.treasure + "finalCharacter.treasure");
+      
+      alert("Can't do that");
+
+
+
       updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) - parsedTargetCost;
       getSiblingQty.setAttribute("data-qty", parsedRetrievedLink);
       getSiblingQty.textContent = parsedRetrievedLink;
