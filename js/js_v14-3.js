@@ -1417,7 +1417,7 @@ function addingTotalInventoryCost(e) {
 
     getSiblingQty.setAttribute("data-qty", parsedRetrievedLink - 1);
 
-    updatedAvailableGold.textContent -= parsedTargetCost;
+    updatedAvailableGold.textContent = Number(updatedAvailableGold.textContent) - Number(e.target.dataset.cost);
 
     getSiblingQty.textContent = `${parsedRetrievedLink - 1}`;
 
