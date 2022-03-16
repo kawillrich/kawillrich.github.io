@@ -1432,9 +1432,10 @@ function addingTotalInventoryCost(e) {
     let totalGoldPiecesContent = document.querySelector('#total-gold');
     let parsedTotalGold = Number(totalGoldPiecesContent.textContent)
 
-    if (e.target.classList.contains("quantity-decrease") && newTotal > parsedTotalGold) {
+    if ((e.target.classList.contains("quantity-decrease") && newTotal > parsedTotalGold) || (retrievedDataLink -1) < 0) {
+      console.log(typeof(retrievedDataLink) + " " + retrievedDataLink + " targetQty");
       console.log(typeof(newTotal) + " " + newTotal + " newTotal");
-      console.log(typeof(finalCharacter.treasure) + " " + finalCharacter.treasure + "finalCharacter.treasure");
+      console.log(typeof(finalCharacter.treasure) + " " + finalCharacter.treasure + " finalCharacter.treasure");
       
       alert("Can't do that");
 
