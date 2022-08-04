@@ -2921,9 +2921,7 @@ function continueChapterFourTwoOne() {
   finalCharacter.inventory.splice(findRaynardsCoin, 1);
   console.log(findRaynardsCoin);
   console.log(finalCharacter.inventory);
-  document.querySelector(
-    "#normal-equipment-list"
-  ).innerHTML = `<p id="normal-equipment-list"></p>`;
+  document.querySelector("#normal-equipment-list").innerHTML = ``;
 
   for (let i = 0; i < finalCharacter.inventory.length; i++) {
     let giveRaynardsCoin = document.querySelector("#normal-equipment-list");
