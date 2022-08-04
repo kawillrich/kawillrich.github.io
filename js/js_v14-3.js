@@ -2215,8 +2215,35 @@ function talkToRaynard() {
     let raynardsCoinIndex = finalCharacter.inventory.indexOf(raynardsCoin);
     console.log(finalCharacter.inventory);
     alert(`You received ${finalCharacter.inventory[raynardsCoinIndex].name}`);
-    let addItemToInventory = document.querySelector("#normal-equipment-list");
-    addItemToInventory.innerHTML += `${raynardsCoin.name}`;
+    document.querySelector("#normal-equipment-list").innerHTML = ``;
+    //adding tooltip for raynardsCoin
+
+    for (let i = 0; i < finalCharacter.inventory.length; i++) {
+
+      let addedItemSpan = document.createElement("span");
+      addedItemSpan.innerHTML = `<span class="supply-item-tooltiptext">Desc: ${finalCharacter.inventory[i].description}<br>
+            Qty: ${finalCharacter.inventory[i].qty}<br>
+            </span>
+            `;
+
+      let newID = finalCharacter.inventory[i].dataName;
+      addedItemSpan.setAttribute("id", newID);
+      addedItemSpan.classList.add("supply-item-tooltip");
+      let itemSpanBreak = document.createElement("br");
+      addedItemSpan.appendChild(itemSpanBreak);
+      let newTextName = finalCharacter.inventory[i].name;
+      let addedItemTextNode = document.createTextNode(newTextName);
+      addedItemSpan.prepend(addedItemTextNode);
+
+      let itemList = document.querySelector("#normal-equipment-list");
+      
+      itemList.appendChild(addedItemSpan);
+    }
+    //end adding tooltip
+
+
+    // let addItemToInventory = document.querySelector("#normal-equipment-list");
+    // addItemToInventory.innerHTML += `${raynardsCoin.name}`;
   });
   continueChapterThreeOne.addEventListener(
     "click",
@@ -2924,8 +2951,32 @@ function continueChapterFourTwoOne() {
   document.querySelector("#normal-equipment-list").innerHTML = ``;
 
   for (let i = 0; i < finalCharacter.inventory.length; i++) {
-    let giveRaynardsCoin = document.querySelector("#normal-equipment-list");
-    giveRaynardsCoin.innerHTML += `${finalCharacter.inventory[i].name} <br>`;
+
+    //re-adding tooltips to regenerated inventory list//
+    let addedItemSpan = document.createElement("span");
+    addedItemSpan.innerHTML = `<span class="supply-item-tooltiptext">Desc: ${finalCharacter.inventory[i].description}<br>
+          Qty: ${finalCharacter.inventory[i].qty}<br>
+          </span>
+          `;
+
+    let newID = finalCharacter.inventory[i].dataName;
+    addedItemSpan.setAttribute("id", newID);
+    addedItemSpan.classList.add("supply-item-tooltip");
+    let itemSpanBreak = document.createElement("br");
+    addedItemSpan.appendChild(itemSpanBreak);
+    let newTextName = finalCharacter.inventory[i].name;
+    let addedItemTextNode = document.createTextNode(newTextName);
+    addedItemSpan.prepend(addedItemTextNode);
+
+    let itemList = document.querySelector("#normal-equipment-list");
+    itemList.appendChild(addedItemSpan);
+
+    //end re-adding tooltips
+
+
+
+    // let giveRaynardsCoin = document.querySelector("#normal-equipment-list");
+    // giveRaynardsCoin.innerHTML += `${finalCharacter.inventory[i].name} <br>`;
   }
 
   let chapterFourTwoOneDialogue = document.querySelector("#dialogue");
