@@ -739,8 +739,7 @@ function updateAlignmentDescription() {
     updateAlignmentDescElement.innerHTML = `
         Chaotic characters are the opposite of Lawful characters. They believe that life is random, and that chance and 
             luck rule the world. Everything happens by accident and nother can be predicted. Laws are made to be broken, as long as a person can get away with it. It is not important to 
-            keep promises, and lying and telling the truth are both useful. To a Chaotic creature, the individual is the most important of all things. Selfishness is the normal way of 
-            life, and the group is not important.
+            keep promises, and lying and telling the truth are both useful. To a Chaotic creature, the individual is the most important, not the group.
             `;
   }
 }
