@@ -473,6 +473,11 @@ function charNameSubmitted() {
 function rollAttributes() {
   document.querySelector("#submit-name").classList.add("disabled");
 
+  let treasure = (Math.ceil(Math.random() * 15) + 3) * 10;
+  finalCharacter.treasure = treasure;
+  console.log(finalCharacter.treasure);
+
+
   let getCharName = document.querySelector("#dialogue");
   getCharName.textContent = `
     Welcome, ${submittedCharName}, please roll your Attribute Scores. The maximum score is 18 and the lowest score is 7. Select 'Confirm' when done.`;
@@ -541,12 +546,12 @@ function rollAttributes() {
 
   let confirmAttributes = document.querySelector("#confirm-attributes");
   confirmAttributes.addEventListener("click", confirmingAttributes, false);
+
+  
 }
 
 function generateNewAttributes() {
-  let treasure = (Math.ceil(Math.random() * 15) + 3) * 10;
-  finalCharacter.treasure = treasure;
-  console.log(finalCharacter.treasure);
+  
   attributes[0].score = Math.ceil(Math.random() * 12) + 6;
   attributes[1].score = Math.ceil(Math.random() * 12) + 6;
   attributes[2].score = Math.ceil(Math.random() * 12) + 6;
