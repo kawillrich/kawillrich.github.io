@@ -1514,7 +1514,7 @@ function selectInventory() {
     let parsedSuppliesValue = purchasedSupplies[i].getAttribute("data-qty");
     if (parsedSuppliesValue > 0) {
       // let updatedSuppliesValue = purchasedSupplies[i].data-name;
-      console.log(updatedSuppliesName);
+      console.log(updatedSuppliesName, parsedSuppliesValue);
       finalCharacter.inventory.push(eval(updatedSuppliesName));
 
       console.log(finalCharacter.inventory);
@@ -1525,6 +1525,12 @@ function selectInventory() {
 
   for (let i = 0; i < finalCharacter.inventory.length; i++) {
     let addedItemSpan = document.createElement("span");
+    
+    let purchasedSuppliesValue2 = purchasedSupplies[i].getAttribute("data-qty");
+    console.log(purchasedSuppliesValue2);
+
+    finalCharacter.inventory[i].qty = purchasedSuppliesValue2;
+
     addedItemSpan.innerHTML = `<span class="supply-item-tooltiptext">Desc: ${finalCharacter.inventory[i].description}<br>
           Qty: ${finalCharacter.inventory[i].qty}<br>
           </span>
