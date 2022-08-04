@@ -473,8 +473,37 @@ function charNameSubmitted() {
 function rollAttributes() {
   document.querySelector("#submit-name").classList.add("disabled");
 
-  let treasure = (Math.ceil(Math.random() * 15) + 3) * 10;
-  finalCharacter.treasure = treasure;
+  let goldPieces = (Math.ceil(Math.random() * 15) + 3) * 10;
+  finalCharacter.treasure = {
+      gold: {    
+        type: "Gold Pieces",
+        gpValue: 1,
+        quantity: goldPieces   
+      },
+      gems: {    
+        type: "Gems",
+        gpValue: 10,
+        quantity: 0   
+      },
+      electrum: {    
+        type: "Electrum Pieces",
+        gpValue: 2,
+        quantity: 0   
+      },
+      silver: {    
+        type: "Silver Pieces",
+        gpValue: 1,
+        quantity: 0   
+      },
+      copper: {    
+        type: "Copper Pieces",
+        gpValue: 1,
+        quantity: 0   
+      },
+  }
+
+
+
   console.log(finalCharacter.treasure);
 
 
@@ -866,7 +895,7 @@ function startGame() {
                   finalCharacter.specialty.spell2.name
                 }</span></h4>
                 <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${
-                  finalCharacter.treasure
+                  finalCharacter.treasure.gold.quantity
                 }</span></h4>
                 <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${
                   finalCharacter.specialty.characterExperience
@@ -1379,10 +1408,10 @@ function showInventory() {
   }
 
   let totalGoldPieces = document.querySelector("#total-gold");
-  totalGoldPieces.textContent = `${finalCharacter.treasure}`;
+  totalGoldPieces.textContent = `${finalCharacter.treasure.gold.quantity}`;
 
   let availableGoldPieces = document.querySelector("#available-gold");
-  availableGoldPieces.textContent = `${finalCharacter.treasure}`;
+  availableGoldPieces.textContent = `${finalCharacter.treasure.gold.quantity}`;
 
   let submitBuyingItems = document.querySelector("#buy-items");
   submitBuyingItems.addEventListener("click", selectInventory, false);
@@ -1391,7 +1420,7 @@ function showInventory() {
 }
 
 function addingTotalInventoryCost(e) {
-  let maxGold = finalCharacter.treasure;
+  let maxGold = finalCharacter.treasure.gold.quantity;
   // let getValues = document.querySelectorAll('.current-item-qty');
 
   let getSiblingQty = document.querySelector(
@@ -1458,8 +1487,8 @@ function addingTotalInventoryCost(e) {
       console.log(
         typeof finalCharacter.treasure +
           " " +
-          finalCharacter.treasure +
-          " finalCharacter.treasure"
+          finalCharacter.treasure.gold.quantity +
+          " finalCharacter.treasure.gold.quantity"
       );
 
       // alert("Can't do that");
@@ -1472,7 +1501,7 @@ function addingTotalInventoryCost(e) {
   }
 
   let finalTreasureAmount = document.querySelector("#available-gold");
-  finalCharacter.treasure = parseInt(finalTreasureAmount.textContent);
+  finalCharacter.treasure.gold.quantity = parseInt(finalTreasureAmount.textContent);
   // console.log(finalCharacter.treasure);
 }
 
@@ -1535,10 +1564,10 @@ function selectInventory() {
       ".hide-inventory-container"
     );
     getInventoryElement.classList.remove("show-inventory-container");
-    console.log(finalCharacter.treasure);
+    console.log(finalCharacter.treasure.gold.quantity);
     let updateCharTreasure = document.querySelector("#char-treasure");
     updateCharTreasure.innerHTML = `
-        <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure}</span></h4>        
+        <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
         `;
   };
   startChapter();
@@ -2627,8 +2656,8 @@ function regenerateHP(hp, maxHP) {
       let regeneratedHP = document.getElementById("char-hp");
       regeneratedHP.innerHTML = `
                 Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${
-        finalCharacter.specialty.maxHealthPoints +
-        finalCharacter.attributes[4].adjustment
+        finalCharacter.specialty.maxHealthPoints 
+        // + finalCharacter.attributes[4].adjustment
       }" value="${hp}"></progress>${hp}/${
         finalCharacter.specialty.maxHealthPoints
       }</span></span>

@@ -236,7 +236,7 @@ export default class Character {
                   this.specialty.spell2.name
                 }</span></h4>
                 <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${
-                  finalCharacter.treasure
+                  finalCharacter.treasure.gold.quantity
                 }</span></h4>
                 <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${
                   finalCharacter.specialty.characterExperience
