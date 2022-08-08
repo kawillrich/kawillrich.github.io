@@ -2220,7 +2220,7 @@ function submitAllClericSpells() {
 
   let showPickSpellsButton = document.querySelector(".hide-cleric-container");
   showPickSpellsButton.classList.remove("show-cleric-spells");
-
+  window.scrollTo(0, 0);
   showInventory();
 }
 
