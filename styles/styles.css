@@ -567,6 +567,12 @@ span#dragonwarrior {
   list-style-type: none;
 }
 
-.char-coins {
-  list-style-type: none;
+.char-treasure {
+  display: inline-block;
+  width: 75px;
 }
+
+#char-gp {
+  
+}
+

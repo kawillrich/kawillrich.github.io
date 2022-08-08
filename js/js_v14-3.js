@@ -492,12 +492,12 @@ function rollAttributes() {
       },
       silver: {    
         type: "Silver Pieces",
-        gpValue: 1,
+        gpValue: .1,
         quantity: 0   
       },
       copper: {    
         type: "Copper Pieces",
-        gpValue: 1,
+        gpValue: .01,
         quantity: 0   
       },
   }
@@ -859,13 +859,8 @@ function startGame() {
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
-                <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${
-                  finalCharacter.specialty.name
-                }</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${
-                  finalCharacter.specialty.healthPoints +
-                  finalCharacter.attributes[4].adjustment
-                }</span><span id='hpBar'><progress id='hp-prog-bar' max="${
+                <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
+                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span><span id='hpBar'><progress id='hp-prog-bar' max="${
     finalCharacter.specialty.maxHealthPoints +
     finalCharacter.attributes[4].adjustment
   }" value="${
@@ -958,6 +953,15 @@ function startGame() {
 
   let updatedInventory = document.querySelector("#normal-equipment-list");
   updatedInventory.innerHTML = `${showInventory()}`;
+
+  let updateTreasure = document.querySelector(".char-coins");
+  updateTreasure.innerHTML = `
+    <span id="char-gp" class="char-treasure">Gold: </span><span class="char-gold-qty">${finalCharacter.treasure.gold.quantity}</span></br>
+    <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
+    <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
+    <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
+    <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
+  `;
 
   showInventory();
   render();
