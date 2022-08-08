@@ -446,10 +446,11 @@ let selectedSpecialty = "";
 
 //asks if you are ready to start game
 
+
 function checkUsername() {
   let checkName = document.querySelector("#character-name");
   let checkNameLength = checkName.value;
-  console.log("checking name");
+  // console.log("checking name");
   let usernameMessage = document.querySelector("#username-message");
   if (checkNameLength.length < 3) {
     usernameMessage.textContent = "Name must be at least 3 characters.";
@@ -459,7 +460,8 @@ function checkUsername() {
   }
 }
 
-function charNameSubmitted() {
+function charNameSubmitted() {  
+  window.scrollTo(0, 0);
   var confirmStart = document.querySelector("#confirm-start");
   submittedCharName = document.querySelector("#character-name").value;
   confirmStart.textContent = `Welcome, ${submittedCharName}, are you ready to begin your journey?`;
@@ -504,7 +506,7 @@ function rollAttributes() {
 
 
 
-  console.log(finalCharacter.treasure);
+  // console.log(finalCharacter.treasure);
 
 
   let getCharName = document.querySelector("#dialogue");
@@ -678,6 +680,7 @@ function generateNewAttributes() {
 }
 
 function confirmingAttributes() {
+  window.scrollTo(0, 0);
   let rollNewAttributes = document.querySelector("#generate-attributes");
 
   let confirmAttributes = document.querySelector("#confirm-attributes");
@@ -780,6 +783,7 @@ function updateAlignmentDescription() {
 
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {
+  window.scrollTo(0, 0);
   let strengthPlusAdjustment;
   let intelligencePlusAdjustment;
   let wisdomPlusAdjustment;
@@ -1244,6 +1248,8 @@ function beginChapterTwo() {
 
 function showInventory() {
   alert("Purchase your inventory");
+  window.scrollTo(0, 0);
+
 
   let totalItems = [
     torch,
@@ -1461,19 +1467,19 @@ function addingTotalInventoryCost(e) {
   if (e.target.classList.contains("quantity-decrease")) {
     let parsedTargetCost = parseInt(e.target.dataset.cost);
 
-    console.log(typeof parsedTargetCost + " " + parsedTargetCost);
+    // console.log(typeof parsedTargetCost + " " + parsedTargetCost);
     let updatedAvailableGold = document.querySelector("#available-gold");
     getSiblingQty.setAttribute("data-qty", parsedRetrievedLink - 1);
     let numberedUpdatedGold = updatedAvailableGold.textContent;
     let parsedUpdatedGold = Number(numberedUpdatedGold);
-    console.log(typeof parsedUpdatedGold + " " + parsedUpdatedGold);
-    console.log(parsedUpdatedGold + parsedTargetCost);
+    // console.log(typeof parsedUpdatedGold + " " + parsedUpdatedGold);
+    // console.log(parsedUpdatedGold + parsedTargetCost);
 
     let newTotal = Number(parsedUpdatedGold + parsedTargetCost);
-    console.log(typeof newTotal + " " + newTotal);
+    // console.log(typeof newTotal + " " + newTotal);
 
     updatedAvailableGold.innerHTML = `<span id="available-gold">${newTotal}</span>`;
-    console.log(updatedAvailableGold.textContent);
+    // console.log(updatedAvailableGold.textContent);
     getSiblingQty.textContent = `${parsedRetrievedLink - 1}`;
 
     let totalGoldPiecesContent = document.querySelector("#total-gold");
@@ -1484,16 +1490,16 @@ function addingTotalInventoryCost(e) {
         newTotal > parsedTotalGold) ||
       retrievedDataLink - 1 < 0
     ) {
-      console.log(
-        typeof retrievedDataLink + " " + retrievedDataLink + " targetQty"
-      );
-      console.log(typeof newTotal + " " + newTotal + " newTotal");
-      console.log(
-        typeof finalCharacter.treasure +
-          " " +
-          finalCharacter.treasure.gold.quantity +
-          " finalCharacter.treasure.gold.quantity"
-      );
+      // console.log(
+      //   typeof retrievedDataLink + " " + retrievedDataLink + " targetQty"
+      // );
+      // console.log(typeof newTotal + " " + newTotal + " newTotal");
+      // console.log(
+      //   typeof finalCharacter.treasure +
+      //     " " +
+      //     finalCharacter.treasure.gold.quantity +
+      //     " finalCharacter.treasure.gold.quantity"
+      // );
 
       // alert("Can't do that");
 
@@ -1511,6 +1517,8 @@ function addingTotalInventoryCost(e) {
 
 function selectInventory() {
   // finalCharacter.treasure = finalGold;
+  window.scrollTo(0, 0);
+
 
   let purchasedSupplies = document.querySelectorAll(".current-item-qty");
   for (let i = 0; i < purchasedSupplies.length; i++) {
@@ -1518,10 +1526,10 @@ function selectInventory() {
     let parsedSuppliesValue = purchasedSupplies[i].getAttribute("data-qty");
     if (parsedSuppliesValue > 0) {
       // let updatedSuppliesValue = purchasedSupplies[i].data-name;
-      console.log(updatedSuppliesName, parsedSuppliesValue);
+      // console.log(updatedSuppliesName, parsedSuppliesValue);
       finalCharacter.inventory.push(eval(updatedSuppliesName));
 
-      console.log(finalCharacter.inventory);
+      // console.log(finalCharacter.inventory);
     }
   }
 
@@ -1531,7 +1539,7 @@ function selectInventory() {
     let addedItemSpan = document.createElement("span");
     
     let purchasedSuppliesValue2 = purchasedSupplies[i].getAttribute("data-qty");
-    console.log(purchasedSuppliesValue2);
+    // console.log(purchasedSuppliesValue2);
 
     finalCharacter.inventory[i].qty = purchasedSuppliesValue2;
 
@@ -1575,7 +1583,7 @@ function selectInventory() {
       ".hide-inventory-container"
     );
     getInventoryElement.classList.remove("show-inventory-container");
-    console.log(finalCharacter.treasure.gold.quantity);
+    // console.log(finalCharacter.treasure.gold.quantity);
     let updateCharTreasure = document.querySelector("#char-treasure");
     updateCharTreasure.innerHTML = `
         <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
@@ -1753,7 +1761,7 @@ submitAllMageSpellsButton.addEventListener("click", submitAllMageSpells, false);
 
 function submitAllMageSpells() {
   let selectedAllSpells = document.querySelectorAll(".mage-spells");
-  console.log(selectedAllSpells);
+  // console.log(selectedAllSpells);
 
   for (let i = 0; i < selectedAllSpells.length; i++) {
     //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
@@ -1789,11 +1797,11 @@ function submitAllMageSpells() {
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Third Level Mage Spells"
       ].push(newSpell);
-      console.log(
-        finalCharacter.specialty.characterLevel.specialtySkills[
-          "Third Level Mage Spells"
-        ]
-      );
+      // console.log(
+      //   finalCharacter.specialty.characterLevel.specialtySkills[
+      //     "Third Level Mage Spells"
+      //   ]
+      // );
     }
   }
 
@@ -1910,7 +1918,7 @@ function pickClericSpells() {
   alert("Pick Cleric Spells");
   let showClericSpellsList = document.querySelector(".hide-cleric-container");
   showClericSpellsList.classList.add("show-cleric-spells");
-  console.log(finalCharacter.specialty.characterLevel.numberOfSpells[0]);
+  // console.log(finalCharacter.specialty.characterLevel.numberOfSpells[0]);
   selectLevelOneClericSpells();
   selectLevelTwoClericSpells();
   selectLevelThreeClericSpells();
@@ -2108,11 +2116,11 @@ function submitAllClericSpells() {
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Third Level Cleric Spells"
       ].push(newSpell);
-      console.log(
-        finalCharacter.specialty.characterLevel.specialtySkills[
-          "Third Level Cleric Spells"
-        ]
-      );
+      // console.log(
+      //   finalCharacter.specialty.characterLevel.specialtySkills[
+      //     "Third Level Cleric Spells"
+      //   ]
+      // );
     }
   }
 
@@ -2225,6 +2233,8 @@ function submitAllClericSpells() {
 }
 
 function talkToRaynard() {
+  window.scrollTo(0, 0);
+
   // console.log('Talking to Raynard');
   let talkingToRaynard = document.querySelector("#dialogue");
   talkingToRaynard.innerHTML = `
@@ -2260,7 +2270,7 @@ function talkToRaynard() {
 
   continueChapterThreeOne.addEventListener("click", function () {
     let raynardsCoinIndex = finalCharacter.inventory.indexOf(raynardsCoin);
-    console.log(finalCharacter.inventory);
+    // console.log(finalCharacter.inventory);
     alert(`You received ${finalCharacter.inventory[raynardsCoinIndex].name}`);
     document.querySelector("#normal-equipment-list").innerHTML = ``;
     //adding tooltip for raynardsCoin
@@ -2302,6 +2312,8 @@ function talkToRaynard() {
 //CHAPTER THREE ONE
 
 function startChapterThreeOne() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Three-one');
   let chapterThreeOne = document.querySelector("#dialogue");
   chapterThreeOne.innerHTML = `
@@ -2331,6 +2343,8 @@ function startChapterThreeOne() {
 //CHAPTER THREE TWO
 
 function continueChapterThreeTwo() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Three-two');
   let chapterThreeTwo = document.querySelector("#dialogue");
   chapterThreeTwo.innerHTML = `
@@ -2372,6 +2386,8 @@ function continueChapterThreeTwo() {
 //CHAPTER THREE THREE
 
 function continueChapterThreeThree() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Three-three');
   let chapterThreeThree = document.querySelector("#dialogue");
   chapterThreeThree.innerHTML = `
