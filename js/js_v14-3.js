@@ -956,7 +956,7 @@ function startGame() {
 
   let updateTreasure = document.querySelector(".char-coins");
   updateTreasure.innerHTML = `
-    <span id="char-gp" class="char-treasure">Gold: </span><span class="char-gold-qty">${finalCharacter.treasure.gold.quantity}</span></br>
+    <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
     <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
     <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
     <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
@@ -1556,6 +1556,7 @@ function selectInventory() {
   //end adding inventory tooltips
 
   let showInventory = () => {
+    window.scrollTo(0, 0);
     let accumulator = "";
 
     for (let i = 0; i < finalCharacter.inventory.length; i++) {
@@ -1586,6 +1587,8 @@ function selectInventory() {
 //end inventory
 
 function pickMageSpells() {
+  window.scrollTo(0, 0);
+
   alert("Pick Mage Spells");
   let showMageSpellsList = document.querySelector(".hide-mage-container");
   showMageSpellsList.classList.add("show-mage-spells");
@@ -1899,6 +1902,7 @@ function submitAllMageSpells() {
   // END
   let showPickSpellsButton = document.querySelector(".hide-mage-container");
   showPickSpellsButton.classList.remove("show-mage-spells");
+  window.scrollTo(0, 0);
   showInventory();
 }
 
