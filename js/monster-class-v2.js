@@ -163,7 +163,7 @@ export default class Monster {
 
 //initializing monsters
 
-let noMonster = new Monster(" ", " ", " ", " ", " ", 0, "Neutral", "None", {
+let noMonster = new Monster(" ", " ", " ", " ", " ", 0, " ", " ", {
   gold: {    
     type: "Gold Pieces",
     gpValue: 1,
@@ -191,7 +191,8 @@ let noMonster = new Monster(" ", " ", " ", " ", " ", 0, "Neutral", "None", {
   }
 }, true);
 
-let smallWolf = new Monster("Small Wolf", [2, 0], 8, 9, 4, 5, "Neutral", "Bite", {
+let smallWolf = new Monster("Small Wolf", [2, 0], 8, 9, 4, 5, "Neutral", "Bite", 
+  {
   gold: {    
     type: "Gold Pieces",
     gpValue: 1,
@@ -217,8 +218,9 @@ let smallWolf = new Monster("Small Wolf", [2, 0], 8, 9, 4, 5, "Neutral", "Bite",
     gpValue: .01,
     quantity: 1   
   }
-}, true, 
-[[9, 9], [8, 11], [7, 12], [6, 13], [7, 14], [6, 13], [5, 14], [5, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20],]
+  }, 
+  true, 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
 );
 
 let wolf1 = new Monster("Wolf", [2, 2], 18, 7, 6, 25, "Neutral", "Bite", {
@@ -247,7 +249,9 @@ let wolf1 = new Monster("Wolf", [2, 2], 18, 7, 6, 25, "Neutral", "Bite", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let wolf2 = new Monster("Wolf", [2, 2], 18, 7, 6, 25, "Neutral", "Bite", {
   gold: {    
@@ -275,7 +279,9 @@ let wolf2 = new Monster("Wolf", [2, 2], 18, 7, 6, 25, "Neutral", "Bite", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let goblin = new Monster("Goblin", [1, -1], 4, 1, 1, 5, "Neutral", "Bite", {
   gold: {    
@@ -303,7 +309,9 @@ let goblin = new Monster("Goblin", [1, -1], 4, 1, 1, 5, "Neutral", "Bite", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true, 
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let goblin1 = new Monster("Goblin", [1, -1], 18, 1, 1, 5, "Neutral", "Bite", {
   gold: {    
@@ -331,7 +339,9 @@ let goblin1 = new Monster("Goblin", [1, -1], 18, 1, 1, 5, "Neutral", "Bite", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true, 
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let goblin2 = new Monster("Goblin", [1, -1], 3, 1, 1, 5, "Neutral", "Bite", {
   gold: {    
@@ -359,7 +369,9 @@ let goblin2 = new Monster("Goblin", [1, -1], 3, 1, 1, 5, "Neutral", "Bite", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true, 
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let fireBeetle = new Monster(
   "Fire Beetle",
@@ -369,8 +381,36 @@ let fireBeetle = new Monster(
   8,
   15,
   "Neutral",
-  "Bite"
-);
+  "Bite", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true,
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+  );
+
 let fireBeetle1 = new Monster(
   "Fire Beetle",
   [1, 2],
@@ -405,8 +445,11 @@ let fireBeetle1 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
+
 let fireBeetle2 = new Monster(
   "Fire Beetle",
   [1, 2],
@@ -441,8 +484,11 @@ let fireBeetle2 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true, 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
+
 let fireBeetle3 = new Monster(
   "Fire Beetle",
   [1, 2],
@@ -477,8 +523,11 @@ let fireBeetle3 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true, 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
+
 let fireBeetle4 = new Monster(
   "Fire Beetle",
   [1, 2],
@@ -513,7 +562,9 @@ let fireBeetle4 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true, 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
 
 let hobGoblin = new Monster(
@@ -550,7 +601,9 @@ let hobGoblin = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true, 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
 let hobGoblin1 = new Monster(
   "Hobgoblin",
@@ -586,8 +639,11 @@ let hobGoblin1 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true, 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
+
 let hobGoblin2 = new Monster(
   "Hobgoblin",
   [1, 1],
@@ -622,8 +678,11 @@ let hobGoblin2 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true, 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
+
 let hobGoblin3 = new Monster(
   "Hobgoblin",
   [1, 1],
@@ -658,7 +717,9 @@ let hobGoblin3 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true, 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
 let hobGoblin4 = new Monster(
   "Hobgoblin",
@@ -694,7 +755,9 @@ let hobGoblin4 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
 let hobGoblin5 = new Monster(
   "Hobgoblin",
@@ -730,7 +793,9 @@ let hobGoblin5 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
 
 let bugBear = new Monster(
@@ -767,8 +832,11 @@ let bugBear = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18],[-3, 19],[-4, 20],[-5, 20]]
+
 );
+
 let bugBear1 = new Monster(
   "Bug Bear",
   [3, 1],
@@ -803,8 +871,11 @@ let bugBear1 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18],[-3, 19],[-4, 20],[-5, 20]]
+
 );
+
 let bugBear2 = new Monster(
   "Bug Bear",
   [3, 1],
@@ -839,8 +910,11 @@ let bugBear2 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18],[-3, 19],[-4, 20],[-5, 20]]
+
 );
+
 let bugBear3 = new Monster(
   "Bug Bear",
   [3, 1],
@@ -875,8 +949,11 @@ let bugBear3 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18],[-3, 19],[-4, 20],[-5, 20]]
+
 );
+
 let bugBear4 = new Monster(
   "Bug Bear",
   [3, 1],
@@ -911,8 +988,11 @@ let bugBear4 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18],[-3, 19],[-4, 20],[-5, 20]]
+
 );
+
 let bugBear5 = new Monster(
   "Bug Bear",
   [3, 1],
@@ -921,7 +1001,35 @@ let bugBear5 = new Monster(
   9,
   75,
   "Chaotic",
-  "Sword"
+  "Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true,
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18],[-3, 19],[-4, 20],[-5, 20]]
+
 );
 
 let kobold = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
@@ -950,7 +1058,10 @@ let kobold = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
+
 let kobold1 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger", {
   gold: {    
     type: "Gold Pieces",
@@ -977,7 +1088,9 @@ let kobold1 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let kobold2 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   gold: {    
@@ -1005,7 +1118,9 @@ let kobold2 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let kobold3 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger", {
   gold: {    
@@ -1033,7 +1148,9 @@ let kobold3 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let kobold4 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   gold: {    
@@ -1061,7 +1178,9 @@ let kobold4 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let kobold5 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   gold: {    
@@ -1089,7 +1208,10 @@ let kobold5 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
+
 let kobold6 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   gold: {    
     type: "Gold Pieces",
@@ -1116,7 +1238,9 @@ let kobold6 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
 
 let orc = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   gold: {    
@@ -1144,7 +1268,10 @@ let orc = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
+
 let orc1 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   gold: {    
     type: "Gold Pieces",
@@ -1171,7 +1298,10 @@ let orc1 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
+
 let orc2 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   gold: {    
     type: "Gold Pieces",
@@ -1198,7 +1328,10 @@ let orc2 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
+
 let orc3 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   gold: {    
     type: "Gold Pieces",
@@ -1225,7 +1358,10 @@ let orc3 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
+
 let orc4 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   gold: {    
     type: "Gold Pieces",
@@ -1252,7 +1388,10 @@ let orc4 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
+
 let orc5 = new Monster("Orc", [1, 0], 8, 6, 8, 10, "Chaotic", "Sword", {
   gold: {    
     type: "Gold Pieces",
@@ -1279,18 +1418,10 @@ let orc5 = new Monster("Orc", [1, 0], 8, 6, 8, 10, "Chaotic", "Sword", {
     gpValue: .01,
     quantity: 1   
   }
-}, true);
-
-let skeleton = new Monster(
-  "Skeleton",
-  [1, 0],
-  8,
-  7,
-  4,
-  10,
-  "Chaotic",
-  "Dagger"
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
 );
+
 let skeleton1 = new Monster("Skeleton", [1, 0], 8, 7, 4, 10, "Chaotic", "Club", {
   gold: {    
     type: "Gold Pieces",
@@ -1317,7 +1448,10 @@ let skeleton1 = new Monster("Skeleton", [1, 0], 8, 7, 4, 10, "Chaotic", "Club", 
     gpValue: .01,
     quantity: 1   
   }
-}, true);
+}, true,
+[[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+);
+
 let skeleton2 = new Monster(
   "Skeleton",
   [1, 0],
@@ -1352,8 +1486,11 @@ let skeleton2 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
+
 let skeleton3 = new Monster(
   "Skeleton",
   [1, 0],
@@ -1388,8 +1525,11 @@ let skeleton3 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
+
 let skeleton4 = new Monster(
   "Skeleton",
   [1, 0],
@@ -1424,7 +1564,9 @@ let skeleton4 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
 let skeleton5 = new Monster(
   "Skeleton",
@@ -1460,7 +1602,9 @@ let skeleton5 = new Monster(
       gpValue: .01,
       quantity: 1   
     }
-  }, true
+  }, true,
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20]]
+
 );
 
 let giantRacer = new Monster("Giant Racer", 2, 16, 5, 6, 20, "Neutral", "Bite", {
