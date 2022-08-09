@@ -114,6 +114,8 @@ export default class Monster {
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
     let charArmorClass = finalCharacter.armor.armorClass;
 
+          //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
+
     let revertToAttackButtons = function () {
       let showAttackButtons = document.querySelectorAll(".attack");
       for (let showAttackButton of showAttackButtons) {
@@ -123,17 +125,15 @@ export default class Monster {
         document.querySelector("#monster-attack");
       hideMonsterAttackButton.classList.add("hidden");
     };
+          //END REVERTING CODE
 
 
     let monstersAttackTurn = (monsterOne, monsterTwo) => {
       
-        let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
+      let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
 
-        finalCharacter.specialty.healthPoints =
-          finalCharacter.specialty.healthPoints - monsterRandomDamage;
-        alert(
-          `The ${this.monsterName} attacks you and causes ${monsterRandomDamage} points of damage.`
-        );
+      finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
+        alert(`The ${this.monsterName} attacks you and causes ${monsterRandomDamage} points of damage.`);
 
         let updatedCharHP = document.querySelector("#char-hp");
         updatedCharHP.innerHTML = `
@@ -143,10 +143,6 @@ export default class Monster {
           alert("You died!");
           window.location.reload(false);
         } else {
-          //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
-          
-
-          //END REVERTING CODE
           revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo);
         }

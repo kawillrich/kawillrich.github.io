@@ -130,7 +130,8 @@ export default class Character {
     enchantedItem,
     achievements,
     characterImage,
-    treasure
+    treasure,
+    hitRollTable
   ) {
     this.name = name;
     this.specialty = specialty;
@@ -143,6 +144,19 @@ export default class Character {
     this.achievements = achievements;
     this.characterImage = characterImage;
     this.treasure = treasure;
+    this.hitRollTable = [
+      [9, 10],
+      [8, 11],
+      [7, 12],
+      [6, 13],
+      [5, 14],
+      [4, 15],
+      [3, 16], 
+      [2, 17],
+      [1, 18],
+      [0, 19],
+      [-1, 20]
+    ];
   }
 
   //updates & initiates Character creation
