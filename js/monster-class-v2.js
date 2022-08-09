@@ -101,63 +101,81 @@ export default class Monster {
       arguments[0].healthPoints = arguments[0].healthPoints;
     }
 
-    monsterOne.monstersTurn(
-      monsterOne,
-      monsterTwo,
-      monsterOne.name,
-      monsterOne.damage,
-      monsterOne.healthPoints,
-      finalCharacter
-    );
+    monsterOne.monstersTurn(monsterOne,monsterTwo,monsterOne.name,monsterOne.damage,monsterOne.healthPoints,monsterOne.hitRoll, finalCharacter);
   }
 
-  monstersTurn(
-    monsterOne,
-    monsterTwo,
-    monsterName,
-    monsterDamage,
-    monsterHealthPoints,
-    finalCharacter
-  ) {
+  monstersTurn(monsterOne,monsterTwo,monsterName,monsterDamage,monsterHealthPoints,monsterHitRoll, finalCharacter) {
     this.monsterName = monsterName;
     this.monsterDamage = monsterDamage;
     this.monsterHealthPoints = monsterHealthPoints;
+    this.monsterHitRoll = monsterHitRoll;
     this.finalCharacter = finalCharacter;
 
-    let monstersAttackTurn = (monsterOne, monsterTwo) => {
-      let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
+    let monstersHitRollValue = Math.ceil(Math.random() * 20);
+    let charArmorClass = finalCharacter.armor.armorClass;
 
-      finalCharacter.specialty.healthPoints =
-        finalCharacter.specialty.healthPoints - monsterRandomDamage;
-      alert(
-        `The ${this.monsterName} attacks you and causes ${monsterRandomDamage} points of damage.`
-      );
-
-      let updatedCharHP = document.querySelector("#char-hp");
-      updatedCharHP.innerHTML = `
-            <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span></span></h4> 
-            `;
-      if (finalCharacter.specialty.healthPoints <= 0) {
-        alert("You died!");
-        window.location.reload(false);
-      } else {
-        //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
-        let revertToAttackButtons = function () {
-          let showAttackButtons = document.querySelectorAll(".attack");
-          for (let showAttackButton of showAttackButtons) {
-            showAttackButton.classList.remove("hidden");
-          }
-          let hideMonsterAttackButton =
-            document.querySelector("#monster-attack");
-          hideMonsterAttackButton.classList.add("hidden");
-        };
-
-        //END REVERTING CODE
-        revertToAttackButtons();
-        confirmAttackMonsters(monsterOne, monsterTwo);
+    let revertToAttackButtons = function () {
+      let showAttackButtons = document.querySelectorAll(".attack");
+      for (let showAttackButton of showAttackButtons) {
+        showAttackButton.classList.remove("hidden");
       }
+      let hideMonsterAttackButton =
+        document.querySelector("#monster-attack");
+      hideMonsterAttackButton.classList.add("hidden");
     };
-    monstersAttackTurn(monsterOne, monsterTwo);
+
+
+    let monstersAttackTurn = (monsterOne, monsterTwo) => {
+      
+        let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
+
+        finalCharacter.specialty.healthPoints =
+          finalCharacter.specialty.healthPoints - monsterRandomDamage;
+        alert(
+          `The ${this.monsterName} attacks you and causes ${monsterRandomDamage} points of damage.`
+        );
+
+        let updatedCharHP = document.querySelector("#char-hp");
+        updatedCharHP.innerHTML = `
+              <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span></span></h4> 
+              `;
+        if (finalCharacter.specialty.healthPoints <= 0) {
+          alert("You died!");
+          window.location.reload(false);
+        } else {
+          //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
+          
+
+          //END REVERTING CODE
+          revertToAttackButtons();
+          confirmAttackMonsters(monsterOne, monsterTwo);
+        }
+     }
+
+     let checkMonsterHitRoll = (monsterHitRollValue1, charArmorClass1, monsterHitRoll1) => {
+      console.log("Monster's HitRoll: " + monsterHitRollValue1);
+      console.log("Player's Armor Class: " + charArmorClass1);
+      console.table(monsterHitRoll1);
+      for (let i = 0; i < monsterHitRoll1.length; i++) {
+        if (monsterHitRoll1[i][0] === charArmorClass1) {
+          console.log("got correct hit roll table");
+          console.log("Player's AC:" + monsterHitRoll1[i][1]);
+          if (monsterHitRollValue1 < monsterHitRoll1[i][1]) {
+            alert('Monster misses!');
+            revertToAttackButtons();
+            confirmAttackMonsters(monsterOne, monsterTwo);
+          } else {
+            monstersAttackTurn(monsterOne, monsterTwo);
+          }
+        }
+      }
+    }
+
+    checkMonsterHitRoll(monstersHitRollValue, charArmorClass, monsterHitRoll);
+
+
+    
+    
   }
 }
 
