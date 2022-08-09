@@ -550,6 +550,36 @@ export default class Character {
         finalCharacter.specialty.characterExperience +=
           monster2.experienceValue;
 
+        finalCharacter.treasure.gold.quantity += monster1.treasure.gold.quantity;
+        finalCharacter.treasure.gold.quantity += monster2.treasure.gold.quantity;
+
+        finalCharacter.treasure.electrum.quantity += monster1.treasure.electrum.quantity;
+        finalCharacter.treasure.electrum.quantity += monster2.treasure.electrum.quantity;
+
+        finalCharacter.treasure.silver.quantity += monster1.treasure.silver.quantity;
+        finalCharacter.treasure.silver.quantity += monster2.treasure.silver.quantity;
+
+        finalCharacter.treasure.copper.quantity += monster1.treasure.copper.quantity;
+        finalCharacter.treasure.copper.quantity += monster2.treasure.copper.quantity;
+
+        finalCharacter.treasure.gems.quantity += monster1.treasure.gems.quantity;
+        finalCharacter.treasure.gems.quantity += monster2.treasure.gems.quantity;
+
+        let updateTreasure = document.querySelector(".char-coins");
+        updateTreasure.innerHTML = `
+          <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
+          <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
+          <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
+          <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
+          <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
+        `;
+
+        let updatePlayerTreasure = document.querySelector('#char-treasure');
+        console.log(finalCharacter.treasure.gold.quantity);
+        updatePlayerTreasure.innerHTML = `
+          <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
+          `;
+
         let updatedExperience = document.querySelector("#char-experience");
         updatedExperience.innerHTML = `
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
@@ -669,6 +699,36 @@ export default class Character {
         finalCharacter.specialty.characterExperience +=
           monster2.experienceValue;
 
+        finalCharacter.treasure.gold.quantity += monster1.treasure.gold.quantity;
+        finalCharacter.treasure.gold.quantity += monster2.treasure.gold.quantity;
+
+        finalCharacter.treasure.electrum.quantity += monster1.treasure.electrum.quantity;
+        finalCharacter.treasure.electrum.quantity += monster2.treasure.electrum.quantity;
+
+        finalCharacter.treasure.silver.quantity += monster1.treasure.silver.quantity;
+        finalCharacter.treasure.silver.quantity += monster2.treasure.silver.quantity;
+
+        finalCharacter.treasure.copper.quantity += monster1.treasure.copper.quantity;
+        finalCharacter.treasure.copper.quantity += monster2.treasure.copper.quantity;
+
+        finalCharacter.treasure.gems.quantity += monster1.treasure.gems.quantity;
+        finalCharacter.treasure.gems.quantity += monster2.treasure.gems.quantity;
+
+        let updateTreasure = document.querySelector(".char-coins");
+        updateTreasure.innerHTML = `
+          <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
+          <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
+          <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
+          <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
+          <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
+        `;
+
+        let updatePlayerTreasure = document.querySelector('#char-treasure');
+        console.log(finalCharacter.treasure.gold.quantity);
+        updatePlayerTreasure.innerHTML = `
+          <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
+          `;
+
         let updatedExperience = document.querySelector("#char-experience");
         updatedExperience.innerHTML = `
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
@@ -787,6 +847,36 @@ export default class Character {
           monster1.experienceValue;
         finalCharacter.specialty.characterExperience +=
           monster2.experienceValue;
+
+        finalCharacter.treasure.gold.quantity += monster1.treasure.gold.quantity;
+        finalCharacter.treasure.gold.quantity += monster2.treasure.gold.quantity;
+
+        finalCharacter.treasure.electrum.quantity += monster1.treasure.electrum.quantity;
+        finalCharacter.treasure.electrum.quantity += monster2.treasure.electrum.quantity;
+
+        finalCharacter.treasure.silver.quantity += monster1.treasure.silver.quantity;
+        finalCharacter.treasure.silver.quantity += monster2.treasure.silver.quantity;
+
+        finalCharacter.treasure.copper.quantity += monster1.treasure.copper.quantity;
+        finalCharacter.treasure.copper.quantity += monster2.treasure.copper.quantity;
+
+        finalCharacter.treasure.gems.quantity += monster1.treasure.gems.quantity;
+        finalCharacter.treasure.gems.quantity += monster2.treasure.gems.quantity;
+
+        let updateTreasure = document.querySelector(".char-coins");
+        updateTreasure.innerHTML = `
+          <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
+          <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
+          <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
+          <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
+          <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
+        `;
+
+        let updatePlayerTreasure = document.querySelector('#char-treasure');
+        console.log(finalCharacter.treasure.gold.quantity);
+        updatePlayerTreasure.innerHTML = `
+          <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
+          `;
 
         let updatedExperience = document.querySelector("#char-experience");
         updatedExperience.innerHTML = `
@@ -952,6 +1042,35 @@ export default class Character {
         finalCharacter.specialty.characterExperience +=
           monster2.experienceValue;
 
+        finalCharacter.treasure.gold.quantity += monster1.treasure.gold.quantity;
+        finalCharacter.treasure.gold.quantity += monster2.treasure.gold.quantity;
+
+        finalCharacter.treasure.electrum.quantity += monster1.treasure.electrum.quantity;
+        finalCharacter.treasure.electrum.quantity += monster2.treasure.electrum.quantity;
+
+        finalCharacter.treasure.silver.quantity += monster1.treasure.silver.quantity;
+        finalCharacter.treasure.silver.quantity += monster2.treasure.silver.quantity;
+
+        finalCharacter.treasure.copper.quantity += monster1.treasure.copper.quantity;
+        finalCharacter.treasure.copper.quantity += monster2.treasure.copper.quantity;
+
+        finalCharacter.treasure.gems.quantity += monster1.treasure.gems.quantity;
+        finalCharacter.treasure.gems.quantity += monster2.treasure.gems.quantity;
+
+        let updateTreasure = document.querySelector(".char-coins");
+        updateTreasure.innerHTML = `
+          <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
+          <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
+          <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
+          <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
+          <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
+        `;
+
+        let updatePlayerTreasure = document.querySelector('#char-treasure');
+        console.log(finalCharacter.treasure.gold.quantity);
+        updatePlayerTreasure.innerHTML = `
+          <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
+          `;
         let updatedExperience = document.querySelector("#char-experience");
         updatedExperience.innerHTML = `
             <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>

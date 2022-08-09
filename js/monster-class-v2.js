@@ -22,8 +22,10 @@ export default class Monster {
     alignment,
     attacks,
     treasure,
-    saveAs,
-    isAlive
+    isAlive,
+    hitRoll,
+    saveAs
+    
   ) {
     this.name = name;
     this.hitDice = hitDice;
@@ -34,8 +36,9 @@ export default class Monster {
     this.alignment = alignment || "Neutral";
     this.attacks = attacks;
     this.treasure = treasure;
+    this.isAlive = isAlive || true;
+    this.hitRoll = hitRoll,
     this.saveAs = saveAs;
-    this.isAlive = true;
     this.maxHP = this.hitDice[0] * 8;
     this.startingHealthPoints = 0;
   }
@@ -214,15 +217,149 @@ let smallWolf = new Monster("Small Wolf", [2, 0], 8, 9, 4, 5, "Neutral", "Bite",
     gpValue: .01,
     quantity: 1   
   }
-}, true
+}, true, 
+[[9, 9], [8, 11], [7, 12], [6, 13], [7, 14], [6, 13], [5, 14], [5, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20],[-3, 20],[-4, 20],[-5, 20],]
 );
 
-let wolf1 = new Monster("Wolf", [2, 2], 18, 7, 6, 25);
-let wolf2 = new Monster("Wolf", [2, 2], 18, 7, 6, 25);
+let wolf1 = new Monster("Wolf", [2, 2], 18, 7, 6, 25, "Neutral", "Bite", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
 
-let goblin = new Monster("Goblin", [1, -1], 4, 1, 1, 5);
-let goblin1 = new Monster("Goblin", [1, -1], 18, 1, 1, 5);
-let goblin2 = new Monster("Goblin", [1, -1], 3, 1, 1, 5);
+let wolf2 = new Monster("Wolf", [2, 2], 18, 7, 6, 25, "Neutral", "Bite", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+
+let goblin = new Monster("Goblin", [1, -1], 4, 1, 1, 5, "Neutral", "Bite", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+
+let goblin1 = new Monster("Goblin", [1, -1], 18, 1, 1, 5, "Neutral", "Bite", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+
+let goblin2 = new Monster("Goblin", [1, -1], 3, 1, 1, 5, "Neutral", "Bite", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
 
 let fireBeetle = new Monster(
   "Fire Beetle",
@@ -242,7 +379,33 @@ let fireBeetle1 = new Monster(
   8,
   15,
   "Neutral",
-  "Bite"
+  "Bite", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let fireBeetle2 = new Monster(
   "Fire Beetle",
@@ -252,7 +415,33 @@ let fireBeetle2 = new Monster(
   8,
   15,
   "Neutral",
-  "Bite"
+  "Bite", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let fireBeetle3 = new Monster(
   "Fire Beetle",
@@ -262,7 +451,33 @@ let fireBeetle3 = new Monster(
   8,
   15,
   "Neutral",
-  "Bite"
+  "Bite", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let fireBeetle4 = new Monster(
   "Fire Beetle",
@@ -272,7 +487,33 @@ let fireBeetle4 = new Monster(
   8,
   15,
   "Neutral",
-  "Bite"
+  "Bite", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 
 let hobGoblin = new Monster(
@@ -283,7 +524,33 @@ let hobGoblin = new Monster(
   6,
   15,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let hobGoblin1 = new Monster(
   "Hobgoblin",
@@ -293,7 +560,33 @@ let hobGoblin1 = new Monster(
   6,
   15,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let hobGoblin2 = new Monster(
   "Hobgoblin",
@@ -303,7 +596,33 @@ let hobGoblin2 = new Monster(
   6,
   15,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let hobGoblin3 = new Monster(
   "Hobgoblin",
@@ -313,7 +632,33 @@ let hobGoblin3 = new Monster(
   6,
   15,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let hobGoblin4 = new Monster(
   "Hobgoblin",
@@ -323,7 +668,33 @@ let hobGoblin4 = new Monster(
   6,
   15,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let hobGoblin5 = new Monster(
   "Hobgoblin",
@@ -333,7 +704,33 @@ let hobGoblin5 = new Monster(
   8,
   15,
   "Chaotic",
-  "Sword"
+  "Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 
 let bugBear = new Monster(
@@ -344,7 +741,33 @@ let bugBear = new Monster(
   7,
   3000,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let bugBear1 = new Monster(
   "Bug Bear",
@@ -354,7 +777,33 @@ let bugBear1 = new Monster(
   7,
   3000,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let bugBear2 = new Monster(
   "Bug Bear",
@@ -364,7 +813,33 @@ let bugBear2 = new Monster(
   7,
   75,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let bugBear3 = new Monster(
   "Bug Bear",
@@ -374,7 +849,33 @@ let bugBear3 = new Monster(
   7,
   75,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let bugBear4 = new Monster(
   "Bug Bear",
@@ -384,7 +885,33 @@ let bugBear4 = new Monster(
   7,
   75,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let bugBear5 = new Monster(
   "Bug Bear",
@@ -397,20 +924,362 @@ let bugBear5 = new Monster(
   "Sword"
 );
 
-let kobold = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club");
-let kobold1 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger");
-let kobold2 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club");
-let kobold3 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger");
-let kobold4 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club");
-let kobold5 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club");
-let kobold6 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club");
+let kobold = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+let kobold1 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
 
-let orc = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword");
-let orc1 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword");
-let orc2 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword");
-let orc3 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword");
-let orc4 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword");
-let orc5 = new Monster("Orc", [1, 0], 8, 6, 8, 10, "Chaotic", "Sword");
+let kobold2 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+
+let kobold3 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+
+let kobold4 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+
+let kobold5 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+let kobold6 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+
+let orc = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+let orc1 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+let orc2 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+let orc3 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+let orc4 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
+let orc5 = new Monster("Orc", [1, 0], 8, 6, 8, 10, "Chaotic", "Sword", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
 
 let skeleton = new Monster(
   "Skeleton",
@@ -422,7 +1291,33 @@ let skeleton = new Monster(
   "Chaotic",
   "Dagger"
 );
-let skeleton1 = new Monster("Skeleton", [1, 0], 8, 7, 4, 10, "Chaotic", "Club");
+let skeleton1 = new Monster("Skeleton", [1, 0], 8, 7, 4, 10, "Chaotic", "Club", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
 let skeleton2 = new Monster(
   "Skeleton",
   [1, 0],
@@ -431,7 +1326,33 @@ let skeleton2 = new Monster(
   4,
   10,
   "Chaotic",
-  "Dagger"
+  "Dagger", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let skeleton3 = new Monster(
   "Skeleton",
@@ -441,7 +1362,33 @@ let skeleton3 = new Monster(
   6,
   10,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let skeleton4 = new Monster(
   "Skeleton",
@@ -451,7 +1398,33 @@ let skeleton4 = new Monster(
   6,
   10,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 let skeleton5 = new Monster(
   "Skeleton",
@@ -461,10 +1434,62 @@ let skeleton5 = new Monster(
   6,
   10,
   "Chaotic",
-  "Short Sword"
+  "Short Sword", {
+    gold: {    
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: 2   
+    },
+    gems: {    
+      type: "Gems",
+      gpValue: 10,
+      quantity: 1   
+    },
+    electrum: {    
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 1   
+    },
+    silver: {    
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 1   
+    },
+    copper: {    
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 1   
+    }
+  }, true
 );
 
-let giantRacer = new Monster("Giant Racer", 2, 16, 5, 6, 20, "Neutral", "Bite");
+let giantRacer = new Monster("Giant Racer", 2, 16, 5, 6, 20, "Neutral", "Bite", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true);
 
 //exporting monsters
 
