@@ -219,6 +219,11 @@ import {
 
 //inializing character default values
 
+window.addEventListener('load', 
+  function() { 
+    window.scrollTo(0, 0);
+  }, false);
+
 let adventurerImage = 4;
 let charAchievements = {};
 let attributes = [];
@@ -2415,6 +2420,7 @@ function continueChapterThreeThree() {
     "click",
     () => {
       addingFightModule(smallWolf, noMonster, continueChapterThreeFour);
+      console.log(smallWolf);
       declareAttack();
     },
     false
@@ -2429,6 +2435,8 @@ function continueChapterThreeThree() {
 }
 
 function declareAttack() {
+  window.scrollTo(0, 0);
+
   let declareAttackDialogue = document.querySelector("#dialogue");
   declareAttackDialogue.innerHTML = `<p>You Attack!</p>`;
 }
@@ -2588,6 +2596,8 @@ function goAroundMonsters(nextChapter) {
 //CHAPTER THREE FOUR
 
 export function continueChapterThreeFour() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Three-four');
 
   //ADDING ACHIEVEMENT
@@ -2708,6 +2718,8 @@ function regenerateHP(hp, maxHP) {
 //CHAPTER THREE FIVE
 
 function continueChapterThreeFive() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Three-Five');
   var removeMonsterInfo = document.querySelector("#monster-info");
   removeMonsterInfo.innerHTML = ` `;
@@ -2735,6 +2747,8 @@ function continueChapterThreeFive() {
 //CHAPTER THREE SIX
 
 function continueChapterThreeSix() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Three Six');
   let chapterThreeSixDialogue = document.querySelector("#dialogue");
   chapterThreeSixDialogue.innerHTML = `
@@ -2765,6 +2779,8 @@ function continueChapterThreeSix() {
 }
 
 function continueChapterThreeSeven() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Three-Seven');
   let chapterThreeSevenDialogue = document.getElementById("dialogue");
   chapterThreeSevenDialogue.innerHTML = `
@@ -2774,6 +2790,8 @@ function continueChapterThreeSeven() {
 }
 
 function continueChapterFour() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Four');
   let chapterFourDialogue = document.getElementById("dialogue");
   chapterFourDialogue.innerHTML = `
@@ -2827,6 +2845,8 @@ function continueChapterFour() {
 }
 
 function continueChapterFourThree() {
+  window.scrollTo(0, 0);
+
   let chapterFourTwoThreeDialogue = document.getElementById("dialogue");
   chapterFourTwoThreeDialogue.innerHTML = `
     <p>Upon hearing your words, the farmer says, "Thank you, adventurer! I have had a lot of trouble with the dire wolves lately, and sadly
@@ -2848,6 +2868,8 @@ function continueChapterFourThree() {
 }
 
 function continueChapterFourThreeOne() {
+  window.scrollTo(0, 0);
+
   let chapterFourThreeFourOneDialogue = document.getElementById("dialogue");
   chapterFourThreeFourOneDialogue.innerHTML = `
     <p>You decide to take the farmer up on his offer to help.  "Come in", he says.  You follow him as he escorts you to the kitchen. "Please,
@@ -2867,6 +2889,8 @@ function continueChapterFourThreeOne() {
 }
 
 function continueChapterFourThreeTwo() {
+  window.scrollTo(0, 0);
+
   let chapterFourThreeFourOneDialogue = document.getElementById("dialogue");
   chapterFourThreeFourOneDialogue.innerHTML = `
     <p>You decide to focus on your mission and not to get caught up in small talk with the farmer, afterall, what could an old farmer 
@@ -2882,6 +2906,8 @@ function continueChapterFourThreeTwo() {
 }
 
 function continueChapterFourThreeThree() {
+  window.scrollTo(0, 0);
+
   let chapterFourThreeThreeDialogue = document.querySelector("#dialogue");
   chapterFourThreeThreeDialogue.innerHTML = `<p>As you drink tea and eat, you can already notice the tingling of the ointments on your arms as they being to heal your wounds</p>
     `;
@@ -2928,6 +2954,8 @@ function continueChapterFourThreeThree() {
 }
 
 function continueChapterFourThreeFour() {
+  window.scrollTo(0, 0);
+
   let chapterFourThreeFourDialogue = document.querySelector("#dialogue");
   chapterFourThreeFourDialogue.innerHTML = `
     <p>You, the farmer, and his wife talk about the wolves and he tells you that this is the first time he has seen dire wolves in 
@@ -2967,6 +2995,8 @@ function continueChapterFourThreeFour() {
 }
 
 function continueChapterFourTwo() {
+  window.scrollTo(0, 0);
+
   let chapterFourTwoDialogue = document.querySelector("#dialogue");
 
   chapterFourTwoDialogue.innerHTML = `
@@ -3003,6 +3033,8 @@ function continueChapterFourTwo() {
 }
 
 function continueChapterFourTwoOne() {
+  window.scrollTo(0, 0);
+
   let giveAwayRaynardsCoin = finalCharacter.inventory.indexOf(raynardsCoin);
   alert(`You gave away ${finalCharacter.inventory[giveAwayRaynardsCoin].name}`);
 
@@ -3091,6 +3123,8 @@ function continueChapterFourTwoOne() {
 }
 
 function continueChapterFive() {
+  window.scrollTo(0, 0);
+
   // console.log(finalCharacter.weapon.name);
   let updatedCharWeapon = document.querySelector("#char-weapon");
   updatedCharWeapon.innerHTML = `<h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
@@ -3112,6 +3146,8 @@ function continueChapterFive() {
 }
 
 function beginTestChapter() {
+  window.scrollTo(0, 0);
+
   // console.log('Chapter Three-Six');
 
   var chapterThreeSixDialogue = document.getElementById("dialogue");
@@ -3130,6 +3166,8 @@ function beginTestChapter() {
 }
 
 function continueChapterSix() {
+  window.scrollTo(0, 0);
+
   let chapterSixDialogue = document.getElementById("dialogue");
   chapterSixDialogue.innerHTML = `
     <p>You continue into the forest.          

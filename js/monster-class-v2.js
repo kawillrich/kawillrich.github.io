@@ -21,9 +21,9 @@ export default class Monster {
     experienceValue,
     alignment,
     attacks,
-    treasureType,
+    treasure,
     saveAs,
-    status
+    isAlive
   ) {
     this.name = name;
     this.hitDice = hitDice;
@@ -33,9 +33,9 @@ export default class Monster {
     this.experienceValue = experienceValue;
     this.alignment = alignment || "Neutral";
     this.attacks = attacks;
-    this.treasureType = treasureType;
+    this.treasure = treasure;
     this.saveAs = saveAs;
-    this.satus = status || "Alive";
+    this.isAlive = true;
     this.maxHP = this.hitDice[0] * 8;
     this.startingHealthPoints = 0;
   }
@@ -160,9 +160,62 @@ export default class Monster {
 
 //initializing monsters
 
-let noMonster = new Monster(" ", " ", " ", " ", " ", 0);
+let noMonster = new Monster(" ", " ", " ", " ", " ", 0, "Neutral", "None", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 0   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 0   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 0   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 0   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 0   
+  }
+}, true);
 
-let smallWolf = new Monster("Small Wolf", [2, 0], 8, 9, 4, 5);
+let smallWolf = new Monster("Small Wolf", [2, 0], 8, 9, 4, 5, "Neutral", "Bite", {
+  gold: {    
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2   
+  },
+  gems: {    
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1   
+  },
+  electrum: {    
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1   
+  },
+  silver: {    
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1   
+  },
+  copper: {    
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1   
+  }
+}, true
+);
 
 let wolf1 = new Monster("Wolf", [2, 2], 18, 7, 6, 25);
 let wolf2 = new Monster("Wolf", [2, 2], 18, 7, 6, 25);
