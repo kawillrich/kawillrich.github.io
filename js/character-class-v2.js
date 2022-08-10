@@ -537,6 +537,11 @@ export default class Character {
     //ADD HITROLL VALUE 
 
     let playerHitRollValue = Math.ceil(Math.random() * 20) + finalCharacter.attributes[0].adjustment;
+ 
+    if (playerHitRollValue > 20) {
+      playerHitRollValue = 20;
+    }
+
     let monsterArmorClass = monster1.armorClass;
 
     //END HITROLL VALUE
@@ -721,6 +726,11 @@ export default class Character {
     }
     
     let playerHitRollValue = Math.ceil(Math.random() * 20) + finalCharacter.attributes[0].adjustment;
+
+    if (playerHitRollValue > 20) {
+      playerHitRollValue = 20;
+    }
+
     let monsterArmorClass = monster1.armorClass;
 
     //END HITROLL VALUE
