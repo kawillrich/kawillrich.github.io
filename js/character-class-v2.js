@@ -531,26 +531,15 @@ export default class Character {
         removeMonster1SpellAttack[0].classList.add("monster1-dead");
   
         //-------------------------------------------------------------------//
-      }
-  
-      //END HIT ROLL SUCCEED
-  
-  
-      //IF HIT ROLL FAILS
-      
-      //END HIT ROLL FAIL
-  
-  
-      confirmMonstersDead();
+      }  
+        confirmMonstersDead();
     }
-    //ADD HITROLL CHECK
+    //ADD HITROLL VALUE 
 
     let playerHitRollValue = Math.ceil(Math.random() * 20);
     let monsterArmorClass = monster1.armorClass;
 
-
-
-    //END HITROLL CHECK
+    //END HITROLL VALUE
 
     let inflictedDamage = Math.ceil(Math.random(1) * finalCharacter.weapon.damage) + finalCharacter.attributes[0].adjustment;
     if (inflictedDamage <= 0) {
@@ -575,24 +564,7 @@ export default class Character {
         }
       }
     }
-
     checkPlayerHitRoll(playerHitRollValue, monsterArmorClass, finalCharacter.hitRollTable);
-
-    //ADD HIT ROLL CHECK
-    
-
-
-
-
-    //END HIT ROLL CHECK
-
-    
-
-    //IF HIT ROLL SUCCEEDS
-
-
-
-    
   }
 
   weaponAttackMonster2(monster1, monster2, weapon, continueNextChapter) {
