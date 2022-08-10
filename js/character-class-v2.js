@@ -568,17 +568,8 @@ export default class Character {
   }
 
   weaponAttackMonster2(monster1, monster2, weapon, continueNextChapter) {
-    // console.log("Logging NEXT CHAPTER" + continueNextChapter)
-    // console.log(monster1);
-    // console.log(weapon);
-    // console.log(monster2);
+   
     let self = this;
-    let inflictedDamage =
-      Math.ceil(Math.random(1) * finalCharacter.weapon.damage) +
-      finalCharacter.attributes[0].adjustment;
-    if (inflictedDamage <= 0) {
-      inflictedDamage = 0;
-    }
 
     let confirmMonstersDead = (enemy2) => {
       if (monster2.healthPoints <= 0 && monster1.healthPoints <= 0) {
@@ -646,71 +637,119 @@ export default class Character {
       }
     };
 
+    let greyOutAttackButtons = function () {
+      let attackButtons = document.querySelectorAll(".attack");
+
+      for (let attackButton of attackButtons) {
+        attackButton.classList.add("hidden");
+      }
+
+      let showMonsterAttackButton = document.querySelector("#monster-attack");
+      showMonsterAttackButton.classList.remove("hidden");
+
+      showMonsterAttackButton.onclick = function () {
+        monster2.monsterAttack(monster1, monster2);
+      };
+    };
+
+    let inflictedDamage =
+      Math.ceil(Math.random(1) * finalCharacter.weapon.damage) +
+      finalCharacter.attributes[0].adjustment;
+    if (inflictedDamage <= 0) {
+      inflictedDamage = 0;
+    }
+
+    
     // this.monster2 = monster2;
     // this.weapon = weapon;
     // let enemy2X = this.enemy2;
 
-    let attackDialogue = document.getElementById("dialogue");
-    attackDialogue.innerHTML = `
-        <p>You attack the ${monster2.name} with your ${this.weapon.name} and cause ${inflictedDamage} points of damage.</p>`;
+    let hitRollSucceed = function(enemy2, finalCharacter) {
+      let attackDialogue = document.getElementById("dialogue");
+      attackDialogue.innerHTML = `
+          <p>You attack the ${monster2.name} with your ${finalCharacter.weapon.name} and cause ${inflictedDamage} points of damage.</p>`;
 
-    //CHECKING ATTACK INTERACTION
-    if (monster2.healthPoints - inflictedDamage > 0) {
-      monster2.healthPoints = monster2.healthPoints - inflictedDamage;
-      let updatedMonsterHP = document.querySelector("#monster-two-hp");
-      updatedMonsterHP.innerHTML = `
-            <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
-            `;
-      //greying out attack module buttons when pressed
+      //CHECKING ATTACK INTERACTION
+      if (monster2.healthPoints - inflictedDamage > 0) {
+        monster2.healthPoints = monster2.healthPoints - inflictedDamage;
+        let updatedMonsterHP = document.querySelector("#monster-two-hp");
+        updatedMonsterHP.innerHTML = `
+              <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+              `;
+        //greying out attack module buttons when pressed
 
-      let greyOutAttackButtons = function () {
-        let attackButtons = document.querySelectorAll(".attack");
+        
 
-        for (let attackButton of attackButtons) {
-          attackButton.classList.add("hidden");
-        }
+        greyOutAttackButtons();
 
-        let showMonsterAttackButton = document.querySelector("#monster-attack");
-        showMonsterAttackButton.classList.remove("hidden");
 
-        showMonsterAttackButton.onclick = function () {
-          monster2.monsterAttack(monster1, monster2);
-        };
-      };
+      } else if (monster2.healthPoints - inflictedDamage <= 0) {
+        monster2.healthPoints = 0;
 
-      greyOutAttackButtons();
-    } else if (monster2.healthPoints - inflictedDamage <= 0) {
-      monster2.healthPoints = 0;
+        let monsterTwoStatus = document.querySelector("#monster-two");
+        let defeatMonster2 = document.querySelector("#dialogue");
+        monsterTwoStatus.innerHTML = `
+                  <div class="monster" id="monster-two">
+                      <fieldset class='monster-info-module'>
+                          <legend class='monster-dashboard'>Monster 2</legend>
+                          <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                          <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                          <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
+                          <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
+                      </fieldset>    
+                  </div>`;
+        defeatMonster2.innerHTML = `
+                  <p>Congratulations, you defeated the Monster 2!</p>`;
 
-      let monsterTwoStatus = document.querySelector("#monster-two");
-      let defeatMonster2 = document.querySelector("#dialogue");
-      monsterTwoStatus.innerHTML = `
-                <div class="monster" id="monster-two">
-                    <fieldset class='monster-info-module'>
-                        <legend class='monster-dashboard'>Monster 2</legend>
-                        <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
-                        <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
-                        <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
-                        <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
-                    </fieldset>    
-                </div>`;
-      defeatMonster2.innerHTML = `
-                <p>Congratulations, you defeated the Monster 2!</p>`;
+        let updatedExperience = document.querySelector("#char-experience");
+        updatedExperience.innerHTML = `
+                  <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+                  `;
 
-      let updatedExperience = document.querySelector("#char-experience");
-      updatedExperience.innerHTML = `
-                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-                `;
 
-      let removingMonster2Button =
-        document.getElementsByClassName("attack-monster-two");
-      removingMonster2Button[0].classList.add("monster1-dead");
+        let removingMonster2Button =
+          document.getElementsByClassName("attack-monster-two");
+        removingMonster2Button[0].classList.add("monster1-dead");
 
-      let removeMonster2SpellAttack =
-        document.getElementsByClassName("spell2-monster-two");
-      removeMonster2SpellAttack[0].classList.add("monster1-dead");
+        let removeMonster2SpellAttack =
+          document.getElementsByClassName("spell2-monster-two");
+        removeMonster2SpellAttack[0].classList.add("monster1-dead");
+
+
+      }
+        confirmMonstersDead();
     }
-    confirmMonstersDead();
+    
+    let playerHitRollValue = Math.ceil(Math.random() * 20) + finalCharacter.attributes[0].adjustment;
+    let monsterArmorClass = monster1.armorClass;
+
+    //END HITROLL VALUE
+
+    let inflictedDamage2 = Math.ceil(Math.random(1) * finalCharacter.weapon.damage) + finalCharacter.attributes[0].adjustment;
+    if (inflictedDamage2 <= 0) {
+      inflictedDamage2 = 0;
+    }
+
+    let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) => {
+      console.log("Player's HitRoll: " + playerHitRollValue1);
+      console.log("Monster's Armor Class: " + monsterArmorClass1);
+      console.table(playerHitRoll1);
+      for (let i = 0; i < playerHitRoll1.length; i++) {
+        if (playerHitRoll1[i][0] === monsterArmorClass1) {
+          console.log("got correct hit roll table");
+          console.log("Player's AC:" + playerHitRoll1[i][1]);
+          if (playerHitRollValue1 < playerHitRoll1[i][1]) {
+            alert('Player misses!');
+            greyOutAttackButtons();
+          } else {
+            hitRollSucceed(monster1, finalCharacter);
+            // greyOutAttackButtons();
+          }
+        }
+      }
+    }
+    checkPlayerHitRoll(playerHitRollValue, monsterArmorClass, finalCharacter.hitRollTable);
+
   }
 
   spell2AttackMonster1(monster1, monster2, spell2, continueNextChapter) {
