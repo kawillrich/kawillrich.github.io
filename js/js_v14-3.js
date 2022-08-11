@@ -1076,6 +1076,7 @@ function logCharSpecialty() {
     finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 2;
+    finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "mage") {
     // console.log('mage');
@@ -1086,6 +1087,8 @@ function logCharSpecialty() {
     finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 3;
+    finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
+
     finalCharacter.specialty.characterLevel.specialtySkills[
       "First Level Mage Spells"
     ] = [];
@@ -1105,6 +1108,8 @@ function logCharSpecialty() {
     finalCharacter.inventory = [];
     finalCharacter.enchantedItem = eloisesRing;
     finalCharacter.characterImage = 0;
+    finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
+
     finalCharacter.specialty.characterLevel.specialtySkills[
       "First Level Mage Spells"
     ] = [];
@@ -1124,6 +1129,8 @@ function logCharSpecialty() {
     finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 1;
+    finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
+
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "cleric") {
     // console.log('dragonwarrior');
@@ -1134,6 +1141,8 @@ function logCharSpecialty() {
     finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 4;
+    finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
+
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "dwarf") {
     // console.log('dragonwarrior');
@@ -1144,6 +1153,8 @@ function logCharSpecialty() {
     finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 6;
+    finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
+
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "elf") {
     // console.log('dragonwarrior');
@@ -1154,6 +1165,8 @@ function logCharSpecialty() {
     finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 5;
+    finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
+
     finalCharacter.specialty.characterLevel.specialtySkills[
       "First Level Mage Spells"
     ] = [];
@@ -1173,6 +1186,8 @@ function logCharSpecialty() {
     finalCharacter.inventory = [];
     finalCharacter.enchantedItem = noItem;
     finalCharacter.characterImage = 7;
+    finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
+
     finalCharacter.characterUpdate();
   } else {
     // console.log ('none');
