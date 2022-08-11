@@ -112,7 +112,12 @@ export default class Monster {
     this.finalCharacter = finalCharacter;
 
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
-    let charArmorClass = finalCharacter.armor.armorClass;
+
+    console.log(finalCharacter.armorClass);
+
+    let charArmorClass = finalCharacter.armorClass;
+
+    console.log(charArmorClass);
 
           //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
 
