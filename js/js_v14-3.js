@@ -1444,7 +1444,7 @@ function showInventory() {
   availableGoldPieces.textContent = `${finalCharacter.treasure.gold.quantity}`;
 
   let submitBuyingItems = document.querySelector("#buy-items");
-  submitBuyingItems.addEventListener("click", selectInventory, false);
+  submitBuyingItems.addEventListener("click", function () {selectInventory(finalCharacter)}, false);
 
   // selectInventory();
 }
@@ -1467,6 +1467,8 @@ function addingTotalInventoryCost(e) {
     let updatedAvailableGold = document.querySelector("#available-gold");
 
     getSiblingQty.setAttribute("data-qty", parsedRetrievedLink + 1);
+
+    // console.log(getSiblingQty.dataset.qty, getSiblingQty.textContent);
 
     updatedAvailableGold.textContent -= parsedTargetCost;
 
@@ -1505,26 +1507,11 @@ function addingTotalInventoryCost(e) {
     let totalGoldPiecesContent = document.querySelector("#total-gold");
     let parsedTotalGold = Number(totalGoldPiecesContent.textContent);
 
-    if (
-      (e.target.classList.contains("quantity-decrease") &&
-        newTotal > parsedTotalGold) ||
-      retrievedDataLink - 1 < 0
-    ) {
-      // console.log(
-      //   typeof retrievedDataLink + " " + retrievedDataLink + " targetQty"
-      // );
-      // console.log(typeof newTotal + " " + newTotal + " newTotal");
-      // console.log(
-      //   typeof finalCharacter.treasure +
-      //     " " +
-      //     finalCharacter.treasure.gold.quantity +
-      //     " finalCharacter.treasure.gold.quantity"
-      // );
+    if ( (e.target.classList.contains("quantity-decrease") && newTotal > parsedTotalGold) || retrievedDataLink - 1 < 0) {
+      
+      console.log(retrievedDataLink);
 
-      // alert("Can't do that");
-
-      updatedAvailableGold.textContent =
-        parseInt(updatedAvailableGold.textContent) - parsedTargetCost;
+      updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) - parsedTargetCost;
       getSiblingQty.setAttribute("data-qty", parsedRetrievedLink);
       getSiblingQty.textContent = parsedRetrievedLink;
     }
@@ -1535,50 +1522,72 @@ function addingTotalInventoryCost(e) {
   // console.log(finalCharacter.treasure);
 }
 
-function selectInventory() {
+function selectInventory(finalCharacter) {
   // finalCharacter.treasure = finalGold;
   window.scrollTo(0, 0);
 
+  ///GETTING ENTIRE NODE LIST 
+  let purchasedSupplies = document.querySelectorAll(".current-item-qty"); //node list of all 23 items
 
-  let purchasedSupplies = document.querySelectorAll(".current-item-qty");
-  for (let i = 0; i < purchasedSupplies.length; i++) {
+  let x = 0;
+
+
+  for (let i = 0; i < purchasedSupplies.length; i++) { //node list of all 23 items
     let updatedSuppliesName = purchasedSupplies[i].getAttribute("data-value");
     let parsedSuppliesValue = purchasedSupplies[i].getAttribute("data-qty");
-    if (parsedSuppliesValue > 0) {
-      // let updatedSuppliesValue = purchasedSupplies[i].data-name;
-      // console.log(updatedSuppliesName, parsedSuppliesValue);
-      finalCharacter.inventory.push(eval(updatedSuppliesName));
 
-      // console.log(finalCharacter.inventory);
+    // console.log(parsedSuppliesValue, updatedSuppliesName)
+
+    if (parsedSuppliesValue > 0) { //this is selecting only the items with a qty greater than 0
+     
+      finalCharacter.inventory.push(eval(updatedSuppliesName)); //this is correctly adding only the supply item that has a qty over 0, but the qty is not carrying over correctly
+
+      // console.log(finalCharacter.inventory); AT THIS POINT, THE QTY DOES NOT GET UPDATED AND STAYS AT 0 BUT THE PARSEDSUPPLIES VALUE IS AN ACCURATE QTY
     }
   }
 
   //start adding inventory tooltips
 
-  for (let i = 0; i < finalCharacter.inventory.length; i++) {
-    let addedItemSpan = document.createElement("span");
+  for (let i = 0; i < purchasedSupplies.length; i++) {
+    let purchasedSuppliesValue2 = purchasedSupplies[i].getAttribute("data-qty"); //retrieves qty for all 23 node items
+
+    if (purchasedSuppliesValue2[i] == 0) {
+      console.log(purchasedSuppliesValue2);
+
+    } else {
+      let addedItemSpan = document.createElement("span");
     
-    let purchasedSuppliesValue2 = purchasedSupplies[i].getAttribute("data-qty");
-    // console.log(purchasedSuppliesValue2);
+      //NEED TO ONLY GET THE ACTUAL PURCHASED ITEMS, NOT ENTIRE NODE LIST OF ALL ITEMS
 
-    finalCharacter.inventory[i].qty = purchasedSuppliesValue2;
 
-    addedItemSpan.innerHTML = `<span class="supply-item-tooltiptext">Desc: ${finalCharacter.inventory[i].description}<br>
-          Qty: ${finalCharacter.inventory[i].qty}<br>
-          </span>
-          `;
+      let purchasedSuppliesValue3 = purchasedSupplies[i].getAttribute("data-qty");
 
-    let newID = finalCharacter.inventory[i].dataName;
-    addedItemSpan.setAttribute("id", newID);
-    addedItemSpan.classList.add("supply-item-tooltip");
-    let itemSpanBreak = document.createElement("br");
-    addedItemSpan.appendChild(itemSpanBreak);
-    let newTextName = finalCharacter.inventory[i].name;
-    let addedItemTextNode = document.createTextNode(newTextName);
-    addedItemSpan.prepend(addedItemTextNode);
+      console.log(purchasedSuppliesValue3);
 
-    let itemList = document.querySelector("#normal-equipment-list");
-    itemList.appendChild(addedItemSpan);
+      if (purchasedSuppliesValue3 > 0) {
+        finalCharacter.inventory[x].qty = purchasedSuppliesValue3;
+
+        addedItemSpan.innerHTML = `<span class="supply-item-tooltiptext">Desc: ${finalCharacter.inventory[x].description}<br>
+        Qty: ${finalCharacter.inventory[x].qty}<br>
+        </span>
+        `;
+
+        let newID = finalCharacter.inventory[x].dataName;
+        addedItemSpan.setAttribute("id", newID);
+        addedItemSpan.classList.add("supply-item-tooltip");
+        let itemSpanBreak = document.createElement("br");
+        addedItemSpan.appendChild(itemSpanBreak);
+        let newTextName = finalCharacter.inventory[x].name;
+        let addedItemTextNode = document.createTextNode(newTextName);
+        addedItemSpan.prepend(addedItemTextNode);
+
+        let itemList = document.querySelector("#normal-equipment-list");
+        itemList.appendChild(addedItemSpan);
+
+        x += 1;
+        console.log("X: " + x)
+      }      
+    }
   }
 
   //end adding inventory tooltips
