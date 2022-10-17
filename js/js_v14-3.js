@@ -2,215 +2,229 @@
 
 //weapon imports
 import Weapon from "./weapon-class-v2.js";
-import {
-  fists,
-  normalSword,
-  shortBow,
-  silverSword,
-  twoHandedBroadSword,
-  longBow,
-  ebonyBow,
-  mahoganyStaff,
-  gemStaff,
-  noWeapon,
-  obsidianSword,
-  woodenClub,
-  dagger,
-  silverDagger,
-  battleAxe,
-  handAxe,
-  crossBow,
-  shortSword,
-  mace,
-  javelin,
-  poleArm,
-  sling,
-  spear,
-  warHammer,
-} from "./weapon-class-v2.js";
+import
+  {
+    fists,
+    normalSword,
+    shortBow,
+    silverSword,
+    twoHandedBroadSword,
+    longBow,
+    ebonyBow,
+    mahoganyStaff,
+    gemStaff,
+    noWeapon,
+    obsidianSword,
+    woodenClub,
+    dagger,
+    silverDagger,
+    battleAxe,
+    handAxe,
+    crossBow,
+    shortSword,
+    mace,
+    javelin,
+    poleArm,
+    sling,
+    spear,
+    warHammer,
+  } from "./weapon-class-v2.js";
 
 //armor imports
 import Armor from "./armor-class-v2.js";
-import {
-  chainMail,
-  leatherArmor,
-  robes,
-  noArmor,
-  scaleMail,
-  plateMail,
-  bandedMail,
-  obsidianPlateMail,
-} from "./armor-class-v2.js";
+import
+  {
+    chainMail,
+    leatherArmor,
+    robes,
+    noArmor,
+    scaleMail,
+    plateMail,
+    bandedMail,
+    obsidianPlateMail,
+  } from "./armor-class-v2.js";
 
 //spell imports
 import Spell from "./spell-class-v2.js";
-import {
-  noSpell,
-  mediumHealing,
-  majorHealing,
-  earthStrike,
-  lightening,
-  minorHealing,
-  fireStorm,
-  dragonFang,
-  fireArrows,
-} from "./spell-class-v2.js";
+import
+  {
+    noSpell,
+    mediumHealing,
+    majorHealing,
+    earthStrike,
+    lightening,
+    minorHealing,
+    fireStorm,
+    dragonFang,
+    fireArrows,
+  } from "./spell-class-v2.js";
 
 //specialty imports
 import Specialty from "./specialty-class-v2.js";
-import {
-  noSpecialty,
-  warrior,
-  highMage,
-  dragonWarrior,
-  elf,
-  dwarf,
-  halfling,
-  cleric,
-  thief,
-} from "./specialty-class-v2.js";
+import
+  {
+    noSpecialty,
+    warrior,
+    highMage,
+    dragonWarrior,
+    elf,
+    dwarf,
+    halfling,
+    cleric,
+    thief,
+  } from "./specialty-class-v2.js";
 
 //character imports
 import Character from "./character-class-v2.js";
 
 //moster imports
 import Monster from "./monster-class-v2.js";
-import {
-  smallWolf,
-  wolf1,
-  wolf2,
-  goblin,
-  goblin1,
-  goblin2,
-  noMonster,
-  fireBeetle,
-  hobGoblin,
-  bugBear,
-  bugBear1,
-  kobold,
-  kobold1,
-} from "./monster-class-v2.js";
+import
+  {
+    smallWolf,
+    wolf1,
+    wolf2,
+    goblin,
+    goblin1,
+    goblin2,
+    noMonster,
+    fireBeetle,
+    hobGoblin,
+    bugBear,
+    bugBear1,
+    kobold,
+    kobold1,
+  } from "./monster-class-v2.js";
 
 //inventory imports
 import Inventory from "./inventory-class-v1.js";
-import {
-  raynardsCoin,
-  farmersNote,
-  noItem,
-  eloisesRing,
-  torch,
-  backPack,
-  holySymbol,
-  holyWater,
-  smallHammer,
-  ironSpikes,
-  garlic,
-  grapplingHook,
-  lantern,
-  mirrorHandSized,
-  oil,
-  poleWooden,
-  rationsIron,
-  rationsStandard,
-  rope,
-  sackSmall,
-  sackLarge,
-  stakesAndMallet,
-  thievesTools,
-  tinderBox,
-  waterskin,
-  wine,
-  wolfsbane,
-} from "./inventory-class-v1.js";
+import
+  {
+    raynardsCoin,
+    farmersNote,
+    noItem,
+    eloisesRing,
+    torch,
+    backPack,
+    holySymbol,
+    holyWater,
+    smallHammer,
+    ironSpikes,
+    garlic,
+    grapplingHook,
+    lantern,
+    mirrorHandSized,
+    oil,
+    poleWooden,
+    rationsIron,
+    rationsStandard,
+    rope,
+    sackSmall,
+    sackLarge,
+    stakesAndMallet,
+    thievesTools,
+    tinderBox,
+    waterskin,
+    wine,
+    wolfsbane,
+  } from "./inventory-class-v1.js";
 
 //class-level-imports
-import {
-  fighterVeteran,
-  fighterWarrior,
-  fighterSwordmaster,
-} from "./character-class-levels/fighter-level-class.js";
-import {
-  veteranMedium,
-  warriorSeer,
-  swordMasterConjurer,
-} from "./character-class-levels/elf-level-class.js";
+import
+  {
+    fighterVeteran,
+    fighterWarrior,
+    fighterSwordmaster,
+  } from "./character-class-levels/fighter-level-class.js";
+import
+  {
+    veteranMedium,
+    warriorSeer,
+    swordMasterConjurer,
+  } from "./character-class-levels/elf-level-class.js";
 import { dragonWarriorVeteran } from "./character-class-levels/dragon-warrior-level-class.js";
 
 //mage spell imports
-import {
-  charmPerson,
-  detectMagic,
-  floatingDisc,
-  holdPortal,
-  light,
-  magicMissile,
-  protectionFromEvil,
-  readLanguages,
-  shield,
-  sleep,
-  ventriloquism,
-  readMagic,
-} from "./mage-spells/mage-level-one-spells-class.js";
-import {
-  continualLight,
-  detectEvil,
-  invisibility,
-  esp,
-  knock,
-  levitate,
-  locateObject,
-  mirrorImage,
-  phantasmalForce,
-  web,
-  wizardLock,
-  detectInvisible,
-} from "./mage-spells/mage-level-two-spells-class.js";
-import {
-  clairvoyance,
-  dispelMagic,
-  fireBall,
-  fly,
-  haste,
-  holdPerson,
-  infravision,
-  invisibilityTenFoot,
-  lightningBolt,
-  protectionFromEvilTenFoot,
-  protectionFromNormalMissiles,
-  waterBreathing,
-} from "./mage-spells/mage-level-three-spells-class.js";
+import
+  {
+    charmPerson,
+    detectMagic,
+    floatingDisc,
+    holdPortal,
+    light,
+    magicMissile,
+    protectionFromEvil,
+    readLanguages,
+    shield,
+    sleep,
+    ventriloquism,
+    readMagic,
+  } from "./mage-spells/mage-level-one-spells-class.js";
+import
+  {
+    continualLight,
+    detectEvil,
+    invisibility,
+    esp,
+    knock,
+    levitate,
+    locateObject,
+    mirrorImage,
+    phantasmalForce,
+    web,
+    wizardLock,
+    detectInvisible,
+  } from "./mage-spells/mage-level-two-spells-class.js";
+import
+  {
+    clairvoyance,
+    dispelMagic,
+    fireBall,
+    fly,
+    haste,
+    holdPerson,
+    infravision,
+    invisibilityTenFoot,
+    lightningBolt,
+    protectionFromEvilTenFoot,
+    protectionFromNormalMissiles,
+    waterBreathing,
+  } from "./mage-spells/mage-level-three-spells-class.js";
 
 //cleric spell imports
-import {
-  cureLightWoundsCleric,
-  detectEvilCleric,
-  detectMagicCleric,
-  purifyFoodAndWaterCleric,
-  lightCleric,
-  removeFearCleric,
-  protectionFromEvilCleric,
-  resistColdCleric,
-} from "./cleric-spells/cleric-level-one-spells-class.js";
-import {
-  blessCleric,
-  findTrapsCleric,
-  holdPersonCleric,
-  knowAlignmentCleric,
-  resistFireCleric,
-  silence15ftCleric,
-  snakeCharmCleric,
-  speakWithAnimalCleric,
-} from "./cleric-spells/cleric-level-two-spells-class.js";
-import {
-  continualLightCleric,
-  cureBlindnessCleric,
-  cureDiseaseCleric,
-  growthOfAnimalsCleric,
-  locateObjectCleric,
-  removeCurseCleric,
-  speakWithTheDeadCleric,
-  strikingCleric,
-} from "./cleric-spells/cleric-level-three-spells.js";
+import
+  {
+    cureLightWoundsCleric,
+    detectEvilCleric,
+    detectMagicCleric,
+    purifyFoodAndWaterCleric,
+    lightCleric,
+    removeFearCleric,
+    protectionFromEvilCleric,
+    resistColdCleric,
+  } from "./cleric-spells/cleric-level-one-spells-class.js";
+import
+  {
+    blessCleric,
+    findTrapsCleric,
+    holdPersonCleric,
+    knowAlignmentCleric,
+    resistFireCleric,
+    silence15ftCleric,
+    snakeCharmCleric,
+    speakWithAnimalCleric,
+  } from "./cleric-spells/cleric-level-two-spells-class.js";
+import
+  {
+    continualLightCleric,
+    cureBlindnessCleric,
+    cureDiseaseCleric,
+    growthOfAnimalsCleric,
+    locateObjectCleric,
+    removeCurseCleric,
+    speakWithTheDeadCleric,
+    strikingCleric,
+  } from "./cleric-spells/cleric-level-three-spells.js";
 
 //achievement imports
 //import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
@@ -219,8 +233,9 @@ import {
 
 //inializing character default values
 
-window.addEventListener('load', 
-  function() { 
+window.addEventListener('load',
+  function ()
+  {
     window.scrollTo(0, 0);
   }, false);
 
@@ -313,14 +328,17 @@ export let finalCharacter = new Character(
 finalCharacter.inventory = [];
 
 //Player sheet tab initialization
-function openItem(e, linkName) {
+function openItem(e, linkName)
+{
   var i, tabcontent, tablinks;
   tabcontent = document.getElementsByClassName("tabContent");
-  for (i = 0; i < tabcontent.length; i++) {
+  for (i = 0; i < tabcontent.length; i++)
+  {
     tabcontent[i].style.display = "none";
   }
   tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
+  for (i = 0; i < tablinks.length; i++)
+  {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
   document.getElementById(linkName).style.display = "block";
@@ -330,7 +348,8 @@ function openItem(e, linkName) {
 let normalEquipmentLink = document.querySelector("#normal-equipment-link");
 normalEquipmentLink.addEventListener(
   "click",
-  function (e) {
+  function (e)
+  {
     openItem(e, "normal-equipment");
   },
   false
@@ -339,7 +358,8 @@ normalEquipmentLink.addEventListener(
 let magicalEqiupmentLink = document.querySelector("#magical-equipment-link");
 magicalEqiupmentLink.addEventListener(
   "click",
-  function (e) {
+  function (e)
+  {
     openItem(e, "magical-equipment");
   },
   false
@@ -348,7 +368,8 @@ magicalEqiupmentLink.addEventListener(
 let spellsLink = document.querySelector("#spells-link");
 spellsLink.addEventListener(
   "click",
-  function (e) {
+  function (e)
+  {
     openItem(e, "spells");
   },
   false
@@ -357,7 +378,8 @@ spellsLink.addEventListener(
 let treasureLink = document.querySelector("#treasure-link");
 treasureLink.addEventListener(
   "click",
-  function (e) {
+  function (e)
+  {
     openItem(e, "treasure");
   },
   false
@@ -381,7 +403,8 @@ let gameFrame = 0;
 const staggerFrames = 8;
 let reqAnim;
 
-export function render() {
+export function render()
+{
   frameY = finalCharacter.characterImage;
   canvas = document.getElementById("canvas2");
   ctx = canvas.getContext("2d");
@@ -403,9 +426,11 @@ export function render() {
   requestAnimationFrame(render);
 }
 
-export function animate() {
+export function animate()
+{
   frameY = finalCharacter.characterImage;
-  if (document.querySelector(".attack-monster-one")) {
+  if (document.querySelector(".attack-monster-one"))
+  {
     document.querySelector(".attack-monster-one").disabled = true;
   }
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
@@ -422,12 +447,16 @@ export function animate() {
     spriteHeight * 3
   );
 
-  if (gameFrame % staggerFrames == 0) {
-    if (frameX < 4) {
+  if (gameFrame % staggerFrames == 0)
+  {
+    if (frameX < 4)
+    {
       frameX++;
-    } else if (frameX >= 4) {
+    } else if (frameX >= 4)
+    {
       frameX = 0;
-      if (document.querySelector(".attack-monster-one")) {
+      if (document.querySelector(".attack-monster-one"))
+      {
         document.querySelector(".attack-monster-one").disabled = false;
       }
       return;
@@ -438,7 +467,8 @@ export function animate() {
   reqAnim = requestAnimationFrame(animate);
 }
 
-export function stopAnimate() {
+export function stopAnimate()
+{
   window.cancelAnimationFrame(reqAnim);
 }
 
@@ -452,20 +482,24 @@ let selectedSpecialty = "";
 //asks if you are ready to start game
 
 
-function checkUsername() {
+function checkUsername()
+{
   let checkName = document.querySelector("#character-name");
   let checkNameLength = checkName.value;
   // console.log("checking name");
   let usernameMessage = document.querySelector("#username-message");
-  if (checkNameLength.length < 3) {
+  if (checkNameLength.length < 3)
+  {
     usernameMessage.textContent = "Name must be at least 3 characters.";
-  } else {
+  } else
+  {
     usernameMessage = "";
     charNameSubmitted();
   }
 }
 
-function charNameSubmitted() {  
+function charNameSubmitted()
+{
   window.scrollTo(0, 0);
   var confirmStart = document.querySelector("#confirm-start");
   submittedCharName = document.querySelector("#character-name").value;
@@ -477,36 +511,37 @@ function charNameSubmitted() {
 
 //ADDING ABILITY SCORE GENERATOR FUNCTION
 
-function rollAttributes() {
+function rollAttributes()
+{
   document.querySelector("#submit-name").classList.add("disabled");
 
   let goldPieces = (Math.ceil(Math.random() * 15) + 3) * 10;
   finalCharacter.treasure = {
-      gold: {    
-        type: "Gold Pieces",
-        gpValue: 1,
-        quantity: goldPieces   
-      },
-      gems: {    
-        type: "Gems",
-        gpValue: 10,
-        quantity: 0   
-      },
-      electrum: {    
-        type: "Electrum Pieces",
-        gpValue: 2,
-        quantity: 0   
-      },
-      silver: {    
-        type: "Silver Pieces",
-        gpValue: .1,
-        quantity: 0   
-      },
-      copper: {    
-        type: "Copper Pieces",
-        gpValue: .01,
-        quantity: 0   
-      },
+    gold: {
+      type: "Gold Pieces",
+      gpValue: 1,
+      quantity: goldPieces
+    },
+    gems: {
+      type: "Gems",
+      gpValue: 10,
+      quantity: 0
+    },
+    electrum: {
+      type: "Electrum Pieces",
+      gpValue: 2,
+      quantity: 0
+    },
+    silver: {
+      type: "Silver Pieces",
+      gpValue: .1,
+      quantity: 0
+    },
+    copper: {
+      type: "Copper Pieces",
+      gpValue: .01,
+      quantity: 0
+    },
   }
 
 
@@ -583,11 +618,12 @@ function rollAttributes() {
   let confirmAttributes = document.querySelector("#confirm-attributes");
   confirmAttributes.addEventListener("click", confirmingAttributes, false);
 
-  
+
 }
 
-function generateNewAttributes() {
-  
+function generateNewAttributes()
+{
+
   attributes[0].score = Math.ceil(Math.random() * 12) + 6;
   attributes[1].score = Math.ceil(Math.random() * 12) + 6;
   attributes[2].score = Math.ceil(Math.random() * 12) + 6;
@@ -613,78 +649,99 @@ function generateNewAttributes() {
   let getCharCharisma = document.querySelector("#charisma-stat");
   getCharCharisma.innerHTML = attributes[5].score;
 
-  for (let i = 0; i < attributes.length; i++) {
-    if (attributes[i].score === 3) {
+  for (let i = 0; i < attributes.length; i++)
+  {
+    if (attributes[i].score === 3)
+    {
       attributes[i].adjustment = -3;
-    } else if (attributes[i].score === 4 || attributes[i].score === 5) {
+    } else if (attributes[i].score === 4 || attributes[i].score === 5)
+    {
       attributes[i].adjustment = -2;
     } else if (
       attributes[i].score === 6 ||
       attributes[i].score === 7 ||
       attributes[i].score === 8
-    ) {
+    )
+    {
       attributes[i].adjustment = -1;
-    } else if (attributes[i].score > 8 && attributes[i].score < 13) {
+    } else if (attributes[i].score > 8 && attributes[i].score < 13)
+    {
       attributes[i].adjustment = 0;
-    } else if (attributes[i].score > 12 && attributes[i].score < 16) {
+    } else if (attributes[i].score > 12 && attributes[i].score < 16)
+    {
       attributes[i].adjustment = 1;
-    } else if (attributes[i].score > 15 && attributes[i].score < 18) {
+    } else if (attributes[i].score > 15 && attributes[i].score < 18)
+    {
       attributes[i].adjustment = 2;
-    } else if (attributes[i].score === 18) {
+    } else if (attributes[i].score === 18)
+    {
       attributes[i].adjustment = 3;
     }
   }
 
   let getCharStrengthAdj = document.querySelector("#strength-stat-adjustment");
-  if (attributes[0].adjustment > 0) {
+  if (attributes[0].adjustment > 0)
+  {
     getCharStrengthAdj.innerHTML = `+${attributes[0].adjustment}`;
-  } else {
+  } else
+  {
     getCharStrengthAdj.innerHTML = attributes[0].adjustment;
   }
 
   let getCharIntelligenceAdj = document.querySelector(
     "#intelligence-stat-adjustment"
   );
-  if (attributes[1].adjustment > 0) {
+  if (attributes[1].adjustment > 0)
+  {
     getCharIntelligenceAdj.innerHTML = `+${attributes[1].adjustment}`;
-  } else {
+  } else
+  {
     getCharIntelligenceAdj.innerHTML = attributes[1].adjustment;
   }
 
   let getCharWisdomAdj = document.querySelector("#wisdom-stat-adjustment");
-  if (attributes[2].adjustment > 0) {
+  if (attributes[2].adjustment > 0)
+  {
     getCharWisdomAdj.innerHTML = `+${attributes[2].adjustment}`;
-  } else {
+  } else
+  {
     getCharWisdomAdj.innerHTML = attributes[2].adjustment;
   }
 
   let getCharDexterityAdj = document.querySelector(
     "#dexterity-stat-adjustment"
   );
-  if (attributes[3].adjustment > 0) {
+  if (attributes[3].adjustment > 0)
+  {
     getCharDexterityAdj.innerHTML = `+${attributes[3].adjustment}`;
-  } else {
+  } else
+  {
     getCharDexterityAdj.innerHTML = attributes[3].adjustment;
   }
 
   let getCharConstitutionAdj = document.querySelector(
     "#constitution-stat-adjustment"
   );
-  if (attributes[4].adjustment > 0) {
+  if (attributes[4].adjustment > 0)
+  {
     getCharConstitutionAdj.innerHTML = `+${attributes[4].adjustment}`;
-  } else {
+  } else
+  {
     getCharConstitutionAdj.innerHTML = attributes[4].adjustment;
   }
 
   let getCharCharismaAdj = document.querySelector("#charisma-stat-adjustment");
-  if (attributes[5].adjustment > 0) {
+  if (attributes[5].adjustment > 0)
+  {
     getCharCharismaAdj.innerHTML = `+${attributes[5].adjustment}`;
-  } else {
+  } else
+  {
     getCharCharismaAdj.innerHTML = attributes[5].adjustment;
   }
 }
 
-function confirmingAttributes() {
+function confirmingAttributes()
+{
   window.scrollTo(0, 0);
   let rollNewAttributes = document.querySelector("#generate-attributes");
 
@@ -754,7 +811,8 @@ function confirmingAttributes() {
   beginningAdventure.addEventListener("click", startGame, false);
 }
 
-function updateAlignmentDescription() {
+function updateAlignmentDescription()
+{
   let selectedAlignment = document.querySelector(
     'input[name="alignment"]:checked'
   ).value;
@@ -762,21 +820,24 @@ function updateAlignmentDescription() {
   let updateAlignmentDescElement = document.querySelector(
     "#alignment-description-container"
   );
-  if (selectedAlignment === "lawful") {
+  if (selectedAlignment === "lawful")
+  {
     finalCharacter.alignment = "Lawful";
     updateAlignmentDescElement.innerHTML = `
         Lawful characters believe that everything should follow an order, and that obeying rules is the natural way of life. 
         Lawful creatures will try to tell the truth, obey laws, and care about all things. Lawful characters always try to keep their promises. They will try to obey laws as long as 
         such laws are fair and just. If a choice must be made between the benefit of the group or an individual, a Lawful character will usually choose the group.
         `;
-  } else if (selectedAlignment === "neutral") {
+  } else if (selectedAlignment === "neutral")
+  {
     finalCharacter.alignment = "Neutral";
     updateAlignmentDescElement.innerHTML = `
         Neutral characters believethat the works is a balance between Law and Chaos. It is important that neither side get
             too much power and upset this balance. The individual is important, but so it the group; the two sides must work together. A Neutral character is most interested in personal
             survival. Such characters believe in their own wits and abilities rather than luck.
         `;
-  } else if (selectedAlignment === "chaotic") {
+  } else if (selectedAlignment === "chaotic")
+  {
     finalCharacter.alignment = "Chaotic";
     updateAlignmentDescElement.innerHTML = `
         Chaotic characters are the opposite of Lawful characters. They believe that life is random, and that chance and 
@@ -787,7 +848,8 @@ function updateAlignmentDescription() {
 }
 
 //TEST FUNCTION TO START GAME - creates player info
-function startGame() {
+function startGame()
+{
   window.scrollTo(0, 0);
   let strengthPlusAdjustment;
   let intelligencePlusAdjustment;
@@ -824,39 +886,51 @@ function startGame() {
   let maximizeCanvas4 = document.querySelector("#canvas4");
   maximizeCanvas4.classList.remove("minimized");
 
-  if (attributes[0].adjustment > 0) {
+  if (attributes[0].adjustment > 0)
+  {
     strengthPlusAdjustment = `+${attributes[0].adjustment}`;
-  } else {
+  } else
+  {
     strengthPlusAdjustment = attributes[0].adjustment;
   }
 
-  if (attributes[1].adjustment > 0) {
+  if (attributes[1].adjustment > 0)
+  {
     intelligencePlusAdjustment = `+${attributes[1].adjustment}`;
-  } else {
+  } else
+  {
     intelligencePlusAdjustment = attributes[1].adjustment;
   }
 
-  if (attributes[2].adjustment > 0) {
+  if (attributes[2].adjustment > 0)
+  {
     wisdomPlusAdjustment = `+${attributes[2].adjustment}`;
-  } else {
+  } else
+  {
     wisdomPlusAdjustment = attributes[2].adjustment;
   }
 
-  if (attributes[3].adjustment > 0) {
+  if (attributes[3].adjustment > 0)
+  {
     dexterityPlusAdjustment = `+${attributes[3].adjustment}`;
-  } else {
+  } else
+  {
     dexterityPlusAdjustment = attributes[3].adjustment;
   }
 
-  if (attributes[4].adjustment > 0) {
+  if (attributes[4].adjustment > 0)
+  {
     constitutionPlusAdjustment = `+${attributes[4].adjustment}`;
-  } else {
+  } else
+  {
     constitutionPlusAdjustment = attributes[4].adjustment;
   }
 
-  if (attributes[5].adjustment > 0) {
+  if (attributes[5].adjustment > 0)
+  {
     charismaPlusAdjustment = `+${attributes[5].adjustment}`;
-  } else {
+  } else
+  {
     charismaPlusAdjustment = attributes[5].adjustment;
   }
 
@@ -869,77 +943,53 @@ function startGame() {
                 <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span><span id='hpBar'><progress id='hp-prog-bar' max="${
-    finalCharacter.specialty.maxHealthPoints +
+                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints +
     finalCharacter.attributes[4].adjustment
-  }" value="${
-    finalCharacter.specialty.healthPoints +
+    }" value="${finalCharacter.specialty.healthPoints +
     finalCharacter.attributes[4].adjustment
-  }"></progress>${
-    finalCharacter.specialty.healthPoints +
+    }"></progress>${finalCharacter.specialty.healthPoints +
     finalCharacter.attributes[4].adjustment
-  }/${
-    finalCharacter.specialty.maxHealthPoints +
+    }/${finalCharacter.specialty.maxHealthPoints +
     finalCharacter.attributes[4].adjustment
-  }</span></span></h4> 
-                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${
-                  finalCharacter.armor.name
-                }<span class="armor-tooltiptext">Armor Class: ${
-    finalCharacter.armor.armorClass
-  }</span></div></h4> 
-                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${
-                  finalCharacter.weapon.name
-                }<span class="weapon-tooltiptext">Damage: d${
-    finalCharacter.weapon.damage
-  }</span></div></h4>
-                <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${
-                  finalCharacter.specialty.spell1.name
-                }</span></h4>
-                <h4 id='char-spell2' class='char-info-label'>Spell 2: <span class="character-display-info">${
-                  finalCharacter.specialty.spell2.name
-                }</span></h4>
-                <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${
-                  finalCharacter.treasure.gold.quantity
-                }</span></h4>
-                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${
-                  finalCharacter.specialty.characterExperience
-                }</span></h4>               
+    }</span></span></h4> 
+                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name
+    }<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass
+    }</span></div></h4> 
+                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name
+    }<span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage
+    }</span></div></h4>
+                <h4 id='char-spell1' class='char-info-label'>Spell 1: <span class="character-display-info">${finalCharacter.specialty.spell1.name
+    }</span></h4>
+                <h4 id='char-spell2' class='char-info-label'>Spell 2: <span class="character-display-info">${finalCharacter.specialty.spell2.name
+    }</span></h4>
+                <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity
+    }</span></h4>
+                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience
+    }</span></h4>               
             </fieldset>
         </div>
         <div id='character-attributes'>
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Attributes</legend>
                 <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>Attribute: </span><span class='character-display-attributes-scores'>Score: </span><span class='character-display-attributes-scores-adj'>Adj: </span></h4>
-                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[0].name
-                }: </span><span class='character-display-attributes-scores'>${
-    finalCharacter.attributes[0].score
-  }</span><span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span></h4>
-                <h4 id='char-intelligence' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[1].name
-                }: </span><span class='character-display-attributes-scores'>${
-    finalCharacter.attributes[1].score
-  }</span><span class='character-display-attributes-scores-adj'>${intelligencePlusAdjustment}</span></h4>
-                <h4 id='char-wisdom' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[2].name
-                }: </span><span class='character-display-attributes-scores'>${
-    finalCharacter.attributes[2].score
-  }</span><span class='character-display-attributes-scores-adj'>${wisdomPlusAdjustment}</span></h4>
-                <h4 id='char-dexterity' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[3].name
-                }: </span><span class='character-display-attributes-scores'>${
-    finalCharacter.attributes[3].score
-  }</span><span class='character-display-attributes-scores-adj'>${dexterityPlusAdjustment}</span></h4>
-                <h4 id='char-constitution' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[4].name
-                }: </span><span class='character-display-attributes-scores'>${
-    finalCharacter.attributes[4].score
-  }</span><span class='character-display-attributes-scores-adj'>${constitutionPlusAdjustment}</span></h4>
-                <h4 id='char-charisma' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[5].name
-                }: </span><span class='character-display-attributes-scores'>${
-    finalCharacter.attributes[5].score
-  }</span><span class='character-display-attributes-scores-adj'>${charismaPlusAdjustment}</span></h4>
+                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[0].name
+    }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score
+    }</span><span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span></h4>
+                <h4 id='char-intelligence' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[1].name
+    }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[1].score
+    }</span><span class='character-display-attributes-scores-adj'>${intelligencePlusAdjustment}</span></h4>
+                <h4 id='char-wisdom' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[2].name
+    }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[2].score
+    }</span><span class='character-display-attributes-scores-adj'>${wisdomPlusAdjustment}</span></h4>
+                <h4 id='char-dexterity' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[3].name
+    }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[3].score
+    }</span><span class='character-display-attributes-scores-adj'>${dexterityPlusAdjustment}</span></h4>
+                <h4 id='char-constitution' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[4].name
+    }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[4].score
+    }</span><span class='character-display-attributes-scores-adj'>${constitutionPlusAdjustment}</span></h4>
+                <h4 id='char-charisma' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[5].name
+    }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[5].score
+    }</span><span class='character-display-attributes-scores-adj'>${charismaPlusAdjustment}</span></h4>
             </fieldset>
         </div>
         
@@ -951,10 +1001,12 @@ function startGame() {
         </div>                
         `;
 
-  let showInventory = () => {
+  let showInventory = () =>
+  {
     let accumulator = "";
 
-    for (let i = 0; i < finalCharacter.inventory.length; i++) {
+    for (let i = 0; i < finalCharacter.inventory.length; i++)
+    {
       accumulator += `${finalCharacter.inventory[i].name} <br>`;
     }
     return accumulator;
@@ -1063,11 +1115,13 @@ function startGame() {
 
 //updates character attributes
 //return out finalCharacter?
-function logCharSpecialty() {
+function logCharSpecialty()
+{
   selectedSpecialty = document.querySelector(
     'input[name="selected-specialty"]:checked'
   ).value;
-  if (selectedSpecialty === "fighter") {
+  if (selectedSpecialty === "fighter")
+  {
     // console.log('fighter');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = warrior;
@@ -1078,7 +1132,8 @@ function logCharSpecialty() {
     finalCharacter.characterImage = 2;
     finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
     finalCharacter.characterUpdate();
-  } else if (selectedSpecialty === "mage") {
+  } else if (selectedSpecialty === "mage")
+  {
     // console.log('mage');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = highMage;
@@ -1099,7 +1154,8 @@ function logCharSpecialty() {
       "Third Level Mage Spells"
     ] = [];
     finalCharacter.characterUpdate();
-  } else if (selectedSpecialty === "dragonwarrior") {
+  } else if (selectedSpecialty === "dragonwarrior")
+  {
     // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = dragonWarrior;
@@ -1120,7 +1176,8 @@ function logCharSpecialty() {
       "Third Level Mage Spells"
     ] = [];
     finalCharacter.characterUpdate();
-  } else if (selectedSpecialty === "thief") {
+  } else if (selectedSpecialty === "thief")
+  {
     // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = thief;
@@ -1132,7 +1189,8 @@ function logCharSpecialty() {
     finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
 
     finalCharacter.characterUpdate();
-  } else if (selectedSpecialty === "cleric") {
+  } else if (selectedSpecialty === "cleric")
+  {
     // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = cleric;
@@ -1144,7 +1202,8 @@ function logCharSpecialty() {
     finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
 
     finalCharacter.characterUpdate();
-  } else if (selectedSpecialty === "dwarf") {
+  } else if (selectedSpecialty === "dwarf")
+  {
     // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = dwarf;
@@ -1156,7 +1215,8 @@ function logCharSpecialty() {
     finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
 
     finalCharacter.characterUpdate();
-  } else if (selectedSpecialty === "elf") {
+  } else if (selectedSpecialty === "elf")
+  {
     // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = elf;
@@ -1177,7 +1237,8 @@ function logCharSpecialty() {
       "Third Level Mage Spells"
     ] = [];
     finalCharacter.characterUpdate();
-  } else if (selectedSpecialty === "halfling") {
+  } else if (selectedSpecialty === "halfling")
+  {
     // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = halfling;
@@ -1189,7 +1250,8 @@ function logCharSpecialty() {
     finalCharacter.armorClass = finalCharacter.armor.armorClass - finalCharacter.attributes[3].adjustment;
 
     finalCharacter.characterUpdate();
-  } else {
+  } else
+  {
     // console.log ('none');
   }
   beginJourney();
@@ -1200,10 +1262,12 @@ submittedCharName.addEventListener("click", checkUsername, false);
 
 //confirms your specialty and continues the gameplay
 
-function beginJourney() {
+function beginJourney()
+{
   var readyBeginJourney = document.querySelector("#dialogue");
   let readyBeginJourneyButton = document.querySelector("#dialogue #ready");
-  if (readyBeginJourneyButton === null) {
+  if (readyBeginJourneyButton === null)
+  {
     let createReadyButton = document.createElement("input");
     createReadyButton.type = "submit";
     createReadyButton.value = "Confirm";
@@ -1211,22 +1275,27 @@ function beginJourney() {
     readyBeginJourney.appendChild(createReadyButton);
     var beginningGame = document.querySelector("#ready");
     beginningGame.addEventListener("click", beginChapterTwo, false);
-  } else {
+  } else
+  {
     return;
   }
 }
 
 //CHAPTER TWO
 
-function beginChapterTwo() {
+function beginChapterTwo()
+{
   if (
     finalCharacter.specialty.name === "High Mage" ||
     finalCharacter.specialty.name === "Elf"
-  ) {
+  )
+  {
     pickMageSpells();
-  } else if (finalCharacter.specialty.name === "Cleric") {
+  } else if (finalCharacter.specialty.name === "Cleric")
+  {
     pickClericSpells();
-  } else {
+  } else
+  {
     showInventory();
 
     console.log(finalCharacter);
@@ -1266,7 +1335,8 @@ function beginChapterTwo() {
 
 //populating inventory
 
-function showInventory() {
+function showInventory()
+{
   alert("Purchase your inventory");
   window.scrollTo(0, 0);
 
@@ -1298,7 +1368,8 @@ function showInventory() {
   ];
 
   //creating items to populate into supply page
-  for (let i = 0; i < totalItems.length; i++) {
+  for (let i = 0; i < totalItems.length; i++)
+  {
     //create <li>
     let newItemList = document.createElement("li");
 
@@ -1338,7 +1409,8 @@ function showInventory() {
 
   //creating increase and decrease buttons (number input type doesn't work because you can hold it down)
 
-  for (let j = 0; j < updateNewLIInput.length; j++) {
+  for (let j = 0; j < updateNewLIInput.length; j++)
+  {
     let buttonClassifiedName = supplies[j].name
       .split(" ")
       .join("-")
@@ -1418,7 +1490,8 @@ function showInventory() {
   }
   let getNewLIQty = document.querySelectorAll(".new-item-qty");
 
-  for (let k = 0; k < getNewLIQty.length; k++) {
+  for (let k = 0; k < getNewLIQty.length; k++)
+  {
     getNewLIQty[k].textContent = 0;
   }
 
@@ -1427,10 +1500,12 @@ function showInventory() {
 
   let selectingInputValues = document.querySelectorAll(".quantity-change");
 
-  for (let k = 0; k < selectingInputValues.length; k++) {
+  for (let k = 0; k < selectingInputValues.length; k++)
+  {
     selectingInputValues[k].addEventListener(
       "click",
-      function (e) {
+      function (e)
+      {
         addingTotalInventoryCost(e);
       },
       false
@@ -1444,12 +1519,13 @@ function showInventory() {
   availableGoldPieces.textContent = `${finalCharacter.treasure.gold.quantity}`;
 
   let submitBuyingItems = document.querySelector("#buy-items");
-  submitBuyingItems.addEventListener("click", function () {selectInventory(finalCharacter)}, false);
+  submitBuyingItems.addEventListener("click", function () { selectInventory(finalCharacter) }, false);
 
   // selectInventory();
 }
 
-function addingTotalInventoryCost(e) {
+function addingTotalInventoryCost(e)
+{
   let maxGold = finalCharacter.treasure.gold.quantity;
   // let getValues = document.querySelectorAll('.current-item-qty');
 
@@ -1462,7 +1538,8 @@ function addingTotalInventoryCost(e) {
 
   // let siblingStep = parseInt(getSiblingQty.dataset.qty);
 
-  if (e.target.classList.contains("quantity-increase")) {
+  if (e.target.classList.contains("quantity-increase"))
+  {
     let parsedTargetCost = parseInt(e.target.dataset.cost);
     let updatedAvailableGold = document.querySelector("#available-gold");
 
@@ -1477,7 +1554,8 @@ function addingTotalInventoryCost(e) {
     if (
       e.target.classList.contains("quantity-increase") &&
       updatedAvailableGold.textContent < 0
-    ) {
+    )
+    {
       alert("You don't have enough gold.");
       updatedAvailableGold.textContent =
         parseInt(updatedAvailableGold.textContent) + parsedTargetCost;
@@ -1486,7 +1564,8 @@ function addingTotalInventoryCost(e) {
     }
   }
 
-  if (e.target.classList.contains("quantity-decrease")) {
+  if (e.target.classList.contains("quantity-decrease"))
+  {
     let parsedTargetCost = parseInt(e.target.dataset.cost);
 
     // console.log(typeof parsedTargetCost + " " + parsedTargetCost);
@@ -1507,8 +1586,9 @@ function addingTotalInventoryCost(e) {
     let totalGoldPiecesContent = document.querySelector("#total-gold");
     let parsedTotalGold = Number(totalGoldPiecesContent.textContent);
 
-    if ( (e.target.classList.contains("quantity-decrease") && newTotal > parsedTotalGold) || retrievedDataLink - 1 < 0) {
-      
+    if ((e.target.classList.contains("quantity-decrease") && newTotal > parsedTotalGold) || retrievedDataLink - 1 < 0)
+    {
+
       console.log(retrievedDataLink);
 
       updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) - parsedTargetCost;
@@ -1522,7 +1602,8 @@ function addingTotalInventoryCost(e) {
   // console.log(finalCharacter.treasure);
 }
 
-function selectInventory(finalCharacter) {
+function selectInventory(finalCharacter)
+{
   // finalCharacter.treasure = finalGold;
   window.scrollTo(0, 0);
 
@@ -1532,14 +1613,16 @@ function selectInventory(finalCharacter) {
   let x = 0;
 
 
-  for (let i = 0; i < purchasedSupplies.length; i++) { //node list of all 23 items
+  for (let i = 0; i < purchasedSupplies.length; i++)
+  { //node list of all 23 items
     let updatedSuppliesName = purchasedSupplies[i].getAttribute("data-value");
     let parsedSuppliesValue = purchasedSupplies[i].getAttribute("data-qty");
 
     // console.log(parsedSuppliesValue, updatedSuppliesName)
 
-    if (parsedSuppliesValue > 0) { //this is selecting only the items with a qty greater than 0
-     
+    if (parsedSuppliesValue > 0)
+    { //this is selecting only the items with a qty greater than 0
+
       finalCharacter.inventory.push(eval(updatedSuppliesName)); //this is correctly adding only the supply item that has a qty over 0, but the qty is not carrying over correctly
 
       // console.log(finalCharacter.inventory); AT THIS POINT, THE QTY DOES NOT GET UPDATED AND STAYS AT 0 BUT THE PARSEDSUPPLIES VALUE IS AN ACCURATE QTY
@@ -1548,15 +1631,18 @@ function selectInventory(finalCharacter) {
 
   //start adding inventory tooltips
 
-  for (let i = 0; i < purchasedSupplies.length; i++) {
+  for (let i = 0; i < purchasedSupplies.length; i++)
+  {
     let purchasedSuppliesValue2 = purchasedSupplies[i].getAttribute("data-qty"); //retrieves qty for all 23 node items
 
-    if (purchasedSuppliesValue2[i] == 0) {
+    if (purchasedSuppliesValue2[i] == 0)
+    {
       console.log(purchasedSuppliesValue2);
 
-    } else {
+    } else
+    {
       let addedItemSpan = document.createElement("span");
-    
+
       //NEED TO ONLY GET THE ACTUAL PURCHASED ITEMS, NOT ENTIRE NODE LIST OF ALL ITEMS
 
 
@@ -1564,7 +1650,8 @@ function selectInventory(finalCharacter) {
 
       console.log(purchasedSuppliesValue3);
 
-      if (purchasedSuppliesValue3 > 0) {
+      if (purchasedSuppliesValue3 > 0)
+      {
         finalCharacter.inventory[x].qty = purchasedSuppliesValue3;
 
         addedItemSpan.innerHTML = `<span class="supply-item-tooltiptext">Desc: ${finalCharacter.inventory[x].description}<br>
@@ -1586,17 +1673,19 @@ function selectInventory(finalCharacter) {
 
         x += 1;
         console.log("X: " + x)
-      }      
+      }
     }
   }
 
   //end adding inventory tooltips
 
-  let showInventory = () => {
+  let showInventory = () =>
+  {
     window.scrollTo(0, 0);
     let accumulator = "";
 
-    for (let i = 0; i < finalCharacter.inventory.length; i++) {
+    for (let i = 0; i < finalCharacter.inventory.length; i++)
+    {
       accumulator += `${finalCharacter.inventory[i].name} <br>`;
     }
     return accumulator;
@@ -1607,7 +1696,8 @@ function selectInventory(finalCharacter) {
 
   showInventory();
 
-  let startChapter = function () {
+  let startChapter = function ()
+  {
     let getInventoryElement = document.querySelector(
       ".hide-inventory-container"
     );
@@ -1623,7 +1713,8 @@ function selectInventory(finalCharacter) {
 
 //end inventory
 
-function pickMageSpells() {
+function pickMageSpells()
+{
   window.scrollTo(0, 0);
 
   alert("Pick Mage Spells");
@@ -1635,16 +1726,21 @@ function pickMageSpells() {
   selectLevelThreeMageSpells();
 }
 
-function selectLevelOneMageSpells() {
-  if (finalCharacter.specialty.characterLevel.numberOfSpells[0] > 0) {
+function selectLevelOneMageSpells()
+{
+  if (finalCharacter.specialty.characterLevel.numberOfSpells[0] > 0)
+  {
     let mageFirstLevelSpells = document
       .getElementById("mage-first-level-spell-list")
       .getElementsByTagName("input");
     let limit = finalCharacter.specialty.characterLevel.numberOfSpells[0];
-    for (let i = 0; i < mageFirstLevelSpells.length; i++) {
-      mageFirstLevelSpells[i].onclick = function () {
+    for (let i = 0; i < mageFirstLevelSpells.length; i++)
+    {
+      mageFirstLevelSpells[i].onclick = function ()
+      {
         let checkedcount = 0;
-        for (let i = 0; i < mageFirstLevelSpells.length; i++) {
+        for (let i = 0; i < mageFirstLevelSpells.length; i++)
+        {
           checkedcount += mageFirstLevelSpells[i].checked ? 1 : 0;
           let updatedCheckedSpells = document.querySelector(
             ".first-level-selected-spells"
@@ -1652,7 +1748,8 @@ function selectLevelOneMageSpells() {
           updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
             `;
         }
-        if (checkedcount > limit) {
+        if (checkedcount > limit)
+        {
           checkedcount = limit;
           let updatedCheckedSpells2 = document.querySelector(
             ".first-level-selected-spells"
@@ -1670,27 +1767,34 @@ function selectLevelOneMageSpells() {
     numberOfLevelOneSpells.innerHTML = `
       <div class="number-of-first-level-mage-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[0]} spell(s)</div><br>
       `;
-  } else {
+  } else
+  {
     let mageFirstLevelSpells = document
       .getElementById("mage-first-level-spell-list")
       .getElementsByTagName("input");
-    for (let i = 0; i < mageFirstLevelSpells.length; i++) {
+    for (let i = 0; i < mageFirstLevelSpells.length; i++)
+    {
       mageFirstLevelSpells[i].classList.add("grey-out");
       //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
 
-function selectLevelTwoMageSpells() {
-  if (finalCharacter.specialty.characterLevel.numberOfSpells[1] > 0) {
+function selectLevelTwoMageSpells()
+{
+  if (finalCharacter.specialty.characterLevel.numberOfSpells[1] > 0)
+  {
     let mageSecondLevelSpells = document
       .getElementById("mage-second-level-spell-list")
       .getElementsByTagName("input");
     let limit = finalCharacter.specialty.characterLevel.numberOfSpells[1];
-    for (let i = 0; i < mageSecondLevelSpells.length; i++) {
-      mageSecondLevelSpells[i].onclick = function () {
+    for (let i = 0; i < mageSecondLevelSpells.length; i++)
+    {
+      mageSecondLevelSpells[i].onclick = function ()
+      {
         let checkedcount = 0;
-        for (let i = 0; i < mageSecondLevelSpells.length; i++) {
+        for (let i = 0; i < mageSecondLevelSpells.length; i++)
+        {
           checkedcount += mageSecondLevelSpells[i].checked ? 1 : 0;
           let updatedCheckedSpells = document.querySelector(
             ".second-level-selected-spells"
@@ -1698,7 +1802,8 @@ function selectLevelTwoMageSpells() {
           updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
             `;
         }
-        if (checkedcount > limit) {
+        if (checkedcount > limit)
+        {
           checkedcount = limit;
 
           //console.log("You can select maximum of " + limit + " spell(s).");
@@ -1718,7 +1823,8 @@ function selectLevelTwoMageSpells() {
     numberOfLeveltwoSpells.innerHTML = `
       <div class="number-of-second-level-mage-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[1]} spell(s)</div><br>
       `;
-  } else {
+  } else
+  {
     let removeMageSecondLevelSpells = document.querySelector(
       "#mage-second-level-spell-list"
     );
@@ -1726,23 +1832,29 @@ function selectLevelTwoMageSpells() {
     let mageSecondLevelSpells = document
       .getElementById("mage-second-level-spell-list")
       .getElementsByTagName("input");
-    for (let i = 0; i < mageSecondLevelSpells.length; i++) {
+    for (let i = 0; i < mageSecondLevelSpells.length; i++)
+    {
       mageSecondLevelSpells[i].classList.add("grey-out");
       //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
 
-function selectLevelThreeMageSpells() {
-  if (finalCharacter.specialty.characterLevel.numberOfSpells[2] > 0) {
+function selectLevelThreeMageSpells()
+{
+  if (finalCharacter.specialty.characterLevel.numberOfSpells[2] > 0)
+  {
     let mageThirdLevelSpells = document
       .getElementById("mage-third-level-spell-list")
       .getElementsByTagName("input");
     let limit = finalCharacter.specialty.characterLevel.numberOfSpells[2];
-    for (let i = 0; i < mageThirdLevelSpells.length; i++) {
-      mageThirdLevelSpells[i].onclick = function () {
+    for (let i = 0; i < mageThirdLevelSpells.length; i++)
+    {
+      mageThirdLevelSpells[i].onclick = function ()
+      {
         let checkedcount = 0;
-        for (let i = 0; i < mageThirdLevelSpells.length; i++) {
+        for (let i = 0; i < mageThirdLevelSpells.length; i++)
+        {
           checkedcount += mageThirdLevelSpells[i].checked ? 1 : 0;
           let updatedCheckedSpells = document.querySelector(
             ".third-level-selected-spells"
@@ -1750,7 +1862,8 @@ function selectLevelThreeMageSpells() {
           updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
             `;
         }
-        if (checkedcount > limit) {
+        if (checkedcount > limit)
+        {
           checkedcount = limit;
           let updatedCheckedSpells2 = document.querySelector(
             ".third-level-selected-spells"
@@ -1768,7 +1881,8 @@ function selectLevelThreeMageSpells() {
     numberOfLevelthreeSpells.innerHTML = `
       <div class="number-of-third-level-mage-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[2]} spell(s)</div><br>
       `;
-  } else {
+  } else
+  {
     let removemageThirdLevelSpells = document.querySelector(
       "#mage-third-level-spell-list"
     );
@@ -1776,7 +1890,8 @@ function selectLevelThreeMageSpells() {
     let mageThirdLevelSpells = document
       .getElementById("mage-third-level-spell-list")
       .getElementsByTagName("input");
-    for (let i = 0; i < mageThirdLevelSpells.length; i++) {
+    for (let i = 0; i < mageThirdLevelSpells.length; i++)
+    {
       mageThirdLevelSpells[i].classList.add("grey-out");
       //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
@@ -1788,16 +1903,19 @@ let submitAllMageSpellsButton = document.querySelector(
 );
 submitAllMageSpellsButton.addEventListener("click", submitAllMageSpells, false);
 
-function submitAllMageSpells() {
+function submitAllMageSpells()
+{
   let selectedAllSpells = document.querySelectorAll(".mage-spells");
   // console.log(selectedAllSpells);
 
-  for (let i = 0; i < selectedAllSpells.length; i++) {
+  for (let i = 0; i < selectedAllSpells.length; i++)
+  {
     //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
     if (
       selectedAllSpells[i].checked === true &&
       selectedAllSpells[i].classList.contains("mage-one-spells")
-    ) {
+    )
+    {
       //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
@@ -1808,7 +1926,8 @@ function submitAllMageSpells() {
     if (
       selectedAllSpells[i].checked === true &&
       selectedAllSpells[i].classList.contains("mage-two-spells")
-    ) {
+    )
+    {
       //   alert('contains level 2');
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
@@ -1820,7 +1939,8 @@ function submitAllMageSpells() {
     if (
       selectedAllSpells[i].checked === true &&
       selectedAllSpells[i].classList.contains("mage-three-spells")
-    ) {
+    )
+    {
       // alert('contains level 3');
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
@@ -1841,7 +1961,8 @@ function submitAllMageSpells() {
       "First Level Mage Spells"
     ].length;
     i++
-  ) {
+  )
+  {
     let addedSpell = document.createElement("li");
     addedSpell.classList.add("spell-tooltip");
 
@@ -1875,7 +1996,8 @@ function submitAllMageSpells() {
       "Second Level Mage Spells"
     ].length;
     i++
-  ) {
+  )
+  {
     let addedSpell = document.createElement("li");
     addedSpell.classList.add("spell-tooltip");
 
@@ -1909,7 +2031,8 @@ function submitAllMageSpells() {
       "Third Level Mage Spells"
     ].length;
     i++
-  ) {
+  )
+  {
     let addedSpell = document.createElement("li");
     addedSpell.classList.add("spell-tooltip");
 
@@ -1943,7 +2066,8 @@ function submitAllMageSpells() {
   showInventory();
 }
 
-function pickClericSpells() {
+function pickClericSpells()
+{
   alert("Pick Cleric Spells");
   let showClericSpellsList = document.querySelector(".hide-cleric-container");
   showClericSpellsList.classList.add("show-cleric-spells");
@@ -1953,16 +2077,21 @@ function pickClericSpells() {
   selectLevelThreeClericSpells();
 }
 
-function selectLevelOneClericSpells() {
-  if (finalCharacter.specialty.characterLevel.numberOfSpells[0] > 0) {
+function selectLevelOneClericSpells()
+{
+  if (finalCharacter.specialty.characterLevel.numberOfSpells[0] > 0)
+  {
     let clericFirstLevelSpells = document
       .getElementById("cleric-first-level-spell-list")
       .getElementsByTagName("input");
     let limit = finalCharacter.specialty.characterLevel.numberOfSpells[0];
-    for (let i = 0; i < clericFirstLevelSpells.length; i++) {
-      clericFirstLevelSpells[i].onclick = function () {
+    for (let i = 0; i < clericFirstLevelSpells.length; i++)
+    {
+      clericFirstLevelSpells[i].onclick = function ()
+      {
         let checkedcount = 0;
-        for (let i = 0; i < clericFirstLevelSpells.length; i++) {
+        for (let i = 0; i < clericFirstLevelSpells.length; i++)
+        {
           checkedcount += clericFirstLevelSpells[i].checked ? 1 : 0;
           let updatedCheckedSpells = document.querySelector(
             ".first-level-selected-spells-cleric"
@@ -1970,7 +2099,8 @@ function selectLevelOneClericSpells() {
           updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
             `;
         }
-        if (checkedcount > limit) {
+        if (checkedcount > limit)
+        {
           checkedcount = limit;
           let updatedCheckedSpells2 = document.querySelector(
             ".first-level-selected-spells-cleric"
@@ -1988,27 +2118,34 @@ function selectLevelOneClericSpells() {
     numberOfLeveloneSpells.innerHTML = `
       <div class="number-of-first-level-cleric-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[0]} spell(s)</div><br>
       `;
-  } else {
+  } else
+  {
     let clericFirstLevelSpells = document
       .getElementById("cleric-first-level-spell-list")
       .getElementsByTagName("input");
-    for (let i = 0; i < clericFirstLevelSpells.length; i++) {
+    for (let i = 0; i < clericFirstLevelSpells.length; i++)
+    {
       clericFirstLevelSpells[i].classList.add("grey-out");
       //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
 
-function selectLevelTwoClericSpells() {
-  if (finalCharacter.specialty.characterLevel.numberOfSpells[1] > 0) {
+function selectLevelTwoClericSpells()
+{
+  if (finalCharacter.specialty.characterLevel.numberOfSpells[1] > 0)
+  {
     let clericSecondLevelSpells = document
       .getElementById("cleric-second-level-spell-list")
       .getElementsByTagName("input");
     let limit = finalCharacter.specialty.characterLevel.numberOfSpells[1];
-    for (let i = 0; i < clericSecondLevelSpells.length; i++) {
-      clericSecondLevelSpells[i].onclick = function () {
+    for (let i = 0; i < clericSecondLevelSpells.length; i++)
+    {
+      clericSecondLevelSpells[i].onclick = function ()
+      {
         let checkedcount = 0;
-        for (let i = 0; i < clericSecondLevelSpells.length; i++) {
+        for (let i = 0; i < clericSecondLevelSpells.length; i++)
+        {
           checkedcount += clericSecondLevelSpells[i].checked ? 1 : 0;
           let updatedCheckedSpells = document.querySelector(
             ".second-level-selected-spells-cleric"
@@ -2016,7 +2153,8 @@ function selectLevelTwoClericSpells() {
           updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
             `;
         }
-        if (checkedcount > limit) {
+        if (checkedcount > limit)
+        {
           checkedcount = limit;
           let updatedCheckedSpells2 = document.querySelector(
             ".second-level-selected-spells-cleric"
@@ -2034,7 +2172,8 @@ function selectLevelTwoClericSpells() {
     numberOfLeveltwoSpells.innerHTML = `
       <div class="number-of-second-level-cleric-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[1]} spell(s)</div><br>
       `;
-  } else {
+  } else
+  {
     let removeclericSecondLevelSpells = document.querySelector(
       "#cleric-second-level-spell-list"
     );
@@ -2042,23 +2181,29 @@ function selectLevelTwoClericSpells() {
     let clericSecondLevelSpells = document
       .getElementById("cleric-second-level-spell-list")
       .getElementsByTagName("input");
-    for (let i = 0; i < clericSecondLevelSpells.length; i++) {
+    for (let i = 0; i < clericSecondLevelSpells.length; i++)
+    {
       clericSecondLevelSpells[i].classList.add("grey-out");
       //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
 
-function selectLevelThreeClericSpells() {
-  if (finalCharacter.specialty.characterLevel.numberOfSpells[2] > 0) {
+function selectLevelThreeClericSpells()
+{
+  if (finalCharacter.specialty.characterLevel.numberOfSpells[2] > 0)
+  {
     let clericThirdLevelSpells = document
       .getElementById("cleric-third-level-spell-list")
       .getElementsByTagName("input");
     let limit = finalCharacter.specialty.characterLevel.numberOfSpells[2];
-    for (let i = 0; i < clericThirdLevelSpells.length; i++) {
-      clericThirdLevelSpells[i].onclick = function () {
+    for (let i = 0; i < clericThirdLevelSpells.length; i++)
+    {
+      clericThirdLevelSpells[i].onclick = function ()
+      {
         let checkedcount = 0;
-        for (let i = 0; i < clericThirdLevelSpells.length; i++) {
+        for (let i = 0; i < clericThirdLevelSpells.length; i++)
+        {
           checkedcount += clericThirdLevelSpells[i].checked ? 1 : 0;
           let updatedCheckedSpells = document.querySelector(
             ".third-level-selected-spells-cleric"
@@ -2066,7 +2211,8 @@ function selectLevelThreeClericSpells() {
           updatedCheckedSpells.textContent = `You have selected ${checkedcount} spell(s)     
             `;
         }
-        if (checkedcount > limit) {
+        if (checkedcount > limit)
+        {
           checkedcount = limit;
           let updatedCheckedSpells2 = document.querySelector(
             ".third-level-selected-spells-cleric"
@@ -2084,7 +2230,8 @@ function selectLevelThreeClericSpells() {
     numberOfLevelthreeSpells.innerHTML = `
       <div class="number-of-third-level-cleric-spells">You can choose ${finalCharacter.specialty.characterLevel.numberOfSpells[2]} spell(s)</div><br>
       `;
-  } else {
+  } else
+  {
     let removeclericThirdLevelSpells = document.querySelector(
       "#cleric-third-level-spell-list"
     );
@@ -2092,7 +2239,8 @@ function selectLevelThreeClericSpells() {
     let clericThirdLevelSpells = document
       .getElementById("cleric-third-level-spell-list")
       .getElementsByTagName("input");
-    for (let i = 0; i < clericThirdLevelSpells.length; i++) {
+    for (let i = 0; i < clericThirdLevelSpells.length; i++)
+    {
       clericThirdLevelSpells[i].classList.add("grey-out");
     }
   }
@@ -2107,16 +2255,19 @@ submitAllClericSpellsButton.addEventListener(
   false
 );
 
-function submitAllClericSpells() {
+function submitAllClericSpells()
+{
   let selectedAllSpells = document.querySelectorAll(".cleric-spells");
 
   // player.spells = [];
-  for (let i = 0; i < selectedAllSpells.length; i++) {
+  for (let i = 0; i < selectedAllSpells.length; i++)
+  {
     //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
     if (
       selectedAllSpells[i].checked === true &&
       selectedAllSpells[i].classList.contains("cleric-one-spells")
-    ) {
+    )
+    {
       //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN Cleric LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
@@ -2127,7 +2278,8 @@ function submitAllClericSpells() {
     if (
       selectedAllSpells[i].checked === true &&
       selectedAllSpells[i].classList.contains("cleric-two-spells")
-    ) {
+    )
+    {
       //   alert('contains level 2');
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
@@ -2139,7 +2291,8 @@ function submitAllClericSpells() {
     if (
       selectedAllSpells[i].checked === true &&
       selectedAllSpells[i].classList.contains("cleric-three-spells")
-    ) {
+    )
+    {
       // alert('contains level 3');
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
@@ -2160,7 +2313,8 @@ function submitAllClericSpells() {
       "First Level Cleric Spells"
     ].length;
     i++
-  ) {
+  )
+  {
     let addedSpell = document.createElement("li");
     addedSpell.classList.add("spell-tooltip");
 
@@ -2194,7 +2348,8 @@ function submitAllClericSpells() {
       "Second Level Cleric Spells"
     ].length;
     i++
-  ) {
+  )
+  {
     let addedSpell = document.createElement("li");
     addedSpell.classList.add("spell-tooltip");
 
@@ -2228,7 +2383,8 @@ function submitAllClericSpells() {
       "Third Level Cleric Spells"
     ].length;
     i++
-  ) {
+  )
+  {
     let addedSpell = document.createElement("li");
     addedSpell.classList.add("spell-tooltip");
 
@@ -2261,7 +2417,8 @@ function submitAllClericSpells() {
   showInventory();
 }
 
-function talkToRaynard() {
+function talkToRaynard()
+{
   window.scrollTo(0, 0);
 
   // console.log('Talking to Raynard');
@@ -2297,14 +2454,16 @@ function talkToRaynard() {
 
   var continueChapterThreeOne = document.querySelector("#start-chapter-three");
 
-  continueChapterThreeOne.addEventListener("click", function () {
+  continueChapterThreeOne.addEventListener("click", function ()
+  {
     let raynardsCoinIndex = finalCharacter.inventory.indexOf(raynardsCoin);
     // console.log(finalCharacter.inventory);
     alert(`You received ${finalCharacter.inventory[raynardsCoinIndex].name}`);
     document.querySelector("#normal-equipment-list").innerHTML = ``;
     //adding tooltip for raynardsCoin
 
-    for (let i = 0; i < finalCharacter.inventory.length; i++) {
+    for (let i = 0; i < finalCharacter.inventory.length; i++)
+    {
 
       let addedItemSpan = document.createElement("span");
       addedItemSpan.innerHTML = `<span class="supply-item-tooltiptext">Desc: ${finalCharacter.inventory[i].description}<br>
@@ -2322,7 +2481,7 @@ function talkToRaynard() {
       addedItemSpan.prepend(addedItemTextNode);
 
       let itemList = document.querySelector("#normal-equipment-list");
-      
+
       itemList.appendChild(addedItemSpan);
     }
     //end adding tooltip
@@ -2340,7 +2499,8 @@ function talkToRaynard() {
 
 //CHAPTER THREE ONE
 
-function startChapterThreeOne() {
+function startChapterThreeOne()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Three-one');
@@ -2371,7 +2531,8 @@ function startChapterThreeOne() {
 
 //CHAPTER THREE TWO
 
-function continueChapterThreeTwo() {
+function continueChapterThreeTwo()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Three-two');
@@ -2414,7 +2575,8 @@ function continueChapterThreeTwo() {
 
 //CHAPTER THREE THREE
 
-function continueChapterThreeThree() {
+function continueChapterThreeThree()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Three-three');
@@ -2442,7 +2604,8 @@ function continueChapterThreeThree() {
   var attackWolvesYes = document.querySelector("#attack-wolves");
   attackWolvesYes.addEventListener(
     "click",
-    () => {
+    () =>
+    {
       addingFightModule(smallWolf, noMonster, continueChapterThreeFour);
       console.log(smallWolf);
       declareAttack();
@@ -2458,14 +2621,16 @@ function continueChapterThreeThree() {
   );
 }
 
-function declareAttack() {
+function declareAttack()
+{
   window.scrollTo(0, 0);
 
   let declareAttackDialogue = document.querySelector("#dialogue");
   declareAttackDialogue.innerHTML = `<p>You Attack!</p>`;
 }
 
-function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
+function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
+{
   monsterOne.createHitPoints();
   monsterTwo.createHitPoints();
 
@@ -2483,7 +2648,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
             <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span><br>            
             <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span>
 
-            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Magic Missile"></span>
+            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Use Spell"></span>
 
             <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>
@@ -2492,7 +2657,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
   let attackMonsterOne = document.querySelector(".attack-monster-one");
   attackMonsterOne.addEventListener(
     "click",
-    function () {
+    function ()
+    {
       animate();
       finalCharacter.weaponAttackMonster1(
         monsterOne,
@@ -2507,7 +2673,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
   let attackMonsterTwo = document.querySelector(".attack-monster-two");
   attackMonsterTwo.addEventListener(
     "click",
-    function () {
+    function ()
+    {
       animate();
       finalCharacter.weaponAttackMonster2(
         monsterOne,
@@ -2519,7 +2686,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     false
   );
 
-  if (finalCharacter.specialty.spell2.name === "None") {
+  if (finalCharacter.specialty.spell2.name === "None")
+  {
     let attackSpellTwoMonsterOneNone = document.querySelector(
       ".spell2-monster-one"
     );
@@ -2531,13 +2699,15 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     );
     attackSpellTwoMonsterTwoNone.className =
       "no-spell attack spell2-monster-two";
-  } else {
+  } else
+  {
     let attackSpellTwoMonsterOne = document.querySelector(
       ".spell2-monster-one"
     );
     attackSpellTwoMonsterOne.addEventListener(
       "click",
-      function () {
+      function ()
+      {
         animate();
         finalCharacter.spell2AttackMonster1(
           monsterOne,
@@ -2554,7 +2724,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     );
     attackSpellTwoMonsterTwo.addEventListener(
       "click",
-      function () {
+      function ()
+      {
         animate();
         finalCharacter.spell2AttackMonster2(
           monsterOne,
@@ -2567,14 +2738,17 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     );
   }
 
-  if (finalCharacter.specialty.spell3.name === "None") {
+  if (finalCharacter.specialty.spell3.name === "None")
+  {
     let groupAttackSpellNone = document.querySelector(".area-attack");
     groupAttackSpellNone.className = "no-spell attack area-attack";
-  } else {
+  } else
+  {
     let groupAttackSpell = document.querySelector(".area-attack");
     groupAttackSpell.addEventListener(
       "click",
-      function () {
+      function ()
+      {
         animate();
         finalCharacter.areaAttackSpell(
           monsterOne,
@@ -2587,14 +2761,17 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
     );
   }
 
-  if (finalCharacter.specialty.spell1.name === "None") {
+  if (finalCharacter.specialty.spell1.name === "None")
+  {
     let healSpellSelfNone = document.querySelector(".spell1-heal");
     healSpellSelfNone.className = "no-spell attack";
-  } else {
+  } else
+  {
     let healSpellSelf = document.querySelector(".spell1-heal");
     healSpellSelf.addEventListener(
       "click",
-      function () {
+      function ()
+      {
         finalCharacter.spell1Heal(finalCharacter.spell1);
       },
       false
@@ -2603,23 +2780,26 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
   confirmAttackMonsters(monsterOne, monsterTwo);
 }
 
-export function confirmAttackMonsters(monsterOne, monsterTwo) {
+export function confirmAttackMonsters(monsterOne, monsterTwo)
+{
   //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES
 
   finalCharacter.confirmAttack(monsterOne, monsterTwo);
 }
 
-export function attackingMonsters() {}
+export function attackingMonsters() { }
 
 //MOVE TO MONSTER CLASS AND THEN REFERENCE IN CHARACTER CLASS AS THIS.MONSTER.MONSTERATTACK
 
-function goAroundMonsters(nextChapter) {
+function goAroundMonsters(nextChapter)
+{
   return nextChapter;
 }
 
 //CHAPTER THREE FOUR
 
-export function continueChapterThreeFour() {
+export function continueChapterThreeFour()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Three-four');
@@ -2654,7 +2834,8 @@ export function continueChapterThreeFour() {
   var restAndHeal = document.querySelector("#rest-and-heal");
   restAndHeal.addEventListener(
     "click",
-    function () {
+    function ()
+    {
       regenerateHP(
         finalCharacter.specialty.healthPoints,
         finalCharacter.specialty.maxHealthPoints
@@ -2675,8 +2856,10 @@ export function continueChapterThreeFour() {
 
 //RESTING
 
-function regenerateHP(hp, maxHP) {
-  let completeHealing = function () {
+function regenerateHP(hp, maxHP)
+{
+  let completeHealing = function ()
+  {
     let finishedRegeneratingHP = document.getElementById("dialogue");
     finishedRegeneratingHP.innerHTML = `
         <p>You are rested.</p>        
@@ -2709,22 +2892,23 @@ function regenerateHP(hp, maxHP) {
 
   regenerating(hp, maxHP);
 
-  function regenerating(hp, maxHP) {
-    if (hp === maxHP) {
+  function regenerating(hp, maxHP)
+  {
+    if (hp === maxHP)
+    {
       finalCharacter.specialty.healthPoints =
         finalCharacter.specialty.maxHealthPoints;
       continueChapterThreeFive();
       completeHealing();
-    } else {
+    } else
+    {
       hp += 1;
       let regeneratedHP = document.getElementById("char-hp");
       regeneratedHP.innerHTML = `
-                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${
-        finalCharacter.specialty.maxHealthPoints 
+                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints
         // + finalCharacter.attributes[4].adjustment
-      }" value="${hp}"></progress>${hp}/${
-        finalCharacter.specialty.maxHealthPoints
-      }</span></span>
+        }" value="${hp}"></progress>${hp}/${finalCharacter.specialty.maxHealthPoints
+        }</span></span>
                 `;
 
       let regenerationDialogue = document.getElementById("dialogue");
@@ -2732,7 +2916,8 @@ function regenerateHP(hp, maxHP) {
                 <p>Resting...</p>
                 `;
 
-      setTimeout(function () {
+      setTimeout(function ()
+      {
         regenerating(hp, maxHP);
       }, 500);
     }
@@ -2741,7 +2926,8 @@ function regenerateHP(hp, maxHP) {
 
 //CHAPTER THREE FIVE
 
-function continueChapterThreeFive() {
+function continueChapterThreeFive()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Three-Five');
@@ -2770,7 +2956,8 @@ function continueChapterThreeFive() {
 
 //CHAPTER THREE SIX
 
-function continueChapterThreeSix() {
+function continueChapterThreeSix()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Three Six');
@@ -2791,7 +2978,8 @@ function continueChapterThreeSix() {
   let knockFarmhouse = document.querySelector("#farmhouse-door");
   knockFarmhouse.addEventListener(
     "click",
-    function () {
+    function ()
+    {
       continueChapterFour();
       //regenerateHP(finalCharacter.specialty.healthPoints, finalCharacter.specialty.maxHealthPoints)
     },
@@ -2802,7 +2990,8 @@ function continueChapterThreeSix() {
   startChapterFive.addEventListener("click", continueChapterFive, false);
 }
 
-function continueChapterThreeSeven() {
+function continueChapterThreeSeven()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Three-Seven');
@@ -2813,7 +3002,8 @@ function continueChapterThreeSeven() {
     `;
 }
 
-function continueChapterFour() {
+function continueChapterFour()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Four');
@@ -2840,7 +3030,8 @@ function continueChapterFour() {
     </p>     
     `;
 
-  if (finalCharacter.achievements.killedFarmWolves) {
+  if (finalCharacter.achievements.killedFarmWolves)
+  {
     chapterFourDialogue.innerHTML += `
         <p>You reply, "I killed a wolf that attacked a sheep down the path and was wondering if the sheep belonged to you.  If so, that
         wolf won't be a threat to you anymore.  Do you see many wolves around here?"</p>
@@ -2855,7 +3046,8 @@ function continueChapterFour() {
       continueChapterFourThree,
       false
     );
-  } else {
+  } else
+  {
     chapterFourDialogue.innerHTML += `
         <p>You reply, "I just saw two wovles eating a dead sheep down the path.  Do you see many wolves around here?"</p>
 
@@ -2868,7 +3060,8 @@ function continueChapterFour() {
   }
 }
 
-function continueChapterFourThree() {
+function continueChapterFourThree()
+{
   window.scrollTo(0, 0);
 
   let chapterFourTwoThreeDialogue = document.getElementById("dialogue");
@@ -2891,7 +3084,8 @@ function continueChapterFourThree() {
   declineToEnter.addEventListener("click", continueChapterFourThreeTwo, false);
 }
 
-function continueChapterFourThreeOne() {
+function continueChapterFourThreeOne()
+{
   window.scrollTo(0, 0);
 
   let chapterFourThreeFourOneDialogue = document.getElementById("dialogue");
@@ -2912,7 +3106,8 @@ function continueChapterFourThreeOne() {
   );
 }
 
-function continueChapterFourThreeTwo() {
+function continueChapterFourThreeTwo()
+{
   window.scrollTo(0, 0);
 
   let chapterFourThreeFourOneDialogue = document.getElementById("dialogue");
@@ -2929,15 +3124,18 @@ function continueChapterFourThreeTwo() {
   beginChapterFive.addEventListener("click", continueChapterFive, false);
 }
 
-function continueChapterFourThreeThree() {
+function continueChapterFourThreeThree()
+{
   window.scrollTo(0, 0);
 
   let chapterFourThreeThreeDialogue = document.querySelector("#dialogue");
   chapterFourThreeThreeDialogue.innerHTML = `<p>As you drink tea and eat, you can already notice the tingling of the ointments on your arms as they being to heal your wounds</p>
     `;
 
-  function farmhouseResting(hp, maxHP) {
-    if (hp === maxHP) {
+  function farmhouseResting(hp, maxHP)
+  {
+    if (hp === maxHP)
+    {
       finalCharacter.specialty.healthPoints =
         finalCharacter.specialty.maxHealthPoints;
       chapterFourThreeThreeDialogue.innerHTML += `
@@ -2952,7 +3150,8 @@ function continueChapterFourThreeThree() {
 
       //continueChapterThreeFive();
       //completeHealing();
-    } else {
+    } else
+    {
       hp += 1;
       let regeneratedHP = document.getElementById("char-hp");
       regeneratedHP.innerHTML = `
@@ -2965,7 +3164,8 @@ function continueChapterFourThreeThree() {
       //     <p>Resting...</p>
       //     `;
 
-      setTimeout(function () {
+      setTimeout(function ()
+      {
         farmhouseResting(hp, maxHP);
       }, 500);
     }
@@ -2977,7 +3177,8 @@ function continueChapterFourThreeThree() {
   );
 }
 
-function continueChapterFourThreeFour() {
+function continueChapterFourThreeFour()
+{
   window.scrollTo(0, 0);
 
   let chapterFourThreeFourDialogue = document.querySelector("#dialogue");
@@ -2987,7 +3188,8 @@ function continueChapterFourThreeFour() {
     shadows and noises coming from the forerst.  I'm not sure if they are just playing jokes trying to scare each other, but if you
     are headed that way, I recommend being careful.</p>`;
 
-  if (finalCharacter.achievements.spokeToRaynard) {
+  if (finalCharacter.achievements.spokeToRaynard)
+  {
     chapterFourThreeFourDialogue.innerHTML += `
         <p>You thank the farmer and his wife for their hospitality, tea, and food.  As you say your thanks, you hand them the coin that
         Raynard provided to you back at the Blue Blade Inn.  You tell the farmer, "On my way here, I came across a man named Raynard.
@@ -3004,7 +3206,8 @@ function continueChapterFourThreeFour() {
       continueChapterFourTwoOne,
       false
     );
-  } else {
+  } else
+  {
     chapterFourThreeFourDialogue.innerHTML += `
         <p>You thank the farmer and his wife for their hospitality, tea, and food.  You let them know you must be going to travel as
         far as you can by foot before it gets dark out.  They thank you again, and bid you safe travels as they escort you to the 
@@ -3018,7 +3221,8 @@ function continueChapterFourThreeFour() {
   }
 }
 
-function continueChapterFourTwo() {
+function continueChapterFourTwo()
+{
   window.scrollTo(0, 0);
 
   let chapterFourTwoDialogue = document.querySelector("#dialogue");
@@ -3028,7 +3232,8 @@ function continueChapterFourTwo() {
         seen these types of wolves in this area for decades.
         `;
 
-  if (finalCharacter.achievements.spokeToRaynard) {
+  if (finalCharacter.achievements.spokeToRaynard)
+  {
     chapterFourTwoDialogue.innerHTML += `
         <p>You thank the farmer for his time, and mention that after speaking to Raynard, the owner of the Blue Blade Inn, he handed you this coin
         to give to the farmer in the event you run into him.  You hand the coin to the farmer, and when he looks at it, you see a gleam in his
@@ -3044,7 +3249,8 @@ function continueChapterFourTwo() {
       continueChapterFourTwoOne,
       false
     );
-  } else {
+  } else
+  {
     chapterFourTwoDialogue.innerHTML += `
         <p>You thank the farmer for his time, and let him know you are just passing through and will be on your way.  You exchange goodbyes and continue
         along your journey.</p> 
@@ -3056,7 +3262,8 @@ function continueChapterFourTwo() {
   }
 }
 
-function continueChapterFourTwoOne() {
+function continueChapterFourTwoOne()
+{
   window.scrollTo(0, 0);
 
   let giveAwayRaynardsCoin = finalCharacter.inventory.indexOf(raynardsCoin);
@@ -3069,7 +3276,8 @@ function continueChapterFourTwoOne() {
   console.log(finalCharacter.inventory);
   document.querySelector("#normal-equipment-list").innerHTML = ``;
 
-  for (let i = 0; i < finalCharacter.inventory.length; i++) {
+  for (let i = 0; i < finalCharacter.inventory.length; i++)
+  {
 
     //re-adding tooltips to regenerated inventory list//
     let addedItemSpan = document.createElement("span");
@@ -3114,24 +3322,32 @@ function continueChapterFourTwoOne() {
      
     <input type="submit" id="start-chapt-five" value="Continue">`;
 
-  if (finalCharacter.specialty === warrior) {
+  if (finalCharacter.specialty === warrior)
+  {
     //resetting weapon damage to account for strength adjustment
     finalCharacter.weapon = twoHandedBroadSword;
-  } else if (finalCharacter.specialty === thief) {
+  } else if (finalCharacter.specialty === thief)
+  {
     finalCharacter.weapon = longBow;
-  } else if (finalCharacter.specialty === cleric) {
+  } else if (finalCharacter.specialty === cleric)
+  {
     finalCharacter.weapon = warHammer;
-  } else if (finalCharacter.specialty === halfling) {
+  } else if (finalCharacter.specialty === halfling)
+  {
     finalCharacter.weapon = shortSword;
-  } else if (finalCharacter.specialty === dwarf) {
+  } else if (finalCharacter.specialty === dwarf)
+  {
     finalCharacter.weapon = normalSword;
     console.log(finalCharacter);
     console.log(finalCharacter.weapon);
-  } else if (finalCharacter.specialty === highMage) {
+  } else if (finalCharacter.specialty === highMage)
+  {
     finalCharacter.weapon = silverDagger;
-  } else if (finalCharacter.specialty === elf) {
+  } else if (finalCharacter.specialty === elf)
+  {
     finalCharacter.weapon = longBow;
-  } else {
+  } else
+  {
     finalCharacter.weapon = finalCharacter.weapon;
   }
 
@@ -3146,7 +3362,8 @@ function continueChapterFourTwoOne() {
   );
 }
 
-function continueChapterFive() {
+function continueChapterFive()
+{
   window.scrollTo(0, 0);
 
   // console.log(finalCharacter.weapon.name);
@@ -3169,7 +3386,8 @@ function continueChapterFive() {
   continueTestChapter.addEventListener("click", beginTestChapter, false);
 }
 
-function beginTestChapter() {
+function beginTestChapter()
+{
   window.scrollTo(0, 0);
 
   // console.log('Chapter Three-Six');
@@ -3183,13 +3401,15 @@ function beginTestChapter() {
     `;
 
   var attackWolvesYes = document.querySelector("#attack-goblins");
-  attackWolvesYes.addEventListener("click", () => {
+  attackWolvesYes.addEventListener("click", () =>
+  {
     addingFightModule(bugBear, bugBear1, continueChapterSix);
     declareAttack();
   });
 }
 
-function continueChapterSix() {
+function continueChapterSix()
+{
   window.scrollTo(0, 0);
 
   let chapterSixDialogue = document.getElementById("dialogue");
