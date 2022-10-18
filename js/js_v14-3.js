@@ -3,76 +3,76 @@
 //weapon imports
 import Weapon from "./weapon-class-v2.js";
 import
-  {
-    fists,
-    normalSword,
-    shortBow,
-    silverSword,
-    twoHandedBroadSword,
-    longBow,
-    ebonyBow,
-    mahoganyStaff,
-    gemStaff,
-    noWeapon,
-    obsidianSword,
-    woodenClub,
-    dagger,
-    silverDagger,
-    battleAxe,
-    handAxe,
-    crossBow,
-    shortSword,
-    mace,
-    javelin,
-    poleArm,
-    sling,
-    spear,
-    warHammer,
-  } from "./weapon-class-v2.js";
+{
+  fists,
+  normalSword,
+  shortBow,
+  silverSword,
+  twoHandedBroadSword,
+  longBow,
+  ebonyBow,
+  mahoganyStaff,
+  gemStaff,
+  noWeapon,
+  obsidianSword,
+  woodenClub,
+  dagger,
+  silverDagger,
+  battleAxe,
+  handAxe,
+  crossBow,
+  shortSword,
+  mace,
+  javelin,
+  poleArm,
+  sling,
+  spear,
+  warHammer,
+} from "./weapon-class-v2.js";
 
 //armor imports
 import Armor from "./armor-class-v2.js";
 import
-  {
-    chainMail,
-    leatherArmor,
-    robes,
-    noArmor,
-    scaleMail,
-    plateMail,
-    bandedMail,
-    obsidianPlateMail,
-  } from "./armor-class-v2.js";
+{
+  chainMail,
+  leatherArmor,
+  robes,
+  noArmor,
+  scaleMail,
+  plateMail,
+  bandedMail,
+  obsidianPlateMail,
+} from "./armor-class-v2.js";
 
 //spell imports
 import Spell from "./spell-class-v2.js";
 import
-  {
-    noSpell,
-    mediumHealing,
-    majorHealing,
-    earthStrike,
-    lightening,
-    minorHealing,
-    fireStorm,
-    dragonFang,
-    fireArrows,
-  } from "./spell-class-v2.js";
+{
+  noSpell,
+  mediumHealing,
+  majorHealing,
+  earthStrike,
+  lightening,
+  minorHealing,
+  fireStorm,
+  dragonFang,
+  fireArrows,
+} from "./spell-class-v2.js";
 
 //specialty imports
 import Specialty from "./specialty-class-v2.js";
 import
-  {
-    noSpecialty,
-    warrior,
-    highMage,
-    dragonWarrior,
-    elf,
-    dwarf,
-    halfling,
-    cleric,
-    thief,
-  } from "./specialty-class-v2.js";
+{
+  noSpecialty,
+  warrior,
+  highMage,
+  dragonWarrior,
+  elf,
+  dwarf,
+  halfling,
+  cleric,
+  thief,
+} from "./specialty-class-v2.js";
 
 //character imports
 import Character from "./character-class-v2.js";
@@ -80,151 +80,151 @@ import Character from "./character-class-v2.js";
 //moster imports
 import Monster from "./monster-class-v2.js";
 import
-  {
-    smallWolf,
-    wolf1,
-    wolf2,
-    goblin,
-    goblin1,
-    goblin2,
-    noMonster,
-    fireBeetle,
-    hobGoblin,
-    bugBear,
-    bugBear1,
-    kobold,
-    kobold1,
-  } from "./monster-class-v2.js";
+{
+  smallWolf,
+  wolf1,
+  wolf2,
+  goblin,
+  goblin1,
+  goblin2,
+  noMonster,
+  fireBeetle,
+  hobGoblin,
+  bugBear,
+  bugBear1,
+  kobold,
+  kobold1,
+} from "./monster-class-v2.js";
 
 //inventory imports
 import Inventory from "./inventory-class-v1.js";
 import
-  {
-    raynardsCoin,
-    farmersNote,
-    noItem,
-    eloisesRing,
-    torch,
-    backPack,
-    holySymbol,
-    holyWater,
-    smallHammer,
-    ironSpikes,
-    garlic,
-    grapplingHook,
-    lantern,
-    mirrorHandSized,
-    oil,
-    poleWooden,
-    rationsIron,
-    rationsStandard,
-    rope,
-    sackSmall,
-    sackLarge,
-    stakesAndMallet,
-    thievesTools,
-    tinderBox,
-    waterskin,
-    wine,
-    wolfsbane,
-  } from "./inventory-class-v1.js";
+{
+  raynardsCoin,
+  farmersNote,
+  noItem,
+  eloisesRing,
+  torch,
+  backPack,
+  holySymbol,
+  holyWater,
+  smallHammer,
+  ironSpikes,
+  garlic,
+  grapplingHook,
+  lantern,
+  mirrorHandSized,
+  oil,
+  poleWooden,
+  rationsIron,
+  rationsStandard,
+  rope,
+  sackSmall,
+  sackLarge,
+  stakesAndMallet,
+  thievesTools,
+  tinderBox,
+  waterskin,
+  wine,
+  wolfsbane,
+} from "./inventory-class-v1.js";
 
 //class-level-imports
 import
-  {
-    fighterVeteran,
-    fighterWarrior,
-    fighterSwordmaster,
-  } from "./character-class-levels/fighter-level-class.js";
+{
+  fighterVeteran,
+  fighterWarrior,
+  fighterSwordmaster,
+} from "./character-class-levels/fighter-level-class.js";
 import
-  {
-    veteranMedium,
-    warriorSeer,
-    swordMasterConjurer,
-  } from "./character-class-levels/elf-level-class.js";
+{
+  veteranMedium,
+  warriorSeer,
+  swordMasterConjurer,
+} from "./character-class-levels/elf-level-class.js";
 import { dragonWarriorVeteran } from "./character-class-levels/dragon-warrior-level-class.js";
 
 //mage spell imports
 import
-  {
-    charmPerson,
-    detectMagic,
-    floatingDisc,
-    holdPortal,
-    light,
-    magicMissile,
-    protectionFromEvil,
-    readLanguages,
-    shield,
-    sleep,
-    ventriloquism,
-    readMagic,
-  } from "./mage-spells/mage-level-one-spells-class.js";
+{
+  charmPerson,
+  detectMagic,
+  floatingDisc,
+  holdPortal,
+  light,
+  magicMissile,
+  protectionFromEvil,
+  readLanguages,
+  shield,
+  sleep,
+  ventriloquism,
+  readMagic,
+} from "./mage-spells/mage-level-one-spells-class.js";
 import
-  {
-    continualLight,
-    detectEvil,
-    invisibility,
-    esp,
-    knock,
-    levitate,
-    locateObject,
-    mirrorImage,
-    phantasmalForce,
-    web,
-    wizardLock,
-    detectInvisible,
-  } from "./mage-spells/mage-level-two-spells-class.js";
+{
+  continualLight,
+  detectEvil,
+  invisibility,
+  esp,
+  knock,
+  levitate,
+  locateObject,
+  mirrorImage,
+  phantasmalForce,
+  web,
+  wizardLock,
+  detectInvisible,
+} from "./mage-spells/mage-level-two-spells-class.js";
 import
-  {
-    clairvoyance,
-    dispelMagic,
-    fireBall,
-    fly,
-    haste,
-    holdPerson,
-    infravision,
-    invisibilityTenFoot,
-    lightningBolt,
-    protectionFromEvilTenFoot,
-    protectionFromNormalMissiles,
-    waterBreathing,
-  } from "./mage-spells/mage-level-three-spells-class.js";
+{
+  clairvoyance,
+  dispelMagic,
+  fireBall,
+  fly,
+  haste,
+  holdPerson,
+  infravision,
+  invisibilityTenFoot,
+  lightningBolt,
+  protectionFromEvilTenFoot,
+  protectionFromNormalMissiles,
+  waterBreathing,
+} from "./mage-spells/mage-level-three-spells-class.js";
 
 //cleric spell imports
 import
-  {
-    cureLightWoundsCleric,
-    detectEvilCleric,
-    detectMagicCleric,
-    purifyFoodAndWaterCleric,
-    lightCleric,
-    removeFearCleric,
-    protectionFromEvilCleric,
-    resistColdCleric,
-  } from "./cleric-spells/cleric-level-one-spells-class.js";
+{
+  cureLightWoundsCleric,
+  detectEvilCleric,
+  detectMagicCleric,
+  purifyFoodAndWaterCleric,
+  lightCleric,
+  removeFearCleric,
+  protectionFromEvilCleric,
+  resistColdCleric,
+} from "./cleric-spells/cleric-level-one-spells-class.js";
 import
-  {
-    blessCleric,
-    findTrapsCleric,
-    holdPersonCleric,
-    knowAlignmentCleric,
-    resistFireCleric,
-    silence15ftCleric,
-    snakeCharmCleric,
-    speakWithAnimalCleric,
-  } from "./cleric-spells/cleric-level-two-spells-class.js";
+{
+  blessCleric,
+  findTrapsCleric,
+  holdPersonCleric,
+  knowAlignmentCleric,
+  resistFireCleric,
+  silence15ftCleric,
+  snakeCharmCleric,
+  speakWithAnimalCleric,
+} from "./cleric-spells/cleric-level-two-spells-class.js";
 import
-  {
-    continualLightCleric,
-    cureBlindnessCleric,
-    cureDiseaseCleric,
-    growthOfAnimalsCleric,
-    locateObjectCleric,
-    removeCurseCleric,
-    speakWithTheDeadCleric,
-    strikingCleric,
-  } from "./cleric-spells/cleric-level-three-spells.js";
+{
+  continualLightCleric,
+  cureBlindnessCleric,
+  cureDiseaseCleric,
+  growthOfAnimalsCleric,
+  locateObjectCleric,
+  removeCurseCleric,
+  speakWithTheDeadCleric,
+  strikingCleric,
+} from "./cleric-spells/cleric-level-three-spells.js";
 
 //achievement imports
 //import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
@@ -2649,7 +2649,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
             <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span>
 
             <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Use Spell"></span>
-
+            
             <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>
         `;
