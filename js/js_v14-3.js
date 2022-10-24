@@ -2781,7 +2781,7 @@ function populateMageSpells()
     let addedSpellName = document.createElement('span');
     addedSpellName.innerHTML = spellList[i];
     spellLi.appendChild(addedSpellName);
-    let spellListUl = document.querySelector('#spell-list-dropdown');
+    let spellListUl = document.querySelector('.spell-list-dropdown');
     spellListUl.appendChild(spellLi);
     //console.log(characterFirstLevelSpells[i])
     //console.log("char spells")
@@ -2833,8 +2833,8 @@ function populateMageSpells()
 
 function toggleShowSpellList()
 {
-  document.querySelector('#spell-list-dropdown').classList.toggle('hide-spell-list-dropdown');
-  document.querySelector('#entire-spell-list').classList.toggle('hide-spell-list-dropdown');
+  document.querySelector('.spell-list-dropdown').classList.toggle('hide-spell-list-dropdown');
+  document.querySelector('.entire-spell-list').classList.toggle('hide-spell-list-dropdown');
   console.log('clicking use spell')
 }
 
