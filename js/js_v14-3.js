@@ -462,7 +462,6 @@ export function animate()
       return;
     }
   }
-  // console.log(frameX);
   gameFrame++;
   reqAnim = requestAnimationFrame(animate);
 }
@@ -486,7 +485,6 @@ function checkUsername()
 {
   let checkName = document.querySelector("#character-name");
   let checkNameLength = checkName.value;
-  // console.log("checking name");
   let usernameMessage = document.querySelector("#username-message");
   if (checkNameLength.length < 3)
   {
@@ -546,7 +544,6 @@ function rollAttributes()
 
 
 
-  // console.log(finalCharacter.treasure);
 
 
   let getCharName = document.querySelector("#dialogue");
@@ -1122,7 +1119,6 @@ function logCharSpecialty()
   ).value;
   if (selectedSpecialty === "fighter")
   {
-    // console.log('fighter');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = warrior;
     finalCharacter.armor = leatherArmor;
@@ -1134,7 +1130,6 @@ function logCharSpecialty()
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "mage")
   {
-    // console.log('mage');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = highMage;
     finalCharacter.armor = robes;
@@ -1156,7 +1151,6 @@ function logCharSpecialty()
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "dragonwarrior")
   {
-    // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = dragonWarrior;
     finalCharacter.armor = obsidianPlateMail;
@@ -1178,7 +1172,6 @@ function logCharSpecialty()
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "thief")
   {
-    // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = thief;
     finalCharacter.armor = leatherArmor;
@@ -1191,7 +1184,6 @@ function logCharSpecialty()
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "cleric")
   {
-    // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = cleric;
     finalCharacter.armor = leatherArmor;
@@ -1204,7 +1196,6 @@ function logCharSpecialty()
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "dwarf")
   {
-    // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = dwarf;
     finalCharacter.armor = leatherArmor;
@@ -1217,7 +1208,6 @@ function logCharSpecialty()
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "elf")
   {
-    // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = elf;
     finalCharacter.armor = leatherArmor;
@@ -1239,7 +1229,6 @@ function logCharSpecialty()
     finalCharacter.characterUpdate();
   } else if (selectedSpecialty === "halfling")
   {
-    // console.log('dragonwarrior');
     finalCharacter.name = submittedCharName;
     finalCharacter.specialty = halfling;
     finalCharacter.armor = leatherArmor;
@@ -1252,7 +1241,6 @@ function logCharSpecialty()
     finalCharacter.characterUpdate();
   } else
   {
-    // console.log ('none');
   }
   beginJourney();
 }
@@ -1300,7 +1288,6 @@ function beginChapterTwo()
 
     console.log(finalCharacter);
     let JSONcharacter = JSON.stringify(finalCharacter);
-    //console.log(JSONcharacter);
   }
   finalCharacter.specialty.healthPoints =
     finalCharacter.specialty.healthPoints +
@@ -1308,8 +1295,7 @@ function beginChapterTwo()
   finalCharacter.specialty.maxHealthPoints =
     finalCharacter.specialty.maxHealthPoints +
     finalCharacter.attributes[4].adjustment;
-  // finalCharacter.weapon.damage = finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment;
-  // console.log('Begin');
+
   let chapterTwo = document.querySelector("#dialogue");
   chapterTwo.innerHTML = `
     <p>As you pack up your belongings, you know your ${finalCharacter.specialty.name} training will serve you well. You pick up your ${finalCharacter.weapon.name} and slide your 
@@ -1405,7 +1391,6 @@ function showInventory()
   }
 
   let updateNewLIInput = document.querySelectorAll(".inventory-list li");
-  // console.log(updateNewLIInput);
 
   //creating increase and decrease buttons (number input type doesn't work because you can hold it down)
 
@@ -1534,7 +1519,6 @@ function addingTotalInventoryCost(e)
   );
   let retrievedDataLink = getSiblingQty.dataset.qty;
   let parsedRetrievedLink = parseInt(retrievedDataLink);
-  // console.log(parsedRetrievedLink);
 
   // let siblingStep = parseInt(getSiblingQty.dataset.qty);
 
@@ -1545,7 +1529,6 @@ function addingTotalInventoryCost(e)
 
     getSiblingQty.setAttribute("data-qty", parsedRetrievedLink + 1);
 
-    // console.log(getSiblingQty.dataset.qty, getSiblingQty.textContent);
 
     updatedAvailableGold.textContent -= parsedTargetCost;
 
@@ -1568,19 +1551,15 @@ function addingTotalInventoryCost(e)
   {
     let parsedTargetCost = parseInt(e.target.dataset.cost);
 
-    // console.log(typeof parsedTargetCost + " " + parsedTargetCost);
     let updatedAvailableGold = document.querySelector("#available-gold");
     getSiblingQty.setAttribute("data-qty", parsedRetrievedLink - 1);
     let numberedUpdatedGold = updatedAvailableGold.textContent;
     let parsedUpdatedGold = Number(numberedUpdatedGold);
-    // console.log(typeof parsedUpdatedGold + " " + parsedUpdatedGold);
-    // console.log(parsedUpdatedGold + parsedTargetCost);
 
     let newTotal = Number(parsedUpdatedGold + parsedTargetCost);
-    // console.log(typeof newTotal + " " + newTotal);
 
     updatedAvailableGold.innerHTML = `<span id="available-gold">${newTotal}</span>`;
-    // console.log(updatedAvailableGold.textContent);
+
     getSiblingQty.textContent = `${parsedRetrievedLink - 1}`;
 
     let totalGoldPiecesContent = document.querySelector("#total-gold");
@@ -1589,7 +1568,6 @@ function addingTotalInventoryCost(e)
     if ((e.target.classList.contains("quantity-decrease") && newTotal > parsedTotalGold) || retrievedDataLink - 1 < 0)
     {
 
-      console.log(retrievedDataLink);
 
       updatedAvailableGold.textContent = parseInt(updatedAvailableGold.textContent) - parsedTargetCost;
       getSiblingQty.setAttribute("data-qty", parsedRetrievedLink);
@@ -1599,7 +1577,6 @@ function addingTotalInventoryCost(e)
 
   let finalTreasureAmount = document.querySelector("#available-gold");
   finalCharacter.treasure.gold.quantity = parseInt(finalTreasureAmount.textContent);
-  // console.log(finalCharacter.treasure);
 }
 
 function selectInventory(finalCharacter)
@@ -1618,7 +1595,6 @@ function selectInventory(finalCharacter)
     let updatedSuppliesName = purchasedSupplies[i].getAttribute("data-value");
     let parsedSuppliesValue = purchasedSupplies[i].getAttribute("data-qty");
 
-    // console.log(parsedSuppliesValue, updatedSuppliesName)
 
     if (parsedSuppliesValue > 0)
     { //this is selecting only the items with a qty greater than 0
@@ -1637,7 +1613,6 @@ function selectInventory(finalCharacter)
 
     if (purchasedSuppliesValue2[i] == 0)
     {
-      console.log(purchasedSuppliesValue2);
 
     } else
     {
@@ -1648,7 +1623,6 @@ function selectInventory(finalCharacter)
 
       let purchasedSuppliesValue3 = purchasedSupplies[i].getAttribute("data-qty");
 
-      console.log(purchasedSuppliesValue3);
 
       if (purchasedSuppliesValue3 > 0)
       {
@@ -1672,7 +1646,6 @@ function selectInventory(finalCharacter)
         itemList.appendChild(addedItemSpan);
 
         x += 1;
-        console.log("X: " + x)
       }
     }
   }
@@ -1702,7 +1675,6 @@ function selectInventory(finalCharacter)
       ".hide-inventory-container"
     );
     getInventoryElement.classList.remove("show-inventory-container");
-    // console.log(finalCharacter.treasure.gold.quantity);
     let updateCharTreasure = document.querySelector("#char-treasure");
     updateCharTreasure.innerHTML = `
         <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
@@ -1720,7 +1692,6 @@ function pickMageSpells()
   alert("Pick Mage Spells");
   let showMageSpellsList = document.querySelector(".hide-mage-container");
   showMageSpellsList.classList.add("show-mage-spells");
-  //console.log(finalCharacter.specialty.characterLevel.numberOfSpells[0]);
   selectLevelOneMageSpells();
   selectLevelTwoMageSpells();
   selectLevelThreeMageSpells();
@@ -1806,7 +1777,6 @@ function selectLevelTwoMageSpells()
         {
           checkedcount = limit;
 
-          //console.log("You can select maximum of " + limit + " spell(s).");
           let updatedCheckedSpells2 = document.querySelector(
             ".second-level-selected-spells"
           );
@@ -2778,6 +2748,24 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
     );
   }
   confirmAttackMonsters(monsterOne, monsterTwo);
+
+  let spellList = [];
+  let characterSpells = finalCharacter.specialty.characterLevel.specialtySkills;
+
+  console.log(characterSpells);
+
+  // for (let j = 0; j < finalCharacter.specialty.characterLevel.specialtySkills.length; j++ ) {
+  //   spellList.push()
+
+
+  //   for ( let i = 0; i < spellList.length; i++ ) {
+  //     let spellLi = document.createElement('li');
+  //     spellLi.classList.add('spell-list');
+  //     let addedSpellName = document.createElement('span');
+  //     addedSpellName.innerHTML = spellList[i].name;
+  //   }
+  // }
+
 }
 
 export function confirmAttackMonsters(monsterOne, monsterTwo)
