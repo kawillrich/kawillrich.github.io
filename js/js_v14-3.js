@@ -2618,7 +2618,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
             <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span><br>            
             <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span>
 
-            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Use Spell"></span>
+            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Use Spell" id="use-spells"></span>
             
             <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>
@@ -2779,8 +2779,10 @@ function populateMageSpells()
     let spellLi = document.createElement('li');
     spellLi.classList.add('spell-list');
     let addedSpellName = document.createElement('span');
-    addedSpellName.innerHTML = characterFirstLevelSpells[i].name;
-
+    addedSpellName.innerHTML = spellList[i];
+    spellLi.appendChild(addedSpellName);
+    let spellListUl = document.querySelector('#spell-list-dropdown');
+    spellListUl.appendChild(spellLi);
     //console.log(characterFirstLevelSpells[i])
     //console.log("char spells")
 
@@ -2824,7 +2826,20 @@ function populateMageSpells()
 
   }
 
+  let spellShowButton = document.querySelector('#use-spells')
+  spellShowButton.addEventListener('click', toggleShowSpellList, false)
+
 }
+
+function toggleShowSpellList()
+{
+  document.querySelector('#spell-list-dropdown').classList.toggle('hide-spell-list-dropdown');
+  document.querySelector('#entire-spell-list').classList.toggle('hide-spell-list-dropdown');
+  console.log('clicking use spell')
+}
+
+
+
 export function confirmAttackMonsters(monsterOne, monsterTwo)
 {
   //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES

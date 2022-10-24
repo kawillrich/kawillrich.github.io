@@ -586,3 +586,31 @@ span#dragonwarrior {
 
   
 }
+
+.hide-spell-list-dropdown {
+  display: none;
+};
+
+#spell-list-dropdown {
+  background-color: blue;
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 100px;
+};
+
+#entire-spell-list {
+  
+  height: 100px;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: left;
+  border-radius: 6px;
+  padding: 5px 5px;
+  position: absolute;
+  z-index: 1;
+  top: -2.7em;
+  left: 50%;
+}
