@@ -2769,21 +2769,23 @@ function populateMageSpells()
   let characterSecondLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"];
   let characterThirdLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"];
 
-  // console.log(characterFirstLevelSpells, characterFirstLevelSpells.length);
+  //populating spell list div
+
   for (let i = 0; i < characterFirstLevelSpells.length; i++)
   {
     spellList.push(characterFirstLevelSpells[i].name);
-    console.log(spellList);
-    //for (let i = 0; i < characterFirstLevelSpells[i].length; i++)
-    //{
-    // let spellLi = document.createElement('li');
-    // spellLi.classList.add('spell-list');
-    // let addedSpellName = document.createElement('span');
-    // addedSpellName.innerHTML = characterFirstLevelSpells[i[j]].name;
-    //console.log(characterFirstLevelSpells[i[j]])
-    //console.log("char spells")
-    //}
 
+
+    let spellLi = document.createElement('li');
+    spellLi.classList.add('spell-list');
+    let addedSpellName = document.createElement('span');
+    addedSpellName.innerHTML = characterFirstLevelSpells[i].name;
+
+    //console.log(characterFirstLevelSpells[i])
+    //console.log("char spells")
+
+
+    console.log(spellList);
 
 
   }
