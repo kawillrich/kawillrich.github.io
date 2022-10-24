@@ -2747,27 +2747,82 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
       false
     );
   }
+
+
+
+  // console.log(characterSpells);
+
+
+  populateMageSpells();
+
+
   confirmAttackMonsters(monsterOne, monsterTwo);
 
-  let spellList = [];
-  let characterSpells = finalCharacter.specialty.characterLevel.specialtySkills;
 
-  console.log(characterSpells);
-
-  // for (let j = 0; j < finalCharacter.specialty.characterLevel.specialtySkills.length; j++ ) {
-  //   spellList.push()
-
-
-  //   for ( let i = 0; i < spellList.length; i++ ) {
-  //     let spellLi = document.createElement('li');
-  //     spellLi.classList.add('spell-list');
-  //     let addedSpellName = document.createElement('span');
-  //     addedSpellName.innerHTML = spellList[i].name;
-  //   }
-  // }
 
 }
 
+function populateMageSpells()
+{
+  let spellList = [];
+  let characterFirstLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"];
+  let characterSecondLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"];
+  let characterThirdLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"];
+
+  // console.log(characterFirstLevelSpells, characterFirstLevelSpells.length);
+  for (let i = 0; i < characterFirstLevelSpells.length; i++)
+  {
+    spellList.push(characterFirstLevelSpells[i].name);
+    console.log(spellList);
+    //for (let i = 0; i < characterFirstLevelSpells[i].length; i++)
+    //{
+    // let spellLi = document.createElement('li');
+    // spellLi.classList.add('spell-list');
+    // let addedSpellName = document.createElement('span');
+    // addedSpellName.innerHTML = characterFirstLevelSpells[i[j]].name;
+    //console.log(characterFirstLevelSpells[i[j]])
+    //console.log("char spells")
+    //}
+
+
+
+  }
+
+  for (let i = 0; i < characterSecondLevelSpells.length; i++)
+  {
+    spellList.push(characterSecondLevelSpells[i].name);
+    console.log(spellList);
+    //for (let i = 0; i < characterFirstLevelSpells[i].length; i++)
+    //{
+    // let spellLi = document.createElement('li');
+    // spellLi.classList.add('spell-list');
+    // let addedSpellName = document.createElement('span');
+    // addedSpellName.innerHTML = characterFirstLevelSpells[i[j]].name;
+    //console.log(characterFirstLevelSpells[i[j]])
+    //console.log("char spells")
+    //}
+
+
+
+  } for (let i = 0; i < characterThirdLevelSpells.length; i++)
+  {
+    spellList.push(characterThirdLevelSpells[i].name);
+    console.log(spellList);
+    //for (let i = 0; i < characterFirstLevelSpells[i].length; i++)
+    //{
+    // let spellLi = document.createElement('li');
+    // spellLi.classList.add('spell-list');
+    // let addedSpellName = document.createElement('span');
+    // addedSpellName.innerHTML = characterFirstLevelSpells[i[j]].name;
+    //console.log(characterFirstLevelSpells[i[j]])
+    //console.log("char spells")
+    //}
+
+
+
+  }
+
+}
 export function confirmAttackMonsters(monsterOne, monsterTwo)
 {
   //PUTTING FIGHT MODULE IN FOOTER FOR TESTING PURPOSES
