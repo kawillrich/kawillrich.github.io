@@ -2618,7 +2618,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
             <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span><br>            
             <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span>
 
-            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Use Spell" id="use-spells"><ul class='dropdown-spell-list-ul hide-spell-list-dropdown'</span>
+            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Use Spell" id="use-spells"><ul class='dropdown-spell-list-ul hide-spell-list-dropdown'></ul></span>
             
             <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>

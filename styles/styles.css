@@ -591,20 +591,14 @@ span#dragonwarrior {
 };
 
 
-
-.entire-spell-list {
-  background-color: red;
-}
-
-
 .spell-list {
   background-color: green;
 }
 
-
-
-.spell-list-dropdown {
-  background-color: blue;
-};
-
+.dropdown-spell-list-ul {
+  position: absolute;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+}
 
