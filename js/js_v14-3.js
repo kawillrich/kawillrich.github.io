@@ -2618,7 +2618,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
             <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span><br>            
             <span class='button-border'><input type="submit" class="attack spell1-heal fight-module-button" value="Cast Heal Spell"></span>
 
-            <span class='button-border'><input type="submit" class="attack spell2-monster-one fight-module-button" value="Use Spell" id="use-spells"><ul class='dropdown-spell-list-ul hide-spell-list-dropdown'></ul></span>
+            <span class='button-border'><input type="submit" class="spell2-monster-one fight-module-button" value="Use Spell" id="use-spells"><ul class='dropdown-spell-list-ul hide-spell-list-dropdown'></ul></span>
             
             <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>
@@ -2838,6 +2838,11 @@ function populateMageSpells()
 function toggleShowSpellList()
 {
   document.querySelector('.dropdown-spell-list-ul').classList.toggle('hide-spell-list-dropdown');
+  let getAllAttackButtons = document.querySelectorAll('.attack');
+  for (let i = 0; i < getAllAttackButtons.length; i++)
+  {
+    getAllAttackButtons[i].classList.toggle('grey-out');
+  };
   console.log('clicking use spell')
 }
 
