@@ -2781,6 +2781,8 @@ function populateMageSpells()
     spellLi.appendChild(addedSpellName);
     let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl.appendChild(spellLi);
+
+    spellLi.addEventListener('click', castSpellFromList, false)
   }
 
   for (let i = 0; i < characterSecondLevelSpells.length; i++)
@@ -2828,7 +2830,12 @@ function toggleShowSpellList()
   console.log('clicking use spell')
 }
 
+//need to tie casting spell to actual spell methods dynamically
 
+function castSpellFromList()
+{
+  console.log('casting spell');
+}
 
 export function confirmAttackMonsters(monsterOne, monsterTwo)
 {
