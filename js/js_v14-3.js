@@ -2777,7 +2777,7 @@ function populateMageSpells()
     let spellLi = document.createElement('li');
     spellLi.classList.add('spell-list');
     let addedSpellName = document.createElement('span');
-    addedSpellName.innerHTML = "1st - " + spellList[i];
+    addedSpellName.innerHTML = "1st - " + characterFirstLevelSpells[i].name;
     spellLi.appendChild(addedSpellName);
     let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl.appendChild(spellLi);
@@ -2786,32 +2786,27 @@ function populateMageSpells()
   for (let i = 0; i < characterSecondLevelSpells.length; i++)
   {
     spellList.push(characterSecondLevelSpells[i].name);
-    console.log(spellList);
-    //for (let i = 0; i < characterFirstLevelSpells[i].length; i++)
-    //{
-    // let spellLi = document.createElement('li');
-    // spellLi.classList.add('spell-list');
-    // let addedSpellName = document.createElement('span');
-    // addedSpellName.innerHTML = characterFirstLevelSpells[i[j]].name;
-    //console.log(characterFirstLevelSpells[i[j]])
-    //console.log("char spells")
-    //}
+    let spellLi2 = document.createElement('li');
+    spellLi2.classList.add('spell-list');
+    let addedSpellName2 = document.createElement('span');
+    addedSpellName2.innerHTML = "2nd - " + characterSecondLevelSpells[i].name;
+    spellLi2.appendChild(addedSpellName2);
+    let addedSpellUl2 = document.querySelector('.dropdown-spell-list-ul');
+    addedSpellUl2.appendChild(spellLi2);
+
 
 
 
   } for (let i = 0; i < characterThirdLevelSpells.length; i++)
   {
     spellList.push(characterThirdLevelSpells[i].name);
-    console.log(spellList);
-    //for (let i = 0; i < characterFirstLevelSpells[i].length; i++)
-    //{
-    // let spellLi = document.createElement('li');
-    // spellLi.classList.add('spell-list');
-    // let addedSpellName = document.createElement('span');
-    // addedSpellName.innerHTML = characterFirstLevelSpells[i[j]].name;
-    //console.log(characterFirstLevelSpells[i[j]])
-    //console.log("char spells")
-    //}
+    let spellLi = document.createElement('li');
+    spellLi.classList.add('spell-list');
+    let addedSpellName = document.createElement('span');
+    addedSpellName.innerHTML = "3rd - " + characterThirdLevelSpells[i].name;
+    spellLi.appendChild(addedSpellName);
+    let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
+    addedSpellUl.appendChild(spellLi);
 
 
 
