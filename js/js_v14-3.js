@@ -2771,13 +2771,25 @@ function populateMageSpells()
 
   //populating spell list div
 
+  let firstLevelSpellList = document.createElement('p');
+  firstLevelSpellList.innerHTML = 'First Level Spells:';
+
+  let secondLevelSpellList = document.createElement('p');
+  secondLevelSpellList.innerHTML = 'Second Level Spells:';
+
+  let thirdLevelSpellList = document.createElement('p');
+  thirdLevelSpellList.innerHTML = 'Third Level Spells:';
+
+  let addingSpellLevels = document.querySelector('.dropdown-spell-list-ul');
+  addingSpellLevels.appendChild(firstLevelSpellList);
+
   for (let i = 0; i < characterFirstLevelSpells.length; i++)
   {
     spellList.push(characterFirstLevelSpells[i].name);
     let spellLi = document.createElement('li');
     spellLi.classList.add('spell-list');
     let addedSpellName = document.createElement('span');
-    addedSpellName.innerHTML = "1st - " + characterFirstLevelSpells[i].name;
+    addedSpellName.innerHTML = characterFirstLevelSpells[i].name;
     spellLi.appendChild(addedSpellName);
     let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl.appendChild(spellLi);
@@ -2785,27 +2797,35 @@ function populateMageSpells()
     spellLi.addEventListener('click', castSpellFromList, false)
   }
 
+  addingSpellLevels.appendChild(secondLevelSpellList);
+
   for (let i = 0; i < characterSecondLevelSpells.length; i++)
   {
     spellList.push(characterSecondLevelSpells[i].name);
     let spellLi2 = document.createElement('li');
     spellLi2.classList.add('spell-list');
     let addedSpellName2 = document.createElement('span');
-    addedSpellName2.innerHTML = "2nd - " + characterSecondLevelSpells[i].name;
+    addedSpellName2.innerHTML = characterSecondLevelSpells[i].name;
     spellLi2.appendChild(addedSpellName2);
+
     let addedSpellUl2 = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl2.appendChild(spellLi2);
 
 
 
 
-  } for (let i = 0; i < characterThirdLevelSpells.length; i++)
+  }
+
+  addingSpellLevels.appendChild(thirdLevelSpellList);
+
+
+  for (let i = 0; i < characterThirdLevelSpells.length; i++)
   {
     spellList.push(characterThirdLevelSpells[i].name);
     let spellLi = document.createElement('li');
     spellLi.classList.add('spell-list');
     let addedSpellName = document.createElement('span');
-    addedSpellName.innerHTML = "3rd - " + characterThirdLevelSpells[i].name;
+    addedSpellName.innerHTML = characterThirdLevelSpells[i].name;
     spellLi.appendChild(addedSpellName);
     let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl.appendChild(spellLi);
@@ -2834,7 +2854,7 @@ function toggleShowSpellList()
 
 function castSpellFromList()
 {
-  console.log('casting spell');
+  console.log(this.textContent);
 }
 
 export function confirmAttackMonsters(monsterOne, monsterTwo)
