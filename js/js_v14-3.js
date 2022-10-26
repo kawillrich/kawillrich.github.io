@@ -2774,26 +2774,13 @@ function populateMageSpells()
   for (let i = 0; i < characterFirstLevelSpells.length; i++)
   {
     spellList.push(characterFirstLevelSpells[i].name);
-
-
     let spellLi = document.createElement('li');
     spellLi.classList.add('spell-list');
     let addedSpellName = document.createElement('span');
-    addedSpellName.innerHTML = spellList[i];
+    addedSpellName.innerHTML = "1st - " + spellList[i];
     spellLi.appendChild(addedSpellName);
-
-    //need to add ul to attach li to
     let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl.appendChild(spellLi);
-
-
-    //console.log(characterFirstLevelSpells[i])
-    //console.log("char spells")
-
-
-    console.log(spellList);
-
-
   }
 
   for (let i = 0; i < characterSecondLevelSpells.length; i++)
