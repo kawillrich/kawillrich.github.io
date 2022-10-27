@@ -24,7 +24,7 @@ let light = new MageLevelOneSpells("Light", 1, 120, 6, "Volume of 30 feet diamet
 let magicMissile = new MageLevelOneSpells("Magic Missile", 1, 150, 0.1, "Creates one or more arrows",
     function ()
     {
-        console.log('Casting');
+        console.log('Casting Magic Missile');
         //finalCharacter.spell2AttackMonster1();
     }, "magic-missile", true
 

@@ -2793,7 +2793,6 @@ function populateMageSpells()
     spellLi.appendChild(addedSpellName);
     let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl.appendChild(spellLi);
-
     spellLi.addEventListener('click', castSpellFromList, false)
   }
 
@@ -2807,7 +2806,6 @@ function populateMageSpells()
     let addedSpellName2 = document.createElement('span');
     addedSpellName2.innerHTML = characterSecondLevelSpells[i].name;
     spellLi2.appendChild(addedSpellName2);
-
     let addedSpellUl2 = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl2.appendChild(spellLi2);
 
@@ -2817,7 +2815,6 @@ function populateMageSpells()
   }
 
   addingSpellLevels.appendChild(thirdLevelSpellList);
-
 
   for (let i = 0; i < characterThirdLevelSpells.length; i++)
   {
