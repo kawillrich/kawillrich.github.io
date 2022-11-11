@@ -621,6 +621,7 @@ li.spell-level-dropdown-list:hover {
 
 li.spell-level-dropdown-list b:hover ul.spell-list {
   display: block;
+  z-index: 100;
 }
 
 ul.spell-list span:hover {
