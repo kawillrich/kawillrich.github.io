@@ -2772,12 +2772,15 @@ function populateMageSpells()
   //populating spell list div
 
   let firstLevelSpellList = document.createElement('li');
+  firstLevelSpellList.classList.add('spell-level-dropdown-list');
   firstLevelSpellList.innerHTML = `<b>First Level Spells:</b>`;
 
   let secondLevelSpellList = document.createElement('li');
+  secondLevelSpellList.classList.add('spell-level-dropdown-list');
   secondLevelSpellList.innerHTML = `<b>Second Level Spells:</b>`;
 
   let thirdLevelSpellList = document.createElement('li');
+  thirdLevelSpellList.classList.add('spell-level-dropdown-list');
   thirdLevelSpellList.innerHTML = `<b>Third Level Spells:</b>`;
 
   let addingSpellLevels = document.querySelector('.dropdown-spell-list-ul');

@@ -614,3 +614,7 @@ span#dragonwarrior {
 ul.spell-list {
   display: none;
 }
+
+li b:hover ul.spell-list {
+  display: block;
+}
