@@ -595,9 +595,6 @@ span#dragonwarrior {
   background-color: green;
 } */
 
-ul.spell-list {
-  display: none;
-}
 
 .monster-spell-list {
   list-style: none;
@@ -622,9 +619,11 @@ li.spell-level-dropdown-list:hover {
   background-color: lightblue;
 }
 
+li.spell-level-dropdown-list b:hover ul.spell-list {
+  display: block;
+}
 
-
-.spell-list span:hover {
+ul.spell-list span:hover {
   cursor: pointer;
   background-color: lightgreen;
 }
