@@ -585,14 +585,8 @@ span#dragonwarrior {
   
 }
 
-
-.hide-spell-list-dropdown {
-  display: none;
-};
-
-
 .spell-list {
-  background-color: green;
+  display: none;
 }
 
 .dropdown-spell-list-ul {
@@ -605,6 +599,15 @@ span#dragonwarrior {
   padding: 10px 10px 10px 10px;
   margin-top: 5px;
 }
+.hide-spell-dropdown-list {
+  display: none;
+}
+/* li.spell-level-dropdown-list b:hover ul.spell-list {
+  display: block;
+  position: relative;
+  left: 100px;
+  top: -10px;
+} */
 
 .monster-spell-list {
   list-style: none;
