@@ -2771,6 +2771,7 @@ function populateMageSpells()
 
   //populating spell list div
 
+<<<<<<< HEAD
   let firstLevelSpellList = document.createElement('li');
   firstLevelSpellList.classList.add('spell-level-dropdown-list');
   firstLevelSpellList.innerHTML = `<b>First Level Spells:</b>`;
@@ -2781,6 +2782,15 @@ function populateMageSpells()
 
   let thirdLevelSpellList = document.createElement('li');
   thirdLevelSpellList.classList.add('spell-level-dropdown-list');
+=======
+  let firstLevelSpellList = document.createElement('p');
+  firstLevelSpellList.innerHTML = `<b>First Level Spells:</b>`;
+
+  let secondLevelSpellList = document.createElement('p');
+  secondLevelSpellList.innerHTML = `<b>Second Level Spells:</b>`;
+
+  let thirdLevelSpellList = document.createElement('p');
+>>>>>>> parent of e576b3f (added spell list with monster 1 and 2 dropdown in attack module)
   thirdLevelSpellList.innerHTML = `<b>Third Level Spells:</b>`;
 
   let addingSpellLevels = document.querySelector('.dropdown-spell-list-ul');
@@ -2789,21 +2799,13 @@ function populateMageSpells()
   for (let i = 0; i < characterFirstLevelSpells.length; i++)
   {
     spellList.push(characterFirstLevelSpells[i].name);
-    let spellLi = document.createElement('ul');
+    let spellLi = document.createElement('li');
     spellLi.classList.add('spell-list');
     let addedSpellName = document.createElement('span');
     addedSpellName.innerHTML = characterFirstLevelSpells[i].name;
     spellLi.appendChild(addedSpellName);
     let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl.appendChild(spellLi);
-    let addMonster1Btn = document.createElement('li');
-    addMonster1Btn.classList.add('monster-spell-list');
-    addMonster1Btn.innerText = 'Monster 1';
-    spellLi.appendChild(addMonster1Btn);
-    let addMonster2Btn = document.createElement('li');
-    addMonster2Btn.classList.add('monster-spell-list');
-    addMonster2Btn.innerText = 'Monster 2';
-    spellLi.appendChild(addMonster2Btn);
     spellLi.addEventListener('click', castSpellFromList, false)
   }
 
@@ -2812,21 +2814,14 @@ function populateMageSpells()
   for (let i = 0; i < characterSecondLevelSpells.length; i++)
   {
     spellList.push(characterSecondLevelSpells[i].name);
-    let spellLi2 = document.createElement('ul');
+    let spellLi2 = document.createElement('li');
     spellLi2.classList.add('spell-list');
     let addedSpellName2 = document.createElement('span');
     addedSpellName2.innerHTML = characterSecondLevelSpells[i].name;
     spellLi2.appendChild(addedSpellName2);
     let addedSpellUl2 = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl2.appendChild(spellLi2);
-    let addMonster1Btn = document.createElement('li');
-    addMonster1Btn.classList.add('monster-spell-list');
-    addMonster1Btn.innerText = 'Monster 1';
-    spellLi2.appendChild(addMonster1Btn);
-    let addMonster2Btn = document.createElement('li');
-    addMonster2Btn.classList.add('monster-spell-list');
-    addMonster2Btn.innerText = 'Monster 2';
-    spellLi2.appendChild(addMonster2Btn)
+
 
 
 
@@ -2837,21 +2832,14 @@ function populateMageSpells()
   for (let i = 0; i < characterThirdLevelSpells.length; i++)
   {
     spellList.push(characterThirdLevelSpells[i].name);
-    let spellLi = document.createElement('ul');
+    let spellLi = document.createElement('li');
     spellLi.classList.add('spell-list');
     let addedSpellName = document.createElement('span');
     addedSpellName.innerHTML = characterThirdLevelSpells[i].name;
     spellLi.appendChild(addedSpellName);
     let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
     addedSpellUl.appendChild(spellLi);
-    let addMonster1Btn = document.createElement('li');
-    addMonster1Btn.classList.add('monster-spell-list');
-    addMonster1Btn.innerText = 'Monster 1';
-    spellLi.appendChild(addMonster1Btn);
-    let addMonster2Btn = document.createElement('li');
-    addMonster2Btn.classList.add('monster-spell-list');
-    addMonster2Btn.innerText = 'Monster 2';
-    spellLi.appendChild(addMonster2Btn)
+
 
 
   }

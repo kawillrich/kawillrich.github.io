@@ -609,23 +609,7 @@ span#dragonwarrior {
   top: -10px;
 } */
 
-.monster-spell-list {
-  list-style: none;
-  display: none;
-}
-
-.spell-list span:hover {
+.spell-list:hover {
   cursor: pointer;
-  background-color: lightgreen;
-}
-
-.spell-list:hover li.monster-spell-list {
-  display: block;
-  position: relative;
-  left: 100px;
-  top: -20px;
-}
-
-li.monster-spell-list:hover {
   background-color: lightgreen;
 }
