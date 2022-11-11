@@ -591,11 +591,19 @@ span#dragonwarrior {
 };
 
 
-.spell-list {
+/* .spell-list {
   background-color: green;
+} */
+
+ul.spell-list {
+  display: none;
 }
 
-.dropdown-spell-list-ul {
+.monster-spell-list {
+  list-style: none;
+}
+
+ul.dropdown-spell-list-ul {
   position: absolute;
   list-style: none;
   width: 200px;
@@ -606,15 +614,19 @@ span#dragonwarrior {
   margin-top: 5px;
 }
 
+ul.spell-list {
+  display: none;
+}
+
+li.spell-level-dropdown-list:hover {
+  background-color: lightblue;
+}
+
+
+
 .spell-list span:hover {
   cursor: pointer;
   background-color: lightgreen;
 }
 
-ul.spell-list {
-  display: none;
-}
 
-li b:hover ul.spell-list {
-  display: block;
-}
