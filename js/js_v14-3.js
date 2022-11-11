@@ -2773,14 +2773,13 @@ function populateMageSpells()
 
 <<<<<<< HEAD
   let firstLevelSpellList = document.createElement('li');
-  firstLevelSpellList.classList.add('spell-level-dropdown-list');
   firstLevelSpellList.innerHTML = `<b>First Level Spells:</b>`;
 
   let secondLevelSpellList = document.createElement('li');
-  secondLevelSpellList.classList.add('spell-level-dropdown-list');
   secondLevelSpellList.innerHTML = `<b>Second Level Spells:</b>`;
 
   let thirdLevelSpellList = document.createElement('li');
+<<<<<<< HEAD
   thirdLevelSpellList.classList.add('spell-level-dropdown-list');
 =======
   let firstLevelSpellList = document.createElement('p');
@@ -2791,6 +2790,8 @@ function populateMageSpells()
 
   let thirdLevelSpellList = document.createElement('p');
 >>>>>>> parent of e576b3f (added spell list with monster 1 and 2 dropdown in attack module)
+=======
+>>>>>>> parent of e24c160 (added new version; added dropdown spell list display: none.  This commit messed up showing the dropdown list)
   thirdLevelSpellList.innerHTML = `<b>Third Level Spells:</b>`;
 
   let addingSpellLevels = document.querySelector('.dropdown-spell-list-ul');
