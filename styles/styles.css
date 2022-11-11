@@ -606,7 +606,11 @@ span#dragonwarrior {
   margin-top: 5px;
 }
 
-.spell-list:hover {
+.spell-list span:hover {
   cursor: pointer;
   background-color: lightgreen;
+}
+
+ul.spell-list {
+  display: none;
 }
