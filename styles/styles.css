@@ -593,9 +593,6 @@ span#dragonwarrior {
   background-color: green;
 } */
 
-
-
-
 ul.dropdown-spell-list-ul {
   position: absolute;
   list-style: none;
@@ -611,17 +608,28 @@ ul.dropdown-spell-list-ul {
   display: none;
 };
 
-li.monster-spell-list {
-  list-style: none;
+li.first-level-dropdown-list,
+li.second-level-dropdown-list,
+li.third-level-dropdown-list  
+{
+  display: none;
 }
+
+li.monster-spell-list {
+  display: none;
+}
+
+/* li.monster-spell-list {
+  list-style: none;
+} */
 
 ul.spell-list {
   display: none;
 }
 
-li.first-level-dropdown-list:hover  ul.spell-list,  
-li.second-level-dropdown-list:hover  ul.spell-list,
-li.third-level-dropdown-list:hover  ul.spell-list 
+li.first-level-dropdown-list:hover ul.spell-list,  
+li.second-level-dropdown-list:hover ul.spell-list,
+li.third-level-dropdown-list:hover ul.spell-list 
 {
   display: block;
 }
