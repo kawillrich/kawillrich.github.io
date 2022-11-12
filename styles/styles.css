@@ -588,7 +588,7 @@ span#dragonwarrior {
 ul.dropdown-spell-list-ul {
   position: absolute;
   list-style: none;
-  width: 200px;
+  width: 184px;
   background-color: white;
   border: 1px solid black;
   border-radius: 5px; 
@@ -616,7 +616,7 @@ li.monster-spell-list {
   display: none;
   position: relative;
   top: -21px;
-  left: 160px;
+  left: 145px;
   background-color: white;
   border: 1px solid black;
 }
