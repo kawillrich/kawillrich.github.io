@@ -2772,15 +2772,15 @@ function populateMageSpells()
   //populating spell list div
 
   let firstLevelSpellList = document.createElement('li');
-  firstLevelSpellList.classList.add('spell-level-dropdown-list');
+  firstLevelSpellList.classList.add('first-level-dropdown-list');
   firstLevelSpellList.innerHTML = `<b>First Level Spells:</b>`;
 
   let secondLevelSpellList = document.createElement('li');
-  secondLevelSpellList.classList.add('spell-level-dropdown-list');
+  secondLevelSpellList.classList.add('second-level-dropdown-list');
   secondLevelSpellList.innerHTML = `<b>Second Level Spells:</b>`;
 
   let thirdLevelSpellList = document.createElement('li');
-  thirdLevelSpellList.classList.add('spell-level-dropdown-list');
+  thirdLevelSpellList.classList.add('third-level-dropdown-list');
   thirdLevelSpellList.innerHTML = `<b>Third Level Spells:</b>`;
 
   let addingSpellLevels = document.querySelector('.dropdown-spell-list-ul');
@@ -2794,7 +2794,7 @@ function populateMageSpells()
     let addedSpellName = document.createElement('span');
     addedSpellName.innerHTML = characterFirstLevelSpells[i].name;
     spellLi.appendChild(addedSpellName);
-    let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
+    let addedSpellUl = document.querySelector('.first-level-dropdown-list');
     addedSpellUl.appendChild(spellLi);
     let addMonster1Btn = document.createElement('li');
     addMonster1Btn.classList.add('monster-spell-list');
@@ -2817,7 +2817,7 @@ function populateMageSpells()
     let addedSpellName2 = document.createElement('span');
     addedSpellName2.innerHTML = characterSecondLevelSpells[i].name;
     spellLi2.appendChild(addedSpellName2);
-    let addedSpellUl2 = document.querySelector('.dropdown-spell-list-ul');
+    let addedSpellUl2 = document.querySelector('.second-level-dropdown-list');
     addedSpellUl2.appendChild(spellLi2);
     let addMonster1Btn = document.createElement('li');
     addMonster1Btn.classList.add('monster-spell-list');
@@ -2842,7 +2842,7 @@ function populateMageSpells()
     let addedSpellName = document.createElement('span');
     addedSpellName.innerHTML = characterThirdLevelSpells[i].name;
     spellLi.appendChild(addedSpellName);
-    let addedSpellUl = document.querySelector('.dropdown-spell-list-ul');
+    let addedSpellUl = document.querySelector('.third-level-dropdown-list');
     addedSpellUl.appendChild(spellLi);
     let addMonster1Btn = document.createElement('li');
     addMonster1Btn.classList.add('monster-spell-list');
