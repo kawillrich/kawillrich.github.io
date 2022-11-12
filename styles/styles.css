@@ -634,6 +634,10 @@ li.third-level-dropdown-list:hover ul.spell-list
   display: block;
 }
 
+ul.spell-list:hover li.monster-spell-list {
+  display: block;
+}
+
 /* 
 li.spell-level-dropdown-list:hover {
   background-color: lightblue;
