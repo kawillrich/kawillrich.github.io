@@ -586,9 +586,7 @@ span#dragonwarrior {
 }
 
 
-.hide-spell-list-dropdown {
-  display: none;
-};
+
 
 
 /* .spell-list {
@@ -596,10 +594,6 @@ span#dragonwarrior {
 } */
 
 
-
-li.monster-spell-list {
-  list-style: none;
-}
 
 
 ul.dropdown-spell-list-ul {
@@ -611,6 +605,14 @@ ul.dropdown-spell-list-ul {
   border-radius: 5px; 
   padding: 10px 10px 10px 10px;
   margin-top: 5px;
+}
+
+.hide-spell-list-dropdown {
+  display: none;
+};
+
+li.monster-spell-list {
+  list-style: none;
 }
 
 ul.spell-list {
