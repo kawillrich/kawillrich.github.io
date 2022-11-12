@@ -600,6 +600,8 @@ ul.dropdown-spell-list-ul {
   display: none;
 };
 
+
+
 li.first-level-dropdown-list,
 li.second-level-dropdown-list,
 li.third-level-dropdown-list  
@@ -609,17 +611,12 @@ li.third-level-dropdown-list
 
 }
 
-li.first-level-dropdown-list b,
-li.second-level-dropdown-list b,
-li.third-level-dropdown-list b  
-{
-}
 
 li.monster-spell-list {
   display: none;
   position: relative;
-  top: -20px;
-  left: 150px;
+  top: -21px;
+  left: 160px;
   background-color: white;
   border: 1px solid black;
 }
@@ -631,6 +628,12 @@ ul.spell-list {
   left: 150px;
   background-color: white;
   border: 1px solid black;
+  height: 20px;
+}
+
+ul.spell-list:hover {
+  background-color: lightblue;
+
 }
 
 li.first-level-dropdown-list b:hover,  
@@ -640,11 +643,12 @@ li.third-level-dropdown-list b:hover
   background-color: lightblue;
 }
 
-li.first-level-dropdown-list span:hover,  
-li.second-level-dropdown-list span:hover,
-li.third-level-dropdown-list span:hover 
+li.first-level-dropdown-list:hover,  
+li.second-level-dropdown-list:hover,
+li.third-level-dropdown-list:hover 
 {
   background-color: lightblue;
+  height: 20px;
 }
 
 li.first-level-dropdown-list:hover ul.spell-list,  
@@ -652,6 +656,7 @@ li.second-level-dropdown-list:hover ul.spell-list,
 li.third-level-dropdown-list:hover ul.spell-list 
 {
   display: block;
+
 }
 
 ul.spell-list:hover li.monster-spell-list {
