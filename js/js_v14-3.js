@@ -2892,14 +2892,25 @@ function castSpellFromList()
     //NEED TO ITERATE THROUGH THE 'NAME' PROPERTY AND MATCH THE PARENTNODEINNERTEXT TO LINK TO ASSOCIATED SPELL
     for (let i = 0; i < firstLevel.length; i++)
     {
-      // for (let i = 0; i < 2; i++)
-      //   if (parentNodeInnerText === spell[i].name)
-      //   {
-      //     console.log(spell[i].name)
-      //   }
       if (firstLevel[i].name === parentNodeInnerText)
       {
         firstLevel[i].castingEffect();
+
+      }
+    };
+    for (let i = 0; i < secondLevel.length; i++)
+    {
+      if (secondLevel[i].name === parentNodeInnerText)
+      {
+        secondLevel[i].castingEffect();
+
+      }
+    };
+    for (let i = 0; i < thirdLevel.length; i++)
+    {
+      if (thirdLevel[i].name === parentNodeInnerText)
+      {
+        thirdLevel[i].castingEffect();
 
       }
     }
