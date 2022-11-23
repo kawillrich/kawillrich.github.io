@@ -615,8 +615,8 @@ li.third-level-dropdown-list
 li.monster-spell-list {
   display: none;
   position: relative;
-  top: -21px;
-  left: 145px;
+  top: -20px;
+  left: 143px;
   background-color: white;
   border: 1px solid black;
 }
