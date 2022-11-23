@@ -2879,9 +2879,19 @@ function toggleShowSpellList()
 
 function castSpellFromList()
 {
+  let parentNodeInnerText = this.parentNode.firstChild.textContent;
+  let thisNodeInnerText = this.textContent;
   console.log(this.textContent);
   console.log(this.parentNode.firstChild.textContent);
+  if (finalCharacter.specialty === highMage || finalCharacter.specialty === elf || finalCharacter.specialty === dragonWarrior)
+  {
+    let firstLevel = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"];
+    let secondLevel = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"];
+    let thirdLevel = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"];
 
+    //NEED TO ITERATE THROUGH THE 'NAME' PROPERTY AND MATCH THE PARENTNODEINNERTEXT TO LINK TO ASSOCIATED SPELL
+
+  }
 }
 
 export function confirmAttackMonsters(monsterOne, monsterTwo)
