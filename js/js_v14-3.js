@@ -2804,7 +2804,8 @@ function populateMageSpells()
     addMonster2Btn.classList.add('monster-spell-list');
     addMonster2Btn.innerText = 'Monster 2';
     spellLi.appendChild(addMonster2Btn);
-    spellLi.addEventListener('click', castSpellFromList, false)
+    addMonster1Btn.addEventListener('click', castSpellFromList, false);
+    addMonster2Btn.addEventListener('click', castSpellFromList, false);
   }
 
   addingSpellLevels.appendChild(secondLevelSpellList);
@@ -2827,7 +2828,8 @@ function populateMageSpells()
     addMonster2Btn.classList.add('monster-spell-list');
     addMonster2Btn.innerText = 'Monster 2';
     spellLi2.appendChild(addMonster2Btn)
-
+    addMonster1Btn.addEventListener('click', castSpellFromList, false);
+    addMonster2Btn.addEventListener('click', castSpellFromList, false);
 
 
   }
@@ -2852,7 +2854,8 @@ function populateMageSpells()
     addMonster2Btn.classList.add('monster-spell-list');
     addMonster2Btn.innerText = 'Monster 2';
     spellLi.appendChild(addMonster2Btn)
-
+    addMonster1Btn.addEventListener('click', castSpellFromList, false);
+    addMonster2Btn.addEventListener('click', castSpellFromList, false);
 
   }
 
