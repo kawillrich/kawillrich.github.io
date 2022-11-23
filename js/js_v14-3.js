@@ -2897,7 +2897,11 @@ function castSpellFromList()
       //   {
       //     console.log(spell[i].name)
       //   }
-      console.log(firstLevel[i].name);
+      if (firstLevel[i].name === parentNodeInnerText)
+      {
+        firstLevel[i].castingEffect();
+
+      }
     }
   }
 }
