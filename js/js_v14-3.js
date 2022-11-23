@@ -2880,6 +2880,8 @@ function toggleShowSpellList()
 function castSpellFromList()
 {
   console.log(this.textContent);
+  console.log(this.parentNode.firstChild.textContent);
+
 }
 
 export function confirmAttackMonsters(monsterOne, monsterTwo)
