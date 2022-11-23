@@ -2890,7 +2890,15 @@ function castSpellFromList()
     let thirdLevel = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"];
 
     //NEED TO ITERATE THROUGH THE 'NAME' PROPERTY AND MATCH THE PARENTNODEINNERTEXT TO LINK TO ASSOCIATED SPELL
-
+    for (let i = 0; i < firstLevel.length; i++)
+    {
+      // for (let i = 0; i < 2; i++)
+      //   if (parentNodeInnerText === spell[i].name)
+      //   {
+      //     console.log(spell[i].name)
+      //   }
+      console.log(firstLevel[i].name);
+    }
   }
 }
 
