@@ -332,9 +332,9 @@ export default class Character
       removeMonsterOneSpellAttack.classList.add("monster1-dead");
 
       let removeMonsterOneSpellHighlight = document.querySelectorAll(".monster-one-spell-list");
-      for (let i = 0; i < removeMonsterOneSpellHighlight; i++)
+      for (let i = 0; i < removeMonsterOneSpellHighlight.length; i++)
       {
-        removeMonsterOneSpellButton[i].classList.add("monster1-spell-dead");
+        removeMonsterOneSpellHighlight[i].classList.add("monster1-spell-dead");
 
       }
 
@@ -351,6 +351,14 @@ export default class Character
         ".spell2-monster-two"
       );
       removeMonsterTwoSpellAttack.classList.add("monster1-dead");
+
+      let removeMonsterTwoSpellHighlight = document.querySelectorAll(".monster-two-spell-list");
+      console.log(removeMonsterTwoSpellHighlight);
+      for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
+      {
+        removeMonsterTwoSpellHighlight[i].classList.add("monster2-spell-dead");
+
+      }
     }
 
     if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints <= 0)
