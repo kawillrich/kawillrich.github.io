@@ -1,12 +1,14 @@
 //import other js modules to access
 
-import {
+import
+{
   finalCharacter,
   continueChapterThreeFour,
   render,
 } from "./js_v14-3.js";
 import Weapon from "./weapon-class-v2.js";
-import {
+import
+{
   normalSword,
   shortBow,
   silverSword,
@@ -32,7 +34,8 @@ import {
   warHammer,
 } from "./weapon-class-v2.js";
 import Armor from "./armor-class-v2.js";
-import {
+import
+{
   chainMail,
   leatherArmor,
   robes,
@@ -43,7 +46,8 @@ import {
   obsidianPlateMail,
 } from "./armor-class-v2.js";
 import Specialty from "./specialty-class-v2.js";
-import {
+import
+{
   noSpecialty,
   warrior,
   highMage,
@@ -54,23 +58,27 @@ import {
   cleric,
   thief,
 } from "./specialty-class-v2.js";
-import {
+import
+{
   fighterVeteran,
   fighterWarrior,
   fighterSwordmaster,
 } from "./character-class-levels/fighter-level-class.js";
-import {
+import
+{
   veteranMedium,
   warriorSeer,
   swordMasterConjurer,
 } from "./character-class-levels/elf-level-class.js";
-import {
+import
+{
   apprentice,
   footpad,
   robber,
 } from "./character-class-levels/thief-level-class.js";
 import { dragonWarriorVeteran } from "./character-class-levels/dragon-warrior-level-class.js";
-import {
+import
+{
   continualLight,
   detectEvil,
   invisibility,
@@ -84,7 +92,8 @@ import {
   wizardLock,
   detectInvisible,
 } from "./mage-spells/mage-level-two-spells-class.js";
-import {
+import
+{
   charmPerson,
   detectMagic,
   floatingDisc,
@@ -98,7 +107,8 @@ import {
   ventriloquism,
   readMagic,
 } from "./mage-spells/mage-level-one-spells-class.js";
-import {
+import
+{
   smallWolf,
   wolf1,
   wolf2,
@@ -118,8 +128,9 @@ import {
 
 //exports Character class for other module access
 
-export default class Character {
-  constructor(
+export default class Character
+{
+  constructor (
     name,
     specialty,
     armor,
@@ -132,7 +143,8 @@ export default class Character {
     characterImage,
     treasure,
     hitRollTable
-  ) {
+  )
+  {
     this.name = name;
     this.specialty = specialty;
     this.armor = armor;
@@ -151,7 +163,7 @@ export default class Character {
       [6, 13],
       [5, 14],
       [4, 15],
-      [3, 16], 
+      [3, 16],
       [2, 17],
       [1, 18],
       [0, 19],
@@ -161,7 +173,8 @@ export default class Character {
 
   //updates & initiates Character creation
 
-  characterUpdate() {
+  characterUpdate()
+  {
     let strengthPlusAdjustment;
     let intelligencePlusAdjustment;
     let wisdomPlusAdjustment;
@@ -169,39 +182,51 @@ export default class Character {
     let constitutionPlusAdjustment;
     let charismaPlusAdjustment;
 
-    if (finalCharacter.attributes[0].adjustment > 0) {
+    if (finalCharacter.attributes[0].adjustment > 0)
+    {
       strengthPlusAdjustment = `+${finalCharacter.attributes[0].adjustment}`;
-    } else {
+    } else
+    {
       strengthPlusAdjustment = finalCharacter.attributes[0].adjustment;
     }
 
-    if (finalCharacter.attributes[1].adjustment > 0) {
+    if (finalCharacter.attributes[1].adjustment > 0)
+    {
       intelligencePlusAdjustment = `+${finalCharacter.attributes[1].adjustment}`;
-    } else {
+    } else
+    {
       intelligencePlusAdjustment = finalCharacter.attributes[1].adjustment;
     }
 
-    if (finalCharacter.attributes[2].adjustment > 0) {
+    if (finalCharacter.attributes[2].adjustment > 0)
+    {
       wisdomPlusAdjustment = `+${finalCharacter.attributes[2].adjustment}`;
-    } else {
+    } else
+    {
       wisdomPlusAdjustment = finalCharacter.attributes[2].adjustment;
     }
 
-    if (finalCharacter.attributes[3].adjustment > 0) {
+    if (finalCharacter.attributes[3].adjustment > 0)
+    {
       dexterityPlusAdjustment = `+${finalCharacter.attributes[3].adjustment}`;
-    } else {
+    } else
+    {
       dexterityPlusAdjustment = finalCharacter.attributes[3].adjustment;
     }
 
-    if (finalCharacter.attributes[4].adjustment > 0) {
+    if (finalCharacter.attributes[4].adjustment > 0)
+    {
       constitutionPlusAdjustment = `+${finalCharacter.attributes[4].adjustment}`;
-    } else {
+    } else
+    {
       constitutionPlusAdjustment = finalCharacter.attributes[4].adjustment;
     }
 
-    if (finalCharacter.attributes[5].adjustment > 0) {
+    if (finalCharacter.attributes[5].adjustment > 0)
+    {
       charismaPlusAdjustment = `+${finalCharacter.attributes[5].adjustment}`;
-    } else {
+    } else
+    {
       charismaPlusAdjustment = finalCharacter.attributes[5].adjustment;
     }
 
@@ -211,50 +236,35 @@ export default class Character {
         <div id='character-stats'>
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Player Data</legend>
-                <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${
-                  this.name
-                }</span></h4>
-                <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${
-                  this.specialty.name
-                }</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${
-                  finalCharacter.specialty.healthPoints +
-                  finalCharacter.attributes[4].adjustment
-                }</span><span id='hpBar'><progress id='hp-prog-bar' max="${
-      finalCharacter.specialty.maxHealthPoints +
+                <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name
+      }</span></h4>
+                <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name
+      }</span></h4>
+                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints +
       finalCharacter.attributes[4].adjustment
-    }" value="${
-      finalCharacter.specialty.healthPoints +
+      }</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints +
       finalCharacter.attributes[4].adjustment
-    }"></progress>${
-      finalCharacter.specialty.healthPoints +
+      }" value="${finalCharacter.specialty.healthPoints +
       finalCharacter.attributes[4].adjustment
-    }/${
-      finalCharacter.specialty.maxHealthPoints +
+      }"></progress>${finalCharacter.specialty.healthPoints +
       finalCharacter.attributes[4].adjustment
-    }</span></span></h4> 
-                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${
-                  finalCharacter.armor.name
-                }<span class="armor-tooltiptext">Armor Class: ${
-      finalCharacter.armor.armorClass
-    }</span></div></h4> 
-                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${
-                  finalCharacter.weapon.name
-                }<span class="weapon-tooltiptext">Damage: d${
-      finalCharacter.weapon.damage
-    }</span></div></h4>
-                <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${
-                  this.specialty.spell1.name
-                }</span></h4>
-                <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${
-                  this.specialty.spell2.name
-                }</span></h4>
-                <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${
-                  finalCharacter.treasure.gold.quantity
-                }</span></h4>
-                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${
-                  finalCharacter.specialty.characterExperience
-                }</span></h4>
+      }/${finalCharacter.specialty.maxHealthPoints +
+      finalCharacter.attributes[4].adjustment
+      }</span></span></h4> 
+                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name
+      }<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass
+      }</span></div></h4> 
+                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name
+      }<span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage
+      }</span></div></h4>
+                <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name
+      }</span></h4>
+                <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name
+      }</span></h4>
+                <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity
+      }</span></h4>
+                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience
+      }</span></h4>
                 
                 
             </fieldset>
@@ -264,36 +274,24 @@ export default class Character {
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Attributes</legend>
                 <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>Attribute: </span><span class='character-display-attributes-scores'>Score: </span><span class='character-display-attributes-scores-adj'>Adj: </span></h4>
-                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[0].name
-                }: </span><span class='character-display-attributes-scores'>${
-      finalCharacter.attributes[0].score
-    }</span><span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span></h4>
-                <h4 id='char-intelligence' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[1].name
-                }: </span><span class='character-display-attributes-scores'>${
-      finalCharacter.attributes[1].score
-    }</span><span class='character-display-attributes-scores-adj'>${intelligencePlusAdjustment}</span></h4>
-                <h4 id='char-wisdom' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[2].name
-                }: </span><span class='character-display-attributes-scores'>${
-      finalCharacter.attributes[2].score
-    }</span><span class='character-display-attributes-scores-adj'>${wisdomPlusAdjustment}</span></h4>
-                <h4 id='char-dexterity' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[3].name
-                }: </span><span class='character-display-attributes-scores'>${
-      finalCharacter.attributes[3].score
-    }</span><span class='character-display-attributes-scores-adj'>${dexterityPlusAdjustment}</span></h4>
-                <h4 id='char-constitution' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[4].name
-                }: </span><span class='character-display-attributes-scores'>${
-      finalCharacter.attributes[4].score
-    }</span><span class='character-display-attributes-scores-adj'>${constitutionPlusAdjustment}</span></h4>
-                <h4 id='char-charisma' class='char-info-label'><span class='character-display-attributes'>${
-                  finalCharacter.attributes[5].name
-                }: </span><span class='character-display-attributes-scores'>${
-      finalCharacter.attributes[5].score
-    }</span><span class='character-display-attributes-scores-adj'>${charismaPlusAdjustment}</span></h4>
+                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[0].name
+      }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score
+      }</span><span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span></h4>
+                <h4 id='char-intelligence' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[1].name
+      }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[1].score
+      }</span><span class='character-display-attributes-scores-adj'>${intelligencePlusAdjustment}</span></h4>
+                <h4 id='char-wisdom' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[2].name
+      }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[2].score
+      }</span><span class='character-display-attributes-scores-adj'>${wisdomPlusAdjustment}</span></h4>
+                <h4 id='char-dexterity' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[3].name
+      }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[3].score
+      }</span><span class='character-display-attributes-scores-adj'>${dexterityPlusAdjustment}</span></h4>
+                <h4 id='char-constitution' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[4].name
+      }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[4].score
+      }</span><span class='character-display-attributes-scores-adj'>${constitutionPlusAdjustment}</span></h4>
+                <h4 id='char-charisma' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[5].name
+      }: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[5].score
+      }</span><span class='character-display-attributes-scores-adj'>${charismaPlusAdjustment}</span></h4>
             </fieldset>
         </div>
 
@@ -310,17 +308,20 @@ export default class Character {
 
     //populating normal-equipment tab
 
-    for (let i = 0; i < finalCharacter.inventory.length; i++) {
+    for (let i = 0; i < finalCharacter.inventory.length; i++)
+    {
       let updateInventory = document.querySelector("#normal-equipment-list");
       updateInventory.innerHTML += `${finalCharacter.inventory[i].name} <br>`;
     }
   }
   //confirms to attack monsters and populates monster-info section
 
-  confirmAttack(monsterOne, monsterTwo) {
+  confirmAttack(monsterOne, monsterTwo)
+  {
     //----------------TRYING TO EITHER REMOVE OR CHANGE COLOR OF ATTACK BUTTON IF MONSTER1 IS DEAD-------------
 
-    if (monsterOne.healthPoints <= 0) {
+    if (monsterOne.healthPoints <= 0)
+    {
       let removeMonsterOneAttackButton = document.querySelector(
         ".attack-monster-one"
       );
@@ -329,9 +330,19 @@ export default class Character {
         ".spell2-monster-one"
       );
       removeMonsterOneSpellAttack.classList.add("monster1-dead");
+
+      let removeMonsterOneSpellHighlight = document.querySelectorAll(".monster-one-spell-list");
+      for (let i = 0; i < removeMonsterOneSpellHighlight; i++)
+      {
+        removeMonsterOneSpellButton[i].classList.add("monster1-spell-dead");
+
+      }
+
+
     }
 
-    if (monsterTwo.healthPoints <= 0) {
+    if (monsterTwo.healthPoints <= 0)
+    {
       let removeMonsterTwoAttackButton = document.querySelector(
         ".attack-monster-two"
       );
@@ -342,7 +353,8 @@ export default class Character {
       removeMonsterTwoSpellAttack.classList.add("monster1-dead");
     }
 
-    if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints <= 0) {
+    if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints <= 0)
+    {
       let removeAreaAttackSpellButton = document.querySelector(".area-attack");
       removeAreaAttackSpellButton.classList.add("monster1-dead");
     }
@@ -380,26 +392,33 @@ export default class Character {
 
   //attacking monster 1
 
-  checkLevelUp() {
-    if (finalCharacter.specialty.characterLevel.level.maxXP) {
+  checkLevelUp()
+  {
+    if (finalCharacter.specialty.characterLevel.level.maxXP)
+    {
       if (
         finalCharacter.specialty.characterExperience >
         finalCharacter.specialty.characterLevel.level.maxXP
-      ) {
+      )
+      {
         alert("Congratulations, you have achieved the next level!");
       }
-    } else {
+    } else
+    {
       return;
     }
   }
 
-  weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter) {
+  weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter)
+  {
     let self = this;
 
-    let confirmMonstersDead = (enemy1) => {
+    let confirmMonstersDead = (enemy1) =>
+    {
       //checking if both monsters are dead
 
-      if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
+      if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
+      {
         // console.log('both dead');
 
         let defeatedMonsters = document.querySelector("#dialogue");
@@ -464,43 +483,49 @@ export default class Character {
       }
     };
 
-    let greyOutAttackButtons = function () {
+    let greyOutAttackButtons = function ()
+    {
       let attackButtons = document.querySelectorAll(".attack");
 
-      for (let attackButton of attackButtons) {
+      for (let attackButton of attackButtons)
+      {
         attackButton.classList.add("hidden");
       }
 
       let showMonsterAttackButton = document.querySelector("#monster-attack");
       showMonsterAttackButton.classList.remove("hidden");
 
-      showMonsterAttackButton.onclick = function () {
+      showMonsterAttackButton.onclick = function ()
+      {
         monster1.monsterAttack(monster1, monster2);
       };
     };
 
-    let hitRollSucceed = function(enemy1, finalCharacter) {
+    let hitRollSucceed = function (enemy1, finalCharacter)
+    {
       let attackDialogue = document.querySelector("#dialogue");
       attackDialogue.innerHTML = `
         <p>You attack the ${monster1.name} with your ${finalCharacter.weapon.name} and cause ${inflictedDamage} points of damage.</p>
       `;
-  
+
       //CHECKING ATTACK INTERACTION
-      if (monster1.healthPoints - inflictedDamage > 0) {
+      if (monster1.healthPoints - inflictedDamage > 0)
+      {
         monster1.healthPoints = monster1.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-one-hp");
         updatedMonsterHP.innerHTML = `
               <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
               `;
-  
+
         //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
-        
+
         greyOutAttackButtons();
-  
+
         //END
-      } else if (monster1.healthPoints - inflictedDamage <= 0) {
+      } else if (monster1.healthPoints - inflictedDamage <= 0)
+      {
         monster1.healthPoints = 0;
-  
+
         let monsterOneStatus = document.querySelector("#monster-one");
         let defeatMonster1 = document.querySelector("#dialogue");
         monsterOneStatus.innerHTML = `
@@ -514,31 +539,32 @@ export default class Character {
                   </fieldset>   
               </div>`;
         defeatMonster1.innerHTML = `<p>Congratulations, you defeated the Monster 1!</p>`;
-  
+
         let updatedExperience = document.querySelector("#char-experience");
         updatedExperience.innerHTML = `
               <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
               `;
-  
+
         //----------------------------trying to remove monster attack button--------------//
-  
+
         let removingMonster1Button =
           document.getElementsByClassName("attack-monster-one");
         removingMonster1Button[0].classList.add("monster1-dead");
-  
+
         let removeMonster1SpellAttack =
           document.getElementsByClassName("spell2-monster-one");
         removeMonster1SpellAttack[0].classList.add("monster1-dead");
-  
+
         //-------------------------------------------------------------------//
-      }  
-        confirmMonstersDead();
+      }
+      confirmMonstersDead();
     }
     //ADD HITROLL VALUE 
 
     let playerHitRollValue = Math.ceil(Math.random() * 20) + finalCharacter.attributes[0].adjustment;
- 
-    if (playerHitRollValue > 20) {
+
+    if (playerHitRollValue > 20)
+    {
       playerHitRollValue = 20;
     }
 
@@ -547,22 +573,28 @@ export default class Character {
     //END HITROLL VALUE
 
     let inflictedDamage = Math.ceil(Math.random(1) * finalCharacter.weapon.damage) + finalCharacter.attributes[0].adjustment;
-    if (inflictedDamage <= 0) {
+    if (inflictedDamage <= 0)
+    {
       inflictedDamage = 0;
     }
 
-    let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) => {
+    let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) =>
+    {
       console.log("Player's HitRoll: " + playerHitRollValue1);
       console.log("Monster's Armor Class: " + monsterArmorClass1);
       console.table(playerHitRoll1);
-      for (let i = 0; i < playerHitRoll1.length; i++) {
-        if (playerHitRoll1[i][0] === monsterArmorClass1) {
+      for (let i = 0; i < playerHitRoll1.length; i++)
+      {
+        if (playerHitRoll1[i][0] === monsterArmorClass1)
+        {
           console.log("got correct hit roll table");
           console.log("Player's AC:" + playerHitRoll1[i][1]);
-          if (playerHitRollValue1 < playerHitRoll1[i][1]) {
+          if (playerHitRollValue1 < playerHitRoll1[i][1])
+          {
             alert('Player misses!');
             greyOutAttackButtons();
-          } else {
+          } else
+          {
             hitRollSucceed(monster1, finalCharacter);
             // greyOutAttackButtons();
           }
@@ -572,12 +604,15 @@ export default class Character {
     checkPlayerHitRoll(playerHitRollValue, monsterArmorClass, finalCharacter.hitRollTable);
   }
 
-  weaponAttackMonster2(monster1, monster2, weapon, continueNextChapter) {
-   
+  weaponAttackMonster2(monster1, monster2, weapon, continueNextChapter)
+  {
+
     let self = this;
 
-    let confirmMonstersDead = (enemy2) => {
-      if (monster2.healthPoints <= 0 && monster1.healthPoints <= 0) {
+    let confirmMonstersDead = (enemy2) =>
+    {
+      if (monster2.healthPoints <= 0 && monster1.healthPoints <= 0)
+      {
         // console.log('both dead');
 
         let defeatedMonsters = document.querySelector("#dialogue");
@@ -642,17 +677,20 @@ export default class Character {
       }
     };
 
-    let greyOutAttackButtons = function () {
+    let greyOutAttackButtons = function ()
+    {
       let attackButtons = document.querySelectorAll(".attack");
 
-      for (let attackButton of attackButtons) {
+      for (let attackButton of attackButtons)
+      {
         attackButton.classList.add("hidden");
       }
 
       let showMonsterAttackButton = document.querySelector("#monster-attack");
       showMonsterAttackButton.classList.remove("hidden");
 
-      showMonsterAttackButton.onclick = function () {
+      showMonsterAttackButton.onclick = function ()
+      {
         monster2.monsterAttack(monster1, monster2);
       };
     };
@@ -660,22 +698,25 @@ export default class Character {
     let inflictedDamage =
       Math.ceil(Math.random(1) * finalCharacter.weapon.damage) +
       finalCharacter.attributes[0].adjustment;
-    if (inflictedDamage <= 0) {
+    if (inflictedDamage <= 0)
+    {
       inflictedDamage = 0;
     }
 
-    
+
     // this.monster2 = monster2;
     // this.weapon = weapon;
     // let enemy2X = this.enemy2;
 
-    let hitRollSucceed = function(enemy2, finalCharacter) {
+    let hitRollSucceed = function (enemy2, finalCharacter)
+    {
       let attackDialogue = document.getElementById("dialogue");
       attackDialogue.innerHTML = `
           <p>You attack the ${monster2.name} with your ${finalCharacter.weapon.name} and cause ${inflictedDamage} points of damage.</p>`;
 
       //CHECKING ATTACK INTERACTION
-      if (monster2.healthPoints - inflictedDamage > 0) {
+      if (monster2.healthPoints - inflictedDamage > 0)
+      {
         monster2.healthPoints = monster2.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-two-hp");
         updatedMonsterHP.innerHTML = `
@@ -683,12 +724,13 @@ export default class Character {
               `;
         //greying out attack module buttons when pressed
 
-        
+
 
         greyOutAttackButtons();
 
 
-      } else if (monster2.healthPoints - inflictedDamage <= 0) {
+      } else if (monster2.healthPoints - inflictedDamage <= 0)
+      {
         monster2.healthPoints = 0;
 
         let monsterTwoStatus = document.querySelector("#monster-two");
@@ -722,12 +764,13 @@ export default class Character {
 
 
       }
-        confirmMonstersDead();
+      confirmMonstersDead();
     }
-    
+
     let playerHitRollValue = Math.ceil(Math.random() * 20) + finalCharacter.attributes[0].adjustment;
 
-    if (playerHitRollValue > 20) {
+    if (playerHitRollValue > 20)
+    {
       playerHitRollValue = 20;
     }
 
@@ -736,22 +779,28 @@ export default class Character {
     //END HITROLL VALUE
 
     let inflictedDamage2 = Math.ceil(Math.random(1) * finalCharacter.weapon.damage) + finalCharacter.attributes[0].adjustment;
-    if (inflictedDamage2 <= 0) {
+    if (inflictedDamage2 <= 0)
+    {
       inflictedDamage2 = 0;
     }
 
-    let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) => {
+    let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) =>
+    {
       console.log("Player's HitRoll: " + playerHitRollValue1);
       console.log("Monster's Armor Class: " + monsterArmorClass1);
       console.table(playerHitRoll1);
-      for (let i = 0; i < playerHitRoll1.length; i++) {
-        if (playerHitRoll1[i][0] === monsterArmorClass1) {
+      for (let i = 0; i < playerHitRoll1.length; i++)
+      {
+        if (playerHitRoll1[i][0] === monsterArmorClass1)
+        {
           console.log("got correct hit roll table");
           console.log("Player's AC:" + playerHitRoll1[i][1]);
-          if (playerHitRollValue1 < playerHitRoll1[i][1]) {
+          if (playerHitRollValue1 < playerHitRoll1[i][1])
+          {
             alert('Player misses!');
             greyOutAttackButtons();
-          } else {
+          } else
+          {
             hitRollSucceed(monster1, finalCharacter);
             // greyOutAttackButtons();
           }
@@ -762,7 +811,8 @@ export default class Character {
 
   }
 
-  spell2AttackMonster1(monster1, monster2, spell2, continueNextChapter) {
+  spell2AttackMonster1(monster1, monster2, spell2, continueNextChapter)
+  {
     // console.log('Casting Spell Two on Monster One');
     // console.log(monster1);
     // console.log(monster2);
@@ -772,14 +822,17 @@ export default class Character {
     let inflictedDamage = Math.ceil(
       Math.random(1) * finalCharacter.specialty.spell2.damage
     );
-    if (inflictedDamage <= 0) {
+    if (inflictedDamage <= 0)
+    {
       inflictedDamage = 0;
     }
 
-    let confirmMonstersDead = (enemy1) => {
+    let confirmMonstersDead = (enemy1) =>
+    {
       //checking if both monsters are dead
 
-      if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
+      if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
+      {
         // console.log('both dead');
 
         let defeatedMonsters = document.querySelector("#dialogue");
@@ -853,7 +906,8 @@ export default class Character {
     // console.log(this.specialty.spell2.damage);
 
     //CHECKING ATTACK INTERACTION
-    if (monster1.healthPoints - inflictedDamage > 0) {
+    if (monster1.healthPoints - inflictedDamage > 0)
+    {
       monster1.healthPoints = monster1.healthPoints - inflictedDamage;
       let updatedMonsterHP = document.querySelector("#monster-one-hp");
       updatedMonsterHP.innerHTML = `
@@ -862,23 +916,27 @@ export default class Character {
 
       //greying out attack module buttons when pressed
 
-      let greyOutAttackButtons = function () {
+      let greyOutAttackButtons = function ()
+      {
         let attackButtons = document.querySelectorAll(".attack");
 
-        for (let attackButton of attackButtons) {
+        for (let attackButton of attackButtons)
+        {
           attackButton.classList.add("hidden");
         }
 
         let showMonsterAttackButton = document.querySelector("#monster-attack");
         showMonsterAttackButton.classList.remove("hidden");
 
-        showMonsterAttackButton.onclick = function () {
+        showMonsterAttackButton.onclick = function ()
+        {
           monster1.monsterAttack(monster1, monster2);
         };
       };
 
       greyOutAttackButtons();
-    } else if (monster1.healthPoints - inflictedDamage <= 0) {
+    } else if (monster1.healthPoints - inflictedDamage <= 0)
+    {
       monster1.healthPoints = 0;
 
       let monsterOneStatus = document.querySelector("#monster-one");
@@ -914,20 +972,24 @@ export default class Character {
     confirmMonstersDead();
   }
 
-  spell2AttackMonster2(monster1, monster2, spell2, continueNextChapter) {
+  spell2AttackMonster2(monster1, monster2, spell2, continueNextChapter)
+  {
     // console.log('Casting Spell Two on Monster Two');
     let self = this;
 
     let inflictedDamage = Math.ceil(
       Math.random(1) * finalCharacter.specialty.spell2.damage
     );
-    if (inflictedDamage <= 0) {
+    if (inflictedDamage <= 0)
+    {
       inflictedDamage = 0;
     }
-    let confirmMonstersDead = (enemy1) => {
+    let confirmMonstersDead = (enemy1) =>
+    {
       //checking if both monsters are dead
 
-      if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
+      if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
+      {
         // console.log('both dead');
 
         let defeatedMonsters = document.querySelector("#dialogue");
@@ -1002,7 +1064,8 @@ export default class Character {
     // console.log(this.specialty.spell2.damage);
 
     //CHECKING ATTACK INTERACTION
-    if (monster2.healthPoints - inflictedDamage > 0) {
+    if (monster2.healthPoints - inflictedDamage > 0)
+    {
       monster2.healthPoints = monster2.healthPoints - inflictedDamage;
       let updatedMonsterHP = document.querySelector("#monster-two-hp");
       updatedMonsterHP.innerHTML = `
@@ -1010,23 +1073,27 @@ export default class Character {
             `;
       //greying out attack module buttons when pressed
 
-      let greyOutAttackButtons = function () {
+      let greyOutAttackButtons = function ()
+      {
         let attackButtons = document.querySelectorAll(".attack");
 
-        for (let attackButton of attackButtons) {
+        for (let attackButton of attackButtons)
+        {
           attackButton.classList.add("hidden");
         }
 
         let showMonsterAttackButton = document.querySelector("#monster-attack");
         showMonsterAttackButton.classList.remove("hidden");
 
-        showMonsterAttackButton.onclick = function () {
+        showMonsterAttackButton.onclick = function ()
+        {
           monster2.monsterAttack(monster1, monster2);
         };
       };
 
       greyOutAttackButtons();
-    } else if (monster2.healthPoints - inflictedDamage <= 0) {
+    } else if (monster2.healthPoints - inflictedDamage <= 0)
+    {
       monster2.healthPoints = 0;
 
       let monsterTwoStatus = document.querySelector("#monster-two");
@@ -1062,7 +1129,8 @@ export default class Character {
     confirmMonstersDead();
   }
 
-  spell1Heal() {
+  spell1Heal()
+  {
     // console.log('Casting Heal Spell');
     let healedCharHP = document.querySelector("#char-hp");
     finalCharacter.specialty.healthPoints +=
@@ -1070,7 +1138,8 @@ export default class Character {
     if (
       finalCharacter.specialty.healthPoints >=
       finalCharacter.specialty.maxHealthPoints
-    ) {
+    )
+    {
       finalCharacter.specialty.healthPoints =
         finalCharacter.specialty.maxHealthPoints;
     }
@@ -1086,14 +1155,16 @@ export default class Character {
 
     //WORKS, BUT NEED TO IMPLEMENT ALERT WINDOW WHEN MONSTERS ATTACK AND NOT RESET FIGHT MODULE
     castedHealSpell.style.visibility = "hidden";
-    setTimeout(function () {
+    setTimeout(function ()
+    {
       castedHealSpell.style.visibility = "visible";
     }, 60000);
   }
 
   //***TRYING TO CREATE AREA ATTACK SPELL
 
-  areaAttackSpell(monster1, monster2, spell3, continueNextChapter) {
+  areaAttackSpell(monster1, monster2, spell3, continueNextChapter)
+  {
     // console.log('Casting Area Attack Spell');
 
     let self = this;
@@ -1109,11 +1180,13 @@ export default class Character {
 
     //checking if both monsters are dead
 
-    let confirmMonstersDead = () => {
+    let confirmMonstersDead = () =>
+    {
       // console.log(monster1.healthPoints);
       // console.log(monster2.healthPoints);
 
-      if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0) {
+      if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
+      {
         // console.log('both dead');
 
         monster1.healthPoints = 0;
@@ -1189,11 +1262,13 @@ export default class Character {
     };
     //  console.log(monster1);
     //  console.log(monster2);
-    if (monster1.healthPoints <= 0) {
+    if (monster1.healthPoints <= 0)
+    {
       monster1.healthPoints = 0;
     }
 
-    if (monster2.healthPoints <= 0) {
+    if (monster2.healthPoints <= 0)
+    {
       monster2.healthPoints = 0;
 
       // let updatedExperience = document.querySelector('#char-experience');
@@ -1212,22 +1287,27 @@ export default class Character {
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
             `;
 
-    let greyOutAttackButtons = function () {
+    let greyOutAttackButtons = function ()
+    {
       // console.log('greyOutAttackButtons arguments');
 
       let attackButtons = document.querySelectorAll(".attack");
 
-      for (let attackButton of attackButtons) {
+      for (let attackButton of attackButtons)
+      {
         attackButton.classList.add("hidden");
       }
 
       let showMonsterAttackButton = document.querySelector("#monster-attack");
       showMonsterAttackButton.classList.remove("hidden");
 
-      showMonsterAttackButton.onclick = function () {
-        if (monster1.healthPoints > 0) {
+      showMonsterAttackButton.onclick = function ()
+      {
+        if (monster1.healthPoints > 0)
+        {
           monster1.monsterAttack(monster1, monster2);
-        } else {
+        } else
+        {
           monster2.monsterAttack(monster1, monster2);
         }
       };
@@ -1238,13 +1318,15 @@ export default class Character {
     confirmMonstersDead();
   }
 
-  areaSpell = function (item) {
+  areaSpell = function (item)
+  {
     let self = this;
 
     let damage = Math.ceil(
       Math.random(1) * finalCharacter.specialty.spell3.damage
     );
-    if (damage <= 0) {
+    if (damage <= 0)
+    {
       damage = 0;
     }
 
@@ -1254,16 +1336,19 @@ export default class Character {
 
     item.healthPoints -= damage;
 
-    if (item.name === " ") {
+    if (item.name === " ")
+    {
       let attackDialogue = document.querySelector("#dialogue");
 
       attackDialogue.innerHTML += ` `;
-    } else if (item.healthPoints <= 0) {
+    } else if (item.healthPoints <= 0)
+    {
       let attackDialogue = document.querySelector("#dialogue");
 
       attackDialogue.innerHTML += `
             <p>${item.name} is dead.</p>`;
-    } else {
+    } else
+    {
       //item.healthPoints -= damage;
       // console.log(`You attacked ${item.name} for ${damage} points of damage`);
 
