@@ -500,6 +500,9 @@ export default class Character
         attackButton.classList.add("hidden");
       }
 
+      let spellAttackButton = document.querySelector(".attack-spell");
+      spellAttackButton.classList.add("hidden");
+
       let showMonsterAttackButton = document.querySelector("#monster-attack");
       showMonsterAttackButton.classList.remove("hidden");
 
@@ -562,6 +565,8 @@ export default class Character
         let removeMonster1SpellAttack =
           document.getElementsByClassName("spell2-monster-one");
         removeMonster1SpellAttack[0].classList.add("monster1-dead");
+
+
 
         //-------------------------------------------------------------------//
       }
@@ -693,6 +698,9 @@ export default class Character
       {
         attackButton.classList.add("hidden");
       }
+
+      let spellAttackButton = document.querySelector(".attack-spell");
+      spellAttackButton.classList.add("hidden");
 
       let showMonsterAttackButton = document.querySelector("#monster-attack");
       showMonsterAttackButton.classList.remove("hidden");
@@ -933,6 +941,9 @@ export default class Character
           attackButton.classList.add("hidden");
         }
 
+        let spellAttackButton = document.querySelector(".attack-spell");
+        spellAttackButton.classList.add("hidden");
+
         let showMonsterAttackButton = document.querySelector("#monster-attack");
         showMonsterAttackButton.classList.remove("hidden");
 
@@ -1089,6 +1100,9 @@ export default class Character
         {
           attackButton.classList.add("hidden");
         }
+
+        let spellAttackButton = document.querySelector(".attack-spell");
+        spellAttackButton.classList.add("hidden");
 
         let showMonsterAttackButton = document.querySelector("#monster-attack");
         showMonsterAttackButton.classList.remove("hidden");
@@ -1305,6 +1319,9 @@ export default class Character
       {
         attackButton.classList.add("hidden");
       }
+
+      let spellAttackButton = document.querySelector(".attack-spell");
+      spellAttackButton.classList.add("hidden");
 
       let showMonsterAttackButton = document.querySelector("#monster-attack");
       showMonsterAttackButton.classList.remove("hidden");
