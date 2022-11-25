@@ -2797,11 +2797,11 @@ function populateMageSpells()
     let addedSpellUl = document.querySelector('.first-level-dropdown-list');
     addedSpellUl.appendChild(spellLi);
     let addMonster1Btn = document.createElement('li');
-    addMonster1Btn.classList.add('monster-spell-list');
+    addMonster1Btn.classList.add('monster-one-spell-list');
     addMonster1Btn.innerText = 'Monster 1';
     spellLi.appendChild(addMonster1Btn);
     let addMonster2Btn = document.createElement('li');
-    addMonster2Btn.classList.add('monster-spell-list');
+    addMonster2Btn.classList.add('monster-two-spell-list');
     addMonster2Btn.innerText = 'Monster 2';
     spellLi.appendChild(addMonster2Btn);
     addMonster1Btn.addEventListener('click', castSpellFromList, false);
@@ -2821,11 +2821,11 @@ function populateMageSpells()
     let addedSpellUl2 = document.querySelector('.second-level-dropdown-list');
     addedSpellUl2.appendChild(spellLi2);
     let addMonster1Btn = document.createElement('li');
-    addMonster1Btn.classList.add('monster-spell-list');
+    addMonster1Btn.classList.add('monster-one-spell-list');
     addMonster1Btn.innerText = 'Monster 1';
     spellLi2.appendChild(addMonster1Btn);
     let addMonster2Btn = document.createElement('li');
-    addMonster2Btn.classList.add('monster-spell-list');
+    addMonster2Btn.classList.add('monster-two-spell-list');
     addMonster2Btn.innerText = 'Monster 2';
     spellLi2.appendChild(addMonster2Btn)
     addMonster1Btn.addEventListener('click', castSpellFromList, false);
@@ -2847,11 +2847,11 @@ function populateMageSpells()
     let addedSpellUl = document.querySelector('.third-level-dropdown-list');
     addedSpellUl.appendChild(spellLi);
     let addMonster1Btn = document.createElement('li');
-    addMonster1Btn.classList.add('monster-spell-list');
+    addMonster1Btn.classList.add('monster-one-spell-list');
     addMonster1Btn.innerText = 'Monster 1';
     spellLi.appendChild(addMonster1Btn);
     let addMonster2Btn = document.createElement('li');
-    addMonster2Btn.classList.add('monster-spell-list');
+    addMonster2Btn.classList.add('monster-two-spell-list');
     addMonster2Btn.innerText = 'Monster 2';
     spellLi.appendChild(addMonster2Btn)
     addMonster1Btn.addEventListener('click', castSpellFromList, false);
