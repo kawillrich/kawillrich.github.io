@@ -158,6 +158,7 @@ h4 {
 .monster1-dead {
   /* display: none; */
   background-color: grey;
+  color: darkgray;
   width: 200px;
   border-radius: 5px;
   cursor: not-allowed;

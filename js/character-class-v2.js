@@ -566,7 +566,12 @@ export default class Character
           document.getElementsByClassName("spell2-monster-one");
         removeMonster1SpellAttack[0].classList.add("monster1-dead");
 
+        let removeMonsterOneSpellHighlight = document.querySelectorAll(".monster-one-spell-list");
+        for (let i = 0; i < removeMonsterOneSpellHighlight.length; i++)
+        {
+          removeMonsterOneSpellHighlight[i].classList.add("monster1-spell-dead");
 
+        }
 
         //-------------------------------------------------------------------//
       }
@@ -778,6 +783,12 @@ export default class Character
           document.getElementsByClassName("spell2-monster-two");
         removeMonster2SpellAttack[0].classList.add("monster1-dead");
 
+        let removeMonsterTwoSpellHighlight = document.querySelectorAll(".monster-two-spell-list");
+        for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
+        {
+          removeMonsterTwoSpellHighlight[i].classList.add("monster2-spell-dead");
+
+        }
 
       }
       confirmMonstersDead();
@@ -987,6 +998,13 @@ export default class Character
       let removingMonster1Button =
         document.getElementsByClassName("attack-monster-one");
       removingMonster1Button[0].classList.add("monster1-dead");
+
+      let removeMonsterOneSpellHighlight = document.querySelectorAll(".monster-one-spell-list");
+      for (let i = 0; i < removeMonsterOneSpellHighlight.length; i++)
+      {
+        removeMonsterOneSpellHighlight[i].classList.add("monster1-spell-dead");
+
+      }
     }
     confirmMonstersDead();
   }
@@ -1147,6 +1165,13 @@ export default class Character
       let removingMonster2Button =
         document.getElementsByClassName("attack-monster-two");
       removingMonster2Button[0].classList.add("monster1-dead");
+    }
+
+    let removeMonsterTwoSpellHighlight = document.querySelectorAll(".monster-two-spell-list");
+    for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
+    {
+      removeMonsterTwoSpellHighlight[i].classList.add("monster2-spell-dead");
+
     }
     confirmMonstersDead();
   }
