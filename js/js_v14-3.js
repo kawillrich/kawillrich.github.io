@@ -2604,8 +2604,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
   monsterOne.createHitPoints();
   monsterTwo.createHitPoints();
 
-  console.log(monsterOne);
-  console.log(monsterTwo);
+  // console.log(monsterOne);
+  // console.log(monsterTwo);
 
   let headerFightModule = document.querySelector("#fight-module");
   headerFightModule.innerHTML = `
@@ -2655,6 +2655,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
     },
     false
   );
+
+
 
   if (finalCharacter.specialty.spell2.name === "None")
   {
@@ -2807,8 +2809,13 @@ function populateMageSpells()
       addMonster2Btn.classList.add('monster-two-spell-list');
       addMonster2Btn.innerText = 'Monster 2';
       spellLi.appendChild(addMonster2Btn);
+
+      //on this event listener, attach function 
       addMonster1Btn.addEventListener('click', castSpellFromList, false);
       addMonster2Btn.addEventListener('click', castSpellFromList, false);
+
+
+
     }
 
   }
