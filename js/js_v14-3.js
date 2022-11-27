@@ -2577,7 +2577,7 @@ function continueChapterThreeThree()
     () =>
     {
       addingFightModule(smallWolf, noMonster, continueChapterThreeFour);
-      console.log(smallWolf);
+      // console.log(smallWolf);
       declareAttack();
     },
     false
@@ -2750,13 +2750,14 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
     );
   }
 
-  populateMageSpells();
+  populateMageSpells(monsterOne, monsterTwo, continueNextChapter);
 
   confirmAttackMonsters(monsterOne, monsterTwo);
 }
 
-function populateMageSpells()
+function populateMageSpells(m1, m2, nextChap)
 {
+  //works console.log(m1)
   let spellList = [];
   let characterFirstLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"];
   let characterSecondLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"];
