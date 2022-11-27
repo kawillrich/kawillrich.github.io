@@ -2807,7 +2807,7 @@ function populateMageSpells()
 
       //on this event listener, attach function 
       addMonster1Btn.addEventListener('click', castSpellFromList, false);
-      addMonster2Btn.addEventListener('click', castSpellFromList, false);=
+      addMonster2Btn.addEventListener('click', castSpellFromList, false);
     }
   }
 
