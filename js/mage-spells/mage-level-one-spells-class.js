@@ -31,7 +31,7 @@ let magicMissile = new MageLevelOneSpells("Magic Missile", 1, 150, 0.1, "Creates
     {
         console.log('Casting Magic Missile');
         // finalCharacter.spell2AttackMonster1(monsterOne, monsterTwo, this, contineNextChapter);
-    }, "magic-missile", true
+    }, "magic-missile", true, 8
 
 );
 let protectionFromEvil = new MageLevelOneSpells("Protection from Evil", 1, 0, 6, "The mage only", function () { console.log('casting') }, "protection-from-evil", true);
