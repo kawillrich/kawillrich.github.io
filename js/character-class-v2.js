@@ -847,6 +847,8 @@ export default class Character
     let self = this;
 
     let inflictedDamage = Math.ceil(
+      //Math.random(1) * spell2.damage  // use for linking magic missile spell dropdown to this function
+
       Math.random(1) * finalCharacter.specialty.spell2.damage
     );
     if (inflictedDamage <= 0)
