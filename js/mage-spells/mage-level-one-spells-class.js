@@ -1,9 +1,13 @@
+import
+{
+    finalCharacter
+} from "/js/js_v14-3.js";
 
 export let mageLevelOneSpells = [];
 
 export default class MageLevelOneSpells
 {
-    constructor (name, level, range, duration, effect, castingEffect, className, useBattle)
+    constructor (name, level, range, duration, effect, castingEffect, className, useBattle, damage)
     {
         this.name = name;
         this.level = level;
@@ -13,6 +17,7 @@ export default class MageLevelOneSpells
         this.castingEffect = castingEffect;
         this.className = className;
         this.useBattle = useBattle;
+        this.damage = 8;
     }
 };
 
@@ -22,10 +27,10 @@ let floatingDisc = new MageLevelOneSpells("Floating Disc", 1, 0, 6, "Creates an 
 let holdPortal = new MageLevelOneSpells("Hold Portal", 1, 10, [2, 12], "On door, gate, or similar portal", function () { console.log('casting') }, "hold-portal", false);
 let light = new MageLevelOneSpells("Light", 1, 120, 6, "Volume of 30 feet diameter", function () { console.log('casting') }, "light", false);
 let magicMissile = new MageLevelOneSpells("Magic Missile", 1, 150, 0.1, "Creates one or more arrows",
-    function ()
+    function (monsterOne, monsterTwo, spell, contineNextChapter)
     {
         console.log('Casting Magic Missile');
-        //finalCharacter.spell2AttackMonster1();
+        // finalCharacter.spell2AttackMonster1(monsterOne, monsterTwo, this, contineNextChapter);
     }, "magic-missile", true
 
 );

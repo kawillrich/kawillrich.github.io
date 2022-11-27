@@ -928,7 +928,7 @@ export default class Character
 
     let attackDialogue = document.querySelector("#dialogue");
     attackDialogue.innerHTML = `
-        <p>You cast ${this.specialty.spell2.name} on the ${monster1.name} and cause ${inflictedDamage} points of damage.</p>`;
+        <p>You cast ${finalCharacter.specialty.spell2.name} on the ${monster1.name} and cause ${inflictedDamage} points of damage.</p>`;
 
     // console.log(this.specialty.spell2.damage);
 

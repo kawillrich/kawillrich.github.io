@@ -2804,6 +2804,10 @@ function populateMageSpells()
       let addMonster1Btn = document.createElement('li');
       addMonster1Btn.classList.add('monster-one-spell-list');
       addMonster1Btn.innerText = 'Monster 1';
+      // addMonster1Btn.addEventListener("click", function ()
+      // {
+      //   characterFirstLevelSpells[i].castingEffect(monsterOne);
+      // })
       spellLi.appendChild(addMonster1Btn);
       let addMonster2Btn = document.createElement('li');
       addMonster2Btn.classList.add('monster-two-spell-list');
@@ -2899,6 +2903,7 @@ function castSpellFromList()
   let thisNodeInnerText = this.textContent;
   console.log(this.textContent);
   console.log(this.parentNode.firstChild.textContent);
+
   if (finalCharacter.specialty === highMage || finalCharacter.specialty === elf || finalCharacter.specialty === dragonWarrior)
   {
     let firstLevel = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"];
@@ -2910,7 +2915,15 @@ function castSpellFromList()
     {
       if (firstLevel[i].name === parentNodeInnerText)
       {
-        firstLevel[i].castingEffect();
+        if (thisNodeInnerText === "Monster 1")
+        {
+          firstLevel[i].castingEffect();
+
+        } else if (thisNodeInnerText === "Monster 2")
+        {
+          firstLevel[i].castingEffect();
+
+        }
 
       }
     };
@@ -2918,7 +2931,15 @@ function castSpellFromList()
     {
       if (secondLevel[i].name === parentNodeInnerText)
       {
-        secondLevel[i].castingEffect();
+        if (thisNodeInnerText === "Monster 1")
+        {
+          secondLevel[i].castingEffect(monsterOne);
+
+        } else if (thisNodeInnerText === "Monster 2")
+        {
+          secondLevel[i].castingEffect(monsterTwo);
+
+        }
 
       }
     };
@@ -2926,7 +2947,15 @@ function castSpellFromList()
     {
       if (thirdLevel[i].name === parentNodeInnerText)
       {
-        thirdLevel[i].castingEffect();
+        if (thisNodeInnerText === "Monster 1")
+        {
+          thirdLevel[i].castingEffect(monsterOne);
+
+        } else if (thisNodeInnerText === "Monster 2")
+        {
+          thirdLevel[i].castingEffect(monsterTwo);
+
+        }
 
       }
     }
