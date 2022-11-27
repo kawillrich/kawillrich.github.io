@@ -2750,18 +2750,9 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
     );
   }
 
-
-
-  // console.log(characterSpells);
-
-
   populateMageSpells();
 
-
   confirmAttackMonsters(monsterOne, monsterTwo);
-
-
-
 }
 
 function populateMageSpells()
@@ -2816,12 +2807,8 @@ function populateMageSpells()
 
       //on this event listener, attach function 
       addMonster1Btn.addEventListener('click', castSpellFromList, false);
-      addMonster2Btn.addEventListener('click', castSpellFromList, false);
-
-
-
+      addMonster2Btn.addEventListener('click', castSpellFromList, false);=
     }
-
   }
 
   addingSpellLevels.appendChild(secondLevelSpellList);
@@ -2849,7 +2836,6 @@ function populateMageSpells()
       addMonster1Btn.addEventListener('click', castSpellFromList, false);
       addMonster2Btn.addEventListener('click', castSpellFromList, false);
     }
-
   }
 
   addingSpellLevels.appendChild(thirdLevelSpellList);
@@ -2881,7 +2867,6 @@ function populateMageSpells()
 
   let spellShowButton = document.querySelector('#use-spells')
   spellShowButton.addEventListener('click', toggleShowSpellList, false)
-
 }
 
 function toggleShowSpellList()
@@ -2922,7 +2907,6 @@ function castSpellFromList()
         } else if (thisNodeInnerText === "Monster 2")
         {
           firstLevel[i].castingEffect();
-
         }
 
       }
@@ -2938,7 +2922,6 @@ function castSpellFromList()
         } else if (thisNodeInnerText === "Monster 2")
         {
           secondLevel[i].castingEffect();
-
         }
 
       }
@@ -2954,7 +2937,6 @@ function castSpellFromList()
         } else if (thisNodeInnerText === "Monster 2")
         {
           thirdLevel[i].castingEffect();
-
         }
 
       }
