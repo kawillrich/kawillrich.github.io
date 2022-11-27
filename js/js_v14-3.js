@@ -2937,7 +2937,7 @@ function castSpellFromList()
 
         } else if (thisNodeInnerText === "Monster 2")
         {
-          secondLevel[i].castingEffect(monsterTwo);
+          secondLevel[i].castingEffect();
 
         }
 
@@ -2953,7 +2953,7 @@ function castSpellFromList()
 
         } else if (thisNodeInnerText === "Monster 2")
         {
-          thirdLevel[i].castingEffect(monsterTwo);
+          thirdLevel[i].castingEffect();
 
         }
 
