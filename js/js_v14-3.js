@@ -2807,7 +2807,7 @@ function populateMageSpells(m1, m2, nextChap)
       spellLi.appendChild(addMonster2Btn);
 
       //on this event listener, attach function 
-      addMonster1Btn.addEventListener('click', castSpellFromList, false);
+      addMonster1Btn.addEventListener('click', function (e) { castSpellFromList(e, m1) }, false);
       addMonster2Btn.addEventListener('click', castSpellFromList, false);
     }
   }
@@ -2883,12 +2883,13 @@ function toggleShowSpellList()
 
 //need to tie casting spell to actual spell methods dynamically
 
-function castSpellFromList()
+function castSpellFromList(e, m1)
 {
-  let parentNodeInnerText = this.parentNode.firstChild.textContent;
-  let thisNodeInnerText = this.textContent;
-  console.log(this.textContent);
-  console.log(this.parentNode.firstChild.textContent);
+  console.log("castingSpellFromList: ", m1, e.target);
+  let parentNodeInnerText = e.target.parentNode.firstChild.textContent;
+  let thisNodeInnerText = e.target.textContent;
+  console.log(e.target.textContent);
+  console.log(e.target.parentNode.firstChild.textContent);
 
   if (finalCharacter.specialty === highMage || finalCharacter.specialty === elf || finalCharacter.specialty === dragonWarrior)
   {
