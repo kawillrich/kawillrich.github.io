@@ -52,10 +52,11 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 //CREATING METHODS TO INDIVIDUAL SPELLS AND NOT TO THE ENTIRE SPELL PROTOTYPE
 
-// magicMissile.castMagicMissile = function(monster1, monster2, spell, contineNextChapter) {
-//     toggleShowSpellList();
-//     finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
-// }
+magicMissile.castSpell = function (monster1, monster2, continueNextChapter)
+{
+    toggleShowSpellList();
+    finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+}
 
 
 

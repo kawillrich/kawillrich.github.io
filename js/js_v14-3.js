@@ -2904,11 +2904,12 @@ function castSpellFromList(e, m1, m2, nextChap)
       {
         if (thisNodeInnerText === "Monster 1")
         {
-          firstLevel[i].castingSpell(m1, m2, nextChap);
+          firstLevel[i].castSpell(m1, m2, nextChap);
 
         } else if (thisNodeInnerText === "Monster 2")
         {
           firstLevel[i].castingEffect();
+
         }
 
       }
