@@ -838,7 +838,7 @@ export default class Character
 
   }
 
-  spell2AttackMonster1(monster1, monster2, spell2, continueNextChapter)
+  spell2AttackMonster1(monster1, monster2, continueNextChapter)
   {
     // console.log('Casting Spell Two on Monster One');
     // console.log(monster1);

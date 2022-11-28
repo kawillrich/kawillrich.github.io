@@ -21,10 +21,11 @@ export default class MageLevelOneSpells
         this.useBattle = useBattle;
         this.damage = 8;
     }
-    castingSpell(monster1, monster2)
+    castingSpell(monster1, monster2, continueNextChapter)
     {
-        finalCharacter.spell2AttackMonster1(monster1, monster2);
         toggleShowSpellList();
+
+        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
     }
 };
 
