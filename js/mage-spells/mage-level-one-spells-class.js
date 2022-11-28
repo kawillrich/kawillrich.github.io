@@ -3,6 +3,8 @@ import
     finalCharacter
 } from "/js/js_v14-3.js";
 
+import { toggleShowSpellList } from "/js/js_v14-3.js";
+
 export let mageLevelOneSpells = [];
 
 export default class MageLevelOneSpells
@@ -22,6 +24,7 @@ export default class MageLevelOneSpells
     castingSpell(monster1, monster2)
     {
         finalCharacter.spell2AttackMonster1(monster1, monster2);
+        toggleShowSpellList();
     }
 };
 

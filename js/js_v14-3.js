@@ -2870,7 +2870,7 @@ function populateMageSpells(m1, m2, nextChap)
   spellShowButton.addEventListener('click', toggleShowSpellList, false)
 }
 
-function toggleShowSpellList()
+export function toggleShowSpellList()
 {
   document.querySelector('.dropdown-spell-list-ul').classList.toggle('hide-spell-list-dropdown');
   let getAllAttackButtons = document.querySelectorAll('.attack');
