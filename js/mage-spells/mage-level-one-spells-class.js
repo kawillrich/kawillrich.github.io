@@ -19,6 +19,10 @@ export default class MageLevelOneSpells
         this.useBattle = useBattle;
         this.damage = 8;
     }
+    castingSpell(monster1)
+    {
+        finalCharacter.spell2AttackMonster1(monster1);
+    }
 };
 
 let charmPerson = new MageLevelOneSpells("Charm Person", 1, 120, 0, "Charms one person", function casting() { console.log('casting') }, "charm-person", true);
@@ -30,8 +34,9 @@ let magicMissile = new MageLevelOneSpells("Magic Missile", 1, 150, 0.1, "Creates
     function (monsterOne, monsterTwo, spell, contineNextChapter)
     {
         console.log('Casting Magic Missile');
-        // finalCharacter.spell2AttackMonster1(monsterOne, monsterTwo, this, contineNextChapter);
-    }, "magic-missile", true, 8
+        finalCharacter.spell2AttackMonster1(monsterOne);
+    }
+    , "magic-missile", true, 8
 
 );
 let protectionFromEvil = new MageLevelOneSpells("Protection from Evil", 1, 0, 6, "The mage only", function () { console.log('casting') }, "protection-from-evil", true);
