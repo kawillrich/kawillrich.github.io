@@ -50,4 +50,13 @@ let sleep = new MageLevelOneSpells("Sleep", 1, 240, [4, 16], "2-16 Hit Dice of l
 let ventriloquism = new MageLevelOneSpells("Ventriloquism", 1, 60, 2, "One item or location", function () { console.log('casting') }, "ventriloquism", true);
 let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", function () { console.log('casting') }, "read-magic", false);
 
+//CREATING METHODS TO INDIVIDUAL SPELLS AND NOT TO THE ENTIRE SPELL PROTOTYPE
+
+// magicMissile.castMagicMissile = function(monster1, monster2, spell, contineNextChapter) {
+//     toggleShowSpellList();
+//     finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+// }
+
+
+
 export { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism, readMagic };
