@@ -838,7 +838,7 @@ export default class Character
 
   }
 
-  spell2AttackMonster1(monster1, monster2, continueNextChapter)
+  spell2AttackMonster1(monster1, monster2, continueNextChapter, damage, spellName)
   {
     // console.log('Casting Spell Two on Monster One');
     // console.log(monster1);
@@ -849,7 +849,7 @@ export default class Character
     let inflictedDamage = Math.ceil(
       //Math.random(1) * spell2.damage  // use for linking magic missile spell dropdown to this function
 
-      Math.random(1) * finalCharacter.specialty.spell2.damage
+      Math.random(1) * damage
     );
     if (inflictedDamage <= 0)
     {
@@ -930,7 +930,7 @@ export default class Character
 
     let attackDialogue = document.querySelector("#dialogue");
     attackDialogue.innerHTML = `
-        <p>You cast ${finalCharacter.specialty.spell2.name} on the ${monster1.name} and cause ${inflictedDamage} points of damage.</p>`;
+        <p>You cast ${spellName} on the ${monster1.name} and cause ${inflictedDamage} points of damage.</p>`;
 
     // console.log(this.specialty.spell2.damage);
 

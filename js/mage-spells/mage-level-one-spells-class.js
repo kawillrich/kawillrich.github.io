@@ -59,11 +59,11 @@ magicMissile.castSpell = function (monster1, monster2, continueNextChapter, atta
     {
 
         toggleShowSpellList();
-        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
     } else if (attackedMonster === "Monster 2")
     {
         toggleShowSpellList();
-        finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter);
+        finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
     }
 }
 
@@ -73,11 +73,11 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
     {
 
         toggleShowSpellList();
-        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
     } else if (attackedMonster === "Monster 2")
     {
         toggleShowSpellList();
-        finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter);
+        finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
     }
 
 }
