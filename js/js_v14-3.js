@@ -2808,7 +2808,7 @@ function populateMageSpells(m1, m2, nextChap)
 
       //on this event listener, attach function 
       addMonster1Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
-      addMonster2Btn.addEventListener('click', castSpellFromList, false);
+      addMonster2Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
     }
   }
 
@@ -2885,7 +2885,7 @@ export function toggleShowSpellList()
 
 function castSpellFromList(e, m1, m2, nextChap)
 {
-  console.log("castingSpellFromList: ", m1, e.target);
+  console.log("castingSpellFromList: ", m1, m2, e.target);
   let parentNodeInnerText = e.target.parentNode.firstChild.textContent;
   let thisNodeInnerText = e.target.textContent;
   console.log(e.target.textContent);
@@ -2902,16 +2902,18 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (firstLevel[i].name === parentNodeInnerText)
       {
-        if (thisNodeInnerText === "Monster 1")
-        {
-          //casting spell from method created on magicMissile instance of Spell class
-          firstLevel[i].castSpell(m1, m2, nextChap);
+        console.log(m2);
+        firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
+        // if (thisNodeInnerText === "Monster 1")
+        // {
+        //   //casting spell from method created on magicMissile instance of Spell class
+        //   firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
 
-        } else if (thisNodeInnerText === "Monster 2")
-        {
-          firstLevel[i].castingEffect();
+        // } else if (thisNodeInnerText === "Monster 2")
+        // {
+        //   firstLevel[i].castingEffect();
 
-        }
+        // }
 
       }
     };
