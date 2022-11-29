@@ -1011,14 +1011,14 @@ export default class Character
     confirmMonstersDead();
   }
 
-  spell2AttackMonster2(monster1, monster2, continueNextChapter, spell2)
+  spell2AttackMonster2(monster1, monster2, continueNextChapter, damage, spellName)
   {
     // console.log('Casting Spell Two on Monster Two');
     console.log(monster2);
     let self = this;
 
     let inflictedDamage = Math.ceil(
-      Math.random(1) * finalCharacter.specialty.spell2.damage
+      Math.random(1) * damage
     );
     if (inflictedDamage <= 0)
     {
@@ -1099,7 +1099,7 @@ export default class Character
 
     let attackDialogue = document.querySelector("#dialogue");
     attackDialogue.innerHTML = `
-        <p>You cast ${finalCharacter.specialty.spell2.name} on the ${monster2.name} and cause ${inflictedDamage} points of damage.</p>`;
+        <p>You cast ${spellName} on the ${monster2.name} and cause ${inflictedDamage} points of damage.</p>`;
 
     // console.log(this.specialty.spell2.damage);
 
