@@ -2751,8 +2751,11 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
     );
   }
 
-  populateMageSpells(monsterOne, monsterTwo, continueNextChapter);
-
+  if (finalCharacter.specialty.name === "High Mage" ||
+    finalCharacter.specialty.name === "Elf")
+  {
+    populateMageSpells(monsterOne, monsterTwo, continueNextChapter);
+  }
   confirmAttackMonsters(monsterOne, monsterTwo);
 }
 
