@@ -1213,9 +1213,11 @@ export default class Character
 
   //***TRYING TO CREATE AREA ATTACK SPELL
 
-  areaAttackSpell(monster1, monster2, continueNextChapter, spellName, damage)
+  areaAttackSpell(monster1, monster2, continueNextChapter, damage, spellName)
   {
     // console.log('Casting Area Attack Spell');
+
+    // console.log(spellName);
 
     let self = this;
     this.monster1 = monster1;
@@ -1226,7 +1228,7 @@ export default class Character
     clearDialogue.innerHTML = "";
 
     let monstersGroup = [monster1, monster2];
-    monstersGroup.forEach(this.areaSpell);
+    monstersGroup.forEach(function (monster1, monster2, damage, spellName) { finalCharacter.areaSpell(monster1, monster2, damage, spellName) });
 
     //checking if both monsters are dead
 

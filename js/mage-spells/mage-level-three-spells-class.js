@@ -46,4 +46,17 @@ fireBall.castSpell = function (monster1, monster2, continueNextChapter, attacked
     //     finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
     // }
 }
+
+lightningBolt.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
+{
+    // if (attackedMonster === "Monster 1")
+    // {
+    toggleShowSpellList();
+    finalCharacter.areaAttackSpell(monster1, monster2, continueNextChapter, this.damage, this.name);
+    // } else if (attackedMonster === "Monster 2")
+    // {
+    //     toggleShowSpellList();
+    //     finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
+    // }
+}
 export { clairvoyance, dispelMagic, fireBall, fly, haste, holdPerson, infravision, invisibilityTenFoot, lightningBolt, protectionFromEvilTenFoot, protectionFromNormalMissiles, waterBreathing }
