@@ -1011,7 +1011,7 @@ export default class Character
     confirmMonstersDead();
   }
 
-  spell2AttackMonster2(monster1, monster2, spell2, continueNextChapter)
+  spell2AttackMonster2(monster1, monster2, continueNextChapter, spell2)
   {
     // console.log('Casting Spell Two on Monster Two');
     console.log(monster2);

@@ -57,20 +57,28 @@ magicMissile.castSpell = function (monster1, monster2, continueNextChapter, atta
 {
     if (attackedMonster === "Monster 1")
     {
+
         toggleShowSpellList();
         finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
     } else if (attackedMonster === "Monster 2")
     {
         toggleShowSpellList();
-        console.log(monster2);
         finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter);
     }
 }
 
-charmPerson.castSpell = function (monster1, monster2, continueNextChapter)
+charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    toggleShowSpellList();
-    finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+    if (attackedMonster === "Monster 1")
+    {
+
+        toggleShowSpellList();
+        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+    } else if (attackedMonster === "Monster 2")
+    {
+        toggleShowSpellList();
+        finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter);
+    }
 
 }
 
