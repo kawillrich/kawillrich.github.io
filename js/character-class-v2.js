@@ -1213,14 +1213,14 @@ export default class Character
 
   //***TRYING TO CREATE AREA ATTACK SPELL
 
-  areaAttackSpell(monster1, monster2, spell3, continueNextChapter)
+  areaAttackSpell(monster1, monster2, continueNextChapter, spellName, damage)
   {
     // console.log('Casting Area Attack Spell');
 
     let self = this;
     this.monster1 = monster1;
     this.monster2 = monster2;
-    this.spell3 = spell3;
+    // this.spell3 = spell3;
 
     let clearDialogue = document.querySelector("#dialogue");
     clearDialogue.innerHTML = "";
@@ -1373,10 +1373,13 @@ export default class Character
 
   areaSpell = function (item)
   {
+
+    let spellDamage = 8;
+
     let self = this;
 
     let damage = Math.ceil(
-      Math.random(1) * finalCharacter.specialty.spell3.damage
+      Math.random(1) * spellDamage
     );
     if (damage <= 0)
     {
@@ -1408,7 +1411,7 @@ export default class Character
       let attackDialogue = document.querySelector("#dialogue");
 
       attackDialogue.innerHTML += `
-            <p>You cast ${finalCharacter.specialty.spell3.name} on the ${item.name} and cause ${damage} points of damage.</p>`;
+            <p>You cast a spell on the ${item.name} and cause ${damage} points of damage.</p>`;
     }
   };
 

@@ -2847,7 +2847,7 @@ function populateMageSpells(m1, m2, nextChap)
 
   for (let i = 0; i < characterThirdLevelSpells.length; i++)
   {
-    if (characterFirstLevelSpells[i].useBattle === true)
+    if (characterThirdLevelSpells[i].useBattle === true)
     {
       spellList.push(characterThirdLevelSpells[i].name);
       let spellLi = document.createElement('ul');
@@ -2865,8 +2865,8 @@ function populateMageSpells(m1, m2, nextChap)
       addMonster2Btn.classList.add('monster-two-spell-list');
       addMonster2Btn.innerText = 'Monster 2';
       spellLi.appendChild(addMonster2Btn)
-      addMonster1Btn.addEventListener('click', castSpellFromList, false);
-      addMonster2Btn.addEventListener('click', castSpellFromList, false);
+      addMonster1Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
+      addMonster2Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
     }
   }
 
@@ -2931,15 +2931,8 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (thirdLevel[i].name === parentNodeInnerText)
       {
-        if (thisNodeInnerText === "Monster 1")
-        {
-          thirdLevel[i].castingEffect(m1);
-
-        } else if (thisNodeInnerText === "Monster 2")
-        {
-          thirdLevel[i].castingEffect();
-        }
-
+        console.log(m2);
+        thirdLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
       }
     }
   }
