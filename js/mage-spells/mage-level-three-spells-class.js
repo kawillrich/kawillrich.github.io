@@ -57,7 +57,9 @@ lightningBolt.castSpell = function (monster1, monster2, continueNextChapter, att
     // if (attackedMonster === "Monster 1")
     // {
     toggleShowSpellList();
-    finalCharacter.areaAttackSpell(monster1, monster2, continueNextChapter, this.damage, this.name);
+    let castingDialogue = `<p>You cast ${this.name} on the ${monster1.name} and ${monster2.name}.</p>`;
+
+    finalCharacter.areaAttackSpell(monster1, monster2, continueNextChapter, this.damage, this.name, castingDialogue);
     // } else if (attackedMonster === "Monster 2")
     // {
     //     toggleShowSpellList();
