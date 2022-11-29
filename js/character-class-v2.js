@@ -1215,6 +1215,44 @@ export default class Character
 
   areaAttackSpell(monster1, monster2, continueNextChapter, damage, spellName, spellDialogue)
   {
+    let areaSpell = (item) =>
+    {
+
+      let spellDamage = 8;
+
+      let self = this;
+
+      let damage = Math.ceil(
+        Math.random(1) * spellDamage
+      );
+      if (damage <= 0)
+      {
+        damage = 0;
+      }
+
+      console.log(damage);
+
+      item.healthPoints -= damage;
+
+      if (item.name === " ")
+      {
+        let attackDialogue = document.querySelector("#dialogue");
+
+        attackDialogue.innerHTML += ` `;
+      } else if (item.healthPoints <= 0)
+      {
+        let attackDialogue = document.querySelector("#dialogue");
+
+        attackDialogue.innerHTML += `
+            <p>${item.name} is dead.</p>`;
+      } else
+      {
+        let attackDialogue = document.querySelector("#dialogue");
+
+        attackDialogue.innerHTML += `
+            <p>You cause ${damage} points of damage on ${item.name}.</p>`;
+      }
+    };
     // console.log('Casting Area Attack Spell');
 
     // console.log(spellName);
@@ -1228,7 +1266,7 @@ export default class Character
     clearDialogue.innerHTML = spellDialogue;
 
     let monstersGroup = [monster1, monster2];
-    monstersGroup.forEach(function (monster1, monster2, damage, spellName) { finalCharacter.areaSpell(monster1, monster2, damage, spellName) });
+    monstersGroup.forEach(function (monster1, monster2, damage, spellName) { areaSpell(monster1, monster2, damage, spellName) });
 
     //checking if both monsters are dead
 
@@ -1373,44 +1411,44 @@ export default class Character
     confirmMonstersDead();
   }
 
-  areaSpell = function (item)
-  {
+  // areaSpell = function (item)
+  // {
 
-    let spellDamage = 8;
+  //   let spellDamage = 8;
 
-    let self = this;
+  //   let self = this;
 
-    let damage = Math.ceil(
-      Math.random(1) * spellDamage
-    );
-    if (damage <= 0)
-    {
-      damage = 0;
-    }
+  //   let damage = Math.ceil(
+  //     Math.random(1) * spellDamage
+  //   );
+  //   if (damage <= 0)
+  //   {
+  //     damage = 0;
+  //   }
 
-    console.log(damage);
+  //   console.log(damage);
 
-    item.healthPoints -= damage;
+  //   item.healthPoints -= damage;
 
-    if (item.name === " ")
-    {
-      let attackDialogue = document.querySelector("#dialogue");
+  //   if (item.name === " ")
+  //   {
+  //     let attackDialogue = document.querySelector("#dialogue");
 
-      attackDialogue.innerHTML += ` `;
-    } else if (item.healthPoints <= 0)
-    {
-      let attackDialogue = document.querySelector("#dialogue");
+  //     attackDialogue.innerHTML += ` `;
+  //   } else if (item.healthPoints <= 0)
+  //   {
+  //     let attackDialogue = document.querySelector("#dialogue");
 
-      attackDialogue.innerHTML += `
-            <p>${item.name} is dead.</p>`;
-    } else
-    {
-      let attackDialogue = document.querySelector("#dialogue");
+  //     attackDialogue.innerHTML += `
+  //           <p>${item.name} is dead.</p>`;
+  //   } else
+  //   {
+  //     let attackDialogue = document.querySelector("#dialogue");
 
-      attackDialogue.innerHTML += `
-            <p>You cause ${damage} points of damage on ${item.name}.</p>`;
-    }
-  };
+  //     attackDialogue.innerHTML += `
+  //           <p>You cause ${damage} points of damage on ${item.name}.</p>`;
+  //   }
+  // };
 
   //END OF AREA ATTACK SPELL
 
