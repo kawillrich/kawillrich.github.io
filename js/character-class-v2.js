@@ -1218,13 +1218,14 @@ export default class Character
     let areaSpell = (item) =>
     {
 
-      let spellDamage = 8;
+      //let spellDamage = 8;
 
       let self = this;
 
-      let damage = Math.ceil(
-        Math.random(1) * spellDamage
-      );
+      // let damage = Math.ceil(
+      //   Math.random(1) * spellDamage
+      // );
+
       if (damage <= 0)
       {
         damage = 0;
