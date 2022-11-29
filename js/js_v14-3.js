@@ -2908,19 +2908,9 @@ function castSpellFromList(e, m1, m2, nextChap)
       {
         console.log(m2);
         firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
-        // if (thisNodeInnerText === "Monster 1")
-        // {
-        //   //casting spell from method created on magicMissile instance of Spell class
-        //   firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
-
-        // } else if (thisNodeInnerText === "Monster 2")
-        // {
-        //   firstLevel[i].castingEffect();
-
-        // }
-
       }
     };
+
     for (let i = 0; i < secondLevel.length; i++)
     {
       if (secondLevel[i].name === parentNodeInnerText)
@@ -2936,6 +2926,7 @@ function castSpellFromList(e, m1, m2, nextChap)
 
       }
     };
+
     for (let i = 0; i < thirdLevel.length; i++)
     {
       if (thirdLevel[i].name === parentNodeInnerText)
