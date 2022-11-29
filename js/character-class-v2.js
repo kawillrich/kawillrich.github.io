@@ -357,9 +357,14 @@ export default class Character
       for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
       {
         removeMonsterTwoSpellHighlight[i].classList.add("monster2-spell-dead");
-
       }
     }
+
+    // let getDeadMonster2 = document.querySelectorAll('.monster2-spell-dead');
+    // for (let i = 0; i < getDeadMonster2; i++)
+    // {
+    //   getDeadMonster2[i].removeEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
+    // }
 
     if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints <= 0)
     {
