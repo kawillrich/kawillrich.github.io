@@ -38,7 +38,8 @@ let magicMissile = new MageLevelOneSpells("Magic Missile", 1, 150, 0.1, "Creates
     function (monsterOne, monsterTwo, spell, contineNextChapter)
     {
         console.log('Casting Magic Missile');
-        finalCharacter.spell2AttackMonster1(monsterOne);
+        //This works, but moving to create this instance's own method called castSpell() *see below
+        // finalCharacter.spell2AttackMonster1(monsterOne);
     }
     , "magic-missile", true, 8
 
@@ -56,6 +57,13 @@ magicMissile.castSpell = function (monster1, monster2, continueNextChapter)
 {
     toggleShowSpellList();
     finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+}
+
+charmPerson.castSpell = function (monster1, monster2, continueNextChapter)
+{
+    toggleShowSpellList();
+    finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+
 }
 
 
