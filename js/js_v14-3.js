@@ -2927,7 +2927,7 @@ function castSpellFromList(e, m1, m2, nextChap)
       {
         if (thisNodeInnerText === "Monster 1")
         {
-          secondLevel[i].castingEffect(monsterOne);
+          secondLevel[i].castingEffect(m1);
 
         } else if (thisNodeInnerText === "Monster 2")
         {
@@ -2942,7 +2942,7 @@ function castSpellFromList(e, m1, m2, nextChap)
       {
         if (thisNodeInnerText === "Monster 1")
         {
-          thirdLevel[i].castingEffect(monsterOne);
+          thirdLevel[i].castingEffect(m1);
 
         } else if (thisNodeInnerText === "Monster 2")
         {
