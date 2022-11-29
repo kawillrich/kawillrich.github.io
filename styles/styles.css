@@ -673,8 +673,12 @@ li.monster-two-spell-list:hover {
 
 li.monster-one-spell-list.monster1-spell-dead:hover {
   background-color: gray;
+  cursor: not-allowed;
+
 }
 
 li.monster-two-spell-list.monster2-spell-dead:hover {
   background-color: gray;
+  cursor: not-allowed;
+  /* pointer-events: none; */
 }
