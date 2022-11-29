@@ -2904,6 +2904,7 @@ function castSpellFromList(e, m1, m2, nextChap)
       {
         if (thisNodeInnerText === "Monster 1")
         {
+          //casting spell from method created on magicMissile instance of Spell class
           firstLevel[i].castSpell(m1, m2, nextChap);
 
         } else if (thisNodeInnerText === "Monster 2")
