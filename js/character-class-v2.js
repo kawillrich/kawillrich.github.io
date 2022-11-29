@@ -1390,8 +1390,6 @@ export default class Character
 
     console.log(damage);
 
-    // let damage = finalCharacter.specialty.spell3.damage;
-
     item.healthPoints -= damage;
 
     if (item.name === " ")
@@ -1407,9 +1405,6 @@ export default class Character
             <p>${item.name} is dead.</p>`;
     } else
     {
-      //item.healthPoints -= damage;
-      // console.log(`You attacked ${item.name} for ${damage} points of damage`);
-
       let attackDialogue = document.querySelector("#dialogue");
 
       attackDialogue.innerHTML += `
@@ -1419,7 +1414,4 @@ export default class Character
 
   //END OF AREA ATTACK SPELL
 
-  // transferToMonsterAttack() {
-  //     self.monster1.monsterAttack(monster1, weapon);
-  // }
 }
