@@ -167,6 +167,10 @@ export default class Monster
       updatedCharHP.innerHTML = `
               <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span></span></h4> 
               `;
+
+      let clearDialogue = document.querySelector("#dialogue");
+      clearDialogue.textContent = ``;
+
       if (finalCharacter.specialty.healthPoints <= 0)
       {
         alert("You died!");
