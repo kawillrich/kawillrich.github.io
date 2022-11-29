@@ -2684,8 +2684,9 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
         finalCharacter.spell2AttackMonster1(
           monsterOne,
           monsterTwo,
-          finalCharacter.spell2,
-          continueNextChapter
+          continueNextChapter,
+          finalCharacter.spell2
+
         );
       },
       false
@@ -2702,8 +2703,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
         finalCharacter.spell2AttackMonster2(
           monsterOne,
           monsterTwo,
-          finalCharacter.spell2,
-          continueNextChapter
+          continueNextChapter,
+          finalCharacter.spell2
         );
       },
       false
@@ -2725,8 +2726,8 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
         finalCharacter.areaAttackSpell(
           monsterOne,
           monsterTwo,
-          finalCharacter.spell3,
-          continueNextChapter
+          continueNextChapter,
+          finalCharacter.spell3
         );
       },
       false
