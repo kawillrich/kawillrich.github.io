@@ -1664,9 +1664,6 @@ function selectInventory(finalCharacter)
     return accumulator;
   };
 
-  //   let updatedInventory = document.querySelector("#normal-equipment-list");
-  //   updatedInventory.innerHTML = showInventory();
-
   showInventory();
 
   let startChapter = function ()
@@ -1746,7 +1743,6 @@ function selectLevelOneMageSpells()
     for (let i = 0; i < mageFirstLevelSpells.length; i++)
     {
       mageFirstLevelSpells[i].classList.add("grey-out");
-      //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
@@ -1805,7 +1801,6 @@ function selectLevelTwoMageSpells()
     for (let i = 0; i < mageSecondLevelSpells.length; i++)
     {
       mageSecondLevelSpells[i].classList.add("grey-out");
-      //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
@@ -1863,7 +1858,6 @@ function selectLevelThreeMageSpells()
     for (let i = 0; i < mageThirdLevelSpells.length; i++)
     {
       mageThirdLevelSpells[i].classList.add("grey-out");
-      //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
@@ -1876,7 +1870,6 @@ submitAllMageSpellsButton.addEventListener("click", submitAllMageSpells, false);
 function submitAllMageSpells()
 {
   let selectedAllSpells = document.querySelectorAll(".mage-spells");
-  // console.log(selectedAllSpells);
 
   for (let i = 0; i < selectedAllSpells.length; i++)
   {
@@ -1898,12 +1891,10 @@ function submitAllMageSpells()
       selectedAllSpells[i].classList.contains("mage-two-spells")
     )
     {
-      //   alert('contains level 2');
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Second Level Mage Spells"
       ].push(newSpell);
-      //console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"]);
     }
 
     if (
@@ -1911,16 +1902,10 @@ function submitAllMageSpells()
       selectedAllSpells[i].classList.contains("mage-three-spells")
     )
     {
-      // alert('contains level 3');
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Third Level Mage Spells"
       ].push(newSpell);
-      // console.log(
-      //   finalCharacter.specialty.characterLevel.specialtySkills[
-      //     "Third Level Mage Spells"
-      //   ]
-      // );
     }
   }
 
@@ -2041,7 +2026,6 @@ function pickClericSpells()
   alert("Pick Cleric Spells");
   let showClericSpellsList = document.querySelector(".hide-cleric-container");
   showClericSpellsList.classList.add("show-cleric-spells");
-  // console.log(finalCharacter.specialty.characterLevel.numberOfSpells[0]);
   selectLevelOneClericSpells();
   selectLevelTwoClericSpells();
   selectLevelThreeClericSpells();
@@ -2096,7 +2080,6 @@ function selectLevelOneClericSpells()
     for (let i = 0; i < clericFirstLevelSpells.length; i++)
     {
       clericFirstLevelSpells[i].classList.add("grey-out");
-      //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
@@ -2154,7 +2137,6 @@ function selectLevelTwoClericSpells()
     for (let i = 0; i < clericSecondLevelSpells.length; i++)
     {
       clericSecondLevelSpells[i].classList.add("grey-out");
-      //   document.querySelector('#submit-spells').classList.add('grey-out');
     }
   }
 }
@@ -2229,7 +2211,6 @@ function submitAllClericSpells()
 {
   let selectedAllSpells = document.querySelectorAll(".cleric-spells");
 
-  // player.spells = [];
   for (let i = 0; i < selectedAllSpells.length; i++)
   {
     //TRYING TO ADD SPELLS TO EACH RESPECTIVE SPELL LEVEL OBJECT ON PLAYER
@@ -2250,12 +2231,10 @@ function submitAllClericSpells()
       selectedAllSpells[i].classList.contains("cleric-two-spells")
     )
     {
-      //   alert('contains level 2');
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Second Level Cleric Spells"
       ].push(newSpell);
-      //console.log(finalCharacter.specialty.characterLevel.specialtySkills["Second Level Cleric Spells"]);
     }
 
     if (
@@ -2263,16 +2242,10 @@ function submitAllClericSpells()
       selectedAllSpells[i].classList.contains("cleric-three-spells")
     )
     {
-      // alert('contains level 3');
       let newSpell = eval(selectedAllSpells[i].value);
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Third Level Cleric Spells"
       ].push(newSpell);
-      // console.log(
-      //   finalCharacter.specialty.characterLevel.specialtySkills[
-      //     "Third Level Cleric Spells"
-      //   ]
-      // );
     }
   }
 
@@ -2391,7 +2364,6 @@ function talkToRaynard()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Talking to Raynard');
   let talkingToRaynard = document.querySelector("#dialogue");
   talkingToRaynard.innerHTML = `
     <p>"Good Morning, ${finalCharacter.name}. I hope you slept well. You know, I remember stories of the dragon Soul Stealer. My father's father's grandfather told me of the 
@@ -2416,7 +2388,6 @@ function talkToRaynard()
     name: "Spoke to Raynard",
     desc: "Spoke to Raynard and received his coin.",
   };
-  // console.log(finalCharacter.achievements);
 
   finalCharacter.inventory.push(raynardsCoin);
 
@@ -2427,10 +2398,8 @@ function talkToRaynard()
   continueChapterThreeOne.addEventListener("click", function ()
   {
     let raynardsCoinIndex = finalCharacter.inventory.indexOf(raynardsCoin);
-    // console.log(finalCharacter.inventory);
     alert(`You received ${finalCharacter.inventory[raynardsCoinIndex].name}`);
     document.querySelector("#normal-equipment-list").innerHTML = ``;
-    //adding tooltip for raynardsCoin
 
     for (let i = 0; i < finalCharacter.inventory.length; i++)
     {
@@ -2455,10 +2424,6 @@ function talkToRaynard()
       itemList.appendChild(addedItemSpan);
     }
     //end adding tooltip
-
-
-    // let addItemToInventory = document.querySelector("#normal-equipment-list");
-    // addItemToInventory.innerHTML += `${raynardsCoin.name}`;
   });
   continueChapterThreeOne.addEventListener(
     "click",
@@ -2473,7 +2438,6 @@ function startChapterThreeOne()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Chapter Three-one');
   let chapterThreeOne = document.querySelector("#dialogue");
   chapterThreeOne.innerHTML = `
     <p>As you depart the Blue Blade Inn, you feel confident in what you are about the journey you are about to embark on (begin). You've heard stories from others about the 
@@ -2505,7 +2469,6 @@ function continueChapterThreeTwo()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Chapter Three-two');
   let chapterThreeTwo = document.querySelector("#dialogue");
   chapterThreeTwo.innerHTML = `
     <p>You find the main road in town and head south until you find the horse cart path running East. You take one look back, beathe in...hold...and exhale. You follow the 
@@ -2568,16 +2531,12 @@ function continueChapterThreeThree()
     </p>
     <input type="submit" id="attack-wolves" value="Attack"><input type="submit" id="dont-attack-wolves" value="Go Around">`;
 
-  // var attackWolvesYes = document.querySelector("#attack-wolves");
-  // attackWolvesYes.addEventListener('click', confirmAttackMonsters, false);
-
   var attackWolvesYes = document.querySelector("#attack-wolves");
   attackWolvesYes.addEventListener(
     "click",
     () =>
     {
       addingFightModule(smallWolf, noMonster, continueChapterThreeFour);
-      // console.log(smallWolf);
       declareAttack();
     },
     false
@@ -2603,9 +2562,6 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
 {
   monsterOne.createHitPoints();
   monsterTwo.createHitPoints();
-
-  // console.log(monsterOne);
-  // console.log(monsterTwo);
 
   let headerFightModule = document.querySelector("#fight-module");
   headerFightModule.innerHTML = `
@@ -2761,7 +2717,6 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
 
 function populateMageSpells(m1, m2, nextChap)
 {
-  //works console.log(m1)
   let spellList = [];
   let characterFirstLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["First Level Mage Spells"];
   let characterSecondLevelSpells = finalCharacter.specialty.characterLevel.specialtySkills["Second Level Mage Spells"];
@@ -2800,10 +2755,7 @@ function populateMageSpells(m1, m2, nextChap)
       let addMonster1Btn = document.createElement('li');
       addMonster1Btn.classList.add('monster-one-spell-list');
       addMonster1Btn.innerText = 'Monster 1';
-      // addMonster1Btn.addEventListener("click", function ()
-      // {
-      //   characterFirstLevelSpells[i].castingEffect(monsterOne);
-      // })
+
       spellLi.appendChild(addMonster1Btn);
       let addMonster2Btn = document.createElement('li');
       addMonster2Btn.classList.add('monster-two-spell-list');
