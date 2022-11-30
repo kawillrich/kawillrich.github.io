@@ -39,8 +39,8 @@ export default class Monster
     this.attacks = attacks;
     this.treasure = treasure;
     this.isAlive = isAlive || true;
-    this.hitRoll = hitRoll,
-      this.saveAs = saveAs;
+    this.hitRoll = hitRoll;
+    this.saveAs = saveAs;
     this.maxHP = this.hitDice[0] * 8;
     this.startingHealthPoints = 0;
   }
