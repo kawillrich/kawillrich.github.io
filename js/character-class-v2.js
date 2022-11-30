@@ -353,7 +353,6 @@ export default class Character
       removeMonsterTwoSpellAttack.classList.add("monster1-dead");
 
       let removeMonsterTwoSpellHighlight = document.querySelectorAll(".monster-two-spell-list");
-      console.log(removeMonsterTwoSpellHighlight);
       for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
       {
         removeMonsterTwoSpellHighlight[i].classList.add("monster2-spell-dead");
