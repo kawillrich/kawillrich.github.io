@@ -25,7 +25,9 @@ export default class Monster
     treasure,
     isAlive,
     hitRoll,
+    status,
     saveAs
+
 
   )
   {
@@ -40,6 +42,7 @@ export default class Monster
     this.treasure = treasure;
     this.isAlive = isAlive || true;
     this.hitRoll = hitRoll;
+    this.status = status;
     this.saveAs = saveAs;
     this.maxHP = this.hitDice[0] * 8;
     this.startingHealthPoints = 0;
