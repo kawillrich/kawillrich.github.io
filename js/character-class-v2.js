@@ -303,9 +303,6 @@ export default class Character
         </div>             
         `;
 
-    // let inventoryStatus = document.querySelector("#normal-equipment-list");
-    // inventoryStatus.innerHTML = `<p id="normal-equipment-list"></p>`;
-
     //populating normal-equipment tab
 
     for (let i = 0; i < finalCharacter.inventory.length; i++)
@@ -358,12 +355,6 @@ export default class Character
         removeMonsterTwoSpellHighlight[i].classList.add("monster2-spell-dead");
       }
     }
-
-    // let getDeadMonster2 = document.querySelectorAll('.monster2-spell-dead');
-    // for (let i = 0; i < getDeadMonster2; i++)
-    // {
-    //   getDeadMonster2[i].removeEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
-    // }
 
     if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints <= 0)
     {
@@ -424,76 +415,6 @@ export default class Character
   weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter)
   {
     let self = this;
-
-    // let confirmMonstersDead = (enemy1) =>
-    // {
-    //   //checking if both monsters are dead
-
-    //   if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
-    //   {
-    //     // console.log('both dead');
-
-    //     let defeatedMonsters = document.querySelector("#dialogue");
-    //     let removeFightModule = document.querySelector("#fight-module");
-
-    //     finalCharacter.specialty.characterExperience +=
-    //       monster1.experienceValue;
-    //     finalCharacter.specialty.characterExperience +=
-    //       monster2.experienceValue;
-
-    //     finalCharacter.treasure.gold.quantity += monster1.treasure.gold.quantity;
-    //     finalCharacter.treasure.gold.quantity += monster2.treasure.gold.quantity;
-
-    //     finalCharacter.treasure.electrum.quantity += monster1.treasure.electrum.quantity;
-    //     finalCharacter.treasure.electrum.quantity += monster2.treasure.electrum.quantity;
-
-    //     finalCharacter.treasure.silver.quantity += monster1.treasure.silver.quantity;
-    //     finalCharacter.treasure.silver.quantity += monster2.treasure.silver.quantity;
-
-    //     finalCharacter.treasure.copper.quantity += monster1.treasure.copper.quantity;
-    //     finalCharacter.treasure.copper.quantity += monster2.treasure.copper.quantity;
-
-    //     finalCharacter.treasure.gems.quantity += monster1.treasure.gems.quantity;
-    //     finalCharacter.treasure.gems.quantity += monster2.treasure.gems.quantity;
-
-    //     let updateTreasure = document.querySelector(".char-coins");
-    //     updateTreasure.innerHTML = `
-    //       <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
-    //       <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
-    //       <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
-    //       <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
-    //       <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
-    //     `;
-
-    //     let updatePlayerTreasure = document.querySelector('#char-treasure');
-    //     console.log(finalCharacter.treasure.gold.quantity);
-    //     updatePlayerTreasure.innerHTML = `
-    //       <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
-    //       `;
-
-    //     let updatedExperience = document.querySelector("#char-experience");
-    //     updatedExperience.innerHTML = `
-    //       <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-    //       `;
-
-    //     finalCharacter.checkLevelUp();
-
-    //     // removeFightModule.innerHTML = `<p>You won!</p>`;
-    //     defeatedMonsters.innerHTML = `
-    //         <p>Congratulations, you defeated the monster(s)!</p>
-    //         <input type="submit" id="start-chapter-three-four" value="Continue">`;
-    //     removeFightModule.innerHTML = ` `;
-
-    //     var startChapterThreeFour = document.querySelector(
-    //       "#start-chapter-three-four"
-    //     );
-    //     startChapterThreeFour.addEventListener(
-    //       "click",
-    //       continueNextChapter,
-    //       false
-    //     );
-    //   }
-    // };
 
     let hitRollSucceed = function (enemy1, finalCharacter)
     {
@@ -609,74 +530,6 @@ export default class Character
 
     let self = this;
 
-    // let confirmMonstersDead = (enemy2) =>
-    // {
-    //   if (monster2.healthPoints <= 0 && monster1.healthPoints <= 0)
-    //   {
-    //     // console.log('both dead');
-
-    //     let defeatedMonsters = document.querySelector("#dialogue");
-    //     let removeFightModule = document.querySelector("#fight-module");
-    //     removeFightModule.innerHTML = ` `;
-
-    //     finalCharacter.specialty.characterExperience +=
-    //       monster1.experienceValue;
-    //     finalCharacter.specialty.characterExperience +=
-    //       monster2.experienceValue;
-
-    //     finalCharacter.treasure.gold.quantity += monster1.treasure.gold.quantity;
-    //     finalCharacter.treasure.gold.quantity += monster2.treasure.gold.quantity;
-
-    //     finalCharacter.treasure.electrum.quantity += monster1.treasure.electrum.quantity;
-    //     finalCharacter.treasure.electrum.quantity += monster2.treasure.electrum.quantity;
-
-    //     finalCharacter.treasure.silver.quantity += monster1.treasure.silver.quantity;
-    //     finalCharacter.treasure.silver.quantity += monster2.treasure.silver.quantity;
-
-    //     finalCharacter.treasure.copper.quantity += monster1.treasure.copper.quantity;
-    //     finalCharacter.treasure.copper.quantity += monster2.treasure.copper.quantity;
-
-    //     finalCharacter.treasure.gems.quantity += monster1.treasure.gems.quantity;
-    //     finalCharacter.treasure.gems.quantity += monster2.treasure.gems.quantity;
-
-    //     let updateTreasure = document.querySelector(".char-coins");
-    //     updateTreasure.innerHTML = `
-    //       <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
-    //       <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
-    //       <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
-    //       <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
-    //       <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
-    //     `;
-
-    //     let updatePlayerTreasure = document.querySelector('#char-treasure');
-    //     console.log(finalCharacter.treasure.gold.quantity);
-    //     updatePlayerTreasure.innerHTML = `
-    //       <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
-    //       `;
-
-    //     let updatedExperience = document.querySelector("#char-experience");
-    //     updatedExperience.innerHTML = `
-    //         <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-    //         `;
-
-    //     finalCharacter.checkLevelUp();
-
-    //     // removeFightModule.innerHTML = `<p>You won!</p>`;
-    //     defeatedMonsters.innerHTML = `
-    //         <p>Congratulations, you defeated the monster(s)!</p>
-    //         <input type="submit" id="start-chapter-three-four" value="Continue">`;
-
-    //     var startChapterThreeFour = document.querySelector(
-    //       "#start-chapter-three-four"
-    //     );
-    //     startChapterThreeFour.addEventListener(
-    //       "click",
-    //       continueNextChapter,
-    //       false
-    //     );
-    //   }
-    // };
-
     let inflictedDamage =
       Math.ceil(Math.random(1) * finalCharacter.weapon.damage) +
       finalCharacter.attributes[0].adjustment;
@@ -684,11 +537,6 @@ export default class Character
     {
       inflictedDamage = 0;
     }
-
-
-    // this.monster2 = monster2;
-    // this.weapon = weapon;
-    // let enemy2X = this.enemy2;
 
     let hitRollSucceed = function (enemy2, finalCharacter)
     {
@@ -705,8 +553,6 @@ export default class Character
               <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
               `;
         //greying out attack module buttons when pressed
-
-
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
 
@@ -735,7 +581,6 @@ export default class Character
                   <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
                   `;
 
-
         let removingMonster2Button =
           document.getElementsByClassName("attack-monster-two");
         removingMonster2Button[0].classList.add("monster1-dead");
@@ -748,7 +593,6 @@ export default class Character
         for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
         {
           removeMonsterTwoSpellHighlight[i].classList.add("monster2-spell-dead");
-
         }
 
       }
@@ -795,7 +639,6 @@ export default class Character
       }
     }
     checkPlayerHitRoll(playerHitRollValue, monsterArmorClass, finalCharacter.hitRollTable);
-
   }
 
   spell2AttackMonster1(monster1, monster2, continueNextChapter, damage, spellName)
@@ -811,81 +654,9 @@ export default class Character
       inflictedDamage = 0;
     }
 
-    // let confirmMonstersDead = (enemy1) =>
-    // {
-    //   //checking if both monsters are dead
-
-    //   if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
-    //   {
-    //     let defeatedMonsters = document.querySelector("#dialogue");
-    //     let removeFightModule = document.querySelector("#fight-module");
-    //     removeFightModule.innerHTML = ` `;
-
-    //     finalCharacter.specialty.characterExperience +=
-    //       monster1.experienceValue;
-    //     finalCharacter.specialty.characterExperience +=
-    //       monster2.experienceValue;
-
-    //     finalCharacter.treasure.gold.quantity += monster1.treasure.gold.quantity;
-    //     finalCharacter.treasure.gold.quantity += monster2.treasure.gold.quantity;
-
-    //     finalCharacter.treasure.electrum.quantity += monster1.treasure.electrum.quantity;
-    //     finalCharacter.treasure.electrum.quantity += monster2.treasure.electrum.quantity;
-
-    //     finalCharacter.treasure.silver.quantity += monster1.treasure.silver.quantity;
-    //     finalCharacter.treasure.silver.quantity += monster2.treasure.silver.quantity;
-
-    //     finalCharacter.treasure.copper.quantity += monster1.treasure.copper.quantity;
-    //     finalCharacter.treasure.copper.quantity += monster2.treasure.copper.quantity;
-
-    //     finalCharacter.treasure.gems.quantity += monster1.treasure.gems.quantity;
-    //     finalCharacter.treasure.gems.quantity += monster2.treasure.gems.quantity;
-
-    //     let updateTreasure = document.querySelector(".char-coins");
-    //     updateTreasure.innerHTML = `
-    //       <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
-    //       <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
-    //       <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
-    //       <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
-    //       <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
-    //     `;
-
-    //     let updatePlayerTreasure = document.querySelector('#char-treasure');
-    //     console.log(finalCharacter.treasure.gold.quantity);
-    //     updatePlayerTreasure.innerHTML = `
-    //       <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
-    //       `;
-
-    //     let updatedExperience = document.querySelector("#char-experience");
-    //     updatedExperience.innerHTML = `
-    //         <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-    //         `;
-
-    //     finalCharacter.checkLevelUp();
-
-    //     // removeFightModule.innerHTML = `<p>You won!</p>`;
-    //     defeatedMonsters.innerHTML = `
-    //         <p>Congratulations, you defeated the monster(s)!</p>
-    //         <input type="submit" id="start-chapter-three-four" value="Continue">`;
-
-    //     var startChapterThreeFour = document.querySelector(
-    //       "#start-chapter-three-four"
-    //     );
-    //     startChapterThreeFour.addEventListener(
-    //       "click",
-    //       continueNextChapter,
-    //       false
-    //     );
-    //   }
-    // };
-    //this.monster1 = monster1;
-    //this.spell2 = spell2;
-
     let attackDialogue = document.querySelector("#dialogue");
     attackDialogue.innerHTML = `
         <p>You cast ${spellName} on the ${monster1.name} and cause ${inflictedDamage} points of damage.</p>`;
-
-    // console.log(this.specialty.spell2.damage);
 
     //CHECKING ATTACK INTERACTION
     if (monster1.healthPoints - inflictedDamage > 0)
@@ -930,7 +701,6 @@ export default class Character
       for (let i = 0; i < removeMonsterOneSpellHighlight.length; i++)
       {
         removeMonsterOneSpellHighlight[i].classList.add("monster1-spell-dead");
-
       }
     }
     finalCharacter.confirmMonstersDead(monster1, monster2, continueNextChapter);
@@ -948,74 +718,6 @@ export default class Character
     {
       inflictedDamage = 0;
     }
-    // let confirmMonstersDead = (enemy1) =>
-    // {
-    //   //checking if both monsters are dead
-
-    //   if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
-    //   {
-    //     let defeatedMonsters = document.querySelector("#dialogue");
-    //     let removeFightModule = document.querySelector("#fight-module");
-
-    //     removeFightModule.innerHTML = ` `;
-
-    //     finalCharacter.specialty.characterExperience +=
-    //       monster1.experienceValue;
-    //     finalCharacter.specialty.characterExperience +=
-    //       monster2.experienceValue;
-
-    //     finalCharacter.treasure.gold.quantity += monster1.treasure.gold.quantity;
-    //     finalCharacter.treasure.gold.quantity += monster2.treasure.gold.quantity;
-
-    //     finalCharacter.treasure.electrum.quantity += monster1.treasure.electrum.quantity;
-    //     finalCharacter.treasure.electrum.quantity += monster2.treasure.electrum.quantity;
-
-    //     finalCharacter.treasure.silver.quantity += monster1.treasure.silver.quantity;
-    //     finalCharacter.treasure.silver.quantity += monster2.treasure.silver.quantity;
-
-    //     finalCharacter.treasure.copper.quantity += monster1.treasure.copper.quantity;
-    //     finalCharacter.treasure.copper.quantity += monster2.treasure.copper.quantity;
-
-    //     finalCharacter.treasure.gems.quantity += monster1.treasure.gems.quantity;
-    //     finalCharacter.treasure.gems.quantity += monster2.treasure.gems.quantity;
-
-    //     let updateTreasure = document.querySelector(".char-coins");
-    //     updateTreasure.innerHTML = `
-    //       <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
-    //       <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
-    //       <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
-    //       <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
-    //       <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
-    //     `;
-
-    //     let updatePlayerTreasure = document.querySelector('#char-treasure');
-    //     console.log(finalCharacter.treasure.gold.quantity);
-    //     updatePlayerTreasure.innerHTML = `
-    //       <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
-    //       `;
-
-    //     let updatedExperience = document.querySelector("#char-experience");
-    //     updatedExperience.innerHTML = `
-    //         <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-    //         `;
-
-    //     finalCharacter.checkLevelUp();
-
-    //     // removeFightModule.innerHTML = `<p>You won!</p>`;
-    //     defeatedMonsters.innerHTML = `
-    //         <p>Congratulations, you defeated the monster(s)!</p>
-    //         <input type="submit" id="start-chapter-three-four" value="Continue">`;
-
-    //     var startChapterThreeFour = document.querySelector(
-    //       "#start-chapter-three-four"
-    //     );
-    //     startChapterThreeFour.addEventListener(
-    //       "click",
-    //       continueNextChapter,
-    //       false
-    //     );
-    //   }
-    // };
 
     let attackDialogue = document.querySelector("#dialogue");
     attackDialogue.innerHTML = `
@@ -1065,7 +767,6 @@ export default class Character
     for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
     {
       removeMonsterTwoSpellHighlight[i].classList.add("monster2-spell-dead");
-
     }
     finalCharacter.confirmMonstersDead(monster1, monster2, continueNextChapter);
   }
@@ -1170,8 +871,6 @@ export default class Character
     monstersGroup.forEach(function (monster1, monster2, damage, spellName) { areaSpell(monster1, monster2, damage, spellName) });
 
     //checking if both monsters are dead
-
-
 
     if (monster1.healthPoints <= 0)
     {
