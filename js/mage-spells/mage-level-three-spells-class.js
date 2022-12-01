@@ -51,8 +51,6 @@ fireBall.castSpell = function (monster1, monster2, continueNextChapter, attacked
         thisSpellDamage += damageAccumulator;
     };
 
-    console.log("Spell Damage: " + thisSpellDamage)
-
     let castingDialogue = `<p>You cast ${this.name}.</p>`;
 
     finalCharacter.areaAttackSpell(monster1, monster2, continueNextChapter, thisSpellDamage, this.name, castingDialogue);
@@ -73,8 +71,6 @@ lightningBolt.castSpell = function (monster1, monster2, continueNextChapter, att
         let damageAccumulator = Math.ceil(Math.random(1) * filteredSpellDamage);
         thisSpellDamage += damageAccumulator;
     };
-
-    console.log("Spell Damage: " + thisSpellDamage)
 
     let castingDialogue = `<p>You cast ${this.name}.</p>`;
 
