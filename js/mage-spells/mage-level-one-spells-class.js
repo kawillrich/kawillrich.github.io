@@ -78,12 +78,14 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
     let dialogue = document.querySelector('#dialogue');
     dialogue.innerHTML = `<p>You cast Shield and reduce your Armor Class to 4</p>`;
     let oldAC = finalCharacter.armorClass;
+    finalCharacter.armorClass = 4;
     console.log(oldAC)
+    console.log(finalCharacter.armorClass)
     setTimeout(function ()
     {
         finalCharacter.armorClass = oldAC;
         console.log("Old AC: " + oldAC, "Armor Class: " + finalCharacter.armorClass)
-    }, 10000);
+    }, 1200000);
 
 }
 
