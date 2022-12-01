@@ -495,27 +495,6 @@ export default class Character
       }
     };
 
-    // let greyOutAttackButtons = function ()
-    // {
-    //   let attackButtons = document.querySelectorAll(".attack");
-
-    //   for (let attackButton of attackButtons)
-    //   {
-    //     attackButton.classList.add("hidden");
-    //   }
-
-    //   let spellAttackButton = document.querySelector(".attack-spell");
-    //   spellAttackButton.classList.add("hidden");
-
-    //   let showMonsterAttackButton = document.querySelector("#monster-attack");
-    //   showMonsterAttackButton.classList.remove("hidden");
-
-    //   showMonsterAttackButton.onclick = function ()
-    //   {
-    //     monster1.monsterAttack(monster1, monster2);
-    //   };
-    // };
-
     let hitRollSucceed = function (enemy1, finalCharacter)
     {
       let attackDialogue = document.querySelector("#dialogue");
@@ -618,7 +597,6 @@ export default class Character
           } else
           {
             hitRollSucceed(monster1, finalCharacter);
-            // greyOutAttackButtons();
           }
         }
       }
@@ -698,27 +676,6 @@ export default class Character
         );
       }
     };
-
-    // let greyOutAttackButtons = function ()
-    // {
-    //   let attackButtons = document.querySelectorAll(".attack");
-
-    //   for (let attackButton of attackButtons)
-    //   {
-    //     attackButton.classList.add("hidden");
-    //   }
-
-    //   let spellAttackButton = document.querySelector(".attack-spell");
-    //   spellAttackButton.classList.add("hidden");
-
-    //   let showMonsterAttackButton = document.querySelector("#monster-attack");
-    //   showMonsterAttackButton.classList.remove("hidden");
-
-    //   showMonsterAttackButton.onclick = function ()
-    //   {
-    //     monster2.monsterAttack(monster1, monster2);
-    //   };
-    // };
 
     let inflictedDamage =
       Math.ceil(Math.random(1) * finalCharacter.weapon.damage) +
@@ -833,7 +790,6 @@ export default class Character
           } else
           {
             hitRollSucceed(monster1, finalCharacter);
-            // greyOutAttackButtons();
           }
         }
       }
@@ -844,14 +800,9 @@ export default class Character
 
   spell2AttackMonster1(monster1, monster2, continueNextChapter, damage, spellName)
   {
-    // console.log('Casting Spell Two on Monster One');
-    // console.log(monster1);
-    // console.log(monster2);
-    // console.log(spell2);
     let self = this;
 
     let inflictedDamage = Math.ceil(
-      //Math.random(1) * spell2.damage  // use for linking magic missile spell dropdown to this function
 
       Math.random(1) * damage
     );
@@ -866,8 +817,6 @@ export default class Character
 
       if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
       {
-        // console.log('both dead');
-
         let defeatedMonsters = document.querySelector("#dialogue");
         let removeFightModule = document.querySelector("#fight-module");
         removeFightModule.innerHTML = ` `;
@@ -949,27 +898,6 @@ export default class Character
 
       //greying out attack module buttons when pressed
 
-      // let greyOutAttackButtons = function ()
-      // {
-      //   let attackButtons = document.querySelectorAll(".attack");
-
-      //   for (let attackButton of attackButtons)
-      //   {
-      //     attackButton.classList.add("hidden");
-      //   }
-
-      //   let spellAttackButton = document.querySelector(".attack-spell");
-      //   spellAttackButton.classList.add("hidden");
-
-      //   let showMonsterAttackButton = document.querySelector("#monster-attack");
-      //   showMonsterAttackButton.classList.remove("hidden");
-
-      //   showMonsterAttackButton.onclick = function ()
-      //   {
-      //     monster1.monsterAttack(monster1, monster2);
-      //   };
-      // };
-
       finalCharacter.greyOutAttackButtons(monster1, monster2);
     } else if (monster1.healthPoints - inflictedDamage <= 0)
     {
@@ -989,13 +917,6 @@ export default class Character
             </div>`;
       defeatMonster1.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;
-
-      // console.log(finalCharacter.specialty.characterExperience);
-
-      // let updatedExperience = document.querySelector('#char-experience');
-      // updatedExperience.innerHTML = `
-      // <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-      // `;
 
       let removingMonster1SpellButton =
         document.getElementsByClassName("spell2-monster-one");
@@ -1017,7 +938,6 @@ export default class Character
 
   spell2AttackMonster2(monster1, monster2, continueNextChapter, damage, spellName)
   {
-    // console.log('Casting Spell Two on Monster Two');
     console.log(monster2);
     let self = this;
 
@@ -1034,8 +954,6 @@ export default class Character
 
       if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
       {
-        // console.log('both dead');
-
         let defeatedMonsters = document.querySelector("#dialogue");
         let removeFightModule = document.querySelector("#fight-module");
 
@@ -1098,14 +1016,10 @@ export default class Character
         );
       }
     };
-    //this.monster2 = monster2;
-    //this.spell2 = spell2;
 
     let attackDialogue = document.querySelector("#dialogue");
     attackDialogue.innerHTML = `
         <p>You cast ${spellName} on the ${monster2.name} and cause ${inflictedDamage} points of damage.</p>`;
-
-    // console.log(this.specialty.spell2.damage);
 
     //CHECKING ATTACK INTERACTION
     if (monster2.healthPoints - inflictedDamage > 0)
@@ -1116,8 +1030,6 @@ export default class Character
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
             `;
       //greying out attack module buttons when pressed
-
-
 
       finalCharacter.greyOutAttackButtons(monster1, monster2);
 
@@ -1139,13 +1051,6 @@ export default class Character
             </div>`;
       defeatMonster2.innerHTML = `
             <p>Congratulations, you defeated the Monster 2!</p>`;
-
-      // finalCharacter.specialty.characterExperience += monster2.experienceValue;
-      // let updatedExperience = document.querySelector('#char-experience');
-      // updatedExperience.innerHTML = `
-      // <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-      // `;
-      // console.log(finalCharacter.specialty.characterExperience);
 
       let removingMonster2SpellButton =
         document.getElementsByClassName("spell2-monster-two");
@@ -1188,7 +1093,6 @@ export default class Character
 
   spell1Heal()
   {
-    // console.log('Casting Heal Spell');
     let healedCharHP = document.querySelector("#char-hp");
     finalCharacter.specialty.healthPoints +=
       finalCharacter.specialty.spell1.healing;
@@ -1224,14 +1128,7 @@ export default class Character
   {
     let areaSpell = (item) =>
     {
-
-      //let spellDamage = 8;
-
       let self = this;
-
-      // let damage = Math.ceil(
-      //   Math.random(1) * spellDamage
-      // );
 
       if (damage <= 0)
       {
@@ -1261,14 +1158,10 @@ export default class Character
             <p>You cause ${damage} points of damage on ${item.name}.</p>`;
       }
     };
-    // console.log('Casting Area Attack Spell');
-
-    // console.log(spellName);
 
     let self = this;
     this.monster1 = monster1;
     this.monster2 = monster2;
-    // this.spell3 = spell3;
 
     let clearDialogue = document.querySelector("#dialogue");
     clearDialogue.innerHTML = spellDialogue;
@@ -1280,9 +1173,6 @@ export default class Character
 
     let confirmMonstersDead = () =>
     {
-      // console.log(monster1.healthPoints);
-      // console.log(monster2.healthPoints);
-
       if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
       {
         // console.log('both dead');
@@ -1341,7 +1231,6 @@ export default class Character
 
         finalCharacter.checkLevelUp();
 
-        // removeFightModule.innerHTML = `<p>You won!</p>`;
         defeatedMonsters.innerHTML = `
             <p>Congratulations, you defeated the monster(s)!</p>
             <input type="submit" id="start-chapter-three-four" value="Continue">`;
@@ -1358,8 +1247,6 @@ export default class Character
         );
       }
     };
-    //  console.log(monster1);
-    //  console.log(monster2);
     if (monster1.healthPoints <= 0)
     {
       monster1.healthPoints = 0;
@@ -1368,11 +1255,6 @@ export default class Character
     if (monster2.healthPoints <= 0)
     {
       monster2.healthPoints = 0;
-
-      // let updatedExperience = document.querySelector('#char-experience');
-      // updatedExperience.innerHTML = `
-      // <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-      // `;
     }
 
     let updatedMonster1HP = document.querySelector("#monster-one-hp");
@@ -1384,35 +1266,6 @@ export default class Character
     updatedMonster2HP.innerHTML = `
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
             `;
-
-    // let greyOutAttackButtons = function ()
-    // {
-    //   // console.log('greyOutAttackButtons arguments');
-
-    //   let attackButtons = document.querySelectorAll(".attack");
-
-    //   for (let attackButton of attackButtons)
-    //   {
-    //     attackButton.classList.add("hidden");
-    //   }
-
-    //   let spellAttackButton = document.querySelector(".attack-spell");
-    //   spellAttackButton.classList.add("hidden");
-
-    //   let showMonsterAttackButton = document.querySelector("#monster-attack");
-    //   showMonsterAttackButton.classList.remove("hidden");
-
-    //   showMonsterAttackButton.onclick = function ()
-    //   {
-    //     if (monster1.healthPoints > 0)
-    //     {
-    //       monster1.monsterAttack(monster1, monster2);
-    //     } else
-    //     {
-    //       monster2.monsterAttack(monster1, monster2);
-    //     }
-    //   };
-    // };
 
     greyOutAttackButtons();
 
