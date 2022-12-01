@@ -41,9 +41,8 @@ fireBall.castSpell = function (monster1, monster2, continueNextChapter, attacked
     let thisSpellDamage = 0;
 
     let filteredSpells = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"];
-    filteredSpells.filter((x) => x === fireBall);
-    let filteredSpellDamage = filteredSpells[0].damage;
-
+    let thisSpell = filteredSpells.filter((x) => x === fireBall);
+    let filteredSpellDamage = thisSpell[0].damage;
 
     for (let i = 0; i < finalCharacter.specialty.characterLevel.level.level; i++)
     {
@@ -65,9 +64,8 @@ lightningBolt.castSpell = function (monster1, monster2, continueNextChapter, att
     let thisSpellDamage = 0;
 
     let filteredSpells = finalCharacter.specialty.characterLevel.specialtySkills["Third Level Mage Spells"];
-    filteredSpells.filter((x) => x === lightningBolt);
-    let filteredSpellDamage = filteredSpells[0].damage;
-
+    let thisSpell = filteredSpells.filter((x) => x === lightningBolt);
+    let filteredSpellDamage = thisSpell[0].damage;
 
     for (let i = 0; i < finalCharacter.specialty.characterLevel.level.level; i++)
     {

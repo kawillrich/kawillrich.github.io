@@ -2828,7 +2828,25 @@ function populateMageSpells(m1, m2, nextChap)
 
   for (let i = 0; i < characterThirdLevelSpells.length; i++)
   {
-    if (characterThirdLevelSpells[i].useBattle === true)
+    if (characterThirdLevelSpells[i].useBattle === true && characterThirdLevelSpells[i].effect === "The mage only")
+    {
+      spellList.push(characterThirdLevelSpells[i].name);
+      let spellLi = document.createElement('ul');
+      spellLi.classList.add('spell-list');
+      let addedSpellName = document.createElement('span');
+      addedSpellName.innerHTML = characterThirdLevelSpells[i].name;
+      spellLi.appendChild(addedSpellName);
+      let addedSpellUl = document.querySelector('.third-level-dropdown-list');
+      addedSpellUl.appendChild(spellLi);
+
+      let addSelf1Btn = document.createElement('li');
+      addSelf1Btn.classList.add('self-spell-list');
+      addSelf1Btn.innerText = 'Self';
+      spellLi.appendChild(addSelf1Btn);
+      addSelf1Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
+
+
+    } else if (characterThirdLevelSpells[i].useBattle === true)
     {
       spellList.push(characterThirdLevelSpells[i].name);
       let spellLi = document.createElement('ul');
