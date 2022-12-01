@@ -509,7 +509,6 @@ export default class Character
       {
         if (playerHitRoll1[i][0] === monsterArmorClass1)
         {
-          console.log("got correct hit roll table");
           console.log("Player's AC:" + playerHitRoll1[i][1]);
           if (playerHitRollValue1 < playerHitRoll1[i][1])
           {
@@ -625,7 +624,6 @@ export default class Character
       {
         if (playerHitRoll1[i][0] === monsterArmorClass1)
         {
-          console.log("got correct hit roll table");
           console.log("Player's AC:" + playerHitRoll1[i][1]);
           if (playerHitRollValue1 < playerHitRoll1[i][1])
           {
@@ -836,8 +834,6 @@ export default class Character
         damage = 0;
       }
 
-      console.log(damage);
-
       item.healthPoints -= damage;
 
       if (item.name === " ")
@@ -901,8 +897,6 @@ export default class Character
   {
     if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
     {
-      // console.log('both dead');
-
       monster1.healthPoints = 0;
       monster2.healthPoints = 0;
 
@@ -946,7 +940,6 @@ export default class Character
       `;
 
       let updatePlayerTreasure = document.querySelector('#char-treasure');
-      console.log(finalCharacter.treasure.gold.quantity);
       updatePlayerTreasure.innerHTML = `
         <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
         `;

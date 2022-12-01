@@ -855,8 +855,6 @@ function startGame()
   let constitutionPlusAdjustment;
   let charismaPlusAdjustment;
 
-  console.log(finalCharacter);
-
   let maximizeMonsterInfo = document.querySelector("#monster-info");
   maximizeMonsterInfo.classList.remove("minimized");
 
@@ -1600,8 +1598,6 @@ function selectInventory(finalCharacter)
     { //this is selecting only the items with a qty greater than 0
 
       finalCharacter.inventory.push(eval(updatedSuppliesName)); //this is correctly adding only the supply item that has a qty over 0, but the qty is not carrying over correctly
-
-      // console.log(finalCharacter.inventory); AT THIS POINT, THE QTY DOES NOT GET UPDATED AND STAYS AT 0 BUT THE PARSEDSUPPLIES VALUE IS AN ACCURATE QTY
     }
   }
 
@@ -2391,8 +2387,6 @@ function talkToRaynard()
 
   finalCharacter.inventory.push(raynardsCoin);
 
-  console.log(finalCharacter.inventory);
-
   var continueChapterThreeOne = document.querySelector("#start-chapter-three");
 
   continueChapterThreeOne.addEventListener("click", function ()
@@ -2512,7 +2506,6 @@ function continueChapterThreeThree()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Chapter Three-three');
   let chapterThreeThree = document.querySelector("#dialogue");
   chapterThreeThree.innerHTML = `
     <p>You hasten (quicken) your pace, enough to move more quickly, but not in a jog - you have a long journey ahead of you and know you can't tire yourself out to soon.  
@@ -2834,7 +2827,6 @@ export function toggleShowSpellList()
   {
     getAllAttackButtons[i].classList.toggle('grey-out');
   };
-  console.log('clicking use spell')
 }
 
 //need to tie casting spell to actual spell methods dynamically
@@ -2844,8 +2836,6 @@ function castSpellFromList(e, m1, m2, nextChap)
   console.log("castingSpellFromList: ", m1, m2, e.target);
   let parentNodeInnerText = e.target.parentNode.firstChild.textContent;
   let thisNodeInnerText = e.target.textContent;
-  console.log(e.target.textContent);
-  console.log(e.target.parentNode.firstChild.textContent);
 
   if (finalCharacter.specialty === highMage || finalCharacter.specialty === elf || finalCharacter.specialty === dragonWarrior)
   {
@@ -2858,7 +2848,6 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (firstLevel[i].name === parentNodeInnerText)
       {
-        console.log(m2);
         firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
       }
     };
@@ -2883,7 +2872,6 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (thirdLevel[i].name === parentNodeInnerText)
       {
-        console.log(m2);
         thirdLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
       }
     }
@@ -2912,15 +2900,12 @@ export function continueChapterThreeFour()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Chapter Three-four');
-
   //ADDING ACHIEVEMENT
 
   finalCharacter.achievements.killedFarmWolves = {
     name: "Killed Farm Wolves",
     desc: "Killed two wolves near farmhouse.",
   };
-  // console.log(finalCharacter.achievements);
 
   //END ACHIEVEMENT ADD
 
@@ -2987,8 +2972,6 @@ function regenerateHP(hp, maxHP)
     );
   };
 
-  // console.log('regenerating HP');
-
   var removeMonsterInfo = document.querySelector("#monster-info");
   removeMonsterInfo.innerHTML = ` `;
 
@@ -3040,7 +3023,6 @@ function continueChapterThreeFive()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Chapter Three-Five');
   var removeMonsterInfo = document.querySelector("#monster-info");
   removeMonsterInfo.innerHTML = ` `;
 
@@ -3070,7 +3052,6 @@ function continueChapterThreeSix()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Chapter Three Six');
   let chapterThreeSixDialogue = document.querySelector("#dialogue");
   chapterThreeSixDialogue.innerHTML = `
     <p>
@@ -3104,7 +3085,6 @@ function continueChapterThreeSeven()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Chapter Three-Seven');
   let chapterThreeSevenDialogue = document.getElementById("dialogue");
   chapterThreeSevenDialogue.innerHTML = `
     <p>         
@@ -3116,7 +3096,6 @@ function continueChapterFour()
 {
   window.scrollTo(0, 0);
 
-  // console.log('Chapter Four');
   let chapterFourDialogue = document.getElementById("dialogue");
   chapterFourDialogue.innerHTML = `
     <p>You decide to knock on the door.  You can see how the wooden door shutters when you strike your hand against it.  As you wait for an 
@@ -3379,11 +3358,8 @@ function continueChapterFourTwoOne()
   let giveAwayRaynardsCoin = finalCharacter.inventory.indexOf(raynardsCoin);
   alert(`You gave away ${finalCharacter.inventory[giveAwayRaynardsCoin].name}`);
 
-  console.log(finalCharacter.inventory);
   let findRaynardsCoin = finalCharacter.inventory.indexOf(raynardsCoin);
   finalCharacter.inventory.splice(findRaynardsCoin, 1);
-  console.log(findRaynardsCoin);
-  console.log(finalCharacter.inventory);
   document.querySelector("#normal-equipment-list").innerHTML = ``;
 
   for (let i = 0; i < finalCharacter.inventory.length; i++)
@@ -3448,8 +3424,6 @@ function continueChapterFourTwoOne()
   } else if (finalCharacter.specialty === dwarf)
   {
     finalCharacter.weapon = normalSword;
-    console.log(finalCharacter);
-    console.log(finalCharacter.weapon);
   } else if (finalCharacter.specialty === highMage)
   {
     finalCharacter.weapon = silverDagger;
@@ -3463,8 +3437,6 @@ function continueChapterFourTwoOne()
 
   //finalCharacter.weapon.damage = finalCharacter.weapon.damage + finalCharacter.attributes[0].adjustment;
 
-  // console.log(finalCharacter.weapon.name);
-
   let beginChapterFive = document.querySelector("#start-chapt-five");
   beginChapterFive.addEventListener("click", continueChapterFive, false);
   beginChapterFive.addEventListener("click", () =>
@@ -3476,7 +3448,6 @@ function continueChapterFive()
 {
   window.scrollTo(0, 0);
 
-  // console.log(finalCharacter.weapon.name);
   let updatedCharWeapon = document.querySelector("#char-weapon");
   updatedCharWeapon.innerHTML = `<h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
     `;
@@ -3499,8 +3470,6 @@ function continueChapterFive()
 function beginTestChapter()
 {
   window.scrollTo(0, 0);
-
-  // console.log('Chapter Three-Six');
 
   var chapterThreeSixDialogue = document.getElementById("dialogue");
   chapterThreeSixDialogue.innerHTML = `
