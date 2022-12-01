@@ -2801,8 +2801,8 @@ function populateMageSpells(m1, m2, nextChap)
       addMonster2Btn.classList.add('monster-two-spell-list');
       addMonster2Btn.innerText = 'Monster 2';
       spellLi2.appendChild(addMonster2Btn)
-      addMonster1Btn.addEventListener('click', castSpellFromList, false);
-      addMonster2Btn.addEventListener('click', castSpellFromList, false);
+      addMonster1Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
+      addMonster2Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
     }
   }
 
