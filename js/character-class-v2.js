@@ -1267,7 +1267,7 @@ export default class Character
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
             `;
 
-    greyOutAttackButtons();
+    finalCharacter.greyOutAttackButtons(monster1, monster2);
 
     confirmMonstersDead();
   }
