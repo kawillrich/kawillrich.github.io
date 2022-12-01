@@ -89,6 +89,21 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
 
 }
 
+protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
+{
+    toggleShowSpellList();
+    console.log("Casting Protection From Evil spell");
+    finalCharacter.greyOutAttackButtons(monster1, monster2);
+    let dialogue = document.querySelector('#dialogue');
+    dialogue.innerHTML = `<p>You cast Protection From Evil and increase your Saving Throws by 1 and reduce Monster Hit Rolls by 1</p>`;
+    // let oldAC = finalCharacter.armorClass;
+    // finalCharacter.armorClass = 4;
+    // setTimeout(function ()
+    // {
+    //     finalCharacter.armorClass = oldAC;
+    //     console.log("Old AC: " + oldAC, "Armor Class: " + finalCharacter.armorClass)
+    // }, 1200000);
 
+}
 
 export { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism, readMagic };
