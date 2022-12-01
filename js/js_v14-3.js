@@ -2734,9 +2734,25 @@ function populateMageSpells(m1, m2, nextChap)
 
   for (let i = 0; i < characterFirstLevelSpells.length; i++)
   {
-    if (characterFirstLevelSpells[i].useBattle === true)
+    if (characterFirstLevelSpells[i].useBattle === true && characterFirstLevelSpells[i].effect === "The mage only")
     {
+      spellList.push(characterFirstLevelSpells[i].name);
+      let spellLi = document.createElement('ul');
+      spellLi.classList.add('spell-list');
+      let addedSpellName = document.createElement('span');
+      addedSpellName.innerHTML = characterFirstLevelSpells[i].name;
+      spellLi.appendChild(addedSpellName);
+      let addedSpellUl = document.querySelector('.first-level-dropdown-list');
+      addedSpellUl.appendChild(spellLi);
 
+      let addSelf1Btn = document.createElement('li');
+      addSelf1Btn.classList.add('self-spell-list');
+      addSelf1Btn.innerText = 'Self';
+      spellLi.appendChild(addSelf1Btn);
+      addSelf1Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
+
+    } else if (characterFirstLevelSpells[i].useBattle === true)
+    {
       spellList.push(characterFirstLevelSpells[i].name);
       let spellLi = document.createElement('ul');
       spellLi.classList.add('spell-list');
@@ -2761,6 +2777,7 @@ function populateMageSpells(m1, m2, nextChap)
       addMonster2Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
     }
   }
+
 
   addingSpellLevels.appendChild(secondLevelSpellList);
 

@@ -614,7 +614,8 @@ li.third-level-dropdown-list
 
 
 li.monster-one-spell-list,
-li.monster-two-spell-list {
+li.monster-two-spell-list,
+li.self-spell-list {
   display: none;
   position: relative;
   top: -20px;
@@ -662,12 +663,14 @@ li.third-level-dropdown-list:hover ul.spell-list
 }
 
 ul.spell-list:hover li.monster-one-spell-list, 
-ul.spell-list:hover li.monster-two-spell-list {
+ul.spell-list:hover li.monster-two-spell-list,
+ul.spell-list:hover li.self-spell-list {
   display: block;
 }
 
 li.monster-one-spell-list:hover, 
-li.monster-two-spell-list:hover {
+li.monster-two-spell-list:hover,
+li.self-spell-list:hover {
   background-color: lightblue;
 }
 
