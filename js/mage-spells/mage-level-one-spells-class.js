@@ -96,6 +96,17 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
     finalCharacter.greyOutAttackButtons(monster1, monster2);
     let dialogue = document.querySelector('#dialogue');
     dialogue.innerHTML = `<p>You cast Protection From Evil and increase your Saving Throws by 1 and reduce Monster Hit Rolls by 1</p>`;
+
+    let monster1HR = monster1.hitRoll;
+    console.log(monster1HR);
+
+    for (let i = 0; i < monster1.hitRoll; i++)
+    {
+        monster1.hitRoll[i][0 + 1];
+
+    }
+
+    console.log(monster1.hitRoll)
     // let oldAC = finalCharacter.armorClass;
     // finalCharacter.armorClass = 4;
     // setTimeout(function ()
