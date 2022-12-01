@@ -495,26 +495,26 @@ export default class Character
       }
     };
 
-    let greyOutAttackButtons = function ()
-    {
-      let attackButtons = document.querySelectorAll(".attack");
+    // let greyOutAttackButtons = function ()
+    // {
+    //   let attackButtons = document.querySelectorAll(".attack");
 
-      for (let attackButton of attackButtons)
-      {
-        attackButton.classList.add("hidden");
-      }
+    //   for (let attackButton of attackButtons)
+    //   {
+    //     attackButton.classList.add("hidden");
+    //   }
 
-      let spellAttackButton = document.querySelector(".attack-spell");
-      spellAttackButton.classList.add("hidden");
+    //   let spellAttackButton = document.querySelector(".attack-spell");
+    //   spellAttackButton.classList.add("hidden");
 
-      let showMonsterAttackButton = document.querySelector("#monster-attack");
-      showMonsterAttackButton.classList.remove("hidden");
+    //   let showMonsterAttackButton = document.querySelector("#monster-attack");
+    //   showMonsterAttackButton.classList.remove("hidden");
 
-      showMonsterAttackButton.onclick = function ()
-      {
-        monster1.monsterAttack(monster1, monster2);
-      };
-    };
+    //   showMonsterAttackButton.onclick = function ()
+    //   {
+    //     monster1.monsterAttack(monster1, monster2);
+    //   };
+    // };
 
     let hitRollSucceed = function (enemy1, finalCharacter)
     {
@@ -534,7 +534,7 @@ export default class Character
 
         //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
 
-        greyOutAttackButtons();
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
 
         //END
       } else if (monster1.healthPoints - inflictedDamage <= 0)
@@ -614,7 +614,7 @@ export default class Character
           if (playerHitRollValue1 < playerHitRoll1[i][1])
           {
             alert('Player misses!');
-            greyOutAttackButtons();
+            finalCharacter.greyOutAttackButtons(monster1, monster2);
           } else
           {
             hitRollSucceed(monster1, finalCharacter);
@@ -699,26 +699,26 @@ export default class Character
       }
     };
 
-    let greyOutAttackButtons = function ()
-    {
-      let attackButtons = document.querySelectorAll(".attack");
+    // let greyOutAttackButtons = function ()
+    // {
+    //   let attackButtons = document.querySelectorAll(".attack");
 
-      for (let attackButton of attackButtons)
-      {
-        attackButton.classList.add("hidden");
-      }
+    //   for (let attackButton of attackButtons)
+    //   {
+    //     attackButton.classList.add("hidden");
+    //   }
 
-      let spellAttackButton = document.querySelector(".attack-spell");
-      spellAttackButton.classList.add("hidden");
+    //   let spellAttackButton = document.querySelector(".attack-spell");
+    //   spellAttackButton.classList.add("hidden");
 
-      let showMonsterAttackButton = document.querySelector("#monster-attack");
-      showMonsterAttackButton.classList.remove("hidden");
+    //   let showMonsterAttackButton = document.querySelector("#monster-attack");
+    //   showMonsterAttackButton.classList.remove("hidden");
 
-      showMonsterAttackButton.onclick = function ()
-      {
-        monster2.monsterAttack(monster1, monster2);
-      };
-    };
+    //   showMonsterAttackButton.onclick = function ()
+    //   {
+    //     monster2.monsterAttack(monster1, monster2);
+    //   };
+    // };
 
     let inflictedDamage =
       Math.ceil(Math.random(1) * finalCharacter.weapon.damage) +
@@ -751,7 +751,7 @@ export default class Character
 
 
 
-        greyOutAttackButtons();
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
 
 
       } else if (monster2.healthPoints - inflictedDamage <= 0)
@@ -829,7 +829,7 @@ export default class Character
           if (playerHitRollValue1 < playerHitRoll1[i][1])
           {
             alert('Player misses!');
-            greyOutAttackButtons();
+            finalCharacter.greyOutAttackButtons(monster1, monster2);
           } else
           {
             hitRollSucceed(monster1, finalCharacter);
@@ -949,28 +949,28 @@ export default class Character
 
       //greying out attack module buttons when pressed
 
-      let greyOutAttackButtons = function ()
-      {
-        let attackButtons = document.querySelectorAll(".attack");
+      // let greyOutAttackButtons = function ()
+      // {
+      //   let attackButtons = document.querySelectorAll(".attack");
 
-        for (let attackButton of attackButtons)
-        {
-          attackButton.classList.add("hidden");
-        }
+      //   for (let attackButton of attackButtons)
+      //   {
+      //     attackButton.classList.add("hidden");
+      //   }
 
-        let spellAttackButton = document.querySelector(".attack-spell");
-        spellAttackButton.classList.add("hidden");
+      //   let spellAttackButton = document.querySelector(".attack-spell");
+      //   spellAttackButton.classList.add("hidden");
 
-        let showMonsterAttackButton = document.querySelector("#monster-attack");
-        showMonsterAttackButton.classList.remove("hidden");
+      //   let showMonsterAttackButton = document.querySelector("#monster-attack");
+      //   showMonsterAttackButton.classList.remove("hidden");
 
-        showMonsterAttackButton.onclick = function ()
-        {
-          monster1.monsterAttack(monster1, monster2);
-        };
-      };
+      //   showMonsterAttackButton.onclick = function ()
+      //   {
+      //     monster1.monsterAttack(monster1, monster2);
+      //   };
+      // };
 
-      greyOutAttackButtons();
+      finalCharacter.greyOutAttackButtons(monster1, monster2);
     } else if (monster1.healthPoints - inflictedDamage <= 0)
     {
       monster1.healthPoints = 0;
@@ -1117,28 +1117,10 @@ export default class Character
             `;
       //greying out attack module buttons when pressed
 
-      let greyOutAttackButtons = function ()
-      {
-        let attackButtons = document.querySelectorAll(".attack");
 
-        for (let attackButton of attackButtons)
-        {
-          attackButton.classList.add("hidden");
-        }
 
-        let spellAttackButton = document.querySelector(".attack-spell");
-        spellAttackButton.classList.add("hidden");
+      finalCharacter.greyOutAttackButtons(monster1, monster2);
 
-        let showMonsterAttackButton = document.querySelector("#monster-attack");
-        showMonsterAttackButton.classList.remove("hidden");
-
-        showMonsterAttackButton.onclick = function ()
-        {
-          monster2.monsterAttack(monster1, monster2);
-        };
-      };
-
-      greyOutAttackButtons();
     } else if (monster2.healthPoints - inflictedDamage <= 0)
     {
       monster2.healthPoints = 0;
@@ -1182,6 +1164,27 @@ export default class Character
     }
     confirmMonstersDead();
   }
+
+  greyOutAttackButtons(monster1, monster2)
+  {
+    let attackButtons = document.querySelectorAll(".attack");
+
+    for (let attackButton of attackButtons)
+    {
+      attackButton.classList.add("hidden");
+    }
+
+    let spellAttackButton = document.querySelector(".attack-spell");
+    spellAttackButton.classList.add("hidden");
+
+    let showMonsterAttackButton = document.querySelector("#monster-attack");
+    showMonsterAttackButton.classList.remove("hidden");
+
+    showMonsterAttackButton.onclick = function ()
+    {
+      monster2.monsterAttack(monster1, monster2);
+    };
+  };
 
   spell1Heal()
   {
@@ -1382,34 +1385,34 @@ export default class Character
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
             `;
 
-    let greyOutAttackButtons = function ()
-    {
-      // console.log('greyOutAttackButtons arguments');
+    // let greyOutAttackButtons = function ()
+    // {
+    //   // console.log('greyOutAttackButtons arguments');
 
-      let attackButtons = document.querySelectorAll(".attack");
+    //   let attackButtons = document.querySelectorAll(".attack");
 
-      for (let attackButton of attackButtons)
-      {
-        attackButton.classList.add("hidden");
-      }
+    //   for (let attackButton of attackButtons)
+    //   {
+    //     attackButton.classList.add("hidden");
+    //   }
 
-      let spellAttackButton = document.querySelector(".attack-spell");
-      spellAttackButton.classList.add("hidden");
+    //   let spellAttackButton = document.querySelector(".attack-spell");
+    //   spellAttackButton.classList.add("hidden");
 
-      let showMonsterAttackButton = document.querySelector("#monster-attack");
-      showMonsterAttackButton.classList.remove("hidden");
+    //   let showMonsterAttackButton = document.querySelector("#monster-attack");
+    //   showMonsterAttackButton.classList.remove("hidden");
 
-      showMonsterAttackButton.onclick = function ()
-      {
-        if (monster1.healthPoints > 0)
-        {
-          monster1.monsterAttack(monster1, monster2);
-        } else
-        {
-          monster2.monsterAttack(monster1, monster2);
-        }
-      };
-    };
+    //   showMonsterAttackButton.onclick = function ()
+    //   {
+    //     if (monster1.healthPoints > 0)
+    //     {
+    //       monster1.monsterAttack(monster1, monster2);
+    //     } else
+    //     {
+    //       monster2.monsterAttack(monster1, monster2);
+    //     }
+    //   };
+    // };
 
     greyOutAttackButtons();
 
