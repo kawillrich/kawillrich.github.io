@@ -74,6 +74,10 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
 {
     toggleShowSpellList();
     console.log("Casting Shield spell");
+    finalCharacter.greyOutAttackButtons(monster1, monster2);
+    let dialogue = document.querySelector('#dialogue');
+    dialogue.innerHTML = `<p>You cast Shield and reduce your Armor Class to 4</p>`;
+
 
 }
 
