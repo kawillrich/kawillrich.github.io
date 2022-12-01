@@ -2783,7 +2783,25 @@ function populateMageSpells(m1, m2, nextChap)
 
   for (let i = 0; i < characterSecondLevelSpells.length; i++)
   {
-    if (characterFirstLevelSpells[i].useBattle === true)
+    if (characterSecondLevelSpells[i].useBattle === true && characterSecondLevelSpells[i].effect === "The mage only")
+    {
+      spellList.push(characterSecondLevelSpells[i].name);
+      let spellLi = document.createElement('ul');
+      spellLi.classList.add('spell-list');
+      let addedSpellName = document.createElement('span');
+      addedSpellName.innerHTML = characterSecondLevelSpells[i].name;
+      spellLi.appendChild(addedSpellName);
+      let addedSpellUl = document.querySelector('.second-level-dropdown-list');
+      addedSpellUl.appendChild(spellLi);
+
+      let addSelf1Btn = document.createElement('li');
+      addSelf1Btn.classList.add('self-spell-list');
+      addSelf1Btn.innerText = 'Self';
+      spellLi.appendChild(addSelf1Btn);
+      addSelf1Btn.addEventListener('click', function (e) { castSpellFromList(e, m1, m2, nextChap) }, false);
+
+
+    } else if (characterSecondLevelSpells[i].useBattle === true)
     {
       spellList.push(characterSecondLevelSpells[i].name);
       let spellLi2 = document.createElement('ul');
