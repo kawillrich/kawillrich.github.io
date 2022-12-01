@@ -70,6 +70,12 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
     }
 }
 
+shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
+{
+    console.log("Casting Shield spell");
+
+}
+
 
 
 export { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism, readMagic };

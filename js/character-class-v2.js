@@ -1416,45 +1416,5 @@ export default class Character
     confirmMonstersDead();
   }
 
-  // areaSpell = function (item)
-  // {
-
-  //   let spellDamage = 8;
-
-  //   let self = this;
-
-  //   let damage = Math.ceil(
-  //     Math.random(1) * spellDamage
-  //   );
-  //   if (damage <= 0)
-  //   {
-  //     damage = 0;
-  //   }
-
-  //   console.log(damage);
-
-  //   item.healthPoints -= damage;
-
-  //   if (item.name === " ")
-  //   {
-  //     let attackDialogue = document.querySelector("#dialogue");
-
-  //     attackDialogue.innerHTML += ` `;
-  //   } else if (item.healthPoints <= 0)
-  //   {
-  //     let attackDialogue = document.querySelector("#dialogue");
-
-  //     attackDialogue.innerHTML += `
-  //           <p>${item.name} is dead.</p>`;
-  //   } else
-  //   {
-  //     let attackDialogue = document.querySelector("#dialogue");
-
-  //     attackDialogue.innerHTML += `
-  //           <p>You cause ${damage} points of damage on ${item.name}.</p>`;
-  //   }
-  // };
-
-  //END OF AREA ATTACK SPELL
 
 }
