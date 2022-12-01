@@ -79,7 +79,6 @@ export default class Monster
         {
           finalHPArray = 1;
         }
-        console.log(finalHPArray);
         this.healthPoints = finalHPArray;
         this.startingHealthPoints = finalHPArray;
       } else
@@ -98,7 +97,6 @@ export default class Monster
         {
           finalHPArray = 1;
         }
-        console.log(finalHPArray);
         this.healthPoints = finalHPArray;
         this.startingHealthPoints = finalHPArray;
       }
@@ -196,8 +194,6 @@ export default class Monster
       {
         if (monsterHitRoll1[i][0] === charArmorClass1)
         {
-          console.log("got correct hit roll table");
-          console.log("Player's AC:" + monsterHitRoll1[i][1]);
           if (monsterHitRollValue1 < monsterHitRoll1[i][1])
           {
             alert('Monster misses!');
