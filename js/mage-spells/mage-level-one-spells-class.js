@@ -145,7 +145,7 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
     finalCharacter.greyOutAttackButtons(monster1, monster2);
     let dialogue = document.querySelector('#dialogue');
-    dialogue.innerHTML = `<p>You cast Charm Person and the monster is dazed for their round</p>`;
+    dialogue.innerHTML = `<p>You cast Charm Person and the monster is dazed for an attack round</p>`;
 
     // for (let i = 0; i < monster1.hitRoll.length; i++)
     // {
