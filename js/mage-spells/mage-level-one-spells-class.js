@@ -106,6 +106,29 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
         }
     }
 
+    if (monster2.name !== " ")
+    {
+
+        for (let i = 0; i < monster2.hitRoll.length; i++)
+        {
+            monster2.hitRoll[i][1] = monster2.hitRoll[i][1] + 1;
+            if (monster2.hitRoll[i][1] > 20)
+            {
+                monster2.hitRoll[i][1] = 20;
+            }
+        }
+
+        setTimeout(function ()
+        {
+            for (let i = 0; i < monster2.hitRoll.length; i++)
+            {
+                monster2.hitRoll[i][1] = monster2.hitRoll[i][1] - 1;
+            }
+            console.log(monster2.hitRoll)
+        }, 60000);
+
+    }
+
     setTimeout(function ()
     {
         for (let i = 0; i < monster1.hitRoll.length; i++)
@@ -114,7 +137,33 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
         }
         console.log(monster1.hitRoll)
     }, 60000);
+}
 
+charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
+{
+    toggleShowSpellList();
+
+    finalCharacter.greyOutAttackButtons(monster1, monster2);
+    let dialogue = document.querySelector('#dialogue');
+    dialogue.innerHTML = `<p>You cast Charm Person and the monster is dazed for their round</p>`;
+
+    // for (let i = 0; i < monster1.hitRoll.length; i++)
+    // {
+    //     monster1.hitRoll[i][1] = monster1.hitRoll[i][1] + 1;
+    //     if (monster1.hitRoll[i][1] > 20)
+    //     {
+    //         monster1.hitRoll[i][1] = 20;
+    //     }
+    // }
+
+    // setTimeout(function ()
+    // {
+    //     for (let i = 0; i < monster1.hitRoll.length; i++)
+    //     {
+    //         monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
+    //     }
+    //     console.log(monster1.hitRoll)
+    // }, 60000);
 }
 
 export { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism, readMagic };
