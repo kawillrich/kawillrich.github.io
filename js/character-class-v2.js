@@ -509,7 +509,6 @@ export default class Character
       {
         if (playerHitRoll1[i][0] === monsterArmorClass1)
         {
-          console.log("Player's AC:" + playerHitRoll1[i][1]);
           if (playerHitRollValue1 < playerHitRoll1[i][1])
           {
             alert('Player misses!');

@@ -2529,6 +2529,7 @@ function continueChapterThreeThree()
     "click",
     () =>
     {
+      console.log(smallWolf);
       addingFightModule(smallWolf, noMonster, continueChapterThreeFour);
       declareAttack();
     },
