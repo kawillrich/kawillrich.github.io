@@ -371,7 +371,8 @@ export default class Character
                 <h4 id="monster-one-type">Monster Type: ${monsterOne.name}</h4>
                 <h4 id="monster-one-hp">Hit Points: ${monsterOne.healthPoints}<progress class='monster-hp-prog-bar' max="${monsterOne.startingHealthPoints}" value="${monsterOne.healthPoints}"></progress></h4> 
                 <h4 id="monster-one-ap">Armor Class: ${monsterOne.armorClass}</h4>
-                <h4 id="monster-one-damage">Damage: ${monsterOne.damage}</h4>     
+                <h4 id="monster-one-damage">Damage: ${monsterOne.damage}</h4>
+                <h4 id="monster-one-status">Status: ${monsterOne.status}</h4>     
             </fieldset>  
         </div>
         <div class="monster" id="monster-two">
@@ -381,6 +382,7 @@ export default class Character
                 <h4 id="monster-two-hp">Hit Points: ${monsterTwo.healthPoints}<progress class='monster-hp-prog-bar' max="${monsterTwo.startingHealthPoints}" value="${monsterTwo.healthPoints}"></progress></h4> 
                 <h4 id="monster-two-ap">Armor Class: ${monsterTwo.armorClass}</h4>
                 <h4 id="monster-two-damage">Damage: ${monsterTwo.damage}</h4> 
+                <h4 id="monster-two-status">Status: ${monsterTwo.status}</h4>    
             </fieldset>        
         </div>
 
@@ -450,7 +452,8 @@ export default class Character
                       <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
                       <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
                       <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
-                      <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>    
+                      <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                      <h4 id="monster-one-status">Status: ${monster1.status}</h4>
                   </fieldset>   
               </div>`;
         defeatMonster1.innerHTML = `<p>Congratulations, you defeated the Monster 1!</p>`;
@@ -569,6 +572,7 @@ export default class Character
                           <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
                           <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
                           <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
+                          <h4 id="monster-two-status">Status: ${monster2.status}</h4>   
                       </fieldset>    
                   </div>`;
         defeatMonster2.innerHTML = `
@@ -680,7 +684,8 @@ export default class Character
                     <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
                     <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
                     <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
-                    <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>    
+                    <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>  
+                    <h4 id="monster-one-status">Status: ${monster1.status}</h4>     
                 </fieldset>   
             </div>`;
       defeatMonster1.innerHTML = `
@@ -746,6 +751,7 @@ export default class Character
                     <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
                     <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
                     <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>   
+                    <h4 id="monster-two-status">Status: ${monster2.status}</h4>    
                 </fieldset>    
             </div>`;
       defeatMonster2.innerHTML = `
