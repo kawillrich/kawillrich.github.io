@@ -896,6 +896,7 @@ export default class Character
   {
     if (monster1.healthPoints <= 0 && monster2.healthPoints <= 0)
     {
+      console.log(monster1.hitRoll);
       monster1.healthPoints = 0;
       monster2.healthPoints = 0;
 

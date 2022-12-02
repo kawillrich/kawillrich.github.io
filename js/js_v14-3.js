@@ -2904,6 +2904,7 @@ function castSpellFromList(e, m1, m2, nextChap)
       if (firstLevel[i].name === parentNodeInnerText)
       {
         firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
+        console.log(m1)
       }
     };
 

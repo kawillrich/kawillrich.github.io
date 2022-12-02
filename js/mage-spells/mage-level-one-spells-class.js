@@ -92,13 +92,10 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
 protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     toggleShowSpellList();
-    console.log("Casting Protection From Evil spell");
+
     finalCharacter.greyOutAttackButtons(monster1, monster2);
     let dialogue = document.querySelector('#dialogue');
     dialogue.innerHTML = `<p>You cast Protection From Evil and increase your Saving Throws by 1 and reduce Monster Hit Rolls by 1</p>`;
-
-    let newM1HitRoll = monster1.hitRoll.map((x) => x);
-    console.log(newM1HitRoll)
 
     for (let i = 0; i < monster1.hitRoll.length; i++)
     {
@@ -107,17 +104,16 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
         {
             monster1.hitRoll[i][1] = 20;
         }
-        console.log(monster1.hitRoll)
     }
 
-    // console.log(monster1.hitRoll)
-    // let oldAC = finalCharacter.armorClass;
-    // finalCharacter.armorClass = 4;
-    // setTimeout(function ()
-    // {
-    //     finalCharacter.armorClass = oldAC;
-    //     console.log("Old AC: " + oldAC, "Armor Class: " + finalCharacter.armorClass)
-    // }, 1200000);
+    setTimeout(function ()
+    {
+        for (let i = 0; i < monster1.hitRoll.length; i++)
+        {
+            monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
+        }
+        console.log(monster1.hitRoll)
+    }, 60000);
 
 }
 
