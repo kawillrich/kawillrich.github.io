@@ -106,9 +106,11 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
         }
     }
 
+    monster1.status.push("Protection from Evil");
+    console.log(monster1.status)
+
     if (monster2.name !== " ")
     {
-
         for (let i = 0; i < monster2.hitRoll.length; i++)
         {
             monster2.hitRoll[i][1] = monster2.hitRoll[i][1] + 1;
@@ -118,15 +120,18 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
             }
         }
 
+        monster2.status.push("Protection from Evil");
+
         setTimeout(function ()
         {
             for (let i = 0; i < monster2.hitRoll.length; i++)
             {
                 monster2.hitRoll[i][1] = monster2.hitRoll[i][1] - 1;
             }
-            console.log(monster2.hitRoll)
+            let removeProtFromEvilM2 = monster1.status.filter((x) => "Protection from Evil");
+            monster2.status.splice(removeProtFromEvilM2);
+            console.log(monster2.status)
         }, 60000);
-
     }
 
     setTimeout(function ()
@@ -135,7 +140,9 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
         {
             monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
         }
-        console.log(monster1.hitRoll)
+        let removeProtFromEvilM1 = monster1.status.filter((x) => "Protection from Evil");
+        monster1.status.splice(removeProtFromEvilM1);
+        console.log(monster1.status)
     }, 60000);
 }
 
