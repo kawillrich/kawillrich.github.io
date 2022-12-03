@@ -107,7 +107,16 @@ export default class Monster
   {
     alert(`Monster(s) Turn!`);
 
-    if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.includes('Charmed') != true || monsterOne.status.includes('Sleep') != true || monsterOne.status.includes('Hold Person') != true) && (monsterTwo.status.includes('Charmed') != true || monsterTwo.status.includes('Sleep') != true || monsterTwo.status.includes('Hold Person') != true))
+    if (monsterTwo.healthPoints <= 0)
+    {
+      monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
+    }
+    else if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints > 0)
+    {
+      console.log("Monster 2 attacking")
+      monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
+    }
+    else if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.includes('Charmed') != true || monsterOne.status.includes('Sleep') != true || monsterOne.status.includes('Hold Person') != true) && (monsterTwo.status.includes('Charmed') != true || monsterTwo.status.includes('Sleep') != true || monsterTwo.status.includes('Hold Person') != true))
     {
       let randomMonsterAttack = Math.ceil(Math.random() * 2);
       if (randomMonsterAttack = 2)
@@ -119,18 +128,16 @@ export default class Monster
         monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
 
       }
-    } else if (monsterOne.healthPoints <= 0)
+    } else if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.includes('Charmed') === true || monsterOne.status.includes('Sleep') === true || monsterOne.status.includes('Hold Person') === true) && (monsterTwo.status.includes('Charmed') != true || monsterTwo.status.includes('Sleep') != true || monsterTwo.status.includes('Hold Person') != true))
     {
       console.log("Monster 2 attacking")
       monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
-    } else
+    } else if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.includes('Charmed') != true || monsterOne.status.includes('Sleep') != true || monsterOne.status.includes('Hold Person') != true) && (monsterTwo.status.includes('Charmed') === true || monsterTwo.status.includes('Sleep') === true || monsterTwo.status.includes('Hold Person') === true))
     {
-      console.log("Monster 1 attacking")
-      monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
+      console.log("Monster 2 attacking")
+      monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
     }
-
   }
-
   monstersTurn(monsterOne, monsterTwo, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter)
   {
 
