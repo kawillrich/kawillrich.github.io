@@ -159,7 +159,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                 {
                     monster2.hitRoll[i][1] = monster2.hitRoll[i][1] - 1;
                 }
-                let removeProtFromEvilM2 = monster1.status.filter((x) => "Protection from Evil");
+                let removeProtFromEvilM2 = monster2.status.filter((x) => "Protection from Evil");
                 monster2.status.splice(removeProtFromEvilM2);
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
@@ -258,11 +258,11 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
               <div class="monster" id="monster-two">
                   <fieldset class='monster-info-module'>
                       <legend class='monster-dashboard'>Monster 1</legend>
-                      <h4 id="monster-two-type">Monster Type: ${monster1.name}</h4>
-                      <h4 id="monster-two-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
-                      <h4 id="monster-two-ap">Armor Class: ${monster1.armorClass}</h4>
-                      <h4 id="monster-two-damage">Damage: ${monster1.damage}</h4>
-                      <h4 id="monster-two-status">Status: ${monster1.status}</h4>
+                      <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                      <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                      <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
+                      <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
+                      <h4 id="monster-two-status">Status: ${monster2.status}</h4>
                   </fieldset>   
               </div>`;
             }, 60000);
@@ -327,11 +327,11 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
               <div class="monster" id="monster-two">
                   <fieldset class='monster-info-module'>
                       <legend class='monster-dashboard'>Monster 1</legend>
-                      <h4 id="monster-two-type">Monster Type: ${monster1.name}</h4>
-                      <h4 id="monster-two-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
-                      <h4 id="monster-two-ap">Armor Class: ${monster1.armorClass}</h4>
-                      <h4 id="monster-two-damage">Damage: ${monster1.damage}</h4>
-                      <h4 id="monster-two-status">Status: ${monster1.status}</h4>
+                      <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                      <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                      <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
+                      <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
+                      <h4 id="monster-two-status">Status: ${monster2.status}</h4>
                   </fieldset>   
               </div>`;
             }, 60000);

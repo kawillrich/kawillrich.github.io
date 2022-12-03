@@ -107,7 +107,7 @@ export default class Monster
   {
     alert(`Monster(s) Turn!`);
 
-    if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.some('Charmed', 'Sleep', 'Hold Person')) != true && monsterTwo.status.some('Charmed', 'Sleep', 'Hold Person') != true)
+    if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.includes('Charmed') != true || monsterOne.status.includes('Sleep') != true || monsterOne.status.includes('Hold Person') != true) && (monsterTwo.status.includes('Charmed') != true || monsterTwo.status.includes('Sleep') != true || monsterTwo.status.includes('Hold Person') != true))
     {
       let randomMonsterAttack = Math.ceil(Math.random() * 2);
       if (randomMonsterAttack = 2)
