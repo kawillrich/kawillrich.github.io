@@ -107,50 +107,61 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
 
 protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    toggleShowSpellList();
-
-    finalCharacter.greyOutAttackButtons(monster1, monster2);
-    let dialogue = document.querySelector('#dialogue');
-    dialogue.innerHTML = `<p>You cast Protection From Evil and increase your Saving Throws by 1 and reduce Monster Hit Rolls by 1</p>`;
-
-    for (let i = 0; i < monster1.hitRoll.length; i++)
+    if (this.numberOfUses <= 0)
     {
-        monster1.hitRoll[i][1] = monster1.hitRoll[i][1] + 1;
-        if (monster1.hitRoll[i][1] > 20)
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+    } else
+    {
+        this.numberOfUses -= 1;
+        if (this.numberOfUses <= 0)
         {
-            monster1.hitRoll[i][1] = 20;
+            this.numberOfUses = 0;
         }
-    }
+        toggleShowSpellList();
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Protection From Evil and increase your Saving Throws by 1 and reduce Monster Hit Rolls by 1</p>`;
 
-    monster1.status.push("Protection from Evil");
-    let monster1Status = document.querySelector("#monster-one-status");
-    monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status}</h4>`
-    console.log(monster1.status)
-
-    if (monster2.name !== " ")
-    {
-        for (let i = 0; i < monster2.hitRoll.length; i++)
+        for (let i = 0; i < monster1.hitRoll.length; i++)
         {
-            monster2.hitRoll[i][1] = monster2.hitRoll[i][1] + 1;
-            if (monster2.hitRoll[i][1] > 20)
+            monster1.hitRoll[i][1] = monster1.hitRoll[i][1] + 1;
+            if (monster1.hitRoll[i][1] > 20)
             {
-                monster2.hitRoll[i][1] = 20;
+                monster1.hitRoll[i][1] = 20;
             }
         }
 
-        monster2.status.push("Protection from Evil");
-        let monster2Status = document.querySelector("#monster-two-status");
-        monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status}</h4>`
-        setTimeout(function ()
+        monster1.status.push("Protection from Evil");
+        let monster1Status = document.querySelector("#monster-one-status");
+        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status}</h4>`
+        console.log(monster1.status)
+
+        if (monster2.name !== " ")
         {
             for (let i = 0; i < monster2.hitRoll.length; i++)
             {
-                monster2.hitRoll[i][1] = monster2.hitRoll[i][1] - 1;
+                monster2.hitRoll[i][1] = monster2.hitRoll[i][1] + 1;
+                if (monster2.hitRoll[i][1] > 20)
+                {
+                    monster2.hitRoll[i][1] = 20;
+                }
             }
-            let removeProtFromEvilM2 = monster1.status.filter((x) => "Protection from Evil");
-            monster2.status.splice(removeProtFromEvilM2);
-            let updateM2Status = document.querySelector("#monster-two");
-            updateM2Status.innerHTML = `
+
+            monster2.status.push("Protection from Evil");
+            let monster2Status = document.querySelector("#monster-two-status");
+            monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status}</h4>`
+            setTimeout(function ()
+            {
+                for (let i = 0; i < monster2.hitRoll.length; i++)
+                {
+                    monster2.hitRoll[i][1] = monster2.hitRoll[i][1] - 1;
+                }
+                let removeProtFromEvilM2 = monster1.status.filter((x) => "Protection from Evil");
+                monster2.status.splice(removeProtFromEvilM2);
+                let updateM2Status = document.querySelector("#monster-two");
+                updateM2Status.innerHTML = `
               <div class="monster" id="monster-one">
                   <fieldset class='monster-info-module'>
                       <legend class='monster-dashboard'>Monster 2</legend>
@@ -161,20 +172,20 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                       <h4 id="monster-one-status">Status: ${monster2.status}</h4>
                   </fieldset>   
               </div>`;
-            console.log(monster2.status)
-        }, 60000);
-    }
-
-    setTimeout(function ()
-    {
-        for (let i = 0; i < monster1.hitRoll.length; i++)
-        {
-            monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
+                console.log(monster2.status)
+            }, 60000);
         }
-        let removeProtFromEvilM1 = monster1.status.filter((x) => "Protection from Evil");
-        monster1.status.splice(removeProtFromEvilM1);
-        let updateM1Status = document.querySelector("#monster-one");
-        updateM1Status.innerHTML = `
+
+        setTimeout(function ()
+        {
+            for (let i = 0; i < monster1.hitRoll.length; i++)
+            {
+                monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
+            }
+            let removeProtFromEvilM1 = monster1.status.filter((x) => "Protection from Evil");
+            monster1.status.splice(removeProtFromEvilM1);
+            let updateM1Status = document.querySelector("#monster-one");
+            updateM1Status.innerHTML = `
               <div class="monster" id="monster-one">
                   <fieldset class='monster-info-module'>
                       <legend class='monster-dashboard'>Monster 1</legend>
@@ -185,8 +196,9 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                       <h4 id="monster-one-status">Status: ${monster1.status}</h4>
                   </fieldset>   
               </div>`;
-        console.log(monster1.status);
-    }, 60000);
+            console.log(monster1.status);
+        }, 60000);
+    }
 }
 
 charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
