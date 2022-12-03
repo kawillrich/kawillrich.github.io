@@ -46,27 +46,35 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 magicMissile.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    if (attackedMonster === "Monster 1")
-    {
-        toggleShowSpellList();
-        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
-    } else if (attackedMonster === "Monster 2")
-    {
-        toggleShowSpellList();
-        finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
-    }
-}
+    console.log(this.numberOfUses)
 
-charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
-{
-    if (attackedMonster === "Monster 1")
+    if (this.numberOfUses <= 0)
     {
-        toggleShowSpellList();
-        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
-    } else if (attackedMonster === "Monster 2")
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
+
+
+    } else
     {
-        toggleShowSpellList();
-        finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
+
+        this.numberOfUses -= 1;
+
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+
+        console.log(this.numberOfUses)
+
+        if (attackedMonster === "Monster 1")
+        {
+            toggleShowSpellList();
+            finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
+        } else if (attackedMonster === "Monster 2")
+        {
+            toggleShowSpellList();
+            finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
+        }
     }
 }
 
