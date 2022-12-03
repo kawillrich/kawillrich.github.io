@@ -113,15 +113,14 @@ export default class Monster
     }
     else if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints > 0)
     {
-      console.log("Monster 2 attacking")
       monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
     }
     else if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.includes('Charmed') != true || monsterOne.status.includes('Sleep') != true || monsterOne.status.includes('Hold Person') != true) && (monsterTwo.status.includes('Charmed') != true || monsterTwo.status.includes('Sleep') != true || monsterTwo.status.includes('Hold Person') != true))
     {
       let randomMonsterAttack = Math.ceil(Math.random() * 2);
-      if (randomMonsterAttack = 2)
+      console.log(randomMonsterAttack)
+      if (randomMonsterAttack === 2)
       {
-        console.log("Monster 2 attacking")
         monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
       } else if (randomMonsterAttack <= 1)
       {
@@ -130,11 +129,9 @@ export default class Monster
       }
     } else if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.includes('Charmed') === true || monsterOne.status.includes('Sleep') === true || monsterOne.status.includes('Hold Person') === true) && (monsterTwo.status.includes('Charmed') != true || monsterTwo.status.includes('Sleep') != true || monsterTwo.status.includes('Hold Person') != true))
     {
-      console.log("Monster 2 attacking")
       monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
     } else if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.includes('Charmed') != true || monsterOne.status.includes('Sleep') != true || monsterOne.status.includes('Hold Person') != true) && (monsterTwo.status.includes('Charmed') === true || monsterTwo.status.includes('Sleep') === true || monsterTwo.status.includes('Hold Person') === true))
     {
-      console.log("Monster 2 attacking")
       monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
     }
   }

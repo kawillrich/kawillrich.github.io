@@ -793,11 +793,9 @@ export default class Character
     {
       if (monster1.healthPoints <= 0)
       {
-        console.log("Monster 2 attacking")
         monster2.monsterAttack(monster1, monster2);
       } else
       {
-        console.log("Monster 1 attacking")
         monster1.monsterAttack(monster1, monster2);
       }
     };
