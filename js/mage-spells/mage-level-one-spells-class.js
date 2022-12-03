@@ -224,12 +224,12 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
         if (monster1.healthPoints > 0)
         {
-            monster1.status.push('Charm');
+            monster1.status.push('Charmed');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
             setTimeout(function ()
             {
-                let removeCharmM1 = monster1.status.filter((x) => "Charm");
+                let removeCharmM1 = monster1.status.filter((x) => "Charmed");
                 monster1.status.splice(removeCharmM1);
                 let updateM1Status = document.querySelector("#monster-one");
                 updateM1Status.innerHTML = `
@@ -246,12 +246,12 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
             }, 60000);
         } else if (monster2.healthPoints > 0)
         {
-            monster2.status.push('Charm');
+            monster2.status.push('Charmed');
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
             setTimeout(function ()
             {
-                let removeCharmM2 = monster2.status.filter((x) => "Charm");
+                let removeCharmM2 = monster2.status.filter((x) => "Charmed");
                 monster2.status.splice(removeCharmM2);
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
