@@ -136,7 +136,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
 
         monster1.status.push("Protection from Evil");
         let monster1Status = document.querySelector("#monster-one-status");
-        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status}</h4>`
+        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
         console.log(monster1.status)
 
         if (monster2.name !== " ")
@@ -152,7 +152,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
 
             monster2.status.push("Protection from Evil");
             let monster2Status = document.querySelector("#monster-two-status");
-            monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status}</h4>`
+            monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
             setTimeout(function ()
             {
                 for (let i = 0; i < monster2.hitRoll.length; i++)
@@ -163,16 +163,16 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                 monster2.status.splice(removeProtFromEvilM2);
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
-              <div class="monster" id="monster-one">
-                  <fieldset class='monster-info-module'>
-                      <legend class='monster-dashboard'>Monster 2</legend>
-                      <h4 id="monster-one-type">Monster Type: ${monster2.name}</h4>
-                      <h4 id="monster-one-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
-                      <h4 id="monster-one-ap">Armor Class: ${monster2.armorClass}</h4>
-                      <h4 id="monster-one-damage">Damage: ${monster2.damage}</h4>
-                      <h4 id="monster-one-status">Status: ${monster2.status}</h4>
-                  </fieldset>   
-              </div>`;
+                    <div class="monster" id="monster-one">
+                        <fieldset class='monster-info-module'>
+                            <legend class='monster-dashboard'>Monster 2</legend>
+                            <h4 id="monster-one-type">Monster Type: ${monster2.name}</h4>
+                            <h4 id="monster-one-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                            <h4 id="monster-one-ap">Armor Class: ${monster2.armorClass}</h4>
+                            <h4 id="monster-one-damage">Damage: ${monster2.damage}</h4>
+                            <h4 id="monster-one-status">Status: ${monster2.status.join(', ')}</h4>
+                        </fieldset>   
+                    </div>`;
                 console.log(monster2.status)
             }, 60000);
         }
@@ -194,7 +194,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                       <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
                       <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
                       <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
-                      <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+                      <h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>
                   </fieldset>   
               </div>`;
             console.log(monster1.status);
@@ -220,7 +220,93 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Charm Person and dazed the monster(s) for an attack round</p>`;
+        dialogue.innerHTML = `<p>You cast Charm Person on the monster(s).</p>`;
+
+        // for (let i = 0; i < monster1.hitRoll.length; i++)
+        // {
+        //     monster1.hitRoll[i][1] = monster1.hitRoll[i][1] + 1;
+        //     if (monster1.hitRoll[i][1] > 20)
+        //     {
+        //         monster1.hitRoll[i][1] = 20;
+        //     }
+        // }
+
+        // setTimeout(function ()
+        // {
+        //     for (let i = 0; i < monster1.hitRoll.length; i++)
+        //     {
+        //         monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
+        //     }
+        //     console.log(monster1.hitRoll)
+        // }, 60000);
+    }
+}
+
+sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
+{
+    if (this.numberOfUses <= 0)
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast Sleep, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+    } else
+    {
+        this.numberOfUses -= 1;
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+        toggleShowSpellList();
+
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Sleep on the monster(s).</p>`;
+
+        if (monster1.healthPoints > 0)
+        {
+            monster1.status.push('Sleep');
+            let monster1Status = document.querySelector("#monster-one-status");
+            monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
+            setTimeout(function ()
+            {
+                let removeSleepM1 = monster1.status.filter((x) => "Sleep");
+                monster1.status.splice(removeSleepM1);
+                let updateM1Status = document.querySelector("#monster-one");
+                updateM1Status.innerHTML = `
+              <div class="monster" id="monster-one">
+                  <fieldset class='monster-info-module'>
+                      <legend class='monster-dashboard'>Monster 1</legend>
+                      <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                      <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                      <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+                      <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                      <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+                  </fieldset>   
+              </div>`;
+            }, 60000);
+        } else if (monster2.healthPoints > 0)
+        {
+            monster2.status.push('Sleep');
+            let monster2Status = document.querySelector("#monster-two-status");
+            monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+            setTimeout(function ()
+            {
+                let removeSleepM2 = monster2.status.filter((x) => "Sleep");
+                monster2.status.splice(removeSleepM2);
+                let updateM2Status = document.querySelector("#monster-two");
+                updateM2Status.innerHTML = `
+              <div class="monster" id="monster-two">
+                  <fieldset class='monster-info-module'>
+                      <legend class='monster-dashboard'>Monster 1</legend>
+                      <h4 id="monster-two-type">Monster Type: ${monster1.name}</h4>
+                      <h4 id="monster-two-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                      <h4 id="monster-two-ap">Armor Class: ${monster1.armorClass}</h4>
+                      <h4 id="monster-two-damage">Damage: ${monster1.damage}</h4>
+                      <h4 id="monster-two-status">Status: ${monster1.status}</h4>
+                  </fieldset>   
+              </div>`;
+            }, 60000);
+        }
 
         // for (let i = 0; i < monster1.hitRoll.length; i++)
         // {

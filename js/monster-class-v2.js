@@ -107,7 +107,7 @@ export default class Monster
   {
     alert(`Monster(s) Turn!`);
 
-    if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0))
+    if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0) && (monsterOne.status.some('Charmed', 'Sleep', 'Hold Person')) != true && monsterTwo.status.some('Charmed', 'Sleep', 'Hold Person') != true)
     {
       let randomMonsterAttack = Math.ceil(Math.random() * 2);
       if (randomMonsterAttack = 2)
