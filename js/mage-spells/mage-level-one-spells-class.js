@@ -46,17 +46,13 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 magicMissile.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    console.log(this.numberOfUses)
-
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
-
-
+        toggleShowSpellList();
     } else
     {
-
         this.numberOfUses -= 1;
 
         if (this.numberOfUses <= 0)
@@ -80,21 +76,33 @@ magicMissile.castSpell = function (monster1, monster2, continueNextChapter, atta
 
 shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    toggleShowSpellList();
-    console.log("Casting Shield spell");
-    finalCharacter.greyOutAttackButtons(monster1, monster2);
-    let dialogue = document.querySelector('#dialogue');
-    dialogue.innerHTML = `<p>You cast Shield and reduce your Armor Class to 4</p>`;
-    let oldAC = finalCharacter.armorClass;
-    finalCharacter.armorClass = 4;
-    console.log(oldAC)
-    console.log(finalCharacter.armorClass)
-    setTimeout(function ()
+    if (this.numberOfUses <= 0)
     {
-        finalCharacter.armorClass = oldAC;
-        console.log("Old AC: " + oldAC, "Armor Class: " + finalCharacter.armorClass)
-    }, 1200000);
-
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+    } else
+    {
+        this.numberOfUses -= 1;
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+        toggleShowSpellList();
+        console.log("Casting Shield spell");
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Shield and reduce your Armor Class to 4</p>`;
+        let oldAC = finalCharacter.armorClass;
+        finalCharacter.armorClass = 4;
+        console.log(oldAC)
+        console.log(finalCharacter.armorClass)
+        setTimeout(function ()
+        {
+            finalCharacter.armorClass = oldAC;
+            console.log("Old AC: " + oldAC, "Armor Class: " + finalCharacter.armorClass)
+        }, 1200000);
+    }
 }
 
 protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
