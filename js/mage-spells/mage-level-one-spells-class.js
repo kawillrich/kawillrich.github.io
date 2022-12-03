@@ -203,29 +203,42 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
 
 charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    toggleShowSpellList();
+    if (this.numberOfUses <= 0)
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+    } else
+    {
+        this.numberOfUses -= 1;
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+        toggleShowSpellList();
 
-    finalCharacter.greyOutAttackButtons(monster1, monster2);
-    let dialogue = document.querySelector('#dialogue');
-    dialogue.innerHTML = `<p>You cast Charm Person and dazed the monster(s) for an attack round</p>`;
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Charm Person and dazed the monster(s) for an attack round</p>`;
 
-    // for (let i = 0; i < monster1.hitRoll.length; i++)
-    // {
-    //     monster1.hitRoll[i][1] = monster1.hitRoll[i][1] + 1;
-    //     if (monster1.hitRoll[i][1] > 20)
-    //     {
-    //         monster1.hitRoll[i][1] = 20;
-    //     }
-    // }
+        // for (let i = 0; i < monster1.hitRoll.length; i++)
+        // {
+        //     monster1.hitRoll[i][1] = monster1.hitRoll[i][1] + 1;
+        //     if (monster1.hitRoll[i][1] > 20)
+        //     {
+        //         monster1.hitRoll[i][1] = 20;
+        //     }
+        // }
 
-    // setTimeout(function ()
-    // {
-    //     for (let i = 0; i < monster1.hitRoll.length; i++)
-    //     {
-    //         monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
-    //     }
-    //     console.log(monster1.hitRoll)
-    // }, 60000);
+        // setTimeout(function ()
+        // {
+        //     for (let i = 0; i < monster1.hitRoll.length; i++)
+        //     {
+        //         monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
+        //     }
+        //     console.log(monster1.hitRoll)
+        // }, 60000);
+    }
 }
 
 export { charmPerson, detectMagic, floatingDisc, holdPortal, light, magicMissile, protectionFromEvil, readLanguages, shield, sleep, ventriloquism, readMagic };
