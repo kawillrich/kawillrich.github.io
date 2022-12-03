@@ -222,23 +222,52 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Charm Person on the monster(s).</p>`;
 
-        // for (let i = 0; i < monster1.hitRoll.length; i++)
-        // {
-        //     monster1.hitRoll[i][1] = monster1.hitRoll[i][1] + 1;
-        //     if (monster1.hitRoll[i][1] > 20)
-        //     {
-        //         monster1.hitRoll[i][1] = 20;
-        //     }
-        // }
+        if (monster1.healthPoints > 0)
+        {
+            monster1.status.push('Charm');
+            let monster1Status = document.querySelector("#monster-one-status");
+            monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
+            setTimeout(function ()
+            {
+                let removeCharmM1 = monster1.status.filter((x) => "Charm");
+                monster1.status.splice(removeCharmM1);
+                let updateM1Status = document.querySelector("#monster-one");
+                updateM1Status.innerHTML = `
+              <div class="monster" id="monster-one">
+                  <fieldset class='monster-info-module'>
+                      <legend class='monster-dashboard'>Monster 1</legend>
+                      <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                      <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                      <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+                      <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                      <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+                  </fieldset>   
+              </div>`;
+            }, 60000);
+        } else if (monster2.healthPoints > 0)
+        {
+            monster2.status.push('Charm');
+            let monster2Status = document.querySelector("#monster-two-status");
+            monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+            setTimeout(function ()
+            {
+                let removeCharmM2 = monster2.status.filter((x) => "Charm");
+                monster2.status.splice(removeCharmM2);
+                let updateM2Status = document.querySelector("#monster-two");
+                updateM2Status.innerHTML = `
+              <div class="monster" id="monster-two">
+                  <fieldset class='monster-info-module'>
+                      <legend class='monster-dashboard'>Monster 1</legend>
+                      <h4 id="monster-two-type">Monster Type: ${monster1.name}</h4>
+                      <h4 id="monster-two-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                      <h4 id="monster-two-ap">Armor Class: ${monster1.armorClass}</h4>
+                      <h4 id="monster-two-damage">Damage: ${monster1.damage}</h4>
+                      <h4 id="monster-two-status">Status: ${monster1.status}</h4>
+                  </fieldset>   
+              </div>`;
+            }, 60000);
+        }
 
-        // setTimeout(function ()
-        // {
-        //     for (let i = 0; i < monster1.hitRoll.length; i++)
-        //     {
-        //         monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
-        //     }
-        //     console.log(monster1.hitRoll)
-        // }, 60000);
     }
 }
 
@@ -307,24 +336,6 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
               </div>`;
             }, 60000);
         }
-
-        // for (let i = 0; i < monster1.hitRoll.length; i++)
-        // {
-        //     monster1.hitRoll[i][1] = monster1.hitRoll[i][1] + 1;
-        //     if (monster1.hitRoll[i][1] > 20)
-        //     {
-        //         monster1.hitRoll[i][1] = 20;
-        //     }
-        // }
-
-        // setTimeout(function ()
-        // {
-        //     for (let i = 0; i < monster1.hitRoll.length; i++)
-        //     {
-        //         monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
-        //     }
-        //     console.log(monster1.hitRoll)
-        // }, 60000);
     }
 }
 
