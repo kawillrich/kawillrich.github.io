@@ -243,7 +243,9 @@ let noMonster = new Monster(" ", " ", " ", " ", " ", 0, " ", " ", {
     gpValue: .01,
     quantity: 0
   }
-}, true, "melee");
+}, true, "melee",
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
+  []);
 
 let smallWolf = new Monster("Small Wolf", [2, 0], 8, 9, 4, 5, "Neutral", "Bite",
   {

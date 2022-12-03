@@ -107,6 +107,8 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
     }
 
     monster1.status.push("Protection from Evil");
+    let monster1Status = document.querySelector("#monster-one-status");
+    monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status}</h4>`
     console.log(monster1.status)
 
     if (monster2.name !== " ")
@@ -121,7 +123,8 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
         }
 
         monster2.status.push("Protection from Evil");
-
+        let monster2Status = document.querySelector("#monster-two-status");
+        monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status}</h4>`
         setTimeout(function ()
         {
             for (let i = 0; i < monster2.hitRoll.length; i++)
@@ -130,6 +133,18 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
             }
             let removeProtFromEvilM2 = monster1.status.filter((x) => "Protection from Evil");
             monster2.status.splice(removeProtFromEvilM2);
+            let updateM2Status = document.querySelector("#monster-two");
+            updateM2Status.innerHTML = `
+              <div class="monster" id="monster-one">
+                  <fieldset class='monster-info-module'>
+                      <legend class='monster-dashboard'>Monster 2</legend>
+                      <h4 id="monster-one-type">Monster Type: ${monster2.name}</h4>
+                      <h4 id="monster-one-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                      <h4 id="monster-one-ap">Armor Class: ${monster2.armorClass}</h4>
+                      <h4 id="monster-one-damage">Damage: ${monster2.damage}</h4>
+                      <h4 id="monster-one-status">Status: ${monster2.status}</h4>
+                  </fieldset>   
+              </div>`;
             console.log(monster2.status)
         }, 60000);
     }
@@ -142,7 +157,19 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
         }
         let removeProtFromEvilM1 = monster1.status.filter((x) => "Protection from Evil");
         monster1.status.splice(removeProtFromEvilM1);
-        console.log(monster1.status)
+        let updateM1Status = document.querySelector("#monster-one");
+        updateM1Status.innerHTML = `
+              <div class="monster" id="monster-one">
+                  <fieldset class='monster-info-module'>
+                      <legend class='monster-dashboard'>Monster 1</legend>
+                      <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                      <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                      <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+                      <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                      <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+                  </fieldset>   
+              </div>`;
+        console.log(monster1.status);
     }, 60000);
 }
 
