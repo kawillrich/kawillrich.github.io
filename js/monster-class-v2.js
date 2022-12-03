@@ -107,18 +107,19 @@ export default class Monster
   {
     alert(`Monster(s) Turn!`);
 
-    if (
-      arguments[0].healthPoints <= 0 ||
-      arguments[0].healthPoints === "Dead"
-    )
+    if ((monsterOne.healthPoints > 0 && monsterTwo.healthPoints > 0))
     {
-      arguments[0].healthPoints === "Dead";
-    } else if (arguments[0].healthPoints > 0)
-    {
-      arguments[0].healthPoints = arguments[0].healthPoints;
-    }
+      let randomMonsterAttack = Math.ceil(Math.random() * 2);
+      if (randomMonsterAttack = 2)
+      {
+        console.log("Monster 2 attacking")
+        monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
+      } else if (randomMonsterAttack <= 1)
+      {
+        monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
 
-    if (monsterOne.healthPoints <= 0)
+      }
+    } else if (monsterOne.healthPoints <= 0)
     {
       console.log("Monster 2 attacking")
       monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
