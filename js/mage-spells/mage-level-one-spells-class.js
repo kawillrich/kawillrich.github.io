@@ -46,10 +46,11 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 magicMissile.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
+    this.reduceNumberOfUses();
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
+        dialogue.innerHTML = `<p>You try to cast Magic Missile, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
     } else
     {
@@ -79,7 +80,7 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
+        dialogue.innerHTML = `<p>You try to cast Shield, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
     } else
     {
@@ -110,7 +111,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
+        dialogue.innerHTML = `<p>You try to cast Protection From Evil, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
     } else
     {
@@ -206,7 +207,7 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You try to cast the spell, but the words won't come to your mind.</p>`;
+        dialogue.innerHTML = `<p>You try to cast Charm Person, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
     } else
     {
