@@ -791,7 +791,15 @@ export default class Character
 
     showMonsterAttackButton.onclick = function ()
     {
-      monster2.monsterAttack(monster1, monster2);
+      if (monster1.healthPoints <= 0)
+      {
+        console.log("Monster 2 attacking")
+        monster2.monsterAttack(monster1, monster2);
+      } else
+      {
+        console.log("Monster 1 attacking")
+        monster1.monsterAttack(monster1, monster2);
+      }
     };
   };
 
@@ -972,5 +980,18 @@ export default class Character
       );
     }
   };
+
+  confirmMonsterStatus(monster1, monster2)
+  {
+
+    if (monster1.status.includes("Sleep"))
+    {
+      let sleepDialogue = document.querySelector("#dialogue");
+
+      sleepDialogue.innerHTML += `
+            <p>Monster 1 is asleep.</p>`;
+    }
+
+  }
 
 }

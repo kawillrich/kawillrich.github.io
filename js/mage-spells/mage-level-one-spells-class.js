@@ -46,7 +46,7 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 magicMissile.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    this.reduceNumberOfUses();
+
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');

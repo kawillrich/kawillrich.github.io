@@ -118,11 +118,21 @@ export default class Monster
       arguments[0].healthPoints = arguments[0].healthPoints;
     }
 
-    monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
+    if (monsterOne.healthPoints <= 0)
+    {
+      console.log("Monster 2 attacking")
+      monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
+    } else
+    {
+      console.log("Monster 1 attacking")
+      monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
+    }
+
   }
 
   monstersTurn(monsterOne, monsterTwo, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter)
   {
+
     this.monsterName = monsterName;
     this.monsterDamage = monsterDamage;
     this.monsterHealthPoints = monsterHealthPoints;
@@ -131,11 +141,7 @@ export default class Monster
 
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
 
-    console.log(finalCharacter.armorClass);
-
     let charArmorClass = finalCharacter.armorClass;
-
-    console.log(charArmorClass);
 
     //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
 
@@ -160,6 +166,8 @@ export default class Monster
 
     let monstersAttackTurn = (monsterOne, monsterTwo) =>
     {
+
+
 
       let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
 
@@ -206,12 +214,7 @@ export default class Monster
         }
       }
     }
-
     checkMonsterHitRoll(monstersHitRollValue, charArmorClass, monsterHitRoll);
-
-
-
-
   }
 }
 

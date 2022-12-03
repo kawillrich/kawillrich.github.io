@@ -3552,7 +3552,7 @@ function beginTestChapter()
   var attackWolvesYes = document.querySelector("#attack-goblins");
   attackWolvesYes.addEventListener("click", () =>
   {
-    addingFightModule(bugBear, bugBear1, continueChapterSix);
+    addingFightModule(fireBeetle, bugBear, continueChapterSix);
     declareAttack();
   });
 }
