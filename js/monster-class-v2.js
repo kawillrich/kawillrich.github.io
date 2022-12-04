@@ -143,20 +143,24 @@ export default class Monster
       monsterTwo.healthPoints > 0) &&
       (monsterOne.status.includes('Charmed') === true ||
         monsterOne.status.includes('Sleep') === true ||
-        monsterOne.status.includes('Hold Person') === true) &&
+        monsterOne.status.includes('Hold Person') === true ||
+        monsterOne.status.includes('Blind') === true) &&
       (monsterTwo.status.includes('Charmed') != true ||
         monsterTwo.status.includes('Sleep') != true ||
-        monsterTwo.status.includes('Hold Person') != true))
+        monsterTwo.status.includes('Hold Person') != true ||
+        monsterTwo.status.includes('Blind') === true))
     {
       monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
     } else if ((monsterOne.healthPoints > 0 &&
       monsterTwo.healthPoints > 0) &&
       (monsterOne.status.includes('Charmed') != true ||
         monsterOne.status.includes('Sleep') != true ||
-        monsterOne.status.includes('Hold Person') != true) &&
+        monsterOne.status.includes('Hold Person') != true ||
+        monsterOne.status.includes('Blind') != true) &&
       (monsterTwo.status.includes('Charmed') === true ||
         monsterTwo.status.includes('Sleep') === true ||
-        monsterTwo.status.includes('Hold Person') === true))
+        monsterTwo.status.includes('Hold Person') === true ||
+        monsterTwo.status.includes('Blind') === true))
     {
       monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
     }
