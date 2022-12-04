@@ -107,6 +107,8 @@ export default class Monster
   {
     alert(`Monster(s) Turn!`);
 
+    //Determining what monster attacks first
+
     if (monsterTwo.healthPoints <= 0)
     {
       monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
@@ -164,7 +166,10 @@ export default class Monster
     {
       monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
     }
+
+    //ending determining what monster will attack first
   }
+
   monstersTurn(monsterOne, monsterTwo, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter)
   {
 
