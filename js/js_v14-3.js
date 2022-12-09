@@ -2932,7 +2932,7 @@ function castSpellFromList(e, m1, m2, nextChap)
 
         } else if (thisNodeInnerText === "Monster 2")
         {
-          secondLevel[i].castingEffect();
+          secondLevel[i].castingEffect(m2);
         }
 
       }
