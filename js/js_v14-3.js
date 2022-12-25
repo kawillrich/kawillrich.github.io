@@ -394,7 +394,7 @@ let ctx = canvas.getContext("2d");
 let CANVAS_WIDTH = (canvas.width = 0);
 let CANVAS_HEIGHT = (canvas.height = 0);
 const playerImage = new Image();
-playerImage.src = "images/character-spritesheet-20221218v2.svg"
+playerImage.src = "images/character-spritesheet-v5.svg"
 const spriteWidth = 64;
 const spriteHeight = 64;
 let frameX = 0;
