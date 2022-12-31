@@ -255,7 +255,8 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
                   </fieldset>   
               </div>`;
             }, 60000);
-        } else if (monster2.healthPoints > 0)
+        }
+        if (monster2.healthPoints > 0)
         {
             monster2.status.push('Charmed');
             let monster2Status = document.querySelector("#monster-two-status");
@@ -324,7 +325,8 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                   </fieldset>   
               </div>`;
             }, 60000);
-        } else if (monster2.healthPoints > 0)
+        }
+        if (monster2.healthPoints > 0)
         {
             monster2.status.push('Sleep');
             let monster2Status = document.querySelector("#monster-two-status");
