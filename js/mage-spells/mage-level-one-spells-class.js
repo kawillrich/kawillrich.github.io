@@ -232,10 +232,18 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
         toggleShowSpellList();
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
-        let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Charm Person on the monster(s).</p>`;
 
-        if (attackedMonster === "Monster 1" && monster1.healthPoints > 0)
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Charm Person on the ${attackedMonster}.</p>`;
+
+        if (attackedMonster === "Monster 1" && monster1.healthPoints <= 0)
+        {
+            dialogue.innerHTML = `<p>You cast Charm Person, but the spell had no effect.</p>`;
+
+        } else if (attackedMonster === "Monster 2" && monster2.healthPoints <= 0)
+        {
+            dialogue.innerHTML = `<p>You cast Charm Person, but the spell had no effect.</p>`;
+        } else if (attackedMonster === "Monster 1" && monster1.healthPoints > 0)
         {
             console.log("Charming Monster 1")
             monster1.status.push('Charmed');
