@@ -312,7 +312,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Sleep on the monster(s).</p>`;
+        dialogue.innerHTML = `<p>You cast Sleep spell, which affects a 40 foot area.</p>`;
 
         if (monster1.healthPoints > 0)
         {
