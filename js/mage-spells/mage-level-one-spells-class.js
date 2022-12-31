@@ -216,6 +216,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
 charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     console.log(attackedMonster);
+    console.log(monster1.name, monster2.name)
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
@@ -234,9 +235,9 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Charm Person on the monster(s).</p>`;
 
-        if (attackedMonster = "Monster 1" && monster1.healthPoints > 0)
-            console.log("charming monster 1")
+        if (attackedMonster === "Monster 1" && monster1.healthPoints > 0)
         {
+            console.log("Charming Monster 1")
             monster1.status.push('Charmed');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
@@ -257,11 +258,9 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
                   </fieldset>   
               </div>`;
             }, 60000);
-        }
-        if (attackedMonster = "Monster 2" && monster2.healthPoints > 0)
-            console.log("charming monster 1")
-
+        } else if (attackedMonster === "Monster 2" && monster2.healthPoints > 0)
         {
+            console.log("charming monster 2")
             monster2.status.push('Charmed');
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
