@@ -316,8 +316,10 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         let isSleeping = monster1.status.some((x) => x === "Sleep");
 
-        //checking if M1 is alive - need to check if HD < 4+1 to be affected
-        console.log(`Monster 1 sleeping?: ${isSleeping}`)
+        //checking if M1 is alive -
+        console.log(`Monster 1 sleeping?: ${isSleeping}`);
+        dialogue.innerHTML += `<p>${monster1.name} fell asleep.</p>`;
+
         if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && monster1.status && isSleeping === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleeping === false))
         {
             monster1.status.push('Sleep');
@@ -344,8 +346,9 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         //checking if M2 is alive - need to check if HD < 4+1 to be affected
 
-        if (monster2.healthPoints > 0)
+        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && monster2.status && isSleeping === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isSleeping === false))
         {
+            dialogue.innerHTML += `<p>${monster2.name} fell asleep.</p>`;
             monster2.status.push('Sleep');
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
@@ -357,7 +360,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                 updateM2Status.innerHTML = `
               <div class="monster" id="monster-two">
                   <fieldset class='monster-info-module'>
-                      <legend class='monster-dashboard'>Monster 1</legend>
+                      <legend class='monster-dashboard'>Monster 2</legend>
                       <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
                       <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
                       <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
