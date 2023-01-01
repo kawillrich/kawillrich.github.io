@@ -716,17 +716,29 @@ export default class Character
     let inflictedDamage = Math.ceil(
       Math.random(1) * damage
     );
+
     if (inflictedDamage <= 0)
     {
       inflictedDamage = 0;
     }
 
     let attackDialogue = document.querySelector("#dialogue");
+
     attackDialogue.innerHTML = `
-        <p>You cast ${spellName} on the ${monster2.name} and cause ${inflictedDamage} points of damage.</p>`;
+    <p>You cast ${spellName} on the ${monster2.name} and cause ${inflictedDamage} points of damage.</p>`;
+
+    console.log(monster2.healthPoints, monster2.name)
 
     //CHECKING ATTACK INTERACTION
-    if (monster2.healthPoints - inflictedDamage > 0)
+    if (monster2.healthPoints === 0 || monster2.healthPoints === " ")
+    {
+      let attackDialogue = document.querySelector("#dialogue");
+      attackDialogue.innerHTML = `
+        <p>You cast ${spellName}, but it had no effect.</p>`;
+      finalCharacter.greyOutAttackButtons(monster1, monster2);
+      // finalCharacter.confirmMonstersDead(monster1, monster2, continueNextChapter);
+    }
+    else if (monster2.healthPoints - inflictedDamage > 0)
     {
       monster2.healthPoints = monster2.healthPoints - inflictedDamage;
       let updatedMonsterHP = document.querySelector("#monster-two-hp");
