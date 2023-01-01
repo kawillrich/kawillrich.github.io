@@ -314,6 +314,8 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Sleep spell, which affects a 40 foot area.</p>`;
 
+        //checking if M1 is alive - need to check if HD < 4+1 to be affected
+
         if (monster1.healthPoints > 0)
         {
             monster1.status.push('Sleep');
@@ -337,6 +339,9 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
               </div>`;
             }, 60000);
         }
+
+        //checking if M2 is alive - need to check if HD < 4+1 to be affected
+
         if (monster2.healthPoints > 0)
         {
             monster2.status.push('Sleep');
