@@ -314,13 +314,15 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Sleep spell, which affects a 40 foot area.</p>`;
 
-        let isSleeping = monster1.status.some((x) => x === "Sleep");
+        let isSleepingM1 = monster1.status.some((x) => x === "Sleep");
+        let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
+
 
         //checking if M1 is alive -
-        console.log(`Monster 1 sleeping?: ${isSleeping}`);
+        console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
         dialogue.innerHTML += `<p>${monster1.name} fell asleep.</p>`;
 
-        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && monster1.status && isSleeping === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleeping === false))
+        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && monster1.status && isSleepingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleepingM1 === false))
         {
             monster1.status.push('Sleep');
             let monster1Status = document.querySelector("#monster-one-status");
@@ -346,7 +348,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         //checking if M2 is alive - need to check if HD < 4+1 to be affected
 
-        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && monster2.status && isSleeping === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isSleeping === false))
+        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && monster2.status && isSleepingM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isSleepingM2 === false))
         {
             dialogue.innerHTML += `<p>${monster2.name} fell asleep.</p>`;
             monster2.status.push('Sleep');
