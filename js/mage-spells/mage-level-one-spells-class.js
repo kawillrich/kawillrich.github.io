@@ -316,7 +316,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         //checking if M1 is alive - need to check if HD < 4+1 to be affected
 
-        if (monster1.healthPoints > 0)
+        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1))
         {
             monster1.status.push('Sleep');
             let monster1Status = document.querySelector("#monster-one-status");
