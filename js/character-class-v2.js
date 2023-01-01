@@ -660,7 +660,15 @@ export default class Character
         <p>You cast ${spellName} on the ${monster1.name} and cause ${inflictedDamage} points of damage.</p>`;
 
     //CHECKING ATTACK INTERACTION
-    if (monster1.healthPoints - inflictedDamage > 0)
+
+    if (monster1.healthPoints === 0 || monster1.healthPoints === " ")
+    {
+      let attackDialogue = document.querySelector("#dialogue");
+      attackDialogue.innerHTML = `
+      <p>You cast ${spellName}, but it had no effect.</p>`;
+      finalCharacter.greyOutAttackButtons(monster1, monster2);
+    }
+    else if (monster1.healthPoints - inflictedDamage > 0)
     {
       monster1.healthPoints = monster1.healthPoints - inflictedDamage;
       let updatedMonsterHP = document.querySelector("#monster-one-hp");
