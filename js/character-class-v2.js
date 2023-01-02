@@ -983,7 +983,7 @@ export default class Character
       finalCharacter.checkLevelUp();
 
       defeatedMonsters.innerHTML = `
-          <p>Congratulations, you defeated the monster(s)!</p>
+          <p>Congratulations, you won the battle!</p>
           <input type="submit" id="start-chapter-three-four" value="Continue">`;
 
       removeFightModule.innerHTML = ` `;

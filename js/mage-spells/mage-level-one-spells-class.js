@@ -20,12 +20,34 @@ export default class MageLevelOneSpells
         this.className = className;
         this.useBattle = useBattle;
         this.damage = 8;
+
     }
     castingSpell(monster1, monster2, continueNextChapter)
     {
         toggleShowSpellList();
 
         finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
+    }
+    setSpellTimeout(status, monster1, monster2, affectedMonster)
+    {
+        console.log('SETTING SPELL TIMEOUT')
+        // setTimeout(function ()
+        // {
+        //     let removeSleepM1 = monster1.status.filter((x) => "Sleep");
+        //     monster1.status.splice(removeSleepM1);
+        //     let updateM1Status = document.querySelector("#monster-one");
+        //     updateM1Status.innerHTML = `
+        //       <div class="monster" id="monster-one">
+        //           <fieldset class='monster-info-module'>
+        //               <legend class='monster-dashboard'>Monster 1</legend>
+        //               <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+        //               <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+        //               <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+        //               <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+        //               <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+        //           </fieldset>   
+        //       </div>`;
+        // }, 60000);
     }
 };
 //completed
@@ -249,23 +271,32 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
             monster1.status.push('Charmed');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
-            setTimeout(function ()
-            {
-                let removeCharmM1 = monster1.status.filter((x) => "Charmed");
-                monster1.status.splice(removeCharmM1);
-                let updateM1Status = document.querySelector("#monster-one");
-                updateM1Status.innerHTML = `
-              <div class="monster" id="monster-one">
-                  <fieldset class='monster-info-module'>
-                      <legend class='monster-dashboard'>Monster 1</legend>
-                      <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
-                      <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
-                      <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
-                      <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
-                      <h4 id="monster-one-status">Status: ${monster1.status}</h4>
-                  </fieldset>   
-              </div>`;
-            }, 60000);
+
+            // WORKING TO PULL SET TIMEOUT OUT OF SPELL CASTING AND MAKING IT'S OWN F(X)
+
+
+            this.setSpellTimeout(monster1, monster2, attackedMonster)
+
+            // (function ()
+            // {
+            //     let removeCharmM1 = monster1.status.filter((x) => "Charmed");
+            //     monster1.status.splice(removeCharmM1);
+            //     let updateM1Status = document.querySelector("#monster-one");
+            //     updateM1Status.innerHTML = `
+            //   <div class="monster" id="monster-one">
+            //       <fieldset class='monster-info-module'>
+            //           <legend class='monster-dashboard'>Monster 1</legend>
+            //           <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+            //           <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+            //           <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+            //           <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+            //           <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+            //       </fieldset>   
+            //   </div>`;
+            // }, 60000);
+
+            // WORKING TO PULL SET TIMEOUT OUT OF SPELL CASTING AND MAKING IT'S OWN F(X)
+
         } else if (attackedMonster === "Monster 2" && monster2.healthPoints > 0)
         {
             console.log("charming monster 2")
