@@ -345,9 +345,12 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                   </fieldset>   
               </div>`;
             }, 60000);
-        } else
+        } else if (monster1.healthPoints > 0)
         {
             dialogue.innerHTML += `<p>${monster1.name} is not affected.</p>`;
+
+        } else 
+        {
 
         }
 
@@ -376,9 +379,12 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                   </fieldset>   
               </div>`;
             }, 60000);
+        } else if (monster2.healthPoints > 0)
+        {
+            dialogue.innerHTML += `<p>${monster2.name} is not affected.</p>`;
+
         } else
         {
-            dialogue.innerHTML += `<p>${monster2.name} fell asleep.</p>`;
 
         }
     }
