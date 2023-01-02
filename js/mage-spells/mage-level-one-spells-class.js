@@ -28,9 +28,30 @@ export default class MageLevelOneSpells
 
         finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
     }
-    setSpellTimeout(status, monster1, monster2, affectedMonster)
+
+    cancelSpellTimeout(monster1, monster2, affectedMonster)
     {
-        console.log('SETTING SPELL TIMEOUT')
+
+    }
+
+    setSpellTimeout(monster1, monster2, affectedMonster)
+    {
+        console.log('SETTING SPELL TIMEOUT');
+        console.log(this.name);
+        let spellName = this.name
+        let spellTimeout = setTimeout(function ()
+        {
+            alert(`${spellName} has worn off.`);
+
+
+
+        }, 10000, spellName)
+        function initSpellTime(spellTimeout)
+        {
+
+        }
+
+
         // setTimeout(function ()
         // {
         //     let removeSleepM1 = monster1.status.filter((x) => "Sleep");
@@ -79,6 +100,9 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 magicMissile.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
+
+    //SETTING TIMEOUT TO TEST CANCELING AND PASSING TWO TIMEOUTS
+    this.setSpellTimeout(monster1, monster2, attackedMonster)
 
     if (this.numberOfUses <= 0)
     {
@@ -275,7 +299,7 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
             // WORKING TO PULL SET TIMEOUT OUT OF SPELL CASTING AND MAKING IT'S OWN F(X)
 
 
-            this.setSpellTimeout(monster1, monster2, attackedMonster)
+            this.setSpellTimeout(monster1, monster2, attackedMonster, this)
 
             // (function ()
             // {
