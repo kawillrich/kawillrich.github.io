@@ -320,10 +320,11 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         //checking if M1 is alive -
         console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
-        dialogue.innerHTML += `<p>${monster1.name} fell asleep.</p>`;
+
 
         if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && monster1.status && isSleepingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleepingM1 === false))
         {
+            dialogue.innerHTML += `<p>${monster1.name} fell asleep.</p>`;
             monster1.status.push('Sleep');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
@@ -344,6 +345,10 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                   </fieldset>   
               </div>`;
             }, 60000);
+        } else
+        {
+            dialogue.innerHTML += `<p>${monster1.name} is not affected.</p>`;
+
         }
 
         //checking if M2 is alive - need to check if HD < 4+1 to be affected
@@ -371,6 +376,10 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                   </fieldset>   
               </div>`;
             }, 60000);
+        } else
+        {
+            dialogue.innerHTML += `<p>${monster2.name} fell asleep.</p>`;
+
         }
     }
 }
