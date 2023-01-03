@@ -131,7 +131,7 @@ export default class Monster
         monsterTwo.status.includes('Blind') != true))
     {
       let randomMonsterAttack = Math.ceil(Math.random() * 2);
-      console.log(randomMonsterAttack)
+      // console.log(randomMonsterAttack)
       if (randomMonsterAttack === 2)
       {
         monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
@@ -235,9 +235,9 @@ export default class Monster
 
     let checkMonsterHitRoll = (monsterHitRollValue1, charArmorClass1, monsterHitRoll1) =>
     {
-      console.log("Monster's HitRoll: " + monsterHitRollValue1);
-      console.log("Player's Armor Class: " + charArmorClass1);
-      console.table(monsterHitRoll1);
+      // console.log("Monster's HitRoll: " + monsterHitRollValue1);
+      // console.log("Player's Armor Class: " + charArmorClass1);
+      // console.table(monsterHitRoll1);
       for (let i = 0; i < monsterHitRoll1.length; i++)
       {
         if (monsterHitRoll1[i][0] === charArmorClass1)
