@@ -9,7 +9,7 @@ export let mageLevelOneSpells = [];
 
 export default class MageLevelOneSpells
 {
-    constructor (name, level, range, duration, effect, castingEffect, className, useBattle, damage)
+    constructor (name, level, range, duration, effect, castingEffect, className, useBattle, damage, activeStatuses)
     {
         this.name = name;
         this.level = level;
@@ -20,6 +20,7 @@ export default class MageLevelOneSpells
         this.className = className;
         this.useBattle = useBattle;
         this.damage = 8;
+        this.activeStatuses = [];
 
     }
     castingSpell(monster1, monster2, continueNextChapter)
@@ -341,23 +342,33 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             monster1.status.push('Sleep');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
-            setTimeout(function ()
+
+            //need to make variable, push to an array, and then call the function expression
+
+
+
+            let charmTimer = setTimeout(function ()
             {
                 let removeSleepM1 = monster1.status.filter((x) => "Sleep");
-                monster1.status.splice(removeSleepM1);
+                monster1.status.splice(removeSleepM1); //removing sleep after function call
                 let updateM1Status = document.querySelector("#monster-one");
                 updateM1Status.innerHTML = `
-              <div class="monster" id="monster-one">
-                  <fieldset class='monster-info-module'>
-                      <legend class='monster-dashboard'>Monster 1</legend>
-                      <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
-                      <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
-                      <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
-                      <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
-                      <h4 id="monster-one-status">Status: ${monster1.status}</h4>
-                  </fieldset>   
-              </div>`;
-            }, 60000);
+                <div class="monster" id="monster-one">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 1</legend>
+                        <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                        <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                        <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+                        <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                        <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+                    </fieldset>   
+                </div>`;
+            }, 6000);
+
+            charmTimer();
+
+            //end of setTimeout
+
         } else if (monster1.healthPoints > 0)
         {
             dialogue.innerHTML += `<p>${monster1.name} is not affected.</p>`;
