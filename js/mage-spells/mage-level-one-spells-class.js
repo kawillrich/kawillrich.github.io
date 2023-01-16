@@ -346,7 +346,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
 
 
-            let charmTimer = setTimeout(function ()
+            let sleepTimer = setTimeout(function ()
             {
                 let removeSleepM1 = monster1.status.filter((x) => "Sleep");
                 monster1.status.splice(removeSleepM1); //removing sleep after function call
@@ -362,10 +362,11 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                         <h4 id="monster-one-status">Status: ${monster1.status}</h4>
                     </fieldset>   
                 </div>`;
+                console.log('sleep removed')
             }, 6000);
 
-            charmTimer();
-
+            finalCharacter.activeSpellStatuses.push(sleepTimer);
+            console.log(finalCharacter.activeSpellStatuses)
             //end of setTimeout
 
         } else if (monster1.healthPoints > 0)
