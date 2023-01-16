@@ -9,7 +9,7 @@ export let mageLevelOneSpells = [];
 
 export default class MageLevelOneSpells
 {
-    constructor (name, level, range, duration, effect, castingEffect, className, useBattle, damage, activeStatuses)
+    constructor (name, level, range, duration, effect, castingEffect, className, useBattle, damage)
     {
         this.name = name;
         this.level = level;
@@ -20,7 +20,6 @@ export default class MageLevelOneSpells
         this.className = className;
         this.useBattle = useBattle;
         this.damage = 8;
-        this.activeStatuses = [];
 
     }
     castingSpell(monster1, monster2, continueNextChapter)
