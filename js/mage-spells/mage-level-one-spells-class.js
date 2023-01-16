@@ -363,7 +363,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                     </fieldset>   
                 </div>`;
                 console.log('sleep removed')
-            }, 6000);
+            }, 30000);
 
             finalCharacter.activeSpellStatuses.push(sleepTimer);
             console.log(finalCharacter.activeSpellStatuses)

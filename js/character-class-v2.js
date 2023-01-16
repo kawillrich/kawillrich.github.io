@@ -991,6 +991,10 @@ export default class Character
 
       removeFightModule.innerHTML = ` `;
 
+
+      clearSpellTimeouts(finalCharacter.activeSpellStatuses);
+
+
       var startChapterThreeFour = document.querySelector(
         "#start-chapter-three-four"
       );
@@ -1013,6 +1017,16 @@ export default class Character
             <p>Monster 1 is asleep.</p>`;
     }
 
+  }
+
+  clearSpellTimeouts(spellTimeouts)
+  {
+    for (let spell in spellTimeouts)
+    {
+      console.log("clearing spell timouts: " + spell)
+      clearTimeout(spell);
+      delete spellTimeouts[spell]
+    }
   }
 
 }
