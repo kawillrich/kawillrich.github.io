@@ -992,7 +992,7 @@ export default class Character
       removeFightModule.innerHTML = ` `;
 
 
-      clearSpellTimeouts(finalCharacter.activeSpellStatuses);
+      finalCharacter.clearSpellTimeouts(finalCharacter.activeSpellStatuses);
 
 
       var startChapterThreeFour = document.querySelector(
