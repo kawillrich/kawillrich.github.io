@@ -1023,8 +1023,9 @@ export default class Character
   {
     for (let spell in spellTimeouts)
     {
+      console.log(finalCharacter.activeSpellStatuses);
       console.log("clearing spell timouts: " + spell)
-      clearTimeout(spell);
+      clearTimeout(spellTimeouts[spell]);
       delete spellTimeouts[spell]
     }
   }
