@@ -337,17 +337,6 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Sleep spell, which affects a 40 foot area.</p>`;
 
-        if (!monster1.status.includes("Sleep"))
-        {
-            monster1.status.push('Sleep');
-        }
-
-        if (!monster2.status.includes("Sleep"))
-        {
-            monster1.status.push('Sleep');
-
-        }
-
         let isSleepingM1 = monster1.status.some((x) => x === "Sleep");
         let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
 
