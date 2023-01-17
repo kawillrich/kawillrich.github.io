@@ -284,6 +284,7 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
             monster2.status.push('Charmed');
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+
             setTimeout(function ()
             {
                 let removeCharmM2 = monster2.status.filter((x) => "Charmed");
@@ -386,7 +387,8 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             monster2.status.push('Sleep');
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
-            setTimeout(function ()
+
+            let sleepTimer2 = setTimeout(function ()
             {
                 let removeSleepM2 = monster2.status.filter((x) => "Sleep");
                 monster2.status.splice(removeSleepM2);
@@ -402,7 +404,13 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                       <h4 id="monster-two-status">Status: ${monster2.status}</h4>
                   </fieldset>   
               </div>`;
-            }, 60000);
+                console.log('sleep removed m2')
+
+            }, 30000);
+
+            finalCharacter.activeSpellStatuses.push(sleepTimer2);
+            console.log(finalCharacter.activeSpellStatuses)
+
         } else if (monster2.healthPoints > 0)
         {
             dialogue.innerHTML += `<p>${monster2.name} is not affected.</p>`;
