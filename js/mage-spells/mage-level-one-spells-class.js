@@ -274,6 +274,8 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
                       <h4 id="monster-one-status">Status: ${monster1.status}</h4>
                   </fieldset>   
               </div>`;
+                console.log('charm removed m1')
+
             }, 60000);
 
             finalCharacter.activeSpellStatuses.push(charmTimer);
@@ -303,6 +305,8 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
                       <h4 id="monster-two-status">Status: ${monster2.status}</h4>
                   </fieldset>   
               </div>`;
+                console.log('charm removed m2')
+
             }, 60000);
 
             finalCharacter.activeSpellStatuses.push(charmTimer2);
@@ -368,7 +372,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                         <h4 id="monster-one-status">Status: ${monster1.status}</h4>
                     </fieldset>   
                 </div>`;
-                console.log('sleep removed')
+                console.log('sleep removed m1')
             }, 30000);
 
             finalCharacter.activeSpellStatuses.push(sleepTimer);
