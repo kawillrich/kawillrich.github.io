@@ -992,7 +992,12 @@ export default class Character
 
 
       finalCharacter.clearSpellTimeouts(finalCharacter.activeSpellStatuses);
+      monster1.status = [];
+      monster2.status = [];
 
+      $("#monster-one-status").text(monster1.status);
+
+      $("#monster-two-status").text(monster2.status);
 
       var startChapterThreeFour = document.querySelector(
         "#start-chapter-three-four"
