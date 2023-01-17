@@ -996,7 +996,6 @@ export default class Character
       monster2.status = [];
 
       $("#monster-one-status").text(monster1.status);
-
       $("#monster-two-status").text(monster2.status);
 
       var startChapterThreeFour = document.querySelector(

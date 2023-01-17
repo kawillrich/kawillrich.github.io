@@ -205,31 +205,44 @@ export default class Monster
 
 
     let monstersAttackTurn = (monsterOne, monsterTwo) =>
+
+    //update to reflect status effects here?
+
+
     {
+      console.log(monsterOne.status)
+      if (monsterOne.status.includes("Sleep"))
+      {
+        console.log("m1 sleeping")
+        let $sleepingDialogue = $("dialogue")
+        $sleepingDialogue.text(`${monsterOne.name} is asleep and cannot attack.`)
+      } else
+      {
 
+        //actual attack causing damage - maybe bypass depending on statuses
 
+        let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
 
-      let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
+        finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
+        alert(`The ${this.monsterName} attacks you and causes ${monsterRandomDamage} points of damage.`);
 
-      finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
-      alert(`The ${this.monsterName} attacks you and causes ${monsterRandomDamage} points of damage.`);
-
-      let updatedCharHP = document.querySelector("#char-hp");
-      updatedCharHP.innerHTML = `
+        let updatedCharHP = document.querySelector("#char-hp");
+        updatedCharHP.innerHTML = `
               <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span></span></h4> 
               `;
 
-      let clearDialogue = document.querySelector("#dialogue");
-      clearDialogue.textContent = ``;
+        let clearDialogue = document.querySelector("#dialogue");
+        clearDialogue.textContent = ``;
 
-      if (finalCharacter.specialty.healthPoints <= 0)
-      {
-        alert("You died!");
-        window.location.reload(false);
-      } else
-      {
-        revertToAttackButtons();
-        confirmAttackMonsters(monsterOne, monsterTwo);
+        if (finalCharacter.specialty.healthPoints <= 0)
+        {
+          alert("You died!");
+          window.location.reload(false);
+        } else
+        {
+          revertToAttackButtons();
+          confirmAttackMonsters(monsterOne, monsterTwo);
+        }
       }
     }
 

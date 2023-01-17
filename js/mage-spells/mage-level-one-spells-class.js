@@ -337,6 +337,16 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Sleep spell, which affects a 40 foot area.</p>`;
 
+        if (!monster1.status.includes("Sleep"))
+        {
+            monster1.status.push('Sleep');
+        }
+
+        if (!monster2.status.includes("Sleep"))
+        {
+            monster1.status.push('Sleep');
+        }
+
         let isSleepingM1 = monster1.status.some((x) => x === "Sleep");
         let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
 
@@ -345,10 +355,10 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
 
 
-        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && monster1.status && isSleepingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleepingM1 === false))
+        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1))
         {
             dialogue.innerHTML += `<p>${monster1.name} fell asleep.</p>`;
-            monster1.status.push('Sleep');
+            // monster1.status.push('Sleep');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
 
@@ -393,7 +403,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && monster2.status && isSleepingM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isSleepingM2 === false))
         {
             dialogue.innerHTML += `<p>${monster2.name} fell asleep.</p>`;
-            monster2.status.push('Sleep');
+            // monster2.status.push('Sleep');
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
 
