@@ -359,7 +359,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isSleepingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleepingM1 === false))
         {
             dialogue.innerHTML += `<p>${monster1.name} fell asleep.</p>`;
-            // monster1.status.push('Sleep');
+            monster1.status.push('Sleep');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
 
