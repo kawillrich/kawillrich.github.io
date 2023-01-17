@@ -258,7 +258,7 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
             // WORKING TO PULL SET TIMEOUT OUT OF SPELL CASTING AND MAKING IT'S OWN F(X)
 
 
-            setTimeout(function ()
+            let charmTimer = setTimeout(function ()
             {
                 let removeCharmM1 = monster1.status.filter((x) => "Charmed");
                 monster1.status.splice(removeCharmM1);
@@ -276,6 +276,8 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
               </div>`;
             }, 60000);
 
+            finalCharacter.activeSpellStatuses.push(charmTimer);
+            console.log(finalCharacter.activeSpellStatuses)
             // WORKING TO PULL SET TIMEOUT OUT OF SPELL CASTING AND MAKING IT'S OWN F(X)
 
         } else if (attackedMonster === "Monster 2" && monster2.healthPoints > 0)
@@ -285,7 +287,7 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
 
-            setTimeout(function ()
+            let charmTimer2 = setTimeout(function ()
             {
                 let removeCharmM2 = monster2.status.filter((x) => "Charmed");
                 monster2.status.splice(removeCharmM2);
@@ -302,6 +304,9 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
                   </fieldset>   
               </div>`;
             }, 60000);
+
+            finalCharacter.activeSpellStatuses.push(charmTimer2);
+            console.log(finalCharacter.activeSpellStatuses)
         }
 
     }
