@@ -205,12 +205,8 @@ export default class Monster
 
 
     let monstersAttackTurn = (monsterOne, monsterTwo) =>
-      console.log(monsterOne.status)
-    //update to reflect status effects here?
-
-
     {
-      console.log(monsterOne.status)
+
 
       if (monsterOne.status.includes("Sleep"))
       {
@@ -246,31 +242,36 @@ export default class Monster
           confirmAttackMonsters(monsterOne, monsterTwo);
         };
 
-        let checkMonsterHitRoll = (monsterHitRollValue1, charArmorClass1, monsterHitRoll1) =>
+
+
+      }
+
+
+
+    }
+    let checkMonsterHitRoll = (monsterHitRollValue1, charArmorClass1, monsterHitRoll1) =>
+    {
+      // console.log("Monster's HitRoll: " + monsterHitRollValue1);
+      // console.log("Player's Armor Class: " + charArmorClass1);
+      // console.table(monsterHitRoll1);
+      for (let i = 0; i < monsterHitRoll1.length; i++)
+      {
+        if (monsterHitRoll1[i][0] === charArmorClass1)
         {
-          // console.log("Monster's HitRoll: " + monsterHitRollValue1);
-          // console.log("Player's Armor Class: " + charArmorClass1);
-          // console.table(monsterHitRoll1);
-          for (let i = 0; i < monsterHitRoll1.length; i++)
+          if (monsterHitRollValue1 < monsterHitRoll1[i][1])
           {
-            if (monsterHitRoll1[i][0] === charArmorClass1)
-            {
-              if (monsterHitRollValue1 < monsterHitRoll1[i][1])
-              {
-                alert('Monster misses!');
-                revertToAttackButtons();
-                confirmAttackMonsters(monsterOne, monsterTwo);
-              } else
-              {
-                monstersAttackTurn(monsterOne, monsterTwo);
-              }
-            }
+            alert('Monster misses!');
+            revertToAttackButtons();
+            confirmAttackMonsters(monsterOne, monsterTwo);
+          } else
+          {
+            monstersAttackTurn(monsterOne, monsterTwo);
           }
         }
-        checkMonsterHitRoll(monstersHitRollValue, charArmorClass, monsterHitRoll);
       }
     }
 
+    checkMonsterHitRoll(monstersHitRollValue, charArmorClass, monsterHitRoll);
 
   }
 }
