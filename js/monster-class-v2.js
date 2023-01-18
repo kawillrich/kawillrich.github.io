@@ -206,8 +206,6 @@ export default class Monster
 
     let monstersAttackTurn = (monsterOne, monsterTwo) =>
     {
-
-
       if (monsterOne.status.includes("Sleep"))
       {
         console.log("m1 sleeping")
@@ -216,7 +214,6 @@ export default class Monster
         confirmAttackMonsters(monsterOne, monsterTwo);
       } else
       {
-
         //actual attack causing damage - maybe bypass depending on statuses
 
         let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
@@ -241,14 +238,9 @@ export default class Monster
           revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo);
         };
-
-
-
       }
-
-
-
     }
+
     let checkMonsterHitRoll = (monsterHitRollValue1, charArmorClass1, monsterHitRoll1) =>
     {
       // console.log("Monster's HitRoll: " + monsterHitRollValue1);
@@ -260,7 +252,7 @@ export default class Monster
         {
           if (monsterHitRollValue1 < monsterHitRoll1[i][1])
           {
-            alert('Monster misses!');
+            alert(`${monsterName} misses!`);
             revertToAttackButtons();
             confirmAttackMonsters(monsterOne, monsterTwo);
           } else
@@ -270,9 +262,7 @@ export default class Monster
         }
       }
     }
-
     checkMonsterHitRoll(monstersHitRollValue, charArmorClass, monsterHitRoll);
-
   }
 }
 

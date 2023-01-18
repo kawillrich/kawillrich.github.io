@@ -318,7 +318,6 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
 sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
@@ -337,14 +336,11 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Sleep spell, which affects a 40 foot area.</p>`;
 
-
         let isSleepingM1 = monster1.status.some((x) => x === "Sleep");
         let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
 
-
         //checking if M1 is alive -
         console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
-
 
         if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1))
         {
@@ -354,8 +350,6 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
 
             //need to make variable, push to an array, and then call the function expression
-
-
 
             let sleepTimer = setTimeout(function ()
             {
@@ -386,7 +380,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         } else 
         {
-
+            alert('NEED TO FIX CONDITIONAL LINE 383 MAGE-LEVEL-ONE-SPELLS-CLASS')
         }
 
         //checking if M2 is alive - need to check if HD < 4+1 to be affected
@@ -394,7 +388,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && monster2.status && isSleepingM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isSleepingM2 === false))
         {
             dialogue.innerHTML += `<p>${monster2.name} fell asleep.</p>`;
-            // monster2.status.push('Sleep');
+            monster2.status.push('Sleep');
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
 
@@ -427,6 +421,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         } else
         {
+            alert('NEED TO FIX CONDITIONAL LINE 424 MAGE-LEVEL-ONE-SPELLS-CLASS')
 
         }
     }
