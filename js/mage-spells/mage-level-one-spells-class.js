@@ -340,9 +340,9 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
 
         //checking if M1 is alive -
-        console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
+        // console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
 
-        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1))
+        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isSleepingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleepingM1 === false))
         {
             dialogue.innerHTML += `<p>${monster1.name} fell asleep.</p>`;
             monster1.status.push('Sleep');
@@ -385,7 +385,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         //checking if M2 is alive - need to check if HD < 4+1 to be affected
 
-        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && monster2.status && isSleepingM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isSleepingM2 === false))
+        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && isSleepingM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isSleepingM2 === false))
         {
             dialogue.innerHTML += `<p>${monster2.name} fell asleep.</p>`;
             monster2.status.push('Sleep');
@@ -398,16 +398,16 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
                 monster2.status.splice(removeSleepM2);
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
-              <div class="monster" id="monster-two">
-                  <fieldset class='monster-info-module'>
-                      <legend class='monster-dashboard'>Monster 2</legend>
-                      <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
-                      <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
-                      <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
-                      <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
-                      <h4 id="monster-two-status">Status: ${monster2.status}</h4>
-                  </fieldset>   
-              </div>`;
+                <div class="monster" id="monster-two">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 2</legend>
+                        <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                        <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                        <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
+                        <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
+                        <h4 id="monster-two-status">Status: ${monster2.status}</h4>
+                    </fieldset>   
+                </div>`;
                 console.log('sleep removed m2')
 
             }, 30000);
