@@ -326,6 +326,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
     } else
     {
         this.numberOfUses -= 1;
+
         if (this.numberOfUses <= 0)
         {
             this.numberOfUses = 0;
@@ -340,7 +341,9 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
 
         //checking if M1 is alive -
-        // console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
+        console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
+        console.log(`Monster 2 sleeping?: ${isSleepingM2}`);
+
 
         if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isSleepingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleepingM1 === false))
         {
@@ -421,6 +424,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         } else
         {
+            //TRIGGERS WHEN FIRST BATTLE WITH ONLY ONE MONSTER STARTS
             alert('NEED TO FIX CONDITIONAL LINE 424 MAGE-LEVEL-ONE-SPELLS-CLASS')
 
         }
