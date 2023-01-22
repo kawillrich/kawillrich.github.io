@@ -106,7 +106,6 @@ export default class Monster
   monsterAttack(monsterOne, monsterTwo)
   {
     alert(`Monster(s) Turn!`);
-
     //Determining what monster attacks first
 
     if (monsterTwo.healthPoints <= 0)
@@ -138,74 +137,32 @@ export default class Monster
 
   monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter)
   {
-
-    this.monsterName = monsterName;
-    this.monsterDamage = monsterDamage;
-    this.monsterHealthPoints = monsterHealthPoints;
-    this.monsterHitRoll = monsterHitRoll;
-    this.finalCharacter = finalCharacter;
+    console.log(monsterName);
 
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
-
     let charArmorClass = finalCharacter.armorClass;
 
-    //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
-    //END REVERTING CODE
-
-    let monstersAttackTurn = (thisMonster, otherMonster) =>
+    console.log("monsterAttackTurn", thisMonster)
+    if (thisMonster.status.includes("Sleep"))
     {
-      if (thisMonster.status.includes("Sleep"))
+      console.log(`${thisMonster.status} thisMonster is asleep`)
+      this.sleepSpellReaction(thisMonster, otherMonster)
+    } else
+    {
+      this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll);
+
+      //actual attack causing damage - maybe bypass depending on statuses
+
+      if (finalCharacter.specialty.healthPoints <= 0)
       {
-        console.log(`${thisMonster.status} thisMonster is asleep`)
-        this.sleepSpellReaction(thisMonster, otherMonster)
+        alert("You died!");
+        window.location.reload(false);
       } else
       {
-        //actual attack causing damage - maybe bypass depending on statuses
-        console.log(`${thisMonster.status} thisMonster is NOT asleep`)
-        let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
-
-        finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
-        alert(`The ${this.monsterName} attacks you and causes ${monsterRandomDamage} points of damage.`);
-
-        let updatedCharHP = document.querySelector("#char-hp");
-        updatedCharHP.innerHTML = `
-              <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span></span></h4> 
-              `;
-
-        let clearDialogue = document.querySelector("#dialogue");
-        clearDialogue.textContent = ``;
-
-        if (finalCharacter.specialty.healthPoints <= 0)
-        {
-          alert("You died!");
-          window.location.reload(false);
-        } else
-        {
-          this.revertToAttackButtons();
-          confirmAttackMonsters(thisMonster, otherMonster);
-        };
-      }
+        this.revertToAttackButtons();
+        confirmAttackMonsters(thisMonster, otherMonster);
+      };
     }
-
-    let checkMonsterHitRoll = (monsterHitRollValue1, charArmorClass1, monsterHitRoll1) =>
-    {
-      for (let i = 0; i < monsterHitRoll1.length; i++)
-      {
-        if (monsterHitRoll1[i][0] === charArmorClass1)
-        {
-          if (monsterHitRollValue1 < monsterHitRoll1[i][1])
-          {
-            alert(`${monsterName} misses!`);
-            this.revertToAttackButtons();
-            confirmAttackMonsters(thisMonster, otherMonster);
-          } else
-          {
-            monstersAttackTurn(thisMonster, otherMonster);
-          }
-        }
-      }
-    }
-    checkMonsterHitRoll(monstersHitRollValue, charArmorClass, monsterHitRoll);
   }
 
   sleepSpellReaction(thisMonster, otherMonster)
@@ -230,6 +187,43 @@ export default class Monster
       document.querySelector("#monster-attack");
     hideMonsterAttackButton.classList.add("hidden");
   };
+
+  checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1) 
+  {
+    console.log("Checking Monster HitRoll", monsterHitRollValue1)
+    for (let i = 0; i < monsterHitRoll1.length; i++)
+    {
+      if (monsterHitRoll1[i][0] === charArmorClass1)
+      {
+        if (monsterHitRollValue1 < monsterHitRoll1[i][1])
+        {
+          alert(`${thisMonster.name} misses!`);
+          this.revertToAttackButtons();
+          confirmAttackMonsters(thisMonster, otherMonster);
+        } else
+        {
+          console.log(`${thisMonster.status} thisMonster is NOT asleep`)
+          let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
+
+          finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
+          alert(`The ${thisMonster.name} attacks you and causes ${monsterRandomDamage} points of damage.`);
+
+          let updatedCharHP = document.querySelector("#char-hp");
+          updatedCharHP.innerHTML = `
+              <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span></span></h4> 
+              `;
+
+          let clearDialogue = document.querySelector("#dialogue");
+          clearDialogue.textContent = ``;
+          // this.monstersTurn(thisMonster, otherMonster, thisMonster.name, this.monsterDamage, this.monsterHealthPoints, this.monsterHitRoll, finalCharacter, this.monstersHitRollValue, finalCharacter.armorClass);
+          this.revertToAttackButtons();
+          confirmAttackMonsters(thisMonster, otherMonster);
+
+
+        }
+      }
+    }
+  }
 }
 
 //initializing monsters
