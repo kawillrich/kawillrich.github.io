@@ -142,9 +142,7 @@ export default class Monster
 
 
     {
-      console.log("Firing first ")
       let randomMonsterAttack = Math.ceil(Math.random() * 2);
-      // console.log(randomMonsterAttack)
       if (randomMonsterAttack === 2)
       {
         let affectedMonster = monsterTwo;
@@ -248,9 +246,7 @@ export default class Monster
 
     let checkMonsterHitRoll = (monsterHitRollValue1, charArmorClass1, monsterHitRoll1) =>
     {
-      // console.log("Monster's HitRoll: " + monsterHitRollValue1);
-      // console.log("Player's Armor Class: " + charArmorClass1);
-      // console.table(monsterHitRoll1);
+
       for (let i = 0; i < monsterHitRoll1.length; i++)
       {
         if (monsterHitRoll1[i][0] === charArmorClass1)
@@ -272,7 +268,6 @@ export default class Monster
 
   sleepSpellReaction(thisMonster, otherMonster)
   {
-    console.log("m1 sleeping")
     $("#dialogue").text(`${thisMonster.name} is asleep and cannot attack.`);
     this.revertToAttackButtons();
     confirmAttackMonsters(thisMonster, otherMonster);
