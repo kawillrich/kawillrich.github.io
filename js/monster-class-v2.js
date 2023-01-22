@@ -111,12 +111,15 @@ export default class Monster
 
     if (monsterTwo.healthPoints <= 0)
     {
-      monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
+      let attackingMonster = monsterOne;
+      monsterOne.monstersTurn(attackingMonster, monsterTwo, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter);
     }
     else if (monsterOne.healthPoints <= 0 &&
+
       monsterTwo.healthPoints > 0)
     {
-      monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
+      let attackingMonster = monsterTwo;
+      monsterTwo.monstersTurn(attackingMonster, monsterOne, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter);
     }
     else
     //COMMENTING OUT AND MOVING TO MONSTERSTURN FX
@@ -144,10 +147,12 @@ export default class Monster
       // console.log(randomMonsterAttack)
       if (randomMonsterAttack === 2)
       {
-        monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
+        let affectedMonster = monsterTwo;
+        monsterTwo.monstersTurn(affectedMonster, monsterOne, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter);
       } else if (randomMonsterAttack <= 1)
       {
-        monsterOne.monstersTurn(monsterOne, monsterTwo, monsterOne.name, monsterOne.damage, monsterOne.healthPoints, monsterOne.hitRoll, finalCharacter);
+        let affectedMonster = monsterOne;
+        monsterOne.monstersTurn(affectedMonster, monsterTwo, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter);
 
       }
     }
@@ -184,7 +189,7 @@ export default class Monster
     //ending determining what monster will attack first
   }
 
-  monstersTurn(monsterOne, monsterTwo, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter)
+  monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter)
   {
 
     this.monsterName = monsterName;
@@ -199,37 +204,19 @@ export default class Monster
 
     //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
 
-    let revertToAttackButtons = function ()
-    {
-      let showAttackButtons = document.querySelectorAll(".attack");
-      for (let showAttackButton of showAttackButtons)
-      {
-        showAttackButton.classList.remove("hidden");
-      };
 
-      let spellAttackButton = document.querySelector(".attack-spell");
-      spellAttackButton.classList.remove("hidden");
-
-      let hideMonsterAttackButton =
-        document.querySelector("#monster-attack");
-      hideMonsterAttackButton.classList.add("hidden");
-
-    };
     //END REVERTING CODE
 
 
 
-    let monstersAttackTurn = (monsterOne, monsterTwo) =>
+    let monstersAttackTurn = (thisMonster, otherMonster) =>
     {
 
 
 
-      if (monsterOne.status.includes("Sleep"))
+      if (thisMonster.status.includes("Sleep"))
       {
-        console.log("m1 sleeping")
-        $("#dialogue").text(`${monsterOne.name} is asleep and cannot attack.`);
-        revertToAttackButtons();
-        confirmAttackMonsters(monsterOne, monsterTwo);
+        this.sleepSpellReaction(thisMonster, otherMonster)
       } else
       {
         //actual attack causing damage - maybe bypass depending on statuses
@@ -253,8 +240,8 @@ export default class Monster
           window.location.reload(false);
         } else
         {
-          revertToAttackButtons();
-          confirmAttackMonsters(monsterOne, monsterTwo);
+          this.revertToAttackButtons();
+          confirmAttackMonsters(thisMonster, otherMonster);
         };
       }
     }
@@ -271,17 +258,44 @@ export default class Monster
           if (monsterHitRollValue1 < monsterHitRoll1[i][1])
           {
             alert(`${monsterName} misses!`);
-            revertToAttackButtons();
-            confirmAttackMonsters(monsterOne, monsterTwo);
+            this.revertToAttackButtons();
+            confirmAttackMonsters(thisMonster, otherMonster);
           } else
           {
-            monstersAttackTurn(monsterOne, monsterTwo);
+            monstersAttackTurn(thisMonster, otherMonster);
           }
         }
       }
     }
     checkMonsterHitRoll(monstersHitRollValue, charArmorClass, monsterHitRoll);
   }
+
+  sleepSpellReaction(thisMonster, otherMonster)
+  {
+    console.log("m1 sleeping")
+    $("#dialogue").text(`${thisMonster.name} is asleep and cannot attack.`);
+    this.revertToAttackButtons();
+    confirmAttackMonsters(thisMonster, otherMonster);
+  }
+
+  revertToAttackButtons()
+  {
+    let showAttackButtons = document.querySelectorAll(".attack");
+    for (let showAttackButton of showAttackButtons)
+    {
+      showAttackButton.classList.remove("hidden");
+    };
+
+    let spellAttackButton = document.querySelector(".attack-spell");
+    spellAttackButton.classList.remove("hidden");
+
+    let hideMonsterAttackButton =
+      document.querySelector("#monster-attack");
+    hideMonsterAttackButton.classList.add("hidden");
+
+  };
+
+
 }
 
 //initializing monsters
