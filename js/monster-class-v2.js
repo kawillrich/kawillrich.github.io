@@ -122,25 +122,6 @@ export default class Monster
       monsterTwo.monstersTurn(attackingMonster, monsterOne, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter);
     }
     else
-    //COMMENTING OUT AND MOVING TO MONSTERSTURN FX
-
-    // if ((
-
-    //   //NEED TO FIX THIS CONDITIONAL TO MAKE IT EASIER TO PROCESS
-
-
-    //   monsterOne.healthPoints > 0 &&
-    //   monsterTwo.healthPoints > 0) &&
-    //   (monsterOne.status.includes('Charmed') != true ||
-    //     monsterOne.status.includes('Sleep') != true ||
-    //     monsterOne.status.includes('Hold Person') != true ||
-    //     monsterOne.status.includes('Blind') != true) &&
-    //   (monsterTwo.status.includes('Charmed') != true ||
-    //     monsterTwo.status.includes('Sleep') != true ||
-    //     monsterTwo.status.includes('Hold Person') != true ||
-    //     monsterTwo.status.includes('Blind') != true))
-
-
     {
       let randomMonsterAttack = Math.ceil(Math.random() * 2);
       if (randomMonsterAttack === 2)
@@ -151,40 +132,8 @@ export default class Monster
       {
         let affectedMonster = monsterOne;
         monsterOne.monstersTurn(affectedMonster, monsterTwo, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter);
-
       }
     }
-
-    //COMMENTING OUT AND MOVING TO MONSTERSTURN FX
-
-    // else if ((
-    //   monsterOne.healthPoints > 0 &&
-    //   monsterTwo.healthPoints > 0) &&
-    //   (monsterOne.status.includes('Charmed') === true ||
-    //     monsterOne.status.includes('Sleep') === true ||
-    //     monsterOne.status.includes('Hold Person') === true ||
-    //     monsterOne.status.includes('Blind') === true) &&
-    //   (monsterTwo.status.includes('Charmed') != true ||
-    //     monsterTwo.status.includes('Sleep') != true ||
-    //     monsterTwo.status.includes('Hold Person') != true ||
-    //     monsterTwo.status.includes('Blind') === true))
-    // {
-    //   monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
-    // } else if ((monsterOne.healthPoints > 0 &&
-    //   monsterTwo.healthPoints > 0) &&
-    //   (monsterOne.status.includes('Charmed') != true ||
-    //     monsterOne.status.includes('Sleep') != true ||
-    //     monsterOne.status.includes('Hold Person') != true ||
-    //     monsterOne.status.includes('Blind') != true) &&
-    //   (monsterTwo.status.includes('Charmed') === true ||
-    //     monsterTwo.status.includes('Sleep') === true ||
-    //     monsterTwo.status.includes('Hold Person') === true ||
-    //     monsterTwo.status.includes('Blind') === true))
-    // {
-    //   monsterTwo.monstersTurn(monsterOne, monsterTwo, monsterTwo.name, monsterTwo.damage, monsterTwo.healthPoints, monsterTwo.hitRoll, finalCharacter);
-    // }
-
-    //ending determining what monster will attack first
   }
 
   monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter)
@@ -201,17 +150,10 @@ export default class Monster
     let charArmorClass = finalCharacter.armorClass;
 
     //REVERT THE MONSTER(S) TURN BUTTON TO 'HIDDEN' AND PLAYER ATTACK BUTTONS TO VISIBLE
-
-
     //END REVERTING CODE
-
-
 
     let monstersAttackTurn = (thisMonster, otherMonster) =>
     {
-
-
-
       if (thisMonster.status.includes("Sleep"))
       {
         this.sleepSpellReaction(thisMonster, otherMonster)
@@ -246,7 +188,6 @@ export default class Monster
 
     let checkMonsterHitRoll = (monsterHitRollValue1, charArmorClass1, monsterHitRoll1) =>
     {
-
       for (let i = 0; i < monsterHitRoll1.length; i++)
       {
         if (monsterHitRoll1[i][0] === charArmorClass1)
@@ -287,11 +228,7 @@ export default class Monster
     let hideMonsterAttackButton =
       document.querySelector("#monster-attack");
     hideMonsterAttackButton.classList.add("hidden");
-
   };
-
-
-
 }
 
 //initializing monsters
