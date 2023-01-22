@@ -111,14 +111,14 @@ export default class Monster
     if (monsterTwo.healthPoints <= 0)
     {
       let attackingMonster = monsterOne;
-      monsterOne.monstersTurn(attackingMonster, monsterTwo, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter);
+      monsterOne.monstersTurn(attackingMonster, monsterTwo, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
     }
     else if (monsterOne.healthPoints <= 0 &&
 
       monsterTwo.healthPoints > 0)
     {
       let attackingMonster = monsterTwo;
-      monsterTwo.monstersTurn(attackingMonster, monsterOne, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter);
+      monsterTwo.monstersTurn(attackingMonster, monsterOne, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
     }
     else
     {
@@ -126,16 +126,16 @@ export default class Monster
       if (randomMonsterAttack === 2)
       {
         let affectedMonster = monsterTwo;
-        monsterTwo.monstersTurn(affectedMonster, monsterOne, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter);
+        monsterTwo.monstersTurn(affectedMonster, monsterOne, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
       } else if (randomMonsterAttack <= 1)
       {
         let affectedMonster = monsterOne;
-        monsterOne.monstersTurn(affectedMonster, monsterTwo, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter);
+        monsterOne.monstersTurn(affectedMonster, monsterTwo, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
       }
     }
   }
 
-  monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter)
+  monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter, monsterOne, monsterTwo)
   {
     console.log(monsterName);
 
@@ -149,7 +149,7 @@ export default class Monster
       this.sleepSpellReaction(thisMonster, otherMonster)
     } else
     {
-      this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll);
+      this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo);
 
       //actual attack causing damage - maybe bypass depending on statuses
 
@@ -159,17 +159,18 @@ export default class Monster
         window.location.reload(false);
       } else
       {
+        console.log("monstersTurn", monsterOne, monsterTwo)
         this.revertToAttackButtons();
-        confirmAttackMonsters(thisMonster, otherMonster);
+        confirmAttackMonsters(monsterOne, monsterTwo);
       };
     }
   }
 
-  sleepSpellReaction(thisMonster, otherMonster)
+  sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
     $("#dialogue").text(`${thisMonster.name} is asleep and cannot attack.`);
     this.revertToAttackButtons();
-    confirmAttackMonsters(thisMonster, otherMonster);
+    confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
   revertToAttackButtons()
@@ -188,7 +189,7 @@ export default class Monster
     hideMonsterAttackButton.classList.add("hidden");
   };
 
-  checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1) 
+  checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1, monsterOne, monsterTwo) 
   {
     console.log("Checking Monster HitRoll", monsterHitRollValue1)
     for (let i = 0; i < monsterHitRoll1.length; i++)
@@ -199,7 +200,7 @@ export default class Monster
         {
           alert(`${thisMonster.name} misses!`);
           this.revertToAttackButtons();
-          confirmAttackMonsters(thisMonster, otherMonster);
+          confirmAttackMonsters(monsterOne, monsterTwo);
         } else
         {
           console.log(`${thisMonster.status} thisMonster is NOT asleep`)
@@ -217,7 +218,7 @@ export default class Monster
           clearDialogue.textContent = ``;
           // this.monstersTurn(thisMonster, otherMonster, thisMonster.name, this.monsterDamage, this.monsterHealthPoints, this.monsterHitRoll, finalCharacter, this.monstersHitRollValue, finalCharacter.armorClass);
           this.revertToAttackButtons();
-          confirmAttackMonsters(thisMonster, otherMonster);
+          confirmAttackMonsters(monsterOne, monsterTwo);
 
 
         }
