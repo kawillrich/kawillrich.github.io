@@ -296,6 +296,7 @@ export default class Monster
   };
 
 
+
 }
 
 //initializing monsters
