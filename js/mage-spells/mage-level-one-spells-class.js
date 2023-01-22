@@ -374,7 +374,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         } else 
         {
-            alert('NEED TO FIX CONDITIONAL LINE 383 MAGE-LEVEL-ONE-SPELLS-CLASS')
+            // alert('NEED TO FIX CONDITIONAL LINE 377 MAGE-LEVEL-ONE-SPELLS-CLASS')
         }
 
         //checking if M2 is alive - need to check if HD < 4+1 to be affected
@@ -415,8 +415,8 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         } else
         {
-            //TRIGGERS WHEN FIRST BATTLE WITH ONLY ONE MONSTER STARTS
-            alert('NEED TO FIX CONDITIONAL LINE 424 MAGE-LEVEL-ONE-SPELLS-CLASS')
+            // //TRIGGERS WHEN FIRST BATTLE WITH ONLY ONE MONSTER STARTS
+            // alert('NEED TO FIX CONDITIONAL LINE 419 MAGE-LEVEL-ONE-SPELLS-CLASS')
 
         }
     }
