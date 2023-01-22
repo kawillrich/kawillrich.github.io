@@ -78,7 +78,6 @@ magicMissile.castSpell = function (monster1, monster2, continueNextChapter, atta
             this.numberOfUses = 0;
         }
 
-        console.log(this.numberOfUses)
 
         if (attackedMonster === "Monster 1")
         {
@@ -113,12 +112,9 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
         dialogue.innerHTML = `<p>You cast Shield and reduce your Armor Class to 4</p>`;
         let oldAC = finalCharacter.armorClass;
         finalCharacter.armorClass = 4;
-        console.log(oldAC)
-        console.log(finalCharacter.armorClass)
         setTimeout(function ()
         {
             finalCharacter.armorClass = oldAC;
-            console.log("Old AC: " + oldAC, "Armor Class: " + finalCharacter.armorClass)
         }, 1200000);
     }
 }
@@ -190,7 +186,6 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                             <h4 id="monster-one-status">Status: ${monster2.status.join(', ')}</h4>
                         </fieldset>   
                     </div>`;
-                console.log(monster2.status)
             }, 60000);
         }
 
@@ -214,7 +209,6 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                       <h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>
                   </fieldset>   
               </div>`;
-            console.log(monster1.status);
         }, 60000);
     }
 }
@@ -274,7 +268,6 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
                       <h4 id="monster-one-status">Status: ${monster1.status}</h4>
                   </fieldset>   
               </div>`;
-                console.log('charm removed m1')
 
             }, 60000);
 
@@ -341,8 +334,6 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
 
         //checking if M1 is alive -
-        console.log(`Monster 1 sleeping?: ${isSleepingM1}`);
-        console.log(`Monster 2 sleeping?: ${isSleepingM2}`);
 
 
         if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isSleepingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleepingM1 === false))

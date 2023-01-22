@@ -156,11 +156,12 @@ export default class Monster
     {
       if (thisMonster.status.includes("Sleep"))
       {
+        console.log(`${thisMonster.status} thisMonster is asleep`)
         this.sleepSpellReaction(thisMonster, otherMonster)
       } else
       {
         //actual attack causing damage - maybe bypass depending on statuses
-
+        console.log(`${thisMonster.status} thisMonster is NOT asleep`)
         let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
 
         finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
