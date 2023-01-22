@@ -810,6 +810,7 @@ export default class Character
       } else
       {
         monster1.monsterAttack(monster1, monster2);
+        console.log(monster1.name, monster2.name)
       }
     };
   };

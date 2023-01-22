@@ -105,6 +105,7 @@ export default class Monster
 
   monsterAttack(monsterOne, monsterTwo)
   {
+    console.log(monsterOne.name, monsterTwo.name)
     alert(`Monster(s) Turn!`);
     //Determining what monster attacks first
 
@@ -137,16 +138,15 @@ export default class Monster
 
   monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter, monsterOne, monsterTwo)
   {
-    console.log(monsterName);
+    console.log(monsterName, monsterOne, monsterTwo);
 
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
     let charArmorClass = finalCharacter.armorClass;
 
-    console.log("monsterAttackTurn", thisMonster)
     if (thisMonster.status.includes("Sleep"))
     {
       console.log(`${thisMonster.status} thisMonster is asleep`)
-      this.sleepSpellReaction(thisMonster, otherMonster)
+      this.sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
     } else
     {
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo);
