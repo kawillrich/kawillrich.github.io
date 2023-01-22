@@ -507,9 +507,6 @@ export default class Character
 
     let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) =>
     {
-      console.log("Player's HitRoll: " + playerHitRollValue1);
-      console.log("Monster's Armor Class: " + monsterArmorClass1);
-      console.table(playerHitRoll1);
       for (let i = 0; i < playerHitRoll1.length; i++)
       {
         if (playerHitRoll1[i][0] === monsterArmorClass1)
@@ -622,14 +619,10 @@ export default class Character
 
     let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) =>
     {
-      console.log("Player's HitRoll: " + playerHitRollValue1);
-      console.log("Monster's Armor Class: " + monsterArmorClass1);
-      console.table(playerHitRoll1);
       for (let i = 0; i < playerHitRoll1.length; i++)
       {
         if (playerHitRoll1[i][0] === monsterArmorClass1)
         {
-          console.log("Player's AC:" + playerHitRoll1[i][1]);
           if (playerHitRollValue1 < playerHitRoll1[i][1])
           {
             alert('Player misses!');
@@ -720,7 +713,6 @@ export default class Character
 
   spell2AttackMonster2(monster1, monster2, continueNextChapter, damage, spellName)
   {
-    console.log(monster2);
     let self = this;
 
     let inflictedDamage = Math.ceil(
@@ -737,7 +729,6 @@ export default class Character
     attackDialogue.innerHTML = `
     <p>You cast ${spellName} on the ${monster2.name} and cause ${inflictedDamage} points of damage.</p>`;
 
-    console.log(monster2.healthPoints, monster2.name)
 
     //CHECKING ATTACK INTERACTION
     if (monster2.healthPoints === 0 || monster2.healthPoints === " ")
