@@ -448,6 +448,9 @@ export default class Character
               `;
 
         //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+        monster1.status.splice(monster1.status.indexOf('Sleep'), 1);
+        let monster1Status = document.querySelector("#monster-one-status");
+        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
         finalCharacter.greyOutAttackButtons(monster1, monster2);
       }
 
@@ -590,8 +593,11 @@ export default class Character
         updatedMonsterHP.innerHTML = `
               <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
               `;
-
+        let monster2Status = document.querySelector("#monster-two-status");
+        monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
         //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+        monster2.status.splice(monster2.status.indexOf('Sleep'), 1);
+
         finalCharacter.greyOutAttackButtons(monster1, monster2);
       }
 
