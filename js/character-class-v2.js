@@ -427,8 +427,19 @@ export default class Character
         <p>You attack the ${monster1.name} with your ${finalCharacter.weapon.name} and cause ${inflictedDamage} points of damage.</p>
       `;
 
+      if (monster1.status.includes('Sleep') && finalCharacter.weapon.attackType === "Edged")
+      {
+        monster1.healthPoints = 0;
+        alert(`The ${monster1.name} was asleep, and was killed instantly with your attack.`);
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let updatedMonsterHP = document.querySelector("#monster-one-hp");
+        updatedMonsterHP.innerHTML = `
+              <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+              `;
+      }
+
       //CHECKING ATTACK INTERACTION
-      if (monster1.healthPoints - inflictedDamage > 0)
+      else if (monster1.healthPoints - inflictedDamage > 0)
       {
         monster1.healthPoints = monster1.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-one-hp");
@@ -545,6 +556,17 @@ export default class Character
           <p>You attack the ${monster2.name} with your ${finalCharacter.weapon.name} and cause ${inflictedDamage} points of damage.</p>`;
 
       //CHECKING ATTACK INTERACTION
+
+      if (monster2.status.includes('Sleep') && finalCharacter.weapon.attackType === "Edged")
+      {
+        monster2.healthPoints = 0;
+        alert(`The ${monster2.name} was asleep, and was killed instantly with your attack.`);
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let updatedMonsterHP = document.querySelector("#monster-two-hp");
+        updatedMonsterHP.innerHTML = `
+              <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+              `;
+      }
       if (monster2.healthPoints - inflictedDamage > 0)
       {
         monster2.healthPoints = monster2.healthPoints - inflictedDamage;
