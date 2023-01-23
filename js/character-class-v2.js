@@ -438,6 +438,20 @@ export default class Character
               `;
       }
 
+      else if (monster1.status.includes('Sleep') && finalCharacter.weapon.attackType !== "Edged")
+      {
+        alert(`The ${monster1.name} was asleep, but woke up after being struck by your ${finalCharacter.weapon.name}`);
+        monster1.healthPoints = monster1.healthPoints - inflictedDamage;
+        let updatedMonsterHP = document.querySelector("#monster-one-hp");
+        updatedMonsterHP.innerHTML = `
+              <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+              `;
+
+        //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+      }
+
+
       //CHECKING ATTACK INTERACTION
       else if (monster1.healthPoints - inflictedDamage > 0)
       {
@@ -567,7 +581,21 @@ export default class Character
               <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
               `;
       }
-      if (monster2.healthPoints - inflictedDamage > 0)
+
+      else if (monster2.status.includes('Sleep') && finalCharacter.weapon.attackType !== "Edged")
+      {
+        alert(`The ${monster2.name} was asleep, but woke up after being struck by your ${finalCharacter.weapon.name}`);
+        monster2.healthPoints = monster2.healthPoints - inflictedDamage;
+        let updatedMonsterHP = document.querySelector("#monster-two-hp");
+        updatedMonsterHP.innerHTML = `
+              <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+              `;
+
+        //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+      }
+
+      else if (monster2.healthPoints - inflictedDamage > 0)
       {
         monster2.healthPoints = monster2.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-two-hp");
