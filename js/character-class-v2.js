@@ -5,6 +5,7 @@ import
   finalCharacter,
   continueChapterThreeFour,
   render,
+  animate,
 } from "./js_v14-3.js";
 import Weapon from "./weapon-class-v2.js";
 import
@@ -419,7 +420,6 @@ export default class Character
   weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter)
   {
     let self = this;
-
     let hitRollSucceed = function (enemy1, finalCharacter)
     {
       let attackDialogue = document.querySelector("#dialogue");
