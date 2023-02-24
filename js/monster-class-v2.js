@@ -150,8 +150,12 @@ export default class Monster
       console.log(`${thisMonster.status} thisMonster is asleep`)
       this.sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
       //otherwise
-    } else
+    } else if (thisMonster.status.includes("Charmed"))
     {
+      console.log("charmed monster", monsterOne, monsterTwo)
+      this.charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+    } else
+{
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo);
 
       //actual attack causing damage - maybe bypass depending on statuses
@@ -178,6 +182,7 @@ export default class Monster
 
   charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
+    console.log(monsterOne.name, monsterTwo.name)
     if ((thisMonster.name === monsterOne.name) && monsterTwo.healthPoints <= 0)
     {
       $("#dialogue").text(`${thisMonster.name} is charmed and does not attack you.`);
