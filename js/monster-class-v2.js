@@ -234,7 +234,7 @@ export default class Monster
           console.log(`${thisMonster.status} thisMonster is NOT asleep`)
 
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
-          console.log(this.monsterDamage, monsterRandomDamage);
+
 
           finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
           alert(`The ${thisMonster.name} attacks you and causes ${monsterRandomDamage} points of damage.`);
@@ -246,7 +246,7 @@ export default class Monster
 
           let clearDialogue = document.querySelector("#dialogue");
           clearDialogue.textContent = ``;
-          // this.monstersTurn(thisMonster, otherMonster, thisMonster.name, this.monsterDamage, this.monsterHealthPoints, this.monsterHitRoll, finalCharacter, this.monstersHitRollValue, finalCharacter.armorClass);
+
           this.revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo);
 
