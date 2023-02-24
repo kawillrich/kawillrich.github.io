@@ -454,6 +454,23 @@ export default class Character
         finalCharacter.greyOutAttackButtons(monster1, monster2);
       }
 
+      //checking if monster is charmed
+      else if (monster1.status.includes('Charmed'))
+      {
+        alert(`The ${monster1.name} was charmed, but the charm was broken after being attacked`);
+        monster1.healthPoints = monster1.healthPoints - inflictedDamage;
+        let updatedMonsterHP = document.querySelector("#monster-one-hp");
+        updatedMonsterHP.innerHTML = `
+              <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+              `;
+
+        //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+        monster1.status.splice(monster1.status.indexOf('Charmed'), 1);
+        let monster1Status = document.querySelector("#monster-one-status");
+        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+
+      }
 
       //CHECKING ATTACK INTERACTION
       else if (monster1.healthPoints - inflictedDamage > 0)
