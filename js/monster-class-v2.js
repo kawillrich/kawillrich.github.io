@@ -191,8 +191,8 @@ export default class Monster
       confirmAttackMonsters(monsterOne, monsterTwo);
     } else if (otherMonster.healthPoints > 0)
     {
-      alert(`${thisMonster.name} is charmed and attacks the ${monsterTwo.name}!`)
-      $("#dialogue").text(`${thisMonster.name} is charmed and attacks the ${monsterTwo.name}!`);
+      alert(`${thisMonster.name} is charmed and attacks the ${otherMonster.name}!`)
+      $("#dialogue").text(`${thisMonster.name} is charmed and attacks the ${otherMonster.name}!`);
       this.attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
 
     }
@@ -258,13 +258,58 @@ export default class Monster
 
   attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
+    let monstersHitRollValue = Math.ceil(Math.random() * 20);
     console.log(`${thisMonster.name} and ${otherMonster.name}`)
+    for (let i = 0; i < thisMonster.hitRoll.length; i++)
+    {
+      if (thisMonster.hitRoll[i][0] === otherMonster.armorClass)
+      {
+        if (monstersHitRollValue < thisMonster.hitRoll[i][1])
+        {
+          alert(`${thisMonster.name} misses the ${otherMonster.name}!`);
+          this.revertToAttackButtons();
+          confirmAttackMonsters(monsterOne, monsterTwo);
+        } else
+        {
+          console.log(`${thisMonster.status} thisMonster is NOT asleep`)
+
+          let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
+
+
+          otherMonster.healthPoints = otherMonster.healthPoints - monsterRandomDamage;
+          alert(`The ${thisMonster.name} attacks the ${otherMonster.name} and causes ${monsterRandomDamage} points of damage.`);
+
+          if (thisMonster.name === monsterOne.name)
+          {
+            let updatedMonsterHP2 = document.querySelector("#monster-two-hp");
+
+            updatedMonsterHP2.innerHTML = `
+              <h4 id="monster-two-hp">Hit Points: ${otherMonster.healthPoints}<progress class='monster-hp-prog-bar' max="${otherMonster.startingHealthPoints}" value="${otherMonster.healthPoints}"></progress></h4> 
+              `;
+
+          } else
+          {
+            let updatedMonsterHP1 = document.querySelector("#monster-one-hp");
+
+            updatedMonsterHP1.innerHTML = `
+              <h4 id="monster-one-hp">Hit Points: ${otherMonster.healthPoints}<progress class='monster-hp-prog-bar' max="${otherMonster.startingHealthPoints}" value="${otherMonster.healthPoints}"></progress></h4> 
+              `;
+
+
+          }
 
 
 
+          let clearDialogue = document.querySelector("#dialogue");
+          clearDialogue.textContent = ``;
 
-    this.revertToAttackButtons();
-    confirmAttackMonsters(monsterOne, monsterTwo);
+          this.revertToAttackButtons();
+          confirmAttackMonsters(monsterOne, monsterTwo);
+
+
+        }
+      }
+    }
   }
 
 }
