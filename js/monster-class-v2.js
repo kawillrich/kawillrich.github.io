@@ -143,10 +143,13 @@ export default class Monster
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
     let charArmorClass = finalCharacter.armorClass;
 
+    //checking if monster is asleep
+    //if asleep:
     if (thisMonster.status.includes("Sleep"))
     {
       console.log(`${thisMonster.status} thisMonster is asleep`)
       this.sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+      //otherwise
     } else
     {
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo);
