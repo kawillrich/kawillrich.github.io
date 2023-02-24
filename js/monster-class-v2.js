@@ -155,7 +155,7 @@ export default class Monster
       console.log("charmed monster", monsterOne, monsterTwo)
       this.charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
     } else
-{
+    {
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo);
 
       //actual attack causing damage - maybe bypass depending on statuses
@@ -185,7 +185,14 @@ export default class Monster
     console.log(monsterOne.name, monsterTwo.name)
     if ((thisMonster.name === monsterOne.name) && monsterTwo.healthPoints <= 0)
     {
+      alert(`${thisMonster.name} is charmed and does not attack you.`)
       $("#dialogue").text(`${thisMonster.name} is charmed and does not attack you.`);
+      this.revertToAttackButtons();
+      confirmAttackMonsters(monsterOne, monsterTwo);
+    } else if ((thisMonster.name === monsterOne.name && monsterTwo.healthPoints > 0))
+    {
+      alert(`${thisMonster.name} is charmed and attacks the ${monsterTwo.name}!`)
+      $("#dialogue").text(`${thisMonster.name} is charmed and attacks the ${monsterTwo.name}!`);
       this.revertToAttackButtons();
       confirmAttackMonsters(monsterOne, monsterTwo);
     }
