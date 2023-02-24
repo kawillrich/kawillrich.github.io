@@ -193,8 +193,8 @@ export default class Monster
     {
       alert(`${thisMonster.name} is charmed and attacks the ${monsterTwo.name}!`)
       $("#dialogue").text(`${thisMonster.name} is charmed and attacks the ${monsterTwo.name}!`);
-      this.revertToAttackButtons();
-      confirmAttackMonsters(monsterOne, monsterTwo);
+      this.attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
+
     }
 
 
@@ -253,6 +253,14 @@ export default class Monster
       }
     }
   }
+
+  attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
+  {
+    console.log(`${thisMonster.name} and ${otherMonster.name}`)
+    this.revertToAttackButtons();
+    confirmAttackMonsters(monsterOne, monsterTwo);
+  }
+
 }
 
 //initializing monsters
