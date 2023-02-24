@@ -176,6 +176,19 @@ export default class Monster
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
+  charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+  {
+    if ((thisMonster.name === monsterOne.name) && monsterTwo.healthPoints <= 0)
+    {
+      $("#dialogue").text(`${thisMonster.name} is charmed and does not attack you.`);
+      this.revertToAttackButtons();
+      confirmAttackMonsters(monsterOne, monsterTwo);
+    }
+
+
+
+  }
+
   revertToAttackButtons()
   {
     let showAttackButtons = document.querySelectorAll(".attack");
