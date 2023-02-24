@@ -183,13 +183,13 @@ export default class Monster
   charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
     console.log(monsterOne.name, monsterTwo.name)
-    if ((thisMonster.name === monsterOne.name) && monsterTwo.healthPoints <= 0)
+    if (otherMonster.healthPoints <= 0)
     {
       alert(`${thisMonster.name} is charmed and does not attack you.`)
       $("#dialogue").text(`${thisMonster.name} is charmed and does not attack you.`);
       this.revertToAttackButtons();
       confirmAttackMonsters(monsterOne, monsterTwo);
-    } else if ((thisMonster.name === monsterOne.name && monsterTwo.healthPoints > 0))
+    } else if (otherMonster.healthPoints > 0)
     {
       alert(`${thisMonster.name} is charmed and attacks the ${monsterTwo.name}!`)
       $("#dialogue").text(`${thisMonster.name} is charmed and attacks the ${monsterTwo.name}!`);
@@ -232,7 +232,9 @@ export default class Monster
         } else
         {
           console.log(`${thisMonster.status} thisMonster is NOT asleep`)
-          let monsterRandomDamage = Math.ceil(Math.random(this.monsterDamage) * 6);
+
+          let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
+          console.log(this.monsterDamage, monsterRandomDamage);
 
           finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
           alert(`The ${thisMonster.name} attacks you and causes ${monsterRandomDamage} points of damage.`);
@@ -257,6 +259,10 @@ export default class Monster
   attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
     console.log(`${thisMonster.name} and ${otherMonster.name}`)
+
+
+
+
     this.revertToAttackButtons();
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
