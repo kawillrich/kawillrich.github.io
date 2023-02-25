@@ -461,8 +461,8 @@ export default class Character
         monster1.healthPoints = monster1.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-one-hp");
         updatedMonsterHP.innerHTML = `
-              <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
-              `;
+          <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+          `;
 
         //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
         monster1.status.splice(monster1.status.indexOf('Charmed'), 1);
@@ -608,8 +608,8 @@ export default class Character
         monster2.healthPoints = monster2.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-two-hp");
         updatedMonsterHP.innerHTML = `
-              <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
-              `;
+          <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+          `;
         let monster2Status = document.querySelector("#monster-two-status");
         monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
         //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
@@ -617,7 +617,22 @@ export default class Character
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
       }
+      else if (monster2.status.includes('Charmed'))
+      {
+        alert(`The ${monster2.name} was charmed, but the charm was broken after being attacked`);
+        monster2.healthPoints = monster2.healthPoints - inflictedDamage;
+        let updatedMonsterHP = document.querySelector("#monster-two-hp");
+        updatedMonsterHP.innerHTML = `
+          <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+          `;
 
+        //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+        monster2.status.splice(monster2.status.indexOf('Charmed'), 1);
+        let monster2Status = document.querySelector("#monster-two-status");
+        monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+        finalCharacter.greyOutAttackButtons(monster2, monster2);
+
+      }
       else if (monster2.healthPoints - inflictedDamage > 0)
       {
         monster2.healthPoints = monster2.healthPoints - inflictedDamage;
