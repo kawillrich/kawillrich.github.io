@@ -28,6 +28,26 @@ export default class MageLevelOneSpells
         toggleShowSpellList();
         finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
     }
+
+    checkNumberOfSpellUses(monster1, monster2, continueNextChapter, attackedMonster)
+    {
+        if (this.numberOfUses <= 0)
+        {
+            let dialogue = document.querySelector('#dialogue');
+            dialogue.innerHTML = `<p>You try to cast ${this.name}, but the words won't come to your mind.</p>`;
+            toggleShowSpellList();
+        } else
+        {
+            this.numberOfUses -= 1;
+
+            if (this.numberOfUses <= 0)
+            {
+                this.numberOfUses = 0;
+            }
+        }
+    }
+
+
 };
 
 //completed charm person
@@ -61,9 +81,11 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 //CREATING METHODS TO INDIVIDUAL SPELLS AND NOT TO THE ENTIRE SPELL PROTOTYPE
 
-ventriloquism.castSpell = function ()
+ventriloquism.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    console.log('Casting Ventriloquism')
+    this.checkNumberOfSpellUses(monster1, monster2, continueNextChapter, attackedMonster);
+    console.log('Casting Ventriloquism');
+    toggleShowSpellList();
 }
 
 detectMagic.castSpell = function ()
@@ -95,6 +117,9 @@ readMagic.castSpell = function ()
 {
     console.log('Casting Read Magic')
 }
+
+
+
 
 magicMissile.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
