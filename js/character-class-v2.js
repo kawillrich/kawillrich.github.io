@@ -1031,13 +1031,13 @@ export default class Character
 
     let updatedMonster1HP = document.querySelector("#monster-one-hp");
     updatedMonster1HP.innerHTML = `
-            <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
-            `;
+      <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+      `;
 
     let updatedMonster2HP = document.querySelector("#monster-two-hp");
     updatedMonster2HP.innerHTML = `
-            <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
-            `;
+      <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+      `;
 
     let monster1Status = document.querySelector("#monster-one-status");
     monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster2.status.join(', ')}</h4>`;

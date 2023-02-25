@@ -35,6 +35,8 @@ let protectionFromEvilTenFoot = new MageLevelThreeSpells("Protection From Evil 1
 let protectionFromNormalMissiles = new MageLevelThreeSpells("Protection From Missiles", 3, 30, 12, "One creature", function () { console.log('Casting'); }, "protection-from-missiles", true, 0, false);
 let waterBreathing = new MageLevelThreeSpells("Water Breathing", 3, 30, 24, "One air-breathing creature", function () { console.log('Casting'); }, "water-breathing", false, 0, false);
 
+
+
 fireBall.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     toggleShowSpellList();

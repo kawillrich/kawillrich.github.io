@@ -56,6 +56,41 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 //CREATING METHODS TO INDIVIDUAL SPELLS AND NOT TO THE ENTIRE SPELL PROTOTYPE
 
+ventriloquism.castSpell = function ()
+{
+    console.log('Casting Ventriloquism')
+}
+
+detectMagic.castSpell = function ()
+{
+    console.log('Casting Detect Magic')
+}
+
+floatingDisc.castSpell = function ()
+{
+    console.log('Casting Floating Disc')
+}
+
+holdPortal.castSpell = function ()
+{
+    console.log('Casting Hold Portal')
+}
+
+light.castSpell = function ()
+{
+    console.log('Casting Light')
+}
+
+readLanguages.castSpell = function ()
+{
+    console.log('Casting Read Languages')
+}
+
+readMagic.castSpell = function ()
+{
+    console.log('Casting Read Magic')
+}
+
 magicMissile.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
 
