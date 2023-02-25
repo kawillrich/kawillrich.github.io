@@ -36,6 +36,7 @@ export default class MageLevelOneSpells
             let dialogue = document.querySelector('#dialogue');
             dialogue.innerHTML = `<p>You try to cast ${this.name}, but the words won't come to your mind.</p>`;
             toggleShowSpellList();
+            finalCharacter.greyOutAttackButtons(monster1, monster2);
         } else
         {
             this.numberOfUses -= 1;
@@ -44,6 +45,7 @@ export default class MageLevelOneSpells
             {
                 this.numberOfUses = 0;
             }
+            toggleShowSpellList();
         }
     }
 
@@ -85,7 +87,6 @@ ventriloquism.castSpell = function (monster1, monster2, continueNextChapter, att
 {
     this.checkNumberOfSpellUses(monster1, monster2, continueNextChapter, attackedMonster);
     console.log('Casting Ventriloquism');
-    toggleShowSpellList();
 }
 
 detectMagic.castSpell = function ()
@@ -125,12 +126,13 @@ magicMissile.castSpell = function (monster1, monster2, continueNextChapter, atta
 {
 
     //SETTING TIMEOUT TO TEST CANCELING AND PASSING TWO TIMEOUTS
-
+    this.checkNumberOfSpellUses(monster1, monster2, continueNextChapter, attackedMonster)
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You try to cast Magic Missile, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
+
     } else
     {
         this.numberOfUses -= 1;
