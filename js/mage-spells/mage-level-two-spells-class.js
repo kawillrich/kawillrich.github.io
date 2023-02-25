@@ -28,6 +28,64 @@ let web = new MageLevelTwoSpells("Web", 2, 10, 48, "A volume of 10 by 10 by 10",
 let wizardLock = new MageLevelTwoSpells("Wizard Lock", 2, 10, 999, "One portal or lock", function () { console.log('Casting'); }, "wizard-lock", false);
 let detectInvisible = new MageLevelTwoSpells("Detect Invisible", 2, 10, 6, "Detect invisibility", function () { console.log('Casting'); }, "detect-invisible", false);
 
+continualLight.castSpell = function ()
+{
+    console.log('Casting Continual Light')
+}
 
+detectEvil.castSpell = function ()
+{
+    console.log('Casting Detect Evil')
+}
+
+invisibility.castSpell = function ()
+{
+    console.log('Casting Invisibility')
+}
+
+esp.castSpell = function ()
+{
+    console.log('Casting ESP')
+}
+
+knock.castSpell = function ()
+{
+    console.log('Casting Knock')
+}
+
+levitate.castSpell = function ()
+{
+    console.log('Casting Levitate')
+}
+
+locateObject.castSpell = function ()
+{
+    console.log('Casting Locate Object')
+}
+
+mirrorImage.castSpell = function ()
+{
+    console.log('Casting Mirror Image')
+}
+
+phantasmalForce.castSpell = function ()
+{
+    console.log('Casting Phantasmal Force')
+}
+
+web.castSpell = function ()
+{
+    console.log('Casting Web')
+}
+
+wizardLock.castSpell = function ()
+{
+    console.log('Casting Wizard Lock')
+}
+
+detectInvisible.castSpell = function ()
+{
+    console.log('Casting Detect Invisibility')
+}
 
 export { continualLight, detectEvil, invisibility, esp, knock, levitate, locateObject, mirrorImage, phantasmalForce, web, wizardLock, detectInvisible }
