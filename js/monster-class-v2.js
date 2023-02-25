@@ -260,16 +260,23 @@ export default class Monster
           alert(`The ${thisMonster.name} attacks the ${otherMonster.name} and causes ${monsterRandomDamage} points of damage.`);
 
           //need to include follow on function when a monster kills the other
+          if (otherMonster.healthPoints <= 0)
+          {
+            otherMonster.healthPoints = 0;
+            this.monsterKilled(thisMonster, otherMonster, monsterOne, monsterTwo);
 
-
-          if (thisMonster.name === monsterOne.name)
+          } else if (thisMonster.name === monsterOne.name)
           {
             let updatedMonsterHP2 = document.querySelector("#monster-two-hp");
 
             updatedMonsterHP2.innerHTML = `
               <h4 id="monster-two-hp">Hit Points: ${otherMonster.healthPoints}<progress class='monster-hp-prog-bar' max="${otherMonster.startingHealthPoints}" value="${otherMonster.healthPoints}"></progress></h4> 
               `;
+            let clearDialogue = document.querySelector("#dialogue");
+            clearDialogue.textContent = ``;
 
+            this.revertToAttackButtons();
+            confirmAttackMonsters(monsterOne, monsterTwo);
           } else
           {
             let updatedMonsterHP1 = document.querySelector("#monster-one-hp");
@@ -277,14 +284,47 @@ export default class Monster
             updatedMonsterHP1.innerHTML = `
               <h4 id="monster-one-hp">Hit Points: ${otherMonster.healthPoints}<progress class='monster-hp-prog-bar' max="${otherMonster.startingHealthPoints}" value="${otherMonster.healthPoints}"></progress></h4> 
               `;
-          }
-          let clearDialogue = document.querySelector("#dialogue");
-          clearDialogue.textContent = ``;
+            let clearDialogue = document.querySelector("#dialogue");
+            clearDialogue.textContent = ``;
 
-          this.revertToAttackButtons();
-          confirmAttackMonsters(monsterOne, monsterTwo);
+            this.revertToAttackButtons();
+            confirmAttackMonsters(monsterOne, monsterTwo);
+          }
         }
       }
+    }
+  }
+
+  monsterKilled(thisMonster, otherMonster, monsterOne, monsterTwo)
+  {
+    if (thisMonster === monsterOne.name)
+    {
+      let updatedMonsterHP2 = document.querySelector("#monster-two-hp");
+
+      updatedMonsterHP2.innerHTML = `
+        <h4 id="monster-two-hp">Hit Points: ${otherMonster.healthPoints}<progress class='monster-hp-prog-bar' max="${otherMonster.startingHealthPoints}" value="${otherMonster.healthPoints}"></progress></h4> 
+        `;
+      let clearDialogue = document.querySelector("#dialogue");
+      clearDialogue.textContent = ``;
+
+      alert(`${monsterOne.name} killed ${monsterTwo.name}!`)
+
+      this.revertToAttackButtons();
+      confirmAttackMonsters(monsterOne, monsterTwo);
+    } else
+    {
+      let updatedMonsterHP1 = document.querySelector("#monster-one-hp");
+
+      updatedMonsterHP1.innerHTML = `
+        <h4 id="monster-one-hp">Hit Points: ${otherMonster.healthPoints}<progress class='monster-hp-prog-bar' max="${otherMonster.startingHealthPoints}" value="${otherMonster.healthPoints}"></progress></h4> 
+        `;
+      let clearDialogue = document.querySelector("#dialogue");
+      clearDialogue.textContent = ``;
+
+      alert(`The ${monsterTwo.name} killed the ${monsterOne.name}!`)
+
+      this.revertToAttackButtons();
+      confirmAttackMonsters(monsterOne, monsterTwo);
     }
   }
 
