@@ -1284,7 +1284,6 @@ function beginChapterTwo()
   {
     showInventory();
 
-    console.log(finalCharacter);
     let JSONcharacter = JSON.stringify(finalCharacter);
   }
   finalCharacter.specialty.healthPoints =
@@ -2529,7 +2528,6 @@ function continueChapterThreeThree()
     "click",
     () =>
     {
-      console.log(smallWolf);
       addingFightModule(smallWolf, noMonster, continueChapterThreeFour);
       declareAttack();
     },
@@ -2788,8 +2786,6 @@ function populateMageSpells(m1, m2, nextChap)
     }
   }
 
-  console.log(finalCharacter)
-
   addingSpellLevels.appendChild(secondLevelSpellList);
 
   for (let i = 0; i < characterSecondLevelSpells.length; i++)
@@ -2902,7 +2898,6 @@ export function toggleShowSpellList()
 
 function castSpellFromList(e, m1, m2, nextChap)
 {
-  console.log("castingSpellFromList: ", m1, m2, e.target);
   let parentNodeInnerText = e.target.parentNode.firstChild.textContent;
   let thisNodeInnerText = e.target.textContent;
 
@@ -2918,8 +2913,6 @@ function castSpellFromList(e, m1, m2, nextChap)
       if (firstLevel[i].name === parentNodeInnerText)
       {
         firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
-
-        console.log(thisNodeInnerText)
       }
     };
 
