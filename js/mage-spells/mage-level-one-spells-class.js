@@ -75,7 +75,6 @@ magicMissile.castSpell = function (monster1, monster2, continueNextChapter, atta
             this.numberOfUses = 0;
         }
 
-
         if (attackedMonster === "Monster 1")
         {
             toggleShowSpellList();

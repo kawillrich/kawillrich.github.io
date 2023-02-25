@@ -753,6 +753,16 @@ export default class Character
     }
     else if (monster1.healthPoints - inflictedDamage > 0)
     {
+      let isSleepingM1 = monster1.status.some((x) => x === "Sleep");
+
+      if (isSleepingM1 === true)
+      {
+        alert(`The ${monster1.name} was asleep, but woke up after being struck by your spell`);
+        monster1.status.splice(monster1.status.indexOf('Sleep'), 1);
+        let monster1Status = document.querySelector("#monster-one-status");
+        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`;
+      }
+
       monster1.healthPoints = monster1.healthPoints - inflictedDamage;
       let updatedMonsterHP = document.querySelector("#monster-one-hp");
       updatedMonsterHP.innerHTML = `
@@ -762,6 +772,7 @@ export default class Character
       //greying out attack module buttons when pressed
 
       finalCharacter.greyOutAttackButtons(monster1, monster2);
+
     } else if (monster1.healthPoints - inflictedDamage <= 0)
     {
       monster1.healthPoints = 0;
@@ -829,6 +840,16 @@ export default class Character
     }
     else if (monster2.healthPoints - inflictedDamage > 0)
     {
+      let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
+
+      if (isSleepingM2 === true)
+      {
+        alert(`The ${monster2.name} was asleep, but woke up after being struck by your spell`);
+        monster2.status.splice(monster2.status.indexOf('Sleep'), 1);
+        let monster2Status = document.querySelector("#monster-two-status");
+        monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`;
+      }
+
       monster2.healthPoints = monster2.healthPoints - inflictedDamage;
       let updatedMonsterHP = document.querySelector("#monster-two-hp");
       updatedMonsterHP.innerHTML = `
