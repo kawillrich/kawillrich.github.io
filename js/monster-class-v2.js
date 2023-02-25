@@ -194,11 +194,7 @@ export default class Monster
       alert(`${thisMonster.name} is charmed and attacks the ${otherMonster.name}!`)
       $("#dialogue").text(`${thisMonster.name} is charmed and attacks the ${otherMonster.name}!`);
       this.attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
-
     }
-
-
-
   }
 
   revertToAttackButtons()
@@ -235,7 +231,6 @@ export default class Monster
 
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
-
           finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
           alert(`The ${thisMonster.name} attacks you and causes ${monsterRandomDamage} points of damage.`);
 
@@ -249,8 +244,6 @@ export default class Monster
 
           this.revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo);
-
-
         }
       }
     }
@@ -275,7 +268,6 @@ export default class Monster
 
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
-
           otherMonster.healthPoints = otherMonster.healthPoints - monsterRandomDamage;
           alert(`The ${thisMonster.name} attacks the ${otherMonster.name} and causes ${monsterRandomDamage} points of damage.`);
 
@@ -294,19 +286,12 @@ export default class Monster
             updatedMonsterHP1.innerHTML = `
               <h4 id="monster-one-hp">Hit Points: ${otherMonster.healthPoints}<progress class='monster-hp-prog-bar' max="${otherMonster.startingHealthPoints}" value="${otherMonster.healthPoints}"></progress></h4> 
               `;
-
-
           }
-
-
-
           let clearDialogue = document.querySelector("#dialogue");
           clearDialogue.textContent = ``;
 
           this.revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo);
-
-
         }
       }
     }
