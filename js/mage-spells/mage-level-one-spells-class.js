@@ -211,7 +211,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
 
 charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-
+    console.log(attackedMonster)
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
@@ -219,6 +219,12 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
         toggleShowSpellList();
     } else
     {
+        let isCharmedM1 = monster1.status.some((x) => x === "Charmed");
+        let isCharmedM2 = monster2.status.some((x) => x === "Charmed");
+
+        console.log(monster1.status);
+        console.log(monster2.status)
+
         this.numberOfUses -= 1;
         if (this.numberOfUses <= 0)
         {
@@ -228,15 +234,14 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
 
-
-
-        if (attackedMonster === "Monster 1" && monster1.healthPoints <= 0)
+        if ((attackedMonster === "Monster 1" && monster1.healthPoints <= 0) || (attackedMonster === "Monster 1" && isCharmedM1 === true))
         {
             dialogue.innerHTML = `<p>You cast Charm Person, but the spell had no effect.</p>`;
 
-        } else if (attackedMonster === "Monster 2" && monster2.healthPoints <= 0)
+        } else if ((attackedMonster === "Monster 2" && monster2.healthPoints <= 0) || (attackedMonster === "Monster 2" && isCharmedM2 === true))
         {
             dialogue.innerHTML = `<p>You cast Charm Person, but the spell had no effect.</p>`;
+
         } else if (attackedMonster === "Monster 1" && monster1.healthPoints > 0)
         {
             let dialogue = document.querySelector('#dialogue');
@@ -313,6 +318,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You try to cast Sleep, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
+
     } else
     {
         this.numberOfUses -= 1;

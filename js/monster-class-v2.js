@@ -259,6 +259,9 @@ export default class Monster
           otherMonster.healthPoints = otherMonster.healthPoints - monsterRandomDamage;
           alert(`The ${thisMonster.name} attacks the ${otherMonster.name} and causes ${monsterRandomDamage} points of damage.`);
 
+          //need to include follow on function when a monster kills the other
+
+
           if (thisMonster.name === monsterOne.name)
           {
             let updatedMonsterHP2 = document.querySelector("#monster-two-hp");
