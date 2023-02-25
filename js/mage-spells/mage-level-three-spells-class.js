@@ -35,7 +35,55 @@ let protectionFromEvilTenFoot = new MageLevelThreeSpells("Protection From Evil 1
 let protectionFromNormalMissiles = new MageLevelThreeSpells("Protection From Missiles", 3, 30, 12, "One creature", function () { console.log('Casting'); }, "protection-from-missiles", true, 0, false);
 let waterBreathing = new MageLevelThreeSpells("Water Breathing", 3, 30, 24, "One air-breathing creature", function () { console.log('Casting'); }, "water-breathing", false, 0, false);
 
+clairvoyance.castSpell = function ()
+{
+    console.log('Casting Clairvoyance')
+}
 
+dispelMagic.castSpell = function ()
+{
+    console.log('Casting Dispel Magic')
+}
+
+fly.castSpell = function ()
+{
+    console.log('Casting Fly')
+}
+
+haste.castSpell = function ()
+{
+    console.log('Casting Haste')
+}
+
+holdPerson.castSpell = function ()
+{
+    console.log('Casting Hold Person')
+}
+
+infravision.castSpell = function ()
+{
+    console.log('Casting Infravision')
+}
+
+invisibilityTenFoot.castSpell = function ()
+{
+    console.log('Casting Invisibility 10 Foot Radius')
+}
+
+protectionFromEvilTenFoot.castSpell = function ()
+{
+    console.log('Casting Protection from Evil 10 Foot Radius')
+}
+
+protectionFromNormalMissiles.castSpell = function ()
+{
+    console.log('Casting Protection from Normal Missiles')
+}
+
+waterBreathing.castSpell = function ()
+{
+    console.log('Casting Water Breathing')
+}
 
 fireBall.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
