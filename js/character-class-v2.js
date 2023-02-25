@@ -984,6 +984,15 @@ export default class Character
       {
         let attackDialogue = document.querySelector("#dialogue");
 
+        let isSleepingMonster = item.status.some((x) => x === "Sleep");
+
+        if (isSleepingMonster === true)
+        {
+          alert(`The ${item.name} was asleep, but woke up after being struck by your spell.`);
+          item.status.splice(item.status.indexOf('Sleep'), 1);
+
+        }
+
         attackDialogue.innerHTML += `
             <p>You cause ${damage} points of damage on ${item.name}.</p>`;
       }
