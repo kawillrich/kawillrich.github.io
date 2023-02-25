@@ -848,6 +848,12 @@ export default class Character
         monster2.status.splice(monster2.status.indexOf('Sleep'), 1);
         let monster2Status = document.querySelector("#monster-two-status");
         monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`;
+      } else if (monster2.status.includes("Charmed"))
+      {
+        alert(`The ${monster2.name} was charmed, but the charm was broken after being struck by your spell.`);
+        monster2.status.splice(monster2.status.indexOf('Charmed'), 1);
+        let monster2Status = document.querySelector("#monster-two-status");
+        monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`;
       }
 
       monster2.healthPoints = monster2.healthPoints - inflictedDamage;
@@ -990,7 +996,10 @@ export default class Character
         {
           alert(`The ${item.name} was asleep, but woke up after being struck by your spell.`);
           item.status.splice(item.status.indexOf('Sleep'), 1);
-
+        } else if (item.status.includes('Charmed'))
+        {
+          alert(`The ${item.name} was charmed, but the charm was broken after being struck by your spell.`);
+          item.status.splice(item.status.indexOf('Charmed'), 1);
         }
 
         attackDialogue.innerHTML += `
@@ -1029,6 +1038,12 @@ export default class Character
     updatedMonster2HP.innerHTML = `
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
             `;
+
+    let monster1Status = document.querySelector("#monster-one-status");
+    monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster2.status.join(', ')}</h4>`;
+
+    let monster2Status = document.querySelector("#monster-two-status");
+    monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`;
 
     finalCharacter.greyOutAttackButtons(monster1, monster2, continueNextChapter);
 
