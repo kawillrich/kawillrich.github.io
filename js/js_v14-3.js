@@ -2920,18 +2920,7 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (secondLevel[i].name === parentNodeInnerText)
       {
-
         secondLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
-
-        // if (thisNodeInnerText === "Monster 1")
-        // {
-        //   secondLevel[i].castingEffect(m1);
-
-        // } else if (thisNodeInnerText === "Monster 2")
-        // {
-        //   secondLevel[i].castingEffect(m2);
-        // }
-
       }
     };
 
