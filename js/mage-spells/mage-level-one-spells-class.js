@@ -25,11 +25,8 @@ export default class MageLevelOneSpells
     castingSpell(monster1, monster2, continueNextChapter)
     {
         toggleShowSpellList();
-
         finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter);
     }
-
-
 };
 
 //completed
@@ -149,8 +146,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
 
         monster1.status.push("Protection from Evil");
         let monster1Status = document.querySelector("#monster-one-status");
-        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
-        console.log(monster1.status)
+        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`;
 
         if (monster2.name !== " ")
         {
@@ -273,7 +269,6 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
             }, 60000);
 
             finalCharacter.activeSpellStatuses.push(charmTimer);
-            console.log(finalCharacter.activeSpellStatuses)
             // WORKING TO PULL SET TIMEOUT OUT OF SPELL CASTING AND MAKING IT'S OWN F(X)
 
         } else if (attackedMonster === "Monster 2" && monster2.healthPoints > 0)
@@ -306,7 +301,6 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
             }, 60000);
 
             finalCharacter.activeSpellStatuses.push(charmTimer2);
-            console.log(finalCharacter.activeSpellStatuses)
         }
 
     }
@@ -368,7 +362,6 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             }, 30000);
 
             finalCharacter.activeSpellStatuses.push(sleepTimer);
-            console.log(finalCharacter.activeSpellStatuses)
             //end of setTimeout
 
         } else if (monster1.healthPoints > 0)
@@ -410,7 +403,6 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             }, 30000);
 
             finalCharacter.activeSpellStatuses.push(sleepTimer2);
-            console.log(finalCharacter.activeSpellStatuses)
 
         } else if (monster2.healthPoints > 0)
         {
