@@ -440,7 +440,7 @@ export default class Character
 
       else if (monster1.status.includes('Sleep') && finalCharacter.weapon.attackType !== "Edged")
       {
-        alert(`The ${monster1.name} was asleep, but woke up after being struck by your ${finalCharacter.weapon.name}`);
+        alert(`The ${monster1.name} was asleep, but woke up after being struck by your ${finalCharacter.weapon.name}.`);
         monster1.healthPoints = monster1.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-one-hp");
         updatedMonsterHP.innerHTML = `
@@ -604,7 +604,7 @@ export default class Character
 
       else if (monster2.status.includes('Sleep') && finalCharacter.weapon.attackType !== "Edged")
       {
-        alert(`The ${monster2.name} was asleep, but woke up after being struck by your ${finalCharacter.weapon.name}`);
+        alert(`The ${monster2.name} was asleep, but woke up after being struck by your ${finalCharacter.weapon.name}.`);
         monster2.healthPoints = monster2.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-two-hp");
         updatedMonsterHP.innerHTML = `
@@ -757,7 +757,7 @@ export default class Character
 
       if (isSleepingM1 === true)
       {
-        alert(`The ${monster1.name} was asleep, but woke up after being struck by your spell`);
+        alert(`The ${monster1.name} was asleep, but woke up after being struck by your spell.`);
         monster1.status.splice(monster1.status.indexOf('Sleep'), 1);
         let monster1Status = document.querySelector("#monster-one-status");
         monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`;
@@ -844,7 +844,7 @@ export default class Character
 
       if (isSleepingM2 === true)
       {
-        alert(`The ${monster2.name} was asleep, but woke up after being struck by your spell`);
+        alert(`The ${monster2.name} was asleep, but woke up after being struck by your spell.`);
         monster2.status.splice(monster2.status.indexOf('Sleep'), 1);
         let monster2Status = document.querySelector("#monster-two-status");
         monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`;
