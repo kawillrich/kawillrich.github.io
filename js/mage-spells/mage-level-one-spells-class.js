@@ -61,9 +61,34 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 
 //CREATING METHODS TO INDIVIDUAL SPELLS AND NOT TO THE ENTIRE SPELL PROTOTYPE
 
-ventriloquism.castSpell = function ()
+ventriloquism.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     console.log('Casting Ventriloquism')
+
+    if (this.numberOfUses <= 0)
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast Ventriloquism, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+    } else
+    {
+        this.numberOfUses -= 1;
+
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+
+        if (attackedMonster === "Monster 1")
+        {
+            toggleShowSpellList();
+            //finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
+        } else if (attackedMonster === "Monster 2")
+        {
+            toggleShowSpellList();
+            //finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
+        }
+    }
 }
 
 detectMagic.castSpell = function ()
