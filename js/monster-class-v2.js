@@ -105,7 +105,6 @@ export default class Monster
 
   monsterAttack(monsterOne, monsterTwo)
   {
-    console.log(monsterOne.name, monsterTwo.name)
     alert(`Monster(s) Turn!`);
     //Determining what monster attacks first
 
@@ -138,7 +137,6 @@ export default class Monster
 
   monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter, monsterOne, monsterTwo)
   {
-    console.log(monsterName, monsterOne, monsterTwo);
 
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
     let charArmorClass = finalCharacter.armorClass;
@@ -147,12 +145,10 @@ export default class Monster
     //if asleep:
     if (thisMonster.status.includes("Sleep"))
     {
-      console.log(`${thisMonster.status} thisMonster is asleep`)
       this.sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
       //otherwise
     } else if (thisMonster.status.includes("Charmed"))
     {
-      console.log("charmed monster", monsterOne, monsterTwo)
       this.charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
     } else
     {
@@ -166,7 +162,6 @@ export default class Monster
         window.location.reload(false);
       } else
       {
-        console.log("monstersTurn", monsterOne, monsterTwo)
         this.revertToAttackButtons();
         confirmAttackMonsters(monsterOne, monsterTwo);
       };
@@ -182,7 +177,6 @@ export default class Monster
 
   charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
-    console.log(monsterOne.name, monsterTwo.name)
     if (otherMonster.healthPoints <= 0)
     {
       alert(`${thisMonster.name} is charmed and does not attack you.`)
@@ -215,7 +209,6 @@ export default class Monster
 
   checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1, monsterOne, monsterTwo) 
   {
-    console.log("Checking Monster HitRoll", monsterHitRollValue1)
     for (let i = 0; i < monsterHitRoll1.length; i++)
     {
       if (monsterHitRoll1[i][0] === charArmorClass1)
@@ -227,8 +220,6 @@ export default class Monster
           confirmAttackMonsters(monsterOne, monsterTwo);
         } else
         {
-          console.log(`${thisMonster.status} thisMonster is NOT asleep`)
-
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
           finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
@@ -252,7 +243,6 @@ export default class Monster
   attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
-    console.log(`${thisMonster.name} and ${otherMonster.name}`)
     for (let i = 0; i < thisMonster.hitRoll.length; i++)
     {
       if (thisMonster.hitRoll[i][0] === otherMonster.armorClass)
@@ -264,8 +254,6 @@ export default class Monster
           confirmAttackMonsters(monsterOne, monsterTwo);
         } else
         {
-          console.log(`${thisMonster.status} thisMonster is NOT asleep`)
-
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
           otherMonster.healthPoints = otherMonster.healthPoints - monsterRandomDamage;
