@@ -2759,7 +2759,7 @@ function populateMageSpells(m1, m2, nextChap)
     {
       //Trying to add numberOfUses = 1
 
-      characterFirstLevelSpells[i].numberOfUses = 99;
+      characterFirstLevelSpells[i].numberOfUses = 1;
 
       spellList.push(characterFirstLevelSpells[i].name);
       let spellLi = document.createElement('ul');
