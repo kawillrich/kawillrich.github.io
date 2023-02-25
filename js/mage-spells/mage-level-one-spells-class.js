@@ -253,7 +253,6 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
             // WORKING TO PULL SET TIMEOUT OUT OF SPELL CASTING AND MAKING IT'S OWN F(X)
 
-
             let charmTimer = setTimeout(function ()
             {
                 let removeCharmM1 = monster1.status.filter((x) => "Charmed");
@@ -307,7 +306,6 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
             finalCharacter.activeSpellStatuses.push(charmTimer2);
         }
-
     }
 }
 
@@ -337,7 +335,6 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
 
         //checking if M1 is alive -
-
 
         if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isSleepingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isSleepingM1 === false))
         {
@@ -418,7 +415,6 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
         {
             // //TRIGGERS WHEN FIRST BATTLE WITH ONLY ONE MONSTER STARTS
             // alert('NEED TO FIX CONDITIONAL LINE 419 MAGE-LEVEL-ONE-SPELLS-CLASS')
-
         }
     }
 }

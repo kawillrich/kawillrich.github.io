@@ -329,7 +329,6 @@ export default class Monster
       confirmAttackMonsters(monsterOne, monsterTwo);
     }
   }
-
 }
 
 //initializing monsters
