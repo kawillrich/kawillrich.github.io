@@ -297,8 +297,9 @@ export default class Monster
 
   monsterKilled(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
-    if (thisMonster === monsterOne.name)
+    if (thisMonster.name === monsterOne.name)
     {
+      console.log("thisMonster = ", thisMonster);
       let updatedMonsterHP2 = document.querySelector("#monster-two-hp");
 
       updatedMonsterHP2.innerHTML = `
@@ -311,8 +312,9 @@ export default class Monster
 
       this.revertToAttackButtons();
       confirmAttackMonsters(monsterOne, monsterTwo);
-    } else
+    } else if (thisMonster.name === monsterTwo.name)
     {
+      console.log("thisMonster = ", thisMonster);
       let updatedMonsterHP1 = document.querySelector("#monster-one-hp");
 
       updatedMonsterHP1.innerHTML = `
