@@ -127,31 +127,31 @@ magicMissile.castSpell = function (monster1, monster2, continueNextChapter, atta
 
     //SETTING TIMEOUT TO TEST CANCELING AND PASSING TWO TIMEOUTS
     this.checkNumberOfSpellUses(monster1, monster2, continueNextChapter, attackedMonster)
-    if (this.numberOfUses <= 0)
+    // if (this.numberOfUses <= 0)
+    // {
+    //     let dialogue = document.querySelector('#dialogue');
+    //     dialogue.innerHTML = `<p>You try to cast Magic Missile, but the words won't come to your mind.</p>`;
+    //     // toggleShowSpellList();
+
+    // } else
+    // {
+    //     this.numberOfUses -= 1;
+
+    //     if (this.numberOfUses <= 0)
+    //     {
+    //         this.numberOfUses = 0;
+    //     }
+
+    if (attackedMonster === "Monster 1")
     {
-        let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You try to cast Magic Missile, but the words won't come to your mind.</p>`;
-        toggleShowSpellList();
-
-    } else
+        // toggleShowSpellList();
+        finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
+    } else if (attackedMonster === "Monster 2")
     {
-        this.numberOfUses -= 1;
-
-        if (this.numberOfUses <= 0)
-        {
-            this.numberOfUses = 0;
-        }
-
-        if (attackedMonster === "Monster 1")
-        {
-            toggleShowSpellList();
-            finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
-        } else if (attackedMonster === "Monster 2")
-        {
-            toggleShowSpellList();
-            finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
-        }
+        // toggleShowSpellList();
+        finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
     }
+    // }
 }
 
 shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
