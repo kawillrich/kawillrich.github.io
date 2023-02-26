@@ -80,21 +80,36 @@ ventriloquism.castSpell = function (monster1, monster2, continueNextChapter, att
             this.numberOfUses = 0;
         }
 
-        if (attackedMonster === "Monster 1")
+        if (attackedMonster.status.includes("Charmed") || attackedMonster.status.includes("Sleep"))
+        {
+            dialogue.innerHTML = `<p>You cast Ventriloquism, but nothing happens.</p>`;
+        }
+        else if ((attackedMonster === "Monster 1") && (attackedMonster.healthPoints > 0))
         {
             toggleShowSpellList();
-            dialogue.innerHTML = `<p>You cast Ventriloquism, and cause a distraction and the ${monster1.name} is caught offguard increasing your chances of hitting - attack again!</p>`;
+            if (confirm(`You cast Ventriloquism, and cause a distraction and the ${attackedMonster.name} is caught offguard increasing your chances of hitting, do you want to take the initiative and attack the ${attackedMonster.name}?`))
+            {
+                finalCharacter.weaponAttackMonster1(monster1, monster2, finalCharacter.weapon, continueNextChapter)
+            } else
+            {
+                dialogue.innerHTML = `<p>You cast Ventriloquism, and cause a distraction and the ${attackedMonster.name} is caught offguard, but you decide not to attack</p>`;
+                finalCharacter.greyOutAttackButtons(monster1, monster2);
+            }
 
-
-            //finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
-        } else if (attackedMonster === "Monster 2")
+        } else if ((attackedMonster === "Monster 2") && (attackedMonster.healthPoints > 0))
         {
             toggleShowSpellList();
-            dialogue.innerHTML = `<p>You cast Ventriloquism, and cause a distraction and the ${monster2.name} is caught offguard increasing your chances of hitting - attack again!</p>`;
-
-
-
-            //finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
+            if (confirm(`You cast Ventriloquism, and cause a distraction and the ${attackedMonster.name} is caught offguard increasing your chances of hitting, do you want to take the initiative and attack the ${attackedMonster.name}?`))
+            {
+                finalCharacter.weaponAttackMonster1(monster1, monster2, finalCharacter.weapon, continueNextChapter)
+            } else
+            {
+                dialogue.innerHTML = `<p>You cast Ventriloquism, and cause a distraction and the ${attackedMonster.name} is caught offguard, but you decide not to attack</p>`;
+                finalCharacter.greyOutAttackButtons(monster1, monster2);
+            }
+        } else
+        {
+            dialogue.innerHTML = `<p>You cast Ventriloquism, but nothing happens.</p>`;
         }
     }
 }
