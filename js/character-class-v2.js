@@ -691,7 +691,7 @@ export default class Character
       finalCharacter.confirmMonstersDead(monster1, monster2, continueNextChapter);
     }
 
-    let playerHitRollValue = Math.ceil(Math.random() * 20) + finalCharacter.attributes[0].adjustment;
+    let playerHitRollValue = (Math.ceil(Math.random() * 20) + finalCharacter.attributes[0].adjustment) + acAdjustment;
 
     if (playerHitRollValue > 20)
     {
@@ -702,7 +702,7 @@ export default class Character
 
     //END HITROLL VALUE
 
-    let inflictedDamage2 = Math.ceil(Math.random(1) * finalCharacter.weapon.damage) + finalCharacter.attributes[0].adjustment;
+    let inflictedDamage2 = (Math.ceil(Math.random(1) * finalCharacter.weapon.damage) + finalCharacter.attributes[0].adjustment) + damageAdjustment;
     if (inflictedDamage2 <= 0)
     {
       inflictedDamage2 = 0;
