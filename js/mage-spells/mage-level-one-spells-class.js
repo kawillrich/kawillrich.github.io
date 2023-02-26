@@ -55,6 +55,7 @@ let shield = new MageLevelOneSpells("Shield", 1, 0, 2, "The mage only", function
 //completed sleep
 let sleep = new MageLevelOneSpells("Sleep", 1, 240, [4, 16], "2-16 Hit Dice of leaving creatures within a 40 foot square area", function () { console.log('casting') }, "sleep", true, 0, true);
 
+//pending - create way to have monster distracted and reduce AC and increase damage sustained
 let ventriloquism = new MageLevelOneSpells("Ventriloquism", 1, 60, 2, "One item or location", function () { console.log('casting') }, "ventriloquism", true, 0, false);
 
 let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", function () { console.log('casting') }, "read-magic", false, 0, false);
@@ -82,10 +83,17 @@ ventriloquism.castSpell = function (monster1, monster2, continueNextChapter, att
         if (attackedMonster === "Monster 1")
         {
             toggleShowSpellList();
+            dialogue.innerHTML = `<p>You cast Ventriloquism, and cause a distraction and the ${monster1.name} is caught offguard increasing your chances of hitting - attack again!</p>`;
+
+
             //finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
         } else if (attackedMonster === "Monster 2")
         {
             toggleShowSpellList();
+            dialogue.innerHTML = `<p>You cast Ventriloquism, and cause a distraction and the ${monster2.name} is caught offguard increasing your chances of hitting - attack again!</p>`;
+
+
+
             //finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
         }
     }
