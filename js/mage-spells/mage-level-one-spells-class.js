@@ -65,7 +65,7 @@ let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", f
 ventriloquism.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     console.log('Casting Ventriloquism')
-
+    console.log(attackedMonster, attackedMonster.status)
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
@@ -80,7 +80,10 @@ ventriloquism.castSpell = function (monster1, monster2, continueNextChapter, att
             this.numberOfUses = 0;
         }
 
-        if (attackedMonster.status.includes("Charmed") || attackedMonster.status.includes("Sleep"))
+        if ((attackedMonster === "Monster 1" && monster1.status.includes("Charmed")) || (attackedMonster === "Monster 1" && monster1.status.includes("Sleep")))
+        {
+            dialogue.innerHTML = `<p>You cast Ventriloquism, but nothing happens.</p>`;
+        } else if ((attackedMonster === "Monster 2" && monster2.status.includes("Charmed")) || (attackedMonster === "Monster 2" && monster2.status.includes("Sleep")))
         {
             dialogue.innerHTML = `<p>You cast Ventriloquism, but nothing happens.</p>`;
         }
