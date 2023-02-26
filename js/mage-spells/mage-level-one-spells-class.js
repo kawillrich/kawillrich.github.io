@@ -97,7 +97,7 @@ ventriloquism.castSpell = function (monster1, monster2, continueNextChapter, att
             toggleShowSpellList();
             if (confirm(`You cast Ventriloquism, and cause a distraction and the ${monster1.name} is caught offguard increasing your chances of hitting, do you want to take the initiative and attack the ${monster1.name}?`))
             {
-                finalCharacter.weaponAttackMonster1(monster1, monster2, finalCharacter.weapon, continueNextChapter)
+                finalCharacter.weaponAttackMonster1(monster1, monster2, finalCharacter.weapon, continueNextChapter, 2, 2)
             } else
             {
                 dialogue.innerHTML = `<p>You cast Ventriloquism, and cause a distraction and the ${monster1.name} is caught offguard, but you decide not to attack</p>`;
