@@ -475,6 +475,7 @@ export default class Character
       //CHECKING ATTACK INTERACTION
       else if (monster1.healthPoints - inflictedDamage > 0)
       {
+        attackDialogue.innerHTML = ``;
         monster1.healthPoints = monster1.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-one-hp");
         updatedMonsterHP.innerHTML = `
@@ -635,6 +636,7 @@ export default class Character
       }
       else if (monster2.healthPoints - inflictedDamage > 0)
       {
+        attackDialogue.innerHTML = ``;
         monster2.healthPoints = monster2.healthPoints - inflictedDamage;
         let updatedMonsterHP = document.querySelector("#monster-two-hp");
         updatedMonsterHP.innerHTML = `
