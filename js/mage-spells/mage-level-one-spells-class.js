@@ -39,7 +39,7 @@ let floatingDisc = new MageLevelOneSpells("Floating Disc", 1, 0, 6, "Creates an 
 
 let holdPortal = new MageLevelOneSpells("Hold Portal", 1, 10, [2, 12], "On door, gate, or similar portal", function () { console.log('casting') }, "hold-portal", false, 0, false);
 
-let light = new MageLevelOneSpells("Light", 1, 120, 6, "Volume of 30 feet diameter", function () { console.log('casting') }, "light", false, 0, true);
+let light = new MageLevelOneSpells("Light", 1, 120, 6, "Volume of 30 feet diameter", function () { console.log('casting') }, "light", true, 0, true);
 
 //completed magic missile
 let magicMissile = new MageLevelOneSpells("Magic Missile", 1, 150, 0.1, "Creates one or more arrows", function () { console.log('casting') }, "magic-missile", true, 8, false);
@@ -55,7 +55,7 @@ let shield = new MageLevelOneSpells("Shield", 1, 0, 2, "The mage only", function
 //completed sleep
 let sleep = new MageLevelOneSpells("Sleep", 1, 240, [4, 16], "2-16 Hit Dice of leaving creatures within a 40 foot square area", function () { console.log('casting') }, "sleep", true, 0, true);
 
-//pending - create way to have monster distracted and reduce AC and increase damage sustained
+//completed ventriloquism
 let ventriloquism = new MageLevelOneSpells("Ventriloquism", 1, 60, 2, "One item or location", function () { console.log('casting') }, "ventriloquism", true, 0, false);
 
 let readMagic = new MageLevelOneSpells("Read Magic", 1, 0, 0, "The mage only", function () { console.log('casting') }, "read-magic", false, 0, false);
