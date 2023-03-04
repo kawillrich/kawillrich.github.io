@@ -39,6 +39,7 @@ let floatingDisc = new MageLevelOneSpells("Floating Disc", 1, 0, 6, "Creates an 
 
 let holdPortal = new MageLevelOneSpells("Hold Portal", 1, 10, [2, 12], "On door, gate, or similar portal", function () { console.log('casting') }, "hold-portal", false, 0, false);
 
+//pending light - need to make it cause blindess during battle
 let light = new MageLevelOneSpells("Light", 1, 120, 6, "Volume of 30 feet diameter", function () { console.log('casting') }, "light", true, 0, true);
 
 //completed magic missile
@@ -137,9 +138,114 @@ holdPortal.castSpell = function ()
     console.log('Casting Hold Portal')
 }
 
-light.castSpell = function ()
+light.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    console.log('Casting Light')
+    if (this.numberOfUses <= 0)
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast Light, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+
+    } else
+    {
+        this.numberOfUses -= 1;
+
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+        toggleShowSpellList();
+
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Light spell, which affects a 30 foot area.</p>`;
+
+        let isBlindedM1 = monster1.status.some((x) => x === "Blind");
+        let isBlindedM2 = monster2.status.some((x) => x === "Blind");
+
+        //checking if M1 is alive -
+
+        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isBlindingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isBlindingM1 === false))
+        {
+            dialogue.innerHTML += `<p>${monster1.name} has been blinded.</p>`;
+            monster1.status.push('Blind');
+            let monster1Status = document.querySelector("#monster-one-status");
+            monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
+
+            //need to make variable, push to an array, and then call the function expression
+
+            let blindTimer = setTimeout(function ()
+            {
+                let removeBlindM1 = monster1.status.filter((x) => "Blind");
+                monster1.status.splice(removeBlindM1); //removing Blind after function call
+                let updateM1Status = document.querySelector("#monster-one");
+                updateM1Status.innerHTML = `
+                <div class="monster" id="monster-one">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 1</legend>
+                        <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                        <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                        <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+                        <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                        <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+                    </fieldset>   
+                </div>`;
+                console.log('Blind removed m1')
+            }, 30000);
+
+            finalCharacter.activeSpellStatuses.push(blindTimer);
+            //end of setTimeout
+
+        } else if (monster1.healthPoints > 0)
+        {
+            dialogue.innerHTML += `<p>${monster1.name} is not affected.</p>`;
+
+        } else 
+        {
+            // alert('NEED TO FIX CONDITIONAL LINE 377 MAGE-LEVEL-ONE-SPELLS-CLASS')
+        }
+
+        //checking if M2 is alive - need to check if HD < 4+1 to be affected
+
+        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && isBlindingM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isBlindingM2 === false))
+        {
+            dialogue.innerHTML += `<p>${monster2.name} is blinded.</p>`;
+            monster2.status.push('Blind');
+            let monster2Status = document.querySelector("#monster-two-status");
+            monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+
+            let blindTimer2 = setTimeout(function ()
+            {
+                let removeBlindM2 = monster2.status.filter((x) => "Blind");
+                monster2.status.splice(removeBlindM2);
+                let updateM2Status = document.querySelector("#monster-two");
+                updateM2Status.innerHTML = `
+                <div class="monster" id="monster-two">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 2</legend>
+                        <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                        <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                        <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
+                        <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
+                        <h4 id="monster-two-status">Status: ${monster2.status}</h4>
+                    </fieldset>   
+                </div>`;
+                console.log('blind removed m2')
+
+            }, 30000);
+
+            finalCharacter.activeSpellStatuses.push(blindTimer2);
+
+        } else if (monster2.healthPoints > 0)
+        {
+            dialogue.innerHTML += `<p>${monster2.name} is not affected.</p>`;
+
+        } else
+        {
+            // //TRIGGERS WHEN FIRST BATTLE WITH ONLY ONE MONSTER STARTS
+            // alert('NEED TO FIX CONDITIONAL LINE 419 MAGE-LEVEL-ONE-SPELLS-CLASS')
+        }
+    }
 }
 
 readLanguages.castSpell = function ()
