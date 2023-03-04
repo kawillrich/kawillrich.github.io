@@ -1880,7 +1880,7 @@ function submitAllMageSpells()
       finalCharacter.specialty.characterLevel.specialtySkills[
         "First Level Mage Spells"
       ].push(newSpell);
-      newSpell.numberOfUses = 1;
+      newSpell.numberOfUses = 2;
     }
 
     if (

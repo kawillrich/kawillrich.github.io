@@ -113,9 +113,7 @@ export default class Monster
       let attackingMonster = monsterOne;
       monsterOne.monstersTurn(attackingMonster, monsterTwo, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
     }
-    else if (monsterOne.healthPoints <= 0 &&
-
-      monsterTwo.healthPoints > 0)
+    else if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints > 0)
     {
       let attackingMonster = monsterTwo;
       monsterTwo.monstersTurn(attackingMonster, monsterOne, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
@@ -150,6 +148,9 @@ export default class Monster
     } else if (thisMonster.status.includes("Charmed"))
     {
       this.charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+    } else if (thisMonster.status.includes("Blind"))
+    {
+      this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
     } else
     {
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo);
@@ -189,6 +190,13 @@ export default class Monster
       $("#dialogue").text(`${thisMonster.name} is charmed and attacks the ${otherMonster.name}!`);
       this.attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
     }
+  }
+
+  lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+  {
+    $("#dialogue").text(`${thisMonster.name} is blinded and cannot attack.`);
+    this.revertToAttackButtons();
+    confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
   revertToAttackButtons()
