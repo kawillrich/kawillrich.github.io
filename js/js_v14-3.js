@@ -1876,9 +1876,11 @@ function submitAllMageSpells()
     {
       //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
       let newSpell = eval(selectedAllSpells[i].value);
+      console.log(newSpell)
       finalCharacter.specialty.characterLevel.specialtySkills[
         "First Level Mage Spells"
       ].push(newSpell);
+      newSpell.numberOfUses = 1;
     }
 
     if (
@@ -1890,6 +1892,7 @@ function submitAllMageSpells()
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Second Level Mage Spells"
       ].push(newSpell);
+      newSpell.numberOfUses = 1;
     }
 
     if (
@@ -1901,6 +1904,7 @@ function submitAllMageSpells()
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Third Level Mage Spells"
       ].push(newSpell);
+      newSpell.numberOfUses = 1;
     }
   }
 
@@ -2738,11 +2742,11 @@ function populateMageSpells(m1, m2, nextChap)
 
       //Trying to add numberOfUses = 1
 
-      if (!characterFirstLevelSpells[i].numberOfUses)
-      {
-        console.log("no number of uses yet")
-        characterFirstLevelSpells[i].numberOfUses = 1
-      }
+      // if (!characterFirstLevelSpells[i].numberOfUses)
+      // {
+      //   console.log("no number of uses yet")
+      //   characterFirstLevelSpells[i].numberOfUses = 1
+      // }
 
       spellList.push(characterFirstLevelSpells[i].name);
       let spellLi = document.createElement('ul');
@@ -2763,10 +2767,11 @@ function populateMageSpells(m1, m2, nextChap)
     {
       //Trying to add numberOfUses = 1
 
-      {
-        console.log("no number of uses yet")
-        characterFirstLevelSpells[i].numberOfUses = 1
-      }
+      // if (!characterFirstLevelSpells[i].numberOfUses)
+      // {
+      //   console.log("no number of uses yet")
+      //   characterFirstLevelSpells[i].numberOfUses = 1
+      // }
 
       spellList.push(characterFirstLevelSpells[i].name);
       let spellLi = document.createElement('ul');
