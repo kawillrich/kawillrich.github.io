@@ -2738,7 +2738,11 @@ function populateMageSpells(m1, m2, nextChap)
 
       //Trying to add numberOfUses = 1
 
-      characterFirstLevelSpells[i].numberOfUses = 1;
+      if (!characterFirstLevelSpells[i].numberOfUses)
+      {
+        console.log("no number of uses yet")
+        characterFirstLevelSpells[i].numberOfUses = 1
+      }
 
       spellList.push(characterFirstLevelSpells[i].name);
       let spellLi = document.createElement('ul');
@@ -2759,7 +2763,10 @@ function populateMageSpells(m1, m2, nextChap)
     {
       //Trying to add numberOfUses = 1
 
-      characterFirstLevelSpells[i].numberOfUses = 1;
+      {
+        console.log("no number of uses yet")
+        characterFirstLevelSpells[i].numberOfUses = 1
+      }
 
       spellList.push(characterFirstLevelSpells[i].name);
       let spellLi = document.createElement('ul');
@@ -2881,7 +2888,9 @@ function populateMageSpells(m1, m2, nextChap)
   }
 
   let spellShowButton = document.querySelector('#use-spells')
-  spellShowButton.addEventListener('click', toggleShowSpellList, false)
+  spellShowButton.addEventListener('click', toggleShowSpellList, false);
+
+  console.log(finalCharacter)
 }
 
 export function toggleShowSpellList()
