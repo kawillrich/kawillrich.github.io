@@ -2739,15 +2739,6 @@ function populateMageSpells(m1, m2, nextChap)
   {
     if (characterFirstLevelSpells[i].useBattle === true && characterFirstLevelSpells[i].effect === "The mage only")
     {
-
-      //Trying to add numberOfUses = 1
-
-      // if (!characterFirstLevelSpells[i].numberOfUses)
-      // {
-      //   console.log("no number of uses yet")
-      //   characterFirstLevelSpells[i].numberOfUses = 1
-      // }
-
       spellList.push(characterFirstLevelSpells[i].name);
       let spellLi = document.createElement('ul');
       spellLi.classList.add('spell-list');
@@ -2765,14 +2756,6 @@ function populateMageSpells(m1, m2, nextChap)
 
     } else if (characterFirstLevelSpells[i].useBattle === true)
     {
-      //Trying to add numberOfUses = 1
-
-      // if (!characterFirstLevelSpells[i].numberOfUses)
-      // {
-      //   console.log("no number of uses yet")
-      //   characterFirstLevelSpells[i].numberOfUses = 1
-      // }
-
       spellList.push(characterFirstLevelSpells[i].name);
       let spellLi = document.createElement('ul');
       spellLi.classList.add('spell-list');
@@ -2804,7 +2787,6 @@ function populateMageSpells(m1, m2, nextChap)
   {
     if (characterSecondLevelSpells[i].useBattle === true && characterSecondLevelSpells[i].effect === "The mage only")
     {
-      characterSecondLevelSpells[i].numberOfUses = 1;
       spellList.push(characterSecondLevelSpells[i].name);
       let spellLi = document.createElement('ul');
       spellLi.classList.add('spell-list');
@@ -2823,7 +2805,6 @@ function populateMageSpells(m1, m2, nextChap)
 
     } else if (characterSecondLevelSpells[i].useBattle === true)
     {
-      characterSecondLevelSpells[i].numberOfUses = 1;
       spellList.push(characterSecondLevelSpells[i].name);
       let spellLi2 = document.createElement('ul');
       spellLi2.classList.add('spell-list');
@@ -2851,7 +2832,6 @@ function populateMageSpells(m1, m2, nextChap)
   {
     if (characterThirdLevelSpells[i].useBattle === true && characterThirdLevelSpells[i].effect === "The mage only")
     {
-      characterThirdLevelSpells[i].numberOfUses = 1;
       spellList.push(characterThirdLevelSpells[i].name);
       let spellLi = document.createElement('ul');
       spellLi.classList.add('spell-list');
@@ -2870,7 +2850,6 @@ function populateMageSpells(m1, m2, nextChap)
 
     } else if (characterThirdLevelSpells[i].useBattle === true)
     {
-      characterThirdLevelSpells[i].numberOfUses = 1;
       spellList.push(characterThirdLevelSpells[i].name);
       let spellLi = document.createElement('ul');
       spellLi.classList.add('spell-list');
