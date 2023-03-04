@@ -166,7 +166,7 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         //checking if M1 is alive -
 
-        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isBlindedM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isBlindedM1 === false))
+        if ((attackedMonster === "Monster 1" && monster1.healthPoints > 0 && isBlindedM1 === false) || (attackedMonster === "Monster 1" && (monster1.healthPoints > 0 && isBlindedM1 === false)))
         {
             dialogue.innerHTML += `<p>${monster1.name} has been blinded.</p>`;
             monster1.status.push('Blind');
@@ -197,18 +197,7 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             finalCharacter.activeSpellStatuses.push(blindTimer);
             //end of setTimeout
 
-        } else if (monster1.healthPoints > 0)
-        {
-            dialogue.innerHTML += `<p>${monster1.name} is not affected.</p>`;
-
-        } else 
-        {
-            // alert('NEED TO FIX CONDITIONAL LINE 377 MAGE-LEVEL-ONE-SPELLS-CLASS')
-        }
-
-        //checking if M2 is alive - need to check if HD < 4+1 to be affected
-
-        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && isBlindedM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isBlindedM2 === false))
+        } else if ((attackedMonster === "Monster 2" && monster2.healthPoints > 0 && isBlindedM2 === false) || (attackedMonster === "Monster 2" && (monster2.healthPoints > 0 && isBlindedM2 === false)))
         {
             dialogue.innerHTML += `<p>${monster2.name} is blinded.</p>`;
             monster2.status.push('Blind');
@@ -237,14 +226,10 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
             finalCharacter.activeSpellStatuses.push(blindTimer2);
 
-        } else if (monster2.healthPoints > 0)
-        {
-            dialogue.innerHTML += `<p>${monster2.name} is not affected.</p>`;
-
-        } else
+        } else 
         {
             // //TRIGGERS WHEN FIRST BATTLE WITH ONLY ONE MONSTER STARTS
-            // alert('NEED TO FIX CONDITIONAL LINE 419 MAGE-LEVEL-ONE-SPELLS-CLASS')
+            alert('NEED TO FIX CONDITIONAL LINE 232 MAGE-LEVEL-ONE-SPELLS-CLASS')
         }
     }
 }
