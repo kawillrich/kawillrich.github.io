@@ -165,7 +165,7 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         //checking if M1 is alive -
 
-        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isBlindingM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isBlindingM1 === false))
+        if ((monster1.healthPoints > 0 && monster1.hitDice[0] < 4 && isBlindedM1 === false) || (monster1.healthPoints > 0 && monster1.hitDice[0] === 4 && monster1.hitDice[1] > 1 && isBlindedM1 === false))
         {
             dialogue.innerHTML += `<p>${monster1.name} has been blinded.</p>`;
             monster1.status.push('Blind');
@@ -207,7 +207,7 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         //checking if M2 is alive - need to check if HD < 4+1 to be affected
 
-        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && isBlindingM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isBlindingM2 === false))
+        if ((monster2.healthPoints > 0 && monster2.hitDice[0] < 4 && isBlindedM2 === false) || (monster2.healthPoints > 0 && monster2.hitDice[0] === 4 && monster2.hitDice[1] > 1 && isBlindedM2 === false))
         {
             dialogue.innerHTML += `<p>${monster2.name} is blinded.</p>`;
             monster2.status.push('Blind');
