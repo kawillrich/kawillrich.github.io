@@ -125,10 +125,12 @@ continualLight.castSpell = function (monster1, monster2, continueNextChapter, at
 
             finalCharacter.activeSpellStatuses.push(blindTimer2);
 
-        } else 
+        } else if (attackedMonster === "Monster 2")
         {
-            // //TRIGGERS WHEN FIRST BATTLE WITH ONLY ONE MONSTER STARTS
-            alert('NEED TO FIX CONDITIONAL LINE 232 MAGE-LEVEL-ONE-SPELLS-CLASS')
+            dialogue.innerHTML += `<p>${monster2.name} was not affected.</p>`;
+        } else if (attackedMonster === "Monster 1")
+        {
+            dialogue.innerHTML += `<p>${monster1.name} was not affected.</p>`;
         }
     }
 }
