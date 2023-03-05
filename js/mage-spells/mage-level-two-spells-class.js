@@ -31,9 +31,99 @@ let web = new MageLevelTwoSpells("Web", 2, 10, 48, "A volume of 10 by 10 by 10",
 let wizardLock = new MageLevelTwoSpells("Wizard Lock", 2, 10, 999, "One portal or lock", function () { console.log('Casting'); }, "wizard-lock", false, 0, false);
 let detectInvisible = new MageLevelTwoSpells("Detect Invisible", 2, 10, 6, "Detect invisibility", function () { console.log('Casting'); }, "detect-invisible", false, 0, true);
 
-continualLight.castSpell = function ()
+continualLight.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
-    console.log('Casting Continual Light')
+    if (this.numberOfUses <= 0)
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast Light, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+
+    } else
+    {
+        this.numberOfUses -= 1;
+
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+        toggleShowSpellList();
+
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Light spell, which affects a 30 foot area.</p>`;
+
+        let isBlindedM1 = monster1.status.some((x) => x === "Blind");
+        let isBlindedM2 = monster2.status.some((x) => x === "Blind");
+
+        //checking if M1 is alive -
+
+        if ((attackedMonster === "Monster 1" && monster1.healthPoints > 0 && isBlindedM1 === false) || (attackedMonster === "Monster 1" && (monster1.healthPoints > 0 && isBlindedM1 === false)))
+        {
+            dialogue.innerHTML += `<p>${monster1.name} has been blinded.</p>`;
+            monster1.status.push('Blind');
+            let monster1Status = document.querySelector("#monster-one-status");
+            monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
+
+            //need to make variable, push to an array, and then call the function expression
+
+            let blindTimer = setTimeout(function ()
+            {
+                let removeBlindM1 = monster1.status.filter((x) => "Blind");
+                monster1.status.splice(removeBlindM1); //removing Blind after function call
+                let updateM1Status = document.querySelector("#monster-one");
+                updateM1Status.innerHTML = `
+                <div class="monster" id="monster-one">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 1</legend>
+                        <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                        <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                        <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+                        <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                        <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+                    </fieldset>   
+                </div>`;
+                console.log('Blind removed m1')
+            }, 60000);
+
+            finalCharacter.activeSpellStatuses.push(blindTimer);
+            //end of setTimeout
+
+        } else if ((attackedMonster === "Monster 2" && monster2.healthPoints > 0 && isBlindedM2 === false) || (attackedMonster === "Monster 2" && (monster2.healthPoints > 0 && isBlindedM2 === false)))
+        {
+            dialogue.innerHTML += `<p>${monster2.name} is blinded.</p>`;
+            monster2.status.push('Blind');
+            let monster2Status = document.querySelector("#monster-two-status");
+            monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+
+            let blindTimer2 = setTimeout(function ()
+            {
+                let removeBlindM2 = monster2.status.filter((x) => "Blind");
+                monster2.status.splice(removeBlindM2);
+                let updateM2Status = document.querySelector("#monster-two");
+                updateM2Status.innerHTML = `
+                <div class="monster" id="monster-two">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 2</legend>
+                        <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                        <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                        <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
+                        <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
+                        <h4 id="monster-two-status">Status: ${monster2.status}</h4>
+                    </fieldset>   
+                </div>`;
+                console.log('blind removed m2')
+
+            }, 60000);
+
+            finalCharacter.activeSpellStatuses.push(blindTimer2);
+
+        } else 
+        {
+            // //TRIGGERS WHEN FIRST BATTLE WITH ONLY ONE MONSTER STARTS
+            alert('NEED TO FIX CONDITIONAL LINE 232 MAGE-LEVEL-ONE-SPELLS-CLASS')
+        }
+    }
 }
 
 detectEvil.castSpell = function ()
