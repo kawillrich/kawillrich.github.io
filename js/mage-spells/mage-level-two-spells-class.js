@@ -43,7 +43,7 @@ continualLight.castSpell = function (monster1, monster2, continueNextChapter, at
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You try to cast Light, but the words won't come to your mind.</p>`;
+        dialogue.innerHTML = `<p>You try to cast Continual Light, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
 
     } else
@@ -58,7 +58,7 @@ continualLight.castSpell = function (monster1, monster2, continueNextChapter, at
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Light spell, which affects a 30 foot area.</p>`;
+        dialogue.innerHTML = `<p>You cast Continual Light spell, which affects a 60 foot area.</p>`;
 
         let isBlindedM1 = monster1.status.some((x) => x === "Blind");
         let isBlindedM2 = monster2.status.some((x) => x === "Blind");
