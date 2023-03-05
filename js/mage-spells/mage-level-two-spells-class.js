@@ -1,3 +1,10 @@
+import
+{
+    finalCharacter
+} from "/js/js_v14-3.js";
+
+import { toggleShowSpellList } from "/js/js_v14-3.js";
+
 export let mageLevelTwoSpells = [];
 
 export default class MageLevelTwoSpells
