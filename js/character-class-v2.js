@@ -144,7 +144,8 @@ export default class Character
     characterImage,
     treasure,
     hitRollTable,
-    activeSpellStatuses
+    activeSpellStatuses,
+    status
   )
   {
     this.name = name;
@@ -172,6 +173,7 @@ export default class Character
       [-1, 20]
     ],
       this.activeSpellStatuses = [];
+      this.status = [];
   }
 
   //updates & initiates Character creation
