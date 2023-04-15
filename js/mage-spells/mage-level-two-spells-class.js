@@ -81,7 +81,7 @@ continualLight.castSpell = function (monster1, monster2, continueNextChapter, at
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Continual Light spell, which affects a 60 foot area.</p>`;
+        dialogue.innerHTML = `<p>You cast Contiual Light, which which affects a 60 foot area.</p>`;
 
         let isBlindedM1 = monster1.status.some((x) => x === "Blind");
         let isBlindedM2 = monster2.status.some((x) => x === "Blind");
@@ -188,13 +188,13 @@ locateObject.castSpell = function ()
     console.log('Casting Locate Object')
 }
 
-mirrorImage.castSpell = function ()
+mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     console.log('Casting Mirror Image');
     if (this.numberOfUses <= 0)
     {
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You try to cast Continual Light, but the words won't come to your mind.</p>`;
+        dialogue.innerHTML = `<p>You try to cast Mirror Image, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
 
     } else
@@ -206,10 +206,10 @@ mirrorImage.castSpell = function ()
             this.numberOfUses = 0;
         }
         toggleShowSpellList();
-
+        let images = Math.ceil(Math.random(1) * 4);
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Continual Light spell, which affects a 60 foot area.</p>`;
+        dialogue.innerHTML = `<p>You cast Mirror Image, which which created ${images} more images of you.</p>`;
     }
 }
 

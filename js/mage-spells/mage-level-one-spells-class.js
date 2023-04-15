@@ -159,7 +159,7 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Light spell, which affects a 30 foot area.</p>`;
+        dialogue.innerHTML = `<p>You cast Light, which affects a 30 foot area.</p>`;
 
         let isBlindedM1 = monster1.status.some((x) => x === "Blind");
         let isBlindedM2 = monster2.status.some((x) => x === "Blind");
@@ -518,7 +518,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Sleep spell, which affects a 40 foot area.</p>`;
+        dialogue.innerHTML = `<p>You cast Sleep, which affects a 40 foot area.</p>`;
 
         let isSleepingM1 = monster1.status.some((x) => x === "Sleep");
         let isSleepingM2 = monster2.status.some((x) => x === "Sleep");
