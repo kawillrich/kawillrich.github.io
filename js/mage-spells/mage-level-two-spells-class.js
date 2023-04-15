@@ -210,12 +210,17 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Mirror Image, which which created ${images} more images of you.</p>`;
+        let addMirrorImageStatus = document.querySelector('#char-status');
+        finalCharacter.status.push('Mirror Image')
+        addMirrorImageStatus.innerHTML = `
+        <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status.join(', ')}        }</span></h4>
+        `
     }
 
     let mirrorImageTimer = setTimeout(function ()
     {
         let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
-        finalCharacter.status.splice(removeMirrorImage); //removing Blind after function call
+        finalCharacter.status.splice(removeMirrorImage); //removing Mirror Image after function call
         let updateCharacterStatus = document.querySelector("#char-status");
         updateCharacterStatus.innerHTML = `
         <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
