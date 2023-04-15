@@ -235,6 +235,26 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
 phantasmalForce.castSpell = function ()
 {
     console.log('Casting Phantasmal Force')
+    if (this.numberOfUses <= 0)
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast Phantasmal Force, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+
+    } else
+    {
+        this.numberOfUses -= 1;
+
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+        toggleShowSpellList();
+
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Phantasmal Force and create a Troll to attack the monsters.</p>`;
+    }
 }
 
 web.castSpell = function ()
