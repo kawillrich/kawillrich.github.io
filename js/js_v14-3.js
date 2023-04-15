@@ -239,6 +239,8 @@ window.addEventListener('load',
     window.scrollTo(0, 0);
   }, false);
 
+let images;
+
 let adventurerImage = 4;
 let charAchievements = {};
 let attributes = [];
@@ -2558,6 +2560,7 @@ function declareAttack()
 
 function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
 {
+  
   monsterOne.createHitPoints();
   monsterTwo.createHitPoints();
 

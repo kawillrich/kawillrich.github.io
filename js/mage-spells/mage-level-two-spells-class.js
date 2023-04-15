@@ -206,10 +206,10 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
             this.numberOfUses = 0;
         }
         toggleShowSpellList();
-        let images = Math.ceil(Math.random(1) * 4);
-        finalCharacter.greyOutAttackButtons(monster1, monster2, images);
+        finalCharacter.mirrorImages = Math.ceil(Math.random(1) * 4);
+        finalCharacter.greyOutAttackButtons(monster1, monster2, finalCharacter.mirrorImages);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Mirror Image, which which created ${images} more image(s) of you.</p>`;
+        dialogue.innerHTML = `<p>You cast Mirror Image, which which created ${finalCharacter.mirrorImages} more image(s) of you.</p>`;
         let addMirrorImageStatus = document.querySelector('#char-status');
         finalCharacter.status.push('Mirror Image')
         addMirrorImageStatus.innerHTML = `

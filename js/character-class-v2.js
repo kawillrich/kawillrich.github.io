@@ -145,7 +145,8 @@ export default class Character
     treasure,
     hitRollTable,
     activeSpellStatuses,
-    status
+    status, 
+    mirrorImages
   )
   {
     this.name = name;
@@ -174,6 +175,7 @@ export default class Character
     ],
       this.activeSpellStatuses = [];
       this.status = [];
+      this.mirrorImages  = 0;
   }
 
   //updates & initiates Character creation
@@ -928,10 +930,10 @@ export default class Character
     {
       if (monster1.healthPoints <= 0)
       {
-        monster2.monsterAttack(monster1, monster2, images);
+        monster2.monsterAttack(monster1, monster2, finalCharacter.mirrorImages);
       } else
       {
-        monster1.monsterAttack(monster1, monster2, images);
+        monster1.monsterAttack(monster1, monster2, finalCharacter.mirrorImages);
       }
     };
   };
