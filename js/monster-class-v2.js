@@ -103,7 +103,7 @@ export default class Monster
     }
   }
 
-  monsterAttack(monsterOne, monsterTwo)
+  monsterAttack(monsterOne, monsterTwo, images)
   {
     alert(`Monster(s) Turn!`);
     //Determining what monster attacks first
@@ -111,12 +111,12 @@ export default class Monster
     if (monsterTwo.healthPoints <= 0)
     {
       let attackingMonster = monsterOne;
-      monsterOne.monstersTurn(attackingMonster, monsterTwo, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
+      monsterOne.monstersTurn(attackingMonster, monsterTwo, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo, images);
     }
     else if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints > 0)
     {
       let attackingMonster = monsterTwo;
-      monsterTwo.monstersTurn(attackingMonster, monsterOne, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
+      monsterTwo.monstersTurn(attackingMonster, monsterOne, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo, images);
     }
     else
     {
@@ -124,16 +124,16 @@ export default class Monster
       if (randomMonsterAttack === 2)
       {
         let affectedMonster = monsterTwo;
-        monsterTwo.monstersTurn(affectedMonster, monsterOne, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
+        monsterTwo.monstersTurn(affectedMonster, monsterOne, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter, monsterOne, monsterTwo, images);
       } else if (randomMonsterAttack <= 1)
       {
         let affectedMonster = monsterOne;
-        monsterOne.monstersTurn(affectedMonster, monsterTwo, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter, monsterOne, monsterTwo);
+        monsterOne.monstersTurn(affectedMonster, monsterTwo, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter, monsterOne, monsterTwo, images);
       }
     }
   }
 
-  monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter, monsterOne, monsterTwo)
+  monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter, monsterOne, monsterTwo, images)
   {
 
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
@@ -151,9 +151,12 @@ export default class Monster
     } else if (thisMonster.status.includes("Blind"))
     {
       this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+    // } else if (finalCharacter.status.includes("Mirror Image"))
+    // { 
+    //   this.mirrorImageSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
     } else
     {
-      this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo);
+      this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo, images);
 
       //actual attack causing damage - maybe bypass depending on statuses
 
@@ -168,6 +171,8 @@ export default class Monster
       };
     }
   }
+
+ 
 
   sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
@@ -199,6 +204,10 @@ export default class Monster
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
+  // mirrorImageSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)  {
+    
+  // }
+
   revertToAttackButtons()
   {
     let showAttackButtons = document.querySelectorAll(".attack");
@@ -215,7 +224,7 @@ export default class Monster
     hideMonsterAttackButton.classList.add("hidden");
   };
 
-  checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1, monsterOne, monsterTwo) 
+  checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1, monsterOne, monsterTwo, images) 
   {
     for (let i = 0; i < monsterHitRoll1.length; i++)
     {
@@ -226,8 +235,22 @@ export default class Monster
           alert(`${thisMonster.name} misses!`);
           this.revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo);
-        } else
-        {
+        } else if (finalCharacter.status.includes("Mirror Image") && images > 0) {
+          images --
+            if (images <= 0) {
+              images = 0;
+              let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
+              finalCharacter.status.splice(removeMirrorImage); //removing Mirror Image after function call
+              let updateCharacterStatus = document.querySelector("#char-status");
+              updateCharacterStatus.innerHTML = `
+                <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
+                }</span></h4>`;
+              console.log('Mirror Image removed from player')
+            };
+
+            alert(`The ${thisMonster.name} attacks you and strikes one of your Mirror Images - there are ${images} left.`);
+
+        } else {
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
           finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;

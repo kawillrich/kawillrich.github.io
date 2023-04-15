@@ -909,7 +909,7 @@ export default class Character
     finalCharacter.confirmMonstersDead(monster1, monster2, continueNextChapter);
   }
 
-  greyOutAttackButtons(monster1, monster2)
+  greyOutAttackButtons(monster1, monster2, images)
   {
     let attackButtons = document.querySelectorAll(".attack");
 
@@ -928,10 +928,10 @@ export default class Character
     {
       if (monster1.healthPoints <= 0)
       {
-        monster2.monsterAttack(monster1, monster2);
+        monster2.monsterAttack(monster1, monster2, images);
       } else
       {
-        monster1.monsterAttack(monster1, monster2);
+        monster1.monsterAttack(monster1, monster2, images);
       }
     };
   };
