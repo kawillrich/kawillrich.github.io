@@ -213,7 +213,8 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
         let addMirrorImageStatus = document.querySelector('#char-status');
         finalCharacter.status.push('Mirror Image')
         addMirrorImageStatus.innerHTML = `
-        <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status.join(', ')}        }</span></h4>
+        <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status.join(', ')}        
+        </span></h4>
         `
     }
 
