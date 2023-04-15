@@ -172,7 +172,7 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             monster1.status.push('Blind');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
-
+            
             //need to make variable, push to an array, and then call the function expression
 
             let blindTimer = setTimeout(function ()
