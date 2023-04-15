@@ -31,7 +31,7 @@ let continualLight = new MageLevelTwoSpells("Continual Light", 2, 120, 999, "Vol
 
 let detectEvil = new MageLevelTwoSpells("Detect Evil", 2, 60, 2, "Everything within 60 feet", function () { console.log('Casting'); }, "detect-evil", false, 0, true);
 
-
+//battle spell
 let invisibility = new MageLevelTwoSpells("Invisibility", 2, 240, 999, "One creature or object", function () { console.log('Casting'); }, "invisibility", true, 0, false);
 
 
@@ -46,13 +46,13 @@ let levitate = new MageLevelTwoSpells("Levitate", 2, 0, 6, "The mage only", func
 
 let locateObject = new MageLevelTwoSpells("Locate Object", 2, 60, 2, "One object within range", function () { console.log('Casting'); }, "locate-object", false, 0, true);
 
-
+//completed
 let mirrorImage = new MageLevelTwoSpells("Mirror Image", 2, 0, 6, "The mage only", function () { console.log('Casting'); }, "mirror-image", true, 0, false);
 
-
+//battle spell
 let phantasmalForce = new MageLevelTwoSpells("Phantasmal Force", 2, 999, 12, "20 foot volume", function () { console.log('Casting'); }, "phantasmal-force", true, 0, true);
 
-
+//battle spell
 let web = new MageLevelTwoSpells("Web", 2, 10, 48, "A volume of 10 by 10 by 10", function () { console.log('Casting'); }, "web", true, 0, true);
 
 
