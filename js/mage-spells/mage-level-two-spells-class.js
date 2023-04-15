@@ -209,7 +209,7 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
         let images = Math.ceil(Math.random(1) * 4);
         finalCharacter.greyOutAttackButtons(monster1, monster2);
         let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Mirror Image, which which created ${images} more images of you.</p>`;
+        dialogue.innerHTML = `<p>You cast Mirror Image, which which created ${images} more image(s) of you.</p>`;
         let addMirrorImageStatus = document.querySelector('#char-status');
         finalCharacter.status.push('Mirror Image')
         addMirrorImageStatus.innerHTML = `
