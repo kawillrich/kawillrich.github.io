@@ -190,7 +190,27 @@ locateObject.castSpell = function ()
 
 mirrorImage.castSpell = function ()
 {
-    console.log('Casting Mirror Image')
+    console.log('Casting Mirror Image');
+    if (this.numberOfUses <= 0)
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast Continual Light, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+
+    } else
+    {
+        this.numberOfUses -= 1;
+
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+        toggleShowSpellList();
+
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Continual Light spell, which affects a 60 foot area.</p>`;
+    }
 }
 
 phantasmalForce.castSpell = function ()
