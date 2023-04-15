@@ -215,7 +215,7 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
     let mirrorImageTimer = setTimeout(function ()
     {
         let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
-        finalCharacter.status.splice(removeMirroImage); //removing Blind after function call
+        finalCharacter.status.splice(removeMirrorImage); //removing Blind after function call
         let updateCharacterStatus = document.querySelector("#char-status");
         updateCharacterStatus.innerHTML = `
         <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
@@ -223,7 +223,7 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
         console.log('Mirror Image removed from player')
     }, 30000);
 
-    finalCharacter.activeSpellStatuses.push(blindTimer);
+    finalCharacter.activeSpellStatuses.push(mirrorImageTimer);
 }
 
 phantasmalForce.castSpell = function ()
