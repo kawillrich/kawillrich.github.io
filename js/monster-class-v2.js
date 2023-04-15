@@ -234,9 +234,10 @@ export default class Monster
         {
           alert(`${thisMonster.name} misses!`);
           this.revertToAttackButtons();
-          confirmAttackMonsters(monsterOne, monsterTwo);
+          confirmAttackMonsters(monsterOne, monsterTwo, images);
         } else if (finalCharacter.status.includes("Mirror Image") && images > 0) {
-          images --
+          images -= 1;
+          console.log (images);
             if (images <= 0) {
               images = 0;
               let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
@@ -265,7 +266,7 @@ export default class Monster
           clearDialogue.textContent = ``;
 
           this.revertToAttackButtons();
-          confirmAttackMonsters(monsterOne, monsterTwo);
+          confirmAttackMonsters(monsterOne, monsterTwo, images);
         }
       }
     }

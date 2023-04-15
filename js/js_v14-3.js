@@ -2710,7 +2710,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
   {
     populateMageSpells(monsterOne, monsterTwo, continueNextChapter);
   }
-  confirmAttackMonsters(monsterOne, monsterTwo);
+  confirmAttackMonsters(monsterOne, monsterTwo, images = 0);
 }
 
 function populateMageSpells(m1, m2, nextChap)
