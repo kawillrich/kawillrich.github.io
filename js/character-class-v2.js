@@ -1163,7 +1163,14 @@ export default class Character
       console.log("clearing spell timouts: " + spell)
       clearTimeout(spellTimeouts[spell]);
       delete spellTimeouts[spell]
-    }
+    };
+    finalCharacter.status = [];
+    finalCharacter.mirrorImages = 0;
+
+    let clearCharacterStatus = document.querySelector("#char-status");
+    clearCharacterStatus.innerHTML = `
+      <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
+      }</span></h4>`;
   }
 
 }
