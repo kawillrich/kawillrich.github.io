@@ -232,7 +232,7 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
     finalCharacter.activeSpellStatuses.push(mirrorImageTimer);
 }
 
-phantasmalForce.castSpell = function ()
+phantasmalForce.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     console.log('Casting Phantasmal Force')
     if (this.numberOfUses <= 0)
@@ -270,7 +270,7 @@ phantasmalForce.castSpell = function ()
     }
 }
 
-web.castSpell = function ()
+web.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     console.log('Casting Web');
 
