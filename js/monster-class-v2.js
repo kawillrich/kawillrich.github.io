@@ -145,15 +145,16 @@ export default class Monster
     {
       this.sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
       //otherwise
+    } else if (thisMonster.status.includes("Web"))
+    {
+      this.webSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+
     } else if (thisMonster.status.includes("Charmed"))
     {
       this.charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
     } else if (thisMonster.status.includes("Blind"))
     {
       this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-    // } else if (finalCharacter.status.includes("Mirror Image"))
-    // { 
-    //   this.mirrorImageSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
     } else
     {
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo, images);
@@ -172,7 +173,12 @@ export default class Monster
     }
   }
 
- 
+  webSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+  {
+    $("#dialogue").text(`${thisMonster.name} is stuck in the web and cannot attack.`);
+    this.revertToAttackButtons();
+    confirmAttackMonsters(monsterOne, monsterTwo);
+  }
 
   sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
   {
@@ -205,7 +211,7 @@ export default class Monster
   }
 
   // mirrorImageSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)  {
-    
+
   // }
 
   revertToAttackButtons()
@@ -237,24 +243,27 @@ export default class Monster
           this.revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo, images);
 
-        } else if (finalCharacter.status.includes("Mirror Image") && images > 0) {
+        } else if (finalCharacter.status.includes("Mirror Image") && images > 0)
+        {
           console.log('checkMonsterHitRoll: status includes Mirror Image & Images > 0', images, finalCharacter.status)
           images -= 1;
           finalCharacter.mirrorImages = images;
-            if (images <= 0) {
-              images = 0;
-              let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
-              finalCharacter.status.splice(removeMirrorImage); //removing Mirror Image after function call
-              let updateCharacterStatus = document.querySelector("#char-status");
-              updateCharacterStatus.innerHTML = `
+          if (images <= 0)
+          {
+            images = 0;
+            let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
+            finalCharacter.status.splice(removeMirrorImage); //removing Mirror Image after function call
+            let updateCharacterStatus = document.querySelector("#char-status");
+            updateCharacterStatus.innerHTML = `
                 <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
-                }</span></h4>`;
-              console.log('Mirror Image removed from player')
-            };
+              }</span></h4>`;
+            console.log('Mirror Image removed from player')
+          };
 
-            alert(`The ${thisMonster.name} attacks you and strikes one of your Mirror Images - there are ${images} left.`);
+          alert(`The ${thisMonster.name} attacks you and strikes one of your Mirror Images - there are ${images} left.`);
 
-        } else {
+        } else
+        {
           console.log('checkMonsterHitRoll: else', images, finalCharacter.status)
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
