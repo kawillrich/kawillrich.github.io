@@ -270,7 +270,36 @@ phantasmalForce.castSpell = function ()
 
 web.castSpell = function ()
 {
-    console.log('Casting Web')
+    console.log('Casting Web');
+
+    //casts a web and prevents monsters from attacking like a sleep spell
+    //Giants and other creatures with great strength can break through a web in 2 rounds. 
+    //A human of average Strength (a score of 9-12) will take 2-8 (2d4) turns to
+    //break through the web. 
+
+    if (this.numberOfUses <= 0)
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast Web, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
+
+    } else
+    {
+        this.numberOfUses -= 1;
+
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
+        }
+
+
+        toggleShowSpellList();
+
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You cast Web and entagle the monster(s).</p>`;
+    }
+
 }
 
 wizardLock.castSpell = function ()
