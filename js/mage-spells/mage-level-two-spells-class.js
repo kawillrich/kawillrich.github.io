@@ -252,10 +252,12 @@ phantasmalForce.castSpell = function ()
 
         //add random monsters in an array to pick which one attacks?
         //would the phantasmal force disappear?
-        //have mage pick what monsters it wants to use? have array populate depending on monsters player encounters?
+        //have mage pick what monsters it wants to use? 
+        //have array populate depending on monsters player encounters?
         //Monster is AC 9 and disappears when hit
         //if mage moves, takes any damage, or fails saving throws, it disappears
-        //no real damage is inflicted. recipient THINKS it is turned to stone/falls unconcious/etc.
+        //no real damage is inflicted. 
+        //recipient THINKS it is turned to stone/falls unconcious/etc.
         //wears off in 1-4 turns
 
 
@@ -295,10 +297,76 @@ web.castSpell = function ()
 
         toggleShowSpellList();
 
-        finalCharacter.greyOutAttackButtons(monster1, monster2);
-        let dialogue = document.querySelector('#dialogue');
-        dialogue.innerHTML = `<p>You cast Web and entagle the monster(s).</p>`;
+        let isWebbedM1 = monster1.status.some((x) => x === "Web");
+        let isWebbedM2 = monster2.status.some((x) => x === "Web");
+
+        //checking if M1 is alive -
+
+        if ((monster1.healthPoints > 0 && isWebbedM1 === false) || (monster1.healthPoints > 0 && isWebbedM1 === false))
+        {
+            dialogue.innerHTML += `<p>${monster1.name} is stuck in the web.</p>`;
+            monster1.status.push('Web');
+            let monster1Status = document.querySelector("#monster-one-status");
+            monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
+
+            //need to make variable, push to an array, and then call the function expression
+
+            let webTimer = setTimeout(function ()
+            {
+                let removeWebM1 = monster1.status.filter((x) => "Web");
+                monster1.status.splice(removeWebM1); //removing Web after function call
+                let updateM1Status = document.querySelector("#monster-one");
+                updateM1Status.innerHTML = `
+                <div class="monster" id="monster-one">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 1</legend>
+                        <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                        <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                        <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+                        <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                        <h4 id="monster-one-status">Status: ${monster1.status}</h4>
+                    </fieldset>   
+                </div>`;
+                console.log('Web removed m1')
+            }, 30000);
+
+            finalCharacter.activeSpellStatuses.push(webTimer);
+            //end of setTimeout
+        }
+
+        if ((monster2.healthPoints > 0 && isWebbedM2 === false) || (monster2.healthPoints > 0 && isWebbedM2 === false))
+        {
+            dialogue.innerHTML += `<p>${monster2.name} is stuck in the web.</p>`;
+            monster2.status.push('Web');
+            let monster2Status = document.querySelector("#monster-two-status");
+            monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+
+            let webTimer2 = setTimeout(function ()
+            {
+                let removeWebM2 = monster2.status.filter((x) => "Web");
+                monster2.status.splice(removeWebM2);
+                let updateM2Status = document.querySelector("#monster-two");
+                updateM2Status.innerHTML = `
+                <div class="monster" id="monster-two">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 2</legend>
+                        <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+                        <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+                        <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
+                        <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
+                        <h4 id="monster-two-status">Status: ${monster2.status}</h4>
+                    </fieldset>   
+                </div>`;
+                console.log('Web removed m2')
+
+            }, 30000);
+
+            finalCharacter.activeSpellStatuses.push(webTimer2);
+
+        }
     }
+
+
 
 }
 
