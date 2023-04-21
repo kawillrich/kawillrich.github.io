@@ -294,7 +294,6 @@ web.castSpell = function ()
             this.numberOfUses = 0;
         }
 
-
         toggleShowSpellList();
 
         let isWebbedM1 = monster1.status.some((x) => x === "Web");
@@ -358,16 +357,11 @@ web.castSpell = function ()
                     </fieldset>   
                 </div>`;
                 console.log('Web removed m2')
-
             }, 30000);
 
             finalCharacter.activeSpellStatuses.push(webTimer2);
-
         }
     }
-
-
-
 }
 
 wizardLock.castSpell = function ()
