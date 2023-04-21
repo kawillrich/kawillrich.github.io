@@ -25,7 +25,7 @@ export default class MageLevelTwoSpells
     }
 };
 
-// completed continual light
+//completed
 let continualLight = new MageLevelTwoSpells("Continual Light", 2, 120, 999, "Volume of 60 foot diameter", function () { console.log('Casting'); }, "continual-light", true, 0, true);
 
 
@@ -52,7 +52,7 @@ let mirrorImage = new MageLevelTwoSpells("Mirror Image", 2, 0, 6, "The mage only
 //battle spell
 let phantasmalForce = new MageLevelTwoSpells("Phantasmal Force", 2, 999, 12, "20 foot volume", function () { console.log('Casting'); }, "phantasmal-force", true, 0, true);
 
-//battle spell
+//completed
 let web = new MageLevelTwoSpells("Web", 2, 10, 48, "A volume of 10 by 10 by 10", function () { console.log('Casting'); }, "web", true, 0, true);
 
 
