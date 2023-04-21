@@ -780,7 +780,7 @@ function confirmingAttributes()
             such laws are fair and just. If a choice must be made between the benefit of the group or an individual, a Lawful character will usually choose the group.
             </div>
 
-            <div id="neutral-description" class="alignement-description hidden no-display">Neutral characters believethat the works is a balance between Law and Chaos. It is important that neither side get
+            <div id="neutral-description" class="alignement-description hidden no-display">Neutral characters believe that the works is a balance between Law and Chaos. It is important that neither side get
             too much power and upset this balance. The individual is important, but so it the group; the two sides must work together. A Neutral character is most interested in personal
             survival. Such characters believe in their own wits and abilities rather than luck.
             </div>
