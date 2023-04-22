@@ -23,15 +23,16 @@ body {
   margin: 0px auto 0px auto;
   width: 800px;
   padding: 10px 10px 0px 10px;
-  border: 1px solid black;
+  border: 1px solid rgb(23, 147, 230);
   height: 1100px;
 }
+
 
 #container-2 {
   margin: 0px 0px 0px 10px;
   width: 800px;
   padding: 10px 0px 0px 10px;
-  border: 1px solid black;
+  border: 1px solid rgb(23, 147, 230);
   height: 1100px;
 }
 
