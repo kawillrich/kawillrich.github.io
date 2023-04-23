@@ -59,8 +59,13 @@ input[type="submit"], #submit-all-mage-spells, #buy-items {
   display: block;
 }
 
+input[type="text"] {
+  font-size: 22px;
+}
 
-
+button {
+  font-size: 22px;
+}
 
 #player-sheet {
   margin: 0px;
