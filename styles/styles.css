@@ -31,7 +31,7 @@ body {
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
   height: 1100px;
-  border-image-source: url(/images/gui/gui-entire-border2.png);
+  border-image-source: url(../images/gui/gui-entire-border2.png);
   border-image-slice: 75 75; 
 }
 
@@ -41,13 +41,13 @@ body {
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
   height: 1100px;
-  border-image-source: url(/images/gui/gui-entire-border2.png);
+  border-image-source: url(../images/gui/gui-entire-border2.png);
   border-image-slice: 75 75;
 }
 
 input[type="submit"], #submit-all-mage-spells, #buy-items {  
   border: 20px solid transparent;
-  border-image-source: url(/images/gui/gui-buttons-player-attack.png);
+  border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 20 20;
   text-align: center;
   background-color: rgb(205,210,245);
