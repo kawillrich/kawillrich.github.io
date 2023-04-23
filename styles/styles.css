@@ -27,6 +27,19 @@ body {
   height: 1100px;
 }
 
+/* #container::before {
+  position: relative;
+  top: -11px;
+  left: -11px;
+  content: url("/images/gui/gui-border-topleft.png");
+} */
+/* 
+#container::before {
+  position: relative;
+  top: -11px;
+  left: 779px;
+  content: url("/images/gui/gui-border-topright.png")
+} */
 
 #container-2 {
   margin: 0px 0px 0px 10px;
