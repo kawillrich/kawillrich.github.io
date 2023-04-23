@@ -1,6 +1,6 @@
 * {
   font-family: "VT323";
-  font-size: 20px;
+  
 }
 
 body {
@@ -12,6 +12,7 @@ body {
   display: flex;
   align-items: stretch;
   color: rgb(130,130,170);
+  font-size: 22px;
   
   
 }
@@ -43,14 +44,21 @@ body {
   border-image-source: url(/images/gui/gui-entire-border2.png);
   border-image-slice: 75 75;
 }
+
 input[type="submit"], #submit-all-mage-spells, #buy-items {  
-  border: 30px solid transparent;
-  padding: 5px;
-  border-image-source: url(/images/gui/gui-buttons.png);
-  border-image-slice: 30 30;
+  border: 20px solid transparent;
+  border-image-source: url(/images/gui/gui-buttons-player-attack.png);
+  border-image-slice: 20 20;
   text-align: center;
   background-color: rgb(205,210,245);
+  font-size: 22px;
 }
+
+#dialogue {
+  padding: 80px 0px 0px 0px;
+  display: block;
+}
+
 
 
 
@@ -88,6 +96,10 @@ fieldset {
   border-radius: 5px;
 }
 
+#canvas2{
+  height: 300px;
+}
+
 #character-info {
   background-image: url("../images/black-dragon.jpg");
   background-repeat: no-repeat;
@@ -102,13 +114,13 @@ fieldset {
 }
 
 .char-info-module {
-  height: 210px;
+  height: 300px;
   width: 200px;
 }
 
 .canvas-info-module-player {
-  height: 210px;
-  width: 200px;
+  height: 300px;
+  width: 300px;
   background-color: rgb(155, 155, 155);
 }
 
@@ -205,13 +217,13 @@ span#dragonwarrior {
 }
 
 .button-border {
-  width: 202px;
+  width: 198px;
   display: inline-block;
-  margin: 2px 2px 2px 2px;
-  border: 1px solid black;
-  padding: 2px 2px 4px 2px;
+  margin: 5px 2px 5px 2px;
+  border: 1px solid transparent;
+  padding: 2px 2px 2px 2px;
   border-radius: 3px;
-  background-color: gray;
+  background-color: transparent;
 }
 
 .hidden {
