@@ -1,9 +1,9 @@
-// import
-// {
-//     finalCharacter
-// } from "../js_v14-3.js";
+import
+{
+    finalCharacter
+} from "../js/js_v14-3.js";
 
-// import { toggleShowSpellList } from "../js/js_v14-3.js";
+import { toggleShowSpellList } from "../js/js_v14-3.js";
 
 export let mageLevelOneSpells = [];
 
