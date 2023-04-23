@@ -1,14 +1,19 @@
 * {
-  font-family: "Corbel";
+  font-family: "VT323";
+  font-size: 20px;
 }
 
 body {
+  background-color: rgb(0, 5, 50);
   margin: 20px 0px 0px 0px;
   /* width: 1400px; */
   height: 1400px;
   padding: 0px 10px 0px 10px;
   display: flex;
   align-items: stretch;
+  color: rgb(130,130,170);
+  
+  
 }
 
 #footer {
@@ -22,32 +27,32 @@ body {
 #container {
   margin: 0px auto 0px auto;
   width: 800px;
-  padding: 10px 10px 0px 10px;
-  border: 1px solid rgb(23, 147, 230);
+  padding: 5px 5px 0px 5px;
+  border: 30px solid transparent;
   height: 1100px;
+  border-image-source: url(/images/gui/gui-entire-border2.png);
+  border-image-slice: 75 75; 
 }
-
-/* #container::before {
-  position: relative;
-  top: -11px;
-  left: -11px;
-  content: url("/images/gui/gui-border-topleft.png");
-} */
-/* 
-#container::before {
-  position: relative;
-  top: -11px;
-  left: 779px;
-  content: url("/images/gui/gui-border-topright.png")
-} */
 
 #container-2 {
   margin: 0px 0px 0px 10px;
   width: 800px;
-  padding: 10px 0px 0px 10px;
-  border: 1px solid rgb(23, 147, 230);
+  padding: 5px 5px 0px 5px;
+  border: 30px solid transparent;
   height: 1100px;
+  border-image-source: url(/images/gui/gui-entire-border2.png);
+  border-image-slice: 75 75;
 }
+input[type="submit"], #submit-all-mage-spells, #buy-items {  
+  border: 30px solid transparent;
+  padding: 5px;
+  border-image-source: url(/images/gui/gui-buttons.png);
+  border-image-slice: 30 30;
+  text-align: center;
+  background-color: rgb(205,210,245);
+}
+
+
 
 #player-sheet {
   margin: 0px;
