@@ -50,6 +50,10 @@ input[type="submit"], #submit-all-mage-spells, #buy-items {
   font-size: 22px;
 }
 
+input[type="submit"]:hover, #submit-all-mage-spells:hover, #buy-items:hover {
+  background-color: azure;
+}
+
 #dialogue {
   padding: 10px 0px 0px 0px;
   display: block;
