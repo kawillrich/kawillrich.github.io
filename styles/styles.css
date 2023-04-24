@@ -529,7 +529,7 @@ span#dragonwarrior {
   display: block;
   height: 2000px;
   width: 2000px;
-  background-color: lightblue;
+  background-color:  rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
 }
@@ -543,7 +543,7 @@ span#dragonwarrior {
   display: block;
   height: 2000px;
   width: 2000px;
-  background-color: lightblue;
+  background-color:  rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
 }
@@ -557,7 +557,7 @@ span#dragonwarrior {
   display: block;
   height: 2000px;
   width: 2000px;
-  background-color: lightblue;
+  background-color:  rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
 }
