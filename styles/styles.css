@@ -206,6 +206,7 @@ h4 {
   border-radius: 5px;
   cursor: not-allowed;
   pointer-events: none;
+  color: darkgray;
 }
 
 .monster1-dead {
@@ -728,13 +729,13 @@ li.self-spell-list:hover {
 }
 
 li.monster-one-spell-list.monster1-spell-dead:hover {
-  background-color: gray;
+  background-color: grey;
   cursor: not-allowed;
 
 }
 
 li.monster-two-spell-list.monster2-spell-dead:hover {
-  background-color: gray;
+  background-color: grey;
   cursor: not-allowed;
   /* pointer-events: none; */
 }
