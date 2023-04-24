@@ -482,7 +482,6 @@ let selectedSpecialty = "";
 
 //asks if you are ready to start game
 
-
 function checkUsername()
 {
   let checkName = document.querySelector("#character-name");

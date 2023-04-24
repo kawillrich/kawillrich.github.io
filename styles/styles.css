@@ -41,6 +41,9 @@ body {
   border-image-slice: 75 75;
 }
 
+/* add a class for submit buttons and <button> to change appearance with background image*/
+
+
 input[type="submit"], #submit-all-mage-spells, #buy-items {  
   border: 20px solid transparent;
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
@@ -63,7 +66,9 @@ input[type="text"] {
   font-size: 22px;
 }
 
-
+altButton {
+  background-color: red;
+}
 
 button {
   font-size: 22px;
@@ -168,6 +173,10 @@ fieldset {
   border-radius: 5px;
   background-color: rgb(224, 193, 193);
 }
+#monster-attack:hover {
+  background-color:  rgb(248, 162, 162);
+}
+
 
 #monster-info {
   display: flex;
