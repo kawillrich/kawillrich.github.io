@@ -422,8 +422,8 @@ export function render()
     spriteHeight,
     0,
     0,
-    spriteWidth * 2,
-    spriteHeight * 2
+    spriteWidth *1.5,
+    spriteHeight *1.5
   );
   requestAnimationFrame(render);
 }
@@ -445,8 +445,8 @@ export function animate()
     spriteHeight,
     0,
     0,
-    spriteWidth * 2,
-    spriteHeight * 2
+    spriteWidth * 1.5,
+    spriteHeight * 1.5
   );
 
   if (gameFrame % staggerFrames == 0)
