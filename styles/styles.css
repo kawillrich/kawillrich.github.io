@@ -44,7 +44,8 @@ body {
 /* add a class for submit buttons and <button> to change appearance with background image*/
 
 
-input[type="submit"], #submit-all-mage-spells, #buy-items {  
+input[type="submit"], #submit-all-mage-spells, #buy-items, 
+#generate-attributes, #confirm-attributes, #beginAdventure {  
   border: 20px solid transparent;
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 20 20;
@@ -53,11 +54,13 @@ input[type="submit"], #submit-all-mage-spells, #buy-items {
   font-size: 22px;
 }
 
-input[type="submit"]:hover, #submit-all-mage-spells:hover, #buy-items:hover {
+input[type="submit"]:hover, #submit-all-mage-spells:hover, #buy-items:hover, 
+#generate-attributes:hover, #confirm-attributes:hover, #beginAdventure:hover  {
   background-color: azure;
 }
 
-input[type="submit"]:active, #submit-all-mage-spells:active, #buy-items:active {
+input[type="submit"]:active, #submit-all-mage-spells:active, #buy-items:active, 
+#generate-attributes:active, #confirm-attributes:active, #beginAdventure:active {
   background-color: rgb(178, 241, 178);
 }
 
@@ -76,24 +79,17 @@ input[type="text"] {
   border: 10px solid transparent;
   border-image-source: url(../images/gui/gui-text-box.png);
   border-image-slice: 10 10;
-  box-shadow: inset 1px 1px 1px 1px #000;
+  /* box-shadow: inset 1px 1px 1px 1px #000; */
   border-radius: 5px;
   background-color:  rgb(205,210,245);
 }
-/* 
-#character-name {
-  
-  border: 15px solid transparent;
-  border-image-source: url(../images/gui/gui-text-box.png);
-  border-image-slice: 20 20;
-  background-color: azure;
-  padding: 5px;
-  
-} */
+ {
 
-altButton {
-  background-color: red;
+
+
 }
+
+
 
 button {
   font-size: 22px;
@@ -202,6 +198,9 @@ fieldset {
   background-color:  rgb(248, 162, 162);
 }
 
+#monster-attack:active {
+  background-color:  rgb(255, 105, 105);
+}
 
 #monster-info {
   display: flex;
