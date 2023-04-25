@@ -57,6 +57,10 @@ input[type="submit"]:hover, #submit-all-mage-spells:hover, #buy-items:hover {
   background-color: azure;
 }
 
+input[type="submit"]:active, #submit-all-mage-spells:active, #buy-items:active {
+  background-color: rgb(178, 241, 178);
+}
+
 #dialogue {
   padding: 10px 0px 0px 0px;
   display: block;
@@ -64,7 +68,28 @@ input[type="submit"]:hover, #submit-all-mage-spells:hover, #buy-items:hover {
 
 input[type="text"] {
   font-size: 22px;
+  /* background-color: aqua; */
+  /* border-top: hidden;
+  border-bottom:hidden;
+  border-right: hidden;
+  border-left: hidden; */
+  border: 10px solid transparent;
+  border-image-source: url(../images/gui/gui-text-box.png);
+  border-image-slice: 10 10;
+  box-shadow: inset 1px 1px 1px 1px #000;
+  border-radius: 5px;
+  background-color:  rgb(205,210,245);
 }
+/* 
+#character-name {
+  
+  border: 15px solid transparent;
+  border-image-source: url(../images/gui/gui-text-box.png);
+  border-image-slice: 20 20;
+  background-color: azure;
+  padding: 5px;
+  
+} */
 
 altButton {
   background-color: red;
