@@ -43,6 +43,38 @@ body {
 
 /* add a class for submit buttons and <button> to change appearance with background image*/
 
+input[name="alignment"] {
+  display: none;
+  position: relative;
+   
+}
+
+.alignment-label {
+  padding: 0px 0px 0px 20px;
+  display: inline-block;
+}
+
+.alignment-label::before, .class-label::before {
+  display: inline-block;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  content: "";
+  border: 10px solid transparent;
+  left: -10px;
+  top: 10px;
+  border-image-source: url(../images/gui/gui-buttons-player-attack.png);
+  border-image-slice: 10 10;
+  background-color: rgb(205,210,245);
+}
+
+.alignment-label:hover::before, .class-label:hover::before {
+  background-color: azure;
+}
+
+.alignment-label:checked::before, .class-label:checked::before {
+  background-color:rgb(178, 241, 178);
+}
 
 input[type="submit"], #submit-all-mage-spells, #buy-items, 
 #generate-attributes, #confirm-attributes, #beginAdventure {  
@@ -83,13 +115,6 @@ input[type="text"] {
   border-radius: 5px;
   background-color:  rgb(205,210,245);
 }
- {
-
-
-
-}
-
-
 
 button {
   font-size: 22px;
