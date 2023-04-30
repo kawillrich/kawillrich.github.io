@@ -1052,29 +1052,29 @@ function startGame()
         
         <div>
         <input type = "radio" name="selected-specialty" value="fighter" id="fighter"/>         
-        <label for "fighter" class="class-label">Fighter</label>   
+        <label for=  "fighter" class="class-label">Fighter</label>   
         </div>             
         
         <input type = "radio" name="selected-specialty" value="mage" id="mage"/> 
-        <label for "mage" class="class-label">Magic-User</label>
+        <label for=  "mage" class="class-label">Magic-User</label>
         
         <input type = "radio" name="selected-specialty" value="thief" id="thief"/> 
-        <label for "thief" class="class-label">Thief</label>
+        <label for=  "thief" class="class-label">Thief</label>
         
         <input type = "radio" name="selected-specialty" value="dwarf" id="dwarf"/> 
-        <label for "dwarf" class="class-label">Dwarf</label>
+        <label for=  "dwarf" class="class-label">Dwarf</label>
         
         <input type = "radio" name="selected-specialty" value="elf" id="elf"/> 
-        <label for "elf" class="class-label">Elf</label>
+        <label for=  "elf" class="class-label">Elf</label>
         
         <input type = "radio" name="selected-specialty" value="halfling" id="halfling"/> 
-        <label for "halfling" class="class-label">Halfling</label>
+        <label for=  "halfling" class="class-label">Halfling</label>
        
         <input type = "radio" name="selected-specialty" value="cleric" id="cleric"/>
-        <label for "cleric" class="class-label">Cleric</label>
+        <label for = "cleric" class="class-label">Cleric</label>
 
         <input type = "radio" name="selected-specialty" value="dragonwarrior" class="dragonwarrior"/>
-        <label for "dragonwarrior" id="dragonwarrior">Dragon Fighting</label>
+        <label for = "dragonwarrior" id="dragonwarrior">Dragon Fighting</label>
         </p>`;
 
   let submittingCharSpecialtyFighter = document.querySelector("#fighter");
