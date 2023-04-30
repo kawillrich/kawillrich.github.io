@@ -43,13 +43,13 @@ body {
 
 /* add a class for submit buttons and <button> to change appearance with background image*/
 
-input[name="alignment"] {
+input[name="alignment"], input[name="selected-specialty"] {
   display: none;
   position: relative;
    
 }
 
-.alignment-label {
+.alignment-label, .class-label {
   padding: 0px 0px 0px 20px;
   display: inline-block;
 }
