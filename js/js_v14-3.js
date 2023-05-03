@@ -972,13 +972,41 @@ function startGame()
         <div id='character-attributes'>
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Attributes</legend>
-                <h4 class='char-info-label'><span class='character-display-attributes-title'>Attribute: </span><span class='character-display-attributes-title'>Score: </span><span class='character-display-attributes'>Adj: </span></h4>
-                <h4 id='char-strength' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[0].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score}</span><span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span></h4>
-                <h4 id='char-intelligence' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[1].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[1].score}</span><span class='character-display-attributes-scores-adj'>${intelligencePlusAdjustment}</span></h4>
-                <h4 id='char-wisdom' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[2].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[2].score}</span><span class='character-display-attributes-scores-adj'>${wisdomPlusAdjustment}</span></h4>
-                <h4 id='char-dexterity' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[3].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[3].score}</span><span class='character-display-attributes-scores-adj'>${dexterityPlusAdjustment}</span></h4>
-                <h4 id='char-constitution' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[4].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[4].score}</span><span class='character-display-attributes-scores-adj'>${constitutionPlusAdjustment}</span></h4>
-                <h4 id='char-charisma' class='char-info-label'><span class='character-display-attributes'>${finalCharacter.attributes[5].name}: </span><span class='character-display-attributes-scores'>${finalCharacter.attributes[5].score}</span><span class='character-display-attributes-scores-adj'>${charismaPlusAdjustment}</span></h4>
+                <h4 class='char-info-label'>
+                  <span class='character-display-attributes-title'>Attribute: </span>
+                  <span class='character-display-attributes-title'>Score: </span>
+                  <span class='character-display-attributes'>Adj: </span>
+                </h4>
+                <h4 id='char-strength' class='char-info-label'>
+                  <span class='character-display-attributes'>${finalCharacter.attributes[0].name}: </span>
+                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score}</span>
+                  <span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span>
+                </h4>
+                  <h4 id='char-intelligence' class='char-info-label'>
+                  <span class='character-display-attributes'>${finalCharacter.attributes[1].name}: </span>
+                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[1].score}</span>
+                  <span class='character-display-attributes-scores-adj'>${intelligencePlusAdjustment}</span>
+                </h4>
+                <h4 id='char-wisdom' class='char-info-label'>
+                  <span class='character-display-attributes'>${finalCharacter.attributes[2].name}: </span>
+                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[2].score}</span>
+                  <span class='character-display-attributes-scores-adj'>${wisdomPlusAdjustment}</span>
+                </h4>
+                <h4 id='char-dexterity' class='char-info-label'>
+                  <span class='character-display-attributes'>${finalCharacter.attributes[3].name}: </span>
+                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[3].score}</span>
+                  <span class='character-display-attributes-scores-adj'>${dexterityPlusAdjustment}</span>
+                </h4>
+                <h4 id='char-constitution' class='char-info-label'>
+                  <span class='character-display-attributes'>${finalCharacter.attributes[4].name}: </span>
+                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[4].score}</span>
+                  <span class='character-display-attributes-scores-adj'>${constitutionPlusAdjustment}</span>
+                </h4>
+                <h4 id='char-charisma' class='char-info-label'>
+                  <span class='character-display-attributes'>${finalCharacter.attributes[5].name}: </span>
+                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[5].score}</span>
+                  <span class='character-display-attributes-scores-adj'>${charismaPlusAdjustment}</span>
+                </h4>
             </fieldset>
         </div>
         
