@@ -547,12 +547,20 @@ span#dragonwarrior {
   display: inline-block;
   width: 70px;
   text-align: center;
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }
 
 .character-display-attributes-scores-adj {
   display: inline-block;
   width: 20px;
   text-align: right;
+  border: 2px solid red;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 }
 
 #hp-prog-bar {
