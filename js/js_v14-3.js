@@ -763,15 +763,15 @@ function confirmingAttributes()
     <div id="alignment-container"> 
         <div class="alignment-item" id="alignment-selection-container">
             <div id="lawful-container-item" class="alignment-container-item">
-                <input type="radio" name="alignment" value="lawful" id="lawful" checked="checked" autofocus/>
+                <input type="radio" class="alignment-radio" name="alignment" value="lawful" id="lawful" checked="checked" autofocus/>
                 <label for ="lawful" class="alignment-label">Lawful</label>
             </div>
             <div id="neutral-container-item" class="alignment-container-item">
-                <input type="radio" name="alignment" value="neutral" id="neutral" />
+                <input type="radio"  class="alignment-radio" name="alignment" value="neutral" id="neutral" />
                 <label for="neutral" class="alignment-label">Neutral</label>
             </div>
             <div id="chaotic-container-item" class="alignment-container-item">
-                <input type="radio" name="alignment" value="chaotic" id="chaotic" />
+                <input type="radio"  class="alignment-radio" name="alignment" value="chaotic" id="chaotic" />
                 <label for="chaotic" class="alignment-label">Chaotic</label>
             </div>
         </div>
@@ -1050,30 +1050,28 @@ function startGame()
         
         <p>What is your Class?</p>
         
-        <div>
-        <input type = "radio" name="selected-specialty" value="fighter" id="fighter"/>         
-        <label for=  "fighter" class="class-label">Fighter</label>   
-        </div>             
+        <input type = "radio"  class="class-radio" name="selected-specialty" value="fighter" id="fighter"/>         
+        <label for=  "fighter" class="class-label">Fighter</label>             
         
-        <input type = "radio" name="selected-specialty" value="mage" id="mage"/> 
+        <input type = "radio" class="class-radio" name="selected-specialty" value="mage" id="mage"/> 
         <label for=  "mage" class="class-label">Magic-User</label>
         
-        <input type = "radio" name="selected-specialty" value="thief" id="thief"/> 
+        <input type = "radio" class="class-radio" name="selected-specialty" value="thief" id="thief"/> 
         <label for=  "thief" class="class-label">Thief</label>
         
-        <input type = "radio" name="selected-specialty" value="dwarf" id="dwarf"/> 
+        <input type = "radio" class="class-radio" name="selected-specialty" value="dwarf" id="dwarf"/> 
         <label for=  "dwarf" class="class-label">Dwarf</label>
         
-        <input type = "radio" name="selected-specialty" value="elf" id="elf"/> 
+        <input type = "radio" class="class-radio" name="selected-specialty" value="elf" id="elf"/> 
         <label for=  "elf" class="class-label">Elf</label>
         
-        <input type = "radio" name="selected-specialty" value="halfling" id="halfling"/> 
+        <input type = "radio" class="class-radio" name="selected-specialty" value="halfling" id="halfling"/> 
         <label for=  "halfling" class="class-label">Halfling</label>
        
-        <input type = "radio" name="selected-specialty" value="cleric" id="cleric"/>
+        <input type = "radio" class="class-radio" name="selected-specialty" value="cleric" id="cleric"/>
         <label for = "cleric" class="class-label">Cleric</label>
 
-        <input type = "radio" name="selected-specialty" value="dragonwarrior" class="dragonwarrior"/>
+        <input type = "radio" class="class-radio dragonwarrior" name="selected-specialty" value="dragonwarrior" />
         <label for = "dragonwarrior" id="dragonwarrior">Dragon Fighting</label>
         </p>`;
 

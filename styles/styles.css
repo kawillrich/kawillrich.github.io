@@ -66,14 +66,15 @@ input[name="alignment"], input[name="selected-specialty"] {
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 10 10;
   background-color: rgb(205,210,245);
+  cursor: pointer;
 }
 
 .alignment-label:hover::before, .class-label:hover::before {
   background-color: azure;
 }
 
-.alignment-label:checked::before, .class-label:checked::before {
-  background-color:rgb(178, 241, 178);
+.alignment-radio:checked + .alignment-label::before, .class-radio:checked + .class-label::before {
+  background-color: rgb(178, 241, 178);
 }
 
 input[type="submit"], #submit-all-mage-spells, #buy-items, 
@@ -84,6 +85,7 @@ input[type="submit"], #submit-all-mage-spells, #buy-items,
   text-align: center;
   background-color: rgb(205,210,245);
   font-size: 22px;
+  cursor: pointer;
 }
 
 input[type="submit"]:hover, #submit-all-mage-spells:hover, #buy-items:hover, 
