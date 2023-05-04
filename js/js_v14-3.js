@@ -975,7 +975,7 @@ function startGame()
                 <h4 class='char-info-label'>
                   <span class='character-display-attributes-title'>Attribute: </span>
                   <span class='character-display-attributes-title'>Score: </span>
-                  <span class='character-display-attributes'>Adj: </span>
+                  <span class='character-display-attributes-title'>Adj: </span>
                 </h4>
                 <h4 id='char-strength' class='char-info-label'>
                   <span class='character-display-attributes'>${finalCharacter.attributes[0].name}: </span>
