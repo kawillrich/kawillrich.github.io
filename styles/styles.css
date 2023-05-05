@@ -565,10 +565,13 @@ span#dragonwarrior {
   grid-row: 2;
   width: 70px;
   text-align: center;
-  border: 2px solid red;
+  font-size: 40px;
   border-radius: 50%;
   width: 20px;
   height: 20px;
+  position: relative;
+  left: 65px;
+  top: -25px;
 }
 
 .character-display-attributes-scores-adj {
@@ -577,9 +580,12 @@ span#dragonwarrior {
   grid-column: 1;
   grid-row: 4;
   width: 20px;
-  text-align: right;
+  text-align: center;
   width: 20px;
   height: 20px;
+  position: relative;
+  left: 70px;
+  top: -10px;
 }
 
 
@@ -589,6 +595,8 @@ circle {
   fill: none;
   stroke: url(#gradientColor);
   stroke-width: 10px;
+  position: relative;
+
 }
 
 /* svg {
