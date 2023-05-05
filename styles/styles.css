@@ -178,6 +178,7 @@ fieldset {
 }
 
 .char-info-module {
+  display: grid;
   height: 300px;
   width: 200px;
 }
@@ -538,13 +539,30 @@ span#dragonwarrior {
   grid-column: 2 / 5;
 }
 
+
+#char-strength {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20px 10px 10px 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+
 .character-display-attributes {
-  display: inline-block;
+  /* flex: auto; */
+  grid-column: 1;
+  grid-row: 3;
   width: 100px;
+  position: relative;
+  
 }
 
 .character-display-attributes-scores {
-  display: inline-block;
+  /* display: inline-block; */
+  /* flex: auto; */
+  grid-column: 1;
+  grid-row: 2;
   width: 70px;
   text-align: center;
   border: 2px solid red;
@@ -554,12 +572,30 @@ span#dragonwarrior {
 }
 
 .character-display-attributes-scores-adj {
-  display: inline-block;
+  /* display: inline-block; */
+  /* flex: auto; */
+  grid-column: 1;
+  grid-row: 4;
   width: 20px;
   text-align: right;
   width: 20px;
   height: 20px;
 }
+
+
+circle {
+  grid-column: 1;
+  grid-row: 1;
+  fill: none;
+  stroke: url(#gradientColor);
+  stroke-width: 10px;
+}
+
+/* svg {
+  position: absolute;
+
+
+} */
 
 #hp-prog-bar {
   width: 70px;

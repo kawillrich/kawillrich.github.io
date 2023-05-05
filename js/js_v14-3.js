@@ -976,6 +976,17 @@ function startGame()
                   <span class='character-display-attributes'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score}</span>
                   <span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                    <defs>
+                      <linearGradient id="gradientColor">
+                        <stop offset="0%" stop-color="#B22222"/>
+                        <stop offset="50%" stop-color="#FFFF00"/>
+                        <stop offset="100%" stop-color="#00FF00"/>
+                      </linearGradient>
+                    </defs>
+                    <circle cx="80" cy="80" r="30"/>
+                  </svg>
+
                 </h4>
                   <h4 id='char-intelligence' class='char-info-label'>
                   <span class='character-display-attributes'>${finalCharacter.attributes[1].name.slice(0,3)}</span>
