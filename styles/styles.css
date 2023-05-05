@@ -565,7 +565,7 @@ span#dragonwarrior {
   grid-row: 2;
   width: 70px;
   text-align: center;
-  font-size: 40px;
+  font-size: 20px;
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -596,6 +596,10 @@ circle {
   stroke: url(#gradientColor);
   stroke-width: 10px;
   position: relative;
+  stroke-dasharray: 280;
+  stroke-dashoffset: 125;
+  transform: rotate(-240deg);
+  transform-origin: center;
 
 }
 
