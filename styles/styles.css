@@ -596,8 +596,8 @@ circle {
   stroke: url(#gradientColor);
   stroke-width: 10px;
   position: relative;
-  stroke-dasharray: 280;
-  stroke-dashoffset: 125;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 0;
   transform: rotate(-240deg);
   transform-origin: center;
 
