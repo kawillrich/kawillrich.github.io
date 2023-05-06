@@ -1007,21 +1007,61 @@ function startGame()
                   <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-wis'>${finalCharacter.attributes[2].score}</span>
                   <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <defs>
+                    <linearGradient id="gradientColor">
+                      <stop offset="0%" stop-color="#B22222"/>
+                      <stop offset="50%" stop-color="#FFFF00"/>
+                      <stop offset="100%" stop-color="#00FF00"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle-wis" cx="80" cy="80" r="30"/>
+                </svg>
                 </h4>
                 <h4 id='char-dexterity' class='char-info-label'>
                   <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-dex'>${finalCharacter.attributes[3].score}</span>
                   <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <defs>
+                    <linearGradient id="gradientColor">
+                      <stop offset="0%" stop-color="#B22222"/>
+                      <stop offset="50%" stop-color="#FFFF00"/>
+                      <stop offset="100%" stop-color="#00FF00"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle-dex" cx="80" cy="80" r="30"/>
+                </svg>
                 </h4>
                 <h4 id='char-constitution' class='char-info-label'>
                   <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-con'>${finalCharacter.attributes[4].score}</span>
                   <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <defs>
+                    <linearGradient id="gradientColor">
+                      <stop offset="0%" stop-color="#B22222"/>
+                      <stop offset="50%" stop-color="#FFFF00"/>
+                      <stop offset="100%" stop-color="#00FF00"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle-con" cx="80" cy="80" r="30"/>
+                </svg>
                 </h4>
                 <h4 id='char-charisma' class='char-info-label'>
                   <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-cha'>${finalCharacter.attributes[5].score}</span>
                   <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <defs>
+                    <linearGradient id="gradientColor">
+                      <stop offset="0%" stop-color="#B22222"/>
+                      <stop offset="50%" stop-color="#FFFF00"/>
+                      <stop offset="100%" stop-color="#00FF00"/>
+                    </linearGradient>
+                  </defs>
+                  <circle class="circle-cha" cx="80" cy="80" r="30"/>
+                </svg>
                 </h4>
             </fieldset>
         </div>
