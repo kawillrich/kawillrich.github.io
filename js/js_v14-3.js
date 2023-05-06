@@ -275,7 +275,9 @@ let strength = {
   score: 9,
   adjustment: 0,
   dashArrayAdj: function () {
-    return this.score * 8.33
+    let dashAdj = 150 - (this.score * 8);
+    console.log(dashAdj)
+    return dashAdj; 
   }
 };
 
@@ -284,7 +286,9 @@ let intelligence = {
   score: 9,
   adjustment: 0,
   dashArrayAdj: function () {
-    return this.score * 8.33
+    let dashAdj = 150 - (this.score * 8);
+    console.log(dashAdj)
+    return dashAdj; 
   }
 };
 
@@ -293,7 +297,9 @@ let wisdom = {
   score: 9,
   adjustment: 0,
   dashArrayAdj: function () {
-    return this.score * 8.33
+    let dashAdj = 150 - (this.score * 8);
+    console.log(dashAdj)
+    return dashAdj; 
   }
 };
 
@@ -302,7 +308,9 @@ let dexterity = {
   score: 9,
   adjustment: 0,
   dashArrayAdj: function () {
-    return this.score * 8.33
+    let dashAdj = 150 - (this.score * 8);
+    console.log(dashAdj)
+    return dashAdj; 
   }
 };
 
@@ -311,7 +319,9 @@ let constitution = {
   score: 9,
   adjustment: 0,
   dashArrayAdj: function () {
-    return this.score * 8.33
+    let dashAdj = 150 - (this.score * 8);
+    console.log(dashAdj)
+    return dashAdj; 
   }
 };
 
@@ -320,7 +330,9 @@ let charisma = {
   score: 9,
   adjustment: 0,
   dashArrayAdj: function () {
-    return this.score * 8.33
+    let dashAdj = 150 - (this.score * 8);
+    console.log(dashAdj)
+    return dashAdj; 
   }
 };
 
@@ -1026,7 +1038,7 @@ function startGame()
                         <stop offset="100%" stop-color="maroon"/>                  
                       </linearGradient>
                     </defs>
-                    <circle class="circle-str" cx="80" cy="80" r="30"/>
+                    <circle class="circle-str" cx="80" cy="80" r="30" stroke-dashoffset="${strength.dashArrayAdj()}"/>
                   </svg>
 
                 </h4>
@@ -1044,7 +1056,7 @@ function startGame()
                       <stop offset="100%" stop-color="maroon"/>                  
                     </linearGradient>
                     </defs>
-                    <circle class="circle-int" cx="80" cy="80" r="30"/>
+                    <circle class="circle-int" cx="80" cy="80" r="30" stroke-dashoffset="${intelligence.dashArrayAdj()}"/>
                   </svg>
                 </h4>
                 <h4 id='char-wisdom' class='char-info-label'>
@@ -1061,7 +1073,7 @@ function startGame()
                     <stop offset="100%" stop-color="maroon"/>                  
               </linearGradient>
                   </defs>
-                  <circle class="circle-wis" cx="80" cy="80" r="30"/>
+                  <circle class="circle-wis" cx="80" cy="80" r="30" stroke-dashoffset="${wisdom.dashArrayAdj()}"/>
                 </svg>
                 </h4>
                 <h4 id='char-dexterity' class='char-info-label'>
@@ -1078,7 +1090,7 @@ function startGame()
                     <stop offset="100%" stop-color="maroon"/>                  
               </linearGradient>
                   </defs>
-                  <circle class="circle-dex" cx="80" cy="80" r="30"/>
+                  <circle class="circle-dex" cx="80" cy="80" r="30" stroke-dashoffset="${dexterity.dashArrayAdj()}"/>
                 </svg>
                 </h4>
                 <h4 id='char-constitution' class='char-info-label'>
@@ -1095,7 +1107,7 @@ function startGame()
                     <stop offset="100%" stop-color="maroon"/>                  
               </linearGradient>
                   </defs>
-                  <circle class="circle-con" cx="80" cy="80" r="30"/>
+                  <circle class="circle-con" cx="80" cy="80" r="30" stroke-dashoffset="${constitution.dashArrayAdj()}"/>
                 </svg>
                 </h4>
                 <h4 id='char-charisma' class='char-info-label'>
@@ -1112,7 +1124,7 @@ function startGame()
                     <stop offset="100%" stop-color="maroon"/>                  
             </linearGradient>
                   </defs>
-                  <circle class="circle-cha" cx="80" cy="80" r="30"/>
+                  <circle class="circle-cha" cx="80" cy="80" r="30" stroke-dashoffset="${charisma.dashArrayAdj()}"/>
                 </svg>
                 </h4>
             </fieldset>
