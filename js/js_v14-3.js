@@ -978,10 +978,10 @@ function startGame()
                   <span class='character-display-attributes-scores-adj-str'>${strengthPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                     <defs>
-                      <linearGradient id="gradientColor">
-                        <stop offset="0%" stop-color="red"/>
-                        <stop offset="50%" stop-color="yellow"/>
-                        <stop offset="100%" stop-color="green"/>
+                      <linearGradient id="gradientColor-str" y2="130%">
+                      <stop offset="0%" stop-color="green"/>
+                      <stop offset="40%" stop-color="yellow"/>
+                      <stop offset="100%" stop-color="red"/>
                       </linearGradient>
                     </defs>
                     <circle class="circle-str" cx="80" cy="80" r="30"/>
@@ -994,11 +994,11 @@ function startGame()
                   <span class='character-display-attributes-scores-adj-int'>${intelligencePlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                     <defs>
-                      <linearGradient id="gradientColor">
-                      <stop offset="0%" stop-color="red"/>
-                      <stop offset="50%" stop-color="yellow"/>
-                      <stop offset="100%" stop-color="green"/>
-                    </linearGradient>
+                      <linearGradient id="gradientColor-int" y2="130%">
+                      <stop offset="0%" stop-color="green"/>
+                      <stop offset="40%" stop-color="yellow"/>
+                      <stop offset="100%" stop-color="red"/>
+                      </linearGradient>
                     </defs>
                     <circle class="circle-int" cx="80" cy="80" r="30"/>
                   </svg>
@@ -1009,11 +1009,11 @@ function startGame()
                   <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
-                    <linearGradient id="gradientColor">
-                    <stop offset="0%" stop-color="red"/>
-                    <stop offset="50%" stop-color="yellow"/>
-                    <stop offset="100%" stop-color="green"/>
-                </linearGradient>
+                    <linearGradient id="gradientColor-wis" y2="130%">
+                      <stop offset="0%" stop-color="green"/>
+                      <stop offset="40%" stop-color="yellow"/>
+                      <stop offset="100%" stop-color="red"/>
+                    </linearGradient>
                   </defs>
                   <circle class="circle-wis" cx="80" cy="80" r="30"/>
                 </svg>
@@ -1024,11 +1024,11 @@ function startGame()
                   <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
-                    <linearGradient id="gradientColor">
-                    <stop offset="0%" stop-color="red"/>
-                    <stop offset="50%" stop-color="yellow"/>
-                    <stop offset="100%" stop-color="green"/>
-                </linearGradient>
+                    <linearGradient id="gradientColor-dex" y2="130%">
+                    <stop offset="0%" stop-color="green"/>
+                    <stop offset="40%" stop-color="yellow"/>
+                    <stop offset="100%" stop-color="red"/>
+                  </linearGradient>
                   </defs>
                   <circle class="circle-dex" cx="80" cy="80" r="30"/>
                 </svg>
@@ -1039,11 +1039,11 @@ function startGame()
                   <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
-                    <linearGradient id="gradientColor">
-                    <stop offset="0%" stop-color="red"/>
-                    <stop offset="50%" stop-color="yellow"/>
-                    <stop offset="100%" stop-color="green"/>
-                </linearGradient>
+                    <linearGradient id="gradientColor-con" y2="130%">
+                    <stop offset="0%" stop-color="green"/>
+                    <stop offset="40%" stop-color="yellow"/>
+                    <stop offset="100%" stop-color="red"/>
+                  </linearGradient>
                   </defs>
                   <circle class="circle-con" cx="80" cy="80" r="30"/>
                 </svg>
@@ -1054,11 +1054,11 @@ function startGame()
                   <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
-                    <linearGradient id="gradientColor">
-                    <stop offset="0%" stop-color="red"/>
-                    <stop offset="50%" stop-color="yellow"/>
-                    <stop offset="100%" stop-color="green"/>
-                </linearGradient>
+                    <linearGradient id="gradientColor-cha" y2="10%">
+                    <stop offset="0%" stop-color="green"/>
+                    <stop offset="40%" stop-color="yellow"/>
+                    <stop offset="100%" stop-color="red"/>
+                  </linearGradient>
                   </defs>
                   <circle class="circle-cha" cx="80" cy="80" r="30"/>
                 </svg>

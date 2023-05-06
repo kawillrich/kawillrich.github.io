@@ -648,17 +648,44 @@ span#dragonwarrior {
   top: -35px;
 }
 
-.circle-str, .circle-int, .circle-wis, .circle-dex, .circle-con, .circle-cha {
-  
+.circle-str{
+stroke: url(#gradientColor-str);
+}
+
+.circle-int{
+stroke: url(#gradientColor-int);
+}
+
+.circle-wis{
+stroke: url(#gradientColor-wis);
+}
+
+.circle-dex{
+stroke: url(#gradientColor-dex);
+}
+
+.circle-con{
+stroke: url(#gradientColor-con);
+}
+
+.circle-cha{
+stroke: url(#gradientColor-cha);
+}
+
+.circle-str, .circle-int, .circle-wis, .circle-dex, .circle-con, .circle-cha {  
   fill: none;
-  stroke: url(#gradientColor);
+  /* stroke: url(#gradientColor); */
   stroke-width: 10px;
   position: relative;
   stroke-dasharray: 150;
   stroke-dashoffset: 0;
   transform: rotate(-235deg);
   transform-origin: center;
+  
 }
+
+
+
 
 #hp-prog-bar {
   width: 70px;
