@@ -274,42 +274,54 @@ let strength = {
   name: "Strength",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: this.score * 8.33
+  dashArrayAdj: function () {
+    return this.score * 8.33
+  }
 };
 
 let intelligence = {
   name: "Intelligence",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: this.score * 8.33
+  dashArrayAdj: function () {
+    return this.score * 8.33
+  }
 };
 
 let wisdom = {
   name: "Wisdom",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: this.score * 8.33
+  dashArrayAdj: function () {
+    return this.score * 8.33
+  }
 };
 
 let dexterity = {
   name: "Dexterity",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: this.score * 8.33
+  dashArrayAdj: function () {
+    return this.score * 8.33
+  }
 };
 
 let constitution = {
   name: "Constitution",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: this.score * 8.33
+  dashArrayAdj: function () {
+    return this.score * 8.33
+  }
 };
 
 let charisma = {
   name: "Charisma",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: this.score * 8.33
+  dashArrayAdj: function () {
+    return this.score * 8.33
+  }
 };
 
 attributes.unshift(
