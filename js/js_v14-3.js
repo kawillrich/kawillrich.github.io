@@ -1054,7 +1054,7 @@ function startGame()
                   <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
-                    <linearGradient id="gradientColor-cha" y2="10%">
+                    <linearGradient id="gradientColor-cha" y2="130%">
                     <stop offset="0%" stop-color="green"/>
                     <stop offset="40%" stop-color="yellow"/>
                     <stop offset="100%" stop-color="red"/>
