@@ -970,7 +970,7 @@ function startGame()
             </fieldset>
         </div>
         <div id='character-attributes'>
-            <fieldset class='char-info-module'>
+            <fieldset class='char-info-module-attributes'>
                 <legend class='player-dashboard'>Attributes</legend>
                 <h4 id='char-strength' class='char-info-label'>
                   <span class='character-display-attributes'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
@@ -984,7 +984,7 @@ function startGame()
                         <stop offset="100%" stop-color="#00FF00"/>
                       </linearGradient>
                     </defs>
-                    <circle cx="80" cy="80" r="30"/>
+                    <circle class="circle-str" cx="80" cy="80" r="30"/>
                   </svg>
 
                 </h4>

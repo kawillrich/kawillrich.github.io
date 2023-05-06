@@ -183,6 +183,59 @@ fieldset {
   width: 200px;
 }
 
+.char-info-module-attributes {
+  display: grid;
+  height: 300px;
+  width: 200px;
+  /* margin: auto; */
+  grid-template-areas:  "topLeft topRight"
+                        "middleLeft middleRight"
+                        "bottomLeft bottomRight";
+  grid-template-columns: repeat(2, 90px);
+  grid-template-rows: repeat(3, 90px);
+  align-items: center;
+  justify-content: center;
+
+}
+
+#char-attributes {
+
+  
+}
+
+#char-strength {
+  
+  grid-row: topLeft;
+  grid-column: topLeft;
+}
+
+#char-intelligence {
+  
+  grid-row: topRight;
+  grid-column: topRight;
+}
+
+#char-wisdom {
+  grid-row: middleLeft;
+  grid-column: middleLeft;
+}
+
+#char-dexterity {
+  grid-row: middleRight;
+  grid-column: middleRight;
+}
+
+#char-constitution {
+  grid-row: bottomLeft;
+  grid-column: bottomLeft;
+}
+
+#char-charisma {
+  grid-row: bottomRight;
+  grid-column: bottomRight;
+}
+
+
 .canvas-info-module-player {
   height: 321px;
   width: 200px;
