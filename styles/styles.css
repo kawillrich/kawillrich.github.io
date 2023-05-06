@@ -589,18 +589,17 @@ span#dragonwarrior {
 }
 
 #alignment-description-container {
-  grid-column: 2 / 5;
-}
+  grid-column: 2 / 5;}
 
 
-#char-strength, #char-intelligence, #char-wisdom, #char-dexterity, #char-constitution, #char-charisma {
+#char-strength, #char-intelligence, #char-wisdom, 
+#char-dexterity, #char-constitution, #char-charisma {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 20px 10px 10px 10px;
   align-items: center;
   justify-content: center;
 }
-
 
 .character-display-attributes-str, .character-display-attributes-int, 
 .character-display-attributes-wis, .character-display-attributes-dex, 
@@ -612,8 +611,7 @@ span#dragonwarrior {
   position: relative;
   left: 67px;
   top: 0px;
-  /* font-size: 20px; */
-  
+  /* font-size: 20px; */  
 }
 
 .character-display-attributes-scores-str, .character-display-attributes-scores-int,
@@ -630,7 +628,7 @@ span#dragonwarrior {
   width: 20px;
   height: 20px;
   position: relative;
-  left: 63px;
+  left: 61px;
   top: -21px;
 }
 
@@ -646,10 +644,9 @@ span#dragonwarrior {
   width: 20px;
   height: 20px;
   position: relative;
-  left: 85px;
+  left: 83px;
   top: -35px;
 }
-
 
 .circle-str, .circle-int, .circle-wis, .circle-dex, .circle-con, .circle-cha {
   
@@ -661,15 +658,7 @@ span#dragonwarrior {
   stroke-dashoffset: 0;
   transform: rotate(-235deg);
   transform-origin: center;
-
 }
-
-
-/* svg {
-  position: absolute;
-
-
-} */
 
 #hp-prog-bar {
   width: 70px;
