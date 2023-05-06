@@ -979,9 +979,9 @@ function startGame()
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                     <defs>
                       <linearGradient id="gradientColor">
-                        <stop offset="0%" stop-color="#B22222"/>
-                        <stop offset="50%" stop-color="#FFFF00"/>
-                        <stop offset="100%" stop-color="#00FF00"/>
+                        <stop offset="0%" stop-color="red"/>
+                        <stop offset="50%" stop-color="yellow"/>
+                        <stop offset="100%" stop-color="green"/>
                       </linearGradient>
                     </defs>
                     <circle class="circle-str" cx="80" cy="80" r="30"/>
@@ -995,10 +995,10 @@ function startGame()
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                     <defs>
                       <linearGradient id="gradientColor">
-                        <stop offset="0%" stop-color="#B22222"/>
-                        <stop offset="50%" stop-color="#FFFF00"/>
-                        <stop offset="100%" stop-color="#00FF00"/>
-                      </linearGradient>
+                      <stop offset="0%" stop-color="red"/>
+                      <stop offset="50%" stop-color="yellow"/>
+                      <stop offset="100%" stop-color="green"/>
+                    </linearGradient>
                     </defs>
                     <circle class="circle-int" cx="80" cy="80" r="30"/>
                   </svg>
@@ -1010,10 +1010,10 @@ function startGame()
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
                     <linearGradient id="gradientColor">
-                      <stop offset="0%" stop-color="#B22222"/>
-                      <stop offset="50%" stop-color="#FFFF00"/>
-                      <stop offset="100%" stop-color="#00FF00"/>
-                    </linearGradient>
+                    <stop offset="0%" stop-color="red"/>
+                    <stop offset="50%" stop-color="yellow"/>
+                    <stop offset="100%" stop-color="green"/>
+                </linearGradient>
                   </defs>
                   <circle class="circle-wis" cx="80" cy="80" r="30"/>
                 </svg>
@@ -1025,10 +1025,10 @@ function startGame()
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
                     <linearGradient id="gradientColor">
-                      <stop offset="0%" stop-color="#B22222"/>
-                      <stop offset="50%" stop-color="#FFFF00"/>
-                      <stop offset="100%" stop-color="#00FF00"/>
-                    </linearGradient>
+                    <stop offset="0%" stop-color="red"/>
+                    <stop offset="50%" stop-color="yellow"/>
+                    <stop offset="100%" stop-color="green"/>
+                </linearGradient>
                   </defs>
                   <circle class="circle-dex" cx="80" cy="80" r="30"/>
                 </svg>
@@ -1040,10 +1040,10 @@ function startGame()
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
                     <linearGradient id="gradientColor">
-                      <stop offset="0%" stop-color="#B22222"/>
-                      <stop offset="50%" stop-color="#FFFF00"/>
-                      <stop offset="100%" stop-color="#00FF00"/>
-                    </linearGradient>
+                    <stop offset="0%" stop-color="red"/>
+                    <stop offset="50%" stop-color="yellow"/>
+                    <stop offset="100%" stop-color="green"/>
+                </linearGradient>
                   </defs>
                   <circle class="circle-con" cx="80" cy="80" r="30"/>
                 </svg>
@@ -1055,10 +1055,10 @@ function startGame()
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
                     <linearGradient id="gradientColor">
-                      <stop offset="0%" stop-color="#B22222"/>
-                      <stop offset="50%" stop-color="#FFFF00"/>
-                      <stop offset="100%" stop-color="#00FF00"/>
-                    </linearGradient>
+                    <stop offset="0%" stop-color="red"/>
+                    <stop offset="50%" stop-color="yellow"/>
+                    <stop offset="100%" stop-color="green"/>
+                </linearGradient>
                   </defs>
                   <circle class="circle-cha" cx="80" cy="80" r="30"/>
                 </svg>
