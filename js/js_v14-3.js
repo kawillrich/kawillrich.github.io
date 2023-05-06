@@ -274,36 +274,42 @@ let strength = {
   name: "Strength",
   score: 9,
   adjustment: 0,
+  dashArrayAdj: this.score * 8.33
 };
 
 let intelligence = {
   name: "Intelligence",
   score: 9,
   adjustment: 0,
+  dashArrayAdj: this.score * 8.33
 };
 
 let wisdom = {
   name: "Wisdom",
   score: 9,
   adjustment: 0,
+  dashArrayAdj: this.score * 8.33
 };
 
 let dexterity = {
   name: "Dexterity",
   score: 9,
   adjustment: 0,
+  dashArrayAdj: this.score * 8.33
 };
 
 let constitution = {
   name: "Constitution",
   score: 9,
   adjustment: 0,
+  dashArrayAdj: this.score * 8.33
 };
 
 let charisma = {
   name: "Charisma",
   score: 9,
   adjustment: 0,
+  dashArrayAdj: this.score * 8.33
 };
 
 attributes.unshift(
@@ -984,7 +990,7 @@ function startGame()
                 <h4 id='char-experience' class='char-info-label'>Experience: 
                   <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span>
                 </h4>  
-                
+
                 <h4 id='char-status' class='char-info-label'>Status: 
                   <span class="character-display-info">${finalCharacter.status}</span>
                 </h4>
