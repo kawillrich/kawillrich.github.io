@@ -973,9 +973,9 @@ function startGame()
             <fieldset class='char-info-module-attributes'>
                 <legend class='player-dashboard'>Attributes</legend>
                 <h4 id='char-strength' class='char-info-label'>
-                  <span class='character-display-attributes'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[0].score}</span>
-                  <span class='character-display-attributes-scores-adj'>${strengthPlusAdjustment}</span>
+                  <span class='character-display-attributes-str'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-scores-str'>${finalCharacter.attributes[0].score}</span>
+                  <span class='character-display-attributes-scores-adj-str'>${strengthPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                     <defs>
                       <linearGradient id="gradientColor">
@@ -989,29 +989,29 @@ function startGame()
 
                 </h4>
                   <h4 id='char-intelligence' class='char-info-label'>
-                  <span class='character-display-attributes'>${finalCharacter.attributes[1].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[1].score}</span>
-                  <span class='character-display-attributes-scores-adj'>${intelligencePlusAdjustment}</span>
+                  <span class='character-display-attributes-int'>${finalCharacter.attributes[1].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-scores-int'>${finalCharacter.attributes[1].score}</span>
+                  <span class='character-display-attributes-scores-adj-int'>${intelligencePlusAdjustment}</span>
                 </h4>
                 <h4 id='char-wisdom' class='char-info-label'>
-                  <span class='character-display-attributes'>${finalCharacter.attributes[2].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[2].score}</span>
-                  <span class='character-display-attributes-scores-adj'>${wisdomPlusAdjustment}</span>
+                  <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-scores-wis'>${finalCharacter.attributes[2].score}</span>
+                  <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
                 </h4>
                 <h4 id='char-dexterity' class='char-info-label'>
-                  <span class='character-display-attributes'>${finalCharacter.attributes[3].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[3].score}</span>
-                  <span class='character-display-attributes-scores-adj'>${dexterityPlusAdjustment}</span>
+                  <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-scores-dex'>${finalCharacter.attributes[3].score}</span>
+                  <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
                 </h4>
                 <h4 id='char-constitution' class='char-info-label'>
-                  <span class='character-display-attributes'>${finalCharacter.attributes[4].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[4].score}</span>
-                  <span class='character-display-attributes-scores-adj'>${constitutionPlusAdjustment}</span>
+                  <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-scores-con'>${finalCharacter.attributes[4].score}</span>
+                  <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
                 </h4>
                 <h4 id='char-charisma' class='char-info-label'>
-                  <span class='character-display-attributes'>${finalCharacter.attributes[5].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores'>${finalCharacter.attributes[5].score}</span>
-                  <span class='character-display-attributes-scores-adj'>${charismaPlusAdjustment}</span>
+                  <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-scores-cha'>${finalCharacter.attributes[5].score}</span>
+                  <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
                 </h4>
             </fieldset>
         </div>

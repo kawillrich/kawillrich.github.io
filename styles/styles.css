@@ -602,32 +602,35 @@ span#dragonwarrior {
 }
 
 
-.character-display-attributes {
+.character-display-attributes-str {
   /* flex: auto; */
   grid-column: 1;
   grid-row: 3;
   width: 100px;
   position: relative;
+  left: 67px;
+  top: 0px;
+  /* font-size: 20px; */
   
 }
 
-.character-display-attributes-scores {
+.character-display-attributes-scores-str {
   /* display: inline-block; */
   /* flex: auto; */
   grid-column: 1;
   grid-row: 2;
   width: 70px;
   text-align: center;
-  font-size: 20px;
+  font-size: 30px;
   border-radius: 50%;
   width: 20px;
   height: 20px;
   position: relative;
-  left: 65px;
-  top: -25px;
+  left: 63px;
+  top: -21px;
 }
 
-.character-display-attributes-scores-adj {
+.character-display-attributes-scores-adj-str {
   /* display: inline-block; */
   /* flex: auto; */
   grid-column: 1;
@@ -637,21 +640,20 @@ span#dragonwarrior {
   width: 20px;
   height: 20px;
   position: relative;
-  left: 70px;
-  top: -10px;
+  left: 85px;
+  top: -35px;
 }
 
 
-circle {
-  grid-column: 1;
-  grid-row: 1;
+.circle-str {
+  
   fill: none;
   stroke: url(#gradientColor);
   stroke-width: 10px;
   position: relative;
   stroke-dasharray: 150;
   stroke-dashoffset: 0;
-  transform: rotate(-240deg);
+  transform: rotate(-235deg);
   transform-origin: center;
 
 }
