@@ -942,15 +942,17 @@ function startGame()
                 <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints +
-    finalCharacter.attributes[4].adjustment
-    }" value="${finalCharacter.specialty.healthPoints +
-    finalCharacter.attributes[4].adjustment
-    }"></progress>${finalCharacter.specialty.healthPoints +
-    finalCharacter.attributes[4].adjustment
-    }/${finalCharacter.specialty.maxHealthPoints +
-    finalCharacter.attributes[4].adjustment
-    }</span></span></h4> 
+                <h4 id='char-hp' class='char-info-label'>Hit Points: 
+                  <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span>
+                    <span id='hpBar'>
+                      <progress id='hp-prog-bar' 
+                        max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" 
+                        value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}">
+                      </progress>
+                      ${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}
+                    </span>
+                  </span>
+                </h4> 
                 <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name
     }<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass
     }</span></div></h4> 
