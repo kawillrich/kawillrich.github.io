@@ -8,9 +8,7 @@ body {
   /* width: 1400px; */
   height: 1400px;
   padding: 0px 10px 0px 10px;
-  display: flex;
-  /* align-items: stretch; */
-  /* justify-content: center; */
+  display: flex;  
   color: rgb(130,130,170);
   font-size: 22px;  
 }
