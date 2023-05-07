@@ -255,13 +255,13 @@ fieldset {
   height: 321px;
   width: 200px;
   padding: 0px;
-  background-color: rgb(205,210,245);
+  background-color:rgb(221, 221, 221);
 }
 
 .canvas-info-module-monster {
   height: 200px;
   width: 200px;
-  background-color:rgb(205,210,245);
+  background-color:rgb(221, 221, 221);
 }
 
 .canvas-dashboard {
