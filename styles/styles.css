@@ -9,7 +9,8 @@ body {
   height: 1400px;
   padding: 0px 10px 0px 10px;
   display: flex;
-  align-items: stretch;
+  /* align-items: stretch; */
+  /* justify-content: center; */
   color: rgb(130,130,170);
   font-size: 22px;  
 }
@@ -24,6 +25,7 @@ body {
 #container {
   margin: 0px auto 0px auto;
   width: 800px;
+  min-width: 800px;
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
   height: 1100px;
@@ -33,7 +35,7 @@ body {
 
 #container-2 {
   margin: 0px 0px 0px 10px;
-  width: 800px;
+  min-width: 800px;
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
   height: 1100px;
