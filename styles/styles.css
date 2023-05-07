@@ -78,7 +78,8 @@ input[name="alignment"], input[name="selected-specialty"] {
 }
 
 input[type="submit"], #submit-all-mage-spells, #buy-items, 
-#generate-attributes, #confirm-attributes, #beginAdventure {  
+#generate-attributes, #confirm-attributes, #beginAdventure,
+#submit-all-cleric-spells {  
   border: 20px solid transparent;
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 20 20;
