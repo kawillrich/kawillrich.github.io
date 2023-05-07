@@ -968,174 +968,189 @@ function startGame()
 
   newStartGameDialogue.innerHTML = `
         <div id='character-stats'>
-            <fieldset class='char-info-module'>
-                <legend class='player-dashboard'>Player Data</legend>
+          <fieldset class='char-info-module'>
+            <legend class='player-dashboard'>Player Data</legend>
 
-                <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
+              <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${submittedCharName}</span></h4>
 
-                <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
+              <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
 
-                <h4 id='char-hp' class='char-info-label'>Hit Points: 
-                  <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span>
-                    <span id='hpBar'>
-                      <progress id='hp-prog-bar' 
+              <h4 id='char-hp' class='char-info-label'>Hit Points: 
+                <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span>
+                  <span id='hpBar'>
+                    <progress id='hp-prog-bar' 
                         max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" 
                         value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}">
-                      </progress>
+                    </progress>
                       ${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}
-                    </span>
                   </span>
-                </h4> 
+                </span>
+              </h4> 
                 
-                <h4 id='char-armor' class='char-info-label'>Armor: 
-                  <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}
-                    <span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span>
-                  </div>
-                </h4> 
+              <h4 id='char-armor' class='char-info-label'>Armor: 
+                <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}
+                  <span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span>
+                </div>
+              </h4> 
 
-                <h4 id='char-weapon' class='char-info-label'>Weapon: 
-                  <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}
-                    <span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage}</span>
-                  </div>
-                </h4>
+              <h4 id='char-weapon' class='char-info-label'>Weapon: 
+                <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}
+                  <span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage}</span>
+                </div>
+              </h4>
 
-                <h4 id='char-spell1' class='char-info-label'>Spell 1: 
-                  <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span>
-                </h4>
+              <h4 id='char-spell1' class='char-info-label'>Spell 1: 
+                <span class="character-display-info">${finalCharacter.specialty.spell1.name}</span>
+              </h4>
 
-                <h4 id='char-spell2' class='char-info-label'>Spell 2: 
-                  <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span>
-                </h4>
+              <h4 id='char-spell2' class='char-info-label'>Spell 2: 
+                <span class="character-display-info">${finalCharacter.specialty.spell2.name}</span>
+              </h4>
 
-                <h4 id='char-treasure' class='char-info-label'>Treasure: 
-                  <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span>
-                </h4>
+              <h4 id='char-treasure' class='char-info-label'>Treasure: 
+                <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span>
+              </h4>
 
-                <h4 id='char-experience' class='char-info-label'>Experience: 
-                  <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span>
-                </h4>  
+              <h4 id='char-experience' class='char-info-label'>Experience: 
+                <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span>
+              </h4>  
 
-                <h4 id='char-status' class='char-info-label'>Status: 
-                  <span class="character-display-info">${finalCharacter.status}</span>
-                </h4>
+              <h4 id='char-status' class='char-info-label'>Status: 
+                <span class="character-display-info">${finalCharacter.status}</span>
+              </h4>
 
-            </fieldset>
+          </fieldset>
         </div>
-        <div id='character-attributes'>
-            <fieldset class='char-info-module-attributes'>
-                <legend class='player-dashboard'>Attributes</legend>
-                <h4 id='char-strength' class='char-info-label'>
-                  <span class='character-display-attributes-str'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores-str'>${finalCharacter.attributes[0].score}</span>
-                  <span class='character-display-attributes-scores-adj-str'>${strengthPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
-                    <defs>
-                      <linearGradient id="gradientColor-str" y2="130%">
-                        <stop offset="10%" stop-color="blue"/>
-                        <stop offset="30%" stop-color="green"/>
-                        <stop offset="40%" stop-color="yellow"/>
-                        <stop offset="80%" stop-color="red"/>
-                        <stop offset="100%" stop-color="maroon"/>                  
-                      </linearGradient>
-                    </defs>
-                    <circle class="circle-str" cx="80" cy="80" r="30" stroke-dashoffset="${strength.dashArrayAdj()}"/>
-                  </svg>
 
-                </h4>
-                  <h4 id='char-intelligence' class='char-info-label'>
-                  <span class='character-display-attributes-int'>${finalCharacter.attributes[1].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores-int'>${finalCharacter.attributes[1].score}</span>
-                  <span class='character-display-attributes-scores-adj-int'>${intelligencePlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
-                    <defs>
-                      <linearGradient id="gradientColor-int" y2="130%">
+        <div id='character-attributes'>
+          <fieldset class='char-info-module-attributes'>
+              <legend class='player-dashboard'>Attributes</legend>
+              <h4 id='char-strength' class='char-info-label'>
+                <span class='character-display-attributes-str'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
+                <span class='character-display-attributes-scores-str'>${finalCharacter.attributes[0].score}</span>
+                <span class='character-display-attributes-scores-adj-str'>${strengthPlusAdjustment}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <defs>
+                    <linearGradient id="gradientColor-str" y2="130%">
                       <stop offset="10%" stop-color="blue"/>
                       <stop offset="30%" stop-color="green"/>
                       <stop offset="40%" stop-color="yellow"/>
                       <stop offset="80%" stop-color="red"/>
                       <stop offset="100%" stop-color="maroon"/>                  
                     </linearGradient>
-                    </defs>
-                    <circle class="circle-int" cx="80" cy="80" r="30" stroke-dashoffset="${intelligence.dashArrayAdj()}"/>
-                  </svg>
-                </h4>
-                <h4 id='char-wisdom' class='char-info-label'>
-                  <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores-wis'>${finalCharacter.attributes[2].score}</span>
-                  <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
-                  <defs>
-                    <linearGradient id="gradientColor-wis" y2="130%">
-                    <stop offset="10%" stop-color="blue"/>
-                    <stop offset="30%" stop-color="green"/>
-                    <stop offset="40%" stop-color="yellow"/>
-                    <stop offset="80%" stop-color="red"/>
-                    <stop offset="100%" stop-color="maroon"/>                  
-              </linearGradient>
                   </defs>
-                  <circle class="circle-wis" cx="80" cy="80" r="30" stroke-dashoffset="${wisdom.dashArrayAdj()}"/>
+                  <circle class="circle-str" cx="80" cy="80" r="30" stroke-dashoffset="${strength.dashArrayAdj()}"/>
                 </svg>
-                </h4>
-                <h4 id='char-dexterity' class='char-info-label'>
-                  <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores-dex'>${finalCharacter.attributes[3].score}</span>
-                  <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+
+              </h4>
+                <h4 id='char-intelligence' class='char-info-label'>
+                <span class='character-display-attributes-int'>${finalCharacter.attributes[1].name.slice(0,3)}</span>
+                <span class='character-display-attributes-scores-int'>${finalCharacter.attributes[1].score}</span>
+                <span class='character-display-attributes-scores-adj-int'>${intelligencePlusAdjustment}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
                   <defs>
-                    <linearGradient id="gradientColor-dex" y2="130%">
+                    <linearGradient id="gradientColor-int" y2="130%">
                     <stop offset="10%" stop-color="blue"/>
                     <stop offset="30%" stop-color="green"/>
                     <stop offset="40%" stop-color="yellow"/>
                     <stop offset="80%" stop-color="red"/>
                     <stop offset="100%" stop-color="maroon"/>                  
-              </linearGradient>
+                  </linearGradient>
                   </defs>
-                  <circle class="circle-dex" cx="80" cy="80" r="30" stroke-dashoffset="${dexterity.dashArrayAdj()}"/>
+                  <circle class="circle-int" cx="80" cy="80" r="30" stroke-dashoffset="${intelligence.dashArrayAdj()}"/>
                 </svg>
-                </h4>
-                <h4 id='char-constitution' class='char-info-label'>
-                  <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores-con'>${finalCharacter.attributes[4].score}</span>
-                  <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
-                  <defs>
-                    <linearGradient id="gradientColor-con" y2="130%">
-                    <stop offset="10%" stop-color="blue"/>
-                    <stop offset="30%" stop-color="green"/>
-                    <stop offset="40%" stop-color="yellow"/>
-                    <stop offset="80%" stop-color="red"/>
-                    <stop offset="100%" stop-color="maroon"/>                  
-              </linearGradient>
-                  </defs>
-                  <circle class="circle-con" cx="80" cy="80" r="30" stroke-dashoffset="${constitution.dashArrayAdj()}"/>
-                </svg>
-                </h4>
-                <h4 id='char-charisma' class='char-info-label'>
-                  <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0,3)}</span>
-                  <span class='character-display-attributes-scores-cha'>${finalCharacter.attributes[5].score}</span>
-                  <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
-                  <defs>
-                    <linearGradient id="gradientColor-cha" y2="130%">
-                    <stop offset="10%" stop-color="blue"/>
-                    <stop offset="30%" stop-color="green"/>
-                    <stop offset="40%" stop-color="yellow"/>
-                    <stop offset="80%" stop-color="red"/>
-                    <stop offset="100%" stop-color="maroon"/>                  
+              </h4>
+              <h4 id='char-wisdom' class='char-info-label'>
+                <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0,3)}</span>
+                <span class='character-display-attributes-scores-wis'>${finalCharacter.attributes[2].score}</span>
+                <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                <defs>
+                  <linearGradient id="gradientColor-wis" y2="130%">
+                  <stop offset="10%" stop-color="blue"/>
+                  <stop offset="30%" stop-color="green"/>
+                  <stop offset="40%" stop-color="yellow"/>
+                  <stop offset="80%" stop-color="red"/>
+                  <stop offset="100%" stop-color="maroon"/>                  
             </linearGradient>
-                  </defs>
-                  <circle class="circle-cha" cx="80" cy="80" r="30" stroke-dashoffset="${charisma.dashArrayAdj()}"/>
-                </svg>
-                </h4>
-            </fieldset>
-        </div>
+                </defs>
+                <circle class="circle-wis" cx="80" cy="80" r="30" stroke-dashoffset="${wisdom.dashArrayAdj()}"/>
+              </svg>
+              </h4>
+              <h4 id='char-dexterity' class='char-info-label'>
+                <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0,3)}</span>
+                <span class='character-display-attributes-scores-dex'>${finalCharacter.attributes[3].score}</span>
+                <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                <defs>
+                  <linearGradient id="gradientColor-dex" y2="130%">
+                  <stop offset="10%" stop-color="blue"/>
+                  <stop offset="30%" stop-color="green"/>
+                  <stop offset="40%" stop-color="yellow"/>
+                  <stop offset="80%" stop-color="red"/>
+                  <stop offset="100%" stop-color="maroon"/>                  
+            </linearGradient>
+                </defs>
+                <circle class="circle-dex" cx="80" cy="80" r="30" stroke-dashoffset="${dexterity.dashArrayAdj()}"/>
+              </svg>
+              </h4>
+              <h4 id='char-constitution' class='char-info-label'>
+                <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0,3)}</span>
+                <span class='character-display-attributes-scores-con'>${finalCharacter.attributes[4].score}</span>
+                <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                <defs>
+                  <linearGradient id="gradientColor-con" y2="130%">
+                  <stop offset="10%" stop-color="blue"/>
+                  <stop offset="30%" stop-color="green"/>
+                  <stop offset="40%" stop-color="yellow"/>
+                  <stop offset="80%" stop-color="red"/>
+                  <stop offset="100%" stop-color="maroon"/>                  
+            </linearGradient>
+                </defs>
+                <circle class="circle-con" cx="80" cy="80" r="30" stroke-dashoffset="${constitution.dashArrayAdj()}"/>
+              </svg>
+              </h4>
+              <h4 id='char-charisma' class='char-info-label'>
+                <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0,3)}</span>
+                <span class='character-display-attributes-scores-cha'>${finalCharacter.attributes[5].score}</span>
+                <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                <defs>
+                  <linearGradient id="gradientColor-cha" y2="130%">
+                  <stop offset="10%" stop-color="blue"/>
+                  <stop offset="30%" stop-color="green"/>
+                  <stop offset="40%" stop-color="yellow"/>
+                  <stop offset="80%" stop-color="red"/>
+                  <stop offset="100%" stop-color="maroon"/>                  
+          </linearGradient>
+                </defs>
+                <circle class="circle-cha" cx="80" cy="80" r="30" stroke-dashoffset="${charisma.dashArrayAdj()}"/>
+              </svg>
+              </h4>
+          </fieldset>
+        </div>        
         
-        </div id="canvas-area">
+        <div id="character-canvas">
           <fieldset class= 'canvas-info-module-player'>
             <legend class='canvas-dashboard'>Player</legend>
             <canvas id="canvas2" height="200" width="200"></canvas>
            </fieldset>
-        </div>                
+        </div>
+
+        <div id="character-statuses">
+          <fieldset class = "status-info-module-player">
+            <legend class="statuses-dashboard">Statuses</legend>
+          </fieldset>
+        </div>
+        
+        <div id="character-saving-throws">
+          <fieldset class = "saves-info-module-player">
+            <legend class="saves-dashboard">Saves</legend>
+          </fieldset>
+        </div>
+
+      </div>                
         `;
 
   let showInventory = () =>
