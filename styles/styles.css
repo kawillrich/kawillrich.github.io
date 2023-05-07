@@ -89,18 +89,30 @@ input[type="submit"], #submit-all-mage-spells, #buy-items,
 }
 
 input[type="submit"]:hover, #submit-all-mage-spells:hover, #buy-items:hover, 
-#generate-attributes:hover, #confirm-attributes:hover, #beginAdventure:hover  {
+#generate-attributes:hover, #confirm-attributes:hover, #beginAdventure:hover,
+#normal-equipment-link:hover, #magical-equipment-link:hover, #spells-link:hover, #treasure-link:hover  {
   background-color: azure;
 }
 
 input[type="submit"]:active, #submit-all-mage-spells:active, #buy-items:active, 
-#generate-attributes:active, #confirm-attributes:active, #beginAdventure:active {
+#generate-attributes:active, #confirm-attributes:active, #beginAdventure:active,
+#normal-equipment-link.active, #magical-equipment-link.active, #spells-link.active, #treasure-link.active {
   background-color: rgb(178, 241, 178);
 }
 
 #dialogue {
   padding: 10px 0px 0px 0px;
   display: block;
+}
+
+#normal-equipment-link, #magical-equipment-link, #spells-link, #treasure-link {
+  border: 20px solid transparent;
+  border-image-source: url(../images/gui/gui-buttons-player-attack.png);
+  border-image-slice: 20 20;
+  text-align: center;
+  background-color: rgb(205,210,245);
+  font-size: 22px;
+  cursor: pointer;
 }
 
 input[type="text"] {
