@@ -21,9 +21,9 @@ body {
 }
 
 #container {
-  margin: 0px auto 0px auto;
-  width: 800px;
-  min-width: 800px;
+  /* margin: 0px auto 0px auto; */
+  width: 820px;
+  min-width: 820px;
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
   height: 1100px;
@@ -33,7 +33,7 @@ body {
 
 #container-2 {
   margin: 0px 0px 0px 10px;
-  min-width: 800px;
+  min-width: 820px;
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
   height: 1100px;
@@ -170,8 +170,8 @@ fieldset {
 }
 
 #canvas2{
-  height: 300px;
-  width: 300px;
+  /* height: 300px;
+  width: 240px; */
 }
 
 #character-info {
@@ -183,23 +183,43 @@ fieldset {
   background-size: cover;
   background-position-x: 50px;
   background-position-y: -50px;
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "playerData playerAttributes playerCanvas playerSaves"
+                       "playerData playerAttributes playerStatus playerSaves";
   height: 320px;
-  width: 750px;
+  /* width: 800px; */
+  /* grid-template-rows: 2fr 2fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr 2fr;   */
 }
 
-.char-info-module {
-  display: grid;
-  height: 300px;
+#character-stats {
+  grid-area: playerData;
   width: 200px;
+}
+
+#character-attributes {
+  grid-area: playerAttributes;
+  width: 200px;
+}
+
+#character-canvas {
+  grid-area: playerCanvas;
+  width: 200px;
+}
+
+#character-statuses {  
+  grid-area: playerStatus;
+  width: 200px;
+}
+
+#character-saving-throws {
+  grid-area: playerSaves;
+  width: 200px;  
 }
 
 .char-info-module-attributes {
-  display: grid;
-  height: 300px;
-  width: 200px;
-  /* margin: auto; */
+  display: grid;  
   grid-template-areas:  "topLeft topRight"
                         "middleLeft middleRight"
                         "bottomLeft bottomRight";
@@ -207,63 +227,40 @@ fieldset {
   grid-template-rows: repeat(3, 90px);
   align-items: center;
   justify-content: center;
-  padding: 20px 0px 0px 10px;
-
+  height: 300px;
+  width: 100px;
 }
 
-#char-attributes {
-
-  
+#char-strength {  
+  grid-area: topLeft;
 }
 
-#char-strength {
-  
-  grid-row: topLeft;
-  grid-column: topLeft;
-}
-
-#char-intelligence {
-  
-  grid-row: topRight;
-  grid-column: topRight;
+#char-intelligence {  
+  grid-area: topRight;
 }
 
 #char-wisdom {
-  grid-row: middleLeft;
-  grid-column: middleLeft;
+  grid-area: middleLeft;
 }
 
 #char-dexterity {
-  grid-row: middleRight;
-  grid-column: middleRight;
+  grid-area: middleRight;
 }
 
 #char-constitution {
-  grid-row: bottomLeft;
-  grid-column: bottomLeft;
+  grid-area: bottomLeft;
 }
 
 #char-charisma {
-  grid-row: bottomRight;
-  grid-column: bottomRight;
-}
-
-
-.canvas-info-module-player {
-  height: 160px;
-  width: 115px;
-  padding: 0px;
-  background-color:rgb(221, 221, 221);
+  grid-area: bottomRight;
 }
 
 .canvas-info-module-monster {
-  height: 200px;
-  width: 200px;
+  
   background-color:rgb(221, 221, 221);
 }
 
 .canvas-dashboard {
-  width: 200px;
   background-color: rgb(139, 226, 138);
 }
 
@@ -622,7 +619,7 @@ span#dragonwarrior {
   grid-row: 3;
   width: 100px;
   position: relative;
-  left: 67px;
+  left: 38px;
   top: 0px;
   /* font-size: 20px; */  
 }
@@ -641,7 +638,7 @@ span#dragonwarrior {
   width: 20px;
   height: 20px;
   position: relative;
-  left: 61px;
+  left: 30px;
   top: -21px;
 }
 
@@ -657,7 +654,7 @@ span#dragonwarrior {
   width: 20px;
   height: 20px;
   position: relative;
-  left: 83px;
+  left: 55px;
   top: -35px;
 }
 
@@ -698,7 +695,7 @@ stroke: url(#gradientColor-cha);
   position: relative;
   stroke-dasharray: 150;
   /* stroke-dashoffset: 0; */
-  transform: rotate(-235deg);
+  transform: rotate(-230deg);
   transform-origin: center;
   
 }
