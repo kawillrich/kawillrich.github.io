@@ -789,7 +789,7 @@ function confirmingAttributes()
 
   let changeDialogue = document.querySelector("#dialogue");
   changeDialogue.innerHTML = `
-    <p>You have successfully selected your attributes. Now select a an Alignment.</p><br>
+    <p>You have successfully selected your attributes. Now select an Alignment.</p><br>
     <div id="alignment-container"> 
         <div class="alignment-item" id="alignment-selection-container">
             <div id="lawful-container-item" class="alignment-container-item">
