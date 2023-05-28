@@ -812,13 +812,13 @@ function confirmingAttributes()
             such laws are fair and just. If a choice must be made between the benefit of the group or an individual, a Lawful character will usually choose the group.
             </div>
 
-            <div id="neutral-description" class="alignement-description hidden no-display">Neutral characters believe that the works is a balance between Law and Chaos. It is important that neither side get
+            <div id="neutral-description" class="alignement-description hidden no-display">Neutral characters believe that the world is a balance between Law and Chaos. It is important that neither side get
             too much power and upset this balance. The individual is important, but so it the group; the two sides must work together. A Neutral character is most interested in personal
             survival. Such characters believe in their own wits and abilities rather than luck.
             </div>
 
             <div id="chaotic-description" class="alignment-description hidden no-display">Chaotic characters are the opposite of Lawful characters. They believe that life is random, and that chance and 
-            luck rule the world. Everything happens by accident and nother can be predicted. Laws are made to be broken, as long as a person can get away with it. It is not important to 
+            luck rule the world. Everything happens by accident and nothing can be predicted. Laws are made to be broken, as long as a person can get away with it. It is not important to 
             keep promises, and lying and telling the truth are both useful. To a Chaotic creature, the individual is the most important of all things. Selfishness is the normal way of 
             life, and the group is not important.
             </div>    
@@ -855,25 +855,26 @@ function updateAlignmentDescription()
   {
     finalCharacter.alignment = "Lawful";
     updateAlignmentDescElement.innerHTML = `
-        Lawful characters believe that everything should follow an order, and that obeying rules is the natural way of life. 
-        Lawful creatures will try to tell the truth, obey laws, and care about all things. Lawful characters always try to keep their promises. They will try to obey laws as long as 
-        such laws are fair and just. If a choice must be made between the benefit of the group or an individual, a Lawful character will usually choose the group.
+      Lawful characters believe that everything should follow an order, and that obeying rules is the natural way of life. 
+      Lawful creatures will try to tell the truth, obey laws, and care about all things. Lawful characters always try to keep their promises. They will try to obey laws as long as 
+      such laws are fair and just. If a choice must be made between the benefit of the group or an individual, a Lawful character will usually choose the group.
         `;
   } else if (selectedAlignment === "neutral")
   {
     finalCharacter.alignment = "Neutral";
     updateAlignmentDescElement.innerHTML = `
-        Neutral characters believethat the works is a balance between Law and Chaos. It is important that neither side get
-            too much power and upset this balance. The individual is important, but so it the group; the two sides must work together. A Neutral character is most interested in personal
-            survival. Such characters believe in their own wits and abilities rather than luck.
+      Neutral characters believe that the world is a balance between Law and Chaos. It is important that neither side get
+      too much power and upset this balance. The individual is important, but so it the group; the two sides must work together. A Neutral character is most interested in personal
+      survival. Such characters believe in their own wits and abilities rather than luck.
         `;
   } else if (selectedAlignment === "chaotic")
   {
     finalCharacter.alignment = "Chaotic";
     updateAlignmentDescElement.innerHTML = `
-        Chaotic characters are the opposite of Lawful characters. They believe that life is random, and that chance and 
-            luck rule the world. Everything happens by accident and nother can be predicted. Laws are made to be broken, as long as a person can get away with it. It is not important to 
-            keep promises, and lying and telling the truth are both useful. To a Chaotic creature, the individual is the most important, not the group.
+      Chaotic characters are the opposite of Lawful characters. They believe that life is random, and that chance and 
+      luck rule the world. Everything happens by accident and nothing can be predicted. Laws are made to be broken, as long as a person can get away with it. It is not important to 
+      keep promises, and lying and telling the truth are both useful. To a Chaotic creature, the individual is the most important of all things. Selfishness is the normal way of 
+      life, and the group is not important.
             `;
   }
 }
@@ -1192,11 +1193,11 @@ function startGame()
         exhale. As you breath out, you remember the training your father taught you - breathe in....hold...exhale...pause. This simple
         act, as you know, allows you to focus your thoughts and dispel any doubt and negativity you may have wandering in your mind. You
         feel the fresh air coming in and the exhale of any wasted thoughts. This focus and training is part of what has allowed you to 
-        act so effective and swiftly.  During training, you noticed how the others would let the worry and doubt consume them...and ultimately
+        act so effective and swiftly. During training, you noticed how the others would let the worry and doubt consume them...and ultimately
         prevent them from becoming focused, patient, and ready.  </p>
         
         <p>As you conduct your breathing Kata, you remember your parents, your brother, Kiyan, and your sister, Avalera. You feel as though
-        everything you've done in life has taken you up to this point. Then, with your clear and focused mind, you meticulously begin 
+        everything you've done in life has taken you up to this point. Then, with your clear and focused mind, you begin 
         preparing and packing your things.</p>
         
         <p>What is your Class?</p>
@@ -2543,7 +2544,7 @@ function talkToRaynard()
     be possible to find that path if you look hard enough. Beyond the farm, travel East. The path is marked by a large boulder with a strange circular carving in it. That 
     is the entrance."</p>  
 
-    <p>Raynard continued, "I, unfortunately ended up not making it all the way to the ruins where Soul Stealer lives, however, because on my way, I reached some old desert ruins just before his liar.  
+    <p>Raynard continued, "I, unfortunately ended up not making it all the way to the ruins where Soul Stealer lives, however, because on my way, I reached some old desert ruins just before his lair.  
     In those ruins, I removed my armor and was preparing for the battle, but I rushed to the aid of a young woman who was gravely injured by the hands of a pack of orcs. I 
     ended up tending her wounds, and we fled the orcs. I returned here, where I took care of her and ended up marrying her. I left my adventures behind, but if you find your 
     way along the hidden path, to the misty forest, and through the underground caves to the desert ruins, you may indeed find my old armor there. Before I forget - if you see 
@@ -2613,11 +2614,11 @@ function startChapterThreeOne()
     ditches in the road over time. The small farm, called the Black Horse Farm, is the last settlement along a large set of woods that span quite a distance to the east.  
     This farm provides some food, animals, and goods to the people of Gryphon's Keep, so the family that owns the Black Horse Farm is known to many here. 
     </p>
-    <p>The woods adjacent to the farm is known as the Forgotten Woods. The woods consist mostley of coniferous (pine) trees over flat land sprinkled with some boulders.  
+    <p>The woods adjacent to the farm are known as the Forgotten Woods. The woods consist mostly of coniferous (pine) trees over flat land sprinkled with some boulders.  
     The woods house many animals such as deer, coyotes, beavers, rabbits, various birds, and other woodland creatures. From what you've heard, there are several brooks 
     throughout the woods, an occasional pond, and some swampy areas. However, it isn't these woods that concern you - it's the forest on the other side of the woods that does.  
     It is rumored that the forest is home to various creatures that don't come out in open fields or the woods. Some of these creatures are said to be mystical, forgotten 
-    beings who stay lurking in the shadows since the Godlen Age. One thing is for certain - no one goes into the forest. The Forgotten Woods is much like a 'buffer' between the 
+    beings who stay lurking in the shadows since the Golden Age. One thing is for certain - no one goes into the forest. The Forgotten Woods is much like a 'buffer' between the 
     forest and the the settled areas. It's almost like there is a mutual undestanding that nothing from the forest goes beyond the woods, and no human from the villages go 
     into the forest. The path you've heard about from other adventurers takes you around the northern part of the forest.  
     </p>
@@ -2639,28 +2640,29 @@ function continueChapterThreeTwo()
 
   let chapterThreeTwo = document.querySelector("#dialogue");
   chapterThreeTwo.innerHTML = `
-    <p>You find the main road in town and head south until you find the horse cart path running East. You take one look back, beathe in...hold...and exhale. You follow the 
+    <p>You find the main road in town and head South until you find the horse cart path running East. You take one look back, breathe in...hold...and exhale. You follow the 
     horse cart path.  
     </p>
-    <p>You walk along the past and Gryphon's keep gets farther in the distance and the noise of the village disappears. Part of you likes the queit, you've always been one 
+
+    <p>You walk along the path and Gryphon's Keep gets farther in the distance and the noise of the village disappears. Part of you likes the quiet, you've always been one 
     to enjoy time to yourself - and in some cases - you prefer it. The confident feeling of being on your own, relying on yourself, and accomplishing hard tasks alone 
     has contributed to your self-confidence. You wouldn't be considered arrogant, just confident. Some of your friends and family would mention how you were calm and 
     composed under pressure, but also, how you never bragged about your accomplishments.</p>  
     
-    <p>While you think about your past, you also look around you.  The horse cart road is dirt where the cart wheels travel, but grassy everywhere else.  The road is not 
-    well-travelled, but it's also not overgrown.  There are some smaller, overgrown paths that lead to the left and right of the road, most likely from people travelling 
-    to outlying farms and orchards.  The land around you is open fields, dotted with some maple trees, white birch trees, and an occasional apple orchard.  It's autumn now, 
-    prime season for picking apples.  The air is cool, but not too cold.  It's perfect weather to be outside.  You feel a light breeze on your face, and the sky has streaks 
+    <p>While you think about your past, you also look around you. The horse cart road is dirt where the cart wheels travel, but grassy everywhere else. The road is not 
+    well-travelled, but it's also not overgrown. There are some smaller, overgrown paths that lead to the left and right of the road, most likely from people travelling 
+    to outlying farms and orchards. The land around you is open fields, dotted with some maple trees, white birch trees, and an occasional apple orchard. It's autumn now, 
+    prime season for picking apples. The air is cool, but not too cold. It's perfect weather to be outside. You feel a light breeze on your face, and the sky has streaks 
     of clouds, some passing between you and the sun, ocassionally casting shade over the land.  
     </p>
 
-    <p>In front of you, you notice a small dark shape and light dust kicking up along the road.  You aren't alarmed, and you think, "It's probably just an old wagon coming to 
-    town."  As it gets closer, you can see one horse in front, pulling along an open wagon.  You can make out the shape of two men in the cart, but as it gets closre you notice 
-    that they seems to be in a hurry and that one horse is missing pulling the wagon.  It comes closer and you notice the horse is in a full out trot.  You can clearly tell the 
-    men are slightly alarmed, and one of them waves at you to move out of the way.  Finally, the older man gets close enough to you and yells, "Go back! There's trouble ahead 
-    - wolf!"  As he passes by, you notice an injured sheep in the back of the cart - blood is everywhere, and you can clearly see a large gash in the animal.  The 
-    wagon-riders don't stop and continue in speed, leaving a dust trail behind them as they quickly move out of sight.  "Strange, for around here...", you think.  "What 
-    is a wolf doing out here during daylight and in the middle of the fields?"  "Did it attack that sheep?" 
+    <p>In front of you, you notice a small dark shape and light dust kicking up along the road. You aren't alarmed, and you think, "It's probably just an old wagon coming to 
+    town." As it gets closer, you can see one horse in front, pulling along an open wagon. You can make out the shape of two men in the cart, but as it gets closre you notice 
+    that they seems to be in a hurry and that one horse is missing pulling the wagon. It comes closer and you notice the horse is in a full out trot. You can clearly tell the 
+    men are slightly alarmed, and one of them waves at you to move out of the way. Finally, the older man gets close enough to you and yells, "Go back! There's trouble ahead 
+    - wolf!" As he passes by, you notice an injured sheep in the back of the cart - blood is everywhere, and you can clearly see a large gash in the animal. The 
+    wagon-riders don't stop and continue in speed, leaving a dust trail behind them as they quickly move out of sight. "Strange, for around here...", you think. "What 
+    is a wolf doing out here during daylight and in the middle of the fields?". "Did it attack that sheep?" 
     </p>
 
     <input type="submit" id="start-chapter-three-three" value="Continue">`;
@@ -2682,17 +2684,16 @@ function continueChapterThreeThree()
 
   let chapterThreeThree = document.querySelector("#dialogue");
   chapterThreeThree.innerHTML = `
-    <p>You hasten (quicken) your pace, enough to move more quickly, but not in a jog - you have a long journey ahead of you and know you can't tire yourself out to soon.  
-    Ahead, you see two dark figures hovering over a shape on the ground.  You quicken your pace still, and as you come closer, you can make out a wolf picking at a 
-    sheep, dead on the road.  Not only is this odd because of the time of day, but wolves haven't been a problem in this country side for quite some time.  You have heard 
+    <p>You hasten (quicken) your pace, enough to move more quickly, but not in a jog - you have a long journey ahead of you and know you can't tire yourself out too soon.  
+    Ahead, you see two dark figures hovering over a shape on the ground. You quicken your pace still, and as you come closer, you can make out a wolf picking at a 
+    sheep, dead on the road. Not only is this odd because of the time of day, but wolves haven't been a problem in this country side for quite some time. You have heard 
     of some stories of attacks from foxes on chickens, or coyotes on deer, but a sighting of wolves is a rare thing.  Regardless, as you approach, you see the wolf look up 
-    at you, while still chewing on the sheep.  It lifts its head up slowly, eyes lowered and it bares its teeth in a small growl.  "Well," you think, "I wasn't planning 
+    at you, while still chewing on the sheep. It lifts its head up slowly, eyes lowered and it bares its teeth in a small growl. "Well," you think, "I wasn't planning 
     on needing to use my training this soon, but now is as good of a time as any..."</p>
 
-    <p>At first you try to scare the wolf away.  You aren't a person to invite violence or to willfully harm others, but you also don't back down from a fight either.  
-    You can tell this wolf has no intention of leaving the sheep, and wolves are dangerous for the farm, so you have to make a decision.  You slow down 
-    as you get closer to the animals.  One wolf isn't too challenging you think...  Breathe in...hold...exhale.  Hand on your 
-    weapon and your mind focused, what do you do?</p>
+    <p>At first you try to scare the wolf away. You aren't a person to invite violence or to willfully harm others, but you also don't back down from a fight either.  
+    You can tell this wolf has no intention of leaving the sheep, and wolves are dangerous for the farm, so you have to make a decision. You slow down 
+    as you get closer to the animals. One wolf isn't too challenging you think...  Breathe in...hold...exhale. Hand on your weapon and your mind focused, what do you do?</p>
     <p>  
     
     </p>
