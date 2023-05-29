@@ -3133,12 +3133,12 @@ export function continueChapterThreeFour()
 
   let chapterThreeFour = document.querySelector("#dialogue");
   chapterThreeFour.innerHTML = `
-    <p>As you pause after your victory over the wolf, you take a breath to regroup.  As you inspect the wolf, you notice that this 
-    don't appear to be normal wolf that you've seen before.  This wolf has a distinctly black coat of fur running down its backs, at 
-    the tip of their tails, and the edges of their ears.  "So strange.", you think.  Then, you notice something very odd...its claws are 
-    black a night!  You didn't immediately notice during the fight, but now you can see plain as day.  You aren't someone who disrespects 
+    <p>As you pause after your victory over the wolf, you take a breath to regroup. As you inspect the wolf, you notice that this 
+    don't appear to be normal wolf that you've seen before. This wolf has a distinctly black coat of fur running down its back, at 
+    the tip of its tail, and the edges of its ears. "So strange.", you think. Then, you notice something very odd...its claws are 
+    black a night! You didn't immediately notice during the fight, but now you can see plain as day. You aren't someone who disrespects 
     animals, but you take one of the large claws and place it on a string around your neck so that you can ask around about it and what others
-    may know of it.  "Well," you think to yourself, "at least I'll have some interseting stories to tell at the end of this journey..."
+    may know of it. "Well," you think to yourself, "at least I'll have some interseting stories to tell at the end of this journey..."
     
     You don't want to linger too long, and decide it's time to get moving.</p>    
     
@@ -3250,11 +3250,11 @@ function continueChapterThreeFive()
 
   var chapterThreeFiveDialogue = document.getElementById("dialogue");
   chapterThreeFiveDialogue.innerHTML = `
-    <p>You continue down the path towards the farm.  While you are walking towards the farm, you glance around and take in the sight around you.
-    You don't travel this far often.  Normally, you may travel to Gryphon's Keep to buy goods that you can't find in your village.  You definitely
-    haven't travelled beyond the farm you are headed to.  Even though you some of your thoughts wander to worrying about travelling farther than
+    <p>You continue down the path towards the farm. While you are walking towards the farm, you glance around and take in the sight around you.
+    You don't travel this far often. Normally, you may travel to Gryphon's Keep to buy goods that you can't find in your village. You definitely
+    haven't travelled beyond the farm you are headed to. Even though some of your thoughts wander to worrying about travelling farther than
     you have in the past, you know that you will be okay and you are reassured by your own thoughts and knowledge that you are capable of doing
-    this.  Besides, there is also a tinge of exitement!        
+    this. Besides, there is also a tinge of exitement!        
     </p>
     
     <input type="submit" id="start-chapter-three-six" value="Continue">    
@@ -3276,11 +3276,10 @@ function continueChapterThreeSix()
 
   let chapterThreeSixDialogue = document.querySelector("#dialogue");
   chapterThreeSixDialogue.innerHTML = `
-    <p>
-    After walking for about 30 minutes, you finally can see the farmhouse in the distance.  You being to approach the farmhouse and start to notice 
-    it and the property it is located on.  You walk up to the farmhouse a large - but noticeably worn down - structure, with several other outlying 
-    buildings randomly located in some of the adjacent fields.  The smells of hay and cow manure fill the air and you can see the heavily worn dirt 
-    paths on the ground where people walk.  One path leads to a small hut-like structure, a simple shed really, where you can see some goats moving
+    <p>After walking for about 30 minutes, you finally can see the farmhouse in the distance. You being to approach the farmhouse and start to notice 
+    it and the property it is located on. You walk up to the farmhouse: a large - but noticeably worn down - structure, with several other outlying 
+    buildings randomly located in some of the adjacent fields. The smells of hay and cow manure fill the air and you can see the heavily worn dirt 
+    paths on the ground where people walk. One path leads to a small hut-like structure, a simple shed really, where you can see some goats moving
     about. Another larger structure appears to be a barn, and as you listen, you can hear the shuffling of horses in the stalls on the inside. What do you do?
     </p>
     
@@ -3320,13 +3319,13 @@ function continueChapterFour()
 
   let chapterFourDialogue = document.getElementById("dialogue");
   chapterFourDialogue.innerHTML = `
-    <p>You decide to knock on the door.  You can see how the wooden door shutters when you strike your hand against it.  As you wait for an 
-    answer, you glance at the building and take notice to its shape and construction.  The farmhouse appears to be imprecisely built, made
-    up of irregulary-shaped boards and lumbar.  Despite it's uneven build, it does look sturdy and well built - suited for a place far
-    from the town.  You can see and smell the smoke from the fireplace and as you glance around, you notice movement through the window and
-    hear footsteps walking along the creaky boards.  When the footsteps get closer, they stop, and then you hear latch sliding, and the 
-    creak of the door as the hinges seem to whine when the door opens.  An elderly man appears in the door.  He is shorter than you, but
-    you can tell that in his youth, he was likely a very strong man.  Now, he has a weathered face, white hair, and caloused hands.
+    <p>You decide to knock on the door. You can see how the wooden door shutters when you strike your hand against it. As you wait for an 
+    answer, you glance at the building and take notice to its shape and construction. The farmhouse appears to be imprecisely built, made
+    up of irregulary-shaped boards and lumber. Despite its uneven build, it does look sturdy and well built - suited for a place far
+    from the town. You can see and smell the smoke from the fireplace and as you glance around, you notice movement through the window and
+    hear footsteps walking along the creaky boards. When the footsteps get closer, they stop, and then you hear a latch sliding, and the 
+    creak of the door as the hinges seem to whine when the door opens. An elderly man appears in the door. He is shorter than you, but
+    you can tell that in his youth, he was likely a very strong man. Now, he has a weathered face, white hair, and caloused hands.
     
     <br>
     <br>
@@ -3344,8 +3343,8 @@ function continueChapterFour()
   if (finalCharacter.achievements.killedFarmWolves)
   {
     chapterFourDialogue.innerHTML += `
-        <p>You reply, "I killed a wolf that attacked a sheep down the path and was wondering if the sheep belonged to you.  If so, that
-        wolf won't be a threat to you anymore.  Do you see many wolves around here?"</p>
+        <p>You reply, "I killed a wolf that attacked a sheep down the path and was wondering if the sheep belonged to you. If so, that
+        wolf won't be a threat to you anymore. Do you see many wolves around here?"</p>
 
         <input type="submit" id="continueChapt4-yesWolvesAchievement" value="Continue">`;
 
@@ -3360,7 +3359,7 @@ function continueChapterFour()
   } else
   {
     chapterFourDialogue.innerHTML += `
-        <p>You reply, "I just saw two wovles eating a dead sheep down the path.  Do you see many wolves around here?"</p>
+        <p>You reply, "I just saw two wolves eating a dead sheep down the path. Do you see many wolves around here?"</p>
 
         <input type="submit" id="continueChapt4-noWolvesAchievement" value="Continue">`;
 
