@@ -3423,7 +3423,7 @@ function continueChapterFourThreeTwo()
   let chapterFourThreeFourOneDialogue = document.getElementById("dialogue");
   chapterFourThreeFourOneDialogue.innerHTML = `
     <p>You decide to focus on your mission and not to get caught up in small talk with the farmer, afterall, what could an old farmer 
-    possibly do to help you on this journey?  You politely decline to enter, and say goodbye to the old man and then continue along
+    possibly do to help you on this journey? You politely decline to enter, and say goodbye to the old man and then continue along
     your adventure.</p>
     
     <input type="submit" id="bypass-farm" value="Continue">
@@ -3439,7 +3439,7 @@ function continueChapterFourThreeThree()
   window.scrollTo(0, 0);
 
   let chapterFourThreeThreeDialogue = document.querySelector("#dialogue");
-  chapterFourThreeThreeDialogue.innerHTML = `<p>As you drink tea and eat, you can already notice the tingling of the ointments on your arms as they being to heal your wounds</p>
+  chapterFourThreeThreeDialogue.innerHTML = `<p>As you drink tea and eat, you can already notice the tingling of the ointments on your arms as they being to heal your wounds.</p>
     `;
 
   function farmhouseResting(hp, maxHP)
@@ -3494,15 +3494,15 @@ function continueChapterFourThreeFour()
   let chapterFourThreeFourDialogue = document.querySelector("#dialogue");
   chapterFourThreeFourDialogue.innerHTML = `
     <p>You, the farmer, and his wife talk about the wolves and he tells you that this is the first time he has seen dire wolves in 
-    the area for decades.  The farmer continues, "I've even heard the farm helpers mention that they've seen and heard some strange
-    shadows and noises coming from the forerst.  I'm not sure if they are just playing jokes trying to scare each other, but if you
+    the area for decades. The farmer continues, "I've even heard the farm helpers mention that they've seen and heard some strange
+    shadows and noises coming from the forerst. I'm not sure if they are just playing jokes trying to scare each other, but if you
     are headed that way, I recommend being careful.</p>`;
 
   if (finalCharacter.achievements.spokeToRaynard)
   {
     chapterFourThreeFourDialogue.innerHTML += `
-        <p>You thank the farmer and his wife for their hospitality, tea, and food.  As you say your thanks, you hand them the coin that
-        Raynard provided to you back at the Blue Blade Inn.  You tell the farmer, "On my way here, I came across a man named Raynard.
+        <p>You thank the farmer and his wife for their hospitality, tea, and food. As you say your thanks, you hand them the coin that
+        Raynard provided to you back at the Blue Blade Inn. You tell the farmer, "On my way here, I came across a man named Raynard.
         He mentioned he knew who you were and asked me to give this to you, if I came across you."</p>
         
         <p>The farmer smiles and looks at you.</p>
@@ -3519,9 +3519,9 @@ function continueChapterFourThreeFour()
   } else
   {
     chapterFourThreeFourDialogue.innerHTML += `
-        <p>You thank the farmer and his wife for their hospitality, tea, and food.  You let them know you must be going to travel as
-        far as you can by foot before it gets dark out.  They thank you again, and bid you safe travels as they escort you to the 
-        front door so you can continue your journey.  You exit the farmhouse, grateful for having met the couple and return to the path.</p>
+        <p>You thank the farmer and his wife for their hospitality, tea, and food. You let them know you must be going to travel as
+        far as you can by foot before it gets dark out. They thank you again, and bid you safe travels as they escort you to the 
+        front door so you can continue your journey. You exit the farmhouse, grateful for having met the couple and return to the path.</p>
         
         <input type="submit" id="return-to-path" value="Continue"> 
         `;
@@ -3538,7 +3538,7 @@ function continueChapterFourTwo()
   let chapterFourTwoDialogue = document.querySelector("#dialogue");
 
   chapterFourTwoDialogue.innerHTML = `
-        </p>"Yes, there has been several strange occurances of dire wolves showing up lately.  This is so odd for around here, I haven't
+        </p>"Yes, there has been several strange occurances of dire wolves showing up lately. This is so odd for around here, I haven't
         seen these types of wolves in this area for decades.
         `;
 
@@ -3546,7 +3546,7 @@ function continueChapterFourTwo()
   {
     chapterFourTwoDialogue.innerHTML += `
         <p>You thank the farmer for his time, and mention that after speaking to Raynard, the owner of the Blue Blade Inn, he handed you this coin
-        to give to the farmer in the event you run into him.  You hand the coin to the farmer, and when he looks at it, you see a gleam in his
+        to give to the farmer in the event you run into him. You hand the coin to the farmer, and when he looks at it, you see a gleam in his
         eyes.</p> 
         
         <input type="submit" id="continueChapt4-2-noWolvesAchievement" value="Continue">`;
@@ -3562,7 +3562,7 @@ function continueChapterFourTwo()
   } else
   {
     chapterFourTwoDialogue.innerHTML += `
-        <p>You thank the farmer for his time, and let him know you are just passing through and will be on your way.  You exchange goodbyes and continue
+        <p>You thank the farmer for his time, and let him know you are just passing through and will be on your way. You exchange goodbyes and continue
         along your journey.</p> 
         
         <input type="submit" id="continue-chapt-5" value="Continue">`;

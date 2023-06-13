@@ -286,7 +286,7 @@ export default class Character
                   <span class='character-display-attributes-str'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-str'>${finalCharacter.attributes[0].score}</span>
                   <span class='character-display-attributes-scores-adj-str'>${strengthPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
                     <defs>
                       <linearGradient id="gradientColor-str" y2="130%">
                         <stop offset="10%" stop-color="blue"/>
@@ -296,7 +296,7 @@ export default class Character
                         <stop offset="100%" stop-color="maroon"/>                  
                       </linearGradient>
                     </defs>
-                    <circle class="circle-str" cx="80" cy="80" r="30" stroke-dashoffset="${finalCharacter.attributes[0].dashArrayAdj()}"/>
+                    <circle class="circle-str" cx="50" cy="50" r="30" stroke-dashoffset="${finalCharacter.attributes[0].dashArrayAdj()}"/>
                   </svg>
 
                 </h4>
@@ -304,7 +304,7 @@ export default class Character
                   <span class='character-display-attributes-int'>${finalCharacter.attributes[1].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-int'>${finalCharacter.attributes[1].score}</span>
                   <span class='character-display-attributes-scores-adj-int'>${intelligencePlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
                     <defs>
                       <linearGradient id="gradientColor-int" y2="130%">
                       <stop offset="10%" stop-color="blue"/>
@@ -314,14 +314,14 @@ export default class Character
                       <stop offset="100%" stop-color="maroon"/>                  
                     </linearGradient>
                     </defs>
-                    <circle class="circle-int" cx="80" cy="80" r="30" stroke-dashoffset="${finalCharacter.attributes[1].dashArrayAdj()}"/>
+                    <circle class="circle-int" cx="50" cy="50" r="30" stroke-dashoffset="${finalCharacter.attributes[1].dashArrayAdj()}"/>
                   </svg>
                 </h4>
                 <h4 id='char-wisdom' class='char-info-label'>
                   <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-wis'>${finalCharacter.attributes[2].score}</span>
                   <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
                   <defs>
                     <linearGradient id="gradientColor-wis" y2="130%">
                     <stop offset="10%" stop-color="blue"/>
@@ -331,14 +331,14 @@ export default class Character
                     <stop offset="100%" stop-color="maroon"/>                  
               </linearGradient>
                   </defs>
-                  <circle class="circle-wis" cx="80" cy="80" r="30" stroke-dashoffset="${finalCharacter.attributes[2].dashArrayAdj()}"/>
+                  <circle class="circle-wis" cx="50" cy="50" r="30" stroke-dashoffset="${finalCharacter.attributes[2].dashArrayAdj()}"/>
                 </svg>
                 </h4>
                 <h4 id='char-dexterity' class='char-info-label'>
                   <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-dex'>${finalCharacter.attributes[3].score}</span>
                   <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
                   <defs>
                     <linearGradient id="gradientColor-dex" y2="130%">
                     <stop offset="10%" stop-color="blue"/>
@@ -348,14 +348,14 @@ export default class Character
                     <stop offset="100%" stop-color="maroon"/>                  
               </linearGradient>
                   </defs>
-                  <circle class="circle-dex" cx="80" cy="80" r="30" stroke-dashoffset="${finalCharacter.attributes[3].dashArrayAdj()}"/>
+                  <circle class="circle-dex" cx="50" cy="50" r="30" stroke-dashoffset="${finalCharacter.attributes[3].dashArrayAdj()}"/>
                 </svg>
                 </h4>
                 <h4 id='char-constitution' class='char-info-label'>
                   <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-con'>${finalCharacter.attributes[4].score}</span>
                   <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
                   <defs>
                     <linearGradient id="gradientColor-con" y2="130%">
                     <stop offset="10%" stop-color="blue"/>
@@ -365,14 +365,14 @@ export default class Character
                     <stop offset="100%" stop-color="maroon"/>                  
               </linearGradient>
                   </defs>
-                  <circle class="circle-con" cx="80" cy="80" r="30" stroke-dashoffset="${finalCharacter.attributes[4].dashArrayAdj()}"/>
+                  <circle class="circle-con" cx="50" cy="50" r="30" stroke-dashoffset="${finalCharacter.attributes[4].dashArrayAdj()}"/>
                 </svg>
                 </h4>
                 <h4 id='char-charisma' class='char-info-label'>
                   <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0,3)}</span>
                   <span class='character-display-attributes-scores-cha'>${finalCharacter.attributes[5].score}</span>
                   <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="160" height="160">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
                   <defs>
                     <linearGradient id="gradientColor-cha" y2="130%">
                     <stop offset="10%" stop-color="blue"/>
@@ -382,7 +382,7 @@ export default class Character
                     <stop offset="100%" stop-color="maroon"/>                  
             </linearGradient>
                   </defs>
-                  <circle class="circle-cha" cx="80" cy="80" r="30" stroke-dashoffset="${finalCharacter.attributes[5].dashArrayAdj()}"/>
+                  <circle class="circle-cha" cx="50" cy="50" r="30" stroke-dashoffset="${finalCharacter.attributes[5].dashArrayAdj()}"/>
                 </svg>
                 </h4>
             </fieldset>
