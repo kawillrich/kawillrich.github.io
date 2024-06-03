@@ -40,7 +40,7 @@ let floatingDisc = new MageLevelOneSpells("Floating Disc", 1, 0, 6, "Creates an 
 
 let holdPortal = new MageLevelOneSpells("Hold Portal", 1, 10, [2, 12], "On door, gate, or similar portal", function () { console.log('casting') }, "hold-portal", false, 0, false);
 
-//complete light - need to make it cause blindess during battle
+//complete light 
 let light = new MageLevelOneSpells("Light", 1, 120, 6, "Volume of 30 feet diameter", function () { console.log('casting') }, "light", true, 0, true);
 
 //completed magic missile
