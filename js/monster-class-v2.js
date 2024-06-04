@@ -161,6 +161,11 @@ export default class Monster
     {
       this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
+    } else if (thisMonster.status.includes("Visibility Impaired")) 
+    {
+      this.invisibilitySpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+    
+
     //no statuses
     } else
     {
@@ -217,9 +222,12 @@ export default class Monster
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
-  // mirrorImageSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)  {
-
-  // }
+  invisibilitySpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+  {
+    $("#dialogue").text(`${thisMonster.name} cannot see you and does not attack.`);
+    this.revertToAttackButtons();
+    confirmAttackMonsters(monsterOne, monsterTwo);
+  }
 
   revertToAttackButtons()
   {
