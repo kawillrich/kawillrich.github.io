@@ -742,6 +742,25 @@ export default class Character
         finalCharacter.greyOutAttackButtons(monster2, monster2);
 
       }
+
+
+      else if (monster2.status.includes('Visibility Impaired'))
+        {
+          alert(`You were invisible and the ${monster2.name} could not see you, but the spell was broken after you attacked`);
+          monster2.healthPoints = monster2.healthPoints - inflictedDamage;
+          let updatedMonsterHP = document.querySelector("#monster-two-hp");
+          updatedMonsterHP.innerHTML = `
+            <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+            `;
+  
+          //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+          monster2.status.splice(monster2.status.indexOf('Visibility Impaired'), 1);
+          let monster2Status = document.querySelector("#monster-two-status");
+          monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+          finalCharacter.greyOutAttackButtons(monster1, monster2);
+  
+        }
+
       else if (monster2.healthPoints - inflictedDamage > 0)
       {
 
