@@ -193,7 +193,7 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
     
             if ((attackedMonster === "Monster 1" && monster1.healthPoints > 0 && isVisibilityImpairedM1 === false) || (attackedMonster === "Monster 1" && (monster1.healthPoints > 0 && isVisibilityImpairedM1 === false)))
             {
-                dialogue.innerHTML += `<p>${monster1.name} can't seee you.</p>`;
+                dialogue.innerHTML += `<p> The ${monster1.name} can't see you.</p>`;
                 monster1.status.push('Visibility Impaired');
                 let monster1Status = document.querySelector("#monster-one-status");
                 monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
