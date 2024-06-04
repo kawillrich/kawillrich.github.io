@@ -160,7 +160,8 @@ export default class Monster
     } else if (thisMonster.status.includes("Blind"))
     {
       this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-
+      
+    //visibility impaired
     } else if (thisMonster.status.includes("Visibility Impaired")) 
     {
       this.invisibilitySpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
