@@ -139,22 +139,29 @@ export default class Monster
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
     let charArmorClass = finalCharacter.armorClass;
 
-    //checking if monster is asleep
-    //if asleep:
+    //CHECKING MONSTER STATUSES
+
+    //asleep:
     if (thisMonster.status.includes("Sleep"))
     {
       this.sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-      //otherwise
+    
+    //webbed
     } else if (thisMonster.status.includes("Web"))
     {
       this.webSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
+    //charmed
     } else if (thisMonster.status.includes("Charmed"))
     {
       this.charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+
+    //blinded
     } else if (thisMonster.status.includes("Blind"))
     {
       this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+
+    //no statuses
     } else
     {
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo, images);
