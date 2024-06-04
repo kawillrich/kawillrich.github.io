@@ -536,8 +536,8 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
             let sleepTimer = setTimeout(function ()
             {
-                let removeSleepM1 = monster1.status.filter((x) => "Sleep");
-                monster1.status.splice(removeSleepM1); //removing sleep after function call
+                // let removeSleepM1 = monster1.status.filter((x) => "Sleep");
+                monster1.status.splice(monster1.status.indexOf("Sleep"), 1); //removing sleep after function call
                 let updateM1Status = document.querySelector("#monster-one");
                 updateM1Status.innerHTML = `
                 <div class="monster" id="monster-one">
@@ -576,8 +576,8 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
             let sleepTimer2 = setTimeout(function ()
             {
-                let removeSleepM2 = monster2.status.filter((x) => "Sleep");
-                monster2.status.splice(removeSleepM2);
+                // let removeSleepM2 = monster2.status.filter((x) => "Sleep");
+                monster1.status.splice(monster1.status.indexOf("Sleep"), 1); //removing sleep after function call
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
                 <div class="monster" id="monster-two">
