@@ -577,7 +577,7 @@ sleep.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             let sleepTimer2 = setTimeout(function ()
             {
                 // let removeSleepM2 = monster2.status.filter((x) => "Sleep");
-                monster1.status.splice(monster1.status.indexOf("Sleep"), 1); //removing sleep after function call
+                monster1.status.splice(monster2.status.indexOf("Sleep"), 1); //removing sleep after function call
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
                 <div class="monster" id="monster-two">
