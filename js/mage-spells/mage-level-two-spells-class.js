@@ -187,7 +187,7 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
             dialogue.innerHTML = `<p>You cast Invisibility, which makes you invisible.</p>`;
     
             let isVisibilityImpairedM1 = monster1.status.some((x) => x === "Visibility Impaired");
-            let isVisibilityImpairedM2 = monster2.status.some((x) => x === "isibility Impaired");
+            let isVisibilityImpairedM2 = monster2.status.some((x) => x === "Visibility Impaired");
     
             //checking if M1 is alive -
     
