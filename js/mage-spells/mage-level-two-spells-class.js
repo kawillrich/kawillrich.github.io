@@ -163,7 +163,7 @@ detectEvil.castSpell = function ()
     console.log('Casting Detect Evil')
 }
 
-invisibility.castSpell = function ()
+invisibility.castSpell = function (monster1, monster2, continueNextChapter, attackedMonster)
 {
     console.log('Casting Invisibility')
     if (this.numberOfUses <= 0)
