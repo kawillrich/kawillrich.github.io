@@ -186,20 +186,26 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
             let dialogue = document.querySelector('#dialogue');
             dialogue.innerHTML = `<p>You cast Invisibility, which makes you invisible.</p>`;
     
-            let isVisibilityImpairedM1 = monster1.status.some((x) => x === "Visibility Impaired");
-            let isVisibilityImpairedM2 = monster2.status.some((x) => x === "Visibility Impaired");
+            // let isVisibilityImpairedM1 = monster1.status.some((x) => x === "Visibility Impaired");
+            // let isVisibilityImpairedM2 = monster2.status.some((x) => x === "Visibility Impaired");
 
             finalCharacter.status.push("Invisible");
             console.log(finalCharacter.status);
     
             //checking if M1 is alive -
     
-            if ((attackedMonster === "Monster 1" && monster1.healthPoints > 0 && isVisibilityImpairedM1 === false) || (attackedMonster === "Monster 1" && (monster1.healthPoints > 0 && isVisibilityImpairedM1 === false)))
-            {
-                dialogue.innerHTML += `<p> The ${monster1.name} can't see you.</p>`;
-                monster1.status.push('Visibility Impaired');
-                let monster1Status = document.querySelector("#monster-one-status");
-                monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
+            dialogue.innerHTML =+ `<p> You are invisible and will remain that way unless you attack or cast a spell.</p>`
+            let playerStatus = document.querySelector("#char-status");
+            playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">
+            <span class="character-display-info">${finalCharacter.status}</span>
+            </h4>`
+
+            // if ((attackedMonster === "Monster 1" && monster1.healthPoints > 0 && isVisibilityImpairedM1 === false) || (attackedMonster === "Monster 1" && (monster1.healthPoints > 0 && isVisibilityImpairedM1 === false)))
+            // {
+            //     dialogue.innerHTML += `<p> The ${monster1.name} can't see you.</p>`;
+            //     monster1.status.push('Visibility Impaired');
+            //     let monster1Status = document.querySelector("#monster-one-status");
+            //     monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
                 
                 //need to make variable, push to an array, and then call the function expression
     
@@ -225,42 +231,42 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
                 finalCharacter.activeSpellStatuses.push(invisibilityTimer);
                 //end of setTimeout
     
-            } else if ((attackedMonster === "Monster 2" && monster2.healthPoints > 0 && isVisibilityImpairedM2 === false) || (attackedMonster === "Monster 2" && (monster2.healthPoints > 0 && isVisibilityImpairedM2 === false)))
-            {
-                dialogue.innerHTML += `<p>${monster2.name} can't see you.</p>`;
-                monster2.status.push('Visibility Impaired');
-                let monster2Status = document.querySelector("#monster-two-status");
-                monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+            // } else if ((attackedMonster === "Monster 2" && monster2.healthPoints > 0 && isVisibilityImpairedM2 === false) || (attackedMonster === "Monster 2" && (monster2.healthPoints > 0 && isVisibilityImpairedM2 === false)))
+            // {
+            //     dialogue.innerHTML += `<p>${monster2.name} can't see you.</p>`;
+            //     monster2.status.push('Visibility Impaired');
+            //     let monster2Status = document.querySelector("#monster-two-status");
+            //     monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
     
-                let visibilityTimer2 = setTimeout(function ()
-                {
-                    let removeInvisibilityM2 = monster2.status.filter((x) => "Visibility Impaired");
-                    monster2.status.splice(removeInvisibilityM2);
-                    let updateM2Status = document.querySelector("#monster-two");
-                    updateM2Status.innerHTML = `
-                    <div class="monster" id="monster-two">
-                        <fieldset class='monster-info-module'>
-                            <legend class='monster-dashboard'>Monster 2</legend>
-                            <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
-                            <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
-                            <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
-                            <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
-                            <h4 id="monster-two-status">Status: ${monster2.status}</h4>
-                        </fieldset>   
-                    </div>`;
-                    console.log('Invisibility removed m2')
+            //     let visibilityTimer2 = setTimeout(function ()
+            //     {
+            //         let removeInvisibilityM2 = monster2.status.filter((x) => "Visibility Impaired");
+            //         monster2.status.splice(removeInvisibilityM2);
+            //         let updateM2Status = document.querySelector("#monster-two");
+            //         updateM2Status.innerHTML = `
+            //         <div class="monster" id="monster-two">
+            //             <fieldset class='monster-info-module'>
+            //                 <legend class='monster-dashboard'>Monster 2</legend>
+            //                 <h4 id="monster-two-type">Monster Type: ${monster2.name}</h4>
+            //                 <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
+            //                 <h4 id="monster-two-ap">Armor Class: ${monster2.armorClass}</h4>
+            //                 <h4 id="monster-two-damage">Damage: ${monster2.damage}</h4>
+            //                 <h4 id="monster-two-status">Status: ${monster2.status}</h4>
+            //             </fieldset>   
+            //         </div>`;
+            //         console.log('Invisibility removed m2')
     
-                }, 30000);
+            //     }, 30000);
     
                 finalCharacter.activeSpellStatuses.push(visibilityTimer2);
     
-            } else if (attackedMonster === "Monster 2")
-            {
-                dialogue.innerHTML += `<p>${monster2.name} was not affected.</p>`;
-            } else if (attackedMonster === "Monster 1")
-            {
-                dialogue.innerHTML += `<p>${monster1.name} was not affected.</p>`;
-            }
+            // } else if (attackedMonster === "Monster 2")
+            // {
+            //     dialogue.innerHTML += `<p>${monster2.name} was not affected.</p>`;
+            // } else if (attackedMonster === "Monster 1")
+            // {
+            //     dialogue.innerHTML += `<p>${monster1.name} was not affected.</p>`;
+            // }
         }
 }
 
