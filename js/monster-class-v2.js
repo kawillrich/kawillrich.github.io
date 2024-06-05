@@ -135,7 +135,6 @@ export default class Monster
 
   monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter, monsterOne, monsterTwo, images)
   {
-    console.log(images)
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
     let charArmorClass = finalCharacter.armorClass;
 
@@ -160,7 +159,7 @@ export default class Monster
     } else if (thisMonster.status.includes("Blind"))
     {
       this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-      
+
     //visibility impaired
     } else if (thisMonster.status.includes("Visibility Impaired")) 
     {
@@ -248,7 +247,6 @@ export default class Monster
 
   checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1, monsterOne, monsterTwo, images) 
   {
-    console.log('checkMonsterHitRoll', images, finalCharacter.status)
     for (let i = 0; i < monsterHitRoll1.length; i++)
     {
       if (monsterHitRoll1[i][0] === charArmorClass1)
@@ -261,7 +259,6 @@ export default class Monster
 
         } else if (finalCharacter.status.includes("Mirror Image") && images > 0)
         {
-          console.log('checkMonsterHitRoll: status includes Mirror Image & Images > 0', images, finalCharacter.status)
           images -= 1;
           finalCharacter.mirrorImages = images;
           if (images <= 0)
@@ -273,14 +270,12 @@ export default class Monster
             updateCharacterStatus.innerHTML = `
                 <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
               }</span></h4>`;
-            console.log('Mirror Image removed from player')
           };
 
           alert(`The ${thisMonster.name} attacks you and strikes one of your Mirror Images - there are ${images} left.`);
 
         } else
         {
-          console.log('checkMonsterHitRoll: else', images, finalCharacter.status)
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
           finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
@@ -360,7 +355,6 @@ export default class Monster
   {
     if (thisMonster.name === monsterOne.name)
     {
-      console.log("thisMonster = ", thisMonster);
       let updatedMonsterHP2 = document.querySelector("#monster-two-hp");
 
       updatedMonsterHP2.innerHTML = `
@@ -375,7 +369,6 @@ export default class Monster
       confirmAttackMonsters(monsterOne, monsterTwo);
     } else if (thisMonster.name === monsterTwo.name)
     {
-      console.log("thisMonster = ", thisMonster);
       let updatedMonsterHP1 = document.querySelector("#monster-one-hp");
 
       updatedMonsterHP1.innerHTML = `
