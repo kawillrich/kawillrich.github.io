@@ -842,7 +842,7 @@ stroke: url(#gradientColor-cha);
 ul.dropdown-spell-list-ul {
   position: absolute;
   list-style: none;
-  width: 184px;
+  width: 200px;
   background-color: white;
   border: 1px solid black;
   border-radius: 5px; 
@@ -862,7 +862,7 @@ li.third-level-dropdown-list
 {
   display: none;
   height: 20px;
-
+  
 }
 
 
@@ -871,10 +871,12 @@ li.monster-two-spell-list,
 li.self-spell-list {
   display: none;
   position: relative;
-  top: -20px;
-  left: 143px;
+  top: -24px;
+  left: 183px;
   background-color: white;
   border: 1px solid black;
+  padding: 0px 0px 0px 5px;
+  width: 80px;
 }
 
 ul.spell-list {
