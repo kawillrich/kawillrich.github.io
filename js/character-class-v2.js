@@ -509,7 +509,6 @@ export default class Character
 
   weaponAttackMonster1(monster1, monster2, weapon, continueNextChapter, acAdjustment = 0, damageAdjustment = 0)
   {
-    console.log(acAdjustment, damageAdjustment)
     let self = this;
     let hitRollSucceed = function (enemy1, finalCharacter)
     {
