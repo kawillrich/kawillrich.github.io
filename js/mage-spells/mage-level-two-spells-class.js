@@ -32,7 +32,7 @@ let continualLight = new MageLevelTwoSpells("Continual Light", 2, 120, 999, "Vol
 let detectEvil = new MageLevelTwoSpells("Detect Evil", 2, 60, 2, "Everything within 60 feet", function () { console.log('Casting'); }, "detect-evil", false, 0, true);
 
 //battle spell
-let invisibility = new MageLevelTwoSpells("Invisibility", 2, 240, 999, "One creature or object", function () { console.log('Casting'); }, "invisibility", true, 0, false);
+let invisibility = new MageLevelTwoSpells("Invisibility", 2, 240, 999, "The mage only", function () { console.log('Casting'); }, "invisibility", true, 0, false);
 
 
 let esp = new MageLevelTwoSpells("ESP", 2, 60, 12, "All thoughts in one direction", function () { console.log('Casting'); }, "esp", false, 0, false);
@@ -188,6 +188,9 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
     
             let isVisibilityImpairedM1 = monster1.status.some((x) => x === "Visibility Impaired");
             let isVisibilityImpairedM2 = monster2.status.some((x) => x === "Visibility Impaired");
+
+            finalCharacter.status.push("Invisible");
+            console.log(finalCharacter.status);
     
             //checking if M1 is alive -
     
