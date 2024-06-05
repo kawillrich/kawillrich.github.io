@@ -932,13 +932,18 @@ li.self-spell-list:hover {
 li.monster-one-spell-list.monster1-spell-dead:hover {
   background-color: grey;
   pointer-events: none;
-  cursor: not-allowed;
+  /* cursor: not-allowed; */
 
 }
 
 li.monster-two-spell-list.monster2-spell-dead:hover {
   background-color: grey;
-  pointer-events: none;
   cursor: not-allowed;
+
+}
+
+li.monster-one-spell-list.monster1-spell-dead:active, 
+li.monster-two-spell-list.monster2-spell-dead:active {
+  pointer-events: none;
 
 }
