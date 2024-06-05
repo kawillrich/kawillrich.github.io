@@ -276,7 +276,6 @@ let strength = {
   adjustment: 0,
   dashArrayAdj: function () {
     let dashAdj = 150 - (this.score * 8);
-    console.log(dashAdj)
     return dashAdj; 
   }
 };
@@ -287,8 +286,6 @@ let intelligence = {
   adjustment: 0,
   dashArrayAdj: function () {
     let dashAdj = 150 - (this.score * 8);
-    console.log(dashAdj)
-    return dashAdj; 
   }
 };
 
@@ -298,8 +295,6 @@ let wisdom = {
   adjustment: 0,
   dashArrayAdj: function () {
     let dashAdj = 150 - (this.score * 8);
-    console.log(dashAdj)
-    return dashAdj; 
   }
 };
 
@@ -309,8 +304,6 @@ let dexterity = {
   adjustment: 0,
   dashArrayAdj: function () {
     let dashAdj = 150 - (this.score * 8);
-    console.log(dashAdj)
-    return dashAdj; 
   }
 };
 
@@ -320,8 +313,6 @@ let constitution = {
   adjustment: 0,
   dashArrayAdj: function () {
     let dashAdj = 150 - (this.score * 8);
-    console.log(dashAdj)
-    return dashAdj; 
   }
 };
 
@@ -331,8 +322,6 @@ let charisma = {
   adjustment: 0,
   dashArrayAdj: function () {
     let dashAdj = 150 - (this.score * 8);
-    console.log(dashAdj)
-    return dashAdj; 
   }
 };
 
@@ -2048,7 +2037,6 @@ function submitAllMageSpells()
     {
       //FIND INDEXOF VALUE (I.E. "MAGIC MISSILE") IN MAGE LEVEL 1 SPELL ARRAY , THEN PUSH ONTO PLAYER.LEVELONESPELLS)
       let newSpell = eval(selectedAllSpells[i].value);
-      console.log(newSpell)
       finalCharacter.specialty.characterLevel.specialtySkills[
         "First Level Mage Spells"
       ].push(newSpell);
