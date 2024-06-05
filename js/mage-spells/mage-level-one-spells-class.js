@@ -179,7 +179,9 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             {
                 // let removeBlindM1 = monster1.status.filter((x) => "Blind");
                 // monster1.status.splice(monster1.status.indexOf("Blind"), 1);
-                monster1.status.splice(removeBlindM1); //removing Blind after function call
+                // monster1.status.splice(removeBlindM1); //removing Blind after function call
+                monster1.status.splice(monster1.status.indexOf("Blind"), 1);
+
                 let updateM1Status = document.querySelector("#monster-one");
                 updateM1Status.innerHTML = `
                 <div class="monster" id="monster-one">
