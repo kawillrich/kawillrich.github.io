@@ -43,7 +43,7 @@ let invisibilityTenFoot = new MageLevelThreeSpells("Invisibility 10 feet radius"
 // completed lightenBolt
 let lightningBolt = new MageLevelThreeSpells("Lightning Bolt", 3, 180, 0, "Bolt 60 feet long, 5 feet wide", function () { console.log('Casting'); }, "lightning-bolt", true, 6, true);
 
-let protectionFromEvilTenFoot = new MageLevelThreeSpells("Protection From Evil 10 feet radius", 3, 0, 12, "Barrier 20 feet in diameter", function () { console.log('Casting'); }, "protection-from-evil-ten-feet", true, 0, true);
+let protectionFromEvilTenFoot = new MageLevelThreeSpells("Prot From Evil 10 ft radius", 3, 0, 12, "Barrier 20 feet in diameter", function () { console.log('Casting'); }, "protection-from-evil-ten-feet", true, 0, true);
 
 let protectionFromNormalMissiles = new MageLevelThreeSpells("Protection From Missiles", 3, 30, 12, "One creature", function () { console.log('Casting'); }, "protection-from-missiles", true, 0, false);
 
