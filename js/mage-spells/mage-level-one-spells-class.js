@@ -177,7 +177,8 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
             let blindTimer = setTimeout(function ()
             {
-                let removeBlindM1 = monster1.status.filter((x) => "Blind");
+                // let removeBlindM1 = monster1.status.filter((x) => "Blind");
+                // monster1.status.splice(monster1.status.indexOf("Blind"), 1);
                 monster1.status.splice(removeBlindM1); //removing Blind after function call
                 let updateM1Status = document.querySelector("#monster-one");
                 updateM1Status.innerHTML = `
@@ -206,8 +207,9 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
             let blindTimer2 = setTimeout(function ()
             {
-                let removeBlindM2 = monster2.status.filter((x) => "Blind");
-                monster2.status.splice(removeBlindM2);
+                monster2.status.splice(monster2.status.indexOf("Blind"), 1);
+                // let removeBlindM2 = monster2.status.filter((x) => "Blind");
+                // monster2.status.splice(removeBlindM2);
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
                 <div class="monster" id="monster-two">
@@ -357,8 +359,9 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                 {
                     monster2.hitRoll[i][1] = monster2.hitRoll[i][1] - 1;
                 }
-                let removeProtFromEvilM2 = monster2.status.filter((x) => "Protection from Evil");
-                monster2.status.splice(removeProtFromEvilM2);
+                monster2.status.splice(monster2.status.indexOf("Protection from Evil"), 1);
+                // let removeProtFromEvilM2 = monster2.status.filter((x) => "Protection from Evil");
+                // monster2.status.splice(removeProtFromEvilM2);
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
                     <div class="monster" id="monster-one">
@@ -380,8 +383,10 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
             {
                 monster1.hitRoll[i][1] = monster1.hitRoll[i][1] - 1;
             }
-            let removeProtFromEvilM1 = monster1.status.filter((x) => "Protection from Evil");
-            monster1.status.splice(removeProtFromEvilM1);
+            monster1.status.splice(monster1.status.indexOf("Protection from Evil"), 1);
+
+            // let removeProtFromEvilM1 = monster1.status.filter((x) => "Protection from Evil");
+            // monster1.status.splice(removeProtFromEvilM1);
             let updateM1Status = document.querySelector("#monster-one");
             updateM1Status.innerHTML = `
               <div class="monster" id="monster-one">
@@ -444,8 +449,9 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
             let charmTimer = setTimeout(function ()
             {
-                let removeCharmM1 = monster1.status.filter((x) => "Charmed");
-                monster1.status.splice(removeCharmM1);
+                monster1.status.splice(monster1.status.indexOf("Charmed"), 1);
+                // let removeCharmM1 = monster1.status.filter((x) => "Charmed");
+                // monster1.status.splice(removeCharmM1);
                 let updateM1Status = document.querySelector("#monster-one");
                 updateM1Status.innerHTML = `
               <div class="monster" id="monster-one">
@@ -475,8 +481,9 @@ charmPerson.castSpell = function (monster1, monster2, continueNextChapter, attac
 
             let charmTimer2 = setTimeout(function ()
             {
-                let removeCharmM2 = monster2.status.filter((x) => "Charmed");
-                monster2.status.splice(removeCharmM2);
+                monster2.status.splice(monster2.status.indexOf("Sleep"), 1);
+                // let removeCharmM2 = monster2.status.filter((x) => "Charmed");
+                // monster2.status.splice(removeCharmM2);
                 let updateM2Status = document.querySelector("#monster-two");
                 updateM2Status.innerHTML = `
               <div class="monster" id="monster-two">
