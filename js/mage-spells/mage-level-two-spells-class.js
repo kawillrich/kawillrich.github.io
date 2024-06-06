@@ -211,21 +211,12 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
     
                 let invisibilityTimer = setTimeout(function ()
                 {
-                    let removeVisibilityM1 = monster1.status.filter((x) => "Visibility Impaired");
-                    monster1.status.splice(removeVisibilityM1); //removing Invisibility after function call
-                    let updateM1Status = document.querySelector("#monster-one");
-                    updateM1Status.innerHTML = `
-                    <div class="monster" id="monster-one">
-                        <fieldset class='monster-info-module'>
-                            <legend class='monster-dashboard'>Monster 1</legend>
-                            <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
-                            <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
-                            <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
-                            <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
-                            <h4 id="monster-one-status">Status: ${monster1.status}</h4>
-                        </fieldset>   
-                    </div>`;
-                    console.log('Invisibility removed m1')
+                    let removeVisibility = finalCharacter.status.filter((x) => "Invisible");
+                    finalCharacter.status.splice(removeVisibility); //removing Invisibility after function call
+                    playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
+                        <span class="character-display-info">${finalCharacter.status}</span>
+                        </h4>`
+                    console.log('Invisibility removed from player')
                 }, 30000);
     
                 finalCharacter.activeSpellStatuses.push(invisibilityTimer);
@@ -258,7 +249,7 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
     
             //     }, 30000);
     
-                finalCharacter.activeSpellStatuses.push(visibilityTimer2);
+                // finalCharacter.activeSpellStatuses.push(visibilityTimer2);
     
             // } else if (attackedMonster === "Monster 2")
             // {
