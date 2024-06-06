@@ -184,7 +184,7 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
     
             finalCharacter.greyOutAttackButtons(monster1, monster2);
             let dialogue = document.querySelector('#dialogue');
-            dialogue.innerHTML = `<p>You cast Invisibility, which makes you invisible.</p>`;
+            dialogue.innerHTML += `<p>You cast Invisibility, which makes you invisible.</p>`;
     
             // let isVisibilityImpairedM1 = monster1.status.some((x) => x === "Visibility Impaired");
             // let isVisibilityImpairedM2 = monster2.status.some((x) => x === "Visibility Impaired");
@@ -194,9 +194,9 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
     
             //checking if M1 is alive -
     
-            dialogue.innerHTML =+ `<p> You are invisible and will remain that way unless you attack or cast a spell.</p>`
+            dialogue.innerHTML += `<p> You are invisible and will remain that way unless you attack or cast a spell.</p>`;
             let playerStatus = document.querySelector("#char-status");
-            playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">
+            playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
             <span class="character-display-info">${finalCharacter.status}</span>
             </h4>`
 
