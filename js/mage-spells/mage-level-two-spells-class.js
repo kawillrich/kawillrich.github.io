@@ -31,7 +31,7 @@ let continualLight = new MageLevelTwoSpells("Continual Light", 2, 120, 999, "Vol
 
 let detectEvil = new MageLevelTwoSpells("Detect Evil", 2, 60, 2, "Everything within 60 feet", function () { console.log('Casting'); }, "detect-evil", false, 0, true);
 
-//battle spell
+//completed
 let invisibility = new MageLevelTwoSpells("Invisibility", 2, 240, 999, "The mage only", function () { console.log('Casting'); }, "invisibility", true, 0, false);
 
 
