@@ -211,8 +211,8 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
     
                 let invisibilityTimer = setTimeout(function ()
                 {
-                    let removeVisibility = finalCharacter.status.filter((x) => "Invisible");
-                    finalCharacter.status.splice(removeVisibility); //removing Invisibility after function call
+                    finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
+
                     playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
                         <span class="character-display-info">${finalCharacter.status}</span>
                         </h4>`

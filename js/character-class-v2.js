@@ -517,6 +517,12 @@ export default class Character
         <p>You attack the ${monster1.name} with your ${finalCharacter.weapon.name} and cause ${inflictedDamage} points of damage.</p>
       `;
 
+      // console.log(finalCharacter.status)
+      // if(finalCharacter.status.includes("Invisible")) {
+      //   alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
+        
+      // }
+
       if (monster1.status.includes('Sleep') && finalCharacter.weapon.attackType === "Edged")
       {
         monster1.healthPoints = 0;
@@ -660,6 +666,17 @@ export default class Character
 
     let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) =>
     {
+
+      console.log(finalCharacter.status)
+      if(finalCharacter.status.includes("Invisible")) {
+        alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
+        finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
+        let playerStatus = document.querySelector("#char-status");
+        playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
+                        <span class="character-display-info">${finalCharacter.status}</span>
+                        </h4>`
+        
+      }
       for (let i = 0; i < playerHitRoll1.length; i++)
       {
         if (playerHitRoll1[i][0] === monsterArmorClass1)
