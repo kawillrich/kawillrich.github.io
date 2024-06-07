@@ -56,13 +56,13 @@ let mageMedium = new MageLevels(
     name: "Medium",
     level: 1,
     maxXP: 2499,
-    savingThrows: [
-      { name: "Poison or Death Ray", score: 13 },
-      { name: "Magic Wand", score: 14 },
-      { name: "Turn to Stone or Paralysis", score: 13 },
-      { name: "Dragon Breath", score: 16 },
-      { name: "Spells or Magic Staff", score: 15 },
-    ],
+    savingThrows: {       
+      "Poison or Death Ray": 13,
+      "Magic Wand": 14,
+      "Turn to Stone or Paralysis": 13,
+      "Dragon Breath": 16,
+      "Spells or Magic Staff": 15
+  },
 
     hitRolls: [
       [9, 10],
@@ -90,13 +90,13 @@ let mageSeer = new MageLevels(
     name: "Seer",
     level: 2,
     maxXP: 4999,
-    savingThrows: [
-      { name: "Poison or Death Ray", score: 13 },
-      { name: "Magic Wand", score: 14 },
-      { name: "Turn to Stone or Paralysis", score: 13 },
-      { name: "Dragon Breath", score: 16 },
-      { name: "Spells or Magic Staff", score: 15 },
-    ],
+    savingThrows: {       
+      "Poison or Death Ray": 13,
+      "Magic Wand": 14,
+      "Turn to Stone or Paralysis": 13,
+      "Dragon Breath": 16,
+      "Spells or Magic Staff": 15
+  },
 
     hitRolls: [
       [9, 10],
@@ -124,13 +124,13 @@ let mageConjurer = new MageLevels(
     name: "Conjurer",
     level: 3,
     maxXP: 9999,
-    savingThrows: [
-      { name: "Poison or Death Ray", score: 13 },
-      { name: "Magic Wand", score: 14 },
-      { name: "Turn to Stone or Paralysis", score: 13 },
-      { name: "Dragon Breath", score: 16 },
-      { name: "Spells or Magic Staff", score: 15 },
-    ],
+    savingThrows: {       
+      "Poison or Death Ray": 13,
+      "Magic Wand": 14,
+      "Turn to Stone or Paralysis": 13,
+      "Dragon Breath": 16,
+      "Spells or Magic Staff": 15
+  },
 
     hitRolls: [
       [9, 10],
