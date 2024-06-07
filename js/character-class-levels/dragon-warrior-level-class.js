@@ -21,13 +21,13 @@ let dragonWarriorVeteran = new DragonWarriorLevels (
         name: "Dragon Warrior Veteran",
         level: 1,
         maxXP: 2499,
-        savingThrows: [       
-            { name: "Poison or Death Ray", score: 13},
-            { name: "Magic Wand", score: 14},
-            { name: "Turn to Stone or Paralysis", score: 13},
-            { name: "Dragon Breath", score: 16},
-            { name: "Spells or Magic Staff", score: 15},
-        ],
+        savingThrows: {       
+            "Poison or Death Ray": 12,
+            "Magic Wand": 13,
+            "Turn to Stone or Paralysis": 14,
+            "Dragon Breath": 15,
+            "Spells or Magic Staff": 16
+        },
 
         hitRolls: [
             [9, 10],
