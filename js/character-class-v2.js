@@ -881,6 +881,17 @@ export default class Character
 
   spell2AttackMonster1(monster1, monster2, continueNextChapter, damage, spellName)
   {
+
+    if(finalCharacter.status.includes("Invisible")) {
+      alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
+      finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
+      let playerStatus = document.querySelector("#char-status");
+      playerStatus.innerHTML = `
+        <h4 id="char-status" class="char-info-label">Status: 
+        <span class="character-display-info">${finalCharacter.status}</span>
+        </h4>`        
+    }
+
     let self = this;
 
     let inflictedDamage = Math.ceil(
@@ -966,6 +977,16 @@ export default class Character
 
   spell2AttackMonster2(monster1, monster2, continueNextChapter, damage, spellName)
   {
+    if(finalCharacter.status.includes("Invisible")) {
+      alert(`You were invisible and the ${monster2.name} could not see you, but the spell was broken after you attacked`);
+      finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
+      let playerStatus = document.querySelector("#char-status");
+      playerStatus.innerHTML = `
+        <h4 id="char-status" class="char-info-label">Status: 
+        <span class="character-display-info">${finalCharacter.status}</span>
+        </h4>`        
+    }
+    
     let self = this;
 
     let inflictedDamage = Math.ceil(

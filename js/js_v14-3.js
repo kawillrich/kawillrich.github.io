@@ -3066,6 +3066,16 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (firstLevel[i].name === parentNodeInnerText)
       {
+        if(finalCharacter.status.includes("Invisible")) {
+          alert(`You were invisible but the spell was broken after you cast the spell`);
+          finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
+          let playerStatus = document.querySelector("#char-status");
+          playerStatus.innerHTML = `
+            <h4 id="char-status" class="char-info-label">Status: 
+            <span class="character-display-info">${finalCharacter.status}</span>
+            </h4>`        
+        }
+
         firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
       }
     };
@@ -3074,6 +3084,17 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (secondLevel[i].name === parentNodeInnerText)
       {
+
+        if(finalCharacter.status.includes("Invisible")) {
+          alert(`You were invisible but the spell was broken after you cast the spell`);
+          finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
+          let playerStatus = document.querySelector("#char-status");
+          playerStatus.innerHTML = `
+            <h4 id="char-status" class="char-info-label">Status: 
+            <span class="character-display-info">${finalCharacter.status}</span>
+            </h4>`        
+        }
+
         secondLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
       }
     };
@@ -3082,6 +3103,17 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (thirdLevel[i].name === parentNodeInnerText)
       {
+
+        if(finalCharacter.status.includes("Invisible")) {
+          alert(`You were invisible but the spell was broken after you cast the spell`);
+          finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
+          let playerStatus = document.querySelector("#char-status");
+          playerStatus.innerHTML = `
+            <h4 id="char-status" class="char-info-label">Status: 
+            <span class="character-display-info">${finalCharacter.status}</span>
+            </h4>`        
+        }
+        
         thirdLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
       }
     }
