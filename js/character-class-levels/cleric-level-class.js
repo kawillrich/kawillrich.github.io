@@ -45,13 +45,13 @@ let acolyte = new ClericLevels(
     name: "Acolyte",
     level: 1,
     maxXP: 1499,
-    savingThrows: [
-      { name: "Poison or Death Ray", score: 11 },
-      { name: "Magic Wand", score: 12 },
-      { name: "Turn to Stone or Paralysis", score: 14 },
-      { name: "Dragon Breath", score: 16 },
-      { name: "Spells or Magic Staff", score: 15 },
-    ],
+    savingThrows: {       
+      "Poison or Death Ray": 11,
+      "Magic Wand": 12,
+      "Turn to Stone or Paralysis": 14,
+      "Dragon Breath": 16,
+      "Spells or Magic Staff": 15
+  },
 
     hitRolls: [
       [9, 10],
@@ -89,13 +89,13 @@ let adept = new ClericLevels(
     name: "Adept",
     level: 2,
     maxXP: 2999,
-    savingThrows: [
-      { name: "Poison or Death Ray", score: 11 },
-      { name: "Magic Wand", score: 12 },
-      { name: "Turn to Stone or Paralysis", score: 14 },
-      { name: "Dragon Breath", score: 16 },
-      { name: "Spells or Magic Staff", score: 15 },
-    ],
+    savingThrows: {       
+      "Poison or Death Ray": 11,
+      "Magic Wand": 12,
+      "Turn to Stone or Paralysis": 14,
+      "Dragon Breath": 16,
+      "Spells or Magic Staff": 15
+  },
 
     hitRolls: [
       [9, 10],
@@ -133,13 +133,13 @@ let priest = new ClericLevels(
     name: "Priest",
     level: 3,
     maxXP: 5999,
-    savingThrows: [
-      { name: "Poison or Death Ray", score: 11 },
-      { name: "Magic Wand", score: 12 },
-      { name: "Turn to Stone or Paralysis", score: 14 },
-      { name: "Dragon Breath", score: 16 },
-      { name: "Spells or Magic Staff", score: 15 },
-    ],
+    savingThrows: {       
+      "Poison or Death Ray": 11,
+      "Magic Wand": 12,
+      "Turn to Stone or Paralysis": 14,
+      "Dragon Breath": 16,
+      "Spells or Magic Staff": 15
+  },
 
     hitRolls: [
       [9, 10],
