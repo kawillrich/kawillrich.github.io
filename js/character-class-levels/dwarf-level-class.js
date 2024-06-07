@@ -14,13 +14,13 @@ let dwarvenVeteran = new DwarfLevels (
         name: "Dwarven Veteran",
         level: 1,
         maxXP: 2199,
-        savingThrows: [       
-            { name: "Poison or Death Ray", score: 8},
-            { name: "Magic Wand", score: 9},
-            { name: "Turn to Stone or Paralysis", score: 10},
-            { name: "Dragon Breath", score: 13},
-            { name: "Spells or Magic Staff", score: 12},
-        ],
+        savingThrows: {       
+            "Poison or Death Ray": 8,
+            "Magic Wand": 9,
+            "Turn to Stone or Paralysis": 10,
+            "Dragon Breath": 13,
+            "Spells or Magic Staff": 12
+        },
 
         hitRolls: [
             [9, 10],
@@ -50,13 +50,13 @@ let dwarvenWarrior = new DwarfLevels (
     name: "Dwarven Warrior",
     level: 2,
     maxXP: 4399,
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 8},
-        { name: "Magic Wand", score: 9},
-        { name: "Turn to Stone or Paralysis", score: 10},
-        { name: "Dragon Breath", score: 13},
-        { name: "Spells or Magic Staff", score: 12},
-],
+    savingThrows: {       
+        "Poison or Death Ray": 8,
+        "Magic Wand": 9,
+        "Turn to Stone or Paralysis": 10,
+        "Dragon Breath": 13,
+        "Spells or Magic Staff": 12
+    },
 
     hitRolls: [
         [9, 10],
@@ -85,13 +85,13 @@ let dwarvenSwordmaster = new DwarfLevels (
     name: "Dwarven Swordmaster",
     level: 3,
     maxXP: 8799,
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 8},
-        { name: "Magic Wand", score: 9},
-        { name: "Turn to Stone or Paralysis", score: 10},
-        { name: "Dragon Breath", score: 13},
-        { name: "Spells or Magic Staff", score: 12},
-],
+    savingThrows: {       
+        "Poison or Death Ray": 8,
+        "Magic Wand": 9,
+        "Turn to Stone or Paralysis": 10,
+        "Dragon Breath": 13,
+        "Spells or Magic Staff": 12
+    },
 
     hitRolls: [
         [9, 10],
