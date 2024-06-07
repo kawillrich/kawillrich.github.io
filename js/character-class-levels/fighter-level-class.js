@@ -10,13 +10,13 @@ let fighterVeteran = new FighterLevels (
         name: "Veteran",
         level: 1,
         maxXP: 1999,
-        savingThrows: [       
-            { name: "Poison or Death Ray", score: 12},
-            { name: "Magic Wand", score: 13},
-            { name: "Turn to Stone or Paralysis", score: 14},
-            { name: "Dragon Breath", score: 15},
-            { name: "Spells or Magic Staff", score: 16},
-        ],
+        savingThrows: {       
+            "Poison or Death Ray": 12,
+            "Magic Wand": 13,
+            "Turn to Stone or Paralysis": 14,
+            "Dragon Breath": 15,
+            "Spells or Magic Staff": 16
+        },
 
         hitRolls: [
             [9, 10],
@@ -41,13 +41,13 @@ let fighterWarrior = new FighterLevels (
     level: 2,
     maxXP: 3999,
 
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 12},
-        { name: "Magic Wand", score: 13},
-        { name: "Turn to Stone or Paralysis", score: 14},
-        { name: "Dragon Breath", score: 15},
-        { name: "Spells or Magic Staff", score: 16},
-    ],
+    savingThrows: {       
+        "Poison or Death Ray": 12,
+        "Magic Wand": 13,
+        "Turn to Stone or Paralysis": 14,
+        "Dragon Breath": 15,
+        "Spells or Magic Staff": 16
+    },
 
     hitRolls: [
         [9, 10],
@@ -71,13 +71,13 @@ let fighterSwordmaster = new FighterLevels (
     level: 3,
     maxXP: 7999,
 
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 12},
-        { name: "Magic Wand", score: 13},
-        { name: "Turn to Stone or Paralysis", score: 14},
-        { name: "Dragon Breath", score: 15},
-        { name: "Spells or Magic Staff", score: 16},
-    ],
+    savingThrows: {       
+        "Poison or Death Ray": 12,
+        "Magic Wand": 13,
+        "Turn to Stone or Paralysis": 14,
+        "Dragon Breath": 15,
+        "Spells or Magic Staff": 16
+    },
 
     hitRolls: [
         [9, 10],
