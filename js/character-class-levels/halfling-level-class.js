@@ -14,13 +14,13 @@ let halflingVeteran = new HalflingLevels (
         name: "Halfling Veteran",
         level: 1,
         maxXP: 1999,
-        savingThrows: [       
-            { name: "Poison or Death Ray", score: 8},
-            { name: "Magic Wand", score: 9},
-            { name: "Turn to Stone or Paralysis", score: 10},
-            { name: "Dragon Breath", score: 13},
-            { name: "Spells or Magic Staff", score: 12},
-        ],
+        savingThrows: {       
+            "Poison or Death Ray": 8,
+            "Magic Wand": 9,
+            "Turn to Stone or Paralysis": 10,
+            "Dragon Breath": 13,
+            "Spells or Magic Staff": 12
+        },
 
         hitRolls: [
             [9, 10],
@@ -51,13 +51,13 @@ let halflingWarrior = new HalflingLevels (
     name: "Halfling Warrior",
     level: 2,
     maxXP: 3999,
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 8},
-        { name: "Magic Wand", score: 9},
-        { name: "Turn to Stone or Paralysis", score: 10},
-        { name: "Dragon Breath", score: 13},
-        { name: "Spells or Magic Staff", score: 12},
-],
+    savingThrows: {       
+        "Poison or Death Ray": 8,
+        "Magic Wand": 9,
+        "Turn to Stone or Paralysis": 10,
+        "Dragon Breath": 13,
+        "Spells or Magic Staff": 12
+    },
 
     hitRolls: [
         [9, 10],
@@ -87,13 +87,13 @@ let halflingSwordmaster = new HalflingLevels (
     name: "Halfling Swordmaster",
     level: 3,
     maxXP: 3999,
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 8},
-        { name: "Magic Wand", score: 9},
-        { name: "Turn to Stone or Paralysis", score: 10},
-        { name: "Dragon Breath", score: 13},
-        { name: "Spells or Magic Staff", score: 12},
-],
+    savingThrows: {       
+        "Poison or Death Ray": 8,
+        "Magic Wand": 9,
+        "Turn to Stone or Paralysis": 10,
+        "Dragon Breath": 13,
+        "Spells or Magic Staff": 12
+    },
 
     hitRolls: [
         [9, 10],
