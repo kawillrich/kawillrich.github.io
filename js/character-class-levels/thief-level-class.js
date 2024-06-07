@@ -10,13 +10,13 @@ let apprentice = new ThiefLevels (
         name: "Apprentice",
         level: 1,
         maxXP: 1199,
-        savingThrows: [       
-            { name: "Poison or Death Ray", score: 13},
-            { name: "Magic Wand", score: 14},
-            { name: "Turn to Stone or Paralysis", score: 13},
-            { name: "Dragon Breath", score: 16},
-            { name: "Spells or Magic Staff", score: 15},
-        ],
+        savingThrows: {       
+            "Poison or Death Ray": 13,
+            "Magic Wand": 14,
+            "Turn to Stone or Paralysis": 13,
+            "Dragon Breath": 16,
+            "Spells or Magic Staff": 15
+        },
 
         hitRolls: [
             [9, 10],
@@ -49,13 +49,13 @@ let footpad = new ThiefLevels (
     level: 2,
     maxXP: 2399,
 
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 13},
-        { name: "Magic Wand", score: 14},
-        { name: "Turn to Stone or Paralysis", score: 13},
-        { name: "Dragon Breath", score: 16},
-        { name: "Spells or Magic Staff", score: 15},  
-      ],
+    savingThrows: {       
+        "Poison or Death Ray": 13,
+        "Magic Wand": 14,
+        "Turn to Stone or Paralysis": 13,
+        "Dragon Breath": 16,
+        "Spells or Magic Staff": 15
+    },
 
     hitRolls: [
         [9, 10],
@@ -87,13 +87,13 @@ let robber = new ThiefLevels (
     level: 3,
     maxXP: 4799,
 
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 13},
-        { name: "Magic Wand", score: 14},
-        { name: "Turn to Stone or Paralysis", score: 13},
-        { name: "Dragon Breath", score: 16},
-        { name: "Spells or Magic Staff", score: 15},
-        ],
+    savingThrows: {       
+        "Poison or Death Ray": 13,
+        "Magic Wand": 14,
+        "Turn to Stone or Paralysis": 13,
+        "Dragon Breath": 16,
+        "Spells or Magic Staff": 15
+    },
 
     hitRolls: [
         [9, 10],
