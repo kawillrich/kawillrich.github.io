@@ -2,6 +2,8 @@ import { finalCharacter, confirmAttackMonsters } from "./js_v14-3.js";
 
 import { fighterVeteran, fighterWarrior, fighterSwordmaster } from "./character-class-levels/fighter-level-class.js";
 
+import { normalMan } from "./character-class-levels/normalMan-level-class.js";
+
 // import Weapon from './weapon-class-v2.js';
 // import { normalSword, shortBow, silverSword, twoHandedBroadSword, longBow, ebonyBow, mahoganyStaff, gemStaff, noWeapon, obsidianSword, woodenClub, dagger,
 //     silverDagger, battleAxe, handAxe, crossBow, shortSword, mace, javelin, poleArm, sling, spear, warHammer } from './weapon-class-v2.js';
@@ -417,7 +419,7 @@ let noMonster = new Monster(" ", " ", " ", " ", " ", 0, " ", " ", {
   }
 }, true, "melee",
   [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
-  [], fighterVeteran.level.savingThrows);
+  [], normalMan.level.savingThrows);
 
 console.log(noMonster.saveAs)
 
