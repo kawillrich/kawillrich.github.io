@@ -292,13 +292,12 @@ phantasmalForce.castSpell = function (monster1, monster2, continueNextChapter, a
             this.numberOfUses = 0;
         }
 
-        //add random monsters in an array to pick which one attacks?
-        //would the phantasmal force disappear?
-        //have mage pick what monsters it wants to use? 
-        //have array populate depending on monsters player encounters?
+        //add random monsters/items in an array to pick which one attacks?
+            //if it's a monster, how long does it last?
+        //when does the phantasmal force disappear?
         //Monster is AC 9 and disappears when hit
         //if mage moves, takes any damage, or fails saving throws, it disappears
-        //no real damage is inflicted. 
+        //no real damage is inflicted (falls unconcious if hp = 0). 
         //recipient THINKS it is turned to stone/falls unconcious/etc.
         //wears off in 1-4 turns
 
