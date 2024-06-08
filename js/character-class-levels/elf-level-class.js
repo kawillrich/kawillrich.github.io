@@ -18,13 +18,13 @@ let veteranMedium = new ElfLevels (
         name: "Veteran Medium",
         level: 1,
         maxXP: 3999,
-        savingThrows: [       
-            { name: "Poison or Death Ray", score: 12},
-            { name: "Magic Wand", score: 13},
-            { name: "Turn to Stone or Paralysis", score: 13},
-            { name: "Dragon Breath", score: 15},
-            { name: "Spells or Magic Staff", score: 15},
-        ],
+        savingThrows: {       
+            "Poison or Death Ray": 12,
+            "Magic Wand": 13,
+            "Turn to Stone or Paralysis": 13,
+            "Dragon Breath": 15,
+            "Spells or Magic Staff": 15
+        },
 
         hitRolls: [
             [9, 10],
@@ -59,13 +59,13 @@ let warriorSeer = new ElfLevels (
     name: "Warrior Seer",
     level: 2,
     maxXP: 7999,
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 12},
-        { name: "Magic Wand", score: 13},
-        { name: "Turn to Stone or Paralysis", score: 13},
-        { name: "Dragon Breath", score: 15},
-        { name: "Spells or Magic Staff", score: 15},
-    ],
+    savingThrows: {       
+        "Poison or Death Ray": 12,
+        "Magic Wand": 13,
+        "Turn to Stone or Paralysis": 13,
+        "Dragon Breath": 15,
+        "Spells or Magic Staff": 15
+    },
 
     hitRolls: [
         [9, 10],
@@ -99,13 +99,13 @@ let swordMasterConjurer = new ElfLevels (
     name: "Swordmaster Conjurer",
     level: 3,
     maxXP: 15999,
-    savingThrows: [       
-        { name: "Poison or Death Ray", score: 12},
-        { name: "Magic Wand", score: 13},
-        { name: "Turn to Stone or Paralysis", score: 13},
-        { name: "Dragon Breath", score: 15},
-        { name: "Spells or Magic Staff", score: 15},
-    ],
+    savingThrows: {       
+        "Poison or Death Ray": 12,
+        "Magic Wand": 13,
+        "Turn to Stone or Paralysis": 13,
+        "Dragon Breath": 15,
+        "Spells or Magic Staff": 15
+    },
 
     hitRolls: [
         [9, 10],
