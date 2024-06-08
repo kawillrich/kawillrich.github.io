@@ -293,6 +293,12 @@ phantasmalForce.castSpell = function (monster1, monster2, continueNextChapter, a
         }
 
         //add random monsters/items in an array to pick which one attacks?
+            //Troll lasts 1d4 turns
+            //monsters attack the troll first, if it's hit, it disappears
+            //Magic Missile
+            //Fireball
+            //Lightning Bolt 
+            //Boulder
             //if it's a monster, how long does it last?
         //when does the phantasmal force disappear?
         //Monster is AC 9 and disappears when hit
