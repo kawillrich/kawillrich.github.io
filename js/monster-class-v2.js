@@ -166,8 +166,7 @@ export default class Monster
 
     //phantasmal force
     } else if (thisMonster.status.includes("Phantasmal Force")) {
-      this.phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-    
+      this.phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)    
 
     //visibility impaired
     } else if (finalCharacter.status.includes("Invisible")) 
