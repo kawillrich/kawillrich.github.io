@@ -1998,6 +1998,41 @@ let giantRacer = new Monster("Giant Racer", 2, 16, 5, 6, 20, "Neutral", "Bite", 
   [], 
   fighterVeteran.level.savingThrows);
 
+
+//phantasmal monsters
+//Troll
+let phantasmalTroll = new Monster("Troll", [6, 3], 39, 4, 15, 650, "Chaotic", "Talons", {
+  gold: {
+    type: "Gold Pieces",
+    gpValue: 1,
+    quantity: 2
+  },
+  gems: {
+    type: "Gems",
+    gpValue: 10,
+    quantity: 1
+  },
+  electrum: {
+    type: "Electrum Pieces",
+    gpValue: 2,
+    quantity: 1
+  },
+  silver: {
+    type: "Silver Pieces",
+    gpValue: .1,
+    quantity: 1
+  },
+  copper: {
+    type: "Copper Pieces",
+    gpValue: .01,
+    quantity: 1
+  }
+}, true,
+  "melee",
+  [[9, 4], [8, 5], [7, 6], [6, 7], [5, 8], [4, 9], [3, 10], [2, 11], [1, 12], [0, 13], [-1, 14], [-2, 15], [-3, 16], [-4, 17], [-5, 18]], 
+  [], 
+  fighterVeteran.level.savingThrows);
+
 //exporting monsters
 
 export
@@ -2015,4 +2050,5 @@ export
   bugBear1,
   kobold,
   kobold1,
+  phantasmalTroll
 };
