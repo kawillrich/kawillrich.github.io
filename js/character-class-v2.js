@@ -121,6 +121,7 @@ import
   hobGoblin,
   bugBear,
   kobold,
+  phantasmalTroll
 } from "./monster-class-v2.js";
 
 //import { noAchievements, killedFarmWolves, spokeToRaynard } from './achievements-v1.js';
@@ -986,7 +987,7 @@ export default class Character
         <span class="character-display-info">${finalCharacter.status}</span>
         </h4>`        
     }
-    
+
     let self = this;
 
     let inflictedDamage = Math.ceil(
