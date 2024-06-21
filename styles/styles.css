@@ -948,7 +948,6 @@ li.monster-two-spell-list.monster2-spell-dead:active {
 
 }
 
-.phantasmalForce {
-  height: 100%;
-  width: 100%;
+.phantasmalForce-hide {
+  display: none;  
 }
