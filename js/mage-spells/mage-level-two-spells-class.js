@@ -299,6 +299,9 @@ phantasmalForce.castSpell = function (monster1, monster2, continueNextChapter, a
                 let phantasmalForceScreen = document.querySelector('#phantasmalForce');
                 console.log(phantasmalForceScreen)
                 phantasmalForceScreen.classList.toggle('phantasmalForce-hide');
+                let cancelPhantasmalForce = document.querySelector('[name="ph-cancel"]');
+                cancelPhantasmalForce.addEventListener('click', function() { phantasmalForceScreen.classList.toggle('phantasmalForce-hide')}, false)
+                console.log(cancelPhantasmalForce);
                 console.log(phantasmalForceScreen.classList)
                 toggleShowSpellList();
 
