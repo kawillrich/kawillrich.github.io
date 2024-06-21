@@ -947,3 +947,8 @@ li.monster-two-spell-list.monster2-spell-dead:active {
   pointer-events: none;
 
 }
+
+.phantasmalForce {
+  height: 100%;
+  width: 100%;
+}

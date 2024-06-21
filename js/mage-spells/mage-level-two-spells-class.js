@@ -292,6 +292,28 @@ phantasmalForce.castSpell = function (monster1, monster2, continueNextChapter, a
             this.numberOfUses = 0;
         }
 
+
+
+        if (attackedMonster === "Monster 1")
+            {
+                let phantasmalForceScreen = document.querySelector('.phantasmalForce');
+                phantasmalForceScreen.classList.remove('hidden')
+                toggleShowSpellList();
+
+
+
+
+                finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
+            } else if (attackedMonster === "Monster 2")
+            {
+                toggleShowSpellList();
+
+
+
+
+                finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
+            }
+        
         //add random monsters/items in an array to pick which one attacks?
             //Troll lasts 1d4 turns
             //monsters attack the troll first, if it's hit, it disappears
