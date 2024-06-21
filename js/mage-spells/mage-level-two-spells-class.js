@@ -297,8 +297,9 @@ phantasmalForce.castSpell = function (monster1, monster2, continueNextChapter, a
         if (attackedMonster === "Monster 1")
             {
                 let phantasmalForceScreen = document.querySelector('#phantasmalForce');
+                console.log(phantasmalForceScreen)
                 phantasmalForceScreen.classList.remove('hidden');
-                console.log(phantasmalForce.classList)
+                console.log(phantasmalForceScreen.classList)
                 toggleShowSpellList();
 
 
