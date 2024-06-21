@@ -348,7 +348,7 @@ web.castSpell = function (monster1, monster2, continueNextChapter, attackedMonst
 
         //checking if M1 is alive -
 
-        if ((monster1.healthPoints > 0 && isWebbedM1 === false) || (monster1.healthPoints > 0 && isWebbedM1 === false))
+        if ((monster1.healthPoints > 0 && isWebbedM1 === false))
         {
             dialogue.innerHTML += `<p>${monster1.name} is stuck in the web.</p>`;
             monster1.status.push('Web');
@@ -380,7 +380,7 @@ web.castSpell = function (monster1, monster2, continueNextChapter, attackedMonst
             //end of setTimeout
         }
 
-        if ((monster2.healthPoints > 0 && isWebbedM2 === false) || (monster2.healthPoints > 0 && isWebbedM2 === false))
+        if ((monster2.healthPoints > 0 && isWebbedM2 === false))
         {
             dialogue.innerHTML += `<p>${monster2.name} is stuck in the web.</p>`;
             monster2.status.push('Web');
