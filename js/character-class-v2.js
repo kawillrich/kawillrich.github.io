@@ -246,7 +246,7 @@ export default class Character
                 <legend class='player-dashboard'>Player Data</legend>
                 <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name
       }</span></h4>
-                <h4 id='char-specialty' class='char-info-label'>Specialty <span class="character-display-info">: ${this.specialty.name
+                <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${this.specialty.name
       }</span></h4>
                 <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints +
       finalCharacter.attributes[4].adjustment

@@ -22,8 +22,8 @@ body {
 
 #container {
   /* margin: 0px auto 0px auto; */
-  width: 820px;
-  min-width: 820px;
+  width: 920px;
+  min-width: 920px;
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
   height: 1100px;
@@ -184,7 +184,7 @@ fieldset {
   background-position-x: 50px;
   background-position-y: -50px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 2fr;
+  grid-template-columns: 2fr 1fr 1fr 2fr;
   grid-template-areas: "playerData playerAttributes playerCanvas playerSaves"
                        "playerData playerAttributes playerStatus playerSaves";
   height: 320px;
@@ -220,6 +220,7 @@ fieldset {
 
 .char-info-module {
   height: 325px;
+  width: 248px;
 }
 
 .char-info-module-attributes {
@@ -626,6 +627,10 @@ span#dragonwarrior {
 #alignment-description-container {
   grid-column: 2 / 5;}
 
+
+.character-display-info {
+  float: right;
+}
 
 #char-strength, #char-intelligence, #char-wisdom, 
 #char-dexterity, #char-constitution, #char-charisma {
