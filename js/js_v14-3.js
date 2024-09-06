@@ -130,6 +130,12 @@ import
 } from "./inventory-class-v1.js";
 
 //class-level-imports
+
+import
+  {
+    adventurer
+  } from "./character-class-levels/adventurer-level-class.js"
+
 import
 {
   fighterVeteran,
