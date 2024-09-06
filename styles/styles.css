@@ -1,5 +1,5 @@
 * {
-  font-family: "VT323";  
+  font-family: "VT323";
 }
 
 body {
@@ -8,9 +8,9 @@ body {
   /* width: 1400px; */
   height: 1400px;
   padding: 0px 10px 0px 10px;
-  display: flex;  
-  color: rgb(130,130,170);
-  font-size: 22px;  
+  display: flex;
+  color: rgb(130, 130, 170);
+  font-size: 22px;
 }
 
 #footer {
@@ -28,7 +28,7 @@ body {
   border: 30px solid transparent;
   height: 1100px;
   border-image-source: url(../images/gui/gui-entire-border2.png);
-  border-image-slice: 75 75; 
+  border-image-slice: 75 75;
 }
 
 #container-2 {
@@ -43,18 +43,20 @@ body {
 
 /* add a class for submit buttons and <button> to change appearance with background image*/
 
-input[name="alignment"], input[name="selected-specialty"] {
+input[name="alignment"],
+input[name="selected-specialty"] {
   display: none;
   position: relative;
-   
 }
 
-.alignment-label, .class-label {
+.alignment-label,
+.class-label {
   padding: 0px 0px 0px 20px;
   display: inline-block;
 }
 
-.alignment-label::before, .class-label::before {
+.alignment-label::before,
+.class-label::before {
   display: inline-block;
   position: relative;
   width: 20px;
@@ -65,39 +67,59 @@ input[name="alignment"], input[name="selected-specialty"] {
   top: 10px;
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 10 10;
-  background-color: rgb(205,210,245);
+  background-color: rgb(205, 210, 245);
   cursor: pointer;
 }
 
-.alignment-label:hover::before, .class-label:hover::before {
+.alignment-label:hover::before,
+.class-label:hover::before {
   background-color: azure;
 }
 
-.alignment-radio:checked + .alignment-label::before, .class-radio:checked + .class-label::before {
+.alignment-radio:checked + .alignment-label::before,
+.class-radio:checked + .class-label::before {
   background-color: rgb(178, 241, 178);
 }
 
-input[type="submit"], #submit-all-mage-spells, #buy-items, 
-#generate-attributes, #confirm-attributes, #beginAdventure,
-#submit-all-cleric-spells {  
+input[type="submit"],
+#submit-all-mage-spells,
+#buy-items,
+#generate-attributes,
+#confirm-attributes,
+#beginAdventure,
+#submit-all-cleric-spells {
   border: 20px solid transparent;
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 20 20;
   text-align: center;
-  background-color: rgb(205,210,245);
+  background-color: rgb(205, 210, 245);
   font-size: 22px;
   cursor: pointer;
 }
 
-input[type="submit"]:hover, #submit-all-mage-spells:hover, #buy-items:hover, 
-#generate-attributes:hover, #confirm-attributes:hover, #beginAdventure:hover,
-#normal-equipment-link:hover, #magical-equipment-link:hover, #spells-link:hover, #treasure-link:hover  {
+input[type="submit"]:hover,
+#submit-all-mage-spells:hover,
+#buy-items:hover,
+#generate-attributes:hover,
+#confirm-attributes:hover,
+#beginAdventure:hover,
+#normal-equipment-link:hover,
+#magical-equipment-link:hover,
+#spells-link:hover,
+#treasure-link:hover {
   background-color: azure;
 }
 
-input[type="submit"]:active, #submit-all-mage-spells:active, #buy-items:active, 
-#generate-attributes:active, #confirm-attributes:active, #beginAdventure:active,
-#normal-equipment-link.active, #magical-equipment-link.active, #spells-link.active, #treasure-link.active {
+input[type="submit"]:active,
+#submit-all-mage-spells:active,
+#buy-items:active,
+#generate-attributes:active,
+#confirm-attributes:active,
+#beginAdventure:active,
+#normal-equipment-link.active,
+#magical-equipment-link.active,
+#spells-link.active,
+#treasure-link.active {
   background-color: rgb(178, 241, 178);
 }
 
@@ -106,12 +128,15 @@ input[type="submit"]:active, #submit-all-mage-spells:active, #buy-items:active,
   display: block;
 }
 
-#normal-equipment-link, #magical-equipment-link, #spells-link, #treasure-link {
+#normal-equipment-link,
+#magical-equipment-link,
+#spells-link,
+#treasure-link {
   /* border: 20px solid transparent; */
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 20 20;
   text-align: center;
-  background-color: rgb(205,210,245);
+  background-color: rgb(205, 210, 245);
   font-size: 22px;
   cursor: pointer;
 }
@@ -128,7 +153,7 @@ input[type="text"] {
   border-image-slice: 10 10;
   /* box-shadow: inset 1px 1px 1px 1px #000; */
   border-radius: 5px;
-  background-color:  rgb(205,210,245);
+  background-color: rgb(205, 210, 245);
 }
 
 button {
@@ -161,7 +186,9 @@ legend {
   border-radius: 5px;
 }
 
-.player-dashboard, .saves-dashboard, .statuses-dashboard {
+.player-dashboard,
+.saves-dashboard,
+.statuses-dashboard {
   background-color: rgb(160, 219, 255);
 }
 
@@ -169,7 +196,7 @@ fieldset {
   border-radius: 5px;
 }
 
-#canvas2{
+#canvas2 {
   /* height: 300px;
   width: 240px; */
 }
@@ -185,9 +212,10 @@ fieldset {
   background-position-y: -50px;
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 2fr;
-  grid-template-areas: "playerData playerAttributes playerCanvas playerSaves"
-                       "playerData playerAttributes playerStatus playerSaves";
-  height: 320px;
+  grid-template-areas:
+    "playerData playerAttributes playerCanvas playerSaves"
+    "playerData playerAttributes playerStatus playerSaves";
+  height: 350px;
   /* width: 800px; */
   /* grid-template-rows: 2fr 2fr 1fr 1fr;
   grid-template-columns: 2fr 2fr 1fr 2fr;   */
@@ -208,14 +236,14 @@ fieldset {
   width: 100px;
 }
 
-#character-statuses {  
+#character-statuses {
   grid-area: playerStatus;
   width: 100px;
 }
 
 #character-saving-throws {
   grid-area: playerSaves;
-  width: 200px;  
+  width: 200px;
 }
 
 .char-info-module {
@@ -229,10 +257,11 @@ fieldset {
 } */
 
 .char-info-module-attributes {
-  display: grid;  
-  grid-template-areas:  "topLeft topRight"
-                        "middleLeft middleRight"
-                        "bottomLeft bottomRight";
+  display: grid;
+  grid-template-areas:
+    "topLeft topRight"
+    "middleLeft middleRight"
+    "bottomLeft bottomRight";
   grid-template-columns: repeat(2, 80px);
   grid-template-rows: repeat(3, 98px);
   align-items: center;
@@ -241,11 +270,11 @@ fieldset {
   width: 100px;
 }
 
-#char-strength {  
+#char-strength {
   grid-area: topLeft;
 }
 
-#char-intelligence {  
+#char-intelligence {
   grid-area: topRight;
 }
 
@@ -266,8 +295,7 @@ fieldset {
 }
 
 .canvas-info-module-monster {
-  
-  background-color:rgb(221, 221, 221);
+  background-color: rgb(221, 221, 221);
 }
 
 .canvas-info-module-player {
@@ -317,11 +345,11 @@ fieldset {
   background-color: rgb(224, 193, 193);
 }
 #monster-attack:hover {
-  background-color:  rgb(248, 162, 162);
+  background-color: rgb(248, 162, 162);
 }
 
 #monster-attack:active {
-  background-color:  rgb(255, 105, 105);
+  background-color: rgb(255, 105, 105);
 }
 
 #monster-info {
@@ -511,7 +539,7 @@ span#dragonwarrior {
   left: 50%;
 }
 
-.spell-tooltiptext{
+.spell-tooltiptext {
   visibility: hidden;
   height: 100px;
   width: 200px;
@@ -582,12 +610,9 @@ span#dragonwarrior {
 .weapon-tooltip:hover .weapon-tooltiptext,
 .spell-tooltip:hover .spell-tooltiptext,
 .item-tooltip:hover .item-tooltiptext,
-.supply-item-tooltip:hover .supply-item-tooltiptext  {
+.supply-item-tooltip:hover .supply-item-tooltiptext {
   visibility: visible;
 }
-
-
-
 
 .html-spell-tooltip:hover .html-spell-tooltiptext {
   visibility: visible;
@@ -608,7 +633,7 @@ span#dragonwarrior {
 
 .ability-score-number-grid-item {
   text-align: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 50%;
 }
 
@@ -641,8 +666,8 @@ span#dragonwarrior {
 }
 
 #alignment-description-container {
-  grid-column: 2 / 5;}
-
+  grid-column: 2 / 5;
+}
 
 .character-display-info {
   float: right;
@@ -652,8 +677,12 @@ span#dragonwarrior {
   float: right;
 }
 
-#char-strength, #char-intelligence, #char-wisdom, 
-#char-dexterity, #char-constitution, #char-charisma {
+#char-strength,
+#char-intelligence,
+#char-wisdom,
+#char-dexterity,
+#char-constitution,
+#char-charisma {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 20px 10px 10px 10px;
@@ -661,9 +690,12 @@ span#dragonwarrior {
   justify-content: center;
 }
 
-.character-display-attributes-str, .character-display-attributes-int, 
-.character-display-attributes-wis, .character-display-attributes-dex, 
-.character-display-attributes-con, .character-display-attributes-cha {
+.character-display-attributes-str,
+.character-display-attributes-int,
+.character-display-attributes-wis,
+.character-display-attributes-dex,
+.character-display-attributes-con,
+.character-display-attributes-cha {
   /* flex: auto; */
   grid-column: 1;
   grid-row: 3;
@@ -671,12 +703,15 @@ span#dragonwarrior {
   position: relative;
   left: 38px;
   top: 0px;
-  /* font-size: 20px; */  
+  /* font-size: 20px; */
 }
 
-.character-display-attributes-scores-str, .character-display-attributes-scores-int,
-.character-display-attributes-scores-wis, .character-display-attributes-scores-dex, 
-.character-display-attributes-scores-con, .character-display-attributes-scores-cha {
+.character-display-attributes-scores-str,
+.character-display-attributes-scores-int,
+.character-display-attributes-scores-wis,
+.character-display-attributes-scores-dex,
+.character-display-attributes-scores-con,
+.character-display-attributes-scores-cha {
   /* display: inline-block; */
   /* flex: auto; */
   grid-column: 1;
@@ -692,9 +727,12 @@ span#dragonwarrior {
   top: -21px;
 }
 
-.character-display-attributes-scores-adj-str, .character-display-attributes-scores-adj-int,
-.character-display-attributes-scores-adj-wis, .character-display-attributes-scores-adj-dex, 
-.character-display-attributes-scores-adj-con, .character-display-attributes-scores-adj-cha {
+.character-display-attributes-scores-adj-str,
+.character-display-attributes-scores-adj-int,
+.character-display-attributes-scores-adj-wis,
+.character-display-attributes-scores-adj-dex,
+.character-display-attributes-scores-adj-con,
+.character-display-attributes-scores-adj-cha {
   /* display: inline-block; */
   /* flex: auto; */
   grid-column: 1;
@@ -708,37 +746,42 @@ span#dragonwarrior {
   top: -35px;
 }
 
-.circle-str{
-stroke: url(#gradientColor-str);
-/* stroke-dasharray: 150; */
+.circle-str {
+  stroke: url(#gradientColor-str);
+  /* stroke-dasharray: 150; */
 }
 
-.circle-int{
-stroke: url(#gradientColor-int);
-/* stroke-dasharray: 150; */
+.circle-int {
+  stroke: url(#gradientColor-int);
+  /* stroke-dasharray: 150; */
 }
 
-.circle-wis{
-stroke: url(#gradientColor-wis);
-/* stroke-dasharray: 150; */
+.circle-wis {
+  stroke: url(#gradientColor-wis);
+  /* stroke-dasharray: 150; */
 }
 
-.circle-dex{
-stroke: url(#gradientColor-dex);
-/* stroke-dasharray: 150; */
+.circle-dex {
+  stroke: url(#gradientColor-dex);
+  /* stroke-dasharray: 150; */
 }
 
-.circle-con{
-stroke: url(#gradientColor-con);
-/* stroke-dasharray: 150; */
+.circle-con {
+  stroke: url(#gradientColor-con);
+  /* stroke-dasharray: 150; */
 }
 
-.circle-cha{
-stroke: url(#gradientColor-cha);
-/* stroke-dasharray: 150; */
+.circle-cha {
+  stroke: url(#gradientColor-cha);
+  /* stroke-dasharray: 150; */
 }
 
-.circle-str, .circle-int, .circle-wis, .circle-dex, .circle-con, .circle-cha {  
+.circle-str,
+.circle-int,
+.circle-wis,
+.circle-dex,
+.circle-con,
+.circle-cha {
   fill: none;
   /* stroke: url(#gradientColor); */
   stroke-width: 10px;
@@ -747,11 +790,7 @@ stroke: url(#gradientColor-cha);
   /* stroke-dashoffset: 0; */
   transform: rotate(-230deg);
   transform-origin: center;
-  
 }
-
-
-
 
 #hp-prog-bar {
   width: 70px;
@@ -778,7 +817,7 @@ stroke: url(#gradientColor-cha);
   display: block;
   height: 2000px;
   width: 2000px;
-  background-color:  rgb(0, 5, 50);
+  background-color: rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
 }
@@ -792,7 +831,7 @@ stroke: url(#gradientColor-cha);
   display: block;
   height: 2000px;
   width: 2000px;
-  background-color:  rgb(0, 5, 50);
+  background-color: rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
 }
@@ -806,7 +845,7 @@ stroke: url(#gradientColor-cha);
   display: block;
   height: 2000px;
   width: 2000px;
-  background-color:  rgb(0, 5, 50);
+  background-color: rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
 }
@@ -878,15 +917,12 @@ stroke: url(#gradientColor-cha);
 }
 
 #char-gp {
-  
 }
 
 .spell-button-tooltip {
-
 }
 
 .spell-button-tooltip::after {
-  
 }
 
 ul.dropdown-spell-list-ul {
@@ -895,26 +931,21 @@ ul.dropdown-spell-list-ul {
   width: 200px;
   background-color: white;
   border: 1px solid black;
-  border-radius: 5px; 
+  border-radius: 5px;
   padding: 10px 10px 10px 10px;
   margin-top: 5px;
 }
 
 .hide-spell-list-dropdown {
   display: none;
-};
-
-
+}
 
 li.first-level-dropdown-list,
 li.second-level-dropdown-list,
-li.third-level-dropdown-list  
-{
+li.third-level-dropdown-list {
   display: none;
   height: 20px;
-  
 }
-
 
 li.monster-one-spell-list,
 li.monster-two-spell-list,
@@ -941,39 +972,34 @@ ul.spell-list {
 
 ul.spell-list:hover {
   background-color: lightblue;
-
 }
 
-li.first-level-dropdown-list b:hover,  
+li.first-level-dropdown-list b:hover,
 li.second-level-dropdown-list b:hover,
-li.third-level-dropdown-list b:hover 
-{
+li.third-level-dropdown-list b:hover {
   background-color: lightblue;
 }
 
-li.first-level-dropdown-list:hover,  
+li.first-level-dropdown-list:hover,
 li.second-level-dropdown-list:hover,
-li.third-level-dropdown-list:hover 
-{
+li.third-level-dropdown-list:hover {
   background-color: lightblue;
   height: 20px;
 }
 
-li.first-level-dropdown-list:hover ul.spell-list,  
+li.first-level-dropdown-list:hover ul.spell-list,
 li.second-level-dropdown-list:hover ul.spell-list,
-li.third-level-dropdown-list:hover ul.spell-list 
-{
+li.third-level-dropdown-list:hover ul.spell-list {
   display: block;
-
 }
 
-ul.spell-list:hover li.monster-one-spell-list, 
+ul.spell-list:hover li.monster-one-spell-list,
 ul.spell-list:hover li.monster-two-spell-list,
 ul.spell-list:hover li.self-spell-list {
   display: block;
 }
 
-li.monster-one-spell-list:hover, 
+li.monster-one-spell-list:hover,
 li.monster-two-spell-list:hover,
 li.self-spell-list:hover {
   background-color: lightblue;
@@ -983,25 +1009,21 @@ li.monster-one-spell-list.monster1-spell-dead:hover {
   background-color: grey;
   pointer-events: none;
   /* cursor: not-allowed; */
-
 }
 
 li.monster-two-spell-list.monster2-spell-dead:hover {
   background-color: grey;
   cursor: not-allowed;
-
 }
 
-li.monster-one-spell-list.monster1-spell-dead:active, 
+li.monster-one-spell-list.monster1-spell-dead:active,
 li.monster-two-spell-list.monster2-spell-dead:active {
   pointer-events: none;
-
 }
 
 #phantasmalForce.phantasmalForce-hide {
-  display: none;  
+  display: none;
 }
-
 
 #phantasmalForce {
   position: absolute;
@@ -1012,7 +1034,7 @@ li.monster-two-spell-list.monster2-spell-dead:active {
   display: block;
   height: 2000px;
   width: 2000px;
-  background-color:  rgb(0, 5, 50);
+  background-color: rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
 }
