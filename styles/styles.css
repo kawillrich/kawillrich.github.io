@@ -107,7 +107,7 @@ input[type="submit"]:active, #submit-all-mage-spells:active, #buy-items:active,
 }
 
 #normal-equipment-link, #magical-equipment-link, #spells-link, #treasure-link {
-  border: 20px solid transparent;
+  /* border: 20px solid transparent; */
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 20 20;
   text-align: center;
@@ -432,7 +432,7 @@ span#dragonwarrior {
 /* Style the tab content */
 .tabContent {
   padding: 6px 12px;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 5px;
   margin: 10px 0px 0px 0px;
 }
