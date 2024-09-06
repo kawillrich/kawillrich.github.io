@@ -987,6 +987,9 @@ function startGame()
 
               <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
 
+              <h4 id='char-level' class='char-info-label'>Level: <span class="character-display-info">${finalCharacter.specialty.characterLevel.level.level}</span></h4>
+
+
               <h4 id='char-hp' class='char-info-label'>Hit Points:                 
                   <span id='hpBar' >
                     <progress id='hp-prog-bar' 
