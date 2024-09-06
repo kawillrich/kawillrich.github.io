@@ -218,6 +218,10 @@ fieldset {
   width: 200px;  
 }
 
+.char-info-module {
+  height: 325px;
+}
+
 .char-info-module-attributes {
   display: grid;  
   grid-template-areas:  "topLeft topRight"
@@ -227,8 +231,8 @@ fieldset {
   grid-template-rows: repeat(3, 98px);
   align-items: center;
   justify-content: center;
-  /* height: 300px;
-  width: 100px; */
+  height: 325px;
+  width: 100px;
 }
 
 #char-strength {  
@@ -261,17 +265,17 @@ fieldset {
 }
 
 .canvas-info-module-player {
-  height: 100px;
+  height: 152px;
   width: 100px;
 }
 
 .saves-info-module-player {
-  height: 318px;
+  height: 325px;
   width: 250px;
 }
 
 .status-info-module-player {
-  height: 100px;
+  height: 148px;
   width: 100px;
 }
 
