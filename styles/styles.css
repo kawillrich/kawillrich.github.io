@@ -629,13 +629,15 @@ span#dragonwarrior {
 
 .alignment-item {
   border: 1px solid rgb(130, 130, 168);
-  padding: 5px;
-  margin: 0px 0px 10px 0px;
-  height: 200px;
+  padding: 20px;
+  margin: auto 0px auto 0px;
+  height: 175px;
+  text-align: justify;
 }
 
 .alignment-container-item {
-  margin: 13px;
+  /* margin: 5px 10px 13px 10px; */
+  padding: 0px 10px 10px 10px;
 }
 
 #alignment-description-container {
