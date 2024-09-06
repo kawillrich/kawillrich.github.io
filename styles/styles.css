@@ -641,6 +641,10 @@ span#dragonwarrior {
   float: right;
 }
 
+.character-hp-bar {
+  float: right;
+}
+
 #char-strength, #char-intelligence, #char-wisdom, 
 #char-dexterity, #char-constitution, #char-charisma {
   display: grid;

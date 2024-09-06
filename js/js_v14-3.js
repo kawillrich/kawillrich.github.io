@@ -993,7 +993,7 @@ function startGame()
                         max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" 
                         value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}">
                     </progress>
-                      ${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}
+                      <span class="character-hp-bar">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span>
                   </span>
                 </span>
               </h4> 
