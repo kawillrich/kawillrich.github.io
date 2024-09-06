@@ -1000,8 +1000,8 @@ function startGame()
               </h4> 
                 
               <h4 id='char-armor' class='char-info-label'>Armor: 
-                <div class="armor-tooltip">${finalCharacter.armor.name}
-                  <span class="armor-tooltiptext character-display-info">Armor Class: ${finalCharacter.armor.armorClass}</span>
+                <div class="armor-tooltip character-display-info">${finalCharacter.armor.name}
+                  <span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span>
                 </div>
               </h4> 
 
