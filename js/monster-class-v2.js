@@ -148,33 +148,34 @@ export default class Monster
     if (thisMonster.status.includes("Sleep"))
     {
       this.sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-    
-    //webbed
+
+      //webbed
     } else if (thisMonster.status.includes("Web"))
     {
       this.webSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
-    //charmed
+      //charmed
     } else if (thisMonster.status.includes("Charmed"))
     {
       this.charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
-    //blinded
+      //blinded
     } else if (thisMonster.status.includes("Blind"))
     {
       this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
-    //phantasmal force
-    } else if (thisMonster.status.includes("Phantasmal Force")) {
-      this.phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)    
+      //phantasmal force
+    } else if (thisMonster.status.includes("Phantasmal Force"))
+    {
+      this.phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
-    //visibility impaired
+      //visibility impaired
     } else if (finalCharacter.status.includes("Invisible")) 
     {
       this.invisibilitySpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-    
 
-    //no statuses
+
+      //no statuses
     } else
     {
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo, images);
@@ -237,7 +238,8 @@ export default class Monster
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
-  phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo) {
+  phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
+  {
     console.log('phantasmal force spell reaction')
   }
 
@@ -295,7 +297,12 @@ export default class Monster
 
           let updatedCharHP = document.querySelector("#char-hp");
           updatedCharHP.innerHTML = `
-              <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span></span></h4> 
+              <h4 id='char-hp' class='char-info-label'>Hit Points: 
+                <span id='hpBar'>                    
+                  <progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}"></progress>
+                  <span class="character-hp-bar">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span>
+                </span>
+              </h4> 
               `;
 
           let clearDialogue = document.querySelector("#dialogue");
@@ -491,7 +498,7 @@ let wolf1 = new Monster("Wolf", [2, 2], 18, 7, 6, 25, "Neutral", "Bite", {
   }
 }, true,
   "melee",
-  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -524,7 +531,7 @@ let wolf2 = new Monster("Wolf", [2, 2], 18, 7, 6, 25, "Neutral", "Bite", {
   }
 }, true,
   "melee",
-  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -557,8 +564,8 @@ let goblin = new Monster("Goblin", [1, -1], 4, 1, 1, 5, "Neutral", "Bite", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
-  [], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
+  [],
   normalMan.level.savingThrows
 );
 
@@ -590,7 +597,7 @@ let goblin1 = new Monster("Goblin", [1, -1], 18, 1, 1, 5, "Neutral", "Bite", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -623,7 +630,7 @@ let goblin2 = new Monster("Goblin", [1, -1], 3, 1, 1, 5, "Neutral", "Bite", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -664,7 +671,7 @@ let fireBeetle = new Monster(
   }
 }, true,
   "melee",
-  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -705,7 +712,7 @@ let fireBeetle1 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 
@@ -747,7 +754,7 @@ let fireBeetle2 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 9], [8, 10], [7, 11], [6, 12], [5, 13], [4, 14], [3, 15], [2, 16], [1, 17], [0, 18], [-1, 19], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 
@@ -1122,7 +1129,7 @@ let bugBear = new Monster(
   }
 }, true,
   "melee",
-  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]], 
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]],
   [],
   fighterSwordmaster.level.savingThrows
 );
@@ -1163,7 +1170,7 @@ let bugBear1 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]], 
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]],
   [],
   fighterSwordmaster.level.savingThrows
 
@@ -1205,7 +1212,7 @@ let bugBear2 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]], 
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]],
   [],
   fighterSwordmaster.level.savingThrows
 
@@ -1247,7 +1254,7 @@ let bugBear3 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]], 
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]],
   [],
   fighterSwordmaster.level.savingThrows
 
@@ -1289,7 +1296,7 @@ let bugBear4 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]], 
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]],
   [],
   fighterSwordmaster.level.savingThrows
 
@@ -1331,8 +1338,8 @@ let bugBear5 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]], 
-  [], 
+  [[9, 7], [8, 8], [7, 9], [6, 10], [5, 11], [4, 12], [3, 13], [2, 14], [1, 15], [0, 16], [-1, 17], [-2, 18], [-3, 19], [-4, 20], [-5, 20]],
+  [],
   fighterSwordmaster.level.savingThrows
 
 );
@@ -1365,7 +1372,7 @@ let kobold = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -1398,7 +1405,7 @@ let kobold1 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -1431,7 +1438,7 @@ let kobold2 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -1464,7 +1471,7 @@ let kobold3 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Dagger", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -1497,7 +1504,7 @@ let kobold4 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -1530,7 +1537,7 @@ let kobold5 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -1563,7 +1570,7 @@ let kobold6 = new Monster("Kobold", [0.5, 0], 4, 7, 4, 5, "Chaotic", "Club", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   normalMan.level.savingThrows
 );
@@ -1596,7 +1603,7 @@ let orc = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -1629,7 +1636,7 @@ let orc1 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -1662,7 +1669,7 @@ let orc2 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -1695,7 +1702,7 @@ let orc3 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -1728,7 +1735,7 @@ let orc4 = new Monster("Orc", [1, 0], 8, 6, 6, 10, "Chaotic", "Short Sword", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -1761,7 +1768,7 @@ let orc5 = new Monster("Orc", [1, 0], 8, 6, 8, 10, "Chaotic", "Sword", {
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -1794,7 +1801,7 @@ let skeleton1 = new Monster("Skeleton", [1, 0], 8, 7, 4, 10, "Chaotic", "Club", 
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 );
@@ -1835,7 +1842,7 @@ let skeleton2 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 
@@ -1877,7 +1884,7 @@ let skeleton3 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 
@@ -1919,7 +1926,7 @@ let skeleton4 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
   [],
   fighterVeteran.level.savingThrows
 
@@ -1960,8 +1967,8 @@ let skeleton5 = new Monster(
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
-  [], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
+  [],
   fighterVeteran.level.savingThrows
 
 );
@@ -1994,8 +2001,8 @@ let giantRacer = new Monster("Giant Racer", 2, 16, 5, 6, 20, "Neutral", "Bite", 
   }
 }, true,
   "melee",
-  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]], 
-  [], 
+  [[9, 10], [8, 11], [7, 12], [6, 13], [5, 14], [4, 15], [3, 16], [2, 17], [1, 18], [0, 19], [-1, 20], [-2, 20], [-3, 20], [-4, 20], [-5, 20]],
+  [],
   fighterVeteran.level.savingThrows);
 
 
@@ -2029,8 +2036,8 @@ let phantasmalTroll = new Monster("Troll", [6, 3], 39, 4, 15, 650, "Chaotic", "T
   }
 }, true,
   "melee",
-  [[9, 4], [8, 5], [7, 6], [6, 7], [5, 8], [4, 9], [3, 10], [2, 11], [1, 12], [0, 13], [-1, 14], [-2, 15], [-3, 16], [-4, 17], [-5, 18]], 
-  [], 
+  [[9, 4], [8, 5], [7, 6], [6, 7], [5, 8], [4, 9], [3, 10], [2, 11], [1, 12], [0, 13], [-1, 14], [-2, 15], [-3, 16], [-4, 17], [-5, 18]],
+  [],
   fighterVeteran.level.savingThrows);
 
 //exporting monsters
