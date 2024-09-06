@@ -1007,7 +1007,7 @@ function startGame()
 
               <h4 id='char-weapon' class='char-info-label'>Weapon: 
                 <div class="weapon-tooltip character-display-info">${finalCharacter.weapon.name}
-                  <span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage}</span>
+                  <span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span>
                 </div>
               </h4>
 
