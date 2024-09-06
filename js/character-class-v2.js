@@ -244,35 +244,30 @@ export default class Character
         <div id='character-stats'>
             <fieldset class='char-info-module'>
                 <legend class='player-dashboard'>Player Data</legend>
-                <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name
-      }</span></h4>
-                <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${this.specialty.name
-      }</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Hit Points: <span id='hpBar' class="character-display-info"><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints +
-      finalCharacter.attributes[4].adjustment
-      }" value="${finalCharacter.specialty.healthPoints +
-      finalCharacter.attributes[4].adjustment
-      }"></progress>${finalCharacter.specialty.healthPoints +
-      finalCharacter.attributes[4].adjustment
-      }/${finalCharacter.specialty.maxHealthPoints +
-      finalCharacter.attributes[4].adjustment
-      }</span></span></h4> 
-                <h4 id='char-armor' class='char-info-label'>Armor: <div class="armor-tooltip character-display-info">${finalCharacter.armor.name
-      }<span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass
-      }</span></div></h4> 
-                <h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip character-display-info">${finalCharacter.weapon.name
-      }<span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage
-      }</span></div></h4>
-                <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name
-      }</span></h4>
-                <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name
-      }</span></h4>
-                <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity
-      }</span></h4>
-                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience
-      }</span></h4>
-                <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
-      }</span></h4>
+                  <h4 id='char-name' class='char-info-label'>Name: <span class="character-display-info">${this.name}</span></h4>
+                  <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${this.specialty.name}</span></h4>
+                  <h4 id='char-hp' class='char-info-label'>Hit Points: <span id='hpBar' class="character-display-info">
+                    <progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}"></progress>${finalCharacter.specialty.healthPoints +
+      finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span></span></h4> 
+                
+                <h4 id='char-armor' class='char-info-label'>Armor: 
+                <div class="armor-tooltip character-display-info">${finalCharacter.armor.name}
+                  <span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span>
+                </div>
+              </h4> 
+
+              <h4 id='char-weapon' class='char-info-label'>Weapon: 
+                <div class="weapon-tooltip character-display-info">${finalCharacter.weapon.name}
+                  <span class="weapon-tooltiptext">Damage: d${finalCharacter.weapon.damage}</span>
+                </div>
+              </h4>
+                
+      
+                <h4 id='char-spell1' class='char-info-label'>Spell 1:  <span class="character-display-info">${this.specialty.spell1.name}</span></h4>
+                <h4 id='char-spell2' class='char-info-label'>Spell 2:  <span class="character-display-info">${this.specialty.spell2.name}</span></h4>
+                <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>
+                <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+                <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status}</span></h4>
                 
                 
             </fieldset>
