@@ -1141,12 +1141,17 @@ function startGame()
           <fieldset class= 'canvas-info-module-player'>
             <legend class='canvas-dashboard'>Player</legend>
             <canvas id="canvas2" height="200" width="200"></canvas>
-           </fieldset>
+          </fieldset>
         </div>
 
         <div id="character-statuses">
           <fieldset class = "status-info-module-player">
             <legend class="statuses-dashboard">Statuses</legend>
+              <h4>Poison or Death Ray: </h4>
+              <h4>Magic Wand: </h4>
+              <h4>Turn to Stone or Paralysis: </h4>
+              <h4>Dragon Breath</h4>
+              <h4>Spells or Magic Staff</h4>
           </fieldset>
         </div>
 
