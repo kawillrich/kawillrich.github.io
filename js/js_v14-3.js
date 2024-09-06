@@ -274,9 +274,10 @@ let strength = {
   name: "Strength",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: function () {
+  dashArrayAdj: function ()
+  {
     let dashAdj = 150 - (this.score * 8);
-    return dashAdj; 
+    return dashAdj;
   }
 };
 
@@ -284,8 +285,11 @@ let intelligence = {
   name: "Intelligence",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: function () {
+  dashArrayAdj: function ()
+  {
     let dashAdj = 150 - (this.score * 8);
+    return dashAdj;
+
   }
 };
 
@@ -293,8 +297,11 @@ let wisdom = {
   name: "Wisdom",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: function () {
+  dashArrayAdj: function ()
+  {
     let dashAdj = 150 - (this.score * 8);
+    return dashAdj;
+
   }
 };
 
@@ -302,8 +309,11 @@ let dexterity = {
   name: "Dexterity",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: function () {
+  dashArrayAdj: function ()
+  {
     let dashAdj = 150 - (this.score * 8);
+    return dashAdj;
+
   }
 };
 
@@ -311,8 +321,11 @@ let constitution = {
   name: "Constitution",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: function () {
+  dashArrayAdj: function ()
+  {
     let dashAdj = 150 - (this.score * 8);
+    return dashAdj;
+
   }
 };
 
@@ -320,8 +333,11 @@ let charisma = {
   name: "Charisma",
   score: 9,
   adjustment: 0,
-  dashArrayAdj: function () {
+  dashArrayAdj: function ()
+  {
     let dashAdj = 150 - (this.score * 8);
+    return dashAdj;
+
   }
 };
 
@@ -441,8 +457,8 @@ export function render()
     spriteHeight,
     0,
     0,
-    spriteWidth *1.5,
-    spriteHeight *1.5
+    spriteWidth * 1.5,
+    spriteHeight * 1.5
   );
   requestAnimationFrame(render);
 }
@@ -1016,7 +1032,7 @@ function startGame()
           <fieldset class='char-info-module-attributes'>
               <legend class='player-dashboard'>Attributes</legend>
               <h4 id='char-strength' class='char-info-label'>
-                <span class='character-display-attributes-str'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
+                <span class='character-display-attributes-str'>${finalCharacter.attributes[0].name.slice(0, 3)}</span>
                 <span class='character-display-attributes-scores-str'>${finalCharacter.attributes[0].score}</span>
                 <span class='character-display-attributes-scores-adj-str'>${strengthPlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -1034,7 +1050,7 @@ function startGame()
 
               </h4>
                 <h4 id='char-intelligence' class='char-info-label'>
-                <span class='character-display-attributes-int'>${finalCharacter.attributes[1].name.slice(0,3)}</span>
+                <span class='character-display-attributes-int'>${finalCharacter.attributes[1].name.slice(0, 3)}</span>
                 <span class='character-display-attributes-scores-int'>${finalCharacter.attributes[1].score}</span>
                 <span class='character-display-attributes-scores-adj-int'>${intelligencePlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -1051,7 +1067,7 @@ function startGame()
                 </svg>
               </h4>
               <h4 id='char-wisdom' class='char-info-label'>
-                <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0,3)}</span>
+                <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0, 3)}</span>
                 <span class='character-display-attributes-scores-wis'>${finalCharacter.attributes[2].score}</span>
                 <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -1068,7 +1084,7 @@ function startGame()
               </svg>
               </h4>
               <h4 id='char-dexterity' class='char-info-label'>
-                <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0,3)}</span>
+                <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0, 3)}</span>
                 <span class='character-display-attributes-scores-dex'>${finalCharacter.attributes[3].score}</span>
                 <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -1085,7 +1101,7 @@ function startGame()
               </svg>
               </h4>
               <h4 id='char-constitution' class='char-info-label'>
-                <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0,3)}</span>
+                <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0, 3)}</span>
                 <span class='character-display-attributes-scores-con'>${finalCharacter.attributes[4].score}</span>
                 <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -1102,7 +1118,7 @@ function startGame()
               </svg>
               </h4>
               <h4 id='char-charisma' class='char-info-label'>
-                <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0,3)}</span>
+                <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0, 3)}</span>
                 <span class='character-display-attributes-scores-cha'>${finalCharacter.attributes[5].score}</span>
                 <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -2716,7 +2732,7 @@ function declareAttack()
 
 function addingFightModule(monsterOne, monsterTwo, continueNextChapter)
 {
-  
+
   monsterOne.createHitPoints();
   monsterTwo.createHitPoints();
 
@@ -3066,14 +3082,15 @@ function castSpellFromList(e, m1, m2, nextChap)
     {
       if (firstLevel[i].name === parentNodeInnerText)
       {
-        if(finalCharacter.status.includes("Invisible")) {
+        if (finalCharacter.status.includes("Invisible"))
+        {
           alert(`You were invisible but the spell was broken after you cast the spell`);
           finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
           let playerStatus = document.querySelector("#char-status");
           playerStatus.innerHTML = `
             <h4 id="char-status" class="char-info-label">Status: 
             <span class="character-display-info">${finalCharacter.status}</span>
-            </h4>`        
+            </h4>`
         }
 
         firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
@@ -3085,14 +3102,15 @@ function castSpellFromList(e, m1, m2, nextChap)
       if (secondLevel[i].name === parentNodeInnerText)
       {
 
-        if(finalCharacter.status.includes("Invisible")) {
+        if (finalCharacter.status.includes("Invisible"))
+        {
           alert(`You were invisible but the spell was broken after you cast the spell`);
           finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
           let playerStatus = document.querySelector("#char-status");
           playerStatus.innerHTML = `
             <h4 id="char-status" class="char-info-label">Status: 
             <span class="character-display-info">${finalCharacter.status}</span>
-            </h4>`        
+            </h4>`
         }
 
         secondLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
@@ -3104,16 +3122,17 @@ function castSpellFromList(e, m1, m2, nextChap)
       if (thirdLevel[i].name === parentNodeInnerText)
       {
 
-        if(finalCharacter.status.includes("Invisible")) {
+        if (finalCharacter.status.includes("Invisible"))
+        {
           alert(`You were invisible but the spell was broken after you cast the spell`);
           finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
           let playerStatus = document.querySelector("#char-status");
           playerStatus.innerHTML = `
             <h4 id="char-status" class="char-info-label">Status: 
             <span class="character-display-info">${finalCharacter.status}</span>
-            </h4>`        
+            </h4>`
         }
-        
+
         thirdLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
       }
     }
