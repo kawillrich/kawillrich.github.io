@@ -184,7 +184,7 @@ fieldset {
   background-position-x: 50px;
   background-position-y: -50px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr 1fr 2fr;
   grid-template-areas: "playerData playerAttributes playerCanvas playerSaves"
                        "playerData playerAttributes playerStatus playerSaves";
   height: 320px;
@@ -210,7 +210,7 @@ fieldset {
 
 #character-statuses {  
   grid-area: playerStatus;
-  width: 200px;
+  width: 100px;
 }
 
 #character-saving-throws {
@@ -223,12 +223,12 @@ fieldset {
   grid-template-areas:  "topLeft topRight"
                         "middleLeft middleRight"
                         "bottomLeft bottomRight";
-  grid-template-columns: repeat(2, 90px);
-  grid-template-rows: repeat(3, 90px);
+  grid-template-columns: repeat(2, 80px);
+  grid-template-rows: repeat(3, 98px);
   align-items: center;
   justify-content: center;
-  height: 300px;
-  width: 100px;
+  /* height: 300px;
+  width: 100px; */
 }
 
 #char-strength {  
@@ -258,6 +258,21 @@ fieldset {
 .canvas-info-module-monster {
   
   background-color:rgb(221, 221, 221);
+}
+
+.canvas-info-module-player {
+  height: 100px;
+  width: 100px;
+}
+
+.saves-info-module-player {
+  height: 318px;
+  width: 250px;
+}
+
+.status-info-module-player {
+  height: 100px;
+  width: 100px;
 }
 
 .canvas-dashboard {

@@ -451,8 +451,8 @@ export function render()
   frameY = finalCharacter.characterImage;
   canvas = document.getElementById("canvas2");
   ctx = canvas.getContext("2d");
-  CANVAS_HEIGHT = 200;
-  CANVAS_WIDTH = 200;
+  CANVAS_HEIGHT = 100;
+  CANVAS_WIDTH = 100;
   ctx.clearRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
   //ctx.drawImage(image, sx, sy, sw, sh, dx, dy, dw, dh);
   ctx.drawImage(
@@ -1146,7 +1146,7 @@ function startGame()
         <div id="character-canvas">
           <fieldset class= 'canvas-info-module-player'>
             <legend class='canvas-dashboard'>Player</legend>
-            <canvas id="canvas2" height="200" width="200"></canvas>
+            <canvas id="canvas2" height="100" width="100"></canvas>
           </fieldset>
         </div>
 

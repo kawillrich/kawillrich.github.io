@@ -392,7 +392,7 @@ export default class Character
         </div id="canvas-area">
           <fieldset class= 'canvas-info-module-player'>
             <legend class='canvas-dashboard'>Player</legend>
-            <canvas id="canvas2" height="200" width="200"></canvas>
+            <canvas id="canvas2" height="100" width="100"></canvas>
            </fieldset>
         </div>
 
