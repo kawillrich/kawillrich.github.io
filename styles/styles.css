@@ -274,6 +274,12 @@ fieldset {
   width: 250px;
 }
 
+.saving-throw-score {
+  float: right;
+  text-align: right;
+  width: 50px;
+}
+
 .status-info-module-player {
   height: 148px;
   width: 100px;
