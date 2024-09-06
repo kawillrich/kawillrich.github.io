@@ -1159,11 +1159,11 @@ function startGame()
         <div id="character-saving-throws">
           <fieldset class = "saves-info-module-player">
             <legend class="saves-dashboard">Saves</legend>
-              <h4>Poison or Death Ray: ${finalCharacter.specialty.characterLevel.level.savingThrows["Poison or Death Ray"]}</h4>
-              <h4>Magic Wand: ${finalCharacter.specialty.characterLevel.level.savingThrows["Magic Wand"]}</h4>
-              <h4>Stone or Paralysis: ${finalCharacter.specialty.characterLevel.level.savingThrows["Turn to Stone or Paralysis"]}</h4>
-              <h4>Dragon Breath: ${finalCharacter.specialty.characterLevel.level.savingThrows["Dragon Breath"]}</h4>
-              <h4>Spells or Magic Staff: ${finalCharacter.specialty.characterLevel.level.savingThrows["Spells or Magic Staff"]}</h4>
+              <h4 class="saving-throws">Poison or Death Ray: ${finalCharacter.specialty.characterLevel.level.savingThrows["Poison or Death Ray"]}</h4>
+              <h4 class="saving-throws">Magic Wand: ${finalCharacter.specialty.characterLevel.level.savingThrows["Magic Wand"]}</h4>
+              <h4 class="saving-throws">Stone or Paralysis: ${finalCharacter.specialty.characterLevel.level.savingThrows["Turn to Stone or Paralysis"]}</h4>
+              <h4 class="saving-throws">Dragon Breath: ${finalCharacter.specialty.characterLevel.level.savingThrows["Dragon Breath"]}</h4>
+              <h4 class="saving-throws">Spells or Magic Staff: ${finalCharacter.specialty.characterLevel.level.savingThrows["Spells or Magic Staff"]}</h4>
           </fieldset>
         </div>
 
