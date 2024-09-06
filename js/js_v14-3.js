@@ -989,7 +989,7 @@ function startGame()
 
               <h4 id='char-hp' class='char-info-label'>Hit Points: 
                 
-                  <span id='hpBar'>
+                  <span id='hpBar' class="char-display-info">
                     <progress id='hp-prog-bar' 
                         max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" 
                         value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}">
