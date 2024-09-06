@@ -63,7 +63,7 @@ import
 import Specialty from "./specialty-class-v2.js";
 import
 {
-  noSpecialty,
+  adventurer,
   warrior,
   highMage,
   dragonWarrior,
@@ -132,9 +132,9 @@ import
 //class-level-imports
 
 import
-  {
-    adventurer
-  } from "./character-class-levels/adventurer-level-class.js"
+{
+  traveller
+} from "./character-class-levels/adventurer-level-class.js"
 
 import
 {
@@ -358,7 +358,7 @@ attributes.unshift(
 
 export let finalCharacter = new Character(
   "Traveler",
-  noSpecialty,
+  adventurer,
   noArmor,
   noWeapon,
   noItem,

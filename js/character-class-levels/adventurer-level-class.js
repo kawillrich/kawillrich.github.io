@@ -7,7 +7,7 @@ export default class AdventurerLevels
     }
 };
 
-let adventurer = new AdventurerLevels(
+let traveller = new AdventurerLevels(
     {
         name: "Adventurer",
         level: 1,
@@ -36,4 +36,4 @@ let adventurer = new AdventurerLevels(
     ['None']
 );
 
-export { adventurer };
+export { traveller };

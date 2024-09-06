@@ -49,7 +49,7 @@ import
 import Specialty from "./specialty-class-v2.js";
 import
 {
-  noSpecialty,
+  adventurer,
   warrior,
   highMage,
   dragonWarrior,

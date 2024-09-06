@@ -20,28 +20,31 @@ import { halflingVeteran, halflingWarrior, halflingSwordmaster } from './charact
 import { acolyte, adept, priest } from './character-class-levels/cleric-level-class.js';
 
 //import spells
-import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireStorm, fireArrows, dragonFang} from './spell-class-v2.js';
+import { noSpell, mediumHealing, majorHealing, earthStrike, lightening, minorHealing, fireStorm, fireArrows, dragonFang } from './spell-class-v2.js';
 import { dragonWarriorVeteran } from './character-class-levels/dragon-warrior-level-class.js';
+import { traveller } from './character-class-levels/adventurer-level-class.js';
 
 //==============================================end imports===============================================//
 
 
-export default class Specialty {
-    constructor(name, healthPoints, spell1, spell2, spell3, maxHealthPoints, characterExperience, characterLanguages, characterLevel) {
+export default class Specialty
+{
+    constructor (name, healthPoints, spell1, spell2, spell3, maxHealthPoints, characterExperience, characterLanguages, characterLevel)
+    {
         this.name = name;
         this.healthPoints = healthPoints;
         this.spell1 = spell1;
         this.spell2 = spell2;
         this.spell3 = spell3;
         this.maxHealthPoints = maxHealthPoints;
-        this.characterExperience = characterExperience || 0;     
-        this.chacterLanguages = characterLanguages || ["Common Tongue"];        
+        this.characterExperience = characterExperience || 0;
+        this.chacterLanguages = characterLanguages || ["Common Tongue"];
         this.characterLevel = characterLevel || 1;
-        
+
     };
 };
 
-let noSpecialty = new Specialty('None', 0, noSpell, noSpell, noSpell, 0, 0, ["Common Tongue"]);
+let adventurer = new Specialty('Traveller', 0, noSpell, noSpell, noSpell, 0, 0, ["Common Tongue"], traveller);
 
 let warrior = new Specialty('Warrior', 8, noSpell, noSpell, noSpell, 8, 0, ['Common Tongue'], fighterVeteran);
 
@@ -57,9 +60,10 @@ let halfling = new Specialty('Halfling', 6, noSpell, noSpell, noSpell, 6, 0, ["C
 
 let cleric = new Specialty('Cleric', 6, minorHealing, noSpell, noSpell, 6, 0, ["Common Tongue"], acolyte);
 
-let thief = new Specialty('Thief', 4, noSpell, noSpell,noSpell, 4, 0, ["Common Tongue"], apprentice);
+let thief = new Specialty('Thief', 4, noSpell, noSpell, noSpell, 4, 0, ["Common Tongue"], apprentice);
 
-export { noSpecialty, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief };
+
+export { adventurer, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief };
 
 
 
