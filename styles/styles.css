@@ -453,7 +453,8 @@ span#dragonwarrior {
 .armor-tooltip,
 .weapon-tooltip {
   position: relative;
-  display: inline-block;
+  display: inline;
+  float: right;
 }
 
 .spell-tooltip {

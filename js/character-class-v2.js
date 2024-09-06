@@ -251,15 +251,17 @@ export default class Character
       finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span></span></h4> 
                 
               <h4 id='char-armor' class='char-info-label'>Armor: 
-                <div class="armor-tooltip character-display-info">${finalCharacter.armor.name}
+                <span class="armor-tooltip">
+                  <span class="character-display-info">${finalCharacter.armor.name}</span>
                   <span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span>
-                </div>
+                </span>
               </h4> 
 
               <h4 id='char-weapon' class='char-info-label'>Weapon: 
-                <div class="weapon-tooltip character-display-info">${finalCharacter.weapon.name}
+                <span class="weapon-tooltip">
+                  <span class="character-display-info">${finalCharacter.weapon.name}</span>
                   <span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span>
-                </div>
+                </span>
               </h4>
                 
       
