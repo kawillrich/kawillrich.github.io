@@ -248,9 +248,7 @@ export default class Character
       }</span></h4>
                 <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${this.specialty.name
       }</span></h4>
-                <h4 id='char-hp' class='char-info-label'>Hit Points: <span class="character-display-info">${finalCharacter.specialty.healthPoints +
-      finalCharacter.attributes[4].adjustment
-      }</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints +
+                <h4 id='char-hp' class='char-info-label'>Hit Points: <span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints +
       finalCharacter.attributes[4].adjustment
       }" value="${finalCharacter.specialty.healthPoints +
       finalCharacter.attributes[4].adjustment

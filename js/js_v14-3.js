@@ -988,7 +988,7 @@ function startGame()
               <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
 
               <h4 id='char-hp' class='char-info-label'>Hit Points: 
-                <span class="character-display-info">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}</span>
+                
                   <span id='hpBar'>
                     <progress id='hp-prog-bar' 
                         max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" 
@@ -1000,8 +1000,8 @@ function startGame()
               </h4> 
                 
               <h4 id='char-armor' class='char-info-label'>Armor: 
-                <div class="armor-tooltip" class="character-display-info">${finalCharacter.armor.name}
-                  <span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span>
+                <div class="armor-tooltip">${finalCharacter.armor.name}
+                  <span class="armor-tooltiptext character-display-info">Armor Class: ${finalCharacter.armor.armorClass}</span>
                 </div>
               </h4> 
 
