@@ -987,9 +987,8 @@ function startGame()
 
               <h4 id='char-specialty' class='char-info-label'>Specialty: <span class="character-display-info">${finalCharacter.specialty.name}</span></h4>
 
-              <h4 id='char-hp' class='char-info-label'>Hit Points: 
-                
-                  <span id='hpBar' class="character-display-info">
+              <h4 id='char-hp' class='char-info-label'>Hit Points:                 
+                  <span id='hpBar' >
                     <progress id='hp-prog-bar' 
                         max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" 
                         value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}">
@@ -1000,17 +999,17 @@ function startGame()
               </h4> 
                 
               <h4 id='char-armor' class='char-info-label'>Armor: 
-                <div class="armor-tooltip">
+                <span class="armor-tooltip">
                   <span class="character-display-info">${finalCharacter.armor.name}</span>
                   <span class="armor-tooltiptext">Armor Class: ${finalCharacter.armor.armorClass}</span>
-                </div>
+                </span>
               </h4> 
 
               <h4 id='char-weapon' class='char-info-label'>Weapon: 
-                <div class="weapon-tooltip">
+                <span class="weapon-tooltip">
                   <span class="character-display-info">${finalCharacter.weapon.name}</span>
                   <span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span>
-                </div>
+                </span>
               </h4>
 
               <h4 id='char-spell1' class='char-info-label'>Spell 1: 
