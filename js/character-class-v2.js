@@ -146,7 +146,7 @@ export default class Character
     treasure,
     hitRollTable,
     activeSpellStatuses,
-    status, 
+    status,
     mirrorImages
   )
   {
@@ -175,8 +175,8 @@ export default class Character
       [-1, 20]
     ],
       this.activeSpellStatuses = [];
-      this.status = [];
-      this.mirrorImages  = 0;
+    this.status = [];
+    this.mirrorImages = 0;
   }
 
   //updates & initiates Character creation
@@ -284,7 +284,7 @@ export default class Character
             <fieldset class='char-info-module-attributes'>
                 <legend class='player-dashboard'>Attributes</legend>
                 <h4 id='char-strength' class='char-info-label'>
-                  <span class='character-display-attributes-str'>${finalCharacter.attributes[0].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-str'>${finalCharacter.attributes[0].name.slice(0, 3)}</span>
                   <span class='character-display-attributes-scores-str'>${finalCharacter.attributes[0].score}</span>
                   <span class='character-display-attributes-scores-adj-str'>${strengthPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -302,7 +302,7 @@ export default class Character
 
                 </h4>
                   <h4 id='char-intelligence' class='char-info-label'>
-                  <span class='character-display-attributes-int'>${finalCharacter.attributes[1].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-int'>${finalCharacter.attributes[1].name.slice(0, 3)}</span>
                   <span class='character-display-attributes-scores-int'>${finalCharacter.attributes[1].score}</span>
                   <span class='character-display-attributes-scores-adj-int'>${intelligencePlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -319,7 +319,7 @@ export default class Character
                   </svg>
                 </h4>
                 <h4 id='char-wisdom' class='char-info-label'>
-                  <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-wis'>${finalCharacter.attributes[2].name.slice(0, 3)}</span>
                   <span class='character-display-attributes-scores-wis'>${finalCharacter.attributes[2].score}</span>
                   <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -336,7 +336,7 @@ export default class Character
                 </svg>
                 </h4>
                 <h4 id='char-dexterity' class='char-info-label'>
-                  <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(0, 3)}</span>
                   <span class='character-display-attributes-scores-dex'>${finalCharacter.attributes[3].score}</span>
                   <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -353,7 +353,7 @@ export default class Character
                 </svg>
                 </h4>
                 <h4 id='char-constitution' class='char-info-label'>
-                  <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(0, 3)}</span>
                   <span class='character-display-attributes-scores-con'>${finalCharacter.attributes[4].score}</span>
                   <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -370,7 +370,7 @@ export default class Character
                 </svg>
                 </h4>
                 <h4 id='char-charisma' class='char-info-label'>
-                  <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0,3)}</span>
+                  <span class='character-display-attributes-cha'>${finalCharacter.attributes[5].name.slice(0, 3)}</span>
                   <span class='character-display-attributes-scores-cha'>${finalCharacter.attributes[5].score}</span>
                   <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
@@ -394,6 +394,18 @@ export default class Character
             <legend class='canvas-dashboard'>Player</legend>
             <canvas id="canvas2" height="200" width="200"></canvas>
            </fieldset>
+        </div>
+
+        <div id="character-statuses">
+          <fieldset class = "status-info-module-player">
+            <legend class="statuses-dashboard">Statuses</legend>
+          </fieldset>
+        </div>
+
+        <div id="character-saving-throws">
+          <fieldset class = "saves-info-module-player">
+            <legend class="saves-dashboard">Saves</legend>
+          </fieldset>
         </div>             
         `;
 
@@ -521,7 +533,7 @@ export default class Character
       // console.log(finalCharacter.status)
       // if(finalCharacter.status.includes("Invisible")) {
       //   alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
-        
+
       // }
 
       if (monster1.status.includes('Sleep') && finalCharacter.weapon.attackType === "Edged")
@@ -570,21 +582,21 @@ export default class Character
       }
 
       else if (monster1.status.includes('Visibility Impaired'))
-        {
-          alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
-          monster1.healthPoints = monster1.healthPoints - inflictedDamage;
-          let updatedMonsterHP = document.querySelector("#monster-one-hp");
-          updatedMonsterHP.innerHTML = `
+      {
+        alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
+        monster1.healthPoints = monster1.healthPoints - inflictedDamage;
+        let updatedMonsterHP = document.querySelector("#monster-one-hp");
+        updatedMonsterHP.innerHTML = `
             <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
             `;
-  
-          //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
-          monster1.status.splice(monster1.status.indexOf('Visibility Impaired'), 1);
-          let monster1Status = document.querySelector("#monster-one-status");
-          monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
-          finalCharacter.greyOutAttackButtons(monster1, monster2);
-  
-        }
+
+        //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+        monster1.status.splice(monster1.status.indexOf('Visibility Impaired'), 1);
+        let monster1Status = document.querySelector("#monster-one-status");
+        monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+
+      }
 
       //CHECKING ATTACK INTERACTION
       else if (monster1.healthPoints - inflictedDamage > 0)
@@ -669,14 +681,15 @@ export default class Character
     {
 
       // console.log(finalCharacter.status)
-      if(finalCharacter.status.includes("Invisible")) {
+      if (finalCharacter.status.includes("Invisible"))
+      {
         alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
         finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
         let playerStatus = document.querySelector("#char-status");
         playerStatus.innerHTML = `
           <h4 id="char-status" class="char-info-label">Status: 
           <span class="character-display-info">${finalCharacter.status}</span>
-          </h4>`        
+          </h4>`
       }
       for (let i = 0; i < playerHitRoll1.length; i++)
       {
@@ -762,21 +775,21 @@ export default class Character
 
 
       else if (monster2.status.includes('Visibility Impaired'))
-        {
-          alert(`You were invisible and the ${monster2.name} could not see you, but the spell was broken after you attacked`);
-          monster2.healthPoints = monster2.healthPoints - inflictedDamage;
-          let updatedMonsterHP = document.querySelector("#monster-two-hp");
-          updatedMonsterHP.innerHTML = `
+      {
+        alert(`You were invisible and the ${monster2.name} could not see you, but the spell was broken after you attacked`);
+        monster2.healthPoints = monster2.healthPoints - inflictedDamage;
+        let updatedMonsterHP = document.querySelector("#monster-two-hp");
+        updatedMonsterHP.innerHTML = `
             <h4 id="monster-two-hp">Hit Points: ${monster2.healthPoints}<progress class='monster-hp-prog-bar' max="${monster2.startingHealthPoints}" value="${monster2.healthPoints}"></progress></h4> 
             `;
-  
-          //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
-          monster2.status.splice(monster2.status.indexOf('Visibility Impaired'), 1);
-          let monster2Status = document.querySelector("#monster-two-status");
-          monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
-          finalCharacter.greyOutAttackButtons(monster1, monster2);
-  
-        }
+
+        //ATTEMPTING TO GREY OUT ATTACK MODULE BUTTONS//
+        monster2.status.splice(monster2.status.indexOf('Visibility Impaired'), 1);
+        let monster2Status = document.querySelector("#monster-two-status");
+        monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+
+      }
 
       else if (monster2.healthPoints - inflictedDamage > 0)
       {
@@ -853,14 +866,15 @@ export default class Character
 
     let checkPlayerHitRoll = (playerHitRollValue1, monsterArmorClass1, playerHitRoll1) =>
     {
-      if(finalCharacter.status.includes("Invisible")) {
+      if (finalCharacter.status.includes("Invisible"))
+      {
         alert(`You were invisible and the ${monster2.name} could not see you, but the spell was broken after you attacked`);
         finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
         let playerStatus = document.querySelector("#char-status");
         playerStatus.innerHTML = `
           <h4 id="char-status" class="char-info-label">Status: 
           <span class="character-display-info">${finalCharacter.status}</span>
-          </h4>`        
+          </h4>`
       }
       for (let i = 0; i < playerHitRoll1.length; i++)
       {
@@ -883,14 +897,15 @@ export default class Character
   spell2AttackMonster1(monster1, monster2, continueNextChapter, damage, spellName)
   {
 
-    if(finalCharacter.status.includes("Invisible")) {
+    if (finalCharacter.status.includes("Invisible"))
+    {
       alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
       finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
       let playerStatus = document.querySelector("#char-status");
       playerStatus.innerHTML = `
         <h4 id="char-status" class="char-info-label">Status: 
         <span class="character-display-info">${finalCharacter.status}</span>
-        </h4>`        
+        </h4>`
     }
 
     let self = this;
@@ -978,14 +993,15 @@ export default class Character
 
   spell2AttackMonster2(monster1, monster2, continueNextChapter, damage, spellName)
   {
-    if(finalCharacter.status.includes("Invisible")) {
+    if (finalCharacter.status.includes("Invisible"))
+    {
       alert(`You were invisible and the ${monster2.name} could not see you, but the spell was broken after you attacked`);
       finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
       let playerStatus = document.querySelector("#char-status");
       playerStatus.innerHTML = `
         <h4 id="char-status" class="char-info-label">Status: 
         <span class="character-display-info">${finalCharacter.status}</span>
-        </h4>`        
+        </h4>`
     }
 
     let self = this;
