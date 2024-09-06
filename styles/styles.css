@@ -161,7 +161,7 @@ legend {
   border-radius: 5px;
 }
 
-.player-dashboard {
+.player-dashboard, .saves-dashboard, .statuses-dashboard {
   background-color: rgb(160, 219, 255);
 }
 
