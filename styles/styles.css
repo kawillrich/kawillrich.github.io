@@ -484,7 +484,7 @@ span#dragonwarrior {
 .weapon-tooltiptext,
 .item-tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 140px;
   background-color: black;
   color: #fff;
   text-align: left;
