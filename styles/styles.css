@@ -223,6 +223,11 @@ fieldset {
   width: 248px;
 }
 
+/* .char-info-label {
+  width: 260px;
+
+} */
+
 .char-info-module-attributes {
   display: grid;  
   grid-template-areas:  "topLeft topRight"
