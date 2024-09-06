@@ -205,7 +205,7 @@ fieldset {
 
 #character-canvas {
   grid-area: playerCanvas;
-  width: 200px;
+  width: 100px;
 }
 
 #character-statuses {  
