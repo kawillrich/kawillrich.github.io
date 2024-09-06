@@ -1146,8 +1146,14 @@ function startGame()
 
         <div id="character-statuses">
           <fieldset class = "status-info-module-player">
-            <legend class="statuses-dashboard">Statuses</legend>
-              <h4>Poison or Death Ray: </h4>
+            <legend class="statuses-dashboard">Statuses</legend>              
+          </fieldset>
+        </div>
+
+        <div id="character-saving-throws">
+          <fieldset class = "saves-info-module-player">
+            <legend class="saves-dashboard">Saves</legend>
+              <h4>Poison or Death Ray: ${finalCharacter.specialty.characterLevel.level.savingThrows["Poison or Death Ray"]}</h4>
               <h4>Magic Wand: </h4>
               <h4>Turn to Stone or Paralysis: </h4>
               <h4>Dragon Breath</h4>
@@ -1155,14 +1161,10 @@ function startGame()
           </fieldset>
         </div>
 
-        <div id="character-saving-throws">
-          <fieldset class = "saves-info-module-player">
-            <legend class="saves-dashboard">Saves</legend>
-          </fieldset>
-        </div>
-
       </div>                
-        `;
+        `
+  console.log(finalCharacter)
+    ;
 
   let showInventory = () =>
   {
