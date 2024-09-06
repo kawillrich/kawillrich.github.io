@@ -634,6 +634,10 @@ span#dragonwarrior {
   height: 200px;
 }
 
+.alignment-container-item {
+  margin: 13px;
+}
+
 #alignment-description-container {
   grid-column: 2 / 5;}
 
