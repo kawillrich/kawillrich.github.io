@@ -297,7 +297,7 @@ fieldset {
 
 /*Magic user spell picker list*/
 
-.mage-spell-container {
+.mage-spell-container, .cleric-spell-container {
   display: grid;
   grid: 550px / 350px 350px 350px
 }
