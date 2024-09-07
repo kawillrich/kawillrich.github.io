@@ -556,8 +556,8 @@ span#dragonwarrior {
 
 .spell-tooltiptext {
   visibility: hidden;
-  height: 100px;
-  width: 200px;
+  height: 110px;
+  width: 220px;
   background-color: black;
   color: #fff;
   text-align: left;
@@ -628,6 +628,7 @@ span#dragonwarrior {
 .item-tooltip:hover,
 .supply-item-tooltip:hover {
   color: white;
+  cursor: pointer;
 }
 
 .armor-tooltip:hover .armor-tooltiptext,
