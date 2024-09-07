@@ -1246,7 +1246,7 @@ function startGame()
         <label for = "cleric" class="class-label">Cleric</label>
 
         <input type = "radio" class="class-radio dragonwarrior" name="selected-specialty" value="dragonwarrior" />
-        <label for = "dragonwarrior" id="dragonwarrior">Dragon Fighting</label>
+        <label for = "dragonwarrior" id="dragonwarrior"></label>
         </p>`;
 
   let submittingCharSpecialtyFighter = document.querySelector("#fighter");
