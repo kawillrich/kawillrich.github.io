@@ -121,225 +121,231 @@
     <!-- END INVENTORY -->
     <!-- MAGE SPELL CONTAINER -->
     <div class="hide-mage-container">
-      <div id="mage-first-level-spell-list">
-        <h1>Level One Mage Spells</h1>
-        <div><span class="first-level-selected-spells">You have selected 0 spell(s)</span></div>
-        <div class="number-of-first-level-mage-spells"></div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Charm Person" data-spell="charm-person" value="charmPerson"
-            name="mage-check[]" class="mage-spells mage-one-spells">Charm Person <span class="html-spell-tooltiptext">
-            Range: 120<br> Duration: 0<br> Effect: Charms one person </span>
-          </br>
+      <div class="mage-spell-container">
+
+        <div id="mage-first-level-spell-list">
+          <h1>Level One Mage Spells</h1>
+          <div><span class="first-level-selected-spells">You have selected 0 spell(s)</span></div>
+          <div class="number-of-first-level-mage-spells"></div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Charm Person" data-spell="charm-person" value="charmPerson"
+              name="mage-check[]" class="mage-spells mage-one-spells">Charm Person <span class="html-spell-tooltiptext">
+              Range: 120<br> Duration: 0<br> Effect: Charms one person </span>
+            </br>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Detect Magic" data-spell="detect-magic" value="detectMagic"
+              name="mage-check[]" class="mage-spells mage-one-spells">Detect Magic</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 2<br> Effect: Detects magic within 60 feet
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Floating Disc" data-spell="floating-disc" value="floatingDisc"
+              name="mage-check[]" class="mage-spells mage-one-spells">Floating Disc</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: Creates an invisible disc that can
+              carry 5000 cn </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Hold Portal" data-spell="hold-portal" value="holdPortal"
+              name="mage-check[]" class="mage-spells mage-one-spells">Hold Portal</br>
+            <span class="html-spell-tooltiptext"> Range: 10<br> Duration: 2<br> Effect: On door, gate, or similar portal
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Light" data-spell="light" value="light" name="mage-check[]"
+              class="mage-spells mage-one-spells">Light</br>
+            <span class="html-spell-tooltiptext"> Range: 120<br> Duration: 6<br> Effect: Volume of 30 feet diameter
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Magic Missile" data-spell="magic-missile" value="magicMissile"
+              name="mage-check[]" class="mage-spells mage-one-spells">Magic Missile</br>
+            <span class="html-spell-tooltiptext"> Range: 150<br> Duration: 0.1<br> Effect: Creates one or more arrows
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Protection From Evil" data-spell="protection-from-evil"
+              value="protectionFromEvil" name="mage-check[]" class="mage-spells mage-one-spells">Protection From Evil</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: The mage only </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Read Languages" data-spell="read-languages" value="readLanguages"
+              name="mage-check[]" class="mage-spells mage-one-spells">Read Languages</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 2<br> Effect: The mage only </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Read Magic" data-spell="read-magic" value="readMagic"
+              name="mage-check[]" class="mage-spells mage-one-spells">Read Magic</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 2<br> Effect: The mage only </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Shield" data-spell="shield" value="shield" name="mage-check[]"
+              class="mage-spells mage-one-spells">Shield</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 2<br> Effect: The mage only </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Sleep" data-spell="sleep" value="sleep" name="mage-check[]"
+              class="mage-spells mage-one-spells">Sleep</br>
+            <span class="html-spell-tooltiptext"> Range: 240<br> Duration: 120<br> Effect: 2-16 Hit Dice of leaving
+              creatures within a 40 foot square area </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Ventriloquism" data-spell="ventriloquism" value="ventriloquism"
+              name="mage-check[]" class="mage-spells mage-one-spells">Ventriloquism</br>
+            <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 2<br> Effect: One item or location </span>
+          </div>
         </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Detect Magic" data-spell="detect-magic" value="detectMagic"
-            name="mage-check[]" class="mage-spells mage-one-spells">Detect Magic</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 2<br> Effect: Detects magic within 60 feet
-          </span>
+        <!-- <input type="button" value="Submit" id="submit-spells"> -->
+        <div id="mage-second-level-spell-list">
+          <h1>Level Two Mage Spells</h1>
+          <div><span class="second-level-selected-spells">You have selected 0 spell(s)</span></div>
+          <div class="number-of-second-level-mage-spells"></div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Continual Light" data-spell="continual-light" value="continualLight"
+              name="mage-check[]" class="mage-spells mage-two-spells">Continual Light</br>
+            <span class="html-spell-tooltiptext"> Range: 120<br> Duration: Until broken<br> Effect: Volume of 60 foot
+              diameter </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Detect Evil" data-spell="detect-evil" value="detectEvil"
+              name="mage-check[]" class="mage-spells mage-two-spells">Detect Evil</br>
+            <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 2<br> Effect: Everything within 60 feet </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Detect Invisible" data-spell="detect-invisible"
+              value="detectInvisible" name="mage-check[]" class="mage-spells mage-two-spells">Detect Invisible</br>
+            <span class="html-spell-tooltiptext"> Range: 10<br> Duration: 6<br> Effect: Detect invisibility </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="ESP" data-spell="ESP" value="esp" name="mage-check[]"
+              class="mage-spells mage-two-spells">ESP</br>
+            <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 12<br> Effect: All thoughts in one direction
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Invisibility" data-spell="invisibility" value="invisibility"
+              name="mage-check[]" class="mage-spells mage-two-spells">Invisibility</br>
+            <span class="html-spell-tooltiptext"> Range: 60<br> Duration: Until broken your caster attacks<br> Effect: One
+              creature or object </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Knock" data-spell="knock" value="knock" name="mage-check[]"
+              class="mage-spells mage-two-spells">Knock</br>
+            <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 1<br> Effect: One lock or bar </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Levitate" data-spell="levitate" value="levitate" name="mage-check[]"
+              class="mage-spells mage-two-spells">Levitate</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: The mage only </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Locate Object" data-spell="locate-object" value="locateObject"
+              name="mage-check[]" class="mage-spells mage-two-spells">Locate Object</br>
+            <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 2<br> Effect: One object within range </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Mirror Image" data-spell="mirror-image" value="mirrorImage"
+              name="mage-check[]" class="mage-spells mage-two-spells">Mirror Image</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: The mage only </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Phantasmal Force" data-spell="phantasmal-force"
+              value="phantasmalForce" name="mage-check[]" class="mage-spells mage-two-spells">Phantasmal Force</br>
+            <span class="html-spell-tooltiptext"> Range: Infinite<br> Duration: 12<br> Effect: 20 foot volume </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Web" data-spell="web" value="web" name="mage-check[]"
+              class="mage-spells mage-two-spells">Web</br>
+            <span class="html-spell-tooltiptext"> Range: 10<br> Duration: 48<br> Effect: A volume of 10 by 10 by 10
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Wizard Lock" data-spell="wizard-lock" value="wizardLock"
+              name="mage-check[]" class="mage-spells mage-two-spells">Wizard Lock</br>
+            <span class="html-spell-tooltiptext"> Range: 10<br> Duration: Until broken<br> Effect: One portal or lock
+            </span>
+          </div>
         </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Floating Disc" data-spell="floating-disc" value="floatingDisc"
-            name="mage-check[]" class="mage-spells mage-one-spells">Floating Disc</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: Creates an invisible disc that can
-            carry 5000 cn </span>
+        <div id="mage-third-level-spell-list">
+          <h1>Level Three Mage Spells</h1>
+          <div><span class="third-level-selected-spells">You have selected 0 spell(s)</span></div>
+          <div class="number-of-third-level-mage-spells"></div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Clairvoyance" data-spell="clairvoyance" value="clairvoyance"
+              name="mage-check[]" class="mage-spells mage-three-spells">Clairvoyance</br>
+            <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 12<br> Effect:See through another's eyes </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Dispel Magic" data-spell="dispel-magic" value="dispelMagic"
+              name="mage-check[]" class="mage-spells mage-three-spells">Dispel Magic</br>
+            <span class="html-spell-tooltiptext"> Range: 120<br> Duration: Permanent<br> Effect: Destroys spells in a 20
+              foot cube </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Fire Ball" data-spell="fire-ball" value="fireBall" name="mage-check[]"
+              class="mage-spells mage-three-spells">Fire Ball</br>
+            <span class="html-spell-tooltiptext"> Range: 240<br> Duration: Instantaneous<br> Effect: Explosion in a sphere
+              40 foot diameter </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Fly" data-spell="fly" value="fly" name="mage-check[]"
+              class="mage-spells mage-three-spells">Fly</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: One creature may fly </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Haste" data-spell="haste" value="haste" name="mage-check[]"
+              class="mage-spells mage-three-spells">Haste</br>
+            <span class="html-spell-tooltiptext"> Range: 240<br> Duration: 3<br> Effect: Up to 24 creatures move double
+              speed </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Hold Person" data-spell="hold-person" value="holdPerson"
+              name="mage-check[]" class="mage-spells mage-three-spells">Hold Person</br>
+            <span class="html-spell-tooltiptext"> Range: 240<br> Duration: 1<br> Effect: Parlyzes up to 4 creatures
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Infravision" data-spell="infravision" value="infravision"
+              name="mage-check[]" class="mage-spells mage-three-spells">Infravision</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 24<br> Effect: One living creature </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Invisibility 10 feet radius" data-spell="invisibility-ten-feet"
+              value="invisibilityTenFoot" name="mage-check[]" class="mage-spells mage-three-spells">Invisibility 10'
+            radius</br>
+            <span class="html-spell-tooltiptext"> Range: 120<br> Duration: Until broken<br> Effect: All creatures within
+              10 feet </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Lightning Bolt" data-spell="lightning-bolt" value="lightningBolt"
+              name="mage-check[]" class="mage-spells mage-three-spells">Lightning Bolt</br>
+            <span class="html-spell-tooltiptext"> Range: 180<br> Duration: 0<br> Effect: Bolt 60 feet long, 5 feet wide
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Protection From Evil 10 feet radius"
+              data-spell="protection-from-evil-ten-feet" value="protectionFromEvilTenFoot" name="mage-check[]"
+              class="mage-spells mage-three-spells">Protection From Evil 10' radius</br>
+            <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 12<br> Effect: Barrier 20 feet in diameter
+            </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Protection From Missiles" data-spell="protection-from-missiles"
+              value="protectionFromNormalMissiles" name="mage-check[]" class="mage-spells mage-three-spells">Protection
+            From Normal Missiles</br>
+            <span class="html-spell-tooltiptext"> Range: 30<br> Duration: 12<br> Effect: One creature </span>
+          </div>
+          <div class="html-spell-tooltip">
+            <input type="checkbox" data-spell-name="Water Breathing" data-spell="water-breathing" value="waterBreathing"
+              name="mage-check[]" class="mage-spells mage-three-spells">Water Breathing</br>
+            <span class="html-spell-tooltiptext"> Range: 30<br> Duration: 24<br> Effect: One air-breathing creature
+            </span>
+          </div>
         </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Hold Portal" data-spell="hold-portal" value="holdPortal"
-            name="mage-check[]" class="mage-spells mage-one-spells">Hold Portal</br>
-          <span class="html-spell-tooltiptext"> Range: 10<br> Duration: 2<br> Effect: On door, gate, or similar portal
-          </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Light" data-spell="light" value="light" name="mage-check[]"
-            class="mage-spells mage-one-spells">Light</br>
-          <span class="html-spell-tooltiptext"> Range: 120<br> Duration: 6<br> Effect: Volume of 30 feet diameter
-          </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Magic Missile" data-spell="magic-missile" value="magicMissile"
-            name="mage-check[]" class="mage-spells mage-one-spells">Magic Missile</br>
-          <span class="html-spell-tooltiptext"> Range: 150<br> Duration: 0.1<br> Effect: Creates one or more arrows
-          </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Protection From Evil" data-spell="protection-from-evil"
-            value="protectionFromEvil" name="mage-check[]" class="mage-spells mage-one-spells">Protection From Evil</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: The mage only </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Read Languages" data-spell="read-languages" value="readLanguages"
-            name="mage-check[]" class="mage-spells mage-one-spells">Read Languages</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 2<br> Effect: The mage only </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Read Magic" data-spell="read-magic" value="readMagic"
-            name="mage-check[]" class="mage-spells mage-one-spells">Read Magic</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 2<br> Effect: The mage only </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Shield" data-spell="shield" value="shield" name="mage-check[]"
-            class="mage-spells mage-one-spells">Shield</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 2<br> Effect: The mage only </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Sleep" data-spell="sleep" value="sleep" name="mage-check[]"
-            class="mage-spells mage-one-spells">Sleep</br>
-          <span class="html-spell-tooltiptext"> Range: 240<br> Duration: 120<br> Effect: 2-16 Hit Dice of leaving
-            creatures within a 40 foot square area </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Ventriloquism" data-spell="ventriloquism" value="ventriloquism"
-            name="mage-check[]" class="mage-spells mage-one-spells">Ventriloquism</br>
-          <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 2<br> Effect: One item or location </span>
-        </div>
+
+
       </div>
-      <!-- <input type="button" value="Submit" id="submit-spells"> -->
-      <div id="mage-second-level-spell-list">
-        <h1>Level Two Mage Spells</h1>
-        <div><span class="second-level-selected-spells">You have selected 0 spell(s)</span></div>
-        <div class="number-of-second-level-mage-spells"></div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Continual Light" data-spell="continual-light" value="continualLight"
-            name="mage-check[]" class="mage-spells mage-two-spells">Continual Light</br>
-          <span class="html-spell-tooltiptext"> Range: 120<br> Duration: Until broken<br> Effect: Volume of 60 foot
-            diameter </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Detect Evil" data-spell="detect-evil" value="detectEvil"
-            name="mage-check[]" class="mage-spells mage-two-spells">Detect Evil</br>
-          <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 2<br> Effect: Everything within 60 feet </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Detect Invisible" data-spell="detect-invisible"
-            value="detectInvisible" name="mage-check[]" class="mage-spells mage-two-spells">Detect Invisible</br>
-          <span class="html-spell-tooltiptext"> Range: 10<br> Duration: 6<br> Effect: Detect invisibility </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="ESP" data-spell="ESP" value="esp" name="mage-check[]"
-            class="mage-spells mage-two-spells">ESP</br>
-          <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 12<br> Effect: All thoughts in one direction
-          </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Invisibility" data-spell="invisibility" value="invisibility"
-            name="mage-check[]" class="mage-spells mage-two-spells">Invisibility</br>
-          <span class="html-spell-tooltiptext"> Range: 60<br> Duration: Until broken your caster attacks<br> Effect: One
-            creature or object </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Knock" data-spell="knock" value="knock" name="mage-check[]"
-            class="mage-spells mage-two-spells">Knock</br>
-          <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 1<br> Effect: One lock or bar </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Levitate" data-spell="levitate" value="levitate" name="mage-check[]"
-            class="mage-spells mage-two-spells">Levitate</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: The mage only </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Locate Object" data-spell="locate-object" value="locateObject"
-            name="mage-check[]" class="mage-spells mage-two-spells">Locate Object</br>
-          <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 2<br> Effect: One object within range </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Mirror Image" data-spell="mirror-image" value="mirrorImage"
-            name="mage-check[]" class="mage-spells mage-two-spells">Mirror Image</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: The mage only </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Phantasmal Force" data-spell="phantasmal-force"
-            value="phantasmalForce" name="mage-check[]" class="mage-spells mage-two-spells">Phantasmal Force</br>
-          <span class="html-spell-tooltiptext"> Range: Infinite<br> Duration: 12<br> Effect: 20 foot volume </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Web" data-spell="web" value="web" name="mage-check[]"
-            class="mage-spells mage-two-spells">Web</br>
-          <span class="html-spell-tooltiptext"> Range: 10<br> Duration: 48<br> Effect: A volume of 10 by 10 by 10
-          </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Wizard Lock" data-spell="wizard-lock" value="wizardLock"
-            name="mage-check[]" class="mage-spells mage-two-spells">Wizard Lock</br>
-          <span class="html-spell-tooltiptext"> Range: 10<br> Duration: Until broken<br> Effect: One portal or lock
-          </span>
-        </div>
-      </div>
-      <div id="mage-third-level-spell-list">
-        <h1>Level Three Mage Spells</h1>
-        <div><span class="third-level-selected-spells">You have selected 0 spell(s)</span></div>
-        <div class="number-of-third-level-mage-spells"></div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Clairvoyance" data-spell="clairvoyance" value="clairvoyance"
-            name="mage-check[]" class="mage-spells mage-three-spells">Clairvoyance</br>
-          <span class="html-spell-tooltiptext"> Range: 60<br> Duration: 12<br> Effect:See through another's eyes </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Dispel Magic" data-spell="dispel-magic" value="dispelMagic"
-            name="mage-check[]" class="mage-spells mage-three-spells">Dispel Magic</br>
-          <span class="html-spell-tooltiptext"> Range: 120<br> Duration: Permanent<br> Effect: Destroys spells in a 20
-            foot cube </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Fire Ball" data-spell="fire-ball" value="fireBall" name="mage-check[]"
-            class="mage-spells mage-three-spells">Fire Ball</br>
-          <span class="html-spell-tooltiptext"> Range: 240<br> Duration: Instantaneous<br> Effect: Explosion in a sphere
-            40 foot diameter </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Fly" data-spell="fly" value="fly" name="mage-check[]"
-            class="mage-spells mage-three-spells">Fly</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 6<br> Effect: One creature may fly </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Haste" data-spell="haste" value="haste" name="mage-check[]"
-            class="mage-spells mage-three-spells">Haste</br>
-          <span class="html-spell-tooltiptext"> Range: 240<br> Duration: 3<br> Effect: Up to 24 creatures move double
-            speed </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Hold Person" data-spell="hold-person" value="holdPerson"
-            name="mage-check[]" class="mage-spells mage-three-spells">Hold Person</br>
-          <span class="html-spell-tooltiptext"> Range: 240<br> Duration: 1<br> Effect: Parlyzes up to 4 creatures
-          </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Infravision" data-spell="infravision" value="infravision"
-            name="mage-check[]" class="mage-spells mage-three-spells">Infravision</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 24<br> Effect: One living creature </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Invisibility 10 feet radius" data-spell="invisibility-ten-feet"
-            value="invisibilityTenFoot" name="mage-check[]" class="mage-spells mage-three-spells">Invisibility 10'
-          radius</br>
-          <span class="html-spell-tooltiptext"> Range: 120<br> Duration: Until broken<br> Effect: All creatures within
-            10 feet </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Lightning Bolt" data-spell="lightning-bolt" value="lightningBolt"
-            name="mage-check[]" class="mage-spells mage-three-spells">Lightning Bolt</br>
-          <span class="html-spell-tooltiptext"> Range: 180<br> Duration: 0<br> Effect: Bolt 60 feet long, 5 feet wide
-          </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Protection From Evil 10 feet radius"
-            data-spell="protection-from-evil-ten-feet" value="protectionFromEvilTenFoot" name="mage-check[]"
-            class="mage-spells mage-three-spells">Protection From Evil 10' radius</br>
-          <span class="html-spell-tooltiptext"> Range: 0<br> Duration: 12<br> Effect: Barrier 20 feet in diameter
-          </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Protection From Missiles" data-spell="protection-from-missiles"
-            value="protectionFromNormalMissiles" name="mage-check[]" class="mage-spells mage-three-spells">Protection
-          From Normal Missiles</br>
-          <span class="html-spell-tooltiptext"> Range: 30<br> Duration: 12<br> Effect: One creature </span>
-        </div>
-        <div class="html-spell-tooltip">
-          <input type="checkbox" data-spell-name="Water Breathing" data-spell="water-breathing" value="waterBreathing"
-            name="mage-check[]" class="mage-spells mage-three-spells">Water Breathing</br>
-          <span class="html-spell-tooltiptext"> Range: 30<br> Duration: 24<br> Effect: One air-breathing creature
-          </span>
-        </div>
-      </div>
+      
       <!-- <input type="button" value="Submit" id="submit-spells-2"> -->
       <h1>Submit All Spells</h1>
       <input type="button" value="Submit All Spells" id="submit-all-mage-spells">

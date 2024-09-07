@@ -294,6 +294,21 @@ fieldset {
   grid-area: bottomRight;
 }
 
+/*Magic user spell picker list*/
+
+.mage-spell-container {
+  display: grid;
+  grid: 550px / 350px 350px 350px
+}
+
+#mage-first-level-spell-list, #mage-second-level-spell-list, #mage-third-level-spell-list {
+  display: inline-block;
+  width: 350px;
+  height: 550px;
+}
+
+
+
 .canvas-info-module-monster {
   background-color: rgb(221, 221, 221);
 }
@@ -815,8 +830,8 @@ span#dragonwarrior {
   left: 0px;
   right: 0px;
   display: block;
-  height: 2000px;
-  width: 2000px;
+  height: 100%;
+  width: 100%;
   background-color: rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
@@ -829,8 +844,8 @@ span#dragonwarrior {
   left: 0px;
   right: 0px;
   display: block;
-  height: 2000px;
-  width: 2000px;
+  height: 100%;
+  width: 100%;
   background-color: rgb(0, 5, 50);
   z-index: 1;
   padding: 10% 30% 30%;
