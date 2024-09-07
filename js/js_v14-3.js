@@ -1859,7 +1859,8 @@ function selectInventory(finalCharacter)
     getInventoryElement.classList.remove("show-inventory-container");
     let updateCharTreasure = document.querySelector("#char-treasure");
     updateCharTreasure.innerHTML = `
-        <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
+        Treasure: 
+        <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span>        
         `;
   };
   startChapter();
@@ -3722,7 +3723,12 @@ function continueChapterFive()
   window.scrollTo(0, 0);
 
   let updatedCharWeapon = document.querySelector("#char-weapon");
-  updatedCharWeapon.innerHTML = `<h4 id='char-weapon' class='char-info-label'>Weapon: <div class="weapon-tooltip" class="character-display-info">${finalCharacter.weapon.name}<span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span></div></h4>
+  updatedCharWeapon.innerHTML = `
+    Weapon:
+    <span class="weapon-tooltip"> 
+      <span class="character-display-info">${finalCharacter.weapon.name}</span>
+      <span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage}</span>
+    </span>
     `;
 
   // let updatedCharDamage = document.querySelector('#char-damage');
