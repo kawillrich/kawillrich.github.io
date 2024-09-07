@@ -990,16 +990,12 @@ function startGame()
               <h4 id='char-level' class='char-info-label'>Level: <span class="character-display-info">${finalCharacter.specialty.characterLevel.level.level}</span></h4>
 
 
-              <h4 id='char-hp' class='char-info-label'>Hit Points:                 
-                  <span id='hpBar' >
-                    <progress id='hp-prog-bar' 
-                        max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" 
-                        value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}">
-                    </progress>
+              <h4 id='char-hp' class='char-info-label'>Hit Points: 
+                    <span id='hpBar'>                    
+                      <progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}" value="${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}"></progress>
                       <span class="character-hp-bar">${finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment}/${finalCharacter.specialty.maxHealthPoints + finalCharacter.attributes[4].adjustment}</span>
-                  </span>
-                </span>
-              </h4> 
+                    </span>
+                  </h4>  
                 
               <h4 id='char-armor' class='char-info-label'>Armor: 
                 <span class="armor-tooltip">
