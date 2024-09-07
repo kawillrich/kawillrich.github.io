@@ -834,7 +834,7 @@ span#dragonwarrior {
   width: 100%;
   background-color: rgb(0, 5, 50);
   z-index: 1;
-  padding: 10% 30% 30%;
+  padding: 1% 30% 30%;
 }
 
 .show-mage-spells {
@@ -884,7 +884,7 @@ span#dragonwarrior {
 
 .inventory-input-container {
   display: grid;
-  grid-template-columns: 100px 300px;
+  grid-template-columns: 100px 500px;
   /* column-gap: 10px; */
 }
 
@@ -905,14 +905,14 @@ span#dragonwarrior {
   width: 2em;
   height: 1.5em;
   text-align: center;
-  margin: auto;
+  margin: 5px;
 }
 
 .quantity-decrease {
   width: 2em;
   height: 1.5em;
   text-align: center;
-  margin: auto;
+  margin: 5px;
 }
 
 .current-item-qty {
