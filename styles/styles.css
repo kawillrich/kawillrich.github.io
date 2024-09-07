@@ -542,7 +542,7 @@ span#dragonwarrior {
 .supply-item-tooltiptext {
   visibility: hidden;
   height: 100px;
-  width: 120px;
+  width: 200px;
   background-color: black;
   color: #fff;
   text-align: left;
@@ -619,6 +619,15 @@ span#dragonwarrior {
   border-width: 5px;
   border-style: solid;
   border-color: transparent black transparent transparent;
+}
+
+
+.armor-tooltip:hover,
+.weapon-tooltip:hover,
+.spell-tooltip:hover,
+.item-tooltip:hover,
+.supply-item-tooltip:hover {
+  color: white;
 }
 
 .armor-tooltip:hover .armor-tooltiptext,
