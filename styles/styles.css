@@ -903,16 +903,16 @@ span#dragonwarrior {
 
 .quantity-increase {
   width: 2em;
-  height: 1.5em;
+  height: 1.2em;
   text-align: center;
-  margin: 5px;
+  margin: auto 5px auto auto;
 }
 
 .quantity-decrease {
   width: 2em;
-  height: 1.5em;
+  height: 1.2em;
   text-align: center;
-  margin: 5px;
+  margin: auto;
 }
 
 .current-item-qty {
