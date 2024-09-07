@@ -302,9 +302,9 @@ fieldset {
 }
 
 #mage-first-level-spell-list, #mage-second-level-spell-list, #mage-third-level-spell-list {
-  display: inline-block;
-  width: 350px;
-  height: 550px;
+  /* display: inline-block; */
+  /* width: 350px;
+  height: 550px; */
 }
 
 
