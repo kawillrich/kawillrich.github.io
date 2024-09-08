@@ -33,7 +33,9 @@ body {
 }
 
 #container-2 {
-  margin: 0px 0px 0px 10px;
+  margin: 20px auto auto 5px;
+  width: 920px;
+  min-width: 920px;
   min-width: 820px;
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
