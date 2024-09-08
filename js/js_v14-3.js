@@ -941,19 +941,7 @@ function startGame() {
                     finalCharacter.weapon.damage
                   }</span>
                 </span>
-              </h4>
-
-              <h4 id='char-spell1' class='char-info-label'>Spell 1: 
-                <span class="character-display-info">${
-                  finalCharacter.specialty.spell1.name
-                }</span>
-              </h4>
-
-              <h4 id='char-spell2' class='char-info-label'>Spell 2: 
-                <span class="character-display-info">${
-                  finalCharacter.specialty.spell2.name
-                }</span>
-              </h4>
+              </h4>              
 
               <h4 id='char-treasure' class='char-info-label'>Treasure: 
                 <span class="character-display-info">${
