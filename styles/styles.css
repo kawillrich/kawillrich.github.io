@@ -967,11 +967,17 @@ ul.dropdown-spell-list-ul {
   display: none;
 }
 
+
 li.first-level-dropdown-list,
 li.second-level-dropdown-list,
 li.third-level-dropdown-list {
   display: none;
   height: 20px;
+}
+
+
+li.show-spell-list-dropdown {
+  display: block;
 }
 
 li.monster-one-spell-list,

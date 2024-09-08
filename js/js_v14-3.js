@@ -2649,7 +2649,11 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
             <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span><br>            
             
 
-            <span class='button-border'><input type="submit" class="attack-spell spell2-monster-one fight-module-button" value="Use Spell" id="use-spells"><ul class='dropdown-spell-list-ul hide-spell-list-dropdown'></ul></span>
+            <span class='button-border'>
+              <input type="submit" class="attack-spell spell2-monster-one fight-module-button" value="Use Spell" id="use-spells">
+                <ul class='dropdown-spell-list-ul hide-spell-list-dropdown'>
+                </ul>
+            </span>
             
             <span class='button-border hidden-border'><input type="submit" id="monster-attack" class="fight-module-button hidden" value="Monster(s) Turn"></span><br>
         </div>
@@ -3000,9 +3004,11 @@ function populateMageSpells(m1, m2, nextChap) {
 }
 
 export function toggleShowSpellList() {
-  document
-    .querySelector(".dropdown-spell-list-ul")
-    .classList.toggle("hide-spell-list-dropdown");
+  document.querySelector(".dropdown-spell-list-ul").classList.toggle("hide-spell-list-dropdown");
+  document.querySelector(".first-level-dropdown-list").classList.toggle("show-spell-list-dropdown");
+  document.querySelector(".second-level-dropdown-list").classList.toggle("show-spell-list-dropdown");
+  document.querySelector(".third-level-dropdown-list").classList.toggle("show-spell-list-dropdown");
+
   let getAllAttackButtons = document.querySelectorAll(".attack");
   for (let i = 0; i < getAllAttackButtons.length; i++) {
     getAllAttackButtons[i].classList.toggle("grey-out");
