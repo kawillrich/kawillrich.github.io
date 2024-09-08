@@ -461,10 +461,10 @@ export default class Character
         ".attack-monster-two"
       );
       removeMonsterTwoAttackButton.classList.add("monster1-dead");
-      let removeMonsterTwoSpellAttack = document.querySelector(
-        ".spell2-monster-two"
-      );
-      removeMonsterTwoSpellAttack.classList.add("monster1-dead");
+      // let removeMonsterTwoSpellAttack = document.querySelector(
+      //   ".spell2-monster-two"
+      // );
+      // removeMonsterTwoSpellAttack.classList.add("monster1-dead");
 
       let removeMonsterTwoSpellHighlight = document.querySelectorAll(".monster-two-spell-list");
       for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
