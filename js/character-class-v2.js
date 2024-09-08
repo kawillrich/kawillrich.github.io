@@ -844,9 +844,9 @@ export default class Character
           document.getElementsByClassName("attack-monster-two");
         removingMonster2Button[0].classList.add("monster1-dead");
 
-        let removeMonster2SpellAttack =
-          document.getElementsByClassName("spell2-monster-two");
-        removeMonster2SpellAttack[0].classList.add("monster1-dead");
+        // let removeMonster2SpellAttack =
+        //   document.getElementsByClassName("spell2-monster-two");
+        // removeMonster2SpellAttack[0].classList.add("monster1-dead");
 
         let removeMonsterTwoSpellHighlight = document.querySelectorAll(".monster-two-spell-list");
         for (let i = 0; i < removeMonsterTwoSpellHighlight.length; i++)
