@@ -2632,11 +2632,7 @@ function addingFightModule(monsterOne, monsterTwo, continueNextChapter) {
         <div class="attack-buttons">
             <span class='button-border'><input type="submit" class="attack attack-monster-one fight-module-button" value="Attack Enemy 1"></span>
             <span class='button-border'><input type="submit" class="attack attack-monster-two fight-module-button" value="Attack Enemy 2"></span><br>
-                        
-            
-            <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span><br>            
-            
-
+            <span class='button-border'><input type="submit" class="attack item-enchantment fight-module-button" value="Use Item Enchantment"></span> 
             <span class='button-border'>
               <input type="submit" class="attack-spell spell2-monster-one fight-module-button" value="Use Spell" id="use-spells">
                 <ul class='dropdown-spell-list-ul hide-spell-list-dropdown'>
@@ -3204,7 +3200,7 @@ function regenerateHP(hp, maxHP) {
       hp += 1;
       let regeneratedHP = document.getElementById("char-hp");
       regeneratedHP.innerHTML = `
-                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${
+        Hit Points: <span class="character-display-info"></span><span id='hpBar'><progress id='hp-prog-bar' max="${
         finalCharacter.specialty.maxHealthPoints
         // + finalCharacter.attributes[4].adjustment
       }" value="${hp}"></progress>${hp}/${
