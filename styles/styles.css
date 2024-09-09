@@ -207,7 +207,7 @@ legend {
 }
 
 .status-info-module-player {
-  height: 165px;
+  height: 146px;
   width: 100px;
   padding: auto;
   display: grid;
@@ -215,7 +215,7 @@ legend {
   grid-template-rows: 34px 34px 34px 34px;
   gap: 1px;
   align-content: center;
-  border: none;
+  border: 3px solid rgb(130, 130, 168);
 }
 
 .container-item {
