@@ -11,7 +11,10 @@ body {
   display: flex;
   color: rgb(130, 130, 170);
   font-size: 22px;
+  cursor: url('/images/gui/cursor.png'), auto;
 }
+
+
 
 #footer {
   border: 1px solid black;
@@ -77,6 +80,7 @@ input[name="selected-specialty"] {
 .alignment-label:hover::before,
 .class-label:hover::before {
   background-color: azure;
+  cursor: url('/images/gui/cursor-hover.png'), auto;
 }
 
 .alignment-radio:checked + .alignment-label::before,
@@ -97,7 +101,7 @@ input[type="submit"],
   text-align: center;
   background-color: rgb(205, 210, 245);
   font-size: 22px;
-  cursor: pointer;
+  cursor: url('/images/gui/cursor-hover.png'), auto;
 }
 
 input[type="submit"]:hover,
