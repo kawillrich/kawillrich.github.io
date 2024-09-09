@@ -439,10 +439,11 @@ export default class Character
       let removeMonsterOneAttackButton = document.querySelector(
         ".attack-monster-one"
       );
-      // removeMonsterOneAttackButton.classList.add("monster1-dead");
-      // let removeMonsterOneSpellAttack = document.querySelector(
-      //   ".spell2-monster-one"
-      // );
+      removeMonsterOneAttackButton.classList.add("monster1-dead");
+
+      let removeMonsterOneSpellAttack = document.querySelector(
+        ".monster-one-spell-list"
+      );
       removeMonsterOneSpellAttack.classList.add("monster1-dead");
 
       let removeMonsterOneSpellHighlight = document.querySelectorAll(".monster-one-spell-list");
