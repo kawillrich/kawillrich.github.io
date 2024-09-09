@@ -913,6 +913,12 @@ span#dragonwarrior {
   grid-template-rows: auto auto auto;
 }
 
+input.mage-spells {
+  height: 20px;
+  width: 30px;
+}
+
+
 .inventory-input-container {
   display: grid;
   grid-template-columns: 100px 500px;
