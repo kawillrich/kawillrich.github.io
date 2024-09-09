@@ -1021,13 +1021,8 @@ function startGame()
               <h4 id='char-experience' class='char-info-label'>Experience: 
                 <span class="character-display-info">${finalCharacter.specialty.characterExperience
     }</span>
-              </h4>  
-
-              <h4 id='char-status' class='char-info-label'>Status: 
-                <span class="character-display-info">${finalCharacter.status
-    }</span>
-              </h4>
-
+              </h4>                
+              
           </fieldset>
         </div>
 
@@ -3247,6 +3242,10 @@ function castSpellFromList(e, m1, m2, nextChap)
             finalCharacter.status.indexOf("Invisible"),
             1
           );
+
+          let addInvisibilityStatus = document.querySelector(".invisibility-status");
+          addInvisibilityStatus.classList.toggle('hide-status')
+
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
           //   <h4 id="char-status" class="char-info-label">Status: 
@@ -3271,6 +3270,9 @@ function castSpellFromList(e, m1, m2, nextChap)
             finalCharacter.status.indexOf("Invisible"),
             1
           );
+
+          let addInvisibilityStatus = document.querySelector(".invisibility-status");
+          addInvisibilityStatus.classList.toggle('hide-status')
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
           //   <h4 id="char-status" class="char-info-label">Status: 
@@ -3295,6 +3297,10 @@ function castSpellFromList(e, m1, m2, nextChap)
             finalCharacter.status.indexOf("Invisible"),
             1
           );
+
+          let addInvisibilityStatus = document.querySelector(".invisibility-status");
+          addInvisibilityStatus.classList.toggle('hide-status')
+          
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
           //   <h4 id="char-status" class="char-info-label">Status: 

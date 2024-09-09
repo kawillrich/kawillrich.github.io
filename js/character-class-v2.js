@@ -709,11 +709,15 @@ export default class Character
       {
         alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
         finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
-        let playerStatus = document.querySelector("#char-status");
-        playerStatus.innerHTML = `
-          <h4 id="char-status" class="char-info-label">Status: 
-          <span class="character-display-info">${finalCharacter.status}</span>
-          </h4>`
+
+        let addInvisibilityStatus = document.querySelector(".invisibility-status");
+        addInvisibilityStatus.classList.toggle('hide-status')
+
+        // let playerStatus = document.querySelector("#char-status");
+        // playerStatus.innerHTML = `
+        //   <h4 id="char-status" class="char-info-label">Status: 
+        //   <span class="character-display-info">${finalCharacter.status}</span>
+        //   </h4>`
       }
       for (let i = 0; i < playerHitRoll1.length; i++)
       {
@@ -894,11 +898,15 @@ export default class Character
       {
         alert(`You were invisible and the ${monster2.name} could not see you, but the spell was broken after you attacked`);
         finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
-        let playerStatus = document.querySelector("#char-status");
-        playerStatus.innerHTML = `
-          <h4 id="char-status" class="char-info-label">Status: 
-          <span class="character-display-info">${finalCharacter.status}</span>
-          </h4>`
+        
+        let addInvisibilityStatus = document.querySelector(".invisibility-status");
+        addInvisibilityStatus.classList.toggle('hide-status')
+        
+        // let playerStatus = document.querySelector("#char-status");
+        // playerStatus.innerHTML = `
+        //   <h4 id="char-status" class="char-info-label">Status: 
+        //   <span class="character-display-info">${finalCharacter.status}</span>
+        //   </h4>`
       }
       for (let i = 0; i < playerHitRoll1.length; i++)
       {
@@ -925,11 +933,15 @@ export default class Character
     {
       alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
       finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
-      let playerStatus = document.querySelector("#char-status");
-      playerStatus.innerHTML = `
-        <h4 id="char-status" class="char-info-label">Status: 
-        <span class="character-display-info">${finalCharacter.status}</span>
-        </h4>`
+      
+      let addInvisibilityStatus = document.querySelector(".invisibility-status");
+      addInvisibilityStatus.classList.toggle('hide-status')      
+      
+      // let playerStatus = document.querySelector("#char-status");
+      // playerStatus.innerHTML = `
+      //   <h4 id="char-status" class="char-info-label">Status: 
+      //   <span class="character-display-info">${finalCharacter.status}</span>
+      //   </h4>`
     }
 
     let self = this;
@@ -1021,11 +1033,15 @@ export default class Character
     {
       alert(`You were invisible and the ${monster2.name} could not see you, but the spell was broken after you attacked`);
       finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
-      let playerStatus = document.querySelector("#char-status");
-      playerStatus.innerHTML = `
-        <h4 id="char-status" class="char-info-label">Status: 
-        <span class="character-display-info">${finalCharacter.status}</span>
-        </h4>`
+      
+      let addInvisibilityStatus = document.querySelector(".invisibility-status");
+      addInvisibilityStatus.classList.toggle('hide-status')
+      
+      // let playerStatus = document.querySelector("#char-status");
+      // playerStatus.innerHTML = `
+      //   <h4 id="char-status" class="char-info-label">Status: 
+      //   <span class="character-display-info">${finalCharacter.status}</span>
+      //   </h4>`
     }
 
     let self = this;
@@ -1382,10 +1398,10 @@ export default class Character
     finalCharacter.status = [];
     finalCharacter.mirrorImages = 0;
 
-    let clearCharacterStatus = document.querySelector("#char-status");
-    clearCharacterStatus.innerHTML = `
-      <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
-      }</span></h4>`;
+    // let clearCharacterStatus = document.querySelector("#char-status");
+    // clearCharacterStatus.innerHTML = `
+    //   <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
+    //   }</span></h4>`;
   }
 
 }
