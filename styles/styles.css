@@ -14,7 +14,13 @@ body {
   cursor: url('/images/gui/cursor.png'), auto;
 }
 
+label {
+  cursor: url('/images/gui/cursor.png'), auto;
+}
 
+input, button {
+  cursor: url('/images/gui/cursor-hover.png'), auto;
+}
 
 #footer {
   border: 1px solid black;
@@ -74,7 +80,7 @@ input[name="selected-specialty"] {
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 10 10;
   background-color: rgb(205, 210, 245);
-  cursor: pointer;
+  cursor: url('/images/gui/cursor.png'), auto;
 }
 
 .alignment-label:hover::before,
@@ -145,7 +151,7 @@ input[type="submit"]:active,
   text-align: center;
   background-color: rgb(205, 210, 245);
   font-size: 22px;
-  cursor: pointer;
+  cursor: url('/images/gui/cursor-hover.png'), auto;
 }
 
 input[type="text"] {
@@ -465,7 +471,7 @@ span#dragonwarrior {
   border-radius: 5px;
   float: left;
   outline: none;
-  cursor: pointer;
+  cursor: url('/images/gui/cursor.png'), auto;
   transition: 0.3s;
   margin: 0px 0px 0px 10px;
 }
@@ -635,7 +641,7 @@ span#dragonwarrior {
 .item-tooltip:hover,
 .supply-item-tooltip:hover {
   color: white;
-  cursor: pointer;
+  cursor: url('/images/gui/cursor-hover.png'), auto;
 }
 
 .armor-tooltip:hover .armor-tooltiptext,
