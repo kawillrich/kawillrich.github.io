@@ -515,6 +515,12 @@ span#dragonwarrior {
   float: right;
 }
 
+.armor-tooltip > .character-display-info,
+.weapon-tooltip > .character-display-info {
+  cursor: url(/images/gui/cursor-hover.png), auto;
+
+}
+
 .spell-tooltip {
   position: relative;
 }
