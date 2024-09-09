@@ -1,5 +1,6 @@
 * {
   font-family: "VT323";
+  cursor: url('/images/gui/cursor.png'), auto;
 }
 
 body {
@@ -1001,6 +1002,7 @@ li.self-spell-list {
   left: 143px;
   background-color: white;
   border: 1px solid black;
+  cursor: url('/images/gui/cursor-hover.png'), auto;
 }
 
 ul.spell-list {
@@ -1013,16 +1015,19 @@ ul.spell-list {
   height: 50px;
   width: 250px;
   padding: 0px 0px 0px 5px;
+  
 }
 
 ul.spell-list:hover {
   background-color: lightblue;
+  
 }
 
 li.first-level-dropdown-list b:hover,
 li.second-level-dropdown-list b:hover,
 li.third-level-dropdown-list b:hover {
   background-color: lightblue;
+  
 }
 
 li.first-level-dropdown-list:hover,
@@ -1064,6 +1069,14 @@ li.monster-two-spell-list.monster2-spell-dead:hover {
 li.monster-one-spell-list.monster1-spell-dead:active,
 li.monster-two-spell-list.monster2-spell-dead:active {
   pointer-events: none;
+}
+
+.show-spell-list-dropdown > b {
+  cursor: url('/images/gui/cursor-hover.png'), auto;
+}
+
+.spell-list > span {
+  cursor: url('/images/gui/cursor-hover.png'), auto;
 }
 
 #phantasmalForce.phantasmalForce-hide {
