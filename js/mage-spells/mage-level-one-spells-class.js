@@ -312,8 +312,8 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
 
         finalCharacter.status.push("Shield");
 
-        let addShieldStatus = document.querySelector(".status-info-module-player");
-        addShieldStatus.appendChild(shieldImage)
+        let addShieldStatus = document.querySelector(".shield-status");
+        addShieldStatus.innerHTML = shieldImage;
 
 
         setTimeout(function ()
