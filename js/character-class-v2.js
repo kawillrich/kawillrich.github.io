@@ -401,6 +401,18 @@ export default class Character
 
         <div id="character-statuses">
           <fieldset class = "status-info-module-player">
+          <div class="container-item protection-from-evil-status"></div>
+            <div class="container-item shield-status"></div>
+            <div class="container-item invisibility-status"></div>
+            <div class="container-item mirror-image-status"></div>
+            <div class="container-item detect-invisibility-status"></div>
+            <div class="container-item fly-status"></div>
+            <div class="container-item haste-status"></div>
+            <div class="container-item invisibility-10-status"></div>
+            <div class="container-item protection-from-evil-10-status"></div>
+            <div class="container-item protection-from-missiles-status"></div>
+            <div class="container-item"></div>
+            <div class="container-item"></div>
             <legend class="statuses-dashboard">Statuses</legend>
           </fieldset>
         </div>
