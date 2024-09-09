@@ -3247,11 +3247,11 @@ function castSpellFromList(e, m1, m2, nextChap)
             finalCharacter.status.indexOf("Invisible"),
             1
           );
-          let playerStatus = document.querySelector("#char-status");
-          playerStatus.innerHTML = `
-            <h4 id="char-status" class="char-info-label">Status: 
-            <span class="character-display-info">${finalCharacter.status}</span>
-            </h4>`;
+          // let playerStatus = document.querySelector("#char-status");
+          // playerStatus.innerHTML = `
+          //   <h4 id="char-status" class="char-info-label">Status: 
+          //   <span class="character-display-info">${finalCharacter.status}</span>
+          //   </h4>`;
         }
 
         firstLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
@@ -3271,11 +3271,11 @@ function castSpellFromList(e, m1, m2, nextChap)
             finalCharacter.status.indexOf("Invisible"),
             1
           );
-          let playerStatus = document.querySelector("#char-status");
-          playerStatus.innerHTML = `
-            <h4 id="char-status" class="char-info-label">Status: 
-            <span class="character-display-info">${finalCharacter.status}</span>
-            </h4>`;
+          // let playerStatus = document.querySelector("#char-status");
+          // playerStatus.innerHTML = `
+          //   <h4 id="char-status" class="char-info-label">Status: 
+          //   <span class="character-display-info">${finalCharacter.status}</span>
+          //   </h4>`;
         }
 
         secondLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);
@@ -3295,11 +3295,11 @@ function castSpellFromList(e, m1, m2, nextChap)
             finalCharacter.status.indexOf("Invisible"),
             1
           );
-          let playerStatus = document.querySelector("#char-status");
-          playerStatus.innerHTML = `
-            <h4 id="char-status" class="char-info-label">Status: 
-            <span class="character-display-info">${finalCharacter.status}</span>
-            </h4>`;
+          // let playerStatus = document.querySelector("#char-status");
+          // playerStatus.innerHTML = `
+          //   <h4 id="char-status" class="char-info-label">Status: 
+          //   <span class="character-display-info">${finalCharacter.status}</span>
+          //   </h4>`;
         }
 
         thirdLevel[i].castSpell(m1, m2, nextChap, thisNodeInnerText);

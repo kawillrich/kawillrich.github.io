@@ -188,7 +188,7 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
     
             finalCharacter.status.push("Invisible");
             console.log(finalCharacter.status);    
-               
+                           
             dialogue.innerHTML += `<p> You are invisible and will remain that way unless you attack or cast a spell.</p>`;
             
             let addInvisibilityStatus = document.querySelector(".invisibility-status");
