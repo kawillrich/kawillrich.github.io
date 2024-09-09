@@ -304,24 +304,18 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
         finalCharacter.armorClass = 4;
 
         //adding status icon to player status module
-        let shieldImage = document.createElement('img');
-        shieldImage.classList.add('status-image');
-        let shieldStatusSource = "/images/gui/statuses/shield-status.png";
-        shieldImage.src = shieldStatusSource
-
 
         finalCharacter.status.push("Shield");
 
         let addShieldStatus = document.querySelector(".shield-status");
-        addShieldStatus.src = shieldStatusSource;
-
+        addShieldStatus.classList.toggle('hide-status')
 
         setTimeout(function ()
         {
             finalCharacter.armorClass = oldAC;
             finalCharacter.status.splice(finalCharacter.status.indexOf("Shield"), 1);
-            let removeShieldStatus = document.querySelector(".status-info-module-player");
-            removeShieldStatus.removeChild(shieldImage);
+            let removeShieldStatus = document.querySelector(".shield-status");
+            removeShieldStatus.classList.toggle('hide-status')
             console.log("shield spell removed");
             console.log(finalCharacter.status)
         }, 10000);

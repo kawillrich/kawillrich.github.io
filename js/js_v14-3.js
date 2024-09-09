@@ -1173,18 +1173,18 @@ function startGame()
 
         <div id="character-statuses">
           <fieldset class = "status-info-module-player">
-            <img class="container-item protection-from-evil-status"></img>
-            <img class="container-item shield-status"></img>
-            <img class="container-item invisibility-status"></img>
-            <img class="container-item mirror-image-status"></img>
-            <img class="container-item detect-invisibility-status"></img>
-            <img class="container-item fly-status"></img>
-            <img class="container-item haste-status"></img>
-            <img class="container-item invisibility-10-status"></img>
-            <img class="container-item protection-from-evil-10-status"></img>
-            <img class="container-item protection-from-missiles-status"></img>
-            <img class="container-item"></img>
-            <img class="container-item"></img>
+            <img class="container-item protection-from-evil-status hide-status"></img>
+            <img src="/images/gui/statuses/shield-status.png" class="container-item shield-status hide-status"></img>
+            <img class="container-item invisibility-status hide-status"></img>
+            <img class="container-item mirror-image-status hide-status"></img>
+            <img class="container-item detect-invisibility-status hide-status"></img>
+            <img class="container-item fly-status hide-status"></img>
+            <img class="container-item haste-status hide-status"></img>
+            <img class="container-item invisibility-10-status hide-status"></img>
+            <img class="container-item protection-from-evil-10-status hide-status"></img>
+            <img class="container-item protection-from-missiles-status hide-status"></img>
+            <img class="container-item hide-status"></img>
+            <img class="container-item hide-status"></img>
             <legend class="statuses-dashboard">Statuses</legend>              
           </fieldset>
         </div>
