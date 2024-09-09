@@ -211,7 +211,7 @@ legend {
   width: 100px;
   padding: auto;
   display: grid;
-  grid-template-columns: 34px 34px 34px;
+  grid-template-columns: 33px 33px 33px;
   grid-template-rows: 34px 34px 34px 34px;
   gap: 1px;
   align-content: center;
@@ -362,7 +362,7 @@ fieldset {
 
 .canvas-info-module-player {
   height: 152px;
-  width: 100px;
+  width: 103px;
 }
 
 .saves-info-module-player {
