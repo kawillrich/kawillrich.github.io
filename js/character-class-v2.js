@@ -401,7 +401,6 @@ export default class Character
 
         <div id="character-statuses">
           <fieldset class = "status-info-module-player">
-          <div class="container-item protection-from-evil-status"></div>
             <img class="container-item protection-from-evil-status"></img>
             <img class="container-item shield-status"></img>
             <img class="container-item invisibility-status"></img>

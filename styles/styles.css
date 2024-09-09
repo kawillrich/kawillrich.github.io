@@ -207,12 +207,27 @@ legend {
 }
 
 .status-info-module-player {
+  height: 165px;
+  width: 100px;
+  padding: auto;
   display: grid;
-  grid-template-columns: 36px 36px 36px;
-  grid-template-rows: 36px 36px 36px 36px;
-  gap: 2px;
+  grid-template-columns: 34px 34px 34px;
+  grid-template-rows: 34px 34px 34px 34px;
+  gap: 1px;
   align-content: center;
+  border: none;
 }
+
+.container-item {
+  /* transform: scale(2); */
+  /* margin: 5px 10px 10px 0px; */
+  border: none;
+  height: 100%;
+  width: 100%;
+  image-rendering: pixelated;
+}
+
+
 
 fieldset {
   border-radius: 5px;
@@ -353,10 +368,7 @@ fieldset {
   width: 50px;
 }
 
-.status-info-module-player {
-  height: 148px;
-  width: 100px;
-}
+
 
 .canvas-dashboard {
   background-color: rgb(139, 226, 138);
