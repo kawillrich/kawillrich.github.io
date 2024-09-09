@@ -318,7 +318,7 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
             removeShieldStatus.classList.toggle('hide-status')
             console.log("shield spell removed");
             console.log(finalCharacter.status)
-        }, 10000);
+        }, 120000);
     }
 }
 
