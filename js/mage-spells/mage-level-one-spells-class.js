@@ -172,7 +172,7 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             monster1.status.push('Blind');
             let monster1Status = document.querySelector("#monster-one-status");
             monster1Status.innerHTML = `<h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>`
-            
+
             //need to make variable, push to an array, and then call the function expression
 
             let blindTimer = setTimeout(function ()
@@ -302,9 +302,24 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
         dialogue.innerHTML = `<p>You cast Shield and reduce your Armor Class to 4</p>`;
         let oldAC = finalCharacter.armorClass;
         finalCharacter.armorClass = 4;
+
+        //adding status icon to player status module
+        let shieldImage = document.createElement('img');
+        shieldImage.classList.add('status-image');
+        let shieldStatusSource = "/images/gui/statuses/shield-status.png";
+        shieldImage.src = shieldStatusSource
+
+
+        finalCharacter.status.push(shieldImage);
+
+        let addShieldStatus = document.querySelector(".status-info-module-player");
+        addShieldStatus.appendChild(shieldImage)
+
+
         setTimeout(function ()
         {
             finalCharacter.armorClass = oldAC;
+
         }, 1200000);
     }
 }

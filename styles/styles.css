@@ -918,6 +918,11 @@ input.mage-spells {
   width: 30px;
 }
 
+.status-image {
+  image-rendering: pixelated;
+  transform: scale(2);
+}
+
 
 .inventory-input-container {
   display: grid;
