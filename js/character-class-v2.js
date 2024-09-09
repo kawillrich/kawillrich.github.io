@@ -439,10 +439,10 @@ export default class Character
       let removeMonsterOneAttackButton = document.querySelector(
         ".attack-monster-one"
       );
-      removeMonsterOneAttackButton.classList.add("monster1-dead");
-      let removeMonsterOneSpellAttack = document.querySelector(
-        ".spell2-monster-one"
-      );
+      // removeMonsterOneAttackButton.classList.add("monster1-dead");
+      // let removeMonsterOneSpellAttack = document.querySelector(
+      //   ".spell2-monster-one"
+      // );
       removeMonsterOneSpellAttack.classList.add("monster1-dead");
 
       let removeMonsterOneSpellHighlight = document.querySelectorAll(".monster-one-spell-list");
@@ -985,9 +985,9 @@ export default class Character
       defeatMonster1.innerHTML = `
             <p>Congratulations, you defeated the Monster 1!</p>`;
 
-      let removingMonster1SpellButton =
-        document.getElementsByClassName("spell2-monster-one");
-      removingMonster1SpellButton[0].classList.add("monster1-dead");
+      // let removingMonster1SpellButton =
+      //   document.getElementsByClassName("spell2-monster-one");
+      // removingMonster1SpellButton[0].classList.add("monster1-dead");
 
       let removingMonster1Button =
         document.getElementsByClassName("attack-monster-one");
