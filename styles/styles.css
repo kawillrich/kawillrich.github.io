@@ -225,9 +225,17 @@ legend {
   height: 100%;
   width: 100%;
   image-rendering: pixelated;
+  border-radius: 10px;
 }
 
+.status-image {
+  image-rendering: pixelated;
+  transform: scale(2);
+}
 
+.hide-status{
+  visibility: hidden;
+}
 
 fieldset {
   border-radius: 5px;
@@ -939,14 +947,7 @@ input.mage-spells {
   width: 30px;
 }
 
-.status-image {
-  image-rendering: pixelated;
-  transform: scale(2);
-}
 
-.hide-status{
-  visibility: hidden;
-}
 
 .inventory-input-container {
   display: grid;
