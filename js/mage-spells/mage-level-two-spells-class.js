@@ -195,10 +195,10 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
             addInvisibilityStatus.classList.toggle('hide-status')
             
             
-            let playerStatus = document.querySelector("#char-status");
-            playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
-            <span class="character-display-info">${finalCharacter.status}</span>
-            </h4>`
+            // let playerStatus = document.querySelector("#char-status");
+            // playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
+            // <span class="character-display-info">${finalCharacter.status}</span>
+            // </h4>`
     
                 let invisibilityTimer = setTimeout(function ()
                 {
@@ -206,9 +206,9 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
 
                     addInvisibilityStatus.classList.toggle('hide-status')
 
-                    playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
-                        <span class="character-display-info">${finalCharacter.status}</span>
-                        </h4>`
+                    // playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
+                    //     <span class="character-display-info">${finalCharacter.status}</span>
+                    //     </h4>`
                     console.log('Invisibility removed from player')
                 }, 30000);
     
