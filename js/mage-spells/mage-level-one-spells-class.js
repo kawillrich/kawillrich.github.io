@@ -310,7 +310,7 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
         shieldImage.src = shieldStatusSource
 
 
-        finalCharacter.status.push(shieldImage);
+        finalCharacter.status.push("Shield");
 
         let addShieldStatus = document.querySelector(".status-info-module-player");
         addShieldStatus.appendChild(shieldImage)
@@ -319,8 +319,12 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
         setTimeout(function ()
         {
             finalCharacter.armorClass = oldAC;
-
-        }, 1200000);
+            finalCharacter.status.splice(finalCharacter.status.indexOf("Shield"), 1);
+            let removeShieldStatus = document.querySelector(".status-info-module-player");
+            removeShieldStatus.removeChild(shieldImage);
+            console.log("shield spell removed");
+            console.log(finalCharacter.status)
+        }, 10000);
     }
 }
 

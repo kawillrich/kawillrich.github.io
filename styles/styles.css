@@ -206,6 +206,14 @@ legend {
   background-color: rgb(160, 219, 255);
 }
 
+.status-info-module-player {
+  display: grid;
+  grid-template-columns: 20px 20px 20px;
+  grid-template-rows: 20px 20px 20px 20px;
+  gap: 2px;
+  align-content: center;
+}
+
 fieldset {
   border-radius: 5px;
 }
@@ -252,7 +260,8 @@ fieldset {
 
 #character-statuses {
   grid-area: playerStatus;
-  width: 100px;
+  width: 140px;
+  
 }
 
 #character-saving-throws {
