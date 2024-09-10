@@ -1171,7 +1171,7 @@ function startGame()
             <img class="container-item protection-from-evil-status hide-status"></img>
             <img src="/images/gui/statuses/shield-status.png" class="container-item shield-status hide-status"></img>
             <img src="/images/gui/statuses/invisibility-status.png" class="container-item invisibility-status hide-status"></img>
-            <img class="container-item mirror-image-status hide-status"></img>
+            <img  src="/images/gui/statuses/mirror-image-status.png" class="container-item mirror-image-status hide-status"></img>
             <img class="container-item detect-invisibility-status hide-status"></img>
             <img class="container-item fly-status hide-status"></img>
             <img class="container-item haste-status hide-status"></img>
@@ -3244,7 +3244,11 @@ function castSpellFromList(e, m1, m2, nextChap)
           );
 
           let addInvisibilityStatus = document.querySelector(".invisibility-status");
-          addInvisibilityStatus.classList.toggle('hide-status')
+          
+          if (!addInvisibilityStatus.classList.includes('hide-status')) {
+            addInvisibilityStatus.classList.toggle('hide-status')
+          }
+          
 
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
@@ -3272,7 +3276,11 @@ function castSpellFromList(e, m1, m2, nextChap)
           );
 
           let addInvisibilityStatus = document.querySelector(".invisibility-status");
-          addInvisibilityStatus.classList.toggle('hide-status')
+          
+          if (!addInvisibilityStatus.classList.contains("hide-status")) {
+            addInvisibilityStatus.classList.toggle('hide-status');
+          }
+          
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
           //   <h4 id="char-status" class="char-info-label">Status: 
@@ -3300,7 +3308,7 @@ function castSpellFromList(e, m1, m2, nextChap)
 
           let addInvisibilityStatus = document.querySelector(".invisibility-status");
           addInvisibilityStatus.classList.toggle('hide-status')
-          
+
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
           //   <h4 id="char-status" class="char-info-label">Status: 
