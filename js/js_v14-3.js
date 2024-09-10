@@ -3307,7 +3307,9 @@ function castSpellFromList(e, m1, m2, nextChap)
           );
 
           let addInvisibilityStatus = document.querySelector(".invisibility-status");
-          addInvisibilityStatus.classList.toggle('hide-status')
+          if (!addInvisibilityStatus.classList.includes('hide-status')) {
+            addInvisibilityStatus.classList.toggle('hide-status')
+          }
 
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
