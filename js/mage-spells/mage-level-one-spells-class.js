@@ -288,6 +288,10 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You try to cast Shield, but the words won't come to your mind.</p>`;
         toggleShowSpellList();
+    } else if (finalCharacter.status.includes("Shield"))
+    {
+        dialogue.innerHTML = `<p>You are already shielded by this spell.</p>`;
+        toggleShowSpellList();
     } else
     {
         this.numberOfUses -= 1;
@@ -308,7 +312,7 @@ shield.castSpell = function (monster1, monster2, continueNextChapter, attackedMo
         finalCharacter.status.push("Shield");
 
         let addShieldStatus = document.querySelector(".shield-status");
-        addShieldStatus.classList.toggle('hide-status')
+        addShieldStatus.classList.remove('hide-status')
 
         setTimeout(function ()
         {
