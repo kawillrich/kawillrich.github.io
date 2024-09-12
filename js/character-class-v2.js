@@ -605,7 +605,7 @@ export default class Character
 
       }
 
-      else if (monster1.status.includes('Visibility Impaired'))
+      else if (finalCharacter.status.includes('Invisibility'))
       {
         alert(`You were invisible and the ${monster1.name} could not see you, but the spell was broken after you attacked`);
         monster1.healthPoints = monster1.healthPoints - inflictedDamage;

@@ -3243,12 +3243,13 @@ function castSpellFromList(e, m1, m2, nextChap)
             1
           );
 
-          let addInvisibilityStatus = document.querySelector(".invisibility-status");
-          
-          if (!addInvisibilityStatus.classList.includes('hide-status')) {
-            addInvisibilityStatus.classList.toggle('hide-status')
+          let addInvisibilityStatus = $(".invisibility-status");
+
+          if (!addInvisibilityStatus.hasClass('hide-status'))
+          {
+            addInvisibilityStatus.addClass('hide-status')
           }
-          
+
 
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
@@ -3276,11 +3277,12 @@ function castSpellFromList(e, m1, m2, nextChap)
           );
 
           let addInvisibilityStatus = document.querySelector(".invisibility-status");
-          
-          if (!addInvisibilityStatus.classList.contains("hide-status")) {
+
+          if (!addInvisibilityStatus.classList.contains("hide-status"))
+          {
             addInvisibilityStatus.classList.toggle('hide-status');
           }
-          
+
           // let playerStatus = document.querySelector("#char-status");
           // playerStatus.innerHTML = `
           //   <h4 id="char-status" class="char-info-label">Status: 
@@ -3307,7 +3309,8 @@ function castSpellFromList(e, m1, m2, nextChap)
           );
 
           let addInvisibilityStatus = document.querySelector(".invisibility-status");
-          if (!addInvisibilityStatus.classList.includes('hide-status')) {
+          if (!addInvisibilityStatus.classList.includes('hide-status'))
+          {
             addInvisibilityStatus.classList.toggle('hide-status')
           }
 
