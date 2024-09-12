@@ -3312,10 +3312,10 @@ function castSpellFromList(e, m1, m2, nextChap)
             1
           );
 
-          let addInvisibilityStatus = document.querySelector(".invisibility-status");
-          if (!addInvisibilityStatus.classList.includes('hide-status'))
+          let addInvisibilityStatus = $(".invisibility-status");
+          if (!addInvisibilityStatus.hasClass('hide-status'))
           {
-            addInvisibilityStatus.classList.toggle('hide-status')
+            addInvisibilityStatus.removeClass('hide-status')
           }
 
           // let playerStatus = document.querySelector("#char-status");
