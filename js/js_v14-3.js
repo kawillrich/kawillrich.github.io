@@ -3249,6 +3249,9 @@ function castSpellFromList(e, m1, m2, nextChap)
           {
             addInvisibilityStatus.addClass('hide-status');
             console.log(finalCharacter.activeSpellStatuses);
+
+            //removing active spell statuses so they don't run after being cancelled.
+            // if (finalCharacter.activeSpellStatuses.includes())
           }
 
 
