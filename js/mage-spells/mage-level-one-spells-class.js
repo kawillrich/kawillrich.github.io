@@ -374,7 +374,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
             monster2.status.push("Protection from Evil");
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
-            setTimeout(function ()
+            let protectionFromEvilTimer2 = setTimeout(function ()
             {
                 for (let i = 0; i < monster2.hitRoll.length; i++)
                 {
@@ -396,6 +396,8 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                         </fieldset>   
                     </div>`;
             }, 60000);
+
+            finalCharacter.activeSpellStatuses.push(protectionFromEvilTimer2)
         }
 
         let protectionFromEvilTimer = setTimeout(function ()
