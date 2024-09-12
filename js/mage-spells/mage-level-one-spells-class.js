@@ -398,7 +398,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
             }, 60000);
         }
 
-        setTimeout(function ()
+        let protectionFromEvilTimer = setTimeout(function ()
         {
             for (let i = 0; i < monster1.hitRoll.length; i++)
             {
@@ -421,6 +421,8 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                   </fieldset>   
               </div>`;
         }, 60000);
+        finalCharacter.activeSpellStatuses.push(protectionFromEvilTimer);
+
     }
 }
 
