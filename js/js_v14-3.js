@@ -3247,7 +3247,8 @@ function castSpellFromList(e, m1, m2, nextChap)
 
           if (!addInvisibilityStatus.hasClass('hide-status'))
           {
-            addInvisibilityStatus.addClass('hide-status')
+            addInvisibilityStatus.addClass('hide-status');
+            console.log(finalCharacter.activeSpellStatuses);
           }
 
 

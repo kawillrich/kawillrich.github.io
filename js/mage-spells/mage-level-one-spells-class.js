@@ -374,6 +374,7 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
             monster2.status.push("Protection from Evil");
             let monster2Status = document.querySelector("#monster-two-status");
             monster2Status.innerHTML = `<h4 id="monster-two-status">Status: ${monster2.status.join(', ')}</h4>`
+
             let protectionFromEvilTimer2 = setTimeout(function ()
             {
                 for (let i = 0; i < monster2.hitRoll.length; i++)
@@ -396,8 +397,14 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
                         </fieldset>   
                     </div>`;
             }, 60000);
+            console.log("protFromEvilTimer2", protectionFromEvilTimer2);
+            let protectionFromEvilObject2 = {
+                name: "protectionFromEvilTimer2",
+                id: protectionFromEvilTimer2
+            }
 
-            finalCharacter.activeSpellStatuses.push(protectionFromEvilTimer2)
+            console.log(protectionFromEvilObject2)
+            finalCharacter.activeSpellStatuses.push(protectionFromEvilTimer2);
         }
 
         let protectionFromEvilTimer = setTimeout(function ()
@@ -412,18 +419,28 @@ protectionFromEvil.castSpell = function (monster1, monster2, continueNextChapter
             // monster1.status.splice(removeProtFromEvilM1);
             let updateM1Status = document.querySelector("#monster-one");
             updateM1Status.innerHTML = `
-              <div class="monster" id="monster-one">
-                  <fieldset class='monster-info-module'>
-                      <legend class='monster-dashboard'>Monster 1</legend>
-                      <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
-                      <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
-                      <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
-                      <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
-                      <h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>
-                  </fieldset>   
-              </div>`;
+                <div class="monster" id="monster-one">
+                    <fieldset class='monster-info-module'>
+                        <legend class='monster-dashboard'>Monster 1</legend>
+                        <h4 id="monster-one-type">Monster Type: ${monster1.name}</h4>
+                        <h4 id="monster-one-hp">Hit Points: ${monster1.healthPoints}<progress class='monster-hp-prog-bar' max="${monster1.startingHealthPoints}" value="${monster1.healthPoints}"></progress></h4> 
+                        <h4 id="monster-one-ap">Armor Class: ${monster1.armorClass}</h4>
+                        <h4 id="monster-one-damage">Damage: ${monster1.damage}</h4>
+                        <h4 id="monster-one-status">Status: ${monster1.status.join(', ')}</h4>
+                    </fieldset>   
+                </div>`;
         }, 60000);
         finalCharacter.activeSpellStatuses.push(protectionFromEvilTimer);
+
+        let protectionFromEvilObject = {
+            name: "protectionFromEvilTimer",
+            id: protectionFromEvilTimer
+        }
+
+        console.log(protectionFromEvilObject)
+
+
+        console.log("protFromEvilTimer", protectionFromEvilTimer)
 
     }
 }
