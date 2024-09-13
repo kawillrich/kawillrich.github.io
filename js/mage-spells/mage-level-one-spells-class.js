@@ -230,6 +230,7 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
 
             finalCharacter.activeSpellStatuses.push(blindTimer2);
 
+
         } else if (attackedMonster === "Monster 2")
         {
             dialogue.innerHTML += `<p>${monster2.name} was not affected.</p>`;
