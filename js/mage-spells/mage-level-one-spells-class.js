@@ -198,6 +198,15 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             }, 30000);
 
             finalCharacter.activeSpellStatuses.push(blindTimer);
+
+            let blindTimerObject = {
+                id: blindTimer,
+                name: "Light Timer 1"
+            };
+
+            finalCharacter.activeSpellStatuses.push(blindTimerObject);
+            console.log(finalCharacter.activeSpellStatuses)
+
             //end of setTimeout
 
         } else if ((attackedMonster === "Monster 2" && monster2.healthPoints > 0 && isBlindedM2 === false) || (attackedMonster === "Monster 2" && (monster2.healthPoints > 0 && isBlindedM2 === false)))
@@ -229,7 +238,14 @@ light.castSpell = function (monster1, monster2, continueNextChapter, attackedMon
             }, 30000);
 
             finalCharacter.activeSpellStatuses.push(blindTimer2);
+            let blindTimerObject2 = {
+                id: blindTimer2,
+                name: "Light Timer 2"
+            };
 
+            finalCharacter.activeSpellStatuses.push(blindTimerObject2);
+
+            console.log(finalCharacter.activeSpellStatuses)
 
         } else if (attackedMonster === "Monster 2")
         {

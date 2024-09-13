@@ -1354,8 +1354,15 @@ export default class Character
 
       removeFightModule.innerHTML = ` `;
 
+      //CLEAR SPELL STATUSES FROM MONSTERS AND CHARACTERS
+      //1. Remove spell timers
+      //2. Hide status icon
+      //3. Clear monster statuses
+      //4. Update monster statuses
 
       finalCharacter.clearSpellTimeouts(finalCharacter.activeSpellStatuses);
+
+
       $(".container-item").addClass("hide-status");
       monster1.status = [];
       monster2.status = [];
@@ -1389,6 +1396,8 @@ export default class Character
 
   clearSpellTimeouts(spellTimeouts)
   {
+
+    //need to iterate over the spell timer object id property from mage-level spell classes
     for (let spell in spellTimeouts)
     {
       console.log(finalCharacter.activeSpellStatuses);
