@@ -1398,6 +1398,15 @@ export default class Character
   {
 
     //need to iterate over the spell timer object id property from mage-level spell classes
+    //clear the timeouts in the id property
+    for (let i = 0; i < spellTimeouts.length; i++)
+    {
+      console.log(finalCharacter.activeSpellStatuses[i].name)
+      clearTimeout(finalCharacter.activeSpellStatuses[i].id)
+    }
+
+
+
     for (let spell in spellTimeouts)
     {
       console.log(finalCharacter.activeSpellStatuses);
@@ -1405,6 +1414,9 @@ export default class Character
       clearTimeout(spellTimeouts[spell]);
       delete spellTimeouts[spell]
     };
+
+
+    //5. remove character statuses
     finalCharacter.status = [];
     finalCharacter.mirrorImages = 0;
 
