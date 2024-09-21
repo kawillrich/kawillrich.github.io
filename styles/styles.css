@@ -501,7 +501,7 @@ span#dragonwarrior {
   border-radius: 5px;
   float: left;
   outline: none;
-  cursor: url('../images/gui/cursor.png'), auto;
+  cursor: url('dungeon-crawl/images/gui/cursor.png'), auto;
   /* cursor: url('../images/gui/cursor.png'), auto; */
   transition: 0.3s;
   margin: 0px 0px 0px 10px;
