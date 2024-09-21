@@ -501,7 +501,7 @@ span#dragonwarrior {
   border-radius: 5px;
   float: left;
   outline: none;
-  cursor: url('/images/gui/cursor.png'), auto;
+  cursor: url('./images/gui/cursor.png'), auto;
   transition: 0.3s;
   margin: 0px 0px 0px 10px;
 }
@@ -546,7 +546,7 @@ span#dragonwarrior {
 
 .armor-tooltip > .character-display-info,
 .weapon-tooltip > .character-display-info {
-  cursor: url(/images/gui/cursor-hover.png), auto;
+  cursor: url(./images/gui/cursor-hover.png), auto;
 
 }
 
