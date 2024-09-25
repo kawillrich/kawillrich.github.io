@@ -1,13 +1,13 @@
 :root {
   --background: #000532;
-  --primary: #0D6E6E;
-  --accent: #f18701;
-  --text: #8282a8;
   --bg-200: #0f1842;
   --bg-300: #2a2e5c;
+  --primary: #0D6E6E;
   --primary-200: #4a9d9c;
   --primary-300: #afffff;
+  --accent: #f18701;
   --accent-200: #822d00;
+  --text: #8282a8;
   --text-200: #e0e0e0;
 }
 
