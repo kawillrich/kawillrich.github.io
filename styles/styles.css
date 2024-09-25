@@ -534,7 +534,7 @@ span#dragonwarrior {
 
 /* Create an active/current tablink class */
 .tab button.active {
-  background-color: rgb(78, 192, 139);
+  background-color: var(--primary-300);
 }
 
 /* Style the tab content */
