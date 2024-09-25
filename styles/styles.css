@@ -104,7 +104,7 @@ input[name="selected-specialty"] {
 
 .alignment-label:hover::before,
 .class-label:hover::before {
-  background-color: azure;
+  background-color: var(--btn-hover);
   cursor: url('/images/gui/cursor-hover.png'), auto;
 }
 
@@ -140,7 +140,7 @@ input[type="submit"]:hover,
 #magical-equipment-link:hover,
 #spells-link:hover,
 #treasure-link:hover {
-  background-color: azure;
+  background-color: var(--btn-hover);
 }
 
 input[type="submit"]:active,
