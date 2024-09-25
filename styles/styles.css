@@ -2,7 +2,7 @@
   --background: #000532;
   --primary: #0D6E6E;
   --accent: #f18701;
-  --text: #ffffff;
+  --text: #8282a8;
   --bg-200: #0f1842;
   --bg-300: #2a2e5c;
   --primary-200: #4a9d9c;
@@ -18,13 +18,13 @@
 }
 
 body {
-  background-color: rgb(0, 5, 50);
+  background-color: var(--background);
   margin: 0px 0px 0px 0px;
   /* width: 1400px; */
   height: 1400px;
   padding: 0px 10px 0px 10px;
   display: flex;
-  color: rgb(130, 130, 170);
+  color: var(--text);
   font-size: 22px;
   cursor: url('/images/gui/cursor.png'), auto;
 }
