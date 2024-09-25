@@ -109,7 +109,7 @@ input[name="selected-specialty"] {
 
 .alignment-radio:checked + .alignment-label::before,
 .class-radio:checked + .class-label::before {
-  background-color: rgb(178, 241, 178);
+  background-color: var(--primary-300);
 }
 
 input[type="submit"],
@@ -151,7 +151,7 @@ input[type="submit"]:active,
 #magical-equipment-link.active,
 #spells-link.active,
 #treasure-link.active {
-  background-color: rgb(178, 241, 178);
+  background-color: var(--primary-300);
 }
 
 #dialogue {
