@@ -4,11 +4,14 @@
   --bg-300: #2a2e5c;
   --primary: #0D6E6E;
   --primary-200: #4a9d9c;
+  
 
   /*button select*/
   --primary-300: #afffff;
-  --accent: #f18701;
-  --accent-200: #822d00;
+  --accent-orange: #f18701;
+  --accent-orange-200: #822d00;
+  --accent-green: #0d6e6e;
+  --accent-green-200: #afffff;
   --text: #8282a8;
   --text-200: #e0e0e0;
   --accent-200: #822d00;
