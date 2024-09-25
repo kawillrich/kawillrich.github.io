@@ -1,3 +1,17 @@
+:root {
+  --background: #000532;
+  --primary: #0D6E6E;
+  --accent: #f18701;
+  --text: #ffffff;
+  --bg-200: #0f1842;
+  --bg-300: #2a2e5c;
+  --primary-200: #4a9d9c;
+  --primary-300: #afffff;
+  --accent-200: #822d00;
+  --text-200: #e0e0e0;
+}
+
+
 * {
   font-family: "VT323";
   cursor: url('/images/gui/cursor.png'), auto;
