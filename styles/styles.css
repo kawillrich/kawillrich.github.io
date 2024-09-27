@@ -241,7 +241,7 @@ legend {
   grid-template-rows: 34px 34px 34px 34px;
   gap: 1px;
   align-content: center;
-  border: 3px solid rgb(130, 130, 168);
+  /* border: 3px solid rgb(130, 130, 168); */
 }
 
 .container-item {
@@ -264,7 +264,9 @@ legend {
 }
 
 fieldset {
+  border: none;
   border-radius: 5px;
+  background-color: #0F1842;
 }
 
 #canvas2 {
@@ -322,6 +324,7 @@ fieldset {
 .char-info-module {
   height: 325px;
   width: 248px;
+  /* background-image: url('../images/gui/pixel-background-player-tag-2.png'); */
 }
 
 /* .char-info-label {

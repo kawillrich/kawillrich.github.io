@@ -459,7 +459,7 @@ export default class Character
       let $removeMonsterOneSpellHighlight = $(".monster-one-spell-list");
       for (let i = 0; i < $removeMonsterOneSpellHighlight.length; i++)
       {
-        $removeMonsterOneSpellHighlight[i].classList.add("monster1-spell-dead");
+        $removeMonsterOneSpellHighlight[i].addClass("monster1-spell-dead");
 
       }
 
