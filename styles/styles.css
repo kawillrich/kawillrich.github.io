@@ -22,7 +22,7 @@
 
 * {
   font-family: "VT323";
-  cursor: url('/images/gui/cursor.png'), auto;
+  cursor: url('../images/gui/cursor.png'), auto;
 }
 
 body {
@@ -39,7 +39,7 @@ body {
 
 
 label {
-  cursor: url('/images/gui/cursor.png'), auto;
+  cursor: url('../images/gui/cursor.png'), auto;
 }
 
 input, button {
@@ -105,13 +105,13 @@ input[name="selected-specialty"] {
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 10 10;
   background-color: rgb(205, 210, 245);
-  cursor: url('/images/gui/cursor.png'), auto;
+  cursor: url('../images/gui/cursor.png'), auto;
 }
 
 .alignment-label:hover::before,
 .class-label:hover::before {
   background-color: var(--btn-hover);
-  cursor: url('/images/gui/cursor-hover.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
 .alignment-radio:checked + .alignment-label::before,
@@ -132,7 +132,7 @@ input[type="submit"],
   text-align: center;
   background-color: rgb(205, 210, 245);
   font-size: 22px;
-  cursor: url('/images/gui/cursor-hover.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
 input[type="submit"]:hover,
@@ -178,7 +178,7 @@ input[type="submit"]:active,
   text-align: center;
   background-color: rgb(205, 210, 245);
   font-size: 22px;
-  cursor: url('/images/gui/cursor-hover.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
 input[type="text"] {
@@ -528,7 +528,7 @@ span#dragonwarrior {
   border-radius: 5px;
   float: left;
   outline: none;
-  cursor: url('cursor.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
   /* cursor: url('../images/gui/cursor.png'), auto; */
   transition: 0.3s;
   margin: 0px 0px 0px 10px;
@@ -574,7 +574,7 @@ span#dragonwarrior {
 
 .armor-tooltip > .character-display-info,
 .weapon-tooltip > .character-display-info {
-  cursor: url(./images/gui/cursor-hover.png), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 
 }
 
@@ -705,7 +705,7 @@ span#dragonwarrior {
 .item-tooltip:hover,
 .supply-item-tooltip:hover {
   color: white;
-  cursor: url('/images/gui/cursor-hover.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
 .armor-tooltip:hover .armor-tooltiptext,
@@ -1072,7 +1072,7 @@ li.self-spell-list {
   left: 143px;
   background-color: white;
   border: 1px solid black;
-  cursor: url('/images/gui/cursor-hover.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
 ul.spell-list {
@@ -1142,11 +1142,11 @@ li.monster-two-spell-list.monster2-spell-dead:active {
 }
 
 .show-spell-list-dropdown > b {
-  cursor: url('/images/gui/cursor-hover.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
 .spell-list > span {
-  cursor: url('/images/gui/cursor-hover.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
 #phantasmalForce.phantasmalForce-hide {
