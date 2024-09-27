@@ -34,15 +34,16 @@ body {
   display: flex;
   color: var(--text);
   font-size: 22px;
-  cursor: url('/images/gui/cursor.png'), auto;
+  cursor: url(''), auto;
 }
+
 
 label {
   cursor: url('/images/gui/cursor.png'), auto;
 }
 
 input, button {
-  cursor: url('/images/gui/cursor-hover.png'), auto;
+  cursor: url('https://kawillrich.github.io/images/gui/cursor-hover.png'), auto;
 }
 
 #footer {
@@ -62,6 +63,7 @@ input, button {
   border-image-source: url(../images/gui/gui-entire-border2.png);
   border-image-slice: 75 75;
   margin: 10px auto auto auto;
+  background-color: var(--background);
 }
 
 #container-2 {
@@ -277,8 +279,9 @@ fieldset {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  background-position-x: 50px;
-  background-position-y: -50px;
+  background-position: center;
+  /* background-position-x: 50px;
+  background-position-y: -50px; */
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 2fr;
   grid-template-areas:
