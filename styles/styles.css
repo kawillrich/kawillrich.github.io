@@ -43,7 +43,7 @@ label {
 }
 
 input, button {
-  cursor: url('https://kawillrich.github.io/images/gui/cursor-hover.png'), auto;
+  cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
 #footer {
