@@ -453,9 +453,7 @@ export default class Character
       );
       removeMonsterOneAttackButton.classList.add("monster1-dead");
 
-      let removeMonsterOneSpellAttack = document.querySelector(
-        ".monster-one-spell-list"
-      );
+      let removeMonsterOneSpellAttack = document.querySelector(".monster-one-spell-list");
       removeMonsterOneSpellAttack.classList.add("monster1-dead");
 
       let removeMonsterOneSpellHighlight = document.querySelectorAll(".monster-one-spell-list");
