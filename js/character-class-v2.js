@@ -456,10 +456,10 @@ export default class Character
       let removeMonsterOneSpellAttack = document.querySelector(".monster-one-spell-list");
       removeMonsterOneSpellAttack.classList.add("monster1-dead");
 
-      let removeMonsterOneSpellHighlight = document.querySelectorAll(".monster-one-spell-list");
-      for (let i = 0; i < removeMonsterOneSpellHighlight.length; i++)
+      let $removeMonsterOneSpellHighlight = $(".monster-one-spell-list");
+      for (let i = 0; i < $removeMonsterOneSpellHighlight.length; i++)
       {
-        removeMonsterOneSpellHighlight[i].classList.add("monster1-spell-dead");
+        $removeMonsterOneSpellHighlight[i].classList.add("monster1-spell-dead");
 
       }
 
