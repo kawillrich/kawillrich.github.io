@@ -224,6 +224,7 @@ button {
 legend {
   border: 1px solid black;
   border-radius: 5px;
+  margin-left: calc(50% - 35px - 8px);
 }
 
 .player-dashboard,
