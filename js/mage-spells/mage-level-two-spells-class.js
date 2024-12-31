@@ -270,7 +270,14 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
 
 
         // let addMirrorImageStatus = document.querySelector('#char-status');
-        finalCharacter.status.push('Mirror Image')
+
+        if (!finalCharacter.status.includes("Mirror Image"))
+        {
+            finalCharacter.status.push('Mirror Image')
+            console.log(finalCharacter.status)
+        }
+
+
 
         let addMirrorImageStatus = document.querySelector(".mirror-image-status");
         if (addMirrorImageStatus.classList.contains("hide-status"))
