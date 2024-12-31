@@ -283,22 +283,21 @@ fieldset {
   -o-background-size: cover;
   background-size: cover;
   background-position: center;
+  height: 570px;
+
   /* background-position-x: 50px;
   background-position-y: -50px; */
   display: grid;
-
-
-  /* grid-template-columns: 2fr 1fr 1fr 2fr; */
-  /* grid-template-areas:
-    "playerData playerAttributes playerCanvas playerSaves"
-    "playerData playerAttributes playerStatus playerSaves"; */
-
-
     
   grid-template-areas: 
     "playerCanvas playerStats playerStats playerStats playerMenu"
     "playerData playerData playerAttributes playerAttributes playerSaves"
     "playerStatus playerStatus playerAttributes playerAttributes playerAfflictions";
+
+  /* grid-template-columns: 2fr 1fr 1fr 2fr; */
+  /* grid-template-areas:
+    "playerData playerAttributes playerCanvas playerSaves"
+    "playerData playerAttributes playerStatus playerSaves"; */
 
   /* height: 350px;   */
 }
@@ -330,8 +329,8 @@ fieldset {
 }
 
 .char-info-module {
-  height: 325px;
-  width: 248px;
+  /* height: 325px;
+  width: 248px; */
   /* background-image: url('../images/gui/pixel-background-player-tag-2.png'); */
 }
 
@@ -345,12 +344,12 @@ fieldset {
   grid-template-areas:
     "topLeft topRight middleLeft"
     "middleRight bottomLeft bottomRight";
-  grid-template-columns: repeat(2, 80px);
-  grid-template-rows: repeat(3, 98px);
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(2, 98px);
   align-items: center;
   justify-content: center;
-  height: 325px;
-  width: 100px;
+  /* height: 325px;
+  width: 100px; */
 }
 
 #char-strength {
@@ -398,13 +397,13 @@ fieldset {
 }
 
 .canvas-info-module-player {
-  height: 152px;
-  width: 103px;
+  /* height: 152px;
+  width: 103px; */
 }
 
 .saves-info-module-player {
-  height: 325px;
-  width: 250px;
+  /* height: 325px;
+  width: 250px; */
 }
 
 .saving-throw-score {
