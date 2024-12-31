@@ -413,6 +413,8 @@ web.castSpell = function (monster1, monster2, continueNextChapter, attackedMonst
 
         let isWebbedM1 = monster1.status.some((x) => x === "Web");
         let isWebbedM2 = monster2.status.some((x) => x === "Web");
+        console.log(isWebbedM1)
+        console.log(isWebbedM2)
 
         //checking if M1 is alive -
 
