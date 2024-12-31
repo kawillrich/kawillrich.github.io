@@ -286,40 +286,47 @@ fieldset {
   /* background-position-x: 50px;
   background-position-y: -50px; */
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 2fr;
-  grid-template-areas:
+
+
+  /* grid-template-columns: 2fr 1fr 1fr 2fr; */
+  /* grid-template-areas:
     "playerData playerAttributes playerCanvas playerSaves"
-    "playerData playerAttributes playerStatus playerSaves";
-  height: 350px;
-  /* width: 800px; */
-  /* grid-template-rows: 2fr 2fr 1fr 1fr;
-  grid-template-columns: 2fr 2fr 1fr 2fr;   */
+    "playerData playerAttributes playerStatus playerSaves"; */
+
+
+    
+  grid-template-areas: 
+    "playerCanvas playerStats playerStats playerStats playerMenu"
+    "playerData playerData playerAttributes playerAttributes playerSaves"
+    "playerStatus playerStatus playerAttributes playerAttributes playerAfflictions";
+
+  /* height: 350px;   */
 }
 
 #character-stats {
   grid-area: playerData;
-  width: 200px;
+  /* width: 200px; */
 }
 
 #character-attributes {
   grid-area: playerAttributes;
-  width: 200px;
+  /* width: 200px; */
 }
 
 #character-canvas {
   grid-area: playerCanvas;
-  width: 100px;
+  /* width: 100px; */
 }
 
 #character-statuses {
   grid-area: playerStatus;
-  width: 140px;
+  /* width: 140px; */
   
 }
 
 #character-saving-throws {
   grid-area: playerSaves;
-  width: 200px;
+  /* width: 200px; */
 }
 
 .char-info-module {
