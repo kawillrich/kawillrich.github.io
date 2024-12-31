@@ -292,7 +292,7 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
 
         let removeMirrorImageStatus = document.querySelector(".mirror-image-status");
 
-        if (removeMirrorImageStatus.classList.contains('hide-status'))
+        if (!removeMirrorImageStatus.classList.contains('hide-status'))
         {
             removeMirrorImageStatus.classList.toggle('hide-status');
         }
