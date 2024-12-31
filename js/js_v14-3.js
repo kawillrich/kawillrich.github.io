@@ -2140,7 +2140,7 @@ function submitAllMageSpells()
       finalCharacter.specialty.characterLevel.specialtySkills[
         "Second Level Mage Spells"
       ].push(newSpell);
-      newSpell.numberOfUses = 1;
+      newSpell.numberOfUses = 4;
     }
 
     if (
