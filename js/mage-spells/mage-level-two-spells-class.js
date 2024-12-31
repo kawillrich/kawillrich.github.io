@@ -445,7 +445,6 @@ web.castSpell = function (monster1, monster2, continueNextChapter, attackedMonst
                 </div>`;
                 console.log('Web removed m1')
                 console.log(monster1.status)
-                console.log(monster2.status)
 
             }, 30000);
 
@@ -476,7 +475,9 @@ web.castSpell = function (monster1, monster2, continueNextChapter, attackedMonst
                         <h4 id="monster-two-status">Status: ${monster2.status}</h4>
                     </fieldset>   
                 </div>`;
-                console.log('Web removed m2')
+                console.log('Web removed m2');
+                console.log(monster2.status)
+
             }, 30000);
 
             finalCharacter.activeSpellStatuses.push(webTimer2);
