@@ -309,6 +309,7 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
         // <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
         //     }</span></h4>`;
         console.log('Mirror Image removed from player')
+        console.log("Statuses: ", finalCharacter.status)
     }, 30000);
 
     finalCharacter.activeSpellStatuses.push(mirrorImageTimer);
