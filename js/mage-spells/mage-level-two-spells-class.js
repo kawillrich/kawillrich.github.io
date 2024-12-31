@@ -287,7 +287,11 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
         finalCharacter.status.splice(removeMirrorImage); //removing Mirror Image after function call
 
         let removeMirrorImageStatus = document.querySelector(".mirror-image-status");
-        removeMirrorImageStatus.classList.toggle('hide-status')
+
+        if (removeMirrorImageStatus.classList.contains('hide-status'))
+        {
+            removeMirrorImageStatus.classList.toggle('hide-status');
+        }
 
         // let updateCharacterStatus = document.querySelector("#char-status");
         // updateCharacterStatus.innerHTML = `
