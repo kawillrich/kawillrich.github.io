@@ -290,9 +290,9 @@ fieldset {
   display: grid;
     
   grid-template-areas: 
-    "playerCanvas playerStats playerStats playerStats playerMenu"
-    "playerData playerData playerAttributes playerAttributes playerSaves"
-    "playerStatus playerStatus playerAttributes playerAttributes playerAfflictions";
+    "playerCanvas playerStats  playerStats      playerStats      playerStats       playerMenu"
+    "playerData   playerData   playerAttributes playerAttributes playerSaves       playerSaves"
+    "playerStatus playerStatus playerAttributes playerAttributes playerAfflictions playerAfflictions";
 
   /* grid-template-columns: 2fr 1fr 1fr 2fr; */
   /* grid-template-areas:
@@ -329,6 +329,7 @@ fieldset {
 }
 
 .char-info-module {
+  padding-top: 0;
   /* height: 325px;
   width: 248px; */
   /* background-image: url('../images/gui/pixel-background-player-tag-2.png'); */
@@ -340,14 +341,15 @@ fieldset {
 } */
 
 .char-info-module-attributes {
+  padding-top: 0px;
   display: grid;
   grid-template-areas:
-    "topLeft topRight middleLeft"
+    "topLeft     topRight   middleLeft"
     "middleRight bottomLeft bottomRight";
-  grid-template-columns: repeat(3, 80px);
-  grid-template-rows: repeat(2, 98px);
+  /* grid-template-columns: repeat(3, auto); */
+  grid-template-rows: 151px; 
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   /* height: 325px;
   width: 100px; */
 }
