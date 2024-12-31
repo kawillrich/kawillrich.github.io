@@ -1171,7 +1171,7 @@ function startGame()
             <img class="container-item protection-from-evil-status hide-status"></img>
             <img src="/images/gui/statuses/shield-status.png" class="container-item shield-status hide-status"></img>
             <img src="/images/gui/statuses/invisibility-status.png" class="container-item invisibility-status hide-status"></img>
-            <img  src="/images/gui/statuses/mirror-image-status.png" class="container-item mirror-image-status hide-status"></img>
+            <img src="/images/gui/statuses/mirror-image-status.png" class="container-item mirror-image-status hide-status"></img>
             <img class="container-item detect-invisibility-status hide-status"></img>
             <img class="container-item fly-status hide-status"></img>
             <img class="container-item haste-status hide-status"></img>

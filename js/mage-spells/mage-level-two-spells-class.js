@@ -167,60 +167,62 @@ invisibility.castSpell = function (monster1, monster2, continueNextChapter, atta
 {
     console.log('Casting Invisibility')
     if (this.numberOfUses <= 0)
-        {
-            let dialogue = document.querySelector('#dialogue');
-            dialogue.innerHTML = `<p>You try to cast Invisibility, but the words won't come to your mind.</p>`;
-            toggleShowSpellList();
-    
-        } else if (finalCharacter.status.includes("Invisible")) {
-            dialogue.innerHTML = `<p>You are already invisible.</p>`;
-            toggleShowSpellList();
-        } else
-        {
-            this.numberOfUses -= 1;
-    
-            if (this.numberOfUses <= 0)
-            {
-                this.numberOfUses = 0;
-            }
-            toggleShowSpellList();
-    
-            finalCharacter.greyOutAttackButtons(monster1, monster2);
-            let dialogue = document.querySelector('#dialogue');
-            dialogue.innerHTML += `<p>You cast Invisibility, which makes you invisible.</p>`;
-    
-            finalCharacter.status.push("Invisible");
-            console.log(finalCharacter.status);    
-                           
-            dialogue.innerHTML += `<p> You are invisible and will remain that way unless you attack or cast a spell.</p>`;
-            
-            let addInvisibilityStatus = document.querySelector(".invisibility-status");
-            
-            
-            addInvisibilityStatus.classList.toggle('hide-status')
-            
-            
-            // let playerStatus = document.querySelector("#char-status");
-            // playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
-            // <span class="character-display-info">${finalCharacter.status}</span>
-            // </h4>`
-    
-                let invisibilityTimer = setTimeout(function ()
-                {
-                    finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
-                    if (!addInvisibilityStatus.classList.contains("hide-status")) {
-                        addInvisibilityStatus.classList.toggle('hide-status');
-                    }
+    {
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML = `<p>You try to cast Invisibility, but the words won't come to your mind.</p>`;
+        toggleShowSpellList();
 
-                    // playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
-                    //     <span class="character-display-info">${finalCharacter.status}</span>
-                    //     </h4>`
-                    console.log('Invisibility removed from player')
-                }, 30000);
-    
-                finalCharacter.activeSpellStatuses.push(invisibilityTimer);
-                //end of setTimeout           
+    } else if (finalCharacter.status.includes("Invisible"))
+    {
+        dialogue.innerHTML = `<p>You are already invisible.</p>`;
+        toggleShowSpellList();
+    } else
+    {
+        this.numberOfUses -= 1;
+
+        if (this.numberOfUses <= 0)
+        {
+            this.numberOfUses = 0;
         }
+        toggleShowSpellList();
+
+        finalCharacter.greyOutAttackButtons(monster1, monster2);
+        let dialogue = document.querySelector('#dialogue');
+        dialogue.innerHTML += `<p>You cast Invisibility, which makes you invisible.</p>`;
+
+        finalCharacter.status.push("Invisible");
+        console.log(finalCharacter.status);
+
+        dialogue.innerHTML += `<p> You are invisible and will remain that way unless you attack or cast a spell.</p>`;
+
+        let addInvisibilityStatus = document.querySelector(".invisibility-status");
+
+
+        addInvisibilityStatus.classList.toggle('hide-status')
+
+
+        // let playerStatus = document.querySelector("#char-status");
+        // playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
+        // <span class="character-display-info">${finalCharacter.status}</span>
+        // </h4>`
+
+        let invisibilityTimer = setTimeout(function ()
+        {
+            finalCharacter.status.splice(finalCharacter.status.indexOf("Invisible"), 1);
+            if (!addInvisibilityStatus.classList.contains("hide-status"))
+            {
+                addInvisibilityStatus.classList.toggle('hide-status');
+            }
+
+            // playerStatus.innerHTML = `<h4 id="char-status" class="char-info-label">Status: 
+            //     <span class="character-display-info">${finalCharacter.status}</span>
+            //     </h4>`
+            console.log('Invisibility removed from player')
+        }, 30000);
+
+        finalCharacter.activeSpellStatuses.push(invisibilityTimer);
+        //end of setTimeout           
+    }
 }
 
 esp.castSpell = function ()
@@ -265,11 +267,11 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
         finalCharacter.greyOutAttackButtons(monster1, monster2, finalCharacter.mirrorImages);
         let dialogue = document.querySelector('#dialogue');
         dialogue.innerHTML = `<p>You cast Mirror Image, which which created ${finalCharacter.mirrorImages} more image(s) of you.</p>`;
-        
-        
+
+
         // let addMirrorImageStatus = document.querySelector('#char-status');
         finalCharacter.status.push('Mirror Image')
-        
+
         let addMirrorImageStatus = document.querySelector(".mirror-image-status");
         addMirrorImageStatus.classList.toggle('hide-status')
 
@@ -283,10 +285,10 @@ mirrorImage.castSpell = function (monster1, monster2, continueNextChapter, attac
     {
         let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
         finalCharacter.status.splice(removeMirrorImage); //removing Mirror Image after function call
-        
+
         let removeMirrorImageStatus = document.querySelector(".mirror-image-status");
         removeMirrorImageStatus.classList.toggle('hide-status')
-        
+
         // let updateCharacterStatus = document.querySelector("#char-status");
         // updateCharacterStatus.innerHTML = `
         // <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
@@ -318,38 +320,38 @@ phantasmalForce.castSpell = function (monster1, monster2, continueNextChapter, a
 
 
         if (attackedMonster === "Monster 1")
-            {
-                let phantasmalForceScreen = document.querySelector('#phantasmalForce');
-                console.log(phantasmalForceScreen)
-                phantasmalForceScreen.classList.toggle('phantasmalForce-hide');
-                let cancelPhantasmalForce = document.querySelector('[name="ph-cancel"]');
-                cancelPhantasmalForce.addEventListener('click', function() { phantasmalForceScreen.classList.toggle('phantasmalForce-hide')}, false)
-                console.log(cancelPhantasmalForce);
-                console.log(phantasmalForceScreen.classList)
-                toggleShowSpellList();
+        {
+            let phantasmalForceScreen = document.querySelector('#phantasmalForce');
+            console.log(phantasmalForceScreen)
+            phantasmalForceScreen.classList.toggle('phantasmalForce-hide');
+            let cancelPhantasmalForce = document.querySelector('[name="ph-cancel"]');
+            cancelPhantasmalForce.addEventListener('click', function () { phantasmalForceScreen.classList.toggle('phantasmalForce-hide') }, false)
+            console.log(cancelPhantasmalForce);
+            console.log(phantasmalForceScreen.classList)
+            toggleShowSpellList();
 
 
 
 
-                finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
-            } else if (attackedMonster === "Monster 2")
-            {
-                toggleShowSpellList();
+            finalCharacter.spell2AttackMonster1(monster1, monster2, continueNextChapter, this.damage, this.name);
+        } else if (attackedMonster === "Monster 2")
+        {
+            toggleShowSpellList();
 
 
 
 
-                finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
-            }
-        
+            finalCharacter.spell2AttackMonster2(monster1, monster2, continueNextChapter, this.damage, this.name);
+        }
+
         //add random monsters/items in an array to pick which one attacks?
-            //Troll lasts 1d4 turns
-            //monsters attack the troll first, if it's hit, it disappears
-            //Magic Missile
-            //Fireball
-            //Lightning Bolt 
-            //Boulder
-            //if it's a monster, how long does it last?
+        //Troll lasts 1d4 turns
+        //monsters attack the troll first, if it's hit, it disappears
+        //Magic Missile
+        //Fireball
+        //Lightning Bolt 
+        //Boulder
+        //if it's a monster, how long does it last?
         //when does the phantasmal force disappear?
         //Monster is AC 9 and disappears when hit
         //if mage moves, takes any damage, or fails saving throws, it disappears
