@@ -343,9 +343,8 @@ fieldset {
 .char-info-module-attributes {
   display: grid;
   grid-template-areas:
-    "topLeft topRight"
-    "middleLeft middleRight"
-    "bottomLeft bottomRight";
+    "topLeft topRight middleLeft"
+    "middleRight bottomLeft bottomRight";
   grid-template-columns: repeat(2, 80px);
   grid-template-rows: repeat(3, 98px);
   align-items: center;
