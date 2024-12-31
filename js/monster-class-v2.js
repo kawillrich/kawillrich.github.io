@@ -282,7 +282,7 @@ export default class Monster
             let removeMirrorImageIcon = document.querySelector('.mirror-image-status');
             if (!removeMirrorImageIcon.classList.contains("hide-status"))
             {
-              addInvisibilityStatus.classList.toggle('hide-status');
+              removeMirrorImageIcon.classList.toggle('hide-status');
             }
 
             let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
