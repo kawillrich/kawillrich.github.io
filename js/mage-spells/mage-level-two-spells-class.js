@@ -413,7 +413,7 @@ web.castSpell = function (monster1, monster2, continueNextChapter, attackedMonst
 
         let isWebbedM1 = monster1.status.some((x) => x === "Web");
         let isWebbedM2 = monster2.status.some((x) => x === "Web");
-        console.log(isWebbedM1)
+        console.table(isWebbedM1, monster2.status, monster1.status, isWebbedM2)
         console.log(isWebbedM2)
 
         //checking if M1 is alive -
@@ -444,6 +444,9 @@ web.castSpell = function (monster1, monster2, continueNextChapter, attackedMonst
                     </fieldset>   
                 </div>`;
                 console.log('Web removed m1')
+                console.log(monster1.status)
+                console.log(monster2.status)
+
             }, 30000);
 
             finalCharacter.activeSpellStatuses.push(webTimer);
