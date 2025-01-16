@@ -302,6 +302,20 @@ fieldset {
   /* height: 350px;   */
 }
 
+
+
+#player-afflictions {
+  grid-area: playerAfflictions;
+}
+
+#player-menu {
+  grid-area: playerMenu;
+}
+
+#player-stats {
+  grid-area: playerStats;
+}
+
 #character-stats {
   grid-area: playerData;
   /* width: 200px; */
