@@ -430,16 +430,9 @@ export default class Character
         
         <div id="character-afflictions">
           <fieldset class = "afflictions-info-module-player">
-            
-          
-          
-          
-          
             <legend class="afflictions-dashboard">Afflictions</legend>
-
-
-
-          </fieldset>
+            
+            </fieldset>
         </div>
         `
     console.log(finalCharacter)

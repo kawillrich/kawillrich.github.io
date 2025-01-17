@@ -422,6 +422,11 @@ fieldset {
   width: 250px; */
 }
 
+.afflictions-info-module-player {
+  /* height: 325px;
+  width: 250px; */
+}
+
 .saving-throw-score {
   float: right;
   text-align: right;
