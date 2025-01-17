@@ -255,9 +255,9 @@ fieldset {
   background-repeat: no-repeat;  
   background-size: cover;
   background-position: center;
-  height: 570px;
+  height: 600px;
   display: grid; 
-  grid-auto-columns: 150px;
+  grid-auto-columns: 147px;
   grid-auto-rows: 200px;
   gap: 5px 8px;
   
@@ -410,6 +410,10 @@ fieldset {
   visibility: hidden;
 }
 /*Magic user spell picker list*/
+
+.saving-throws {
+  padding: 0px 0px 0px 10px;
+}
 
 .mage-spell-container,
 .cleric-spell-container {
