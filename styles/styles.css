@@ -233,41 +233,16 @@ legend {
   background-color: rgb(160, 219, 255);
 }
 
-.status-info-module-player {
-  height: 146px;
-  width: 100px;
-  padding: auto;
-  display: grid;
-  grid-template-columns: 33px 33px 33px;
-  grid-template-rows: 34px 34px 34px 34px;
-  gap: 1px;
-  align-content: center;
-  /* border: 3px solid rgb(130, 130, 168); */
-}
 
-.container-item {
-  /* transform: scale(2); */
-  /* margin: 5px 10px 10px 0px; */
-  border: none;
-  height: 100%;
-  width: 100%;
-  image-rendering: pixelated;
-  border-radius: 10px;
-}
-
-.status-image {
-  image-rendering: pixelated;
-  transform: scale(2);
-}
-
-.hide-status{
-  visibility: hidden;
-}
 
 fieldset {
+  padding: 0px 0px 0px 0px;
+  height: 100%;
   border: none;
   border-radius: 5px;
   background-color: #0F1842;
+  /* height: 100%;
+  width: 100%; */
 }
 
 #canvas2 {
@@ -277,22 +252,20 @@ fieldset {
 
 #character-info {
   background-image: url("../images/black-dragon2.svg");
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-repeat: no-repeat;  
   background-size: cover;
   background-position: center;
   height: 570px;
-
-  /* background-position-x: 50px;
-  background-position-y: -50px; */
-  display: grid;
-    
-  grid-template-areas: 
+  display: grid; 
+  grid-auto-columns: 150px;
+  grid-auto-rows: 200px;
+  gap: 5px 8px;
+  
+  /* grid-template-areas: 
     "playerCanvas playerStats  playerStats      playerStats      playerStats       playerMenu"
     "playerData   playerData   playerAttributes playerAttributes playerSaves       playerSaves"
-    "playerStatus playerStatus playerAttributes playerAttributes playerAfflictions playerAfflictions";
+    "playerStatus playerStatus playerAttributes playerAttributes playerAfflictions playerAfflictions"; */
+  /* grid-gap: 5px; */
 
   /* grid-template-columns: 2fr 1fr 1fr 2fr; */
   /* grid-template-areas:
@@ -302,46 +275,58 @@ fieldset {
   /* height: 350px;   */
 }
 
+#character-info > div {
+  /* padding: 10px 5px; */
+}
 
 
-#character-afflictions {
-  grid-area: playerAfflictions;
+
+#character-canvas {
+  grid-area: 1/1/span 1/span 1;
+  /* grid-area: playerCanvas; */
+}
+
+
+#character-hitpoints {
+  grid-area: 1/ 2 / span 1 / span 4;
+  /* grid-area: playerStats;   */
 }
 
 #character-menu {
-  grid-area: playerMenu;
-}
-
-#character-hitpoints {
-  grid-area: playerStats;
+  grid-area: 1/6/span 1/span 1;
+  /* grid-area: playerMenu; */
 }
 
 #character-stats {
-  grid-area: playerData;
-  /* width: 200px; */
+  grid-area: 2 / 1 /span 1 / span 2;
+  /* grid-area: playerData; */
 }
+
+
+
+
 
 #character-attributes {
-  grid-area: playerAttributes;
-  /* width: 200px; */
+  grid-area: 2 / 3 / span 2 / span 2;
+  /* grid-area: playerAttributes; */
 }
 
-#character-canvas {
-  grid-area: playerCanvas;
-  /* width: 100px; */
-}
+
 
 #character-statuses {
-  grid-area: playerStatus;
-  /* width: 140px; */
-  
+  grid-area: 3 / 1 / span 1 / span 2;
+  /* grid-area: playerStatus; */
 }
 
-#character-saving-throws {
-  grid-area: playerSaves;
-  /* width: 200px; */
+#character-saving-throws {  
+  grid-area: 2 / 5 / span 1 / span 2;
+  /* grid-area: playerSaves; */
 }
 
+#character-afflictions {
+  grid-area: 3 / 5 / span 1 / span 2;
+  /* grid-area: playerAfflictions; */
+}
 .char-info-module {
   padding-top: 0;
   /* height: 325px;
@@ -349,10 +334,10 @@ fieldset {
   /* background-image: url('../images/gui/pixel-background-player-tag-2.png'); */
 }
 
-/* .char-info-label {
-  width: 260px;
+.char-info-label {
+  padding: 0px 0px 0px 10px;
 
-} */
+}
 
 .char-info-module-attributes {
   padding-top: 0px;
@@ -361,7 +346,8 @@ fieldset {
     "topLeft     topRight   middleLeft"
     "middleRight bottomLeft bottomRight";
   /* grid-template-columns: repeat(3, auto); */
-  grid-template-rows: 151px; 
+  grid-template-rows: 151px;
+  grid-template-columns: 50px; 
   align-items: center;
   justify-content: space-evenly;
   /* height: 325px;
@@ -392,6 +378,37 @@ fieldset {
   grid-area: bottomRight;
 }
 
+
+.status-info-module-player {
+  /* height: 146px;
+  width: 100px; */
+  padding: auto;
+  display: grid;
+  grid-template-columns: 33px 33px 33px;
+  grid-template-rows: 34px 34px 34px 34px;
+  gap: 1px;
+  align-content: center;
+  /* border: 3px solid rgb(130, 130, 168); */
+}
+
+.container-item {
+  /* transform: scale(2); */
+  /* margin: 5px 10px 10px 0px; */
+  /* border: none;
+  height: 100%;
+  width: 100%; */
+  /* image-rendering: pixelated; */
+  /* border-radius: 10px; */
+}
+
+.status-image {
+  image-rendering: pixelated;
+  transform: scale(2);
+}
+
+.hide-status{
+  visibility: hidden;
+}
 /*Magic user spell picker list*/
 
 .mage-spell-container,

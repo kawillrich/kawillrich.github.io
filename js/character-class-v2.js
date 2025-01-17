@@ -445,7 +445,6 @@ export default class Character
         <div id="character-hitpoints">
           <fieldset class = "hitpoints-info-module-player">
             <legend class="hitpoints-dashboard">Hitpoints</legend>
-            
             </fieldset>
         </div>
         `
