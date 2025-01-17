@@ -225,12 +225,14 @@ legend {
   /* border: 1px solid black; */
   border-radius: 5px;
   margin-left: calc(50% - 35px - 8px);
+  background-color: var(--accent-green-200);
+  color: var(--primary)
 }
 
 .player-dashboard,
 .saves-dashboard,
 .statuses-dashboard {
-  background-color: rgb(160, 219, 255);
+  background-color: var(--accent-green-200);
 }
 
 
@@ -457,7 +459,6 @@ fieldset {
 
 
 .canvas-dashboard {
-  background-color: rgb(139, 226, 138);
 }
 
 .monster-dashboard {
