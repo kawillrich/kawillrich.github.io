@@ -364,21 +364,18 @@ fieldset {
   padding-top: 15px;
   padding-left: 30px;
   grid-area: 1 / 1 / span 1 / span 1;
-  /* grid-area: topLeft; */
 }
 
 #char-intelligence {
   padding-left: 30px;
 
   grid-area: 2 / 1 / span 1 /span 1;
-  /* grid-area: topRight; */
 }
 
 #char-wisdom {
   padding-left: 30px;
 
   grid-area: 3 / 1 / span 1 / span 1;
-  /* grid-area: middleLeft; */
 }
 
 #char-dexterity {
