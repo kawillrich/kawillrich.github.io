@@ -1161,6 +1161,22 @@ function startGame() {
             
             </fieldset>
         </div>
+
+        <div id="character-menu">
+          <fieldset class = "menu-info-module-player">
+            <legend class="menu-dashboard">Menu</legend>
+            
+            </fieldset>
+        </div>
+
+        <div id="character-hitpoints">
+          <fieldset class = "hitpoints-info-module-player">
+            <legend class="hitpoints-dashboard">Hitpoints</legend>
+            
+            </fieldset>
+        </div>
+
+
         `;
   console.log(finalCharacter);
 
