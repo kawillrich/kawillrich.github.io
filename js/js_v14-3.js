@@ -429,8 +429,8 @@ export function render() {
     spriteHeight,
     0,
     0,
-    spriteWidth * 1.5,
-    spriteHeight * 1.5
+    spriteWidth * 2,
+    spriteHeight * 2
   );
   requestAnimationFrame(render);
 }
