@@ -304,15 +304,15 @@ fieldset {
 
 
 
-#player-afflictions {
+#character-afflictions {
   grid-area: playerAfflictions;
 }
 
-#player-menu {
+#character-menu {
   grid-area: playerMenu;
 }
 
-#player-stats {
+#character-hitpoints {
   grid-area: playerStats;
 }
 

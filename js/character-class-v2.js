@@ -426,7 +426,21 @@ export default class Character
               <h4 class="saving-throws">Dragon Breath: <span class="saving-throw-score">${finalCharacter.specialty.characterLevel.level.savingThrows["Dragon Breath"]}</span></h4>
               <h4 class="saving-throws">Spells or Magic Staff: <span class="saving-throw-score">${finalCharacter.specialty.characterLevel.level.savingThrows["Spells or Magic Staff"]}</span></h4>
           </fieldset>
-        </div>             
+        </div>
+        
+        <div id="character-afflictions">
+          <fieldset class = "afflictions-info-module-player">
+            
+          
+          
+          
+          
+            <legend class="afflictions-dashboard">Afflictions</legend>
+
+
+
+          </fieldset>
+        </div>
         `
     console.log(finalCharacter)
 
