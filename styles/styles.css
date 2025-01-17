@@ -361,7 +361,7 @@ fieldset {
 }
 
 #char-strength {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-left: 30px;
   grid-area: 1 / 1 / span 1 / span 1;
   /* grid-area: topLeft; */
@@ -382,7 +382,7 @@ fieldset {
 }
 
 #char-dexterity {
-  padding-top: 10px;
+  padding-top: 15px;
   grid-area: 1 / 2 / span 1 / span 1;
   /* grid-area: middleRight; */
 }
