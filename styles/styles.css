@@ -932,7 +932,9 @@ span#dragonwarrior {
 }
 
 .circle-dex {
-  stroke: url(#gradientColor-dex);
+  stroke: var(--accent-orange);
+  stroke-linecap: round;
+  /* stroke: url(#gradientColor-dex); */
   /* stroke-dasharray: 150; */
 }
 
@@ -958,6 +960,25 @@ span#dragonwarrior {
   position: relative;
   stroke-dasharray: 150;
   /* stroke-dashoffset: 0; */
+  transform: rotate(-230deg);
+  transform-origin: center;
+}
+
+
+
+.circle-dex-background {
+  
+  stroke: var(--accent-200);
+  stroke-linecap: round;
+  fill: none;
+  /* stroke: url(#gradientColor); */
+  stroke-width: 10px;
+  position: absolute;
+  display: inline;
+  text-align: center;
+
+  stroke-dasharray: 150;
+  stroke-dashoffset: 5;
   transform: rotate(-230deg);
   transform-origin: center;
 }

@@ -1037,18 +1037,14 @@ function startGame() {
                   finalCharacter.attributes[3].score
                 }</span>
                 <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
-                <defs>
-                  <linearGradient id="gradientColor-dex" y2="130%">
-                  <stop offset="10%" stop-color="blue"/>
-                  <stop offset="30%" stop-color="green"/>
-                  <stop offset="40%" stop-color="yellow"/>
-                  <stop offset="80%" stop-color="red"/>
-                  <stop offset="100%" stop-color="maroon"/>                  
-            </linearGradient>
-                </defs>
-                <circle class="circle-dex" cx="50" cy="50" r="30" stroke-dashoffset="${dexterity.dashArrayAdj()}"/>
-              </svg>
+                
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">    
+                  <circle class="circle-dex-background" cx="50" cy="50" r="30"/>
+
+                  <circle class="circle-dex" cx="50" cy="50" r="30" stroke-dashoffset="${dexterity.dashArrayAdj()}"/>
+
+                </svg>                
+
               </h4>
               <h4 id='char-constitution' class='char-info-label'>
                 <span class='character-display-attributes-con'>${finalCharacter.attributes[4].name.slice(
