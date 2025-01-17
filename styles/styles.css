@@ -248,6 +248,8 @@ fieldset {
 }
 
 #canvas2 {
+    display: block;
+    margin: 20% auto auto 20%;
   /* height: 300px;
   width: 240px; */
 }
@@ -438,6 +440,7 @@ fieldset {
 .canvas-info-module-player {
   /* height: 152px;
   width: 103px; */
+  
 }
 
 .saves-info-module-player {
