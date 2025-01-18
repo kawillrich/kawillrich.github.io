@@ -19,11 +19,11 @@
   --btn-hover: azure;
 
   /*hit-points guage*/
-  --strokeDashArray: 260;
-  --strokeDashArrayBackground: 260;
-  --strokeDashOffset: 50;
+  --strokeDashArray: 240;
+  --strokeDashArrayBackground: 240;
+  --strokeDashOffset: 90;
   --strokeDashOffsetBackground: 0;
-  --imageRotate: 120deg;
+  --imageRotate: 132deg;
 }
 
 
@@ -878,7 +878,7 @@ span#dragonwarrior {
   position: relative;
   stroke-dasharray: var(--strokeDashArray);
   stroke-dashoffset: var(--strokeDashOffset); 
-  transform: rotate(var(--imageRotate));
+  transform: rotate(150deg);
   transform-origin: center;
 }
 
@@ -892,21 +892,21 @@ span#dragonwarrior {
   stroke-width: 15px;
   position: relative;
   stroke-dasharray: var(--strokeDashArrayBackground);
-  stroke-dashoffset: var(--strokeDashOffest); 
-  transform: rotate(var(--imageRotate));
+  stroke-dashoffset: -50; 
+  transform: rotate(150deg);
   transform-origin: center;  
 }
 
 .circle-ac {
   cx: 50%;
   cy: 50%;
-  r: 65px;
+  r: 50px;
   fill: none;
   stroke: #787DE1;
   stroke-linecap: round;
   stroke-width: 15px;
   position: relative;
-  stroke-dasharray: 335;
+  stroke-dasharray: 240;
   stroke-dashoffset: 0; 
   transform: rotate(var(--imageRotate));
   transform-origin: center;
