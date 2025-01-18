@@ -361,28 +361,25 @@ fieldset {
 }
 
 #char-strength {
-  padding-top: 10px;
+  padding-top: 15px;
   padding-left: 30px;
   grid-area: 1 / 1 / span 1 / span 1;
-  /* grid-area: topLeft; */
 }
 
 #char-intelligence {
   padding-left: 30px;
 
   grid-area: 2 / 1 / span 1 /span 1;
-  /* grid-area: topRight; */
 }
 
 #char-wisdom {
   padding-left: 30px;
 
   grid-area: 3 / 1 / span 1 / span 1;
-  /* grid-area: middleLeft; */
 }
 
 #char-dexterity {
-  padding-top: 10px;
+  padding-top: 15px;
   grid-area: 1 / 2 / span 1 / span 1;
   /* grid-area: middleRight; */
 }
@@ -935,7 +932,9 @@ span#dragonwarrior {
 }
 
 .circle-dex {
-  stroke: url(#gradientColor-dex);
+  stroke: var(--accent-orange);
+  stroke-linecap: round;
+  /* stroke: url(#gradientColor-dex); */
   /* stroke-dasharray: 150; */
 }
 
@@ -961,6 +960,25 @@ span#dragonwarrior {
   position: relative;
   stroke-dasharray: 150;
   /* stroke-dashoffset: 0; */
+  transform: rotate(-230deg);
+  transform-origin: center;
+}
+
+
+
+.circle-dex-background {
+  
+  stroke: var(--accent-200);
+  stroke-linecap: round;
+  fill: none;
+  /* stroke: url(#gradientColor); */
+  stroke-width: 10px;
+  position: absolute;
+  display: inline;
+  text-align: center;
+
+  stroke-dasharray: 150;
+  stroke-dashoffset: 5;
   transform: rotate(-230deg);
   transform-origin: center;
 }
