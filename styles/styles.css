@@ -916,35 +916,15 @@ span#dragonwarrior {
   top: -35px;
 }
 
-.circle-str {
-  stroke: url(#gradientColor-str);
-  /* stroke-dasharray: 150; */
-}
-
-.circle-int {
-  stroke: url(#gradientColor-int);
-  /* stroke-dasharray: 150; */
-}
-
-.circle-wis {
-  stroke: url(#gradientColor-wis);
-  /* stroke-dasharray: 150; */
-}
-
-.circle-dex {
+.circle-str,
+.circle-int,
+.circle-wis,
+.circle-dex,
+.circle-cha,
+.circle-con {
   stroke: var(--accent-orange);
   stroke-linecap: round;
   /* stroke: url(#gradientColor-dex); */
-  /* stroke-dasharray: 150; */
-}
-
-.circle-con {
-  stroke: url(#gradientColor-con);
-  /* stroke-dasharray: 150; */
-}
-
-.circle-cha {
-  stroke: url(#gradientColor-cha);
   /* stroke-dasharray: 150; */
 }
 
@@ -965,8 +945,12 @@ span#dragonwarrior {
 }
 
 
-
-.circle-dex-background {
+.circle-str-background,
+.circle-int-background,
+.circle-wis-background,
+.circle-dex-background,
+.circle-con-background,
+.circle-cha-background {
   
   stroke: var(--accent-200);
   stroke-linecap: round;

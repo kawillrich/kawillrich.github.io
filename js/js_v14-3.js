@@ -971,17 +971,10 @@ function startGame() {
                 }</span>
                 <span class='character-display-attributes-scores-adj-str'>${strengthPlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
-                  <defs>
-                    <linearGradient id="gradientColor-str" y2="130%">
-                      <stop offset="10%" stop-color="blue"/>
-                      <stop offset="30%" stop-color="green"/>
-                      <stop offset="40%" stop-color="yellow"/>
-                      <stop offset="80%" stop-color="red"/>
-                      <stop offset="100%" stop-color="maroon"/>                  
-                    </linearGradient>
-                  </defs>
+                  <circle class="circle-str-background" cx="50" cy="50" r="30"/>
                   <circle class="circle-str" cx="50" cy="50" r="30" stroke-dashoffset="${strength.dashArrayAdj()}"/>
-                </svg>
+                  
+                  </svg>
 
               </h4>
                 <h4 id='char-intelligence' class='char-info-label'>
@@ -994,16 +987,9 @@ function startGame() {
                 }</span>
                 <span class='character-display-attributes-scores-adj-int'>${intelligencePlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
-                  <defs>
-                    <linearGradient id="gradientColor-int" y2="130%">
-                    <stop offset="10%" stop-color="blue"/>
-                    <stop offset="30%" stop-color="green"/>
-                    <stop offset="40%" stop-color="yellow"/>
-                    <stop offset="80%" stop-color="red"/>
-                    <stop offset="100%" stop-color="maroon"/>                  
-                  </linearGradient>
-                  </defs>
+                  <circle class="circle-int-background" cx="50" cy="50" r="30"/>
                   <circle class="circle-int" cx="50" cy="50" r="30" stroke-dashoffset="${intelligence.dashArrayAdj()}"/>
+                  
                 </svg>
               </h4>
               <h4 id='char-wisdom' class='char-info-label'>
@@ -1016,17 +1002,10 @@ function startGame() {
                 }</span>
                 <span class='character-display-attributes-scores-adj-wis'>${wisdomPlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
-                <defs>
-                  <linearGradient id="gradientColor-wis" y2="130%">
-                  <stop offset="10%" stop-color="blue"/>
-                  <stop offset="30%" stop-color="green"/>
-                  <stop offset="40%" stop-color="yellow"/>
-                  <stop offset="80%" stop-color="red"/>
-                  <stop offset="100%" stop-color="maroon"/>                  
-            </linearGradient>
-                </defs>
+                <circle class="circle-wis-background" cx="50" cy="50" r="30"/>
                 <circle class="circle-wis" cx="50" cy="50" r="30" stroke-dashoffset="${wisdom.dashArrayAdj()}"/>
-              </svg>
+                
+                </svg>
               </h4>
               <h4 id='char-dexterity' class='char-info-label'>
                 <span class='character-display-attributes-dex'>${finalCharacter.attributes[3].name.slice(
@@ -1038,10 +1017,8 @@ function startGame() {
                 }</span>
                 <span class='character-display-attributes-scores-adj-dex'>${dexterityPlusAdjustment}</span>
                 
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">    
-                  
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">                  
                   <circle class="circle-dex-background" cx="50" cy="50" r="30"/>
-
                   <circle class="circle-dex" cx="50" cy="50" r="30" stroke-dashoffset="${dexterity.dashArrayAdj()}"/>
                 </svg>                
 
@@ -1055,16 +1032,8 @@ function startGame() {
                   finalCharacter.attributes[4].score
                 }</span>
                 <span class='character-display-attributes-scores-adj-con'>${constitutionPlusAdjustment}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
-                <defs>
-                  <linearGradient id="gradientColor-con" y2="130%">
-                  <stop offset="10%" stop-color="blue"/>
-                  <stop offset="30%" stop-color="green"/>
-                  <stop offset="40%" stop-color="yellow"/>
-                  <stop offset="80%" stop-color="red"/>
-                  <stop offset="100%" stop-color="maroon"/>                  
-            </linearGradient>
-                </defs>
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">                
+                <circle class="circle-con-background" cx="50" cy="50" r="30"/>
                 <circle class="circle-con" cx="50" cy="50" r="30" stroke-dashoffset="${constitution.dashArrayAdj()}"/>
               </svg>
               </h4>
@@ -1078,17 +1047,12 @@ function startGame() {
                 }</span>
                 <span class='character-display-attributes-scores-adj-cha'>${charismaPlusAdjustment}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100" height="100">
-                <defs>
-                  <linearGradient id="gradientColor-cha" y2="130%">
-                  <stop offset="10%" stop-color="blue"/>
-                  <stop offset="30%" stop-color="green"/>
-                  <stop offset="40%" stop-color="yellow"/>
-                  <stop offset="80%" stop-color="red"/>
-                  <stop offset="100%" stop-color="maroon"/>                  
-          </linearGradient>
-                </defs>
+                
+                               
+                <circle class="circle-cha-background" cx="50" cy="50" r="30"/>
                 <circle class="circle-cha" cx="50" cy="50" r="30" stroke-dashoffset="${charisma.dashArrayAdj()}"/>
-              </svg>
+                
+                </svg>
               </h4>
           </fieldset>
         </div>        
