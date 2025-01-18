@@ -862,7 +862,7 @@ span#dragonwarrior {
 .circle-hitpoints {
   cx: 50%;
   cy: 50%;
-  r: 70px;
+  r: 65px;
   fill: none;
   stroke: gold;
   stroke-linecap: round;
@@ -877,7 +877,7 @@ span#dragonwarrior {
 .circle-hitpoints-background {
   cx: 50%;
   cy: 50%;
-  r: 70px;
+  r: 65px;
   fill: none;
   stroke-linecap: round;  
   stroke: darkorange;
@@ -886,9 +886,7 @@ span#dragonwarrior {
   stroke-dasharray: var(--strokeDashArrayBackground);
   stroke-dashoffset: var(--strokeDashOffest); 
   transform: rotate(var(--imageRotate));
-  transform-origin: center;
-
-  
+  transform-origin: center;  
 }
 
 #char-strength,
