@@ -856,7 +856,15 @@ span#dragonwarrior {
 
 .hp-grid-container {
   display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-evenly;
   
+}
+
+.hitpoints-guage > svg,
+.ac-guage > svg, 
+.xp-guage > svg {
+  margin-top: 15px;
 }
 
 .circle-hitpoints {
@@ -864,7 +872,7 @@ span#dragonwarrior {
   cy: 50%;
   r: 65px;
   fill: none;
-  stroke: gold;
+  stroke: #FEEB78;
   stroke-linecap: round;
   stroke-width: 15px;
   position: relative;
@@ -880,7 +888,7 @@ span#dragonwarrior {
   r: 65px;
   fill: none;
   stroke-linecap: round;  
-  stroke: darkorange;
+  stroke: #BF8200;
   stroke-width: 15px;
   position: relative;
   stroke-dasharray: var(--strokeDashArrayBackground);
@@ -889,6 +897,52 @@ span#dragonwarrior {
   transform-origin: center;  
 }
 
+.circle-ac {
+  cx: 50%;
+  cy: 50%;
+  r: 65px;
+  fill: none;
+  stroke: #787DE1;
+  stroke-linecap: round;
+  stroke-width: 15px;
+  position: relative;
+  stroke-dasharray: 335;
+  stroke-dashoffset: 0; 
+  transform: rotate(var(--imageRotate));
+  transform-origin: center;
+}
+
+
+
+.circle-xp {
+  cx: 50%;
+  cy: 50%;
+  r: 50px;
+  fill: none;
+  stroke: #C8B8DB;
+  stroke-linecap: round;
+  stroke-width: 15px;
+  position: relative;
+  stroke-dasharray: var(--strokeDashArray);
+  stroke-dashoffset: var(--strokeDashOffset); 
+  transform: rotate(var(--imageRotate));
+  transform-origin: center;
+}
+
+.circle-xp-background {
+  cx: 50%;
+  cy: 50%;
+  r: 50px;
+  fill: none;
+  stroke-linecap: round;  
+  stroke: #912F56;
+  stroke-width: 15px;
+  position: relative;
+  stroke-dasharray: var(--strokeDashArrayBackground);
+  stroke-dashoffset: var(--strokeDashOffest); 
+  transform: rotate(var(--imageRotate));
+  transform-origin: center;  
+}
 #char-strength,
 #char-intelligence,
 #char-wisdom,

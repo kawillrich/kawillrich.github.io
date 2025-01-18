@@ -1132,12 +1132,27 @@ function startGame() {
         <div id="character-hitpoints">
           <fieldset class = "hitpoints-info-module-player hp-grid-container">
             <legend class="hitpoints-dashboard">Hitpoints</legend>
+            <div class="ac-guage">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
+                <circle class="circle-ac-background"/>
+                <circle class="circle-ac"/>
+              </svg>
+            </div>
+
             <div class="hitpoints-guage">
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
                 <circle class="circle-hitpoints-background"/>
                 <circle class="circle-hitpoints"/>
               </svg>
             </div>
+
+            <div class="xp-guage">
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
+                <circle class="circle-xp-background"/>
+                <circle class="circle-xp"/>
+              </svg>
+            </div>
+            
             </fieldset>
         </div>
 
