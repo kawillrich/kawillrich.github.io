@@ -933,8 +933,6 @@ span#dragonwarrior {
 }
 
 .hitpoint-guage-text {
-  grid-column: 1 / 1;
-  grid-row: 1 / 3;
   font-size: 45px;
   /* position: absolute; */
   left: 490px;

@@ -1140,6 +1140,13 @@ function startGame() {
             </div>
 
             <div class="hitpoints-guage">
+              <div class="hitpoint-guage-value-current">${
+                finalCharacter.specialty.healthPoints +
+                finalCharacter.attributes[4].adjustment
+              }</div>  
+              <div class="hitpoint-guage-value-total">150</div>                            
+
+              <div class="hitpoint-guage-text">HP</div>
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
                 <circle class="circle-hitpoints-background"/>
                 <circle class="circle-hitpoints"/>
