@@ -1,4 +1,4 @@
-export default PlayerModule = 
+export default playerModule = 
 `<div id='character-stats'>
           <fieldset class='char-info-module'>
             <legend class='player-dashboard'>Player Data</legend>
