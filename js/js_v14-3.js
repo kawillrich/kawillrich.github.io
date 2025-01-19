@@ -1144,7 +1144,10 @@ function startGame() {
                 finalCharacter.specialty.healthPoints +
                 finalCharacter.attributes[4].adjustment
               }</div>  
-              <div class="hitpoint-guage-value-total">150</div>                            
+              <div class="hitpoint-guage-value-total">${
+                finalCharacter.specialty.maxHealthPoints +
+                finalCharacter.attributes[4].adjustment
+              }</div>                            
 
               
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
