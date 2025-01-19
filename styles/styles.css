@@ -934,15 +934,14 @@ span#dragonwarrior {
   align-self: flex-end;
 }
 
-.hitpoint-guage-text {
+/* .hitpoint-guage-text {
   grid-column: 1 / 1;
   grid-row: 1 / 3;
   font-size: 45px;  
-  /* left: 490px;
-  top: 200px;   */
+ 
   justify-self: center;
   align-self: flex-start;
-}
+} */
 
 .circle-ac {
   cx: 50%;
