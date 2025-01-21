@@ -302,6 +302,10 @@ export default class Monster
           finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
           alert(`The ${thisMonster.name} attacks you and causes ${monsterRandomDamage} points of damage.`);
 
+          if (finalCharacter.specialty.healthPoints <= 0) {
+            finalCharacter.specialty.healthPoints = 0;  //prevents negative HP
+          }
+
           let updatedCharHP = document.querySelector("#char-hp");
           updatedCharHP.innerHTML = `
               Hit Points: 
@@ -316,7 +320,14 @@ export default class Monster
           updateCharacterHPGuage.textContent = `${finalCharacter.specialty.healthPoints}`;
 
           let characterHPGuageDashoffset = document.querySelector(".circle-hitpoints");
-          characterHPGuageDashoffset.style.strokeDashoffset = 90 + ((320 / finalCharacter.specialty.maxHealthPoints) * (finalCharacter.specialty.maxHealthPoints - finalCharacter.specialty.healthPoints));
+
+          let characterHPGuageRatio = 90 + ((320 / finalCharacter.specialty.maxHealthPoints) * (finalCharacter.specialty.maxHealthPoints - finalCharacter.specialty.healthPoints));
+
+          if (characterHPGuageRatio >= 410) {
+            characterHPGuageRatio = 410;
+          }
+
+          characterHPGuageDashoffset.style.strokeDashoffset = characterHPGuageRatio;
 
           console.log(characterHPGuageDashoffset)
               
