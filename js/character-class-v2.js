@@ -562,9 +562,12 @@ export default class Character
       );
       removeMonsterTwoAttackButton.classList.add("monster1-dead");
       
-      
-      
-      
+      let removeMonsterTwoSpellAttack = document.querySelector(".monster-two-spell-list");
+
+      if (removeMonsterTwoSpellAttack) {
+        removeMonsterTwoSpellAttack.classList.add("monster1-dead");
+      }
+
       // let removeMonsterTwoSpellAttack = document.querySelector(
       //   ".spell2-monster-two"
       // );
