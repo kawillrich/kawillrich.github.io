@@ -314,6 +314,11 @@ export default class Monster
 
           let updateCharacterHPGuage = document.querySelector(".hitpoint-guage-value-current");
           updateCharacterHPGuage.textContent = `${finalCharacter.specialty.healthPoints}`;
+
+          let characterHPGuageDashoffset = document.querySelector(".circle-hitpoints");
+          characterHPGuageDashoffset.style.strokeDashoffset = 90 + (320 / finalCharacter.specialty.maxHealthPoints);
+
+          console.log(characterHPGuageDashoffset)
               
           let clearDialogue = document.querySelector("#dialogue");
           clearDialogue.textContent = ``;
