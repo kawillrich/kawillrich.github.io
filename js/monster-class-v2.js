@@ -316,7 +316,7 @@ export default class Monster
           updateCharacterHPGuage.textContent = `${finalCharacter.specialty.healthPoints}`;
 
           let characterHPGuageDashoffset = document.querySelector(".circle-hitpoints");
-          characterHPGuageDashoffset.style.strokeDashoffset = 90 + (320 / finalCharacter.specialty.maxHealthPoints);
+          characterHPGuageDashoffset.style.strokeDashoffset = 90 + ((320 / finalCharacter.specialty.maxHealthPoints) * (finalCharacter.specialty.maxHealthPoints - finalCharacter.specialty.healthPoints));
 
           console.log(characterHPGuageDashoffset)
               

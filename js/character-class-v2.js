@@ -540,19 +540,19 @@ export default class Character
       let removeMonsterOneAttackButton = document.querySelector(
         ".attack-monster-one"
       );
-      removeMonsterOneAttackButton.classList.add("monster1-dead");
-
+      removeMonsterOneAttackButton.classList.add("monster1-dead");      
+      
       let removeMonsterOneSpellAttack = document.querySelector(".monster-one-spell-list");
-      removeMonsterOneSpellAttack.classList.add("monster1-dead");
+
+      if (removeMonsterOneSpellAttack) {
+        removeMonsterOneSpellAttack.classList.add("monster1-dead");
+      }
 
       let $removeMonsterOneSpellHighlight = $(".monster-one-spell-list");
       for (let i = 0; i < $removeMonsterOneSpellHighlight.length; i++)
       {
         $removeMonsterOneSpellHighlight[i].addClass("monster1-spell-dead");
-
       }
-
-
     }
 
     if (monsterTwo.healthPoints <= 0)
@@ -561,6 +561,10 @@ export default class Character
         ".attack-monster-two"
       );
       removeMonsterTwoAttackButton.classList.add("monster1-dead");
+      
+      
+      
+      
       // let removeMonsterTwoSpellAttack = document.querySelector(
       //   ".spell2-monster-two"
       // );
