@@ -312,6 +312,9 @@ export default class Monster
                
               `;
 
+          let updateCharacterHPGuage = document.querySelector(".hitpoint-guage-value-current");
+          updateCharacterHPGuage.textContent = `${finalCharacter.specialty.healthPoints}`;
+              
           let clearDialogue = document.querySelector("#dialogue");
           clearDialogue.textContent = ``;
 

@@ -872,9 +872,13 @@ span#dragonwarrior {
   stroke-linecap: round;
   stroke-width: 15px;
   position: relative;
+  /*295 is full*/
+  stroke-dasharray: 410;
+  stroke-dashoffset:  90; 
+/* 
   stroke-dasharray: var(--strokeDashArray);
-  stroke-dashoffset: var(--strokeDashOffset); 
-  transform: rotate(150deg);
+  stroke-dashoffset: var(--strokeDashOffset);  */
+  transform: rotate(130deg);
   transform-origin: center;
 }
 
@@ -887,9 +891,9 @@ span#dragonwarrior {
   stroke: #BF8200;
   stroke-width: 15px;
   position: relative;
-  stroke-dasharray: var(--strokeDashArrayBackground);
-  stroke-dashoffset: -50; 
-  transform: rotate(150deg);
+  stroke-dasharray: 410;
+  stroke-dashoffset: 90; 
+  transform: rotate(130deg);
   transform-origin: center;  
 }
 
