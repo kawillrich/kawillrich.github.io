@@ -1238,44 +1238,44 @@ export default class Character
     };
   };
 
-  spell1Heal()
-  {
-    let healedCharHP = document.querySelector("#char-hp");
-    finalCharacter.specialty.healthPoints +=
-      finalCharacter.specialty.spell1.healing;
-    if (
-      finalCharacter.specialty.healthPoints >=
-      finalCharacter.specialty.maxHealthPoints
-    )
-    {
-      finalCharacter.specialty.healthPoints =
-        finalCharacter.specialty.maxHealthPoints;
-    }
-    healedCharHP.innerHTML = `
-                    Hit Points: 
-                    <span id='hpBar'>                    
-                      <progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>
-                      <span class="character-hp-bar">${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span>
-                    </span>
+  // spell1Heal()
+  // {
+  //   let healedCharHP = document.querySelector("#char-hp");
+  //   finalCharacter.specialty.healthPoints +=
+  //     finalCharacter.specialty.spell1.healing;
+  //   if (
+  //     finalCharacter.specialty.healthPoints >=
+  //     finalCharacter.specialty.maxHealthPoints
+  //   )
+  //   {
+  //     finalCharacter.specialty.healthPoints =
+  //       finalCharacter.specialty.maxHealthPoints;
+  //   }
+  //   healedCharHP.innerHTML = `
+  //                   Hit Points: 
+  //                   <span id='hpBar'>                    
+  //                     <progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>
+  //                     <span class="character-hp-bar">${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span>
+  //                   </span>
                   
-        `;
+  //       `;
 
-    let attackDialogue = document.querySelector("#dialogue");
-    attackDialogue.innerHTML = `
-        <p>You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} hit points.</p>`;
+  //   let attackDialogue = document.querySelector("#dialogue");
+  //   attackDialogue.innerHTML = `
+  //       <p>You cast ${finalCharacter.specialty.spell1.name} and heal ${finalCharacter.specialty.spell1.healing} hit points.</p>`;
 
-    let castedHealSpell = document.querySelector(".spell1-heal");
+  //   let castedHealSpell = document.querySelector(".spell1-heal");
 
-    //WORKS, BUT NEED TO IMPLEMENT ALERT WINDOW WHEN MONSTERS ATTACK AND NOT RESET FIGHT MODULE
-    castedHealSpell.style.visibility = "hidden";
-    setTimeout(function ()
-    {
-      castedHealSpell.style.visibility = "visible";
-    }, 60000);
+  //   //WORKS, BUT NEED TO IMPLEMENT ALERT WINDOW WHEN MONSTERS ATTACK AND NOT RESET FIGHT MODULE
+  //   castedHealSpell.style.visibility = "hidden";
+  //   setTimeout(function ()
+  //   {
+  //     castedHealSpell.style.visibility = "visible";
+  //   }, 60000);
 
-    console.log(finalCharacter.specialty.maxHealthPoints, finalCharacter.specialty.healthPoints)
+  //   console.log(finalCharacter.specialty.maxHealthPoints, finalCharacter.specialty.healthPoints)
 
-  }
+  // }
 
   //***TRYING TO CREATE AREA ATTACK SPELL
 
