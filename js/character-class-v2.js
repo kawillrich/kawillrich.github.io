@@ -467,7 +467,14 @@ export default class Character
         <div id="character-hitpoints">
           <fieldset class = "hitpoints-info-module-player hp-grid-container">
             <legend class="hitpoints-dashboard">Hitpoints</legend>
+            
             <div class="ac-guage">
+              <div class="ac-guage-value">${finalCharacter.armorClass} 
+              </div>  
+              
+              <div class="ac-guage-text">AC
+              </div>
+            
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
                 <circle class="circle-ac-background"/>
                 <circle class="circle-ac"/>
