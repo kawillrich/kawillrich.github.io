@@ -969,7 +969,7 @@ span#dragonwarrior {
   stroke-width: 15px;
   position: relative;
   stroke-dasharray: 380;
-  stroke-dashoffset: 140; 
+  stroke-dashoffset: 380; 
   transform: rotate(var(--imageRotate));
   transform-origin: center;
 }

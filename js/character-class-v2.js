@@ -545,11 +545,16 @@ export default class Character
         removeMonsterOneSpellAttack.classList.add("monster1-dead");
       }
 
-      let $removeMonsterOneSpellHighlight = $(".monster-one-spell-list");
-      for (let i = 0; i < $removeMonsterOneSpellHighlight.length; i++)
-      {
-        $removeMonsterOneSpellHighlight[i].addClass("monster1-spell-dead");
-      }
+      // let $removeMonsterOneSpellHighlight = $(".monster-one-spell-list");
+
+      // if ($removeMonsterOneSpellHighlight.length > 0) {
+      //   for (let i = 0; i < $removeMonsterOneSpellHighlight.length; i++)
+      //     {
+      //       $removeMonsterOneSpellHighlight[i].addClass("monster1-spell-dead");
+      //     }
+      // }
+
+      
     }
 
     if (monsterTwo.healthPoints <= 0)
@@ -1440,6 +1445,15 @@ export default class Character
       let characterExperienceGuage = document.querySelector(".xp-guage-value-current");
       characterExperienceGuage.textContent = finalCharacter.specialty.characterExperience;
 
+      let characterXPGuage = document.querySelector(".circle-xp");
+
+      let characterXPGuageDashoffset = 140 + ((240 / finalCharacter.specialty.characterLevel.level.maxXP) * (finalCharacter.specialty.characterExperience));
+
+      if (characterXPGuageDashoffset <= 140) {
+        characterXPGuageDashoffset = 140;
+      }
+
+      characterXPGuage.style.strokeDashoffset = characterXPGuageDashoffset;
 
       finalCharacter.checkLevelUp();
 
