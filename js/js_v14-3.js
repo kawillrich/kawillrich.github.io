@@ -902,24 +902,7 @@ function startGame() {
               }</span></h4>
 
 
-              <h4 id='char-hp' class='char-info-label'>Hit Points: 
-                    <span id='hpBar'>                    
-                      <progress id='hp-prog-bar' max="${
-                        finalCharacter.specialty.maxHealthPoints +
-                        finalCharacter.attributes[4].adjustment
-                      }" value="${
-    finalCharacter.specialty.healthPoints +
-    finalCharacter.attributes[4].adjustment
-  }"></progress>
-                      <span class="character-hp-bar">${
-                        finalCharacter.specialty.healthPoints +
-                        finalCharacter.attributes[4].adjustment
-                      }/${
-    finalCharacter.specialty.maxHealthPoints +
-    finalCharacter.attributes[4].adjustment
-  }</span>
-                    </span>
-                  </h4>  
+             
                 
               <h4 id='char-armor' class='char-info-label'>Armor: 
                 <span class="armor-tooltip">
@@ -3251,15 +3234,15 @@ function regenerateHP(hp, maxHP) {
       completeHealing();
     } else {
       hp += 1;
-      let regeneratedHP = document.getElementById("char-hp");
-      regeneratedHP.innerHTML = `
-        Hit Points: <span class="character-display-info"></span><span id='hpBar'><progress id='hp-prog-bar' max="${
-          finalCharacter.specialty.maxHealthPoints
-          // + finalCharacter.attributes[4].adjustment
-        }" value="${hp}"></progress>${hp}/${
-        finalCharacter.specialty.maxHealthPoints
-      }</span></span>
-                `;
+      // let regeneratedHP = document.getElementById("char-hp");
+      // regeneratedHP.innerHTML = `
+      //   Hit Points: <span class="character-display-info"></span><span id='hpBar'><progress id='hp-prog-bar' max="${
+      //     finalCharacter.specialty.maxHealthPoints
+      //     // + finalCharacter.attributes[4].adjustment
+      //   }" value="${hp}"></progress>${hp}/${
+      //   finalCharacter.specialty.maxHealthPoints
+      // }</span></span>
+      //           `;
 
       let updateCharacterHPGuage = document.querySelector(".hitpoint-guage-value-current");
       updateCharacterHPGuage.textContent = hp;
@@ -3496,10 +3479,10 @@ function continueChapterFourThreeThree() {
       //completeHealing();
     } else {
       hp += 1;
-      let regeneratedHP = document.getElementById("char-hp");
-      regeneratedHP.innerHTML = `
-                Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${hp}"></progress>${hp}/${finalCharacter.specialty.maxHealthPoints}</span></span>
-                `;
+      // let regeneratedHP = document.getElementById("char-hp");
+      // regeneratedHP.innerHTML = `
+      //           Hit Points: <span class="character-display-info">${hp}</span><span id='hpBar'><progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${hp}"></progress>${hp}/${finalCharacter.specialty.maxHealthPoints}</span></span>
+      //           `;
 
       let updateCharacterHPGuage = document.querySelector(".hitpoint-guage-value-current");
       updateCharacterHPGuage.textContent = hp;

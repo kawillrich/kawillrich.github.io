@@ -306,15 +306,15 @@ export default class Monster
             finalCharacter.specialty.healthPoints = 0;  //prevents negative HP
           }
 
-          let updatedCharHP = document.querySelector("#char-hp");
-          updatedCharHP.innerHTML = `
-              Hit Points: 
-                <span id='hpBar'>                    
-                  <progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>
-                  <span class="character-hp-bar">${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span>
-                </span>
+          // let updatedCharHP = document.querySelector("#char-hp");
+          // updatedCharHP.innerHTML = `
+          //     Hit Points: 
+          //       <span id='hpBar'>                    
+          //         <progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>
+          //         <span class="character-hp-bar">${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span>
+          //       </span>
                
-              `;
+          //     `;
 
           let updateCharacterHPGuage = document.querySelector(".hitpoint-guage-value-current");
           updateCharacterHPGuage.textContent = `${finalCharacter.specialty.healthPoints}`;
