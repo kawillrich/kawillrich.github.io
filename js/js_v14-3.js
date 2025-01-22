@@ -3264,6 +3264,16 @@ function regenerateHP(hp, maxHP) {
       let updateCharacterHPGuage = document.querySelector(".hitpoint-guage-value-current");
       updateCharacterHPGuage.textContent = hp;
 
+      let characterHPGuageDashoffset = document.querySelector(".circle-hitpoints");
+
+      let characterHPGuageRatio = 90 + ((320 / finalCharacter.specialty.maxHealthPoints) * (finalCharacter.specialty.maxHealthPoints - hp));
+
+      if (characterHPGuageRatio <= 90) {
+        characterHPGuageRatio = 90;
+      }
+
+      characterHPGuageDashoffset.style.strokeDashoffset = characterHPGuageRatio;
+
       let regenerationDialogue = document.getElementById("dialogue");
       regenerationDialogue.innerHTML = `
                 <p>Resting...</p>
