@@ -1147,6 +1147,12 @@ function startGame() {
             </div>
 
             <div class="xp-guage">
+            <div class="xp-guage-value-current">${
+                finalCharacter.specialty.characterExperience
+              }</div>  
+              <div class="xp-guage-value-total">${
+                finalCharacter.specialty.characterLevel.level.maxXP
+              }</div>
               <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
                 <circle class="circle-xp-background"/>
                 <circle class="circle-xp"/>
