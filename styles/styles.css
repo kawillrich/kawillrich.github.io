@@ -968,8 +968,8 @@ span#dragonwarrior {
   stroke-linecap: round;
   stroke-width: 15px;
   position: relative;
-  stroke-dasharray: 240;
-  stroke-dashoffset: 90; 
+  stroke-dasharray: 380;
+  stroke-dashoffset: 140; 
   transform: rotate(var(--imageRotate));
   transform-origin: center;
 }

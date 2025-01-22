@@ -1437,6 +1437,10 @@ export default class Character
           <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
           `;
 
+      let characterExperienceGuage = document.querySelector(".xp-guage-value-current");
+      characterExperienceGuage.textContent = finalCharacter.specialty.characterExperience;
+
+
       finalCharacter.checkLevelUp();
 
       defeatedMonsters.innerHTML = `
