@@ -3261,6 +3261,9 @@ function regenerateHP(hp, maxHP) {
       }</span></span>
                 `;
 
+      let updateCharacterHPGuage = document.querySelector(".hitpoint-guage-value-current");
+      updateCharacterHPGuage.textContent = hp;
+
       let regenerationDialogue = document.getElementById("dialogue");
       regenerationDialogue.innerHTML = `
                 <p>Resting...</p>
