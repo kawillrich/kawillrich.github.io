@@ -899,7 +899,8 @@ span#dragonwarrior {
 
 
 
-.hitpoints-guage {
+.hitpoints-guage,
+.ac-guage {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
@@ -914,7 +915,8 @@ span#dragonwarrior {
   grid-row: 1 / 3;
 }
 
-.hitpoint-guage-value-current {
+.hitpoint-guage-value-current,
+.ac-guage-value {
   grid-column: 1 / 1;
   grid-row: 1 / 3;
   font-size: 50px;
@@ -926,7 +928,8 @@ span#dragonwarrior {
   align-self: center;
 }
 
-.hitpoint-guage-value-total {
+.hitpoint-guage-value-total,
+.ac-guage-text {
   grid-column: 1 / 1;
   grid-row: 1 / 3;
   font-size: 40px;

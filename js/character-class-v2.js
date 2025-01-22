@@ -177,6 +177,7 @@ export default class Character
       this.activeSpellStatuses = [];
     this.status = [];
     this.mirrorImages = 0;
+    this.armorClass = 9;
   }
 
   //updates & initiates Character creation
