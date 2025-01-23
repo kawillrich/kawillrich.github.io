@@ -15,9 +15,8 @@ import { normalMan } from "./character-class-levels/normalMan-level-class.js";
 // import { noSpecialty, warrior, highMage, dragonWarrior, elf, dwarf, halfling, cleric, thief } from './specialty-class-v2.js';
 // import Character from './character-class-v2.js';
 
-export default class Monster
-{
-  constructor (
+export default class Monster {
+  constructor(
     name,
     hitDice,
     healthPoints,
@@ -34,8 +33,7 @@ export default class Monster
     saveAs
 
 
-  )
-  {
+  ) {
     this.name = name;
     this.hitDice = hitDice;
     this.healthPoints = healthPoints;
@@ -55,50 +53,41 @@ export default class Monster
   }
 
   //auto generating HD number of hitpoints for monsters
-  createHitPoints()
-  {
+  createHitPoints() {
     if (
       this.healthPoints === 0 ||
       this.healthPoints === " " ||
       this.hitDice === 0 ||
       this.hitDice === " "
-    )
-    {
+    ) {
       return;
-    } else
-    {
-      if (this.hitDice[0] < 1)
-      {
+    } else {
+      if (this.hitDice[0] < 1) {
         let newHPArray = [];
         let finalHPArray = [];
-        for (let i = 0; i < this.hitDice[0]; i++)
-        {
+        for (let i = 0; i < this.hitDice[0]; i++) {
           let updatedHP = Math.ceil(Math.random(1) * 4);
           newHPArray.unshift(updatedHP);
         }
         const reducer = (previousValue, currentValue) =>
           previousValue + currentValue;
         finalHPArray = newHPArray.reduce(reducer) + this.hitDice[1];
-        if (finalHPArray < 1)
-        {
+        if (finalHPArray < 1) {
           finalHPArray = 1;
         }
         this.healthPoints = finalHPArray;
         this.startingHealthPoints = finalHPArray;
-      } else
-      {
+      } else {
         let newHPArray = [];
         let finalHPArray = [];
-        for (let i = 0; i < this.hitDice[0]; i++)
-        {
+        for (let i = 0; i < this.hitDice[0]; i++) {
           let updatedHP = Math.ceil(Math.random(1) * 8);
           newHPArray.unshift(updatedHP);
         }
         const reducer = (previousValue, currentValue) =>
           previousValue + currentValue;
         finalHPArray = newHPArray.reduce(reducer) + this.hitDice[1];
-        if (finalHPArray < 1)
-        {
+        if (finalHPArray < 1) {
           finalHPArray = 1;
         }
         this.healthPoints = finalHPArray;
@@ -107,147 +96,121 @@ export default class Monster
     }
   }
 
-  monsterAttack(monsterOne, monsterTwo, images)
-  {
+  monsterAttack(monsterOne, monsterTwo, images) {
     alert(`Monster(s) Turn!`);
     //Determining what monster attacks first
 
-    if (monsterTwo.healthPoints <= 0)
-    {
+    if (monsterTwo.healthPoints <= 0) {
       let attackingMonster = monsterOne;
       monsterOne.monstersTurn(attackingMonster, monsterTwo, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo, images);
     }
-    else if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints > 0)
-    {
+    else if (monsterOne.healthPoints <= 0 && monsterTwo.healthPoints > 0) {
       let attackingMonster = monsterTwo;
       monsterTwo.monstersTurn(attackingMonster, monsterOne, attackingMonster.name, attackingMonster.damage, attackingMonster.healthPoints, attackingMonster.hitRoll, finalCharacter, monsterOne, monsterTwo, images);
     }
-    else
-    {
+    else {
       let randomMonsterAttack = Math.ceil(Math.random() * 2);
-      if (randomMonsterAttack === 2)
-      {
+      if (randomMonsterAttack === 2) {
         let affectedMonster = monsterTwo;
         monsterTwo.monstersTurn(affectedMonster, monsterOne, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter, monsterOne, monsterTwo, images);
-      } else if (randomMonsterAttack <= 1)
-      {
+      } else if (randomMonsterAttack <= 1) {
         let affectedMonster = monsterOne;
         monsterOne.monstersTurn(affectedMonster, monsterTwo, affectedMonster.name, affectedMonster.damage, affectedMonster.healthPoints, affectedMonster.hitRoll, finalCharacter, monsterOne, monsterTwo, images);
       }
     }
   }
 
-  monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter, monsterOne, monsterTwo, images)
-  {
+  monstersTurn(thisMonster, otherMonster, monsterName, monsterDamage, monsterHealthPoints, monsterHitRoll, finalCharacter, monsterOne, monsterTwo, images) {
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
     let charArmorClass = finalCharacter.armorClass;
 
     //CHECKING MONSTER STATUSES
 
     //asleep:
-    if (thisMonster.status.includes("Sleep"))
-    {
+    if (thisMonster.status.includes("Sleep")) {
       this.sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
       //webbed
-    } else if (thisMonster.status.includes("Web"))
-    {
+    } else if (thisMonster.status.includes("Web")) {
       this.webSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
       //charmed
-    } else if (thisMonster.status.includes("Charmed"))
-    {
+    } else if (thisMonster.status.includes("Charmed")) {
       this.charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
       //blinded
-    } else if (thisMonster.status.includes("Blind"))
-    {
+    } else if (thisMonster.status.includes("Blind")) {
       this.lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
       //phantasmal force
-    } else if (thisMonster.status.includes("Phantasmal Force"))
-    {
+    } else if (thisMonster.status.includes("Phantasmal Force")) {
       this.phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
       //visibility impaired
-    } else if (finalCharacter.status.includes("Invisible")) 
-    {
+    } else if (finalCharacter.status.includes("Invisible")) {
       this.invisibilitySpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
 
 
       //no statuses
-    } else
-    {
+    } else {
       this.checkMonsterHitRoll(thisMonster, otherMonster, monstersHitRollValue, charArmorClass, thisMonster.hitRoll, monsterOne, monsterTwo, images);
 
       //actual attack causing damage - maybe bypass depending on statuses
 
-      if (finalCharacter.specialty.healthPoints <= 0)
-      {
+      if (finalCharacter.specialty.healthPoints <= 0) {
         alert("You died!");
         window.location.reload(false);
-      } else
-      {
+      } else {
         this.revertToAttackButtons();
         confirmAttackMonsters(monsterOne, monsterTwo);
       };
     }
   }
 
-  webSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-  {
+  webSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo) {
     $("#dialogue").text(`${thisMonster.name} is stuck in the web and cannot attack.`);
     this.revertToAttackButtons();
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
-  sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-  {
+  sleepSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo) {
     $("#dialogue").text(`${thisMonster.name} is asleep and cannot attack.`);
     this.revertToAttackButtons();
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
-  charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-  {
-    if (otherMonster.healthPoints <= 0)
-    {
+  charmSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo) {
+    if (otherMonster.healthPoints <= 0) {
       alert(`${thisMonster.name} is charmed and does not attack you.`)
       $("#dialogue").text(`${thisMonster.name} is charmed and does not attack you.`);
       this.revertToAttackButtons();
       confirmAttackMonsters(monsterOne, monsterTwo);
-    } else if (otherMonster.healthPoints > 0)
-    {
+    } else if (otherMonster.healthPoints > 0) {
       alert(`${thisMonster.name} is charmed and attacks the ${otherMonster.name}!`)
       $("#dialogue").text(`${thisMonster.name} is charmed and attacks the ${otherMonster.name}!`);
       this.attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
     }
   }
 
-  lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-  {
+  lightSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo) {
     $("#dialogue").text(`${thisMonster.name} is blinded and cannot attack.`);
     this.revertToAttackButtons();
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
-  invisibilitySpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-  {
+  invisibilitySpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo) {
     $("#dialogue").text(`${thisMonster.name} cannot see you and does not attack.`);
     this.revertToAttackButtons();
     confirmAttackMonsters(monsterOne, monsterTwo);
   }
 
-  phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo)
-  {
+  phantasmalForceSpellReaction(thisMonster, otherMonster, monsterOne, monsterTwo) {
     console.log('phantasmal force spell reaction')
   }
 
-  revertToAttackButtons()
-  {
+  revertToAttackButtons() {
     let showAttackButtons = document.querySelectorAll(".attack");
-    for (let showAttackButton of showAttackButtons)
-    {
+    for (let showAttackButton of showAttackButtons) {
       showAttackButton.classList.remove("hidden");
     };
 
@@ -259,29 +222,22 @@ export default class Monster
     hideMonsterAttackButton.classList.add("hidden");
   };
 
-  checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1, monsterOne, monsterTwo, images) 
-  {
-    for (let i = 0; i < monsterHitRoll1.length; i++)
-    {
-      if (monsterHitRoll1[i][0] === charArmorClass1)
-      {
-        if (monsterHitRollValue1 < monsterHitRoll1[i][1])
-        {
+  checkMonsterHitRoll(thisMonster, otherMonster, monsterHitRollValue1, charArmorClass1, monsterHitRoll1, monsterOne, monsterTwo, images) {
+    for (let i = 0; i < monsterHitRoll1.length; i++) {
+      if (monsterHitRoll1[i][0] === charArmorClass1) {
+        if (monsterHitRollValue1 < monsterHitRoll1[i][1]) {
           alert(`${thisMonster.name} misses!`);
           this.revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo, images);
 
-        } else if (finalCharacter.status.includes("Mirror Image") && images > 0)
-        {
+        } else if (finalCharacter.status.includes("Mirror Image") && images > 0) {
           images -= 1;
           finalCharacter.mirrorImages = images;
-          if (images <= 0)
-          {
+          if (images <= 0) {
             images = 0;
 
             let removeMirrorImageIcon = document.querySelector('.mirror-image-status');
-            if (!removeMirrorImageIcon.classList.contains("hide-status"))
-            {
+            if (!removeMirrorImageIcon.classList.contains("hide-status")) {
               removeMirrorImageIcon.classList.toggle('hide-status');
             }
 
@@ -295,8 +251,7 @@ export default class Monster
 
           alert(`The ${thisMonster.name} attacks you and strikes one of your Mirror Images - there are ${images} left.`);
 
-        } else
-        {
+        } else {
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
           finalCharacter.specialty.healthPoints = finalCharacter.specialty.healthPoints - monsterRandomDamage;
@@ -313,7 +268,7 @@ export default class Monster
           //         <progress id='hp-prog-bar' max="${finalCharacter.specialty.maxHealthPoints}" value="${finalCharacter.specialty.healthPoints}"></progress>
           //         <span class="character-hp-bar">${finalCharacter.specialty.healthPoints}/${finalCharacter.specialty.maxHealthPoints}</span>
           //       </span>
-               
+
           //     `;
 
           let updateCharacterHPGuage = document.querySelector(".hitpoint-guage-value-current");
@@ -330,7 +285,7 @@ export default class Monster
           characterHPGuageDashoffset.style.strokeDashoffset = characterHPGuageRatio;
 
           console.log(characterHPGuageDashoffset)
-              
+
           let clearDialogue = document.querySelector("#dialogue");
           clearDialogue.textContent = ``;
 
@@ -341,33 +296,26 @@ export default class Monster
     }
   }
 
-  attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo)
-  {
+  attackOtherMonster(thisMonster, otherMonster, monsterOne, monsterTwo) {
     let monstersHitRollValue = Math.ceil(Math.random() * 20);
-    for (let i = 0; i < thisMonster.hitRoll.length; i++)
-    {
-      if (thisMonster.hitRoll[i][0] === otherMonster.armorClass)
-      {
-        if (monstersHitRollValue < thisMonster.hitRoll[i][1])
-        {
+    for (let i = 0; i < thisMonster.hitRoll.length; i++) {
+      if (thisMonster.hitRoll[i][0] === otherMonster.armorClass) {
+        if (monstersHitRollValue < thisMonster.hitRoll[i][1]) {
           alert(`${thisMonster.name} misses the ${otherMonster.name}!`);
           this.revertToAttackButtons();
           confirmAttackMonsters(monsterOne, monsterTwo);
-        } else
-        {
+        } else {
           let monsterRandomDamage = Math.ceil(Math.random() * thisMonster.damage);
 
           otherMonster.healthPoints = otherMonster.healthPoints - monsterRandomDamage;
           alert(`The ${thisMonster.name} attacks the ${otherMonster.name} and causes ${monsterRandomDamage} points of damage.`);
 
           //need to include follow on function when a monster kills the other
-          if (otherMonster.healthPoints <= 0)
-          {
+          if (otherMonster.healthPoints <= 0) {
             otherMonster.healthPoints = 0;
             this.monsterKilled(thisMonster, otherMonster, monsterOne, monsterTwo);
 
-          } else if (thisMonster.name === monsterOne.name)
-          {
+          } else if (thisMonster.name === monsterOne.name) {
             let updatedMonsterHP2 = document.querySelector("#monster-two-hp");
 
             updatedMonsterHP2.innerHTML = `
@@ -378,8 +326,7 @@ export default class Monster
 
             this.revertToAttackButtons();
             confirmAttackMonsters(monsterOne, monsterTwo);
-          } else
-          {
+          } else {
             let updatedMonsterHP1 = document.querySelector("#monster-one-hp");
 
             updatedMonsterHP1.innerHTML = `
@@ -396,10 +343,8 @@ export default class Monster
     }
   }
 
-  monsterKilled(thisMonster, otherMonster, monsterOne, monsterTwo)
-  {
-    if (thisMonster.name === monsterOne.name)
-    {
+  monsterKilled(thisMonster, otherMonster, monsterOne, monsterTwo) {
+    if (thisMonster.name === monsterOne.name) {
       let updatedMonsterHP2 = document.querySelector("#monster-two-hp");
 
       updatedMonsterHP2.innerHTML = `
@@ -412,8 +357,7 @@ export default class Monster
 
       this.revertToAttackButtons();
       confirmAttackMonsters(monsterOne, monsterTwo);
-    } else if (thisMonster.name === monsterTwo.name)
-    {
+    } else if (thisMonster.name === monsterTwo.name) {
       let updatedMonsterHP1 = document.querySelector("#monster-one-hp");
 
       updatedMonsterHP1.innerHTML = `
@@ -2068,8 +2012,7 @@ let phantasmalTroll = new Monster("Troll", [6, 3], 39, 4, 15, 650, "Chaotic", "T
 
 //exporting monsters
 
-export
-{
+export {
   smallWolf,
   wolf1,
   wolf2,
