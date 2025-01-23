@@ -930,13 +930,7 @@ function startGame() {
                 <span class="character-display-info">${
                   finalCharacter.treasure.gold.quantity
                 }</span>
-              </h4>
-
-              <h4 id='char-experience' class='char-info-label'>Experience: 
-                <span class="character-display-info">${
-                  finalCharacter.specialty.characterExperience
-                }</span>
-              </h4>                
+              </h4>                            
               
           </fieldset>
         </div>

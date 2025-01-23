@@ -284,11 +284,7 @@ export default class Character
                 }</span>
               </h4>
 
-              <h4 id='char-experience' class='char-info-label'>Experience: 
-                <span class="character-display-info">${
-                  finalCharacter.specialty.characterExperience
-                }</span>
-              </h4>                
+                          
               
           </fieldset>
         </div>
@@ -752,10 +748,22 @@ export default class Character
               </div>`;
         defeatMonster1.innerHTML = `<p>Congratulations, you defeated the Monster 1!</p>`;
 
-        let updatedExperience = document.querySelector("#char-experience");
-        updatedExperience.innerHTML = `
-              <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-              `;
+        let characterExperienceGuage = document.querySelector(".xp-guage-value-current");
+        characterExperienceGuage.textContent = finalCharacter.specialty.characterExperience;
+  
+        let characterXPGuage = document.querySelector(".circle-xp");
+  
+        let characterXPGuageDashoffset = 380 - ((240 / finalCharacter.specialty.characterLevel.level.maxXP) * (finalCharacter.specialty.characterExperience));
+  
+        if (characterXPGuageDashoffset <= 140) {
+          characterXPGuageDashoffset = 140;
+        }
+  
+        if (characterXPGuageDashoffset >= 380) {
+          characterXPGuageDashoffset = 380;
+        }  
+  
+        characterXPGuage.style.strokeDashoffset = characterXPGuageDashoffset;
 
         //----------------------------trying to remove monster attack button--------------//
 
@@ -948,10 +956,27 @@ export default class Character
         defeatMonster2.innerHTML = `
                   <p>Congratulations, you defeated the Monster 2!</p>`;
 
-        let updatedExperience = document.querySelector("#char-experience");
-        updatedExperience.innerHTML = `
-                  <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-                  `;
+        // let updatedExperience = document.querySelector("#char-experience");
+        // updatedExperience.innerHTML = `
+        //           <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+        //           `;
+
+                  let characterExperienceGuage = document.querySelector(".xp-guage-value-current");
+                  characterExperienceGuage.textContent = finalCharacter.specialty.characterExperience;
+            
+                  let characterXPGuage = document.querySelector(".circle-xp");
+            
+                  let characterXPGuageDashoffset = 380 - ((240 / finalCharacter.specialty.characterLevel.level.maxXP) * (finalCharacter.specialty.characterExperience));
+            
+                  if (characterXPGuageDashoffset <= 140) {
+                    characterXPGuageDashoffset = 140;
+                  }
+            
+                  if (characterXPGuageDashoffset >= 380) {
+                    characterXPGuageDashoffset = 380;
+                  }  
+            
+                  characterXPGuage.style.strokeDashoffset = characterXPGuageDashoffset;
 
         let removingMonster2Button =
           document.getElementsByClassName("attack-monster-two");
@@ -1437,21 +1462,25 @@ export default class Character
       updatePlayerTreasure.innerHTML = `
         <h4 id='char-treasure' class='char-info-label'>Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span></h4>        
         `;
-      let updatedExperience = document.querySelector("#char-experience");
-      updatedExperience.innerHTML = `
-          <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
-          `;
+      // let updatedExperience = document.querySelector("#char-experience");
+      // updatedExperience.innerHTML = `
+      //     <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>
+      //     `;
 
       let characterExperienceGuage = document.querySelector(".xp-guage-value-current");
       characterExperienceGuage.textContent = finalCharacter.specialty.characterExperience;
 
       let characterXPGuage = document.querySelector(".circle-xp");
 
-      let characterXPGuageDashoffset = 140 + ((240 / finalCharacter.specialty.characterLevel.level.maxXP) * (finalCharacter.specialty.characterExperience));
+      let characterXPGuageDashoffset = 380 - ((240 / finalCharacter.specialty.characterLevel.level.maxXP) * (finalCharacter.specialty.characterExperience));
 
       if (characterXPGuageDashoffset <= 140) {
         characterXPGuageDashoffset = 140;
       }
+
+      if (characterXPGuageDashoffset >= 380) {
+        characterXPGuageDashoffset = 380;
+      }  
 
       characterXPGuage.style.strokeDashoffset = characterXPGuageDashoffset;
 
