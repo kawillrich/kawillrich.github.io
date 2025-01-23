@@ -471,7 +471,7 @@ export default class Character
               <div class="ac-guage-text">AC
               </div>
             
-              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
+              <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="125" height="125">                  
                 <circle class="circle-ac-background"/>
                 <circle class="circle-ac"/>
               </svg>
@@ -501,7 +501,7 @@ export default class Character
                 <div class="xp-guage-value-total">${
                   finalCharacter.specialty.characterLevel.level.maxXP
                 }</div>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="150" height="150">                  
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="125" height="125">                  
                   <circle class="circle-xp-background"/>
                   <circle class="circle-xp"/>
                 </svg>
