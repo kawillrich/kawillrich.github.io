@@ -248,10 +248,7 @@ export default class Character {
                 </span>
               </h4>              
 
-              <h4 id='char-treasure' class='char-info-label'>Treasure: 
-                <span class="character-display-info">${finalCharacter.treasure.gold.quantity
-      }</span>
-              </h4>
+              
 
                           
               
@@ -1496,8 +1493,7 @@ export default class Character {
         <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
       `;
 
-      let updatePlayerTreasure = document.querySelector("#char-treasure");
-      updatePlayerTreasure.innerHTML = `Treasure: <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span>`;
+      
       // let updatedExperience = document.querySelector("#char-experience");
       // updatedExperience.innerHTML = `
       //     <h4 id='char-experience' class='char-info-label'>Experience: <span class="character-display-info">${finalCharacter.specialty.characterExperience}</span></h4>

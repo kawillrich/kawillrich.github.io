@@ -918,12 +918,9 @@ function startGame() {
                   <span class="weapon-tooltiptext">Damage: ${finalCharacter.weapon.damage
     }</span>
                 </span>
-              </h4>              
+              </h4>           
 
-              <h4 id='char-treasure' class='char-info-label'>Treasure: 
-                <span class="character-display-info">${finalCharacter.treasure.gold.quantity
-    }</span>
-              </h4>                            
+                                        
               
           </fieldset>
         </div>
@@ -1799,12 +1796,18 @@ function selectInventory(finalCharacter) {
       ".hide-inventory-container"
     );
     getInventoryElement.classList.remove("show-inventory-container");
-    let updateCharTreasure = document.querySelector("#char-treasure");
-    updateCharTreasure.innerHTML = `
-        Treasure: 
-        <span class="character-display-info">${finalCharacter.treasure.gold.quantity}</span>        
-        `;
+    
+    let updateTreasure = document.querySelector(".char-coins");
+    updateTreasure.innerHTML = `
+      <span id="char-gp" class="char-treasure">Gold: </span><span">${finalCharacter.treasure.gold.quantity}</span></br>
+      <span id="char-ep" class="char-treasure">Electrum: </span><span>${finalCharacter.treasure.electrum.quantity}</span></br>
+      <span id="char-sp" class="char-treasure">Silver: </span><span>${finalCharacter.treasure.silver.quantity}</span></br>
+      <span id="char-cp" class="char-treasure">Copper: </span><span>${finalCharacter.treasure.copper.quantity}</span></br>
+      <span id="char-gems" class="char-treasure">Gems: </span><span>${finalCharacter.treasure.gems.quantity}</span></br>
+    `;
   };
+
+  
   startChapter();
 }
 
