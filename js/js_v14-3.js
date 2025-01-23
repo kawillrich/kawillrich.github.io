@@ -1130,13 +1130,15 @@ function startGame() {
             </div>
 
             <div class="hitpoints-guage">
-              <div class="hitpoint-guage-value-current">${
-                finalCharacter.specialty.healthPoints +
-                finalCharacter.attributes[4].adjustment
-              }</div>  
-              <div class="hitpoint-guage-value-total">${
-                finalCharacter.specialty.maxHealthPoints +
-                finalCharacter.attributes[4].adjustment
+              <div class="hitpoint-guage-value-current">
+                ${(finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment) <= 0 ? 0 :
+                  (finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment)
+                }
+              
+
+              </div>  
+              <div class="hitpoint-guage-value-total">${(finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment) <= 0 ? 0 :
+                (finalCharacter.specialty.healthPoints + finalCharacter.attributes[4].adjustment)
               }</div>                            
 
               
