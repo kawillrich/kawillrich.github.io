@@ -4,7 +4,7 @@
   --bg-300: #2a2e5c;
   --primary: #0D6E6E;
   --primary-200: #4a9d9c;
-  --tertiary: #6b0504; 
+  --tertiary: #6b0504;
   --tertiary-200: #ff9983;
 
   /*button select*/
@@ -49,7 +49,8 @@ label {
   cursor: url('../images/gui/cursor.png'), auto;
 }
 
-input, button {
+input,
+button {
   cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
@@ -121,8 +122,8 @@ input[name="selected-specialty"] {
   cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
-.alignment-radio:checked + .alignment-label::before,
-.class-radio:checked + .class-label::before {
+.alignment-radio:checked+.alignment-label::before,
+.class-radio:checked+.class-label::before {
   background-color: var(--primary-300);
 }
 
@@ -255,23 +256,23 @@ fieldset {
 }
 
 #canvas2 {
-    display: block;
-    margin: 15% auto auto 10%;
+  display: block;
+  margin: 15% auto auto 10%;
   /* height: 300px;
   width: 240px; */
 }
 
 #character-info {
   background-image: url("../images/black-dragon2.svg");
-  background-repeat: no-repeat;  
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 600px;
-  display: grid; 
+  display: grid;
   grid-auto-columns: 147px;
   grid-auto-rows: 170px;
   gap: 5px 8px;
-  
+
   /* grid-template-areas: 
     "playerCanvas playerStats  playerStats      playerStats      playerStats       playerMenu"
     "playerData   playerData   playerAttributes playerAttributes playerSaves       playerSaves"
@@ -286,7 +287,7 @@ fieldset {
   /* height: 350px;   */
 }
 
-#character-info > div {
+#character-info>div {
   /* padding: 10px 5px; */
 }
 
@@ -329,7 +330,7 @@ fieldset {
   /* grid-area: playerStatus; */
 }
 
-#character-saving-throws {  
+#character-saving-throws {
   grid-area: 2 / 5 / span 1 / span 2;
   /* grid-area: playerSaves; */
 }
@@ -338,6 +339,7 @@ fieldset {
   grid-area: 3 / 5 / span 1 / span 2;
   /* grid-area: playerAfflictions; */
 }
+
 .char-info-module {
   padding-top: 0;
   /* height: 325px;
@@ -351,12 +353,12 @@ fieldset {
 }
 
 .char-info-module-attributes {
-  
+
   display: grid;
   align-items: center;
   grid-auto-columns: auto;
   grid-auto-rows: auto;
-  
+
   /* grid-template-areas:
     "topLeft     topRight   middleLeft"
     "middleRight bottomLeft bottomRight"; */
@@ -429,9 +431,10 @@ fieldset {
   transform: scale(2);
 }
 
-.hide-status{
+.hide-status {
   visibility: hidden;
 }
+
 /*Magic user spell picker list*/
 
 .saving-throws {
@@ -459,7 +462,7 @@ fieldset {
 .canvas-info-module-player {
   /* height: 152px;
   width: 103px; */
-  
+
 }
 
 .saves-info-module-player {
@@ -480,8 +483,7 @@ fieldset {
 
 
 
-.canvas-dashboard {
-}
+.canvas-dashboard {}
 
 .monster-dashboard {
   background-color: rgb(255, 139, 139);
@@ -504,6 +506,7 @@ fieldset {
   border-radius: 5px;
   background-color: rgb(224, 193, 193);
 }
+
 #monster-attack:hover {
   background-color: rgb(248, 162, 162);
 }
@@ -646,8 +649,8 @@ span#dragonwarrior {
   float: right;
 }
 
-.armor-tooltip > .character-display-info,
-.weapon-tooltip > .character-display-info {
+.armor-tooltip>.character-display-info,
+.weapon-tooltip>.character-display-info {
   cursor: url('../images/gui/cursor-hover.png'), auto;
 
 }
@@ -737,6 +740,7 @@ span#dragonwarrior {
   left: 50%;
   /* overflow: auto; */
 }
+
 .armor-tooltip .armor-tooltiptext::after,
 .weapon-tooltip .weapon-tooltiptext::after,
 .spell-tooltip .spell-tooltiptext::after,
@@ -858,14 +862,7 @@ span#dragonwarrior {
   display: grid;
   grid-template-columns: auto auto auto;
   justify-content: space-evenly;
-  
 }
-
-
-
-
-
-
 
 .hitpoints-guage {
   display: grid;
@@ -884,13 +881,14 @@ span#dragonwarrior {
   padding-top: 10px;
 }
 
-.hitpoints-guage > svg,
-.ac-guage > svg, 
-.xp-guage > svg {
+.hitpoints-guage>svg,
+.ac-guage>svg,
+.xp-guage>svg {
   margin-top: 5px;
   grid-column: 1 / 1;
   grid-row: 1 / 3;
 }
+
 .circle-hitpoints {
   cx: 50%;
   cy: 50%;
@@ -902,8 +900,8 @@ span#dragonwarrior {
   position: relative;
   /*295 is full*/
   stroke-dasharray: 410;
-  stroke-dashoffset:  90; 
-/* 
+  stroke-dashoffset: 90;
+  /* 
   stroke-dasharray: var(--strokeDashArray);
   stroke-dashoffset: var(--strokeDashOffset);  */
   transform: rotate(130deg);
@@ -915,14 +913,14 @@ span#dragonwarrior {
   cy: 50%;
   r: 65px;
   fill: none;
-  stroke-linecap: round;  
+  stroke-linecap: round;
   stroke: #BF8200;
   stroke-width: 15px;
   position: relative;
   stroke-dasharray: 410;
-  stroke-dashoffset: 90; 
+  stroke-dashoffset: 90;
   transform: rotate(130deg);
-  transform-origin: center;  
+  transform-origin: center;
 }
 
 
@@ -991,7 +989,7 @@ span#dragonwarrior {
   stroke-width: 15px;
   position: relative;
   stroke-dasharray: 240;
-  stroke-dashoffset: 0; 
+  stroke-dashoffset: 0;
   transform: rotate(var(--imageRotate));
   transform-origin: center;
 }
@@ -1006,7 +1004,7 @@ span#dragonwarrior {
   stroke-width: 15px;
   position: relative;
   stroke-dasharray: 380;
-  stroke-dashoffset: 380; 
+  stroke-dashoffset: 380;
   transform: rotate(var(--imageRotate));
   transform-origin: center;
 }
@@ -1016,15 +1014,16 @@ span#dragonwarrior {
   cy: 50%;
   r: 50px;
   fill: none;
-  stroke-linecap: round;  
+  stroke-linecap: round;
   stroke: #912F56;
   stroke-width: 15px;
   position: relative;
   stroke-dasharray: 240;
-  stroke-dashoffset: 0; 
+  stroke-dashoffset: 0;
   transform: rotate(var(--imageRotate));
-  transform-origin: center;  
+  transform-origin: center;
 }
+
 #char-strength,
 #char-intelligence,
 #char-wisdom,
@@ -1129,7 +1128,7 @@ span#dragonwarrior {
 .circle-dex-background,
 .circle-con-background,
 .circle-cha-background {
-  
+
   stroke: var(--accent-200);
   stroke-linecap: round;
   fill: none;
@@ -1276,14 +1275,11 @@ input.mage-spells {
   width: 75px;
 }
 
-#char-gp {
-}
+#char-gp {}
 
-.spell-button-tooltip {
-}
+.spell-button-tooltip {}
 
-.spell-button-tooltip::after {
-}
+.spell-button-tooltip::after {}
 
 ul.dropdown-spell-list-ul {
   position: absolute;
@@ -1335,19 +1331,19 @@ ul.spell-list {
   height: 50px;
   width: 250px;
   padding: 0px 0px 0px 5px;
-  
+
 }
 
 ul.spell-list:hover {
   background-color: lightblue;
-  
+
 }
 
 li.first-level-dropdown-list b:hover,
 li.second-level-dropdown-list b:hover,
 li.third-level-dropdown-list b:hover {
   background-color: lightblue;
-  
+
 }
 
 li.first-level-dropdown-list:hover,
@@ -1391,11 +1387,11 @@ li.monster-two-spell-list.monster2-spell-dead:active {
   pointer-events: none;
 }
 
-.show-spell-list-dropdown > b {
+.show-spell-list-dropdown>b {
   cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
-.spell-list > span {
+.spell-list>span {
   cursor: url('../images/gui/cursor-hover.png'), auto;
 }
 
