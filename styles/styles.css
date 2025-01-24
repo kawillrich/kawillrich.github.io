@@ -86,10 +86,9 @@ button {
   margin: 0px auto auto auto;
   width: 920px;
   min-width: 920px;
-  min-width: 820px;
   padding: 5px 5px 0px 5px;
   border: 30px solid transparent;
-  height: 1100px;
+  height: auto;
   border-image-source: url(../images/gui/gui-entire-border2.png);
   border-image-slice: 75 75;
 }
