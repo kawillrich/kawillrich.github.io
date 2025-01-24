@@ -63,6 +63,10 @@ button {
   /* margin: auto; */
 }
 
+.page-title {
+  font-size: 5rem;
+}
+
 .page-title,
 .page-version {
   text-align: center;
