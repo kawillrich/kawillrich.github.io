@@ -63,6 +63,12 @@ button {
   /* margin: auto; */
 }
 
+.page-title,
+.page-version {
+  text-align: center;
+ 
+}
+
 #container {
   /* margin: 0px auto 0px auto; */
   width: 920px;
