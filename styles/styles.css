@@ -184,6 +184,9 @@ input[type="submit"]:active,
 #dialogue {
   padding: 10px 0px 0px 0px;
   display: block;
+  margin: auto;
+  height: 100%;
+  width: 100%;
 }
 
 #normal-equipment-link,
