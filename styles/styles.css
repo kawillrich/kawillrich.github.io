@@ -17,6 +17,8 @@
   --text-200: #e0e0e0;
   --accent-200: #822d00;
   --btn-hover: azure;
+  --btn-bg: #72FF7C;
+  --btn-text: #0D6E6E;
 
   /*hit-points guage*/
   --strokeDashArray: 240;
@@ -134,13 +136,19 @@ input[type="submit"],
 #confirm-attributes,
 #beginAdventure,
 #submit-all-cleric-spells {
-  border: 20px solid transparent;
-  border-image-source: url(../images/gui/gui-buttons-player-attack.png);
-  border-image-slice: 20 20;
-  text-align: center;
-  background-color: rgb(205, 210, 245);
+  background-color: var(--btn-bg);
+  color: var(--btn-text);
+  border-radius: 10px;
   font-size: 22px;
-  cursor: url('../images/gui/cursor-hover.png'), auto;
+  text-align: center;
+  padding: 20px;
+  /* border: 20px solid transparent; */
+  
+  
+  /* border-image-source: url(../images/gui/gui-buttons-player-attack.png);
+  border-image-slice: 20 20; */
+  /* background-color: rgb(205, 210, 245); */
+  /* cursor: url('../images/gui/cursor-hover.png'), auto; */
 }
 
 input[type="submit"]:hover,
