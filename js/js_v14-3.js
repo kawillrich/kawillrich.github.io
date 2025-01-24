@@ -814,6 +814,7 @@ function updateAlignmentDescription() {
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {
   window.scrollTo(0, 0);
+  document.body.style.zoom = "100%";
   let strengthPlusAdjustment;
   let intelligencePlusAdjustment;
   let wisdomPlusAdjustment;
@@ -1464,6 +1465,7 @@ function beginChapterTwo() {
 function showInventory() {
   alert("Purchase your inventory");
   window.scrollTo(0, 0);
+  document.body.style.zoom = "100%";
 
   let totalItems = [
     torch,
@@ -1720,6 +1722,7 @@ function addingTotalInventoryCost(e) {
 function selectInventory(finalCharacter) {
   // finalCharacter.treasure = finalGold;
   window.scrollTo(0, 0);
+  document.body.style.zoom = "100%";
 
   ///GETTING ENTIRE NODE LIST
   let purchasedSupplies = document.querySelectorAll(".current-item-qty"); //node list of all 23 items
