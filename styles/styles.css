@@ -144,6 +144,7 @@ input[type="submit"],
   padding: 15px;
   height: 70px;
   width: 210px;
+  border: 0px solid var(--btn-bg);
   /* border: 20px solid transparent; */
   
   
