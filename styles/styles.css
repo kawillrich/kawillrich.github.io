@@ -39,7 +39,7 @@ body {
   margin: 0px 0px 0px 0px;
   /* width: 1400px; */
   height: 1400px;
-  padding: 0px 10px 0px 10px;
+  /* padding: 0px 10px 0px 10px; */
   display: flex;
   color: var(--text);
   font-size: 22px;
@@ -73,12 +73,12 @@ button {
   /* margin: 0px auto 0px auto; */
   width: 920px;
   min-width: 920px;
-  padding: 5px 5px 0px 5px;
+  padding: 0px 5px 0px 5px;
   border: 30px solid transparent;
-  height: 1100px;
+  height: auto;
   border-image-source: url(../images/gui/gui-entire-border2.png);
   border-image-slice: 75 75;
-  margin: 10px auto auto auto;
+  margin: 0px auto auto auto;
   background-color: var(--background);
 }
 
