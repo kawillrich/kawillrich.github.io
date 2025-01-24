@@ -73,9 +73,9 @@ button {
   /* margin: 0px auto 0px auto; */
   width: 920px;
   min-width: 920px;
-  padding: 0px 5px 0px 5px;
+  padding: 0px 0px 0px 0px;
   border: 30px solid transparent;
-  height: auto;
+  height: 100%;
   border-image-source: url(../images/gui/gui-entire-border2.png);
   border-image-slice: 75 75;
   margin: 0px auto auto auto;
@@ -86,9 +86,9 @@ button {
   margin: 0px auto auto auto;
   width: 920px;
   min-width: 920px;
-  padding: 5px 5px 0px 5px;
+  padding: 0px 0px 0px 0px;
   border: 30px solid transparent;
-  height: auto;
+  height: 100%;
   border-image-source: url(../images/gui/gui-entire-border2.png);
   border-image-slice: 75 75;
 }
