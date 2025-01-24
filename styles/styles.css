@@ -139,11 +139,11 @@ input[type="submit"],
   background-color: var(--btn-bg);
   color: var(--btn-text);
   border-radius: 10px;
-  font-size: 30px;
+  font-size: 2rem;
   text-align: center;
-  padding: 20px;
+  padding: 15px;
   height: 70px;
-  width: 175px;
+  width: 210px;
   /* border: 20px solid transparent; */
   
   
