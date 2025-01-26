@@ -195,8 +195,7 @@ input[type="submit"]:active,
   padding: 10px 0px 0px 0px;
   display: block;
   margin: auto;
-  /* height: 100%;
-  width: 100%; */
+  font-size: 2rem;
 }
 
 #normal-equipment-link,
