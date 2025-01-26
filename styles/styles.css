@@ -144,7 +144,8 @@ input[type="submit"],
 #generate-attributes,
 #confirm-attributes,
 #beginAdventure,
-#submit-all-cleric-spells {
+#submit-all-cleric-spells,
+.continue-button {
   background-color: var(--btn-bg);
   color: var(--btn-text);
   border-radius: 10px;
@@ -173,7 +174,8 @@ input[type="submit"]:hover,
 #normal-equipment-link:hover,
 #magical-equipment-link:hover,
 #spells-link:hover,
-#treasure-link:hover {
+#treasure-link:hover,
+.continue-button:hover {
   background-color: var(--btn-hover);
 }
 
@@ -187,7 +189,8 @@ input[type="submit"]:active,
 #normal-equipment-link.active,
 #magical-equipment-link.active,
 #spells-link.active,
-#treasure-link.active {
+#treasure-link.active,
+.continue-button:active {
   background-color: var(--primary-300);
 }
 
