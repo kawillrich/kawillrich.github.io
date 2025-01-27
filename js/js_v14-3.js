@@ -511,7 +511,7 @@ let setTimeoutArray = [];
 function beginIntro() {
   $("#header").slideUp(500).next().animate({
     width: "0px",
-    height: "0px"}, 500).slideUp(500).next().children("h1").animate({fontSize: "2em"}, 500);   
+    height: "0px"}, 500).slideUp(500).next().dequeue(); 
   continueAnimation();  
 }
 
@@ -564,9 +564,9 @@ let introContinueDialogue = `You have decided that your training and preparation
                              wounds. <br><br> But did they prepare you for this?.... <br><br> What's your name? <br><br></br>`
 
 function introContinue() {
-  $("#welcome-title").dequeue().slideUp(500);
+  $("#welcome-title").animate({fontSize: "0px"});
   $(".welcome-title").slideUp(500).children().slideUp(500);
-
+  
 
   
   console.log("introContinue");
