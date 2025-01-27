@@ -230,6 +230,7 @@ window.addEventListener(
   false
 );
 
+
 let images;
 
 let adventurerImage = 4;
@@ -482,6 +483,17 @@ let selectedSpecialty = "";
 
 //asks if you are ready to start game
 
+
+const SCREEN_WIDTH =  document.documentElement.clientWidth;
+const SCREEN_HEIGHT = document.documentElement.clientHeight;
+
+let $mainContainer = $("#container");
+$mainContainer.width(SCREEN_WIDTH);
+$mainContainer.height(SCREEN_HEIGHT); 
+
+console.log(SCREEN_WIDTH);
+console.log(SCREEN_HEIGHT); 
+
 let enterGame = document.querySelector("#enter-game");
 enterGame.addEventListener("click", beginIntro, false);
 
@@ -495,21 +507,18 @@ let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure
                     breathes black fire that is able to burn through *almost* anything....`;
 let setTimeoutArray = [];
 
-
 function beginIntro() {
+
   enterGame.remove();
   if (dialogueIterator < dialogueText.length) {
     introDialogue.innerHTML += dialogueText.charAt(dialogueIterator);
     dialogueIterator++;
-
     setTimeoutArray.push(setTimeout(beginIntro, typingSpeed));
-    
   }
 
   if (setTimeoutArray.length === dialogueText.length) {
     addIntroContinueButton();
   }
-
 }
 
 function addIntroContinueButton() {
@@ -530,9 +539,9 @@ function addIntroContinueButton() {
   introDialogue.appendChild(continueButtonContainer);
 
   introDialogue.appendChild(continueButtonContainer);
-  
+
   // let introBreak = document.createElement("br");
-  // introDialogue.appendChild(introBreak);  
+  // introDialogue.appendChild(introBreak);
   // continueButtonContainer.append(continueButton);
 }
 
