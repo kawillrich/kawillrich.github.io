@@ -190,6 +190,7 @@ input[type="submit"]:active,
 
 #enter-game {
   margin: auto;
+  display: block;
 }
 
 #confirm-start {
