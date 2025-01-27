@@ -561,27 +561,19 @@ let introContinueDialogue = `You have decided that your training and preparation
                              Your father taught you how to handle your skills and how to defend yourself. 
                              He spent many nights with you, hiking, camping, and living in the woods. Your mother
                              taught you how to mend clothes, forage edible foods, and how to take care of your 
-                             wounds. <br><br> But did they prepare you for this?.... <br><br> What's your name? <br><br></br>`
+                             wounds. But did they prepare you for this?.... What's your name?`
 
 function introContinue() {
   $("#welcome-title").animate({fontSize: "0px"});
   $(".welcome-title").slideUp(500).children().slideUp(500);
   setTimeoutArray = [];
   dialogueIterator = 0;
+
+  dialogue.innerHTML = "";
   introContinueTwo();
 }
  
 function introContinueTwo() {
-
- 
-
-  
-  
-  // console.log(introContinueDialogue.length)
-
-  // let dialogue = document.querySelector("#dialogue");
-  // dialogue.innerHTML = "";
-
   if (dialogueIterator < introContinueDialogue.length) {
     dialogue.innerHTML += introContinueDialogue.charAt(dialogueIterator);
     dialogueIterator++;
@@ -589,22 +581,14 @@ function introContinueTwo() {
   }
 
   if (setTimeoutArray.length === introContinueDialogue.length) {
-    addIntroContinueButton();
+    addSubmitNameButton();
   }
   
-
   
-  console.log("introContinue");
-  // dialogue.innerHTML = `<div>
-  // You have decided that your training and preparation have readied you for the challenge to venture to
-  //     the ruins, in hopes of defeating the dragon and obtaining his treasure. You have grown up a lot since your
-  //     youth. Now, at age 26, you feel you are at your physical peak. Mentally, you have already taken the leap of
-  //     faith and prepared your belongings - basic supplies: food, water, armor, a weapon, and a survival kit. Your
-  //     father, Edwin, and your Mother, Alena, have raised you well. Your father taught you how to handle your skills
-  //     and how to defend yourself. He spent many nights with you, hiking, camping, and living in the woods. Your mother
-  //     taught you how to mend clothes, forage edible foods, and how to take care of your wounds. <br><br> But did they
-  //     prepare you for this?.... <br><br> What's your name? <br><br>
-  // `;
+}
+
+function addSubmitNameButton() {
+  console.log("addSubmitNameButton");
   let confrimStart = document.querySelector("#confirm-start");
   confrimStart.style.display = "block";
 }
