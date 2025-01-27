@@ -492,7 +492,7 @@ $mainContainer.width(SCREEN_WIDTH);
 $mainContainer.height(SCREEN_HEIGHT); 
 
 console.log(SCREEN_WIDTH);
-console.log(SCREEN_HEIGHT); 
+console.log(SCREEN_HEIGHT);   
 
 let enterGame = document.querySelector("#enter-game");
 enterGame.addEventListener("click", beginIntro, false);

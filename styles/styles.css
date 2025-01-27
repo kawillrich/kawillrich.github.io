@@ -308,7 +308,7 @@ fieldset {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 480px;
+  /* height: 480px; */
   display: grid;
   grid-auto-columns: 146px;
   grid-auto-rows: 170px 145px 145px;
