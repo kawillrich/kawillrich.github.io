@@ -521,9 +521,8 @@ function continueAnimation() {
     dialogue.innerHTML += dialogueText.charAt(dialogueIterator);
     dialogueIterator++;
     setTimeoutArray.push(setTimeout(beginIntro, typingSpeed));
-  }
-
-  if (setTimeoutArray.length === dialogueText.length) {
+  }else {
+    console.log('test')
     addIntroContinueButton();
   }
 }
@@ -542,8 +541,6 @@ function addIntroContinueButton() {
   let introBreak = document.createElement("br");
 
   dialogue.appendChild(introBreak);
-  dialogue.appendChild(introBreak);
-  dialogue.appendChild(continueButtonContainer);
   dialogue.appendChild(continueButtonContainer);
 }
 
@@ -552,11 +549,7 @@ let introContinueDialogue = `You have decided that your training and preparation
                              his treasure. You have grown up a lot since your youth. Now, at age 26, you feel 
                              you are at your physical peak. Mentally, you have already taken the leap of faith 
                              and prepared your belongings - basic supplies: food, water, armor, a weapon, and 
-                             a survival kit. Your father, Edwin, and your Mother, Alena, have raised you well. 
-                             Your father taught you how to handle your skills and how to defend yourself. 
-                             He spent many nights with you, hiking, camping, and living in the woods. Your mother
-                             taught you how to mend clothes, forage edible foods, and how to take care of your 
-                             wounds. But did they prepare you for this?.... What's your name?`
+                             a survival kit. `
 
 function introContinue() {
   $("#welcome-title").animate({fontSize: "0px"}, 300);
@@ -574,7 +567,34 @@ function introContinueTwo() {
     setTimeoutArray.push(setTimeout(introContinueTwo, typingSpeed));
   }
 
-  if (setTimeoutArray.length === introContinueDialogue.length) {
+  else {
+    addContinueButton();
+  }  
+}
+
+function addContinueButton() {
+  let addNewContinueButton = document.createElement("button");
+  addNewContinueButton.id = "new-continue-button";
+  addNewContinueButton.textContent = "Continue";
+  addNewContinueButton.type = "button";
+  addNewContinueButton.addEventListener("click", introContinueThree, false);
+  dialogue.appendChild(addNewContinueButton);
+}
+
+let introContinueDialogue2 = `Your father, Edwin, and your Mother, Alena, have raised you well. 
+                             Your father taught you how to handle your skills and how to defend yourself. 
+                             He spent many nights with you, hiking, camping, and living in the woods. Your mother
+                             taught you how to mend clothes, forage edible foods, and how to take care of your 
+                             wounds. But did they prepare you for this?.... What's your name?`
+
+function introContinueThree() {
+  if (dialogueIterator < introContinueDialogue.length) {
+    dialogue.innerHTML += introContinueDialogue.charAt(dialogueIterator);
+    dialogueIterator++;
+    setTimeoutArray.push(setTimeout(introContinueTwo, typingSpeed));
+  }
+
+  else {
     addSubmitNameButton();
   }  
 }
