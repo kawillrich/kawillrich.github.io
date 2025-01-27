@@ -497,7 +497,7 @@ console.log(SCREEN_HEIGHT);
 let enterGame = document.querySelector("#enter-game");
 enterGame.addEventListener("click", beginIntro, false);
 
-let introDialogue = document.querySelector("#dialogue");
+let dialogue = document.querySelector("#dialogue");
 let dialogueIterator = 0;
 let typingSpeed = 5;
 let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure being guarded 
@@ -519,7 +519,7 @@ function continueAnimation() {
 
   enterGame.remove();
   if (dialogueIterator < dialogueText.length) {
-  introDialogue.innerHTML += dialogueText.charAt(dialogueIterator);
+  dialogue.innerHTML += dialogueText.charAt(dialogueIterator);
   dialogueIterator++;
   setTimeoutArray.push(setTimeout(beginIntro, typingSpeed));
   }
@@ -541,21 +541,21 @@ function addIntroContinueButton() {
 
   continueButtonContainer.appendChild(continueButton);
   let introBreak = document.createElement("br");
-  introDialogue.appendChild(introBreak);
-  introDialogue.appendChild(introBreak);
+  dialogue.appendChild(introBreak);
+  dialogue.appendChild(introBreak);
 
-  introDialogue.appendChild(continueButtonContainer);
+  dialogue.appendChild(continueButtonContainer);
 
-  introDialogue.appendChild(continueButtonContainer);
+  dialogue.appendChild(continueButtonContainer);
 
   // let introBreak = document.createElement("br");
-  // introDialogue.appendChild(introBreak);
+  // dialogue.appendChild(introBreak);
   // continueButtonContainer.append(continueButton);
 }
 
 function introContinue() {
   console.log("introContinue");
-  introDialogue.innerHTML = `<div>
+  dialogue.innerHTML = `<div>
   You have decided that your training and preparation have readied you for the challenge to venture to
       the ruins, in hopes of defeating the dragon and obtaining his treasure. You have grown up a lot since your
       youth. Now, at age 26, you feel you are at your physical peak. Mentally, you have already taken the leap of
