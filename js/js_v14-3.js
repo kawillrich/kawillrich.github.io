@@ -507,9 +507,9 @@ let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure
 let setTimeoutArray = [];
 
 function beginIntro() {
-  $("#header").slideUp(500).next().animate({
+  $("#header").slideUp(300).next().animate({
     width: "0px",
-    height: "0px"}, 500).slideUp(500).next().dequeue(); 
+    height: "0px"}, 300).slideUp(300).next().dequeue(); 
   continueAnimation();  
 }
 
