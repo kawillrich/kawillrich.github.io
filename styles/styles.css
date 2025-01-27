@@ -143,7 +143,8 @@ input[type="submit"],
 #beginAdventure,
 #submit-all-cleric-spells,
 #intro-continue-button,
-#enter-game {
+#enter-game,
+#new-continue-button {
   background-color: var(--btn-bg);
   color: var(--btn-text);
   border-radius: 10px;
@@ -174,7 +175,8 @@ input[type="submit"]:hover,
 #spells-link:hover,
 #treasure-link:hover,
 #intro-continue-button:hover,
-#enter-game:hover {
+#enter-game:hover,
+#new-continue-button:hover  {
   background-color: var(--btn-hover);
 }
 
@@ -190,7 +192,8 @@ input[type="submit"]:active,
 #spells-link.active,
 #treasure-link.active,
 #intro-continue-button:active,
-#enter-game:active {
+#enter-game:active,
+#new-continue-button:active  {
   background-color: var(--primary-300);
 }
 
