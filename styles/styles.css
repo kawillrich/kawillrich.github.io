@@ -200,7 +200,7 @@ input[type="submit"]:active,
   padding: 10px 0px 0px 0px;
   display: block;
   margin: auto;
-  font-size: 2rem;
+  font-size: 1.75rem;
   display: grid;
   justify-content: space-evenly;
 }
