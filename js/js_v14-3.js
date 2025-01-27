@@ -500,6 +500,7 @@ enterGame.addEventListener("click", beginIntro, false);
 let dialogue = document.querySelector("#dialogue");
 let dialogueIterator = 0;
 let typingSpeed = 5;
+
 let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure being guarded 
                     by the Nightfang Dragon, known as Soul Stealer. Soul Stealer is an ancient 
                     species of dragon with black scales, obsidian-like talons, and silver eyes 
@@ -508,14 +509,22 @@ let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure
 let setTimeoutArray = [];
 
 function beginIntro() {
-  $("#welcome-title").animate({fontSize: "2rem"}, 500); 
-    continueAnimation();  
+  $("#header").slideUp(500).next().slideUp(500).next().children("h1").animate({fontSize: "2em"}, 500); 
+  
+  // $("#header").slideUp(500).next().slideUp(500).queue( function() {
+  //   $("#welcome-title").animate({fontSize: "2em"}, 300);
+  //   }
+  // ) 
+  
+  
+
+  continueAnimation();  
 }
 
 function continueAnimation() {
   
-  $("#header").slideUp(500);
-  $("#character-info").slideUp(500);
+  // $("#header").slideUp(500);
+  // $("#character-info").slideUp(500);
 
   enterGame.remove();
   if (dialogueIterator < dialogueText.length) {
@@ -553,7 +562,23 @@ function addIntroContinueButton() {
   // continueButtonContainer.append(continueButton);
 }
 
+let introContinueDialogue = `You have decided that your training and preparation have readied you for the 
+                             challenge to venture to the ruins, in hopes of defeating the dragon and obtaining 
+                             his treasure. You have grown up a lot since your youth. Now, at age 26, you feel 
+                             you are at your physical peak. Mentally, you have already taken the leap of faith 
+                             and prepared your belongings - basic supplies: food, water, armor, a weapon, and 
+                             a survival kit. Your father, Edwin, and your Mother, Alena, have raised you well. 
+                             Your father taught you how to handle your skills and how to defend yourself. 
+                             He spent many nights with you, hiking, camping, and living in the woods. Your mother
+                             taught you how to mend clothes, forage edible foods, and how to take care of your 
+                             wounds. <br><br> But did they prepare you for this?.... <br><br> What's your name? <br><br></br>`
+
 function introContinue() {
+  $("#welcome-title").dequeue().slideUp(500);
+  $(".welcome-title").slideUp(500).children().slideUp(500);
+
+
+  
   console.log("introContinue");
   dialogue.innerHTML = `<div>
   You have decided that your training and preparation have readied you for the challenge to venture to
