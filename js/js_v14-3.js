@@ -485,23 +485,75 @@ let selectedSpecialty = "";
 let enterGame = document.querySelector("#enter-game");
 enterGame.addEventListener("click", beginIntro, false);
 
+let introDialogue = document.querySelector("#dialogue");
 let dialogueIterator = 0;
-let typingSpeed = 25;
+let typingSpeed = 5;
 let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure being guarded 
                     by the Nightfang Dragon, known as Soul Stealer. Soul Stealer is an ancient 
                     species of dragon with black scales, obsidian-like talons, and silver eyes 
                     that can see in the dark as if it were daytime. It is said that Soul Stealer 
                     breathes black fire that is able to burn through *almost* anything....`;
+let setTimeoutArray = [];
+
+
 function beginIntro() {
   enterGame.remove();
-  let introDialogue = document.querySelector("#dialogue");
   if (dialogueIterator < dialogueText.length) {
     introDialogue.innerHTML += dialogueText.charAt(dialogueIterator);
     dialogueIterator++;
-    setTimeout(beginIntro, typingSpeed);
+
+    setTimeoutArray.push(setTimeout(beginIntro, typingSpeed));
+    
   }
 
+  if (setTimeoutArray.length === dialogueText.length) {
+    addIntroContinueButton();
+  }
 
+}
+
+function addIntroContinueButton() {
+  let continueButtonContainer = document.createElement("div");
+  continueButtonContainer.id = "intro-button-container";
+  continueButtonContainer.type = "button";
+  let continueButton = document.querySelector("button");
+  continueButton.textContent = "Continue";
+  continueButton.id = "intro-continue-button";
+  continueButton.type = "button";
+  continueButton.addEventListener("click", introContinue, false);
+
+  continueButtonContainer.appendChild(continueButton);
+  let introBreak = document.createElement("br");
+  introDialogue.appendChild(introBreak);
+  introDialogue.appendChild(introBreak);
+
+  introDialogue.appendChild(continueButtonContainer);
+
+  introDialogue.appendChild(continueButtonContainer);
+  
+  // let introBreak = document.createElement("br");
+  // introDialogue.appendChild(introBreak);  
+  // continueButtonContainer.append(continueButton);
+}
+
+function introContinue() {
+  console.log("introContinue");
+  introDialogue.innerHTML = `<div>
+  You have decided that your training and preparation have readied you for the challenge to venture to
+      the ruins, in hopes of defeating the dragon and obtaining his treasure. You have grown up a lot since your
+      youth. Now, at age 26, you feel you are at your physical peak. Mentally, you have already taken the leap of
+      faith and prepared your belongings - basic supplies: food, water, armor, a weapon, and a survival kit. Your
+      father, Edwin, and your Mother, Alena, have raised you well. Your father taught you how to handle your skills
+      and how to defend yourself. He spent many nights with you, hiking, camping, and living in the woods. Your mother
+      taught you how to mend clothes, forage edible foods, and how to take care of your wounds. <br><br> But did they
+      prepare you for this?.... <br><br> What's your name? <br><br>
+      <label for="character-name">Character Name: </label><input type="text" maxlength="15" id="character-name"
+        placeholder="15 letters max">
+      <input type="submit" id="submit-name" value="Submit Name">
+      <h5 id="username-message"></h5>
+      <div id='confirm-start'>
+      </div>
+  `;
 }
 
 function checkUsername() {
