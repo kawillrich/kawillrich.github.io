@@ -65,7 +65,11 @@ button {
 .page-title,
 .page-version {
   text-align: center;
- 
+  margin: auto;
+}
+
+#header {
+  margin: auto;
 }
 
 #container {
