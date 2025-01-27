@@ -205,6 +205,10 @@ input[type="submit"]:active,
   justify-content: space-evenly;
 }
 
+#welcome-title {
+  font-size: 3rem;
+  text-align: center;
+}
 #intro-continue-button {
   margin: auto;
 }
