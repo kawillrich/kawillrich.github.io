@@ -230,7 +230,6 @@ window.addEventListener(
   false
 );
 
-
 let images;
 
 let adventurerImage = 4;
@@ -483,7 +482,6 @@ let selectedSpecialty = "";
 
 //asks if you are ready to start game
 
-
 const SCREEN_WIDTH =  document.documentElement.clientWidth;
 const SCREEN_HEIGHT = document.documentElement.clientHeight - 100;
 
@@ -540,16 +538,11 @@ function addIntroContinueButton() {
 
   continueButtonContainer.appendChild(continueButton);
   let introBreak = document.createElement("br");
+
   dialogue.appendChild(introBreak);
   dialogue.appendChild(introBreak);
-
   dialogue.appendChild(continueButtonContainer);
-
   dialogue.appendChild(continueButtonContainer);
-
-  // let introBreak = document.createElement("br");
-  // dialogue.appendChild(introBreak);
-  // continueButtonContainer.append(continueButton);
 }
 
 let introContinueDialogue = `You have decided that your training and preparation have readied you for the 
@@ -568,7 +561,6 @@ function introContinue() {
   $(".welcome-title").slideUp(500).children().slideUp(500);
   setTimeoutArray = [];
   dialogueIterator = 0;
-
   dialogue.innerHTML = "";
   introContinueTwo();
 }
@@ -582,9 +574,7 @@ function introContinueTwo() {
 
   if (setTimeoutArray.length === introContinueDialogue.length) {
     addSubmitNameButton();
-  }
-  
-  
+  }  
 }
 
 function addSubmitNameButton() {
@@ -619,7 +609,6 @@ function charNameSubmitted() {
 
 function rollAttributes() {
   $("#submit-name").addClass("disabled");
-  // document.getElementById("#submit-name").classList.add("disabled");
 
   let goldPieces = (Math.ceil(Math.random() * 15) + 3) * 10;
   finalCharacter.treasure = {
