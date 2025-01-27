@@ -547,13 +547,9 @@ function introContinue() {
       and how to defend yourself. He spent many nights with you, hiking, camping, and living in the woods. Your mother
       taught you how to mend clothes, forage edible foods, and how to take care of your wounds. <br><br> But did they
       prepare you for this?.... <br><br> What's your name? <br><br>
-      <label for="character-name">Character Name: </label><input type="text" maxlength="15" id="character-name"
-        placeholder="15 letters max">
-      <input type="submit" id="submit-name" value="Submit Name">
-      <h5 id="username-message"></h5>
-      <div id='confirm-start'>
-      </div>
   `;
+  let confrimStart = document.querySelector("#confirm-start");
+  confrimStart.style.display = "block";
 }
 
 function checkUsername() {
@@ -581,7 +577,8 @@ function charNameSubmitted() {
 //ADDING ABILITY SCORE GENERATOR FUNCTION
 
 function rollAttributes() {
-  document.querySelector("#submit-name").classList.add("disabled");
+  $("#submit-name").addClass("disabled");
+  // document.getElementById("#submit-name").classList.add("disabled");
 
   let goldPieces = (Math.ceil(Math.random() * 15) + 3) * 10;
   finalCharacter.treasure = {

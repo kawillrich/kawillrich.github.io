@@ -197,13 +197,21 @@ input[type="submit"]:active,
   background-color: var(--primary-300);
 }
 
+#enter-game {
+  margin: auto;
+}
 
+#confirm-start {
+  display: none;
+}
 
 #dialogue {
   padding: 10px 0px 0px 0px;
   display: block;
   margin: auto;
   font-size: 3rem;
+  display: grid;
+  justify-content: space-evenly;
 }
 
 #intro-continue-button {
