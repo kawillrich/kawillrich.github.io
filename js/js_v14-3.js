@@ -557,8 +557,8 @@ let introContinueDialogue = `You have decided that your training and preparation
                              wounds. But did they prepare you for this?.... What's your name?`
 
 function introContinue() {
-  $("#welcome-title").animate({fontSize: "0px"});
-  $(".welcome-title").slideUp(500).children().slideUp(500);
+  $("#welcome-title").animate({fontSize: "0px"}, 300);
+  $(".welcome-title").slideUp(300).children().slideUp(300);
   setTimeoutArray = [];
   dialogueIterator = 0;
   dialogue.innerHTML = "";
