@@ -79,6 +79,8 @@ button {
   border-image-slice: 75 75;
   margin: 0px auto auto auto;
   background-color: var(--background);
+  max-width: 920px;
+  min-height: 640px;
 }
 
 #container-2 {
