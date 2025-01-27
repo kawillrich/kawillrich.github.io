@@ -219,6 +219,15 @@ input[type="submit"]:active,
   align-items: center;
 }
 
+#character-name {
+  display: block;
+  margin: auto;
+}
+
+#submit-name {
+  display: block;
+  margin: auto;
+}
 
 #normal-equipment-link,
 #magical-equipment-link,
