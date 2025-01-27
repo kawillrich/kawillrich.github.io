@@ -485,7 +485,7 @@ let selectedSpecialty = "";
 
 
 const SCREEN_WIDTH =  document.documentElement.clientWidth;
-const SCREEN_HEIGHT = document.documentElement.clientHeight;
+const SCREEN_HEIGHT = document.documentElement.clientHeight - 100;
 
 let $mainContainer = $("#container");
 $mainContainer.width(SCREEN_WIDTH);
