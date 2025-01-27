@@ -499,7 +499,7 @@ enterGame.addEventListener("click", beginIntro, false);
 
 let dialogue = document.querySelector("#dialogue");
 let dialogueIterator = 0;
-let typingSpeed = 5;
+let typingSpeed = 3;
 
 let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure being guarded 
                     by the Nightfang Dragon, known as Soul Stealer. Soul Stealer is an ancient 
@@ -518,9 +518,9 @@ function beginIntro() {
 function continueAnimation() {  
   enterGame.remove();
   if (dialogueIterator < dialogueText.length) {
-  dialogue.innerHTML += dialogueText.charAt(dialogueIterator);
-  dialogueIterator++;
-  setTimeoutArray.push(setTimeout(beginIntro, typingSpeed));
+    dialogue.innerHTML += dialogueText.charAt(dialogueIterator);
+    dialogueIterator++;
+    setTimeoutArray.push(setTimeout(beginIntro, typingSpeed));
   }
 
   if (setTimeoutArray.length === dialogueText.length) {
@@ -566,20 +566,45 @@ let introContinueDialogue = `You have decided that your training and preparation
 function introContinue() {
   $("#welcome-title").animate({fontSize: "0px"});
   $(".welcome-title").slideUp(500).children().slideUp(500);
+  setTimeoutArray = [];
+  dialogueIterator = 0;
+  introContinueTwo();
+}
+ 
+function introContinueTwo() {
+
+ 
+
+  
+  
+  // console.log(introContinueDialogue.length)
+
+  // let dialogue = document.querySelector("#dialogue");
+  // dialogue.innerHTML = "";
+
+  if (dialogueIterator < introContinueDialogue.length) {
+    dialogue.innerHTML += introContinueDialogue.charAt(dialogueIterator);
+    dialogueIterator++;
+    setTimeoutArray.push(setTimeout(introContinueTwo, typingSpeed));
+  }
+
+  if (setTimeoutArray.length === introContinueDialogue.length) {
+    addIntroContinueButton();
+  }
   
 
   
   console.log("introContinue");
-  dialogue.innerHTML = `<div>
-  You have decided that your training and preparation have readied you for the challenge to venture to
-      the ruins, in hopes of defeating the dragon and obtaining his treasure. You have grown up a lot since your
-      youth. Now, at age 26, you feel you are at your physical peak. Mentally, you have already taken the leap of
-      faith and prepared your belongings - basic supplies: food, water, armor, a weapon, and a survival kit. Your
-      father, Edwin, and your Mother, Alena, have raised you well. Your father taught you how to handle your skills
-      and how to defend yourself. He spent many nights with you, hiking, camping, and living in the woods. Your mother
-      taught you how to mend clothes, forage edible foods, and how to take care of your wounds. <br><br> But did they
-      prepare you for this?.... <br><br> What's your name? <br><br>
-  `;
+  // dialogue.innerHTML = `<div>
+  // You have decided that your training and preparation have readied you for the challenge to venture to
+  //     the ruins, in hopes of defeating the dragon and obtaining his treasure. You have grown up a lot since your
+  //     youth. Now, at age 26, you feel you are at your physical peak. Mentally, you have already taken the leap of
+  //     faith and prepared your belongings - basic supplies: food, water, armor, a weapon, and a survival kit. Your
+  //     father, Edwin, and your Mother, Alena, have raised you well. Your father taught you how to handle your skills
+  //     and how to defend yourself. He spent many nights with you, hiking, camping, and living in the woods. Your mother
+  //     taught you how to mend clothes, forage edible foods, and how to take care of your wounds. <br><br> But did they
+  //     prepare you for this?.... <br><br> What's your name? <br><br>
+  // `;
   let confrimStart = document.querySelector("#confirm-start");
   confrimStart.style.display = "block";
 }
