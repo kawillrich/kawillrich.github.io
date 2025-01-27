@@ -509,23 +509,13 @@ let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure
 let setTimeoutArray = [];
 
 function beginIntro() {
-  $("#header").slideUp(500).next().slideUp(500).next().children("h1").animate({fontSize: "2em"}, 500); 
-  
-  // $("#header").slideUp(500).next().slideUp(500).queue( function() {
-  //   $("#welcome-title").animate({fontSize: "2em"}, 300);
-  //   }
-  // ) 
-  
-  
-
+  $("#header").slideUp(500).next().animate({
+    width: "0px",
+    height: "0px"}, 500).slideUp(500).next().children("h1").animate({fontSize: "2em"}, 500);   
   continueAnimation();  
 }
 
-function continueAnimation() {
-  
-  // $("#header").slideUp(500);
-  // $("#character-info").slideUp(500);
-
+function continueAnimation() {  
   enterGame.remove();
   if (dialogueIterator < dialogueText.length) {
   dialogue.innerHTML += dialogueText.charAt(dialogueIterator);

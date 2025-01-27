@@ -309,6 +309,7 @@ fieldset {
 }
 
 #character-info {
+  margin: auto;
   background-image: url("../images/black-dragon2.svg");
   background-repeat: no-repeat;
   background-size: cover;
