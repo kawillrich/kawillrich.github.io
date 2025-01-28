@@ -551,6 +551,16 @@ let introContinueDialogue = `You have decided that your training and preparation
                              and prepared your belongings - basic supplies: food, water, armor, a weapon, and 
                              a survival kit. `
 
+//create global fx to animate and create new dialogue, and to create and append continue button
+
+function createContinue() {
+
+}
+
+
+
+//end global fx
+
 function introContinue() {
   $("#welcome-title").animate({fontSize: "0px"}, 300);
   $(".welcome-title").slideUp(300).children().slideUp(300);
@@ -577,8 +587,10 @@ function addContinueButton() {
   addNewContinueButton.id = "new-continue-button";
   addNewContinueButton.textContent = "Continue";
   addNewContinueButton.type = "button";
-  addNewContinueButton.addEventListener("click", introContinueFour, false);
+  addNewContinueButton.addEventListener("click", function(newButton) {introContinueThree(newButton)}, false);
   dialogue.appendChild(addNewContinueButton);
+  let newButton = document.querySelector("#new-continue-button");
+  return newButton;
 }
 
 let introContinueDialogue2 = `Your father, Edwin, and your Mother, Alena, have raised you well. 
@@ -587,7 +599,14 @@ let introContinueDialogue2 = `Your father, Edwin, and your Mother, Alena, have r
                              taught you how to mend clothes, forage edible foods, and how to take care of your 
                              wounds. But did they prepare you for this?.... What's your name?`
 
-function introContinueThree() {
+function introContinueThree(newButton) {
+  console.log(newButton)
+  newButton.target.remove();
+  $("#dialogue").animate({fontSize: "0px"}, 300);
+  introContinueFour();
+}
+
+function introContinueFour() {
   if (dialogueIterator < introContinueDialogue2.length) {
     dialogue.innerHTML += introContinueDialogue2.charAt(dialogueIterator);
     dialogueIterator++;
@@ -597,10 +616,6 @@ function introContinueThree() {
   else {
     addSubmitNameButton();
   }  
-}
-
-function introContinueFour() {
-
 
 }
 
