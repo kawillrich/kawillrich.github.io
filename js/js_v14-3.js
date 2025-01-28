@@ -598,7 +598,8 @@ function introContinue() {
   dialogue.innerHTML = "";
   let innerDialogueDiv = document.createElement('div');
   innerDialogueDiv.id = "inner-dialogue-div";
-  dialogue.appendChild(innerDialogueDiv);
+  innerDialogueDiv.style.fontSize = "1.75rem";
+  dialogue.insertAdjacentElement("beforebegin", innerDialogueDiv);
   introContinueTwo();
 }
  
@@ -621,7 +622,9 @@ function addContinueButton() {
   addNewContinueButton.id = "new-continue-button";
   addNewContinueButton.textContent = "Continue";
   addNewContinueButton.type = "button";
-  addNewContinueButton.addEventListener("click", function(newButton) {introContinueThree(newButton)}, false);
+  addNewContinueButton.addEventListener("click", function(newButton) {
+    newButton.target.remove();
+    introContinueThree(newButton)}, false);
   dialogue.appendChild(addNewContinueButton);
   let newButton = document.querySelector("#new-continue-button");
   return newButton;
@@ -634,9 +637,11 @@ let introContinueDialogue2 = `Your father, Edwin, and your Mother, Alena, have r
                              wounds. But did they prepare you for this?.... What's your name?`
 
 function introContinueThree(newButton) {
-  console.log(newButton)
-  newButton.target.remove();
-  $("#dialogue").animate({fontSize: "0px"}, 300).dequeue();
+  $("#inner-dialogue-div").animate({fontSize: "0px"}, 300)
+  
+  // console.log(newButton)
+  // newButton.target.remove();
+
   dialogueIterator = 0;
   setTimeoutArray = [];
 
@@ -644,7 +649,6 @@ function introContinueThree(newButton) {
 }
 
 function introContinueFour() {
-  $("#dialogue").css("font-size", "1.75rem");
   if (dialogueIterator < introContinueDialogue2.length) {
     dialogue.innerHTML += introContinueDialogue2.charAt(dialogueIterator);
     dialogueIterator++;
