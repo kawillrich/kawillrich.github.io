@@ -577,7 +577,7 @@ function addContinueButton() {
   addNewContinueButton.id = "new-continue-button";
   addNewContinueButton.textContent = "Continue";
   addNewContinueButton.type = "button";
-  addNewContinueButton.addEventListener("click", introContinueThree, false);
+  addNewContinueButton.addEventListener("click", introContinueFour, false);
   dialogue.appendChild(addNewContinueButton);
 }
 
@@ -588,15 +588,20 @@ let introContinueDialogue2 = `Your father, Edwin, and your Mother, Alena, have r
                              wounds. But did they prepare you for this?.... What's your name?`
 
 function introContinueThree() {
-  if (dialogueIterator < introContinueDialogue.length) {
-    dialogue.innerHTML += introContinueDialogue.charAt(dialogueIterator);
+  if (dialogueIterator < introContinueDialogue2.length) {
+    dialogue.innerHTML += introContinueDialogue2.charAt(dialogueIterator);
     dialogueIterator++;
-    setTimeoutArray.push(setTimeout(introContinueTwo, typingSpeed));
+    setTimeoutArray.push(setTimeout(introContinueFour, typingSpeed));
   }
 
   else {
     addSubmitNameButton();
   }  
+}
+
+function introContinueFour() {
+
+
 }
 
 function addSubmitNameButton() {
