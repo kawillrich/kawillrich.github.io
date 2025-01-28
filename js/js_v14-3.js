@@ -998,6 +998,10 @@ function updateAlignmentDescription() {
 
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {
+
+
+
+  $("#character-info").css({margin: "0px"}).animate({width: "0px", height: "0px"}, 300).slideDown(300).next().dequeue();
   window.scrollTo(0, 0);
   let strengthPlusAdjustment;
   let intelligencePlusAdjustment;
