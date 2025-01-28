@@ -243,11 +243,11 @@ export default class Monster {
 
             let removeMirrorImage = finalCharacter.status.filter((x) => "Mirror Image");
             finalCharacter.status.splice(removeMirrorImage); //removing Mirror Image after function call
-            let updateCharacterStatus = document.querySelector("#char-status");
-            updateCharacterStatus.innerHTML = `
-                <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
-              }</span></h4>`;
-          };
+          //   let updateCharacterStatus = document.querySelector("#char-status");
+          //   updateCharacterStatus.innerHTML = `
+          //       <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
+          //     }</span></h4>`;
+          // };
 
           alert(`The ${thisMonster.name} attacks you and strikes one of your Mirror Images - there are ${images} left.`);
 
