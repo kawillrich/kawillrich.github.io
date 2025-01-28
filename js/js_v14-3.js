@@ -596,12 +596,17 @@ function introContinue() {
   setTimeoutArray = [];
   dialogueIterator = 0;
   dialogue.innerHTML = "";
+  let innerDialogueDiv = document.createElement('div');
+  innerDialogueDiv.id = "inner-dialogue-div";
+  dialogue.appendChild(innerDialogueDiv);
   introContinueTwo();
 }
  
 function introContinueTwo() {
+  let innerText = document.querySelector('#inner-dialogue-div')
+
   if (dialogueIterator < introContinueDialogue.length) {
-    dialogue.innerHTML += introContinueDialogue.charAt(dialogueIterator);
+    innerText.innerHTML += introContinueDialogue.charAt(dialogueIterator);
     dialogueIterator++;
     setTimeoutArray.push(setTimeout(introContinueTwo, typingSpeed));
   }
@@ -634,6 +639,7 @@ function introContinueThree(newButton) {
   $("#dialogue").animate({fontSize: "0px"}, 300).dequeue();
   dialogueIterator = 0;
   setTimeoutArray = [];
+
   introContinueFour();
 }
 
