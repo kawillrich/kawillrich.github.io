@@ -602,11 +602,14 @@ let introContinueDialogue2 = `Your father, Edwin, and your Mother, Alena, have r
 function introContinueThree(newButton) {
   console.log(newButton)
   newButton.target.remove();
-  $("#dialogue").animate({fontSize: "0px"}, 300);
+  $("#dialogue").animate({fontSize: "0px"}, 300).dequeue();
+  dialogueIterator = 0;
+  setTimeoutArray = [];
   introContinueFour();
 }
 
 function introContinueFour() {
+  $("#dialogue").css("font-size", "2rem");
   if (dialogueIterator < introContinueDialogue2.length) {
     dialogue.innerHTML += introContinueDialogue2.charAt(dialogueIterator);
     dialogueIterator++;
