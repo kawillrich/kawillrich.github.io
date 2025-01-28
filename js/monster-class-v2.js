@@ -247,7 +247,7 @@ export default class Monster {
           //   updateCharacterStatus.innerHTML = `
           //       <h4 id='char-status' class='char-info-label'>Status: <span class="character-display-info">${finalCharacter.status
           //     }</span></h4>`;
-          // };
+          };
 
           alert(`The ${thisMonster.name} attacks you and strikes one of your Mirror Images - there are ${images} left.`);
 
