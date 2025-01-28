@@ -520,7 +520,7 @@ function continueAnimation() {
   if (dialogueIterator < dialogueText.length) {
     dialogue.innerHTML += dialogueText.charAt(dialogueIterator);
     dialogueIterator++;
-    setTimeoutArray.push(setTimeout(beginIntro, typingSpeed));
+    setTimeoutArray.push(setTimeout(continueAnimation, typingSpeed));
   }else {
     console.log('test')
     addIntroContinueButton();
