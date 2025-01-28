@@ -998,7 +998,7 @@ function updateAlignmentDescription() {
 
 //TEST FUNCTION TO START GAME - creates player info
 function startGame() {
-  $("#character-info").animate({width: "100%", height: "470px"}, 300).slideDown(300);
+  $("#character-info").animate({width: "100%", height: "50%"}, 300).slideDown(300);
 
 
 
