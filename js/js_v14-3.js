@@ -495,6 +495,8 @@ console.log(SCREEN_HEIGHT);
 let enterGame = document.querySelector("#enter-game");
 enterGame.addEventListener("click", beginIntro, false);
 
+let buttonIterator = 1;
+
 let dialogue = document.querySelector("#dialogue");
 let dialogueIterator = 0;
 let typingSpeed = 3;
@@ -505,6 +507,41 @@ let dialogueText = `In the ruins of Elsier, there are rumors of a large treasure
                     that can see in the dark as if it were daytime. It is said that Soul Stealer 
                     breathes black fire that is able to burn through *almost* anything....`;
 let setTimeoutArray = [];
+
+
+//create global fx to animate and create new dialogue, and to create and append continue button
+
+function createButton() {
+  let newButton = document.createElement("button");
+  newButton.id = `button-${buttonIterator}`;
+  newButton.type = "button";
+  newButton.textContent = `Continue ${buttonIterator}`;
+  newButton.style.display = "block";
+  newButton.addEventListener(
+    "click",
+    function () {
+      createDialogueDiv(dialogueToDisplay);
+    },
+    false
+  );
+  let appDiv = document.getElementById("dialogue");
+  appDiv.appendChild(newButton);
+  buttonIterator++;
+  return newButton; 
+}
+
+function createDialogueDiv(dialogueInput) {
+  dialogue.innerHTML = "";
+  let dialogueDiv = document.createElement("div");
+  dialogueDiv.id = `dialogue-div-${dialogueIterator}`;
+  dialogueDiv.textContent = dialogueInput + " " + dialogueIterator;
+  dialogue.appendChild(dialogueDiv);
+  dialogueDiv.appendChild(createButton(newDialogue));
+  dialogueIterator++;
+}
+
+//end global fx
+
 
 function beginIntro() {
   $(".page-title").animate({
@@ -551,15 +588,7 @@ let introContinueDialogue = `You have decided that your training and preparation
                              and prepared your belongings - basic supplies: food, water, armor, a weapon, and 
                              a survival kit. `
 
-//create global fx to animate and create new dialogue, and to create and append continue button
 
-function createContinue() {
-
-}
-
-
-
-//end global fx
 
 function introContinue() {
   $("#welcome-title").animate({fontSize: "0px"}, 300);
