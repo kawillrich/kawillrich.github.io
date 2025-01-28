@@ -644,7 +644,7 @@ function introContinueThree(newButton) {
 }
 
 function introContinueFour() {
-  $("#dialogue").css("font-size", "2rem");
+  $("#dialogue").css("font-size", "1.75rem");
   if (dialogueIterator < introContinueDialogue2.length) {
     dialogue.innerHTML += introContinueDialogue2.charAt(dialogueIterator);
     dialogueIterator++;
