@@ -681,9 +681,10 @@ function checkUsername() {
 
 function charNameSubmitted() {
   window.scrollTo(0, 0);
-  var confirmStart = document.querySelector("#confirm-start");
+
+  let confirmStart = document.querySelector("#confirm-start");
   submittedCharName = document.querySelector("#character-name").value;
-  confirmStart.textContent = `Welcome, ${submittedCharName}, are you ready to begin your journey?`;
+  confirmStart.style.display = "none";
   rollAttributes();
 }
 
