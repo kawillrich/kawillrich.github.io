@@ -524,7 +524,9 @@ function createButton() {
     },
     false
   );
+  let lineBreak = document.createElement('br');
   let appDiv = document.getElementById("dialogue");
+  appDiv.appendChild(line)
   appDiv.appendChild(newButton);
   buttonIterator++;
   return newButton; 
@@ -576,8 +578,13 @@ function addIntroContinueButton() {
 
   continueButtonContainer.appendChild(continueButton);
   let introBreak = document.createElement("br");
+  let introBreak2 = document.createElement("br");
+
+
 
   dialogue.appendChild(introBreak);
+  dialogue.appendChild(introBreak2);
+
   dialogue.appendChild(continueButtonContainer);
 }
 
