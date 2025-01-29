@@ -606,6 +606,12 @@ function introContinue() {
   let innerDialogueDiv = document.createElement('div');
   innerDialogueDiv.id = "inner-dialogue-div";
   innerDialogueDiv.style.fontSize = "1.75rem";
+
+  let continueBreak = document.createElement('br');
+
+  dialogue.appendChild(continueBreak);
+
+
   dialogue.insertAdjacentElement("beforebegin", innerDialogueDiv);
   introContinueTwo();
 }
