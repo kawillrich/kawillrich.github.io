@@ -510,36 +510,36 @@ let setTimeoutArray = [];
 
 //create global fx to animate and create new dialogue, and to create and append continue button
 
-function createButton() {
-  let newButton = document.createElement("button");
-  newButton.id = `button-${buttonIterator}`;
-  newButton.type = "button";
-  newButton.textContent = `Continue ${buttonIterator}`;
-  newButton.style.display = "block";
-  newButton.addEventListener(
-    "click",
-    function () {
-      createDialogueDiv(dialogueToDisplay);
-    },
-    false
-  );
-  let lineBreak = document.createElement('br');
-  let appDiv = document.getElementById("dialogue");
-  appDiv.appendChild(line)
-  appDiv.appendChild(newButton);
-  buttonIterator++;
-  return newButton; 
-}
+// function createButton() {
+//   let newButton = document.createElement("button");
+//   newButton.id = `button-${buttonIterator}`;
+//   newButton.type = "button";
+//   newButton.textContent = `Continue ${buttonIterator}`;
+//   newButton.style.display = "block";
+//   newButton.addEventListener(
+//     "click",
+//     function () {
+//       createDialogueDiv(dialogueToDisplay);
+//     },
+//     false
+//   );
+//   let lineBreak = document.createElement('br');
+//   let appDiv = document.getElementById("dialogue");
+//   appDiv.appendChild(line)
+//   appDiv.appendChild(newButton);
+//   buttonIterator++;
+//   return newButton; 
+// }
 
-function createDialogueDiv(dialogueInput) {
-  dialogue.innerHTML = "";
-  let dialogueDiv = document.createElement("div");
-  dialogueDiv.id = `dialogue-div-${dialogueIterator}`;
-  dialogueDiv.textContent = dialogueInput + " " + dialogueIterator;
-  dialogue.appendChild(dialogueDiv);
-  dialogueDiv.appendChild(createButton(newDialogue));
-  dialogueIterator++;
-}
+// function createDialogueDiv(dialogueInput) {
+//   dialogue.innerHTML = "";
+//   let dialogueDiv = document.createElement("div");
+//   dialogueDiv.id = `dialogue-div-${dialogueIterator}`;
+//   dialogueDiv.textContent = dialogueInput + " " + dialogueIterator;
+//   dialogue.appendChild(dialogueDiv);
+//   dialogueDiv.appendChild(createButton(newDialogue));
+//   dialogueIterator++;
+// }
 
 //end global fx
 
@@ -550,17 +550,19 @@ function beginIntro() {
     width: "0px",
     height: "0px"}, 300).slideUp(300).next().dequeue(); 
   $("#character-info").animate({width: "0px", height: "0px"}, 300).slideUp(300).next().dequeue();
+  enterGame.remove();
   continueAnimation();  
 }
 
 function continueAnimation() {  
-  enterGame.remove();
   if (dialogueIterator < dialogueText.length) {
     dialogue.innerHTML += dialogueText.charAt(dialogueIterator);
     dialogueIterator++;
-    setTimeoutArray.push(setTimeout(continueAnimation, typingSpeed));
+    setTimeoutArray.push(setTimeout(continueAnimation, 10));
   }else {
     console.log('test')
+    setTimeoutArray = [];
+
     addIntroContinueButton();
   }
 }
@@ -569,7 +571,7 @@ function addIntroContinueButton() {
   let continueButtonContainer = document.createElement("div");
   continueButtonContainer.id = "intro-button-container";
   continueButtonContainer.type = "button";
-  let continueButton = document.querySelector("button");
+  let continueButton = document.createElement("button");
   continueButton.textContent = "Continue";
   continueButton.id = "intro-continue-button";
   continueButton.type = "button";
