@@ -482,15 +482,14 @@ let selectedSpecialty = "";
 
 //asks if you are ready to start game
 
-const SCREEN_WIDTH =  document.documentElement.clientWidth;
-const SCREEN_HEIGHT = document.documentElement.clientHeight - 100;
+// const SCREEN_WIDTH =  document.documentElement.clientWidth;
+// const SCREEN_HEIGHT = document.documentElement.clientHeight - 100;
 
-let $mainContainer = $("#container");
-$mainContainer.width(SCREEN_WIDTH);
-$mainContainer.height(SCREEN_HEIGHT); 
+// let $mainContainer = $("#container");
+// $mainContainer.width(SCREEN_WIDTH);
+// $mainContainer.height(SCREEN_HEIGHT); 
 
-console.log(SCREEN_WIDTH);
-console.log(SCREEN_HEIGHT);   
+
 
 let enterGame = document.querySelector("#enter-game");
 enterGame.addEventListener("click", beginIntro, false);
