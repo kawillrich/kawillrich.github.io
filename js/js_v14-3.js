@@ -559,8 +559,11 @@ function continueAnimation() {
     dialogue.innerHTML += dialogueText.charAt(dialogueIterator);
     dialogueIterator++;
     setTimeoutArray.push(setTimeout(continueAnimation, 10));
-  }else {
+  } else {
     console.log('test')
+    for (let i = 0; i < setTimeoutArray.length; i ++) {
+      clearTimeout[i];
+    }
     setTimeoutArray = [];
 
     addIntroContinueButton();
@@ -627,6 +630,11 @@ function introContinueTwo() {
   }
 
   else {
+    for (let i = 0; i < setTimeoutArray.length; i ++) {
+      clearTimeout[i];
+    }
+    setTimeoutArray = [];
+
     addContinueButton();
   }  
 }
@@ -670,6 +678,10 @@ function introContinueFour() {
   }
 
   else {
+    for (let i = 0; i < setTimeoutArray.length; i ++) {
+      clearTimeout[i];
+    }
+    setTimeoutArray = [];
     addSubmitNameButton();
   }  
 
