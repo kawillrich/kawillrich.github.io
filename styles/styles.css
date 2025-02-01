@@ -55,7 +55,7 @@ button {
 }
 
 #footer {
-  border: 1px solid black; 
+  border: 1px solid black;
 }
 
 .page-title {
@@ -156,8 +156,8 @@ input[type="submit"],
   width: 210px;
   border: 0px solid var(--btn-bg);
   /* border: 20px solid transparent; */
-  
-  
+
+
   /* border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 20 20; */
   /* background-color: rgb(205, 210, 245); */
@@ -177,7 +177,7 @@ input[type="submit"]:hover,
 #treasure-link:hover,
 #intro-continue-button:hover,
 #enter-game:hover,
-#new-continue-button:hover  {
+#new-continue-button:hover {
   background-color: var(--btn-hover);
 }
 
@@ -194,7 +194,7 @@ input[type="submit"]:active,
 #treasure-link.active,
 #intro-continue-button:active,
 #enter-game:active,
-#new-continue-button:active  {
+#new-continue-button:active {
   background-color: var(--primary-300);
 }
 
@@ -220,6 +220,7 @@ input[type="submit"]:active,
   font-size: 3rem;
   text-align: center;
 }
+
 #intro-continue-button {
   margin: auto;
 }
@@ -255,7 +256,7 @@ input[type="submit"]:active,
 input[type="text"] {
   font-size: 2rem;
   text-align: center;
-  
+
   /* border: 10px solid transparent;
   border-image-source: url(../images/gui/gui-text-box.png);
   border-image-slice: 10 10; */
@@ -327,6 +328,8 @@ fieldset {
   width: 240px; */
 }
 
+/* mobile */
+
 #character-info {
   margin: auto;
   background-image: url("../images/black-dragon2.svg");
@@ -339,26 +342,25 @@ fieldset {
   grid-auto-rows: 170px 145px 145px; */
   gap: 5px 8px;
   border-radius: 10px;
-
-  /* grid-template-areas: 
-    "playerCanvas playerStats  playerStats      playerStats      playerStats       playerMenu"
-    "playerData   playerData   playerAttributes playerAttributes playerSaves       playerSaves"
-    "playerStatus playerStatus playerAttributes playerAttributes playerAfflictions playerAfflictions"; */
-  /* grid-gap: 5px; */
-
-  /* grid-template-columns: 2fr 1fr 1fr 2fr; */
-  /* grid-template-areas:
-    "playerData playerAttributes playerCanvas playerSaves"
-    "playerData playerAttributes playerStatus playerSaves"; */
-
-  /* height: 350px;   */
 }
 
-#character-info>div {
-  /* padding: 10px 5px; */
+/* Desktop */
+
+@media only screen and (min-width: 768px) {
+  #character-info {
+    margin: auto;
+    background-image: url("../images/black-dragon2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* height: 480px; */
+    display: grid;
+    /* grid-auto-columns: 146px;
+    grid-auto-rows: 170px 145px 145px; */
+    gap: 5px 8px;
+    border-radius: 10px;
+  }
 }
-
-
 
 #character-canvas {
   grid-area: 1/1/span 1/span 1;
