@@ -77,15 +77,11 @@ button {
   border-image-slice: 75 75;
   margin: 0px auto auto auto;
   background-color: var(--background);
-  display: grid;
-  /* max-width: 920px;
-  min-height: 640px; */
+  display: grid;  
 }
 
 #container-2 {
-  margin: 0px auto auto auto;
-  /* width: 920px;
-  min-width: 920px; */
+  margin: 0px auto auto auto;  
   padding: 0px 0px 0px 0px;
   border: 30px solid transparent;
   height: 100%;
@@ -152,13 +148,7 @@ input[type="submit"],
   padding: 15px;
   height: 70px;
   width: 210px;
-  border: 0px solid var(--btn-bg);
-  /* border: 20px solid transparent; */
-
-  /* border-image-source: url(../images/gui/gui-buttons-player-attack.png);
-  border-image-slice: 20 20; */
-  /* background-color: rgb(205, 210, 245); */
-  /* cursor: url('../images/gui/cursor-hover.png'), auto; */
+  border: 0px solid var(--btn-bg);  
 }
 
 input[type="submit"]:hover,
@@ -241,7 +231,6 @@ input[type="submit"]:active,
 #magical-equipment-link,
 #spells-link,
 #treasure-link {
-  /* border: 20px solid transparent; */
   border-image-source: url(../images/gui/gui-buttons-player-attack.png);
   border-image-slice: 20 20;
   text-align: center;
@@ -253,11 +242,6 @@ input[type="submit"]:active,
 input[type="text"] {
   font-size: 2rem;
   text-align: center;
-
-  /* border: 10px solid transparent;
-  border-image-source: url(../images/gui/gui-text-box.png);
-  border-image-slice: 10 10; */
-  /* padding: 15px; */
   height: 68px;
   width: 210px;
   border-radius: 10px;
@@ -291,10 +275,8 @@ button {
 }
 
 legend {
-  /* border: 1px solid black; */
   border-radius: 5px;
   margin: auto;
-  /* margin-left: calc(50% - 35px - 8px); */
   background-color: var(--accent-green-200);
   color: var(--primary);
 }
@@ -311,15 +293,13 @@ fieldset {
   border: none;
   border-radius: 5px;
   background-color: #0f1842;
-  /* height: 100%;
-  width: 100%; */
+ 
 }
 
 #canvas2 {
   display: block;
   margin: 15% auto auto 10%;
-  /* height: 300px;
-  width: 240px; */
+ 
 }
 
 /* mobile */
@@ -330,7 +310,6 @@ fieldset {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  /* height: 480px; */
   display: grid;
   /* grid-auto-columns: 100%; */
   /* grid-auto-rows: 170px 145px 145px; */
