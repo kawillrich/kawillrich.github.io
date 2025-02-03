@@ -78,6 +78,7 @@ button {
   margin: 0px auto auto auto;
   background-color: var(--background);
   display: grid;  
+  grid-template-rows: 150px 100px 1fr .5fr;
 }
 
 #container-2 {
@@ -311,7 +312,9 @@ fieldset {
   background-size: cover;
   background-position: center;
   display: grid;
-  /* grid-auto-columns: 100%; */
+  width: 50%;
+  height: 100%;
+  /* grid-auto-columns: 50%; */
   /* grid-auto-rows: 170px 145px 145px; */
   gap: 5px 8px;
   border-radius: 10px;
